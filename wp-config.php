@@ -31,7 +31,7 @@ define( 'DB_USER', getenv('MYSQL_ADDON_USER'));
 define( 'DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
 
 /** Adresse de l’hébergement MySQL. */
-define( 'DB_HOST', getenv('MYSQL_ADDON_HOST') );
+define( 'DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT') );
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -93,6 +93,33 @@ define( 'WP_DEBUG', false );
 /** Chemin absolu vers le dossier de WordPress. */
 if ( ! defined( 'ABSPATH' ) )
   define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+
+
+/**
+ * HTTPS-related configuration, necessary for clever-cloud
+https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/#ssl-configuration
+*/
+function check_proto_set_ssl($forwarded_protocols){
+    $secure = 'off';
+    if ( strstr($forwarded_protocols , ",") ) {
+        $previous = null;
+        foreach ( explode(",", $forwarded_protocols) as $value ) {
+            if ( $previous ) {
+                trim($value) == $previous && trim($value) == 'https' ? $secure = 'on' : $secure = 'off';
+            }
+            $previous = trim($value);
+        }
+        $_SERVER["HTTPS"] = $secure;
+    }else{
+        $forwarded_protocols == 'https' ? $_SERVER["HTTPS"] = 'on' : $_SERVER["HTTPS"] = $secure = 'off';
+    }
+}
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+    check_proto_set_ssl($_SERVER['HTTP_X_FORWARDED_PROTO']);
+} elseif (isset($_SERVER['X_FORWARDED_PROTO'])) {
+    check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
+}
 
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once( ABSPATH . 'wp-settings.php' );
