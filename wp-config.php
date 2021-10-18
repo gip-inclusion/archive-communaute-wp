@@ -22,19 +22,27 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define( 'DB_NAME', getenv('MYSQL_ADDON_DB'));
-
-/** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', getenv('MYSQL_ADDON_USER'));
-
-/** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
-
-/** Adresse de l’hébergement MySQL. */
-define( 'DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT') );
-
-/** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
-define( 'DB_CHARSET', 'utf8' );
+if (strstr($_SERVER['SERVER_NAME'], '.local')) {
+    define('DB_NAME', 'communaute');
+    define('DB_USER', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_HOST', 'localhost');
+    define('DB_CHARSET', 'utf8');
+  
+    define('WP_DEBUG', true);
+    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_DISPLAY', true);
+  } else {
+    define( 'DB_NAME', getenv('MYSQL_ADDON_DB'));
+    define( 'DB_USER', getenv('MYSQL_ADDON_USER'));
+    define( 'DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
+    define( 'DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT') );
+    define('DB_CHARSET', 'utf8');
+   
+    define('WP_DEBUG', false);
+    define('WP_DEBUG_LOG', false);
+    define('WP_DEBUG_DISPLAY', false);
+  }
 
 /**
  * Type de collation de la base de données.
@@ -85,9 +93,15 @@ $table_prefix = 'wp_';
  * pour le déboguage, rendez-vous sur le Codex.
  *
  * @link https://fr.wordpress.org/support/article/debugging-in-wordpress/
+ * define( 'WP_DEBUG', false );
  */
-define( 'WP_DEBUG', false );
-
+define('AUTOMATIC_UPDATER_DISABLED', true);
+define('WP_AUTO_UPDATE_CORE', false);
+define('EMPTY_TRASH_DAYS', 7);
+define('AUTOSAVE_INTERVAL', 86400);
+define('WP_POST_REVISIONS', 1);
+define('ALLOW_UNFILTERED_UPLOADS', false);
+define('FORCE_SSL_ADMIN', true);
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 
 /** Chemin absolu vers le dossier de WordPress. */
@@ -97,9 +111,9 @@ if ( ! defined( 'ABSPATH' ) )
 
 /**
  * HTTPS-related configuration, necessary for clever-cloud
-https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/#ssl-configuration
+ * @link https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/#ssl-configuration
 */
-function check_proto_set_ssl($forwarded_protocols){
+function check_proto_set_ssl($forwarded_protocols) {
     $secure = 'off';
     if ( strstr($forwarded_protocols , ",") ) {
         $previous = null;

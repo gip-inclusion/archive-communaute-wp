@@ -466,30 +466,6 @@
         } );
     });
 
-    wp.customize( 'betterdocs_doc_single_content_area_margin_top', function( value ) {
-        value.bind( function( to ) {
-            $( '.betterdocs-single-wraper .betterdocs-content-area' ).css( 'margin-top', to + 'px' );
-        } );
-    });
-
-    wp.customize( 'betterdocs_doc_single_content_area_margin_right', function( value ) {
-        value.bind( function( to ) {
-            $( '.betterdocs-single-wraper .betterdocs-content-area' ).css( 'margin-right', to + 'px' );
-        } );
-    });
-
-    wp.customize( 'betterdocs_doc_single_content_area_margin_bottom', function( value ) {
-        value.bind( function( to ) {
-            $( '.betterdocs-single-wraper .betterdocs-content-area' ).css( 'margin-bottom', to + 'px' );
-        } );
-    });
-
-    wp.customize( 'betterdocs_doc_single_content_area_margin_left', function( value ) {
-        value.bind( function( to ) {
-            $( '.betterdocs-single-wraper .betterdocs-content-area' ).css( 'margin-left', to + 'px' );
-        } );
-    });
-
     wp.customize( 'betterdocs_doc_single_post_content_padding_top', function( value ) {
         value.bind( function( to ) {
             $( '.betterdocs-single-wraper .betterdocs-content-area .docs-single-main' ).css( 'padding-top', to + 'px' );
