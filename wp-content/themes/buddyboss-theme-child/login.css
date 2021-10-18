@@ -1,0 +1,13 @@
+#login {
+	width: 360px;
+}
+
+div#login form#loginform p.forgetmenot label {
+	padding-left: 30px;
+}
+
+.login form#loginform label[for="user_login"]::before, 
+.login form#loginform label[for="user_pass"]::before, 
+.user-pass-wrap .wp-pwd::before {
+  top: 32px !important;
+}

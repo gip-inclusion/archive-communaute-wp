@@ -1,0 +1,17 @@
+/*
+Theme Name: Theme enfant de Buddyboss
+Description: Theme enfant de Buddyboss par Sophie
+Author: Sophie
+Author URI: 
+Template: buddyboss-theme 
+Version: 0.1.0
+*/
+
+.entry-title,
+.page-title {
+	display: none;
+}
+
+.tribe-events-widget .tribe-events-widget-events-list__view-more-link {
+  text-transform: initial !important;
+}
