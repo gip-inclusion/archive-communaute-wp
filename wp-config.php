@@ -94,5 +94,16 @@ define( 'WP_DEBUG', false );
 if ( ! defined( 'ABSPATH' ) )
   define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 
+
+/**
+ * HTTPS-related configuration, necessary for clever-cloud
+https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-wordpress/#ssl-configuration
+*/
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';
+} elseif (isset($_SERVER['X_FORWARDED_PROTO']) && $_SERVER['X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';  
+}
+
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once( ABSPATH . 'wp-settings.php' );
