@@ -346,6 +346,10 @@ function betterdocs_customize_css() {
 			padding-right: <?php echo $output['betterdocs_doc_single_content_area_padding_right'] ?>px;
 			padding-bottom: <?php echo $output['betterdocs_doc_single_content_area_padding_bottom'] ?>px;
 			padding-left: <?php echo $output['betterdocs_doc_single_content_area_padding_left'] ?>px;
+			margin-top: <?php echo $output['betterdocs_doc_single_content_area_margin_top'] ?>px;
+			margin-right: <?php echo $output['betterdocs_doc_single_content_area_margin_right'] ?>px;
+			margin-bottom:<?php echo $output['betterdocs_doc_single_content_area_margin_bottom'] ?>px;
+			margin-left: <?php echo $output['betterdocs_doc_single_content_area_margin_left'] ?>px;
 		}
 		.betterdocs-single-wraper .betterdocs-content-area .docs-single-main {
 			padding-top: <?php echo $output['betterdocs_doc_single_post_content_padding_top'] ?>px;

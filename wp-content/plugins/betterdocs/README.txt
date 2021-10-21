@@ -4,7 +4,7 @@ Donate link: https://wpdeveloper.net
 Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, knowledge, table of content, TOC, knowledgebase, faqs, doc page, best documentation plugin, support ticket, customer support, instant answer bot, bot, help articles, better docs
 Requires at least: 4.0
 Tested up to: 5.8
-Stable tag: 1.9.5
+Stable tag: 1.9.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,19 +37,19 @@ Let the visitors instantly find the answers they are searching without having to
 - In-built advanced live search will help visitors to get the exact docs solution
 - Integrated with Analytics to track and evaluate the performance
 - 100% Compatibility with Elementor Page Builder
-- WPML Certified Plugin
+- WPML Certified Plugin 
 - Advanced List View Editor
 
-## 🙌 STUNNING READY TEMPLATES FOR DOCS LANDING PAGE ##
+## 🙌 STUNNING READY TEMPLATES FOR DOCS LANDING PAGE ## 
 
-BetterDocs offer multiple ready templates to design your WordPress documentation site within a few minutes. Beside, you have full freedom to customize the layout with ease.
+BetterDocs offer multiple ready templates to design your WordPress documentation site within a few minutes. Beside, you have full freedom to customize the layout with ease. 
 
 
 ## 📋 Interactive Table of Content (TOC) ##
 
 BetterDocs will automatically create a well-managed [Table Of Contents(TOC)](https://wpdeveloper.net/display-toc-wordpress/) while you are writing your documentation. With an effective automated process, it will organize your documentation with its in-built functions and this stunning TOC moves with your scroll, so your visitors can always go to other pages easily.
 
-## 🔎 IN-BUILT ADVANCED SEARCH OPTION ##
+## 🔎 IN-BUILT ADVANCED SEARCH OPTION ## 
 
 Assist your visitors to get the exact docs solution and reduce dependency on support with built-in advanced live search option from the top.
 
@@ -70,7 +70,7 @@ Show off your creativity and create an amazing single doc template with Elemento
 
 Design stunning Docs page and Docs Category archive template with Elementor Theme Builder
 
-## 🤖 INSTANT ANSWER BOT TO REDUCE SUPPORT TICKETS (PRO) ##
+## 🤖 INSTANT ANSWER BOT TO REDUCE SUPPORT TICKETS (PRO) ## 
 
 Help your customers browse the docs and knowledge base articles right from the chat window without leaving the page and reduce the support tickets.
 
@@ -122,7 +122,7 @@ This Documentation plugin is brought to you by the team behind [WPDeveloper](htt
 - Learn from our tutorials on [Youtube Channel](https://wpdeveloper.net/go/youtube-channel)
 - Or rate **Better Docs** on WordPress
 
-## 🔥 WHAT’S NEXT ##
+## 🔥 WHAT’S NEXT ## 
 
 If you like this docs plugin, then consider checking out our other projects:
 
@@ -137,7 +137,7 @@ Visit [WPDeveloper](https://wpdeveloper.net) to learn more about how to do bette
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "BetterDocs".
+2. Search For "BetterDocs". 
 3. Install, then Activate it.
 4. Follow the [Documentation](https://betterdocs.co/docs/)
 
@@ -159,9 +159,6 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-= 1.9.5 - 18/10/2021 =
-- Few minor bug fix and improvements
-
 = 1.9.4 - 18/10/2021 =
 - Fixed: Search not working in responsive devices
 - Fixed: List View pagination not working
@@ -176,14 +173,14 @@ Yes, it will work with any standard WordPress theme.
 - Improved: Security enhancements for better performance
 - Fixed: Search Heading & Sub-heading not being translatable
 - Fixed: Typography not working properly in frontend
-- Fixed: Elementor BetterDocs Category Grid widget Sorting not syncing with BetterDocs UI
+- Fixed: Elementor BetterDocs Category Grid widget Sorting not syncing with BetterDocs UI 
 - Fixed: Single Doc share not working for Twitter
 - Fixed: Elementor widgets not showing when Elementor PRO is inactive
 - Few minor bug fix and improvements
 
 = 1.9.1 - 26/08/2021 =
 - Fixed: Quick Setup throwing error after plugin activation
-- Fixed: Polylang Doc Translation option not showing anymore
+- Fixed: Polylang Doc Translation option not showing anymore 
 - Few minor bug fix and improvements
 
 
@@ -193,7 +190,7 @@ Yes, it will work with any standard WordPress theme.
 - Few minor bug fix and improvements
 
 = 1.8.4 - 01/08/2021 =
-- Added: 'Copy to Clipboard’ option for Shortcodes
+- Added: 'Copy to Clipboard’ option for Shortcodes 
 - Added: Font controls for Sub-category in Customizer
 - Fixed: Current category not expanding from Sidebar in Category archive page
 - Fixed: Elementor BetterDocs Category Grid: Title, Border Type options not working
@@ -211,7 +208,7 @@ Yes, it will work with any standard WordPress theme.
 - Few minor bug fix and improvements
 
 = 1.8.2 - 24/06/2021 =
-- Fixed: Disable masonry layout when nested subcategory is enabled
+- Fixed: Disable masonry layout when nested subcategory is enabled 
 - Fixed: Compatibility issue with PHP 8.0
 - Few minor bug fix and improvements
 
@@ -238,7 +235,7 @@ Yes, it will work with any standard WordPress theme.
 - Added: Option to change ‘not found text’ in Live Search
 - Added: Nested subcategory settings option in Layout -> Archive Page
 - Added: ‘orderby’ and ‘order’ select options in Elementor Widget "Doc Category Archive List"
-- Fixed: Ready Templates not loading inside Elementor
+- Fixed: Ready Templates not loading inside Elementor 
 - Few minor bug fix and improvements
 
 = 1.7.3 - 13/04/2021 =
@@ -246,7 +243,7 @@ Yes, it will work with any standard WordPress theme.
 - Added: TOC title text option in the settings
 - Added: Docs order and order by option for BetterDocs Category Grid
 - Fixed: PHP 8.0 Compatibility
-- Fixed: "Masonry" view not working in Elementor widget BetterDocs Category Grid
+- Fixed: "Masonry" view not working in Elementor widget BetterDocs Category Grid 
 - Fixed: Doc Feedback email not updating
 - Fixed: Category order not working properly in 'betterdocs_category_list' shortcode
 - Fixed: Docs count not showing properly in Elementor widgets: BetterDocs Category Grid and Box
@@ -324,7 +321,7 @@ Yes, it will work with any standard WordPress theme.
 - Fixed: Layout preview not showing properly inside Customizer
 - Fixed: Content space option not working inside Customizer
 - Fixed: Sticky TOC z-index option not resetting
-- Few minor bugfix and improvements
+- Few minor bugfix and improvements 
 
 = 1.4.2 - 21/09/2020 =
 - Fixed: isEditMode Not defined error with Elementor
@@ -339,7 +336,7 @@ Yes, it will work with any standard WordPress theme.
 - Added: Option to change Single Doc Feedback Form title
 - Added: Option to change the colours for Nested Sub-categories
 - Replaced: 'Articles' has been replaced by 'Docs'
-- Few minor bugfix and improvements
+- Few minor bugfix and improvements 
 
 = 1.3.5 - 20/08/2020 =
 - Improved: jQuery Select2 only loaded in BetterDocs Settings page

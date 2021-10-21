@@ -24,7 +24,7 @@ if ( ! class_exists( 'Awl_Blog_Filter' ) ) {
 			define( 'BF_PLUGIN_VER', '5.3.5' );
 			
 			//Plugin Text Domain
-			define('blog-filter', 'blog-filter');
+			define("'blog-filter'","blog-filter" );
 
 			//Plugin Name
 			define( 'BF_PLUGIN_NAME', __( 'Blog Filter Premium', 'blog-filter' ) );

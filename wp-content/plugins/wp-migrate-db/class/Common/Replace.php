@@ -2,8 +2,6 @@
 
 namespace DeliciousBrains\WPMDB\Common;
 
-use DeliciousBrains\WPMDB\Common\DryRun\DiffEntity;
-use DeliciousBrains\WPMDB\Common\DryRun\DiffInterpreter;
 use DeliciousBrains\WPMDB\Common\Error\ErrorLog;
 use DeliciousBrains\WPMDB\Common\FormData\FormData;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
@@ -162,11 +160,6 @@ class Replace
      */
     private $http;
 
-    /**
-     * @var DiffInterpreter
-     */
-    private $diff_interpreter;
-
     public function __construct(
         MigrationStateManager $migration_state_manager,
         TableHelper $table_helper,
@@ -177,8 +170,7 @@ class Replace
         PairFactory $pairs_factory,
         WPMDBRestAPIServer $rest_api_server,
         Helper $http_helper,
-        Http $http,
-        DiffInterpreter $diff_interpreter
+        Http $http
     ) {
         $this->migration_state_manager = $migration_state_manager;
         $this->table_helper            = $table_helper;
@@ -189,7 +181,6 @@ class Replace
         $this->rest_api_server         = $rest_api_server;
         $this->http_helper             = $http_helper;
         $this->http                    = $http;
-        $this->diff_interpreter        = $diff_interpreter;
         self::$form_data               = $form_data;
 
         //Setup REST API routes
@@ -245,9 +236,6 @@ class Replace
         $this->json_replace_tables  = '';
         $this->json_replace_columns = '';
         $this->json_merged          = false;
-
-        // Set diff interpreter table name
-        $this->diff_interpreter->getGroup()->setTable($this->table);
 
         global $wpdb;
 
@@ -562,8 +550,6 @@ class Replace
      */
     public function apply_replaces($subject)
     {
-        $original = $subject;
-
         if (empty($this->search) && empty($this->replace)) {
             return $subject;
         }
@@ -584,10 +570,6 @@ class Replace
 
         if (true === $this->is_protocol_mismatch) {
             $subject = $this->do_protocol_replace($subject, $this->destination_url);
-        }
-
-        if ('find_replace' === $this->intent) {
-            $this->diff_interpreter->compute(DiffEntity::create($original, $subject, $this->column, is_object($this->row) ? reset($this->row) : null));
         }
 
         return $subject;
@@ -891,27 +873,5 @@ class Replace
      */
     public function reset_pairs() {
         $this->pairs = [];
-    }
-
-
-    /**
-     * @return DiffInterpreter
-     */
-    public function get_diff_interpreter() {
-        return $this->diff_interpreter;
-    }
-
-
-    /**
-     * Returns an array of json serialized entities.
-     *
-     * @return array
-     */
-    public function get_diff_result() {
-        $result = [];
-        foreach($this->diff_interpreter->getGroup()->getEntities() as $entity) {
-            $result[] = $entity->jsonSerialize();
-        }
-        return $result;
     }
 }
