@@ -16,5 +16,8 @@ deploy.sh
 node_modules
 .vscode
 
+# Log
+.debug.log
+
 # App
 wp-content/uploads/
