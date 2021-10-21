@@ -2660,6 +2660,106 @@ function betterdocs_customize_register( $wp_customize ) {
 		),
 	) ) );
 
+	$wp_customize->add_setting( 'betterdocs_doc_single_content_area_margin', array(
+		'default'       	=> $defaults['betterdocs_doc_single_content_area_margin'],
+		'capability'    	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'sanitize_callback' => 'betterdocs_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new BetterDocs_Title_Custom_Control(
+		$wp_customize, 'betterdocs_doc_single_content_area_margin', array(
+		'type'       => 'betterdocs-title',
+		'section'    => 'betterdocs_single_docs_settings',
+		'settings'   => 'betterdocs_doc_single_content_area_margin',
+		'label'    	 => esc_html__('Content Area Margin', 'betterdocs'),
+		'priority'   => 108,
+		'input_attrs' => array(
+			'id' 	=> 'betterdocs_doc_single_content_area_margin',
+			'class' => 'betterdocs-dimension',
+		),
+	) ) );
+
+	$wp_customize->add_setting( 'betterdocs_doc_single_content_area_margin_top', array(
+		'default'       	=> $defaults['betterdocs_doc_single_content_area_margin_top'],
+		'capability'    	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'sanitize_callback' => 'betterdocs_sanitize_integer'
+	) );
+
+	$wp_customize->add_control( new BetterDocs_Dimension_Control(
+		$wp_customize, 'betterdocs_doc_single_content_area_margin_top', array(
+		'type'     	 => 'betterdocs-dimension',
+		'section'    => 'betterdocs_single_docs_settings',
+		'settings' 	 => 'betterdocs_doc_single_content_area_margin_top',
+		'label'    	 => esc_html__('Top', 'betterdocs'),
+		'priority'   => 108,
+		'input_attrs' => array(
+			'class' => 'betterdocs_doc_single_content_area_margin betterdocs-dimension',
+		),
+	) ) );
+
+	$wp_customize->add_setting( 'betterdocs_doc_single_content_area_margin_right', array(
+		'default'       	=> $defaults['betterdocs_doc_single_content_area_margin_right'],
+		'capability'    	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'sanitize_callback' => 'betterdocs_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new BetterDocs_Dimension_Control(
+		$wp_customize, 'betterdocs_doc_single_content_area_margin_right', array(
+		'type'     	 => 'betterdocs-dimension',
+		'section'  	 => 'betterdocs_single_docs_settings',
+		'settings' 	 => 'betterdocs_doc_single_content_area_margin_right',
+		'label'    	 => esc_html__('Right', 'betterdocs'),
+		'priority'   => 108,
+		'input_attrs' => array(
+			'class' => 'betterdocs_doc_single_content_area_margin betterdocs-dimension',
+		),
+	) ) );
+
+	$wp_customize->add_setting( 'betterdocs_doc_single_content_area_margin_bottom', array(
+		'default'       	=> $defaults['betterdocs_doc_single_content_area_margin_bottom'],
+		'capability'    	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'sanitize_callback' => 'betterdocs_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new BetterDocs_Dimension_Control(
+		$wp_customize, 'betterdocs_doc_single_content_area_margin_bottom', array(
+		'type'     	 => 'betterdocs-dimension',
+		'section'  	 => 'betterdocs_single_docs_settings',
+		'settings' 	 => 'betterdocs_doc_single_content_area_margin_bottom',
+		'label'    	 => esc_html__('Bottom', 'betterdocs'),
+		'priority'   => 108,
+		'input_attrs' => array(
+			'class' => 'betterdocs_doc_single_content_area_margin betterdocs-dimension',
+		),
+	) ) );
+
+	$wp_customize->add_setting( 'betterdocs_doc_single_content_area_margin_left', array(
+		'default'       	=> $defaults['betterdocs_doc_single_content_area_margin_left'],
+		'capability'    	=> 'edit_theme_options',
+		'transport' 		=> 'postMessage',
+		'sanitize_callback' => 'betterdocs_sanitize_integer'
+
+	) );
+
+	$wp_customize->add_control( new BetterDocs_Dimension_Control(
+		$wp_customize, 'betterdocs_doc_single_content_area_margin_left', array(
+		'type'       => 'betterdocs-dimension',
+		'section'    => 'betterdocs_single_docs_settings',
+		'settings'	 => 'betterdocs_doc_single_content_area_margin_left',
+		'label'    	 => esc_html__('Left', 'betterdocs'),
+		'priority'   => 108,
+		'input_attrs' => array(
+			'class' => 'betterdocs_doc_single_content_area_margin betterdocs-dimension',
+		),
+	) ) );
+
 	$wp_customize->add_setting( 'betterdocs_doc_single_post_content_padding', array(
 		'default'       => $defaults['betterdocs_doc_single_post_content_padding'],
 		'capability'    => 'edit_theme_options',

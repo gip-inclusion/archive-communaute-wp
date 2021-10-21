@@ -291,7 +291,6 @@ class Compatibility {
 				'wpmdb_remote_flush',
 				'wpmdb_get_themes',
 				'wpmdb_get_plugins',
-				'wpmdb_verify_connection_to_remote_site'
 			) ) ) {
 			return false;
 		}

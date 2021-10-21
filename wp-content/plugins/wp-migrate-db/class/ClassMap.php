@@ -5,9 +5,6 @@ namespace DeliciousBrains\WPMDB;
 use DeliciousBrains\WPMDB\Common\BackupExport;
 use DeliciousBrains\WPMDB\Common\Cli\CliManager;
 use DeliciousBrains\WPMDB\Common\Compatibility\CompatibilityManager;
-use DeliciousBrains\WPMDB\Common\DryRun\DiffGroup;
-use DeliciousBrains\WPMDB\Common\DryRun\DiffInterpreter;
-use DeliciousBrains\WPMDB\Common\DryRun\MemoryPersistence;
 use DeliciousBrains\WPMDB\Common\Error\ErrorLog;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\RemotePost;
@@ -72,7 +69,6 @@ class ClassMap
     public $WPMDBRestAPIServer;
     public $flush;
     public $pair_factory;
-    public $diff_interpreter;
 
     /**
      * @var ProfileImporter
@@ -154,8 +150,6 @@ class ClassMap
         );
 
         $this->pair_factory = new PairFactory();
-        // Swap persistence interface at this point to change storage method.
-        $this->diff_interpreter = new DiffInterpreter(new DiffGroup(new MemoryPersistence()));
 
         $this->replace = new Replace(
             $this->migration_state_manager,
@@ -167,8 +161,7 @@ class ClassMap
             $this->pair_factory,
             $this->WPMDBRestAPIServer,
             $this->http_helper,
-            $this->http,
-            $this->diff_interpreter
+            $this->http
         );
 
         // Notice
@@ -337,8 +330,7 @@ class ClassMap
             $this->WPMDBRestAPIServer,
             $this->http_helper,
             $this->template_base,
-            $this->notice,
-            $this->profile_manager
+            $this->notice
         );
 
         $this->cli_manager = new CliManager();
