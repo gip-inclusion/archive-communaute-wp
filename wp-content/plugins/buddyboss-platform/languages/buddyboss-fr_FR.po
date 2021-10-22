@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-10-22 15:02+0200\n"
+"PO-Revision-Date: 2021-10-22 15:41+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -1723,17 +1723,13 @@ msgid "My Favorites"
 msgstr "Mes favoris"
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:407
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you cannot view the activities."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr "Désolé, vous ne pouvez pas voir les activités."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:479
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:720
-#, fuzzy
-#| msgid "Please enter some content to post."
 msgid "Please, enter some content."
-msgstr "Veuillez entrer le contenu à poster."
+msgstr "Merci d'entrer du contenu."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:586
 #, fuzzy
@@ -1748,10 +1744,8 @@ msgid "Sorry, you are not allowed to create activities."
 msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:760
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allow to update the privacy"
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr "Désolé, vous n’êtes pas autorisé à mettre à jour la confidentialité"
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:772
 msgid "Cannot update existing activity."
@@ -1799,10 +1793,8 @@ msgid "The ID of some other object also associated with this one."
 msgstr ""
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1671
-#, fuzzy
-#| msgid "Profile photo of the author of the site %s"
 msgid "The ID for the author of the activity."
-msgstr "Photo du profil de l'auteur(e) du site %s"
+msgstr "L’ID de l'auteur de l'activité."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1676
 msgid "User's display name for the activity."
@@ -1893,16 +1885,14 @@ msgid "Comment count for the activity object."
 msgstr "Personnalisez le texte du sujet de l'invitation."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1801
-#, fuzzy
-#| msgid "You do not have access to this activity."
 msgid "Whether or not user have the edit access for the activity object."
-msgstr "Vous n'avez pas accès à cette activité."
+msgstr ""
+"Que l’utilisateur ait ou non accès en modification pour l’objet d’activité."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1807
-#, fuzzy
-#| msgid "You do not have access to this activity."
 msgid "Whether or not user have the delete access for the activity object."
-msgstr "Vous n'avez pas accès à cette activité."
+msgstr ""
+"Que l’utilisateur ait ou non l’accès supprimer pour l’objet d’activité."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1813
 msgid "Content for the activity without HTML tags."
@@ -1910,16 +1900,12 @@ msgstr ""
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1819
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:2000
-#, fuzzy
-#| msgid "View activity."
 msgid "Privacy of the activity."
-msgstr "Voir activité."
+msgstr "Confidentialité de l’activité."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1825
-#, fuzzy
-#| msgid "Activity feed for the entire site."
 msgid "Activity data for allow edit or not."
-msgstr "Fil d'activité de tout le site."
+msgstr "Données d’activité pour autoriser la modification ou non."
 
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1830
 msgid ""
@@ -2059,10 +2045,9 @@ msgid "Sorry, URL is not valid."
 msgstr ""
 
 #: bp-activity/classes/class-bp-rest-activity-link-preview-endpoint.php:150
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to generate link preview in the activity."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr ""
+"Désolé, vous n’êtes pas autorisé à générer un aperçu de lien dans l’activité."
 
 #: bp-activity/classes/class-bp-rest-activity-link-preview-endpoint.php:160
 msgid "Sorry, Link Previews is disabled."
@@ -2133,16 +2118,12 @@ msgid "(no title)"
 msgstr "(sans titre)"
 
 #: bp-blogs/bp-blogs-activity.php:283 bp-blogs/bp-blogs-activity.php:1653
-#, fuzzy
-#| msgid "%1$s posted a new post, %2$s, on the site %3$s"
 msgid "%1$s posted a new post, on the site %2$s"
-msgstr "%1$s a publié un nouveau message, %2$s, sur le site %3$s"
+msgstr "%1$s a publié un nouveau message, sur le site %2$s"
 
 #: bp-blogs/bp-blogs-activity.php:285 bp-blogs/bp-blogs-activity.php:1655
-#, fuzzy
-#| msgid "%1$s posted a new post, %2$s"
 msgid "%1$s posted a new post."
-msgstr "%1$s a publié un nouveau message, %2$s"
+msgstr "%1$s a publié un nouvel article."
 
 #: bp-blogs/bp-blogs-activity.php:409
 msgid "%1$s commented on the post, %2$s, on the site %3$s"
@@ -2159,10 +2140,8 @@ msgid "%1$s posted a new %2$s, on the site %3$s"
 msgstr "%1$s a publié un nouveau message, %2$s, sur le site %3$s"
 
 #: bp-blogs/bp-blogs-activity.php:1648
-#, fuzzy
-#| msgid "%1$s posted a new %2$s, %3$s"
 msgid "%1$s posted a new %2$s."
-msgstr "%1$s a posté(e) un nouveau %2$s, %3$s"
+msgstr "%1$s a posté(e) un nouveau %2$s."
 
 #: bp-blogs/bp-blogs-template.php:241
 msgid "Viewing 1 site"
@@ -2392,19 +2371,17 @@ msgstr "Maximum d&#180;articles à afficher:"
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:62
 #: bp-blogs/classes/class-bp-rest-blogs-endpoint.php:420
 msgid "A unique numeric ID for the blog."
-msgstr ""
+msgstr "Un ID numérique unique pour le blog."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:89
-#, fuzzy
-#| msgid "There was a problem closing the discussion \"%1$s\"."
 msgid "There was a problem confirming the blog's user admin is valid."
-msgstr "Il y a eu un problème pour clore la discussion \"%1$s\"."
+msgstr ""
+"Il y avait un problème confirmant l’administrateur utilisateur du blog est "
+"valide."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:118
-#, fuzzy
-#| msgid "There was a problem deleting the album."
 msgid "Sorry, there was a problem fetching the blog avatar."
-msgstr "Il y a eu un problème en supprimant l'album."
+msgstr "Désolé, il y avait un problème à aller chercher l’avatar blog."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:162
 #: bp-document/classes/class-bp-rest-document-endpoint.php:380
@@ -2428,13 +2405,11 @@ msgstr "Il y a eu un problème en supprimant l'album."
 #: bp-media/classes/class-bp-rest-media-endpoint.php:280
 #: bp-video/classes/class-bp-rest-video-endpoint.php:402
 msgid "Invalid group ID."
-msgstr ""
+msgstr "ID de groupe non valide."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:172
-#, fuzzy
-#| msgid "Sorry, uploading the file failed."
 msgid "Sorry, blog avatar is disabled."
-msgstr "Désolé, le téléversement du fichier a échoué."
+msgstr "Désolé, avatar blog est désactivé."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:237
 #: bp-groups/classes/class-bp-rest-attachments-group-avatar-endpoint.php:488
@@ -2442,32 +2417,36 @@ msgstr "Désolé, le téléversement du fichier a échoué."
 #: bp-members/classes/class-bp-rest-attachments-member-avatar-endpoint.php:496
 #: bp-members/classes/class-bp-rest-attachments-member-cover-endpoint.php:459
 msgid "Full size of the image file."
-msgstr ""
+msgstr "Taille maximale du fichier image."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:244
 #: bp-groups/classes/class-bp-rest-attachments-group-avatar-endpoint.php:494
 #: bp-members/classes/class-bp-rest-attachments-member-avatar-endpoint.php:503
 msgid "Thumb size of the image file."
-msgstr ""
+msgstr "Taille du fichier image Thumb."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:275
 #: bp-members/classes/class-bp-rest-attachments-member-avatar-endpoint.php:533
 msgid "Whether to return an <img> HTML element, vs a raw URL to an avatar."
 msgstr ""
+"Indique s'il faut renvoyer un élément HTML <img>, ou une URL brute à un "
+"avatar."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:283
 #: bp-groups/classes/class-bp-rest-attachments-group-avatar-endpoint.php:531
 #: bp-members/classes/class-bp-rest-attachments-member-avatar-endpoint.php:541
 msgid "The alt attribute for the <img> element."
-msgstr ""
+msgstr "L'attribut alt de l'élément <img>."
 
 #: bp-blogs/classes/class-bp-rest-attachments-blog-avatar-endpoint.php:291
 msgid "Whether to disable the default Gravatar Admin user fallback."
 msgstr ""
+"Que ce soit pour désactiver le repli par défaut de l’utilisateur Gravatar "
+"Admin."
 
 #: bp-blogs/classes/class-bp-rest-blogs-endpoint.php:57
 msgid "A unique numeric ID for the Blog."
-msgstr ""
+msgstr "Un ID numérique unique pour le blog."
 
 #: bp-blogs/classes/class-bp-rest-blogs-endpoint.php:131
 #, fuzzy
@@ -2488,10 +2467,8 @@ msgid "The name of the blog."
 msgstr ""
 
 #: bp-blogs/classes/class-bp-rest-blogs-endpoint.php:441
-#, fuzzy
-#| msgid "%1$s changed the permalink of the group %2$s."
 msgid "The permalink of the blog."
-msgstr "%1$s a changé le lien permanent du groupe%2$s."
+msgstr "Le permalink du blog."
 
 #: bp-blogs/classes/class-bp-rest-blogs-endpoint.php:448
 msgid "The description of the blog."
@@ -3378,8 +3355,6 @@ msgid "View Tutorial"
 msgstr "Voir le tutoriel"
 
 #: bp-core/admin/bp-core-admin-pages.php:269
-#, fuzzy
-#| msgid "Associate a WordPress page with the following Registration sections."
 msgid ""
 "Associate a WordPress page with the following Registration and Login "
 "sections."
@@ -4676,10 +4651,8 @@ msgstr "Messages"
 #: bp-moderation/bp-moderation-admin.php:70
 #: bp-moderation/bp-moderation-admin.php:71
 #: bp-moderation/classes/class-bp-moderation-component.php:29
-#, fuzzy
-#| msgid "Moderator"
 msgid "Moderation"
-msgstr "Modérateur"
+msgstr "Modération"
 
 #: bp-core/admin/settings/bp-admin-setting-notifications.php:28
 #: bp-core/bp-core-functions.php:2536 bp-core/deprecated/buddypress/2.1.php:538
@@ -4696,16 +4669,12 @@ msgid "Notifications"
 msgstr "Notifications"
 
 #: bp-core/admin/settings/bp-admin-setting-notifications.php:69
-#, fuzzy
-#| msgid "Notifications"
 msgid "On-screen Notifications"
-msgstr "Notifications"
+msgstr "Notifications à l’écran"
 
 #: bp-core/admin/settings/bp-admin-setting-notifications.php:72
-#, fuzzy
-#| msgid "No new notifications"
 msgid "On-screen notifications"
-msgstr "Pas de nouvelle notifications"
+msgstr "Notifications sur l'écran"
 
 #: bp-core/admin/settings/bp-admin-setting-notifications.php:73
 msgid "Position on Screen"
@@ -4738,7 +4707,7 @@ msgstr "Paramètres d'inscription"
 #: bp-moderation/classes/class-bp-moderation-video.php:215
 #: bp-video/bp-video-functions.php:2536
 msgid "Video"
-msgstr ""
+msgstr "Vidéo"
 
 #: bp-core/admin/settings/bp-admin-setting-xprofile.php:21
 #: bp-integrations/learndash/bp-admin-learndash-tab.php:405
@@ -5055,16 +5024,12 @@ msgid "<a href=\"%s\" target=\"_blank\">Documentation</a>"
 msgstr ""
 
 #: bp-core/admin/templates/about-buddyboss.php:61
-#, fuzzy
-#| msgid "<a href=\"%s\">Spam</a>"
 msgid "<a href=\"%s\" target=\"_blank\">Roadmap</a>"
-msgstr "<a href=\"%s\">Spam</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">Feuille de route</a>"
 
 #: bp-core/admin/templates/about-buddyboss.php:69
-#, fuzzy
-#| msgid "<a href=\"%s\">Delete</a>"
 msgid "<a href=\"%s\" target=\"_blank\">Release Notes</a>"
-msgstr "<a href=\"%s\">Supprimer</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">Notes de version</a>"
 
 #: bp-core/admin/templates/about-buddyboss.php:77
 msgid "<a href=\"%s\" target=\"_blank\">Code Reference</a>"
@@ -5075,10 +5040,8 @@ msgid "<a href=\"%s\" target=\"_blank\">REST API</a>"
 msgstr ""
 
 #: bp-core/admin/templates/about-buddyboss.php:93
-#, fuzzy
-#| msgid "<a href=\"%s\">Trash</a>"
 msgid "<a href=\"%s\" target=\"_blank\">Github</a>"
-msgstr "<a href=\"%s\">Corbeille</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">Github</a>"
 
 #: bp-core/admin/templates/about-buddyboss.php:108
 msgid "Built by <a href=\"%s\">BuddyBoss</a>."
@@ -5309,10 +5272,9 @@ msgid "You have attempted to queue too many files."
 msgstr "Vous essayez d'envoyer trop de fichiers à la fois."
 
 #: bp-core/bp-core-attachments.php:670
-#, fuzzy
-#| msgid "%s exceeds the maximum upload size for this site."
 msgid "%1$s exceeds the maximum upload size of %2$s for this site."
-msgstr "%s dépasse la limite de téléversement de ce site."
+msgstr ""
+"%1$s dépasse la taille maximale de téléchargement de %2$s pour ce site."
 
 #: bp-core/bp-core-attachments.php:671
 msgid "This file is empty. Please try another."
@@ -8053,11 +8015,8 @@ msgstr ""
 "a> <br /><a href=\"###SITEURL###\">###SITEURL###</a>"
 
 #: bp-core/classes/class-bp-admin-tab.php:112
-#, fuzzy
-#| msgid "Please upload only this file type: %s."
-#| msgid_plural "Please upload only these file types: %s."
 msgid "Please upload a file to check the MIME Type."
-msgstr "Veuillez téléverser uniquement ce type de fichier: %s."
+msgstr "Veuillez télécharger un fichier pour vérifier le type MIME."
 
 #: bp-core/classes/class-bp-admin-tab.php:115
 msgid ""
@@ -8649,37 +8608,29 @@ msgid "View Profile"
 msgstr "Voir le profil"
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:52
-#, fuzzy
-#| msgid "No components found."
 msgid "Name of the component."
-msgstr "Aucun composant trouvé."
+msgstr "Nom du composant."
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:55
 msgid "Whether to activate or deactivate the component."
-msgstr ""
+msgstr "Activer ou désactiver le composant."
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:175
 #: bp-members/classes/class-bp-rest-members-actions-endpoint.php:168
-#, fuzzy
-#| msgid "You do not have access to this content."
 msgid "Sorry, you do not have access to list components."
-msgstr "Vous n'avez pas accès à ce contenu."
+msgstr "Désolé, vous n'avez pas accès à la liste des composants."
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:219
 msgid "Sorry, this component does not exist."
 msgstr ""
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:230
-#, fuzzy
-#| msgid "Sorry, there was no activity found."
 msgid "Sorry, this is not a valid action."
-msgstr "Désolé(e), aucune activité n'a été trouvée."
+msgstr "Désolé, ce n'est pas une action valide."
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:241
-#, fuzzy
-#| msgid "The user is already active."
 msgid "Sorry, this component is already active."
-msgstr "Cet usager est déjà activé."
+msgstr "Désolé, ce composant est déjà actif."
 
 #: bp-core/classes/class-bp-rest-components-endpoint.php:253
 msgid "Sorry, this component is not active."
@@ -8714,10 +8665,8 @@ msgid "HTML description of the object."
 msgstr ""
 
 #: bp-core/classes/class-bp-rest-mention-endpoint.php:161
-#, fuzzy
-#| msgid "You do not have access to this content."
 msgid "Sorry, you do not have access to list mentions."
-msgstr "Vous n'avez pas accès à ce contenu."
+msgstr "Désolé, vous n’avez pas accès aux mentions de liste."
 
 #: bp-core/classes/class-bp-rest-mention-endpoint.php:249
 #: bp-members/classes/class-bp-rest-attachments-member-avatar-endpoint.php:70
@@ -9983,10 +9932,8 @@ msgid "get current location"
 msgstr "obtenir l'emplacement actuel"
 
 #: bp-document/bp-document-filters.php:120
-#, fuzzy
-#| msgid "Documentation"
 msgid "Document Folders"
-msgstr "Documentation"
+msgstr "Dossiers de document"
 
 #: bp-document/bp-document-filters.php:338
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-actions.php:31
@@ -10006,18 +9953,16 @@ msgstr "Télécharger"
 
 #: bp-document/bp-document-filters.php:1207 bp-media/bp-media-filters.php:1982
 #: bp-video/bp-video-filters.php:1089
-#, fuzzy
-#| msgid "Date not found"
 msgid "File not found"
-msgstr "Date introuvable"
+msgstr "Fichier non trouvé"
 
 #: bp-document/bp-document-filters.php:1224
 msgid "Go to document"
-msgstr ""
+msgstr "Aller au document"
 
 #: bp-document/bp-document-filters.php:1518
 msgid "Repair document on the site."
-msgstr ""
+msgstr "Réparer le document sur le site."
 
 #: bp-document/bp-document-filters.php:1578
 #, fuzzy
@@ -10030,11 +9975,9 @@ msgid "document update complete!"
 msgstr ""
 
 #: bp-document/bp-document-filters.php:1785
-#, fuzzy
-#| msgid "%d Comment"
 msgid "%s document"
 msgid_plural "%s documents"
-msgstr[0] "%d Commentaire"
+msgstr[0] "%s document"
 msgstr[1] "%d Commentaire"
 
 #: bp-document/bp-document-filters.php:1790 bp-media/bp-media-filters.php:2399
@@ -10063,10 +10006,8 @@ msgstr "Erreur lors du téléchargement du média."
 
 #: bp-document/bp-document-functions.php:1943
 #: bp-video/bp-video-functions.php:2491
-#, fuzzy
-#| msgid "Default Data"
 msgid "Default"
-msgstr "Données par défaut"
+msgstr "Défaut"
 
 #: bp-document/bp-document-functions.php:1948
 #: bp-video/bp-video-functions.php:2496
@@ -10096,10 +10037,8 @@ msgstr "Image"
 
 #: bp-document/bp-document-functions.php:1973
 #: bp-video/bp-video-functions.php:2521
-#, fuzzy
-#| msgid "Destination"
 msgid "Presentation"
-msgstr "Destination"
+msgstr "Präsentation"
 
 #: bp-document/bp-document-functions.php:1978
 #: bp-video/bp-video-functions.php:2526
@@ -10136,16 +10075,12 @@ msgid "File renaming error!"
 msgstr ""
 
 #: bp-document/classes/class-bp-document-component.php:164
-#, fuzzy
-#| msgid "Group Members"
 msgid "Group members"
 msgstr "Membres du groupe"
 
 #: bp-document/classes/class-bp-document-component.php:197
-#, fuzzy
-#| msgid "Search Forums&hellip;"
 msgid "Search Documents&hellip;"
-msgstr "Rechercher dans les Forums&hellip;"
+msgstr "Recherche des Documents&hellip;"
 
 #: bp-document/classes/class-bp-document-folder.php:524
 #: bp-document/classes/class-bp-document-privacy.php:58
@@ -10170,10 +10105,8 @@ msgstr "Usagers connectés"
 
 #: bp-document/classes/class-bp-document-privacy.php:76
 #: bp-document/classes/class-bp-document-privacy.php:94
-#, fuzzy
-#| msgid "There is no media."
 msgid "There is no document."
-msgstr "Il n'y a pas de média."
+msgstr "Il n’y a pas de document."
 
 #: bp-document/classes/class-bp-document.php:678
 #: bp-integrations/learndash/templates/buddypress/groups/single/reports-user-stats.php:72
