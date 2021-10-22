@@ -17,7 +17,7 @@ node_modules
 .vscode
 
 # Log
-.debug.log
+debug.log
 
 # App
 wp-content/uploads/
