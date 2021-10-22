@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-10-22 14:43+0200\n"
+"PO-Revision-Date: 2021-10-22 15:02+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -16234,10 +16234,8 @@ msgstr "Joindre une photo"
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-editor-toolbar.php:26
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/private-message.php:272
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/public-message.php:188
-#, fuzzy
-#| msgid "Attach a photo"
 msgid "Attach a video"
-msgstr "Joindre une photo"
+msgstr "Joindre une vidéo"
 
 #: bp-forums/templates/default/bbpress/form-attachments.php:181
 #: bp-templates/bp-nouveau/buddypress/activity/comment-form.php:139
@@ -16245,10 +16243,8 @@ msgstr "Joindre une photo"
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-editor-toolbar.php:37
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/private-message.php:279
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/public-message.php:195
-#, fuzzy
-#| msgid "Attachments"
 msgid "Attach a document"
-msgstr "Pièces jointes"
+msgstr "Joindre un document"
 
 #: bp-forums/templates/default/bbpress/form-attachments.php:193
 #: bp-templates/bp-nouveau/buddypress/activity/comment-form.php:146
@@ -16264,10 +16260,8 @@ msgstr "Publier un GIF"
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-gif-media-search-dropdown.php:4
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/private-message.php:294
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/public-message.php:210
-#, fuzzy
-#| msgid "Search GIFs"
 msgid "Search GIPHY"
-msgstr "Rechercher dans les GIFs"
+msgstr "Recherche GIPHY"
 
 #: bp-forums/templates/default/bbpress/form-attachments.php:215
 #: bp-templates/bp-nouveau/buddypress/activity/comment-form.php:153
@@ -25409,18 +25403,14 @@ msgstr ""
 #: bp-moderation/bp-moderation-admin.php:46
 #: bp-moderation/classes/class-bp-moderation-list-table.php:500
 #: bp-moderation/screens/single/admin/report-single.php:191
-#, fuzzy
-#| msgid "Content"
 msgid "Hide Content"
-msgstr "Contenu"
+msgstr "Masquer le contenu"
 
 #: bp-moderation/bp-moderation-admin.php:47
 #: bp-moderation/classes/class-bp-moderation-list-table.php:500
 #: bp-moderation/screens/single/admin/report-single.php:191
-#, fuzzy
-#| msgid "Email Content"
 msgid "Unhide Content"
-msgstr "Contenu de l'e-mail"
+msgstr "Démasquer le contenu"
 
 #: bp-moderation/bp-moderation-admin.php:50
 #: bp-moderation/classes/class-bp-moderation-list-table.php:538
@@ -25444,10 +25434,8 @@ msgstr ""
 
 #: bp-moderation/bp-moderation-admin.php:159
 #: bp-moderation/bp-moderation-admin.php:338
-#, fuzzy
-#| msgid "Connection requested"
 msgid "Moderation Request"
-msgstr "Demande d’amis"
+msgstr "Demande de modération"
 
 #: bp-moderation/bp-moderation-admin.php:167
 #: bp-moderation/bp-moderation-admin.php:346
@@ -25827,22 +25815,16 @@ msgstr "Membres bannis"
 #: bp-moderation/classes/class-bp-moderation-comment.php:316
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:1568
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:1858
-#, fuzzy
-#| msgid "Options"
 msgid "More Options"
-msgstr "Options"
+msgstr "Plus d’options"
 
 #: bp-moderation/classes/class-bp-moderation-component.php:139
-#, fuzzy
-#| msgid "Moderator"
 msgid "My Moderation"
-msgstr "Modérateur"
+msgstr "Ma modération"
 
 #: bp-moderation/classes/class-bp-moderation-component.php:165
-#, fuzzy
-#| msgid "Category"
 msgid "Reporting Category"
-msgstr "Catégorie"
+msgstr "Catégorie de signalement"
 
 #: bp-moderation/classes/class-bp-moderation-component.php:169
 #, fuzzy
@@ -25899,10 +25881,8 @@ msgid "Choose from the most used categories"
 msgstr ""
 
 #: bp-moderation/classes/class-bp-moderation-component.php:179
-#, fuzzy
-#| msgid "No replies found"
 msgid "No reporting categories found."
-msgstr "Pas de réponse trouvée"
+msgstr "Aucune catégorie de signalement n’a été trouvée."
 
 #: bp-moderation/classes/class-bp-moderation-component.php:181
 #, fuzzy
@@ -25927,16 +25907,12 @@ msgid "Contains mature or sensitive content"
 msgstr ""
 
 #: bp-moderation/classes/class-bp-moderation-component.php:204
-#, fuzzy
-#| msgid "Your information:"
 msgid "Misinformation"
-msgstr "Vos informations:"
+msgstr "Désinformation"
 
 #: bp-moderation/classes/class-bp-moderation-component.php:205
-#, fuzzy
-#| msgid "Repair any missing information:"
 msgid "Contains misleading or false information"
-msgstr "Réparer toute information manquante:"
+msgstr "Contient des informations trompeuses ou fausses"
 
 #: bp-moderation/classes/class-bp-moderation-component.php:208
 msgid "Suspicious"
