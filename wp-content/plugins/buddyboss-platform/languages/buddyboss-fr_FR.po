@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-10-22 12:01+0200\n"
+"PO-Revision-Date: 2021-10-22 14:43+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -10001,10 +10001,8 @@ msgstr "Documentation"
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:723
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:2517
 #: bp-templates/bp-nouveau/includes/video/ajax.php:1234
-#, fuzzy
-#| msgid "Download PDF"
 msgid "Download"
-msgstr "Télécharger le PDF"
+msgstr "Télécharger"
 
 #: bp-document/bp-document-filters.php:1207 bp-media/bp-media-filters.php:1982
 #: bp-video/bp-video-filters.php:1089
@@ -10508,6 +10506,7 @@ msgstr ""
 #: bp-document/classes/class-bp-rest-document-endpoint.php:1558
 msgid "The date the document was modified, in the site's timezone."
 msgstr ""
+"Date à laquelle le document a été modifié, dans le fuseau horaire du site."
 
 #: bp-document/classes/class-bp-rest-document-endpoint.php:1565
 msgid "Group name associate with the document."
@@ -10527,7 +10526,7 @@ msgstr ""
 
 #: bp-document/classes/class-bp-rest-document-endpoint.php:1589
 msgid "Download URL for the document."
-msgstr ""
+msgstr "URL de téléchargement du document."
 
 #: bp-document/classes/class-bp-rest-document-endpoint.php:1595
 msgid "Document file extension."
@@ -13455,10 +13454,12 @@ msgstr ""
 #: bp-forums/classes/class-bp-rest-forums-endpoint.php:667
 msgid "The date for forum was last modified, in the site's timezone."
 msgstr ""
+"La date du forum a été modifiée pour la dernière fois, dans le fuseau "
+"horaire du site."
 
 #: bp-forums/classes/class-bp-rest-forums-endpoint.php:674
 msgid "The date for forum was last modified, as GMT."
-msgstr ""
+msgstr "La date du forum a été modifiée pour la dernière fois, comme GMT."
 
 #: bp-forums/classes/class-bp-rest-forums-endpoint.php:681
 #: bp-forums/classes/class-bp-rest-reply-endpoint.php:2100
@@ -14117,12 +14118,12 @@ msgstr ""
 #: bp-forums/classes/class-bp-rest-reply-endpoint.php:2086
 msgid "The date for reply was last modified, in the site's timezone."
 msgstr ""
+"La date de réponse a été modifiée pour la dernière fois, dans le fuseau "
+"horaire du site."
 
 #: bp-forums/classes/class-bp-rest-reply-endpoint.php:2093
-#, fuzzy
-#| msgid "This reply was modified %1$s by %2$s."
 msgid "The date for reply was last modified, as GMT."
-msgstr "Cette réponse a été modifiée %1$s par %2$s."
+msgstr "La date de réponse a été modifiée pour la dernière fois, comme GMT."
 
 #: bp-forums/classes/class-bp-rest-reply-endpoint.php:2105
 msgid "An alphanumeric unique identifier for the reply."
@@ -14789,10 +14790,12 @@ msgstr ""
 #: bp-forums/classes/class-bp-rest-topics-endpoint.php:2152
 msgid "The date for topic was last modified, in the site's timezone."
 msgstr ""
+"La date du sujet a été modifiée pour la dernière fois, dans le fuseau "
+"horaire du site."
 
 #: bp-forums/classes/class-bp-rest-topics-endpoint.php:2159
 msgid "The date for topic was last modified, as GMT."
-msgstr ""
+msgstr "La date du sujet a été modifiée pour la dernière fois, comme GMT."
 
 #: bp-forums/classes/class-bp-rest-topics-endpoint.php:2171
 msgid "An alphanumeric unique identifier for the topic."
@@ -19426,6 +19429,8 @@ msgid ""
 "The date of the last time the membership of this user was modified, in the "
 "site's timezone."
 msgstr ""
+"Date de la dernière modification de l'appartenance de cet utilisateur, dans "
+"le fuseau horaire du site."
 
 #: bp-groups/classes/class-bp-rest-group-membership-endpoint.php:1032
 #: bp-groups/classes/class-bp-rest-groups-endpoint.php:1381
@@ -21056,10 +21061,12 @@ msgstr ""
 #: bp-integrations/learndash/classes/class-bp-rest-learndash-courses-endpoint.php:399
 msgid "The date for course was last modified, in the site's timezone."
 msgstr ""
+"La date du cours a été modifiée pour la dernière fois, dans le fuseau "
+"horaire du site."
 
 #: bp-integrations/learndash/classes/class-bp-rest-learndash-courses-endpoint.php:406
 msgid "The date for course was last modified, as GMT."
-msgstr ""
+msgstr "La date de cours a été modifiée pour la dernière fois, comme GMT."
 
 #: bp-integrations/learndash/classes/class-bp-rest-learndash-courses-endpoint.php:413
 msgid "An alphanumeric unique identifier for the course."
@@ -22866,10 +22873,8 @@ msgid "Media file URL."
 msgstr ""
 
 #: bp-media/classes/class-bp-rest-media-endpoint.php:1693
-#, fuzzy
-#| msgid "Download Certificate"
 msgid "Download Media file URL."
-msgstr "Télécharger le Certificat"
+msgstr "Télécharger l’URL du fichier multimédia."
 
 #: bp-media/classes/class-bp-rest-media-endpoint.php:1699
 msgid "Current user's permission with the media."
@@ -26863,7 +26868,7 @@ msgstr ""
 
 #: bp-performance/classes/class-performance.php:396
 msgid "Download the plugin"
-msgstr ""
+msgstr "Télécharger le plugin"
 
 #: bp-performance/classes/class-performance.php:397
 msgid ""
@@ -26879,10 +26884,8 @@ msgid ""
 msgstr ""
 
 #: bp-performance/classes/class-performance.php:423
-#, fuzzy
-#| msgid "Download PDF"
 msgid "Download v1.0.1"
-msgstr "Télécharger le PDF"
+msgstr "Télécharger v1.0.1"
 
 #: bp-performance/classes/class-performance.php:424
 msgid ""
@@ -27577,19 +27580,13 @@ msgstr "Cacher la conversation"
 
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:64
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:106
-#, fuzzy
-#| msgid "%s member"
-#| msgid_plural "%s members"
 msgid "Block a member"
-msgstr "membre %s"
+msgstr "Bloquer un membre"
 
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:72
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:114
-#, fuzzy
-#| msgid "%s member"
-#| msgid_plural "%s members"
 msgid "Block member"
-msgstr "membre %s"
+msgstr "Bloquer le membre"
 
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:77
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:119
@@ -27602,10 +27599,8 @@ msgid "Delete conversation"
 msgstr "Supprimer la conversation"
 
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-header.php:143
-#, fuzzy
-#| msgid "Total Members"
 msgid "Block a Member?"
-msgstr "Total des Membres"
+msgstr "Bloquer un membre ?"
 
 #: bp-templates/bp-nouveau/buddypress/common/js-templates/messages/parts/bp-messages-single-load-more.php:2
 msgid "Load previous messages"
@@ -27728,10 +27723,8 @@ msgstr "Veuillez ajouter des champs aux recherches de membres."
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-actions.php:30
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:724
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:2518
-#, fuzzy
-#| msgid "Collapse All"
 msgid "Collapse"
-msgstr "Tout réduire"
+msgstr "Réduire"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-actions.php:35
 #: bp-templates/bp-nouveau/buddypress/media/activity-entry.php:50
@@ -27741,24 +27734,20 @@ msgstr "Tout réduire"
 #: bp-templates/bp-nouveau/buddypress/video/entry.php:42
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:726
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:2520
-#, fuzzy
-#| msgid "Mentions"
 msgid "More actions"
-msgstr "Mentions"
+msgstr "Plus d'actions"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-actions.php:44
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:252
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:725
 #: bp-templates/bp-nouveau/includes/messages/ajax.php:2519
-#, fuzzy
-#| msgid "Download PDF"
 msgid "Copy Download Link"
-msgstr "Télécharger le PDF"
+msgstr "Copier le lien de téléchargement"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-actions.php:52
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:300
 msgid "Documents added in comment cannot be moved"
-msgstr ""
+msgstr "Les documents ajoutés dans un commentaire ne peuvent pas être déplacés"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-folder-move.php:25
 #: bp-templates/bp-nouveau/buddypress/document/activity-document-move.php:27
@@ -27767,49 +27756,39 @@ msgstr ""
 #: bp-templates/bp-nouveau/buddypress/document/create-folder.php:17
 #: bp-templates/bp-nouveau/buddypress/document/create-folder.php:31
 #: bp-templates/bp-nouveau/buddypress/document/document-uploader.php:73
-#, fuzzy
-#| msgid "Create New Forum"
 msgid "Create new folder"
-msgstr "Créer un nouveau forum"
+msgstr "Créer un nouveau dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-entry.php:36
-#, fuzzy
-#| msgid "Preview"
 msgid " view"
-msgstr "Aperçu"
+msgstr " voir"
 
 #: bp-templates/bp-nouveau/buddypress/document/activity-entry.php:91
 msgid "Click to"
-msgstr ""
+msgstr "Cliquez pour"
 
 #: bp-templates/bp-nouveau/buddypress/document/add-document.php:19
 #: bp-templates/bp-nouveau/buddypress/document/add-document.php:27
 #: bp-templates/bp-nouveau/buddypress/document/index.php:50
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:56
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:66
-#, fuzzy
-#| msgid "Upload failed."
 msgid "Upload Files"
-msgstr "Échec du téléversement."
+msgstr "Télécharger des fichiers"
 
 #: bp-templates/bp-nouveau/buddypress/document/add-folder.php:16
 #: bp-templates/bp-nouveau/buddypress/document/index.php:51
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:59
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:69
 #: bp-templates/bp-nouveau/includes/document/functions.php:107
-#, fuzzy
-#| msgid "Created"
 msgid "Create Folder"
-msgstr "Créé"
+msgstr "Créer un dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/create-child-folder.php:30
 #: bp-templates/bp-nouveau/buddypress/document/create-folder.php:22
 #: bp-templates/bp-nouveau/buddypress/document/document-create-folder.php:16
 #: bp-templates/bp-nouveau/buddypress/document/edit-child-folder.php:29
-#, fuzzy
-#| msgid "Enter Album Title"
 msgid "Enter Folder Title"
-msgstr "Entrer le titre de l'album"
+msgstr "Entrez le titre du dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/create-child-folder.php:31
 #: bp-templates/bp-nouveau/buddypress/document/create-folder.php:23
@@ -27821,10 +27800,8 @@ msgstr ""
 #: bp-templates/bp-nouveau/buddypress/document/document-create-folder.php:26
 #: bp-templates/bp-nouveau/buddypress/media/media-create-album.php:25
 #: bp-templates/bp-nouveau/buddypress/video/video-create-album.php:25
-#, fuzzy
-#| msgid "Created"
 msgid "Create"
-msgstr "Créé"
+msgstr "Créer"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:136
 msgid ""
@@ -27848,14 +27825,12 @@ msgstr ""
 #: bp-templates/bp-nouveau/buddypress/search/loop/photos.php:52
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos-ajax.php:50
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos.php:52
-#, fuzzy
-#| msgid "by %1$s"
 msgid "by "
-msgstr "par %1$s"
+msgstr "par "
 
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:184
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:200
 #: bp-templates/bp-nouveau/buddypress/search/loop/albums-ajax.php:100
@@ -27868,31 +27843,25 @@ msgstr ""
 #: bp-templates/bp-nouveau/buddypress/search/loop/photos.php:92
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos-ajax.php:90
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos.php:92
-#, fuzzy
-#| msgid "Group Privacy"
 msgid "Based on group privacy"
-msgstr "Protection de la vie privée des groupes"
+msgstr "Basé sur la confidentialité du groupe"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:260
-#, fuzzy
-#| msgid "Privacy"
 msgid "Edit Privacy"
-msgstr "Confidentialité"
+msgstr "Modifier la Confidentialité"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-entry.php:272
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:1185
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:1209
-#, fuzzy
-#| msgid "Group Privacy"
 msgid "Edit Post Privacy"
-msgstr "Protection de la vie privée des groupes"
+msgstr "Modifier la confidentialité de la publication"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-loop.php:52
 #: bp-templates/bp-nouveau/includes/document/ajax.php:914
 #: bp-templates/bp-nouveau/includes/document/ajax.php:1239
 #: bp-templates/bp-nouveau/includes/document/ajax.php:1397
 msgid "Modified"
-msgstr ""
+msgstr "Modifié"
 
 #: bp-templates/bp-nouveau/buddypress/document/document-uploader.php:27
 #: bp-templates/bp-nouveau/buddypress/document/uploader.php:34
@@ -27929,27 +27898,21 @@ msgstr "Terminé"
 #: bp-templates/bp-nouveau/buddypress/document/document-uploader.php:92
 #: bp-templates/bp-nouveau/buddypress/media/uploader.php:142
 #: bp-templates/bp-nouveau/buddypress/video/uploader.php:122
-#, fuzzy
-#| msgid "Go Back"
 msgid "Back"
 msgstr "Retour"
 
 #: bp-templates/bp-nouveau/buddypress/document/edit-child-folder.php:24
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:88
-#, fuzzy
-#| msgid "Edit Forum"
 msgid "Edit Folder"
-msgstr "Editer le forum"
+msgstr "Modifier le dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/edit-child-folder.php:28
-#, fuzzy
-#| msgid "Rename"
 msgid "Rename Folder"
-msgstr "Renommer"
+msgstr "Renommer le dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/location-move.php:22
 msgid "No folders found. Please create and select folder."
-msgstr ""
+msgstr "Aucun dossier trouvé. Veuillez créer et sélectionner un dossier."
 
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:42
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:43
@@ -27957,16 +27920,12 @@ msgstr ""
 #: bp-templates/bp-nouveau/buddypress/groups/single/documents.php:47
 #: bp-templates/bp-nouveau/buddypress/members/single/document.php:37
 #: bp-templates/bp-nouveau/buddypress/members/single/document.php:38
-#, fuzzy
-#| msgid "Search Forums"
 msgid "Search Documents…"
-msgstr "Chercher dans les forums"
+msgstr "Rechercher des documents…"
 
 #: bp-templates/bp-nouveau/buddypress/document/single-folder.php:97
-#, fuzzy
-#| msgid "Delete Field Set"
 msgid "Delete Folder"
-msgstr "Supprimer ce champ"
+msgstr "Supprimer le dossier"
 
 #: bp-templates/bp-nouveau/buddypress/document/uploader.php:20
 #: bp-templates/bp-nouveau/buddypress/media/uploader.php:18
@@ -27980,10 +27939,8 @@ msgstr ""
 "Ecrivez quelque chose à propos de vos photos, à afficher sur votre journal"
 
 #: bp-templates/bp-nouveau/buddypress/document/uploader.php:75
-#, fuzzy
-#| msgid "Add Photos"
 msgid "Add more photos"
-msgstr "Ajouter des photos"
+msgstr "Ajouter plus de photos"
 
 #: bp-templates/bp-nouveau/buddypress/groups/create.php:11
 msgid "Create A New Group"
@@ -28182,22 +28139,16 @@ msgstr "(banni)"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:45
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:41
-#, fuzzy
-#| msgid "Edit Cover Photo"
 msgid "Reposition Cover Photo"
-msgstr "Editer la photo de couverture"
+msgstr "Reposition de la photo de couverture"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:51
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:47
-#, fuzzy
-#| msgid "Change Cover Photo"
 msgid "Drag to move cover photo"
-msgstr "Editer la photo de couverture"
+msgstr "Glisser pour déplacer la photo de couverture"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:52
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:48
-#, fuzzy
-#| msgid "Cover Photo"
 msgid "Cover photo"
 msgstr "Image de couverture"
 
@@ -28458,10 +28409,8 @@ msgstr "Supprimer l'album"
 #: bp-templates/bp-nouveau/buddypress/video/add-video.php:15
 #: bp-templates/bp-nouveau/buddypress/video/index.php:45
 #: bp-templates/bp-nouveau/buddypress/video/single-album.php:65
-#, fuzzy
-#| msgid "Add Field"
 msgid "Add Videos"
-msgstr "Ajouter un champ"
+msgstr "Ajouter des vidéos"
 
 #: bp-templates/bp-nouveau/buddypress/media/uploader.php:33
 msgid "Write something about your photos, to be shown on the group feed"
@@ -29295,10 +29244,8 @@ msgid "You do not have permission to delete this folder."
 msgstr "Vous n'avez pas la permission de supprimer cet album."
 
 #: bp-templates/bp-nouveau/includes/document/ajax.php:443
-#, fuzzy
-#| msgid "Uploaded Date"
 msgid "uploaded a document"
-msgstr "Date de téléversement"
+msgstr "a télévisé un document"
 
 #: bp-templates/bp-nouveau/includes/document/ajax.php:520
 #: bp-templates/bp-nouveau/includes/media/ajax.php:846
@@ -29442,7 +29389,7 @@ msgstr "Clé d’activation invalide."
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:86
 msgid "Empty documents will not be uploaded."
-msgstr ""
+msgstr "Les documents vides ne seront pas téléchargés."
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:93
 #, fuzzy
@@ -29453,19 +29400,14 @@ msgstr "Veuillez entrer le titre de l'album."
 #: bp-templates/bp-nouveau/includes/document/functions.php:94
 #: bp-templates/bp-nouveau/includes/media/functions.php:135
 #: bp-templates/bp-nouveau/includes/video/functions.php:118
-#, fuzzy
-#| msgid "Make sure to upload a unique file"
 msgid "Unable to upload the file"
-msgstr "Assurez-vous de téléverser un fichier unique"
+msgstr "Impossible de télécharger le fichier"
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:95
 #: bp-templates/bp-nouveau/includes/document/functions.php:113
 #: bp-templates/bp-nouveau/includes/video/functions.php:132
-#, fuzzy
-#| msgid "Please upload only this file type: %s."
-#| msgid_plural "Please upload only these file types: %s."
 msgid "Please upload only the following file types: "
-msgstr "Veuillez téléverser uniquement ce type de fichier: %s."
+msgstr "Veuillez télécharger uniquement les types de fichiers suivants : "
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:98
 #, fuzzy
@@ -29505,7 +29447,7 @@ msgstr ""
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:108
 msgid "You are allowed to upload only %s documents at a time."
-msgstr ""
+msgstr "Vous n’êtes autorisé à télécharger que %s documents à la fois."
 
 #: bp-templates/bp-nouveau/includes/document/functions.php:132
 #, fuzzy
@@ -30664,10 +30606,8 @@ msgstr ""
 "Veuillez recommencer."
 
 #: bp-templates/bp-nouveau/includes/media/ajax.php:1166
-#, fuzzy
-#| msgid "Upload Image"
 msgid "uploaded an image"
-msgstr "Télécharger une image"
+msgstr "a mis en ligne une image"
 
 #: bp-templates/bp-nouveau/includes/media/ajax.php:1240
 #, fuzzy
@@ -30683,10 +30623,8 @@ msgid "You don't have permission to move this media."
 msgstr "Vous n’avez pas les permissions pour effectuer cette action."
 
 #: bp-templates/bp-nouveau/includes/media/functions.php:132
-#, fuzzy
-#| msgid "Drop files here to upload"
 msgid "Drop images here to upload"
-msgstr "Glissez/déposez vos fichiers ici"
+msgstr "Glissez/déposez vos images ici"
 
 #: bp-templates/bp-nouveau/includes/media/functions.php:133
 #, fuzzy
@@ -30698,7 +30636,7 @@ msgstr ""
 
 #: bp-templates/bp-nouveau/includes/media/functions.php:134
 msgid "Empty media file will not be uploaded."
-msgstr ""
+msgstr "Un fichier multimédia vide ne sera pas téléchargé."
 
 #: bp-templates/bp-nouveau/includes/media/functions.php:139
 #: bp-templates/bp-nouveau/includes/video/functions.php:125
@@ -30710,6 +30648,8 @@ msgid ""
 "To reposition your cover photo, please upload a larger image and then try "
 "again."
 msgstr ""
+"Pour repositionner votre photo de couverture, veuillez télécharger une image "
+"plus grande puis réessayer."
 
 #: bp-templates/bp-nouveau/includes/media/functions.php:143
 #: bp-templates/bp-nouveau/includes/video/functions.php:124
