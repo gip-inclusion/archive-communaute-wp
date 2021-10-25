@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-10-22 15:41+0200\n"
+"PO-Revision-Date: 2021-10-25 16:26+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -30865,10 +30865,8 @@ msgid "New private messages"
 msgstr "Nouveau messages privés"
 
 #: bp-templates/bp-nouveau/includes/moderation/functions.php:58
-#, fuzzy
-#| msgid "Are you sure you want to do this?"
 msgid "Are you sure you want to unblock this member?"
-msgstr "Voulez-vous vraiment faire cela ?"
+msgstr "Etes-vous sûr de vouloir débloquer ce membre ?"
 
 #: bp-templates/bp-nouveau/includes/notifications/functions.php:210
 msgid "Mark Unread"
@@ -30893,14 +30891,8 @@ msgid "<label for=\"%1$s\">%2$s %3$s</label>"
 msgstr "<label for=\"%1$s\"> %2$s %3$s</label>"
 
 #: bp-templates/bp-nouveau/includes/template-tags.php:2592
-#, fuzzy
-#| msgid ""
-#| "By creating an account you are agreeing to the <a class=\"popup-modal-"
-#| "register popup-terms\" href=\"#terms-modal\">%s</a>."
 msgid "By creating an account you are agreeing to the %1$s and %2$s."
-msgstr ""
-"En créant un compte, vous acceptez les <a class=\"popup-modal-register popup-"
-"terms\" href=\"#terms-modal\">%s</a>."
+msgstr "En créant un compte, vous acceptez %1$s, et %2$s."
 
 #: bp-templates/bp-nouveau/includes/template-tags.php:2601
 #: bp-templates/bp-nouveau/includes/template-tags.php:2609
@@ -30912,7 +30904,7 @@ msgstr "×"
 #: bp-templates/bp-nouveau/includes/template-tags.php:2624
 #: bp-templates/bp-nouveau/includes/template-tags.php:2648
 msgid "By creating an account you are agreeing to the %s."
-msgstr ""
+msgstr "En créant un compte, vous acceptez les %s."
 
 #: bp-templates/bp-nouveau/includes/video/ajax.php:357
 #: bp-templates/bp-nouveau/includes/video/ajax.php:584

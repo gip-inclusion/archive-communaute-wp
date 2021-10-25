@@ -24,7 +24,7 @@ if ( ! class_exists( 'Awl_Blog_Filter' ) ) {
 			define( 'BF_PLUGIN_VER', '5.3.5' );
 			
 			//Plugin Text Domain
-			define("'blog-filter'","blog-filter" );
+			define( 'blog-filter', 'blog-filter' );
 
 			//Plugin Name
 			define( 'BF_PLUGIN_NAME', __( 'Blog Filter Premium', 'blog-filter' ) );
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Awl_Blog_Filter' ) ) {
 		}
 		
 		public function load_textdomain() {
-			load_plugin_textdomain( 'blog-filter', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+			load_plugin_textdomain( 'blog-filter', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}
 		
 		public function blog_filter_menu() {
