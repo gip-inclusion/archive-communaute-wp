@@ -525,6 +525,7 @@
 				$upload = wp_upload_dir();
 				$upload_dir = $upload['basedir'];
 				$upload_dir = $upload_dir . '/piotnet-addons-for-elementor';
+				$upload_dir = apply_filters( 'pafe/form_builder/upload_dir', $upload_dir );
 
 				$attachment = array();
 
@@ -543,6 +544,7 @@
 							$filename_goc = str_replace( '.' . $file_extension, '', $file['name'][$i]);
 							$filename = $filename_goc . '-' . uniqid() . '.' . $file_extension;
 							$filename = wp_unique_filename( $upload_dir, $filename );
+							$filename = apply_filters( 'pafe/form_builder/upload_dir/file_name', $filename );
 							$new_file = trailingslashit( $upload_dir ) . $filename;
 
 							if ( is_dir( $upload_dir ) && is_writable( $upload_dir ) ) {

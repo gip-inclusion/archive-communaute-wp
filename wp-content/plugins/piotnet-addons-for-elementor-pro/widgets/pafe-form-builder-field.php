@@ -678,7 +678,42 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				],
 			]
 		);
-
+		$this->add_control(
+			'field_label_inline',
+			[
+				'label' => __( 'Inline Label', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'true',
+				'default' => '',
+			]
+		);
+		$this->add_control(
+			'field_label_inline_width',
+			[
+				'label' => __( 'Label Width', 'pafe' ),
+				'type' => Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['%'],
+				'range' => [
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 10,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-label-inline' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .pafe-field-inline' => 'width: calc(100% - {{SIZE}}%)',
+				],
+				'condition' => [
+					'field_label_inline' => 'true'
+				]
+			]
+		);
 		$this->add_control(
 			'field_placeholder',
 			[
@@ -4757,6 +4792,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		}else{
 			$rage_setting_encode = '';
 		}
+		$label_inline = !empty($item['field_label_inline']) ? ' pafe-label-inline' : '';
 		$this->add_render_attribute(
 			[
 				'field-group' . $i => [
@@ -4805,7 +4841,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				],
 				'label' . $i => [
 					'for' => $this->get_attribute_id( $item ),
-					'class' => 'elementor-field-label',
+					'class' => 'elementor-field-label'.$label_inline,
 				],
 			]
 		);
@@ -5341,10 +5377,14 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					}
 					echo '>' . $item['field_label'] . '</label>';
 				}
+				if(empty($settings['field_label_inline'])){
+					echo '<div data-pafe-form-builder-required></div>';
+					$field_inline = '';
+				}else{
+					$field_inline = !empty($item['field_label_inline']) ? ' pafe-field-inline' : '';
+				}
 
-				echo '<div data-pafe-form-builder-required></div>';
-
-				echo '<div class="pafe-field-container">';
+				echo '<div class="pafe-field-container'.$field_inline.'">';
 
 				if ( ! empty( $item['field_icon_enable'] ) ) {
 					echo '<div class="pafe-field-icon">';
@@ -5797,6 +5837,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				endswitch;
 
 				echo '</div>';
+				if(!empty($settings['field_label_inline'])){
+					echo '<div data-pafe-form-builder-required></div>';
+				}
 				?>
 			</div>
 		</div>

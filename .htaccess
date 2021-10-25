@@ -7,7 +7,6 @@
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
-RewriteRule ^[ct]/(.*)$ https://forum.inclusion.beta.gouv.fr%{REQUEST_URI} [L,R=301]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

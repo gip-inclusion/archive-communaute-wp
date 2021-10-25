@@ -333,5 +333,10 @@ label.pafe-show-password{
 body:not(.elementor-editor-active) .elementor-field-type-select_autocomplete .elementor-field .selectize-control {
     padding: 0!important;
 }
+@media only screen and (max-width: 768px) {
+  .pafe-field-inline, .pafe-label-inline{
+    width: 100% !important;
+  }
+}
 
 

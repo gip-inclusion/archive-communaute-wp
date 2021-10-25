@@ -3225,11 +3225,16 @@ jQuery(document).ready(function($) {
     var $conditionals = $(document).find('body:not(.elementor-editor-active) [data-pafe-form-builder-conditional-logic]');
 	if ($conditionals.length > 0) {
 		pafeConditionalLogicFormCheck($conditionals);
+
 	}
 
 	$(document).on('keyup change','[data-pafe-form-builder-form-id]', $.debounce( 200, function(){
 		var $conditionals = $(document).find('body:not(.elementor-editor-active) [data-pafe-form-builder-conditional-logic]');
 			pafeConditionalLogicFormCheck($conditionals);
+		var $gridCarousel = $(document).find('[data-piotnetgrid-grid-carousel]');
+		if ( $gridCarousel.length > 0 ) {
+			$gridCarousel.trigger('grid_carousels');
+		}
 		})
 	);
 
