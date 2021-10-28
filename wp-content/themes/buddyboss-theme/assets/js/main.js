@@ -780,12 +780,12 @@
 			}
 
 			if ( $( window ).width() > 1081 ) {
-				$( '.bb-sticky-sidebar' ).stick_in_parent( { offset_top: offsetTop, spacer: false } );
+				$( '.bb-sticky-sidebar' ).stick_in_parent( { spacer: false, offset_top: offsetTop } );
 			}
 
 			$( window ).resize( function () {
 				if ( $( window ).width() > 1081 ) {
-					$( '.bb-sticky-sidebar' ).stick_in_parent( { offset_top: offsetTop, spacer: false } );
+					$( '.bb-sticky-sidebar' ).stick_in_parent( { spacer: false, offset_top: offsetTop } );
 				} else {
 					$( '.bb-sticky-sidebar' ).trigger( "sticky_kit:detach" );
 				}

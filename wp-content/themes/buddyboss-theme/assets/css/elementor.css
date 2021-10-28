@@ -623,7 +623,16 @@ div.elementor-price-table__ribbon-inner {
 .elementor-element-edit-mode .elementor-widget-wp-widget-bp_core_whos_online_widget #boss_whos_online_widget_connections {
   display: none; }
 
-.elementor-element-edit-mode.elementor-widget {
+.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget ul a {
+  font-size: 14px; }
+
+.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget .item-meta {
+  display: none; }
+
+.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget .item-list .item-avatar {
+  margin-right: 12px; }
+
+.elementor-element-edit-mode.elementor-widget[class*="wp-widget"] {
   background: #fff;
   border: 1px solid #E7E9EC;
   border-radius: 4px;
@@ -631,12 +640,6 @@ div.elementor-price-table__ribbon-inner {
   line-height: 1.35;
   margin-bottom: 1.25rem;
   padding: 1.25rem 0.9375rem; }
-  .elementor-element-edit-mode.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget ul a {
-    font-size: 14px; }
-  .elementor-element-edit-mode.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget .item-meta {
-    display: none; }
-  .elementor-element-edit-mode.elementor-widget.elementor-widget-wp-widget-bp_core_friends_widget .item-list .item-avatar {
-    margin-right: 12px; }
 
 /** header bar widget */
 .site-header.site-header--elementor,

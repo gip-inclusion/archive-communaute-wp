@@ -341,7 +341,7 @@ function buddyboss_theme_scripts() {
 	if ( defined('ELEMENTOR_VERSION') ) {
 		wp_enqueue_script( 'buddyboss-theme-elementor-js', get_template_directory_uri() . '/assets/js/plugins/elementor' . $minjs . '.js', array( 'jquery' ), buddyboss_theme()->version(), true );
 	}
-    if ( function_exists( 'buddyboss_global_search_init' ) || class_exists( 'WPForms' ) || class_exists( 'IT_Exchange' ) || class_exists( 'Ninja_Forms' ) || class_exists( 'WC_Vendors' )){
+    if ( function_exists( 'buddyboss_global_search_init' ) || class_exists( 'WPForms' ) || class_exists( 'IT_Exchange' ) || class_exists( 'Ninja_Forms' ) || class_exists( 'WC_Vendors' ) || class_exists( 'arete_buddypress_smileys_setting' )){
         wp_enqueue_script( 'buddyboss-theme-plugins-js', get_template_directory_uri() . '/assets/js/plugins/plugins' . $minjs . '.js', array( 'jquery' ), buddyboss_theme()->version(), true );
     }
 

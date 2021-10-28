@@ -222,7 +222,7 @@ class BB_Elementor_Widgets {
 					'widget_recent_comments',
 				);
 			}
-			if ( 'bbp_stats_widget' === $controls['wp']['id_base'] || 'bp_core_recently_active_widget' === $controls['wp']['id_base'] || 'boss-follow-us' === $controls['wp']['id_base'] ) {
+			if ( 'bbp_stats_widget' === $controls['wp']['id_base'] || 'bp_core_recently_active_widget' === $controls['wp']['id_base'] || 'boss-follow-us' === $controls['wp']['id_base'] || 'widget_recent_jobs' === $controls['wp']['id_base'] ) {
 				$classes = array(
 					'widget',
 				);

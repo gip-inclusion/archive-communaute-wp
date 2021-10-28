@@ -93,10 +93,12 @@ $assignment_points = learndash_get_points_awarded_array( $assignment->ID );  ?>
              */
             do_action( 'learndash-assignment-row-columns-before', $assignment, get_the_ID(), $course_id, $user_id );
 
-            ob_start(); ?>
+            ?>
 
             <?php
             if( post_type_supports( 'sfwd-assignment', 'comments' ) && apply_filters( 'comments_open', $assignment->comment_status, $assignment->ID ) ):
+
+                ob_start();
 
                 /**
                  * Action to add custom content before assignment comment count & link

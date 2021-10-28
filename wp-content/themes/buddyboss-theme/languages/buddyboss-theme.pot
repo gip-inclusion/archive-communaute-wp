@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 13:42:49+00:00\n"
+"POT-Creation-Date: 2021-10-27 15:39:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: archive-sfwd-courses.php:30 archive-sfwd-courses.php:31
+#: archive-sfwd-courses.php:30 archive-sfwd-courses.php:31 bbpress.php:40
 #: inc/admin/options-init.php:312 inc/admin/options-init.php:353
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:97
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1857
@@ -548,6 +548,10 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#: bbpress.php:39 template-parts/bbpress-banner.php:107
+msgid "Search forums..."
+msgstr ""
+
 #: buddypress/common/nav/directory-nav.php:10 docs/tabs-nouveau.php:2
 msgid "Directory menu"
 msgstr ""
@@ -597,7 +601,7 @@ msgstr ""
 #: buddypress/groups/single/members/leaders.php:15
 #: buddypress/groups/single/members-loop.php:15
 #: buddypress/members/members-loop.php:16
-#: learndash/ld30/template-course-author-details.php:52
+#: learndash/ld30/template-course-author-details.php:49
 msgid "Message"
 msgstr ""
 
@@ -788,7 +792,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:717
 #: inc/plugins/lifterlms-helper.php:1710 inc/plugins/lifterlms-helper.php:1789
 #: inc/theme/login.php:406 inc/theme/template-functions.php:722
-#: learndash/ld30/learndash-sidebar.php:195
+#: learndash/ld30/learndash-sidebar.php:198
 #: learndash/ld30/lesson/partials/row.php:117
 #: learndash/ld30/lesson/partials/row.php:137
 #: learndash/ld30/shortcodes/course_list_template.php:284
@@ -3221,32 +3225,32 @@ msgstr ""
 msgid "License Keys"
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:526
+#: inc/lib/buddyboss-updater/includes/admin.php:532
 msgid "Dismiss this notice."
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:558
+#: inc/lib/buddyboss-updater/includes/admin.php:564
 msgid "activate your product licenses"
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:559
+#: inc/lib/buddyboss-updater/includes/admin.php:565
 msgid ""
 "<strong>Your BuddyBoss products are almost ready.</strong> To get started, "
 "please %s."
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:588
+#: inc/lib/buddyboss-updater/includes/admin.php:594
 msgid "here"
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:589
+#: inc/lib/buddyboss-updater/includes/admin.php:595
 msgid "This license for <strong>%s</strong> is invalid or incomplete. %s"
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:746
-#: inc/lib/buddyboss-updater/includes/admin.php:778
-#: inc/lib/buddyboss-updater/includes/admin.php:862
-#: inc/lib/buddyboss-updater/includes/admin.php:868
+#: inc/lib/buddyboss-updater/includes/admin.php:752
+#: inc/lib/buddyboss-updater/includes/admin.php:784
+#: inc/lib/buddyboss-updater/includes/admin.php:874
+#: inc/lib/buddyboss-updater/includes/admin.php:880
 msgid ""
 "Your account was successfully connected. No new activations have been made. "
 "If you are attempting to activate a new license key, please make sure that "
@@ -3254,14 +3258,14 @@ msgid ""
 "available in your BuddyBoss.com account."
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:839
+#: inc/lib/buddyboss-updater/includes/admin.php:845
 msgid ""
 "Congratulations! License keys for the following product(s) have been "
 "activated: %s"
 msgstr ""
 
-#: inc/lib/buddyboss-updater/includes/admin.php:857
-#: inc/lib/buddyboss-updater/includes/admin.php:870
+#: inc/lib/buddyboss-updater/includes/admin.php:869
+#: inc/lib/buddyboss-updater/includes/admin.php:882
 msgid ""
 "The connection was successful, however, no license key was activated. We "
 "could not find any active license in your account, for any of the installed "
@@ -9264,7 +9268,7 @@ msgstr[1] ""
 msgid "more"
 msgstr ""
 
-#: inc/plugins/buddypress-helper.php:279
+#: inc/plugins/buddypress-helper.php:281
 msgid "%d result"
 msgid_plural "%d results"
 msgstr[0] ""
@@ -10960,7 +10964,7 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/courses/templates/learndash-activity-template.php:116
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-activity-template.php:103
-#: learndash/ld30/learndash-sidebar.php:212
+#: learndash/ld30/learndash-sidebar.php:215
 msgid "% Completed"
 msgstr ""
 
@@ -11396,11 +11400,11 @@ msgid "Continue"
 msgstr ""
 
 #: inc/plugins/lifterlms-helper.php:1510
-#: learndash/ld30/learndash-sidebar.php:208
-#: learndash/ld30/learndash-sidebar.php:268
-#: learndash/ld30/learndash-sidebar.php:299
-#: learndash/ld30/learndash-sidebar.php:348
-#: learndash/ld30/learndash-sidebar.php:402
+#: learndash/ld30/learndash-sidebar.php:211
+#: learndash/ld30/learndash-sidebar.php:271
+#: learndash/ld30/learndash-sidebar.php:302
+#: learndash/ld30/learndash-sidebar.php:351
+#: learndash/ld30/learndash-sidebar.php:405
 #: learndash/ld30/shortcodes/course_list_template.php:127
 #: learndash/ld30/shortcodes/course_list_template.php:134
 #: learndash/ld30/shortcodes/profile.php:85
@@ -12263,17 +12267,17 @@ msgstr ""
 msgid "Download Assignment"
 msgstr ""
 
-#: learndash/ld30/assignment/partials/row.php:134
+#: learndash/ld30/assignment/partials/row.php:136
 #: learndash/ld30/shortcodes/profile/assignment-row.php:75
 msgid "Waiting Review"
 msgstr ""
 
-#: learndash/ld30/assignment/partials/row.php:148
+#: learndash/ld30/assignment/partials/row.php:150
 #: learndash/ld30/shortcodes/profile/assignment-row.php:89
 msgid "%s/%s Points Awarded "
 msgstr ""
 
-#: learndash/ld30/assignment/partials/row.php:151
+#: learndash/ld30/assignment/partials/row.php:153
 #: learndash/ld30/shortcodes/profile/assignment-row.php:92
 msgid "Approved"
 msgstr ""
@@ -12301,27 +12305,27 @@ msgstr ""
 msgid "Light Mode"
 msgstr ""
 
-#: learndash/ld30/learndash-sidebar.php:137
-#: learndash/ld30/learndash-sidebar.php:387
+#: learndash/ld30/learndash-sidebar.php:140
+#: learndash/ld30/learndash-sidebar.php:390
 #: learndash/ld30/lesson/partials/row.php:29
 #: learndash/ld30/quiz/partials/row.php:21
 msgid "You don't currently have access to this content"
 msgstr ""
 
-#: learndash/ld30/learndash-sidebar.php:210
-#: learndash/ld30/learndash-sidebar.php:274
-#: learndash/ld30/learndash-sidebar.php:307
-#: learndash/ld30/learndash-sidebar.php:354
-#: learndash/ld30/learndash-sidebar.php:408
+#: learndash/ld30/learndash-sidebar.php:213
+#: learndash/ld30/learndash-sidebar.php:277
+#: learndash/ld30/learndash-sidebar.php:310
+#: learndash/ld30/learndash-sidebar.php:357
+#: learndash/ld30/learndash-sidebar.php:411
 msgid "Not Completed"
 msgstr ""
 
-#: learndash/ld30/learndash-sidebar.php:427
+#: learndash/ld30/learndash-sidebar.php:430
 #: lifterlms/lesson/template-single-lesson-sidebar.php:107
 msgid "Participants"
 msgstr ""
 
-#: learndash/ld30/learndash-sidebar.php:476
+#: learndash/ld30/learndash-sidebar.php:479
 #: lifterlms/lesson/template-single-lesson-sidebar.php:146
 msgid "Show more"
 msgstr ""
@@ -12589,23 +12593,23 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: lifterlms/course/course-index-loop.php:190
-#: lifterlms/membership/membership-index-loop.php:100
+#: lifterlms/membership/membership-index-loop.php:101
 msgid "Starts from"
 msgstr ""
 
 #: lifterlms/course/course-index-loop.php:193
 #: lifterlms/course/template-single-course-sidebar.php:101
-#: lifterlms/membership/membership-index-loop.php:103
+#: lifterlms/membership/membership-index-loop.php:104
 msgid "See Plans"
 msgstr ""
 
 #: lifterlms/course/course-index-loop.php:223
-#: lifterlms/membership/membership-index-loop.php:127
+#: lifterlms/membership/membership-index-loop.php:129
 msgid "Enrolled on"
 msgstr ""
 
 #: lifterlms/course/course-index-loop.php:232
-#: lifterlms/membership/membership-index-loop.php:131
+#: lifterlms/membership/membership-index-loop.php:133
 msgid "Expires on"
 msgstr ""
 
@@ -12935,10 +12939,6 @@ msgstr ""
 #: template-parts/author-box.php:56 template-parts/bookmarks-shortcode.php:63
 #: template-parts/entry-meta.php:100 template-parts/share.php:40
 msgid "Remove bookmark"
-msgstr ""
-
-#: template-parts/bbpress-banner.php:107
-msgid "Search forums..."
 msgstr ""
 
 #: template-parts/content-bbpress.php:34

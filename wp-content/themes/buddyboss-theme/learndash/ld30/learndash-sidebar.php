@@ -130,8 +130,11 @@ if ( ( isset( $_COOKIE['lessonpanel'] ) && 'closed' === $_COOKIE['lessonpanel'] 
 					<?php
 					foreach ( $lession_list as $lesson ) {
 
-						$lesson_topics        = learndash_get_topic_list( $lesson->ID, $parent_course->ID );
-						$lesson_sample        = learndash_get_setting( $lesson->ID, 'sample_lesson' ) == 'on' ? 'bb-lms-is-sample' : '';
+
+						$lesson_topics  = learndash_get_topic_list( $lesson->ID, $parent_course->ID );
+						$lesson_quizzes = learndash_get_lesson_quiz_list( $lesson->ID, get_current_user_id(), $course_id );
+						$lesson_sample  = learndash_get_setting( $lesson->ID, 'sample_lesson' ) == 'on' ? 'bb-lms-is-sample' : '';
+
 						$is_sample            = ( isset( $lesson->sample ) ? $lesson->sample : false );
 						$bb_lesson_has_access = sfwd_lms_has_access( $lesson->ID, $user_id );
 						$atts                 = apply_filters( 'learndash_quiz_row_atts', ( isset( $bb_lesson_has_access ) && ! $bb_lesson_has_access && ! $is_sample ? 'data-balloon-pos="up" data-balloon="' . __( "You don't currently have access to this content", 'buddyboss-theme' ) . '"' : '' ) );
@@ -140,7 +143,7 @@ if ( ( isset( $_COOKIE['lessonpanel'] ) && 'closed' === $_COOKIE['lessonpanel'] 
 
 						if ( $bb_lesson_has_access || ( ! $bb_lesson_has_access && apply_filters( 'bb_theme_ld_show_locked_lessons', false ) ) ) {
 							?>
-							<li class="lms-lesson-item <?php echo $lesson->ID === $post->ID ? esc_attr( 'current' ) : esc_attr( 'lms-lesson-turnover' ); ?> <?php echo esc_attr( $lesson_sample . ' ' . $locked_class ); ?> <?php echo ! empty( $lesson_topics ) ? '' : esc_attr( 'bb-lesson-item-no-topics' ); ?>">
+							<li class="lms-lesson-item <?php echo $lesson->ID === $post->ID ? esc_attr( 'current' ) : esc_attr( 'lms-lesson-turnover' ); ?> <?php echo esc_attr( $lesson_sample . ' ' . $locked_class ); ?> <?php echo ( ! empty( $lesson_topics ) || ! empty( $lesson_quizzes ) ) ? '' : esc_attr( 'bb-lesson-item-no-topics' ); ?>">
 
 								<?php
 								if ( isset( $sections[ $lesson->ID ] ) ) :
@@ -155,7 +158,7 @@ if ( ( isset( $_COOKIE['lessonpanel'] ) && 'closed' === $_COOKIE['lessonpanel'] 
 									);
 								endif;
 
-								if ( ! empty( $lesson_topics ) ) :
+								if ( ! empty( $lesson_topics ) || ! empty( $lesson_quizzes ) ) :
 									?>
 									<span class="lms-toggle-lesson"><i class="bb-icons bb-icon-triangle-fill"></i></span>
 									<?php

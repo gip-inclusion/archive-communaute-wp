@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '5ebf9043d7dc86e1421c5e5abc8fc19d89aad9b2',
+    'reference' => 'c2c54cc7c8fc1e859a43cc889313b73de17347ef',
     'name' => 'buddyboss/buddyboss-platform',
   ),
   'versions' => 
@@ -50,7 +50,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '5ebf9043d7dc86e1421c5e5abc8fc19d89aad9b2',
+      'reference' => 'c2c54cc7c8fc1e859a43cc889313b73de17347ef',
     ),
     'composer/installers' => 
     array (

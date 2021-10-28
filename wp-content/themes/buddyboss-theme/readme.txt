@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.1
-Version: 1.7.7
+Version: 1.7.8.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,31 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.7.8.1 =
+* Coding Standards - Fixed critical code refactoring issue
+
+= 1.7.8 =
+* Groups - Fixed Groups directory screen search icon issue
+* Forums - Fixed forum reply edit history UI issue
+* Forums - Search enabled for forums when ‘Allow forum wide search’ checked
+* Activity - Fixed sidebar UI issue on activity feed scroll
+* Text Editor - Fixed emojis popup UI issue to show properly in the responsive view
+* Theme Options - Fixed custom code fields overlapping issue
+* Post Types - Fixed HTML hierarchy rule on a single post and custom post types
+* Elementor - Fixed blocks and widgets background color issue
+* LearnDash - Fixed course page instructor avatar issue
+* LearnDash - Fixed [ld_course_list] shortcode UI issues to make it consistent
+* LearnDash - Fixed [ld_profile] shortcode profile statistics modal UI issue
+* LearnDash - Fixed lessons assignment not showing issue when comments disabled
+* LearnDash - Fixed lessons sidebar UI issue in iPad device
+* LearnDash - Fixed dropdown issue for lessons with just quiz on single course and sidebar
+* LifterLMS - Fixed LifterLMS membership listing right sales price not showing issue
+* WP Job Manager - Fixed 'Recent Job Listings' widget UI issues
+* WP Job Manager - Fixed single job listing image UI issue
+* Compatibility - Fixed 'BuddyPress User Blog' bookmark button UI issue
+* Compatibility - Fixed 'Activity Reactions For BuddyPress' plugin compatibility issues
+* Compatibility - Code refactoring to fix Cross-Site Scripting and PHP 8 compatibility issues
 
 = 1.7.7 =
 * BuddyPanel - Fixed BuddyPanel menu tooltip alignment issue

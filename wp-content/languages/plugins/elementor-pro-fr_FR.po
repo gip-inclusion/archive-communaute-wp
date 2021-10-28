@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Elementor Pro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-08-11 20:58:14+0000\n"
+"PO-Revision-Date: 2021-10-26 19:03:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,19 @@ msgstr ""
 "X-Generator: GlotPress/2.3.1\n"
 "Language: fr\n"
 "Project-Id-Version: Elementor Pro\n"
+
+#: elementor-pro/core/upgrade/manager.php:25
+msgid "Elementor Pro Data Updater"
+msgstr "Outil de mise à jour de données Elementor Pro"
+
+#: elementor-pro/modules/forms/submissions/actions/save-to-database.php:46
+msgid "Collected Submissions will be saved to Elementor > <a href=\"%s\" target=\"_blank\" rel=\"noreferrer\">Submissions</a>"
+msgstr ""
+
+#. translators: %1$s: Breakpoint Label, %2$d: Breakpoint value.
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:316
+msgid "%1$s (< %2$dpx)"
+msgstr "%1$s (< %2$dpx)"
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:234
 msgid "POSITION"
@@ -29,7 +42,7 @@ msgstr "Personnaliser les propriétés de l’infobulle"
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:320
 msgid "Set custom Tooltip opening that will only affect this specific hotspot."
-msgstr ""
+msgstr "Définissez l’ouverture personnalisée de l'infobulle qui affectera uniquement ce point chaud spécifique."
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:393
 msgid "Text Wrap"
@@ -58,11 +71,11 @@ msgstr "Cliquer"
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:539
 msgid "Fade In/Out"
-msgstr ""
+msgstr "Fondu entrant/sortant"
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:540
 msgid "Fade Grow"
-msgstr ""
+msgstr "Fondu croissant"
 
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:541
 msgid "Fade By Direction"
@@ -573,7 +586,8 @@ msgstr "Ceci est l’adresse qui vous est donnée par PayPal lorsque vous config
 msgid "Never lose another submission! Using “Actions After Submit” you can now choose to save all submissions to an internal database."
 msgstr "Ne perdez jamais un autre envoi ! En utilisant « Actions après envoi », vous pouvez maintenant choisir d’enregistrer tous les envois dans une base de données interne."
 
-#: elementor-pro/modules/forms/submissions/actions/save-to-database.php:25
+#: elementor-pro/modules/forms/submissions/actions/save-to-database.php:27
+#: elementor-pro/modules/forms/submissions/actions/save-to-database.php:34
 msgid "Collect Submissions"
 msgstr "Collecter les envois"
 
@@ -808,11 +822,11 @@ msgstr "Priorité"
 msgid "Define in which order the Custom Code will appear"
 msgstr "Définir dans quel ordre le code personnalisé apparaîtra"
 
-#: elementor-pro/modules/custom-code/custom-code-metabox.php:332
+#: elementor-pro/modules/custom-code/custom-code-metabox.php:339
 msgid "Custom code"
 msgstr "Code personnalisé"
 
-#: elementor-pro/modules/custom-code/custom-code-metabox.php:347
+#: elementor-pro/modules/custom-code/custom-code-metabox.php:354
 msgid "Conditions:"
 msgstr "Conditions :"
 
@@ -930,7 +944,7 @@ msgstr "Safari"
 msgid "Max Height"
 msgstr "Hauteur maximale"
 
-#: elementor-pro/license/api.php:210
+#: elementor-pro/license/api.php:212
 msgid "Another check is in progress."
 msgstr "Une autre vérification est en cours."
 
@@ -1297,7 +1311,7 @@ msgid "Scroll"
 msgstr "Défilement"
 
 #: elementor-pro/modules/lottie/widgets/lottie.php:267
-#: elementor-pro/modules/motion-fx/controls-group.php:140
+#: elementor-pro/modules/motion-fx/controls-group.php:157
 msgid "Effects Relative To"
 msgstr "Effets relatifs à"
 
@@ -1486,13 +1500,13 @@ msgstr "Marqueur"
 msgid "Font Awesome - Duotone Pro"
 msgstr "Font Awesome - Duotone Pro"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:140
+#: elementor-pro/modules/gallery/widgets/gallery.php:148
 #: elementor-pro/modules/lottie/widgets/lottie.php:499
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:623
 msgid "Lazy Load"
 msgstr "Chargement différé"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1123
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1144
 msgid "Menu Toggle"
 msgstr "Permuter le menu"
 
@@ -1565,10 +1579,10 @@ msgid "Error occurred, The version selected is invalid. Try selecting different 
 msgstr "Une erreur est survenue. La version sélectionnée n’est pas valide. Essayez de choisir une version différente."
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:103
-#: elementor-pro/modules/carousel/widgets/reviews.php:618
-#: elementor-pro/modules/carousel/widgets/reviews.php:628
-#: elementor-pro/modules/carousel/widgets/reviews.php:636
-#: elementor-pro/modules/carousel/widgets/reviews.php:644
+#: elementor-pro/modules/carousel/widgets/reviews.php:635
+#: elementor-pro/modules/carousel/widgets/reviews.php:645
+#: elementor-pro/modules/carousel/widgets/reviews.php:653
+#: elementor-pro/modules/carousel/widgets/reviews.php:661
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:554
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:562
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:570
@@ -1626,32 +1640,32 @@ msgstr "Champ HTML"
 msgid "Gallery"
 msgstr "Galerie"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:88
-#: elementor-pro/modules/gallery/widgets/gallery.php:114
+#: elementor-pro/modules/gallery/widgets/gallery.php:96
+#: elementor-pro/modules/gallery/widgets/gallery.php:122
 msgid "New Gallery"
 msgstr "Nouvelle galerie"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:109
+#: elementor-pro/modules/gallery/widgets/gallery.php:117
 msgid "Galleries"
 msgstr "Galeries"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:154
+#: elementor-pro/modules/gallery/widgets/gallery.php:162
 msgid "Grid"
 msgstr "Grille"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:184
+#: elementor-pro/modules/gallery/widgets/gallery.php:213
 msgid "Row Height"
 msgstr "Hauteur de la rangée"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:261
+#: elementor-pro/modules/gallery/widgets/gallery.php:280
 msgid "Aspect Ratio"
 msgstr "Ratio d’aspect"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:303
+#: elementor-pro/modules/gallery/widgets/gallery.php:322
 msgid "\"All\" Filter"
 msgstr "Filtre « Tous »"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:313
+#: elementor-pro/modules/gallery/widgets/gallery.php:332
 msgid "\"All\" Filter Label"
 msgstr "Libellé du filtre « Tous » "
 
@@ -1887,7 +1901,7 @@ msgid "Bottom Left"
 msgstr "En bas à gauche"
 
 #: elementor-pro/modules/lottie/widgets/lottie.php:276
-#: elementor-pro/modules/motion-fx/controls-group.php:145
+#: elementor-pro/modules/motion-fx/controls-group.php:162
 msgid "Entire Page"
 msgstr "Page entière"
 
@@ -1911,7 +1925,7 @@ msgstr "Tout enfant de %s"
 msgid "Direct Child %s Of"
 msgstr "Enfant direct de %s"
 
-#: elementor-pro/modules/woocommerce/widgets/products.php:180
+#: elementor-pro/modules/woocommerce/widgets/products.php:157
 msgid "Ordering is not available if this widget is placed in your front page. Visible on frontend only."
 msgstr "Commander n’est pas possible si ce widget est placé sur votre page d'accueil. Visible uniquement sur l’interface publique."
 
@@ -1955,94 +1969,94 @@ msgstr "Définir une date « avant » affichera toutes les publications publi�
 msgid "Setting an ‘After’ date will show all the posts published since the chosen date (inclusive)."
 msgstr "Définir une date « après » affichera toutes les publications publiées depuis la date choisie (incluse)."
 
-#: elementor-pro/modules/motion-fx/controls-group.php:74
+#: elementor-pro/modules/motion-fx/controls-group.php:75
 msgid "X Anchor Point"
 msgstr "Point d’ancrage X"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:97
+#: elementor-pro/modules/motion-fx/controls-group.php:98
 msgid "Y Anchor Point"
 msgstr "Point d’ancrage Y"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:122
+#: elementor-pro/modules/motion-fx/controls-group.php:143
 msgid "Apply Effects On"
 msgstr "Appliquer les effets sur"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:155
+#: elementor-pro/modules/motion-fx/controls-group.php:172
 msgid "Mouse Effects"
 msgstr "Effets au passage de la souris"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:178
+#: elementor-pro/modules/motion-fx/controls-group.php:195
 msgid "Vertical Scroll"
 msgstr "Défilement vertical"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:189
-#: elementor-pro/modules/motion-fx/controls-group.php:232
-#: elementor-pro/modules/motion-fx/controls-group.php:368
-#: elementor-pro/modules/motion-fx/controls-group.php:414
-#: elementor-pro/modules/motion-fx/controls-group.php:463
-#: elementor-pro/modules/motion-fx/controls-group.php:490
+#: elementor-pro/modules/motion-fx/controls-group.php:206
+#: elementor-pro/modules/motion-fx/controls-group.php:249
+#: elementor-pro/modules/motion-fx/controls-group.php:385
+#: elementor-pro/modules/motion-fx/controls-group.php:431
+#: elementor-pro/modules/motion-fx/controls-group.php:480
+#: elementor-pro/modules/motion-fx/controls-group.php:507
 msgid "Speed"
 msgstr "Vitesse"
 
 #: elementor-pro/modules/lottie/widgets/lottie.php:216
 #: elementor-pro/modules/lottie/widgets/lottie.php:229
 #: elementor-pro/modules/lottie/widgets/lottie.php:275
-#: elementor-pro/modules/motion-fx/controls-group.php:144
-#: elementor-pro/modules/motion-fx/controls-group.php:202
-#: elementor-pro/modules/motion-fx/controls-group.php:245
-#: elementor-pro/modules/motion-fx/controls-group.php:292
-#: elementor-pro/modules/motion-fx/controls-group.php:338
-#: elementor-pro/modules/motion-fx/controls-group.php:381
-#: elementor-pro/modules/motion-fx/controls-group.php:427
+#: elementor-pro/modules/motion-fx/controls-group.php:161
+#: elementor-pro/modules/motion-fx/controls-group.php:219
+#: elementor-pro/modules/motion-fx/controls-group.php:262
+#: elementor-pro/modules/motion-fx/controls-group.php:309
+#: elementor-pro/modules/motion-fx/controls-group.php:355
+#: elementor-pro/modules/motion-fx/controls-group.php:398
+#: elementor-pro/modules/motion-fx/controls-group.php:444
 msgid "Viewport"
 msgstr "Viewport"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:221
+#: elementor-pro/modules/motion-fx/controls-group.php:238
 msgid "Horizontal Scroll"
 msgstr "Défilement horizontal"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:227
-#: elementor-pro/modules/motion-fx/controls-group.php:363
+#: elementor-pro/modules/motion-fx/controls-group.php:244
+#: elementor-pro/modules/motion-fx/controls-group.php:380
 msgid "To Left"
 msgstr "Vers la gauche"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:228
-#: elementor-pro/modules/motion-fx/controls-group.php:364
+#: elementor-pro/modules/motion-fx/controls-group.php:245
+#: elementor-pro/modules/motion-fx/controls-group.php:381
 msgid "To Right"
 msgstr "Vers la droite"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:264
+#: elementor-pro/modules/motion-fx/controls-group.php:281
 msgid "Transparency"
 msgstr "Transparence"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:278
-#: elementor-pro/modules/motion-fx/controls-group.php:325
+#: elementor-pro/modules/motion-fx/controls-group.php:295
+#: elementor-pro/modules/motion-fx/controls-group.php:342
 msgid "Level"
 msgstr "Niveau"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:357
+#: elementor-pro/modules/motion-fx/controls-group.php:374
 msgid "Rotate"
 msgstr "Rotation"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:400
+#: elementor-pro/modules/motion-fx/controls-group.php:417
 msgid "Scale"
 msgstr "Échelle"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:451
+#: elementor-pro/modules/motion-fx/controls-group.php:468
 msgid "Mouse Track"
 msgstr "Mouvement de la souris"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:458
-#: elementor-pro/modules/motion-fx/controls-group.php:486
+#: elementor-pro/modules/motion-fx/controls-group.php:475
+#: elementor-pro/modules/motion-fx/controls-group.php:503
 msgid "Opposite"
 msgstr "Opposé"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:459
-#: elementor-pro/modules/motion-fx/controls-group.php:485
+#: elementor-pro/modules/motion-fx/controls-group.php:476
+#: elementor-pro/modules/motion-fx/controls-group.php:502
 msgid "Direct"
 msgstr "Direct"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:478
+#: elementor-pro/modules/motion-fx/controls-group.php:495
 msgid "3D Tilt"
 msgstr "Inclinaison 3D"
 
@@ -2075,8 +2089,8 @@ msgstr "Inclure par"
 #: elementor-pro/modules/query-control/controls/group-control-query.php:175
 #: elementor-pro/modules/query-control/controls/group-control-query.php:211
 #: elementor-pro/modules/query-control/controls/group-control-related.php:40
-#: elementor-pro/modules/woocommerce/widgets/products.php:80
-#: elementor-pro/modules/woocommerce/widgets/products.php:85
+#: elementor-pro/modules/woocommerce/widgets/products.php:81
+#: elementor-pro/modules/woocommerce/widgets/products.php:86
 msgid "Term"
 msgstr "Terme"
 
@@ -2484,7 +2498,7 @@ msgstr "Vous voulez activer ce site web avec une autre licence ?"
 msgid "Switch Account"
 msgstr "Changer de compte"
 
-#: elementor-pro/license/api.php:311
+#: elementor-pro/license/api.php:313
 msgid "Your license is invalid for this domain. Please check your key again."
 msgstr "Votre licence n’est pas valide pour ce domaine. Veuillez vérifier à nouveau votre clé."
 
@@ -2539,20 +2553,20 @@ msgstr "Activer manuellement"
 msgid "Reviews"
 msgstr "Avis"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:212
-#: elementor-pro/modules/carousel/widgets/reviews.php:616
+#: elementor-pro/modules/carousel/widgets/reviews.php:229
+#: elementor-pro/modules/carousel/widgets/reviews.php:633
 msgid "Review"
 msgstr "Avis"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:381
+#: elementor-pro/modules/carousel/widgets/reviews.php:398
 msgid "Unmarked Style"
 msgstr "Style non marqué"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:389
+#: elementor-pro/modules/carousel/widgets/reviews.php:406
 msgid "Outline"
 msgstr "Contour"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:448
+#: elementor-pro/modules/carousel/widgets/reviews.php:465
 msgid "Unmarked Color"
 msgstr "Couleur non marquée"
 
@@ -2685,8 +2699,8 @@ msgid "Data"
 msgstr "Données"
 
 #: elementor-pro/modules/dynamic-tags/tags/featured-image-data.php:88
-#: elementor-pro/modules/gallery/widgets/gallery.php:451
-#: elementor-pro/modules/gallery/widgets/gallery.php:468
+#: elementor-pro/modules/gallery/widgets/gallery.php:470
+#: elementor-pro/modules/gallery/widgets/gallery.php:487
 msgid "Alt"
 msgstr "Alt"
 
@@ -2779,7 +2793,7 @@ msgid "In Child %s"
 msgstr "Dans les %s enfants"
 
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:526
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:622
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:642
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:359
 msgid "Indent"
 msgstr "Indenter"
@@ -2897,12 +2911,12 @@ msgstr "Fil d'Ariane WooCommerce"
 msgid "Product Categories"
 msgstr "Catégories de produit"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:89
+#: elementor-pro/modules/woocommerce/widgets/categories.php:79
 msgid "Current Subcategories"
 msgstr "Sous-catégories actuelles"
 
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:19
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:35
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:20
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:36
 msgid "Upsells"
 msgstr "Ventes croisées"
 
@@ -2916,14 +2930,14 @@ msgstr "Image de catégorie"
 msgid "Media"
 msgstr "Média"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:181
-#: elementor-pro/modules/motion-fx/controls-group.php:224
-#: elementor-pro/modules/motion-fx/controls-group.php:267
-#: elementor-pro/modules/motion-fx/controls-group.php:314
-#: elementor-pro/modules/motion-fx/controls-group.php:360
-#: elementor-pro/modules/motion-fx/controls-group.php:403
-#: elementor-pro/modules/motion-fx/controls-group.php:454
-#: elementor-pro/modules/motion-fx/controls-group.php:481
+#: elementor-pro/modules/motion-fx/controls-group.php:198
+#: elementor-pro/modules/motion-fx/controls-group.php:241
+#: elementor-pro/modules/motion-fx/controls-group.php:284
+#: elementor-pro/modules/motion-fx/controls-group.php:331
+#: elementor-pro/modules/motion-fx/controls-group.php:377
+#: elementor-pro/modules/motion-fx/controls-group.php:420
+#: elementor-pro/modules/motion-fx/controls-group.php:471
+#: elementor-pro/modules/motion-fx/controls-group.php:498
 #: elementor-pro/modules/popup/display-settings/triggers.php:51
 msgid "Direction"
 msgstr "Direction"
@@ -3005,13 +3019,11 @@ msgid "Redirect After Logout"
 msgstr "Rediriger après la déconnexion"
 
 #. translators: %d: Breakpoint number.
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:312
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:284
 msgid "Mobile (< %dpx)"
 msgstr "Mobile (< %dpx)"
 
 #. translators: %d: Breakpoint number.
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:314
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:286
 msgid "Tablet (< %dpx)"
 msgstr "Tablette (< %dpx)"
@@ -3198,21 +3210,21 @@ msgstr "Ajouter au panier personnalisé"
 msgid "Archive Products"
 msgstr "Archive de produits"
 
-#: elementor-pro/modules/woocommerce/widgets/products.php:167
+#: elementor-pro/modules/woocommerce/widgets/products.php:144
 msgid "Allow Order"
 msgstr "Autoriser la commande"
 
-#: elementor-pro/modules/woocommerce/widgets/products.php:192
+#: elementor-pro/modules/woocommerce/widgets/products.php:169
 msgid "Show Result Count"
 msgstr "Afficher le compteur de résultat"
 
-#: elementor-pro/modules/woocommerce/widgets/products.php:58
+#: elementor-pro/modules/woocommerce/widgets/products.php:59
 msgid "Latest Products"
 msgstr "Produits récents"
 
 #: elementor-pro/modules/woocommerce/widgets/archive-description.php:49
 #: elementor-pro/modules/woocommerce/widgets/breadcrumb.php:47
-#: elementor-pro/modules/woocommerce/widgets/categories.php:184
+#: elementor-pro/modules/woocommerce/widgets/categories.php:174
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:62
 #: elementor-pro/modules/woocommerce/widgets/product-data-tabs.php:44
 #: elementor-pro/modules/woocommerce/widgets/product-images.php:43
@@ -3225,11 +3237,11 @@ msgstr "Produits récents"
 msgid "The style of this widget is often affected by your theme and plugins. If you experience any such issue, try to switch to a basic theme and deactivate related plugins."
 msgstr "Le style de ce widget est souvent affecté par votre thème et vos extensions. Si vous rencontrez un tel problème, essayez de passer sur un thème de base et/ou de désactiver les extensions."
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:175
+#: elementor-pro/modules/woocommerce/widgets/categories.php:165
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:480
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:23
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:65
-#: elementor-pro/modules/woocommerce/widgets/products.php:21
+#: elementor-pro/modules/woocommerce/widgets/products.php:22
 msgid "Products"
 msgstr "Produits"
 
@@ -3310,10 +3322,10 @@ msgstr "Panneau"
 
 #: elementor-pro/modules/woocommerce/widgets/product-additional-information.php:35
 #: elementor-pro/modules/woocommerce/widgets/product-data-tabs.php:202
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:108
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:116
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:94
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:102
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:98
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:106
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:85
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:93
 msgid "Heading"
 msgstr "Titrage"
 
@@ -3494,7 +3506,7 @@ msgid_plural "You can upload up to %d files."
 msgstr[0] "Vous pouvez télécharger uniquement %d fichier."
 msgstr[1] "Vous pouvez télécharger uniquement %d fichiers."
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:93
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:113
 msgctxt "Date Format"
 msgid "March 6, 2018 (F j, Y)"
 msgstr "Mars 6, 2018 (F j, Y)"
@@ -3611,7 +3623,7 @@ msgstr "Conditions d’affichage"
 #: elementor-pro/modules/query-control/controls/group-control-query.php:315
 #: elementor-pro/modules/query-control/controls/group-control-query.php:332
 #: elementor-pro/modules/theme-builder/module.php:117
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:671
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:691
 msgid "Choose"
 msgstr "Choisir"
 
@@ -3672,8 +3684,8 @@ msgstr "Prévisualiser"
 msgid "Archive Posts"
 msgstr "Archive de publications"
 
-#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:73
-#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:88
+#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:77
+#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:92
 #: elementor-pro/modules/woocommerce/widgets/archive-products-deprecated.php:101
 #: elementor-pro/modules/woocommerce/widgets/archive-products-deprecated.php:113
 #: elementor-pro/modules/woocommerce/widgets/archive-products.php:128
@@ -3681,7 +3693,7 @@ msgstr "Archive de publications"
 msgid "Nothing Found Message"
 msgstr "Aucun message trouvé"
 
-#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:75
+#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:79
 #: elementor-pro/modules/woocommerce/widgets/archive-products-deprecated.php:103
 #: elementor-pro/modules/woocommerce/widgets/archive-products.php:130
 msgid "It seems we can't find what you're looking for."
@@ -3701,11 +3713,11 @@ msgstr "Contenu de la publication"
 msgid "Post Info"
 msgstr "Information de la publication"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:79
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:99
 msgid "Terms"
 msgstr "Termes"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:108
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:128
 msgid "Custom Date Format"
 msgstr "Format de date personnalisé"
 
@@ -3713,41 +3725,41 @@ msgstr "Format de date personnalisé"
 #. http:php.net/manual/en/function.date.php).
 #. translators: %s: Allowed time letters (see:
 #. http:php.net/manual/en/function.time.php).
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:117
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:154
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:137
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:174
 msgid "Use the letters: %s"
 msgstr "Utiliser les lettres : %s"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:144
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:164
 msgid "Custom Time Format"
 msgstr "Changer le Format Horaire"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:225
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:227
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:754
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:245
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:247
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:774
 msgid "No Comments"
 msgstr "Aucun commentaire"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:238
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:240
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:755
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:258
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:260
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:775
 msgid "One Comment"
 msgstr "Un commentaire"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:253
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:756
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:273
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:776
 msgid "%s Comments"
 msgstr "%s commentaires"
 
 #: elementor-pro/modules/dynamic-tags/tags/contact-url.php:211
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:599
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:410
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:430
 msgid "Start"
 msgstr "Début"
 
 #: elementor-pro/modules/dynamic-tags/tags/contact-url.php:226
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:607
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:418
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:438
 msgid "End"
 msgstr "Fin"
 
@@ -3969,7 +3981,7 @@ msgid "Fallback"
 msgstr "Remplacement"
 
 #: elementor-pro/modules/dynamic-tags/module.php:96
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:463
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:466
 #: elementor-pro/modules/theme-builder/documents/archive.php:26
 #: elementor-pro/modules/theme-builder/documents/archive.php:50
 #: elementor-pro/modules/theme-builder/documents/archive.php:98
@@ -4086,12 +4098,12 @@ msgid "Current Date Time"
 msgstr "Date et heure actuelles"
 
 #: elementor-pro/modules/dynamic-tags/tags/current-date-time.php:33
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:88
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:108
 msgid "Date Format"
 msgstr "Format de la date"
 
 #: elementor-pro/modules/dynamic-tags/tags/current-date-time.php:51
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:126
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:146
 msgid "Time Format"
 msgstr "Format de l’heure"
 
@@ -4100,7 +4112,7 @@ msgstr "Format de l’heure"
 #: elementor-pro/modules/dynamic-tags/tags/post-date.php:64
 #: elementor-pro/modules/dynamic-tags/tags/post-time.php:62
 #: elementor-pro/modules/dynamic-tags/toolset/tags/toolset-date.php:99
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:213
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:233
 msgid "Custom Format"
 msgstr "Format personnalisé"
 
@@ -4201,7 +4213,7 @@ msgstr "Format de la devise"
 
 #: elementor-pro/modules/query-control/controls/group-control-posts.php:112
 #: elementor-pro/modules/query-control/controls/group-control-query.php:51
-#: elementor-pro/modules/woocommerce/widgets/products.php:57
+#: elementor-pro/modules/woocommerce/widgets/products.php:58
 msgid "Current Query"
 msgstr "Requête actuelle"
 
@@ -4209,7 +4221,7 @@ msgstr "Requête actuelle"
 msgid "Access to edit content only"
 msgstr "Accès uniquement pour modifier le contenu"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:40
+#: elementor-pro/modules/motion-fx/controls-group.php:41
 msgid "Scrolling Effects"
 msgstr "Effets de défilement"
 
@@ -4221,13 +4233,12 @@ msgstr "Épinglé"
 msgid "Sticky On"
 msgstr "Épinglage actif"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:128
+#: elementor-pro/modules/motion-fx/controls-group.php:137
 #: elementor-pro/modules/popup/display-settings/timing.php:174
 #: elementor-pro/modules/sticky/module.php:72
 msgid "Desktop"
 msgstr "Ordinateur de bureau"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:129
 #: elementor-pro/modules/popup/display-settings/timing.php:175
 #: elementor-pro/modules/sticky/module.php:73
 msgid "Tablet"
@@ -4254,18 +4265,18 @@ msgstr "Inclure"
 msgid "General"
 msgstr "Général"
 
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:346
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:349
 #: elementor-pro/modules/theme-builder/documents/single-base.php:87
 msgid "Content Area"
 msgstr "Zone de contenu"
 
 #. translators: %s: Location name.
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:419
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:422
 msgid "Location '%s' is not a core location."
 msgstr "L’emplacement '%s n’est pas un emplacement central."
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:62
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:469
+#: elementor-pro/modules/gallery/widgets/gallery.php:70
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:472
 #: elementor-pro/modules/theme-builder/documents/single-base.php:24
 #: elementor-pro/modules/theme-builder/documents/single-base.php:44
 #: elementor-pro/modules/theme-builder/documents/single-base.php:135
@@ -4300,7 +4311,7 @@ msgstr "Dans %s"
 msgid "404 Page"
 msgstr "Page 404"
 
-#: elementor-pro/modules/carousel/widgets/base.php:87
+#: elementor-pro/modules/carousel/widgets/base.php:88
 msgid "Set how many slides are scrolled per swipe."
 msgstr "Définissez le nombre de diapositives défilées par balayage."
 
@@ -4309,9 +4320,9 @@ msgid "Enter Font Family"
 msgstr "Saisir une famille de police"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1325
-#: elementor-pro/modules/gallery/widgets/gallery.php:605
-#: elementor-pro/modules/gallery/widgets/gallery.php:766
-#: elementor-pro/modules/gallery/widgets/gallery.php:1018
+#: elementor-pro/modules/gallery/widgets/gallery.php:624
+#: elementor-pro/modules/gallery/widgets/gallery.php:785
+#: elementor-pro/modules/gallery/widgets/gallery.php:1037
 #: elementor-pro/modules/popup/document.php:377
 msgid "Animation Duration"
 msgstr "Durée de l’animation"
@@ -4543,19 +4554,19 @@ msgid "Min Width"
 msgstr "Largeur minimum"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1262
-#: elementor-pro/modules/gallery/widgets/gallery.php:732
-#: elementor-pro/modules/gallery/widgets/gallery.php:973
+#: elementor-pro/modules/gallery/widgets/gallery.php:751
+#: elementor-pro/modules/gallery/widgets/gallery.php:992
 msgid "Entrance"
 msgstr "Entrée"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1274
-#: elementor-pro/modules/gallery/widgets/gallery.php:985
+#: elementor-pro/modules/gallery/widgets/gallery.php:1004
 msgid "Reaction"
 msgstr "Réaction"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1285
-#: elementor-pro/modules/gallery/widgets/gallery.php:744
-#: elementor-pro/modules/gallery/widgets/gallery.php:996
+#: elementor-pro/modules/gallery/widgets/gallery.php:763
+#: elementor-pro/modules/gallery/widgets/gallery.php:1015
 msgid "Exit"
 msgstr "Quitter"
 
@@ -4585,14 +4596,14 @@ msgstr "Effets au survol"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1252
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1381
-#: elementor-pro/modules/gallery/widgets/gallery.php:584
-#: elementor-pro/modules/gallery/widgets/gallery.php:722
-#: elementor-pro/modules/gallery/widgets/gallery.php:963
+#: elementor-pro/modules/gallery/widgets/gallery.php:603
+#: elementor-pro/modules/gallery/widgets/gallery.php:741
+#: elementor-pro/modules/gallery/widgets/gallery.php:982
 msgid "Hover Animation"
 msgstr "Animation au survol"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1353
-#: elementor-pro/modules/gallery/widgets/gallery.php:1041
+#: elementor-pro/modules/gallery/widgets/gallery.php:1060
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:445
 msgid "Sequenced Animation"
 msgstr "Animation séquencée"
@@ -4600,16 +4611,16 @@ msgstr "Animation séquencée"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1427
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:221
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:378
-#: elementor-pro/modules/gallery/widgets/gallery.php:693
+#: elementor-pro/modules/gallery/widgets/gallery.php:712
 #: elementor-pro/modules/slides/widgets/slides.php:192
 msgid "Blend Mode"
 msgstr "Mode de fusion"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:63
+#: elementor-pro/modules/gallery/widgets/gallery.php:71
 msgid "Multiple"
 msgstr "Multiple"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:311
+#: elementor-pro/modules/motion-fx/controls-group.php:328
 msgid "Blur"
 msgstr "Flou"
 
@@ -5035,11 +5046,11 @@ msgstr "Flèche cerclée négative"
 msgid "Borders"
 msgstr "Bordures"
 
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:322
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:342
 msgid "Choose Icon"
 msgstr "Choisir une icône"
 
-#: elementor-pro/modules/carousel/widgets/base.php:86
+#: elementor-pro/modules/carousel/widgets/base.php:87
 msgid "Slides to Scroll"
 msgstr "Nombre de diapositives à faire glisser"
 
@@ -5054,7 +5065,7 @@ msgstr "Fil d’Ariane"
 msgid "Post Navigation"
 msgstr "Navigation de publication"
 
-#: elementor-pro/modules/carousel/widgets/base.php:516
+#: elementor-pro/modules/carousel/widgets/base.php:528
 #: elementor-pro/modules/forms/widgets/form.php:657
 #: elementor-pro/modules/forms/widgets/form.php:661
 #: elementor-pro/modules/forms/widgets/form.php:662
@@ -5064,7 +5075,7 @@ msgstr "Navigation de publication"
 msgid "Previous"
 msgstr "Précédent"
 
-#: elementor-pro/modules/carousel/widgets/base.php:520
+#: elementor-pro/modules/carousel/widgets/base.php:532
 #: elementor-pro/modules/forms/widgets/form.php:645
 #: elementor-pro/modules/forms/widgets/form.php:649
 #: elementor-pro/modules/forms/widgets/form.php:650
@@ -5137,15 +5148,15 @@ msgstr "Incompatibilité de licence"
 msgid "Your License Will Expire in %s."
 msgstr "Votre licence expirera dans %s."
 
-#: elementor-pro/license/api.php:307
+#: elementor-pro/license/api.php:309
 msgid "<strong>You have no more activations left.</strong> <a href=\"%s\" target=\"_blank\">Please upgrade to a more advanced license</a> (you'll only need to cover the difference)."
 msgstr "<strong>Vous n’avez plus d’activation.</strong> <a href=\"%s\" target=\"_blank\">Veuillez mettre à niveau vers une licence plus avancée</a> (vous aurez à couvrir uniquement la différence)."
 
-#: elementor-pro/license/admin.php:35 elementor-pro/license/api.php:310
+#: elementor-pro/license/admin.php:35 elementor-pro/license/api.php:312
 msgid "<strong>Your license key has been cancelled</strong> (most likely due to a refund request). Please consider acquiring a new license."
 msgstr "<strong>Votre clé de licence a été annulée</strong> (probablement en raison d’une demande de remboursement). Veuillez envisager d’acquérir une nouvelle licence."
 
-#: elementor-pro/license/api.php:321
+#: elementor-pro/license/api.php:323
 msgid "An error occurred. Please check your internet connection and try again. If the problem persists, contact our support."
 msgstr "Une erreur est survenue. Veuillez vérifier votre connexion internet et réessayer. Si le problème persiste, contactez notre support."
 
@@ -5178,7 +5189,7 @@ msgid "Invalid"
 msgstr "Non valide"
 
 #: elementor-pro/license/admin.php:201 elementor-pro/license/admin.php:483
-#: elementor-pro/license/api.php:308
+#: elementor-pro/license/api.php:310
 msgid "<strong>Your License Has Expired.</strong> <a href=\"%s\" target=\"_blank\">Renew your license today</a> to keep getting feature updates, premium support and unlimited access to the template library."
 msgstr "<strong>Votre licence a expiré.</strong> <a href=\"%s\" target=\"_blank\">Renouvelez votre licence aujourd’hui</a> pour continuer à recevoir les mises à jour de fonctionnalités, une assistance premium et un accès illimité à la bibliothèque de modèles."
 
@@ -5224,9 +5235,9 @@ msgstr "L'abonné existe déjà."
 
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:450
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:541
-#: elementor-pro/modules/gallery/widgets/gallery.php:429
-#: elementor-pro/modules/gallery/widgets/gallery.php:627
-#: elementor-pro/modules/gallery/widgets/gallery.php:653
+#: elementor-pro/modules/gallery/widgets/gallery.php:448
+#: elementor-pro/modules/gallery/widgets/gallery.php:646
+#: elementor-pro/modules/gallery/widgets/gallery.php:672
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:434
 #: elementor-pro/modules/popup/document.php:329
 #: elementor-pro/modules/popup/document.php:478
@@ -5236,8 +5247,8 @@ msgstr "Superposition"
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:468
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:473
 #: elementor-pro/modules/dynamic-tags/tags/featured-image-data.php:89
-#: elementor-pro/modules/gallery/widgets/gallery.php:450
-#: elementor-pro/modules/gallery/widgets/gallery.php:467
+#: elementor-pro/modules/gallery/widgets/gallery.php:469
+#: elementor-pro/modules/gallery/widgets/gallery.php:486
 #: elementor-pro/modules/lottie/widgets/lottie.php:123
 #: elementor-pro/modules/lottie/widgets/lottie.php:129
 #: elementor-pro/modules/lottie/widgets/lottie.php:694
@@ -5291,36 +5302,36 @@ msgstr "Image à droite"
 msgid "CEO"
 msgstr "CEO"
 
-#: elementor-pro/modules/carousel/widgets/base.php:55
+#: elementor-pro/modules/carousel/widgets/base.php:56
 msgid "Effect"
 msgstr "Effet"
 
-#: elementor-pro/modules/carousel/widgets/base.php:60
+#: elementor-pro/modules/carousel/widgets/base.php:61
 msgid "Cube"
 msgstr "Cube"
 
-#: elementor-pro/modules/carousel/widgets/base.php:73
+#: elementor-pro/modules/carousel/widgets/base.php:74
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:692
 msgid "Slides Per View"
 msgstr "Diapositives par vue"
 
-#: elementor-pro/modules/carousel/widgets/base.php:173
+#: elementor-pro/modules/carousel/widgets/base.php:174
 msgid "Fraction"
 msgstr "Fraction"
 
-#: elementor-pro/modules/carousel/widgets/base.php:174
+#: elementor-pro/modules/carousel/widgets/base.php:175
 msgid "Progress"
 msgstr "Progrès"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1481
-#: elementor-pro/modules/carousel/widgets/base.php:185
+#: elementor-pro/modules/carousel/widgets/base.php:186
 #: elementor-pro/modules/lottie/widgets/lottie.php:668
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:219
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:388
 msgid "Transition Duration"
 msgstr "Durée de transition"
 
-#: elementor-pro/modules/carousel/widgets/base.php:246
+#: elementor-pro/modules/carousel/widgets/base.php:247
 #: elementor-pro/modules/slides/widgets/slides.php:560
 msgid "Pause on Interaction"
 msgstr "Pause lors des interactions"
@@ -5347,15 +5358,15 @@ msgid "Video Width"
 msgstr "Largeur de la vidéo"
 
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:170
-#: elementor-pro/modules/gallery/widgets/gallery.php:238
+#: elementor-pro/modules/gallery/widgets/gallery.php:257
 #: elementor-pro/modules/lottie/widgets/lottie.php:60
 msgid "Media File"
 msgstr "Fichier média"
 
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:171
-#: elementor-pro/modules/gallery/widgets/gallery.php:239
+#: elementor-pro/modules/gallery/widgets/gallery.php:258
 #: elementor-pro/modules/lottie/widgets/lottie.php:175
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:291
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:311
 msgid "Custom URL"
 msgstr "URL personnalisée"
 
@@ -5400,7 +5411,7 @@ msgctxt "Text Shadow Control"
 msgid "Shadow"
 msgstr "Ombre"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:364
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:375
 msgid "Hamburger"
 msgstr "Hamburger"
 
@@ -5408,24 +5419,24 @@ msgstr "Hamburger"
 msgid "Mobile Dropdown"
 msgstr "Menu déroulant mobile"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:307
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:324
 msgid "Breakpoint"
 msgstr "Seuil"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:327
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:338
 msgid "Full Width"
 msgstr "Pleine largeur"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:329
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:340
 msgid "Stretch the dropdown of the menu to full width."
 msgstr "Passer le sous menu en pleine largeur."
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:359
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:939
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:370
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:950
 msgid "Toggle Button"
 msgstr "Bouton de bascule"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:687
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:698
 msgid "On desktop, this will affect the submenu. On mobile, this will affect the entire menu."
 msgstr "Sur ordinateur cela affectera le sous menu. Su mobile, cela affectera tout le menu."
 
@@ -5451,10 +5462,10 @@ msgid "Clean"
 msgstr "Propre"
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:117
-#: elementor-pro/modules/carousel/widgets/reviews.php:506
-#: elementor-pro/modules/carousel/widgets/reviews.php:629
-#: elementor-pro/modules/carousel/widgets/reviews.php:637
-#: elementor-pro/modules/carousel/widgets/reviews.php:645
+#: elementor-pro/modules/carousel/widgets/reviews.php:523
+#: elementor-pro/modules/carousel/widgets/reviews.php:646
+#: elementor-pro/modules/carousel/widgets/reviews.php:654
+#: elementor-pro/modules/carousel/widgets/reviews.php:662
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:529
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:555
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:563
@@ -5474,7 +5485,7 @@ msgid "Tweet"
 msgstr "Tweet"
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:393
-#: elementor-pro/modules/carousel/widgets/reviews.php:313
+#: elementor-pro/modules/carousel/widgets/reviews.php:330
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:439
 msgid "Official"
 msgstr "Officiel"
@@ -5809,7 +5820,7 @@ msgid "Nav Menu"
 msgstr "Menu de navigation"
 
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:84
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1166
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1187
 msgid "Menu"
 msgstr "Menu"
 
@@ -5830,7 +5841,7 @@ msgid "Vertical"
 msgstr "Vertical"
 
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:114
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:679
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:690
 msgid "Dropdown"
 msgstr "Liste déroulante"
 
@@ -5839,9 +5850,9 @@ msgstr "Liste déroulante"
 msgid "Toggle"
 msgstr "Permuter"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:1067
+#: elementor-pro/modules/gallery/widgets/gallery.php:1086
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:123
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:342
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:353
 msgid "Align"
 msgstr "Aligner"
 
@@ -5849,12 +5860,12 @@ msgstr "Aligner"
 msgid "Stretch"
 msgstr "Etirer"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:324
+#: elementor-pro/modules/gallery/widgets/gallery.php:343
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:153
 msgid "Pointer"
 msgstr "Pointeur"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:329
+#: elementor-pro/modules/gallery/widgets/gallery.php:348
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:158
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:563
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:596
@@ -5862,12 +5873,12 @@ msgstr "Pointeur"
 msgid "Underline"
 msgstr "Souligner"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:330
+#: elementor-pro/modules/gallery/widgets/gallery.php:349
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:159
 msgid "Overline"
 msgstr "Surligner"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:331
+#: elementor-pro/modules/gallery/widgets/gallery.php:350
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:160
 msgid "Double Line"
 msgstr "Ligne double"
@@ -5884,13 +5895,12 @@ msgstr "Chevron"
 msgid "Angle"
 msgstr "Angle"
 
-#: elementor-pro/modules/motion-fx/controls-group.php:130
 #: elementor-pro/modules/popup/display-settings/timing.php:176
 #: elementor-pro/modules/sticky/module.php:74
 msgid "Mobile"
 msgstr "Mobile"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:346
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:357
 msgid "Aside"
 msgstr "Sur le coté"
 
@@ -5898,35 +5908,35 @@ msgstr "Sur le coté"
 msgid "Max Width"
 msgstr "Largeur maxi"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:378
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:389
 msgid "Toggle Align"
 msgstr "Permuter l’alignement"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:415
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:426
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:1174
-#: elementor-pro/modules/gallery/widgets/gallery.php:1213
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:509
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:551
+#: elementor-pro/modules/gallery/widgets/gallery.php:1193
+#: elementor-pro/modules/gallery/widgets/gallery.php:1232
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:520
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:562
 msgid "Pointer Color"
 msgstr "Couleur du pointeur"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:1235
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:581
+#: elementor-pro/modules/gallery/widgets/gallery.php:1254
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:592
 msgid "Pointer Width"
 msgstr "Largeur de pointeur"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:608
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:854
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:619
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:865
 #: elementor-pro/modules/posts/skins/skin-cards.php:410
 msgid "Horizontal Padding"
 msgstr "Marges internes horizontales"
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:617
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:624
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:867
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:635
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:878
 #: elementor-pro/modules/posts/skins/skin-cards.php:430
 msgid "Vertical Padding"
 msgstr "Marges internes verticales"
@@ -5964,7 +5974,7 @@ msgstr "Exclure"
 #: elementor-pro/modules/query-control/module.php:79
 #: elementor-pro/modules/theme-elements/widgets/post-comments.php:68
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:82
-#: elementor-pro/modules/woocommerce/widgets/products.php:78
+#: elementor-pro/modules/woocommerce/widgets/products.php:79
 msgid "Current Post"
 msgstr "Publication actuelle"
 
@@ -5985,7 +5995,7 @@ msgstr "Badge"
 
 #: elementor-pro/modules/posts/skins/skin-cards.php:259
 #: elementor-pro/modules/posts/skins/skin-cards.php:324
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:188
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:208
 msgid "Avatar"
 msgstr "Avatar"
 
@@ -6049,7 +6059,7 @@ msgstr "Propulsé par"
 msgid "Please make sure the ID is unique and not used elsewhere in this form. This field allows <code>A-z 0-9</code> & underscore chars without spaces."
 msgstr "Veuillez vous assurer que cet ID est unique et n’est utilisé autre part que dans ce formulaire. Ce champ accepte les caractères <code>A-z 0-9</code> et tirets bas sans espace."
 
-#: elementor-pro/modules/carousel/widgets/base.php:314
+#: elementor-pro/modules/carousel/widgets/base.php:326
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:408
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:423
 msgid "Border Size"
@@ -6151,7 +6161,7 @@ msgstr ""
 "Ajouter une action après l’envoi du formulaire par un visiteur (envoyer un e-mail de notification par ex.)\n"
 "Choisir une action ajoutera ses réglages ci-dessous."
 
-#: elementor-pro/modules/carousel/widgets/base.php:146
+#: elementor-pro/modules/carousel/widgets/base.php:147
 #: elementor-pro/modules/forms/widgets/form.php:861
 #: elementor-pro/modules/forms/widgets/login.php:137
 #: elementor-pro/modules/payments/classes/payment-button.php:301
@@ -6314,7 +6324,7 @@ msgctxt "Background Control"
 msgid "Size"
 msgstr "Taille"
 
-#: elementor-pro/modules/carousel/widgets/base.php:208
+#: elementor-pro/modules/carousel/widgets/base.php:209
 #: elementor-pro/modules/slides/widgets/slides.php:574
 msgid "Autoplay Speed"
 msgstr "Vitesse de lecture automatique"
@@ -6377,7 +6387,7 @@ msgstr "Empilé"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:201
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:121
-#: elementor-pro/modules/gallery/widgets/gallery.php:332
+#: elementor-pro/modules/gallery/widgets/gallery.php:351
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:161
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:167
 msgid "Framed"
@@ -6418,7 +6428,7 @@ msgid "Whole Box"
 msgstr "Toute la boîte"
 
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:413
-#: elementor-pro/modules/gallery/widgets/gallery.php:53
+#: elementor-pro/modules/gallery/widgets/gallery.php:61
 #: elementor-pro/modules/lottie/widgets/lottie.php:206
 #: elementor-pro/modules/theme-builder/views/panel-template.php:74
 msgid "Settings"
@@ -6476,7 +6486,7 @@ msgstr "Marge interne de l’icône"
 msgid "Icon Rotate"
 msgstr "Rotation de l'Icone"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:156
+#: elementor-pro/modules/gallery/widgets/gallery.php:164
 #: elementor-pro/modules/posts/skins/skin-base.php:76
 #: elementor-pro/modules/posts/widgets/portfolio.php:121
 msgid "Masonry"
@@ -6488,14 +6498,14 @@ msgstr "Maçonnerie"
 msgid "Posts Per Page"
 msgstr "Publications par page"
 
-#: elementor-pro/modules/carousel/widgets/base.php:167
-#: elementor-pro/modules/carousel/widgets/base.php:415
+#: elementor-pro/modules/carousel/widgets/base.php:168
+#: elementor-pro/modules/carousel/widgets/base.php:427
 #: elementor-pro/modules/posts/skins/skin-base.php:1016
 #: elementor-pro/modules/posts/widgets/posts-base.php:43
 #: elementor-pro/modules/posts/widgets/posts-base.php:50
 #: elementor-pro/modules/posts/widgets/posts-base.php:150
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:699
-#: elementor-pro/modules/woocommerce/widgets/products.php:158
+#: elementor-pro/modules/woocommerce/widgets/products.php:135
 msgid "Pagination"
 msgstr "Pagination"
 
@@ -6573,7 +6583,7 @@ msgstr "Dehors"
 #: elementor-pro/modules/posts/skins/skin-base.php:369
 #: elementor-pro/modules/posts/widgets/portfolio.php:280
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:291
-#: elementor-pro/modules/woocommerce/widgets/categories.php:201
+#: elementor-pro/modules/woocommerce/widgets/categories.php:191
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:49
 msgid "Columns Gap"
 msgstr "Écart de colonnes"
@@ -6586,7 +6596,7 @@ msgstr "Écart de colonnes"
 #: elementor-pro/modules/pricing/widgets/price-list.php:365
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:307
 #: elementor-pro/modules/theme-builder/skins/post-comments-skin-classic.php:88
-#: elementor-pro/modules/woocommerce/widgets/categories.php:221
+#: elementor-pro/modules/woocommerce/widgets/categories.php:211
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:75
 msgid "Rows Gap"
 msgstr "Écart de lignes"
@@ -6617,11 +6627,11 @@ msgstr "Méta"
 msgid "Price Table"
 msgstr "Table de prix"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:53
+#: elementor-pro/modules/carousel/widgets/reviews.php:70
 #: elementor-pro/modules/pricing/widgets/price-table.php:42
 #: elementor-pro/modules/pricing/widgets/price-table.php:374
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:418
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:450
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:453
 #: elementor-pro/modules/theme-builder/documents/header.php:23
 msgid "Header"
 msgstr "En-tête"
@@ -6681,7 +6691,7 @@ msgstr "Article de la liste #3"
 
 #: elementor-pro/modules/pricing/widgets/price-table.php:270
 #: elementor-pro/modules/pricing/widgets/price-table.php:1027
-#: elementor-pro/modules/theme-builder/classes/locations-manager.php:456
+#: elementor-pro/modules/theme-builder/classes/locations-manager.php:459
 #: elementor-pro/modules/theme-builder/documents/footer.php:23
 msgid "Footer"
 msgstr "Pied de page"
@@ -6716,7 +6726,7 @@ msgstr "Partie décimale"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:65
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:345
-#: elementor-pro/modules/carousel/widgets/base.php:426
+#: elementor-pro/modules/carousel/widgets/base.php:438
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:338
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:489
 #: elementor-pro/modules/popup/document.php:258
@@ -6733,13 +6743,13 @@ msgstr "Position"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:545
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:589
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:473
-#: elementor-pro/modules/carousel/widgets/base.php:121
+#: elementor-pro/modules/carousel/widgets/base.php:122
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:905
 #: elementor-pro/modules/lottie/widgets/lottie.php:521
 #: elementor-pro/modules/popup/document.php:161
 #: elementor-pro/modules/pricing/widgets/price-table.php:897
 #: elementor-pro/modules/pricing/widgets/price-table.php:987
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:489
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:509
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:575
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1241
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:422
@@ -6748,9 +6758,9 @@ msgstr "Position"
 msgid "Width"
 msgstr "Largeur"
 
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:883
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:894
 #: elementor-pro/modules/pricing/widgets/price-table.php:914
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:429
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:449
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:423
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:553
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:88
@@ -6762,11 +6772,11 @@ msgstr "Séparateur"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:557
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:601
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:805
-#: elementor-pro/modules/carousel/widgets/reviews.php:73
-#: elementor-pro/modules/carousel/widgets/reviews.php:270
+#: elementor-pro/modules/carousel/widgets/reviews.php:90
+#: elementor-pro/modules/carousel/widgets/reviews.php:287
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:226
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:385
-#: elementor-pro/modules/gallery/widgets/gallery.php:1268
+#: elementor-pro/modules/gallery/widgets/gallery.php:1287
 #: elementor-pro/modules/pricing/widgets/price-table.php:1001
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:344
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:481
@@ -6782,7 +6792,7 @@ msgid "Margin"
 msgstr "Marges externes"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1195
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:920
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:931
 #: elementor-pro/modules/pricing/widgets/price-table.php:1333
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:389
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:1008
@@ -6813,7 +6823,7 @@ msgstr "Ajouter au panier"
 msgid "Please set a valid product"
 msgstr "Veuillez choisir un produit valide"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:64
+#: elementor-pro/modules/woocommerce/widgets/categories.php:54
 msgid "Categories Count"
 msgstr "Nombre de catégories"
 
@@ -6824,47 +6834,47 @@ msgstr "Nombre de catégories"
 #: elementor-pro/modules/theme-elements/widgets/post-comments.php:65
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:204
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:217
-#: elementor-pro/modules/woocommerce/widgets/categories.php:83
+#: elementor-pro/modules/woocommerce/widgets/categories.php:73
 msgid "Source"
 msgstr "Source"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:86
+#: elementor-pro/modules/woocommerce/widgets/categories.php:76
 msgid "Show All"
 msgstr "Tout afficher"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:88
+#: elementor-pro/modules/woocommerce/widgets/categories.php:78
 msgid "By Parent"
 msgstr "Par parent"
 
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:338
 #: elementor-pro/modules/woocommerce/tags/product-terms.php:25
-#: elementor-pro/modules/woocommerce/widgets/categories.php:105
+#: elementor-pro/modules/woocommerce/widgets/categories.php:95
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:300
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:380
 msgid "Categories"
 msgstr "Catégories"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:117
+#: elementor-pro/modules/woocommerce/widgets/categories.php:107
 msgid "Only Top Level"
 msgstr "Uniquement de niveau supérieur"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:121
+#: elementor-pro/modules/woocommerce/widgets/categories.php:111
 msgid "Parent"
 msgstr "Parent"
 
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:285
-#: elementor-pro/modules/woocommerce/widgets/categories.php:134
+#: elementor-pro/modules/woocommerce/widgets/categories.php:124
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:80
 msgid "Hide Empty"
 msgstr "Masquer les vides"
 
-#: elementor-pro/modules/woocommerce/widgets/categories.php:150
+#: elementor-pro/modules/woocommerce/widgets/categories.php:140
 msgid "Slug"
 msgstr "Slug"
 
 #: elementor-pro/modules/popup/display-settings/timing.php:74
-#: elementor-pro/modules/woocommerce/widgets/categories.php:152
-#: elementor-pro/modules/woocommerce/widgets/categories.php:342
+#: elementor-pro/modules/woocommerce/widgets/categories.php:142
+#: elementor-pro/modules/woocommerce/widgets/categories.php:332
 msgid "Count"
 msgstr "Nombre"
 
@@ -6903,7 +6913,7 @@ msgstr "Votre panier est actuellement vide."
 msgid "Woo - Products-"
 msgstr "Woo - Produits-"
 
-#: elementor-pro/modules/woocommerce/widgets/products.php:61
+#: elementor-pro/modules/woocommerce/widgets/products.php:62
 msgctxt "Posts Query Control"
 msgid "Manual Selection"
 msgstr "Sélection manuelle"
@@ -6927,14 +6937,14 @@ msgid "Filter By"
 msgstr "Filtrer par"
 
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:118
-#: elementor-pro/modules/woocommerce/widgets/products.php:60
+#: elementor-pro/modules/woocommerce/widgets/products.php:61
 msgid "Featured"
 msgstr "Mis en avant"
 
 #: elementor-pro/modules/pricing/widgets/price-table.php:163
 #: elementor-pro/modules/woocommerce/tags/product-price.php:26
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:119
-#: elementor-pro/modules/woocommerce/widgets/products.php:59
+#: elementor-pro/modules/woocommerce/widgets/products.php:60
 msgid "Sale"
 msgstr "Ventes"
 
@@ -6949,8 +6959,8 @@ msgstr "Ventes"
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:318
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:396
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:448
-#: elementor-pro/modules/motion-fx/controls-group.php:43
-#: elementor-pro/modules/motion-fx/controls-group.php:158
+#: elementor-pro/modules/motion-fx/controls-group.php:44
+#: elementor-pro/modules/motion-fx/controls-group.php:175
 #: elementor-pro/modules/payments/classes/payment-button.php:229
 #: elementor-pro/modules/payments/classes/payment-button.php:327
 #: elementor-pro/modules/posts/skins/skin-base.php:79
@@ -6958,16 +6968,16 @@ msgstr "Ventes"
 #: elementor-pro/modules/posts/widgets/portfolio.php:166
 #: elementor-pro/modules/posts/widgets/portfolio.php:230
 #: elementor-pro/modules/pricing/widgets/price-table.php:165
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:432
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:452
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:91
 msgid "On"
 msgstr "Actif"
 
 #: elementor-pro/modules/posts/widgets/portfolio.php:198
 #: elementor-pro/modules/posts/widgets/posts.php:67
-#: elementor-pro/modules/woocommerce/widgets/categories.php:75
+#: elementor-pro/modules/woocommerce/widgets/categories.php:65
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:89
-#: elementor-pro/modules/woocommerce/widgets/products.php:42
+#: elementor-pro/modules/woocommerce/widgets/products.php:43
 msgid "Query"
 msgstr "Requête"
 
@@ -6977,7 +6987,7 @@ msgstr "Elementor Pro ne fonctionne pas car vous devez activer l’extension Ele
 
 #: elementor-pro/modules/forms/widgets/form.php:386
 #: elementor-pro/modules/popup/document.php:678
-#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:66
+#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:70
 #: elementor-pro/modules/woocommerce/widgets/archive-products-deprecated.php:94
 #: elementor-pro/modules/woocommerce/widgets/archive-products.php:121
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:105
@@ -6988,14 +6998,14 @@ msgstr "Avancé"
 msgid "Activate Elementor Now"
 msgstr "Activer Elementor maintenant"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:127
+#: elementor-pro/modules/gallery/widgets/gallery.php:135
 #: elementor-pro/modules/query-control/controls/group-control-query.php:344
 #: elementor-pro/modules/social/widgets/facebook-comments.php:56
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:238
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:256
-#: elementor-pro/modules/woocommerce/widgets/categories.php:145
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:68
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:54
+#: elementor-pro/modules/woocommerce/widgets/categories.php:135
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:58
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:45
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:127
 msgid "Order By"
 msgstr "Ordonner par"
@@ -7006,10 +7016,10 @@ msgstr "Elementor Pro ne fonctionne pas car il nécessite l’extension Elemento
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:350
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:244
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:78
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:64
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:68
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:55
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:137
-#: elementor-pro/modules/woocommerce/widgets/products.php:73
+#: elementor-pro/modules/woocommerce/widgets/products.php:74
 msgid "Menu Order"
 msgstr "Ordre du menu"
 
@@ -7017,13 +7027,13 @@ msgstr "Ordre du menu"
 msgid "Install Elementor Now"
 msgstr "Installez Elementor maintenant"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:130
+#: elementor-pro/modules/gallery/widgets/gallery.php:138
 #: elementor-pro/modules/query-control/controls/group-control-query.php:351
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:245
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:77
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:63
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:67
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:54
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:136
-#: elementor-pro/modules/woocommerce/widgets/products.php:72
+#: elementor-pro/modules/woocommerce/widgets/products.php:73
 msgid "Random"
 msgstr "Aléatoire"
 
@@ -7033,9 +7043,9 @@ msgstr "Elementor Pro ne fonctionne pas car vous utilisez une ancienne version d
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:359
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:272
-#: elementor-pro/modules/woocommerce/widgets/categories.php:160
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:86
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:72
+#: elementor-pro/modules/woocommerce/widgets/categories.php:150
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:76
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:63
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:145
 msgid "Order"
 msgstr "Ordre"
@@ -7046,9 +7056,9 @@ msgstr "Mettre Elementor à jour maintenant"
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:363
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:276
-#: elementor-pro/modules/woocommerce/widgets/categories.php:164
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:90
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:76
+#: elementor-pro/modules/woocommerce/widgets/categories.php:154
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:80
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:67
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:149
 msgid "ASC"
 msgstr "Ascendant"
@@ -7059,9 +7069,9 @@ msgstr "Prière de saisir votre clé de license."
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:364
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:277
-#: elementor-pro/modules/woocommerce/widgets/categories.php:165
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:91
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:77
+#: elementor-pro/modules/woocommerce/widgets/categories.php:155
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:81
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:68
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:150
 msgid "DESC"
 msgstr "Descendant"
@@ -7086,8 +7096,8 @@ msgstr "Elementor Pro"
 msgid "Offset"
 msgstr "Décalage"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:292
-#: elementor-pro/modules/gallery/widgets/gallery.php:1056
+#: elementor-pro/modules/gallery/widgets/gallery.php:311
+#: elementor-pro/modules/gallery/widgets/gallery.php:1075
 #: elementor-pro/modules/posts/widgets/portfolio.php:219
 #: elementor-pro/modules/posts/widgets/portfolio.php:382
 msgid "Filter Bar"
@@ -7096,14 +7106,14 @@ msgstr "Barre de filtrage"
 #: elementor-pro/modules/dynamic-tags/tags/internal-url.php:64
 #: elementor-pro/modules/dynamic-tags/tags/post-terms.php:61
 #: elementor-pro/modules/posts/widgets/portfolio.php:237
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:163
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:183
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:173
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:196
 #: elementor-pro/modules/woocommerce/tags/product-terms.php:47
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: elementor-pro/license/api.php:309
+#: elementor-pro/license/api.php:311
 msgid "Your license is missing. Please check your key again."
 msgstr "Votre licence est manquante. Veuillez vérifier à nouveau votre clé."
 
@@ -7119,8 +7129,8 @@ msgstr "Écart d'éléments"
 msgid "Item Overlay"
 msgstr "Superposition de l'élément"
 
-#: elementor-pro/license/api.php:60 elementor-pro/license/api.php:262
-#: elementor-pro/license/api.php:299
+#: elementor-pro/license/api.php:62 elementor-pro/license/api.php:264
+#: elementor-pro/license/api.php:301
 msgid "An error occurred, please try again"
 msgstr "Une erreur est survenue, veuillez réessayer"
 
@@ -7138,7 +7148,7 @@ msgid "License Settings"
 msgstr "Réglages de licence"
 
 #: elementor-pro/modules/forms/submissions/data/controller.php:101
-#: elementor-pro/modules/gallery/widgets/gallery.php:314
+#: elementor-pro/modules/gallery/widgets/gallery.php:333
 #: elementor-pro/modules/posts/widgets/portfolio.php:580
 #: elementor-pro/modules/query-control/controls/group-control-query.php:290
 #: elementor-pro/modules/query-control/module.php:981
@@ -7174,7 +7184,7 @@ msgstr "Activer"
 #: elementor-pro/modules/pricing/widgets/price-list.php:38
 #: elementor-pro/modules/pricing/widgets/price-list.php:139
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:489
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:377
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:397
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:351
 msgid "List"
 msgstr "Liste"
@@ -7192,11 +7202,11 @@ msgstr "Désactiver"
 #: elementor-pro/modules/pricing/widgets/price-table.php:139
 #: elementor-pro/modules/woocommerce/wc-templates/cart/mini-cart.php:47
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:36
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:74
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:60
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:64
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:51
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:296
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:133
-#: elementor-pro/modules/woocommerce/widgets/products.php:69
+#: elementor-pro/modules/woocommerce/widgets/products.php:70
 #: elementor-pro/modules/woocommerce/widgets/single-elements.php:48
 msgid "Price"
 msgstr "Prix"
@@ -7226,16 +7236,16 @@ msgstr "Expiré"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1133
 #: elementor-pro/modules/forms/actions/discord.php:72
 #: elementor-pro/modules/forms/actions/slack.php:82
-#: elementor-pro/modules/gallery/widgets/gallery.php:452
-#: elementor-pro/modules/gallery/widgets/gallery.php:461
-#: elementor-pro/modules/gallery/widgets/gallery.php:469
-#: elementor-pro/modules/gallery/widgets/gallery.php:923
+#: elementor-pro/modules/gallery/widgets/gallery.php:471
+#: elementor-pro/modules/gallery/widgets/gallery.php:480
+#: elementor-pro/modules/gallery/widgets/gallery.php:488
+#: elementor-pro/modules/gallery/widgets/gallery.php:942
 #: elementor-pro/modules/pricing/widgets/price-list.php:72
 #: elementor-pro/modules/pricing/widgets/price-list.php:180
 #: elementor-pro/modules/pricing/widgets/price-table.php:61
 #: elementor-pro/modules/slides/widgets/slides.php:240
 #: elementor-pro/modules/slides/widgets/slides.php:831
-#: elementor-pro/modules/woocommerce/widgets/categories.php:151
+#: elementor-pro/modules/woocommerce/widgets/categories.php:141
 msgid "Description"
 msgstr "Description"
 
@@ -7243,11 +7253,11 @@ msgstr "Description"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:215
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:295
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:166
-#: elementor-pro/modules/carousel/widgets/reviews.php:603
+#: elementor-pro/modules/carousel/widgets/reviews.php:620
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:61
 #: elementor-pro/modules/dynamic-tags/tags/post-terms.php:80
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:310
-#: elementor-pro/modules/gallery/widgets/gallery.php:233
+#: elementor-pro/modules/gallery/widgets/gallery.php:252
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:89
 #: elementor-pro/modules/lottie/widgets/lottie.php:169
 #: elementor-pro/modules/lottie/widgets/lottie.php:184
@@ -7260,7 +7270,7 @@ msgstr "Description"
 #: elementor-pro/modules/social/widgets/facebook-page.php:43
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:150
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:200
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:279
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:299
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:86
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:243
 msgid "Link"
@@ -7268,9 +7278,9 @@ msgstr "Lien"
 
 #: elementor-pro/license/admin.php:190 elementor-pro/license/admin.php:478
 #: elementor-pro/modules/forms/widgets/form.php:1726
-#: elementor-pro/modules/gallery/widgets/gallery.php:1192
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:532
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:771
+#: elementor-pro/modules/gallery/widgets/gallery.php:1211
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:543
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:782
 #: elementor-pro/modules/posts/widgets/posts-base.php:223
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:609
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:967
@@ -7295,7 +7305,7 @@ msgstr "Troisième élément de la liste"
 msgid "Title & Price"
 msgstr "Titre & Prix"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:91
+#: elementor-pro/modules/carousel/widgets/reviews.php:108
 #: elementor-pro/modules/dynamic-tags/tags/post-terms.php:71
 #: elementor-pro/modules/pricing/widgets/price-list.php:214
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:904
@@ -7304,10 +7314,10 @@ msgstr "Titre & Prix"
 msgid "Separator"
 msgstr "Séparateur"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:385
+#: elementor-pro/modules/carousel/widgets/reviews.php:402
 #: elementor-pro/modules/pricing/widgets/price-list.php:226
 #: elementor-pro/modules/pricing/widgets/price-table.php:927
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:446
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:466
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:49
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:52
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:55
@@ -7316,14 +7326,14 @@ msgstr "Séparateur"
 msgid "Solid"
 msgstr "Solide"
 
-#: elementor-pro/license/api.php:55 elementor-pro/license/api.php:257
-#: elementor-pro/license/api.php:294
+#: elementor-pro/license/api.php:57 elementor-pro/license/api.php:259
+#: elementor-pro/license/api.php:296
 msgid "HTTP Error"
 msgstr "Erreur HTTP"
 
 #: elementor-pro/modules/pricing/widgets/price-list.php:227
 #: elementor-pro/modules/pricing/widgets/price-table.php:929
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:448
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:468
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:567
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:108
 msgid "Dotted"
@@ -7336,7 +7346,7 @@ msgstr "Compte à rebours"
 
 #: elementor-pro/modules/pricing/widgets/price-list.php:228
 #: elementor-pro/modules/pricing/widgets/price-table.php:930
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:449
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:469
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:568
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:109
 msgid "Dashed"
@@ -7349,7 +7359,7 @@ msgstr "Date d'échéance"
 
 #: elementor-pro/modules/pricing/widgets/price-list.php:229
 #: elementor-pro/modules/pricing/widgets/price-table.php:928
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:447
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:467
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:566
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:107
 msgid "Double"
@@ -7363,7 +7373,7 @@ msgstr "Date ajustée selon votre fuseau horaire: %s."
 #: elementor-pro/modules/assets-manager/asset-types/fonts/custom-fonts.php:64
 #: elementor-pro/modules/pricing/widgets/price-list.php:243
 #: elementor-pro/modules/pricing/widgets/price-table.php:963
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:465
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:485
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:933
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1133
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:591
@@ -7387,7 +7397,7 @@ msgstr "Bloc"
 #: elementor-pro/modules/countdown/widgets/countdown.php:103
 #: elementor-pro/modules/forms/widgets/form.php:357
 #: elementor-pro/modules/forms/widgets/form.php:552
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:57
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:77
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:639
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:58
 msgid "Inline"
@@ -7406,8 +7416,8 @@ msgstr "Jours"
 msgid "Vertical Align"
 msgstr "Alignement vertical"
 
-#: elementor-pro/modules/carousel/widgets/base.php:157
-#: elementor-pro/modules/carousel/widgets/reviews.php:94
+#: elementor-pro/modules/carousel/widgets/base.php:158
+#: elementor-pro/modules/carousel/widgets/reviews.php:111
 #: elementor-pro/modules/countdown/widgets/countdown.php:115
 #: elementor-pro/modules/countdown/widgets/countdown.php:126
 #: elementor-pro/modules/countdown/widgets/countdown.php:137
@@ -7455,8 +7465,8 @@ msgstr "Alignement vertical"
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:438
 #: elementor-pro/modules/woocommerce/widgets/product-additional-information.php:37
 #: elementor-pro/modules/woocommerce/widgets/product-images.php:53
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:119
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:105
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:109
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:96
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:724
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:883
 msgid "Show"
@@ -7465,18 +7475,18 @@ msgstr "Afficher"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:436
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:578
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1043
-#: elementor-pro/modules/gallery/widgets/gallery.php:835
+#: elementor-pro/modules/gallery/widgets/gallery.php:854
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:286
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:354
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:507
 #: elementor-pro/modules/lottie/widgets/lottie.php:255
-#: elementor-pro/modules/motion-fx/controls-group.php:110
-#: elementor-pro/modules/motion-fx/controls-group.php:212
-#: elementor-pro/modules/motion-fx/controls-group.php:255
-#: elementor-pro/modules/motion-fx/controls-group.php:302
-#: elementor-pro/modules/motion-fx/controls-group.php:348
-#: elementor-pro/modules/motion-fx/controls-group.php:391
-#: elementor-pro/modules/motion-fx/controls-group.php:437
+#: elementor-pro/modules/motion-fx/controls-group.php:111
+#: elementor-pro/modules/motion-fx/controls-group.php:229
+#: elementor-pro/modules/motion-fx/controls-group.php:272
+#: elementor-pro/modules/motion-fx/controls-group.php:319
+#: elementor-pro/modules/motion-fx/controls-group.php:365
+#: elementor-pro/modules/motion-fx/controls-group.php:408
+#: elementor-pro/modules/motion-fx/controls-group.php:454
 #: elementor-pro/modules/popup/document.php:240
 #: elementor-pro/modules/popup/document.php:312
 #: elementor-pro/modules/pricing/widgets/price-list.php:401
@@ -7489,8 +7499,8 @@ msgstr "Afficher"
 msgid "Bottom"
 msgstr "En bas"
 
-#: elementor-pro/modules/carousel/widgets/base.php:156
-#: elementor-pro/modules/carousel/widgets/reviews.php:93
+#: elementor-pro/modules/carousel/widgets/base.php:157
+#: elementor-pro/modules/carousel/widgets/reviews.php:110
 #: elementor-pro/modules/countdown/widgets/countdown.php:116
 #: elementor-pro/modules/countdown/widgets/countdown.php:127
 #: elementor-pro/modules/countdown/widgets/countdown.php:138
@@ -7537,16 +7547,16 @@ msgstr "En bas"
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:439
 #: elementor-pro/modules/woocommerce/widgets/product-additional-information.php:38
 #: elementor-pro/modules/woocommerce/widgets/product-images.php:54
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:118
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:104
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:108
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:95
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:723
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:882
 msgid "Hide"
 msgstr "Masquer"
 
-#: elementor-pro/modules/carousel/widgets/base.php:31
-#: elementor-pro/modules/carousel/widgets/base.php:43
-#: elementor-pro/modules/carousel/widgets/base.php:271
+#: elementor-pro/modules/carousel/widgets/base.php:32
+#: elementor-pro/modules/carousel/widgets/base.php:44
+#: elementor-pro/modules/carousel/widgets/base.php:272
 #: elementor-pro/modules/slides/widgets/slides.php:23
 #: elementor-pro/modules/slides/widgets/slides.php:52
 #: elementor-pro/modules/slides/widgets/slides.php:453
@@ -7567,8 +7577,8 @@ msgstr "Heures"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1370
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:180
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:337
-#: elementor-pro/modules/gallery/widgets/gallery.php:333
-#: elementor-pro/modules/gallery/widgets/gallery.php:434
+#: elementor-pro/modules/gallery/widgets/gallery.php:352
+#: elementor-pro/modules/gallery/widgets/gallery.php:453
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:162
 #: elementor-pro/modules/slides/widgets/slides.php:60
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:688
@@ -7662,9 +7672,9 @@ msgstr "Largeur du conteneur"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1051
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1093
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1168
-#: elementor-pro/modules/carousel/widgets/base.php:303
+#: elementor-pro/modules/carousel/widgets/base.php:315
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:553
-#: elementor-pro/modules/carousel/widgets/reviews.php:62
+#: elementor-pro/modules/carousel/widgets/reviews.php:79
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:113
 #: elementor-pro/modules/countdown/widgets/countdown.php:330
 #: elementor-pro/modules/forms/widgets/form.php:1169
@@ -7674,11 +7684,11 @@ msgstr "Largeur du conteneur"
 #: elementor-pro/modules/forms/widgets/form.php:1434
 #: elementor-pro/modules/forms/widgets/form.php:1873
 #: elementor-pro/modules/forms/widgets/login.php:459
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:717
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:754
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:790
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:971
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1002
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:728
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:765
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:801
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:982
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1013
 #: elementor-pro/modules/popup/document.php:618
 #: elementor-pro/modules/popup/document.php:649
 #: elementor-pro/modules/posts/skins/skin-cards.php:152
@@ -7762,8 +7772,8 @@ msgstr "Cliquer ici"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:596
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:729
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1137
-#: elementor-pro/modules/carousel/widgets/base.php:325
-#: elementor-pro/modules/carousel/widgets/reviews.php:288
+#: elementor-pro/modules/carousel/widgets/base.php:337
+#: elementor-pro/modules/carousel/widgets/reviews.php:305
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:149
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:460
 #: elementor-pro/modules/countdown/widgets/countdown.php:353
@@ -7776,13 +7786,13 @@ msgstr "Cliquer ici"
 #: elementor-pro/modules/forms/widgets/form.php:1915
 #: elementor-pro/modules/forms/widgets/login.php:501
 #: elementor-pro/modules/forms/widgets/login.php:584
-#: elementor-pro/modules/gallery/widgets/gallery.php:520
-#: elementor-pro/modules/gallery/widgets/gallery.php:560
+#: elementor-pro/modules/gallery/widgets/gallery.php:539
+#: elementor-pro/modules/gallery/widgets/gallery.php:579
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:806
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:953
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:658
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:829
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1050
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:669
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:840
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1061
 #: elementor-pro/modules/popup/document.php:442
 #: elementor-pro/modules/posts/skins/skin-base.php:448
 #: elementor-pro/modules/posts/skins/skin-cards.php:183
@@ -7799,7 +7809,7 @@ msgstr "Cliquer ici"
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:672
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:436
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:701
-#: elementor-pro/modules/woocommerce/widgets/categories.php:284
+#: elementor-pro/modules/woocommerce/widgets/categories.php:274
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:261
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:679
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:114
@@ -7819,7 +7829,7 @@ msgstr "Rayon de bordure"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:225
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:300
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:183
-#: elementor-pro/modules/carousel/widgets/reviews.php:608
+#: elementor-pro/modules/carousel/widgets/reviews.php:625
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:315
 #: elementor-pro/modules/forms/actions/redirect.php:39
 #: elementor-pro/modules/forms/widgets/login.php:159
@@ -7835,13 +7845,13 @@ msgstr "Rayon de bordure"
 msgid "https://your-link.com"
 msgstr "https://your-link.com"
 
-#: elementor-pro/modules/carousel/widgets/base.php:279
+#: elementor-pro/modules/carousel/widgets/base.php:278
 #: elementor-pro/modules/countdown/widgets/countdown.php:365
-#: elementor-pro/modules/gallery/widgets/gallery.php:1256
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:640
+#: elementor-pro/modules/gallery/widgets/gallery.php:1275
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:651
 #: elementor-pro/modules/posts/widgets/portfolio.php:432
 #: elementor-pro/modules/posts/widgets/posts-base.php:245
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:385
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:405
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:650
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:448
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:67
@@ -7857,14 +7867,14 @@ msgstr "Appliquer le lien sur"
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:645
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:448
-#: elementor-pro/modules/carousel/widgets/base.php:353
+#: elementor-pro/modules/carousel/widgets/base.php:365
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:125
 #: elementor-pro/modules/countdown/widgets/countdown.php:388
 #: elementor-pro/modules/countdown/widgets/countdown.php:535
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:528
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:992
 #: elementor-pro/modules/forms/widgets/form.php:1651
-#: elementor-pro/modules/gallery/widgets/gallery.php:853
+#: elementor-pro/modules/gallery/widgets/gallery.php:872
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:780
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:924
 #: elementor-pro/modules/popup/document.php:774
@@ -7902,7 +7912,7 @@ msgstr "Diapositive entière"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:44
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:262
 #: elementor-pro/modules/forms/widgets/form.php:76
-#: elementor-pro/modules/gallery/widgets/gallery.php:788
+#: elementor-pro/modules/gallery/widgets/gallery.php:807
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:69
 #: elementor-pro/modules/posts/skins/skin-base.php:527
 #: elementor-pro/modules/slides/widgets/slides.php:225
@@ -7910,7 +7920,7 @@ msgstr "Diapositive entière"
 #: elementor-pro/modules/theme-builder/skins/post-comments-skin-classic.php:215
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:42
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1356
-#: elementor-pro/modules/woocommerce/widgets/products.php:110
+#: elementor-pro/modules/woocommerce/widgets/products.php:111
 msgid "Content"
 msgstr "Contenu"
 
@@ -7926,7 +7936,7 @@ msgstr "Chiffres"
 
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:203
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:394
-#: elementor-pro/modules/carousel/widgets/reviews.php:314
+#: elementor-pro/modules/carousel/widgets/reviews.php:331
 #: elementor-pro/modules/dynamic-tags/pods/tags/pods-date.php:71
 #: elementor-pro/modules/dynamic-tags/tags/current-date-time.php:42
 #: elementor-pro/modules/dynamic-tags/tags/post-date.php:55
@@ -7945,11 +7955,11 @@ msgstr "Chiffres"
 #: elementor-pro/modules/social/widgets/facebook-comments.php:74
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:57
 #: elementor-pro/modules/theme-elements/widgets/post-comments.php:69
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:80
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:97
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:134
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:264
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:310
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:100
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:117
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:154
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:284
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:330
 msgid "Custom"
 msgstr "Personnaliser"
 
@@ -7958,17 +7968,17 @@ msgstr "Personnaliser"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:534
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:578
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:773
-#: elementor-pro/modules/carousel/widgets/base.php:404
-#: elementor-pro/modules/carousel/widgets/base.php:464
+#: elementor-pro/modules/carousel/widgets/base.php:416
+#: elementor-pro/modules/carousel/widgets/base.php:476
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:78
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:403
-#: elementor-pro/modules/carousel/widgets/reviews.php:105
-#: elementor-pro/modules/carousel/widgets/reviews.php:162
-#: elementor-pro/modules/carousel/widgets/reviews.php:193
-#: elementor-pro/modules/carousel/widgets/reviews.php:221
-#: elementor-pro/modules/carousel/widgets/reviews.php:309
-#: elementor-pro/modules/carousel/widgets/reviews.php:322
-#: elementor-pro/modules/carousel/widgets/reviews.php:436
+#: elementor-pro/modules/carousel/widgets/reviews.php:122
+#: elementor-pro/modules/carousel/widgets/reviews.php:179
+#: elementor-pro/modules/carousel/widgets/reviews.php:210
+#: elementor-pro/modules/carousel/widgets/reviews.php:238
+#: elementor-pro/modules/carousel/widgets/reviews.php:326
+#: elementor-pro/modules/carousel/widgets/reviews.php:339
+#: elementor-pro/modules/carousel/widgets/reviews.php:453
 #: elementor-pro/modules/countdown/widgets/countdown.php:418
 #: elementor-pro/modules/countdown/widgets/countdown.php:449
 #: elementor-pro/modules/forms/actions/discord.php:98
@@ -7976,12 +7986,12 @@ msgstr "Personnaliser"
 #: elementor-pro/modules/forms/widgets/form.php:1109
 #: elementor-pro/modules/forms/widgets/form.php:1856
 #: elementor-pro/modules/forms/widgets/form.php:1966
-#: elementor-pro/modules/gallery/widgets/gallery.php:880
-#: elementor-pro/modules/gallery/widgets/gallery.php:935
+#: elementor-pro/modules/gallery/widgets/gallery.php:899
+#: elementor-pro/modules/gallery/widgets/gallery.php:954
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:677
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:939
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:960
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:991
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:971
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1002
 #: elementor-pro/modules/popup/document.php:607
 #: elementor-pro/modules/popup/document.php:638
 #: elementor-pro/modules/posts/skins/skin-base.php:546
@@ -8008,13 +8018,13 @@ msgstr "Personnaliser"
 #: elementor-pro/modules/slides/widgets/slides.php:65
 #: elementor-pro/modules/slides/widgets/slides.php:172
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:651
-#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:98
+#: elementor-pro/modules/theme-builder/widgets/archive-posts.php:102
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:456
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:507
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:614
 #: elementor-pro/modules/theme-elements/widgets/breadcrumbs.php:158
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:547
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:575
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:567
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:595
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:209
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:233
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:283
@@ -8045,8 +8055,8 @@ msgstr "Personnaliser"
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1440
 #: elementor-pro/modules/woocommerce/widgets/archive-products-deprecated.php:123
 #: elementor-pro/modules/woocommerce/widgets/archive-products.php:150
-#: elementor-pro/modules/woocommerce/widgets/categories.php:317
-#: elementor-pro/modules/woocommerce/widgets/categories.php:351
+#: elementor-pro/modules/woocommerce/widgets/categories.php:307
+#: elementor-pro/modules/woocommerce/widgets/categories.php:341
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:458
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:497
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:529
@@ -8060,8 +8070,8 @@ msgstr "Personnaliser"
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:260
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:78
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:112
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:129
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:115
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:119
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:106
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:177
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:305
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:341
@@ -8104,7 +8114,7 @@ msgstr "Mois"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:424
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:566
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1031
-#: elementor-pro/modules/gallery/widgets/gallery.php:823
+#: elementor-pro/modules/gallery/widgets/gallery.php:842
 #: elementor-pro/modules/popup/document.php:532
 #: elementor-pro/modules/pricing/widgets/price-table.php:579
 #: elementor-pro/modules/pricing/widgets/price-table.php:639
@@ -8121,7 +8131,7 @@ msgstr "Semaines"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:432
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:574
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1039
-#: elementor-pro/modules/gallery/widgets/gallery.php:831
+#: elementor-pro/modules/gallery/widgets/gallery.php:850
 #: elementor-pro/modules/pricing/widgets/price-table.php:587
 #: elementor-pro/modules/pricing/widgets/price-table.php:647
 #: elementor-pro/modules/pricing/widgets/price-table.php:724
@@ -8139,8 +8149,8 @@ msgstr "CSS personnalisé"
 
 #: elementor-pro/modules/slides/widgets/slides.php:379
 #: elementor-pro/modules/slides/widgets/slides.php:745
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:160
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:146
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:150
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:137
 msgid "Text Align"
 msgstr "Alignement du texte"
 
@@ -8174,7 +8184,7 @@ msgstr "Diapositive 3 Titre"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:376
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:499
-#: elementor-pro/modules/carousel/widgets/base.php:100
+#: elementor-pro/modules/carousel/widgets/base.php:101
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:614
 #: elementor-pro/modules/code-highlight/widgets/code-highlight.php:214
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:420
@@ -8182,7 +8192,7 @@ msgstr "Diapositive 3 Titre"
 #: elementor-pro/modules/popup/document.php:186
 #: elementor-pro/modules/slides/widgets/slides.php:484
 #: elementor-pro/modules/social/widgets/facebook-page.php:108
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:518
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:538
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:402
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:644
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:168
@@ -8202,7 +8212,7 @@ msgstr "Options des diapositives"
 msgid "There's something wrong. The form is invalid."
 msgstr "Quelque chose s’est mal passé. Le formulaire n’est pas valide."
 
-#: elementor-pro/modules/carousel/widgets/base.php:368
+#: elementor-pro/modules/carousel/widgets/base.php:380
 #: elementor-pro/modules/slides/widgets/slides.php:520
 #: elementor-pro/modules/slides/widgets/slides.php:1032
 msgid "Navigation"
@@ -8220,8 +8230,8 @@ msgstr "Flèches et points"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: elementor-pro/modules/carousel/widgets/base.php:154
-#: elementor-pro/modules/carousel/widgets/base.php:376
+#: elementor-pro/modules/carousel/widgets/base.php:155
+#: elementor-pro/modules/carousel/widgets/base.php:388
 #: elementor-pro/modules/slides/widgets/slides.php:525
 #: elementor-pro/modules/slides/widgets/slides.php:1043
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:86
@@ -8235,16 +8245,16 @@ msgstr "Flèches"
 #: elementor-pro/modules/posts/skins/skin-base.php:329
 #: elementor-pro/modules/query-control/controls/group-control-query.php:286
 #: elementor-pro/modules/query-control/controls/group-control-query.php:348
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:76
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:96
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:242
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:72
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:58
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:62
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:49
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:131
-#: elementor-pro/modules/woocommerce/widgets/products.php:67
+#: elementor-pro/modules/woocommerce/widgets/products.php:68
 msgid "Date"
 msgstr "Date"
 
-#: elementor-pro/modules/carousel/widgets/base.php:172
+#: elementor-pro/modules/carousel/widgets/base.php:173
 #: elementor-pro/modules/slides/widgets/slides.php:526
 #: elementor-pro/modules/slides/widgets/slides.php:1106
 msgid "Dots"
@@ -8256,11 +8266,11 @@ msgstr "Points"
 #: elementor-pro/modules/forms/widgets/form.php:55
 #: elementor-pro/modules/posts/skins/skin-base.php:330
 #: elementor-pro/modules/social/widgets/facebook-comments.php:62
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:77
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:97
 msgid "Time"
 msgstr "Heure"
 
-#: elementor-pro/modules/carousel/widgets/base.php:232
+#: elementor-pro/modules/carousel/widgets/base.php:233
 #: elementor-pro/modules/slides/widgets/slides.php:546
 msgid "Pause on Hover"
 msgstr "Pause au survol"
@@ -8270,7 +8280,7 @@ msgstr "Pause au survol"
 msgid "Page URL"
 msgstr "URL de la page"
 
-#: elementor-pro/modules/carousel/widgets/base.php:196
+#: elementor-pro/modules/carousel/widgets/base.php:197
 #: elementor-pro/modules/slides/widgets/slides.php:536
 #: elementor-pro/modules/social/widgets/facebook-embed.php:147
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:523
@@ -8290,7 +8300,7 @@ msgid "Remote IP"
 msgstr "IP distante"
 
 #: elementor-pro/modules/animated-headline/widgets/animated-headline.php:187
-#: elementor-pro/modules/carousel/widgets/base.php:222
+#: elementor-pro/modules/carousel/widgets/base.php:223
 #: elementor-pro/modules/slides/widgets/slides.php:591
 msgid "Infinite Loop"
 msgstr "Boucle infinie"
@@ -8305,7 +8315,7 @@ msgstr "Transition"
 msgid "New message from \"%s\""
 msgstr "Nouveau message depuis « %s »"
 
-#: elementor-pro/modules/carousel/widgets/base.php:58
+#: elementor-pro/modules/carousel/widgets/base.php:59
 #: elementor-pro/modules/slides/widgets/slides.php:605
 msgid "Slide"
 msgstr "Diapositive"
@@ -8314,7 +8324,7 @@ msgstr "Diapositive"
 msgid "To use reCAPTCHA, you need to add the API Key and complete the setup process in Dashboard > Elementor > Settings > Integrations > reCAPTCHA."
 msgstr "Pour utiliser reCAPTCHA, vous devez ajouter la clé de l’API et terminer le processus d’installation dans Tableau de bord > Elementor  >  Réglages >  reCAPTCHA."
 
-#: elementor-pro/modules/carousel/widgets/base.php:59
+#: elementor-pro/modules/carousel/widgets/base.php:60
 #: elementor-pro/modules/slides/widgets/slides.php:606
 msgid "Fade"
 msgstr "Fondu"
@@ -8334,7 +8344,7 @@ msgid "Site Key"
 msgstr "Clé du site"
 
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:486
-#: elementor-pro/modules/motion-fx/controls-group.php:185
+#: elementor-pro/modules/motion-fx/controls-group.php:202
 #: elementor-pro/modules/popup/display-settings/triggers.php:54
 #: elementor-pro/modules/slides/widgets/slides.php:631
 msgid "Down"
@@ -8346,7 +8356,7 @@ msgid "Secret Key"
 msgstr "Clé secrète"
 
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:485
-#: elementor-pro/modules/motion-fx/controls-group.php:184
+#: elementor-pro/modules/motion-fx/controls-group.php:201
 #: elementor-pro/modules/popup/display-settings/triggers.php:55
 #: elementor-pro/modules/slides/widgets/slides.php:632
 msgid "Up"
@@ -8380,9 +8390,9 @@ msgstr "Le paramètre secret est non valide ou mal formé."
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1340
 #: elementor-pro/modules/forms/widgets/form.php:1197
 #: elementor-pro/modules/forms/widgets/login.php:487
-#: elementor-pro/modules/gallery/widgets/gallery.php:508
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:901
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1034
+#: elementor-pro/modules/gallery/widgets/gallery.php:527
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:912
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1045
 #: elementor-pro/modules/posts/skins/skin-cards.php:374
 #: elementor-pro/modules/posts/skins/skin-classic.php:39
 #: elementor-pro/modules/slides/widgets/slides.php:910
@@ -8410,7 +8420,7 @@ msgstr "Position des flèches"
 msgid "The response parameter is invalid or malformed."
 msgstr "Le paramètre de réponse est non valide ou mal formulé."
 
-#: elementor-pro/modules/carousel/widgets/base.php:431
+#: elementor-pro/modules/carousel/widgets/base.php:443
 #: elementor-pro/modules/popup/document.php:522
 #: elementor-pro/modules/slides/widgets/slides.php:1059
 #: elementor-pro/modules/slides/widgets/slides.php:1123
@@ -8422,7 +8432,7 @@ msgstr "À l’intérieur"
 msgid "Can not connect to the reCAPTCHA server (%d)."
 msgstr "Connexion impossible au serveur reCAPTCHA (%d)."
 
-#: elementor-pro/modules/carousel/widgets/base.php:430
+#: elementor-pro/modules/carousel/widgets/base.php:442
 #: elementor-pro/modules/popup/document.php:523
 #: elementor-pro/modules/slides/widgets/slides.php:1060
 #: elementor-pro/modules/slides/widgets/slides.php:1122
@@ -8465,7 +8475,7 @@ msgstr "Taille des points"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1008
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1210
-#: elementor-pro/modules/forms/classes/form-base.php:29
+#: elementor-pro/modules/forms/classes/form-base.php:30
 #: elementor-pro/modules/forms/widgets/form.php:507
 #: elementor-pro/modules/forms/widgets/login.php:60
 #: elementor-pro/modules/forms/widgets/login.php:94
@@ -8480,7 +8490,7 @@ msgstr "Couleur des points"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1009
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1211
-#: elementor-pro/modules/forms/classes/form-base.php:30
+#: elementor-pro/modules/forms/classes/form-base.php:31
 #: elementor-pro/modules/forms/widgets/form.php:508
 #: elementor-pro/modules/forms/widgets/login.php:61
 #: elementor-pro/modules/forms/widgets/login.php:95
@@ -8492,7 +8502,7 @@ msgstr "Petit"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1010
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1212
-#: elementor-pro/modules/forms/classes/form-base.php:31
+#: elementor-pro/modules/forms/classes/form-base.php:32
 #: elementor-pro/modules/forms/widgets/form.php:509
 #: elementor-pro/modules/forms/widgets/login.php:62
 #: elementor-pro/modules/forms/widgets/login.php:96
@@ -8506,7 +8516,7 @@ msgstr "Moyen"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1011
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1213
-#: elementor-pro/modules/forms/classes/form-base.php:32
+#: elementor-pro/modules/forms/classes/form-base.php:33
 #: elementor-pro/modules/forms/widgets/form.php:510
 #: elementor-pro/modules/forms/widgets/login.php:63
 #: elementor-pro/modules/forms/widgets/login.php:97
@@ -8522,7 +8532,7 @@ msgstr "Nombre de produits"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1012
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1214
-#: elementor-pro/modules/forms/classes/form-base.php:33
+#: elementor-pro/modules/forms/classes/form-base.php:34
 #: elementor-pro/modules/forms/widgets/form.php:511
 #: elementor-pro/modules/forms/widgets/login.php:64
 #: elementor-pro/modules/forms/widgets/login.php:98
@@ -8541,10 +8551,10 @@ msgstr "Très grand"
 #: elementor-pro/modules/dynamic-tags/tags/request-parameter.php:66
 #: elementor-pro/modules/forms/widgets/form.php:82
 #: elementor-pro/modules/forms/widgets/form.php:794
-#: elementor-pro/modules/gallery/widgets/gallery.php:59
+#: elementor-pro/modules/gallery/widgets/gallery.php:67
 #: elementor-pro/modules/social/widgets/facebook-button.php:45
 #: elementor-pro/modules/social/widgets/facebook-embed.php:47
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:71
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:91
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:91
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:191
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:72
@@ -8552,14 +8562,14 @@ msgid "Type"
 msgstr "Type"
 
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:455
-#: elementor-pro/modules/carousel/widgets/reviews.php:146
+#: elementor-pro/modules/carousel/widgets/reviews.php:163
 #: elementor-pro/modules/forms/widgets/form.php:44
 #: elementor-pro/modules/forms/widgets/login.php:82
-#: elementor-pro/modules/gallery/widgets/gallery.php:334
+#: elementor-pro/modules/gallery/widgets/gallery.php:353
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:163
 #: elementor-pro/modules/pricing/widgets/price-table.php:209
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:439
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:614
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:634
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:96
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:109
 #: elementor-pro/modules/woocommerce/tags/product-sale.php:21
@@ -8567,10 +8577,10 @@ msgstr "Type"
 msgid "Text"
 msgstr "Texte"
 
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:75
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:61
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:65
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:52
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:134
-#: elementor-pro/modules/woocommerce/widgets/products.php:70
+#: elementor-pro/modules/woocommerce/widgets/products.php:71
 msgid "Popularity"
 msgstr "Popularité"
 
@@ -8580,13 +8590,13 @@ msgstr "Popularité"
 msgid "Tel"
 msgstr "Tél."
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:357
-#: elementor-pro/modules/carousel/widgets/reviews.php:522
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:76
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:62
+#: elementor-pro/modules/carousel/widgets/reviews.php:374
+#: elementor-pro/modules/carousel/widgets/reviews.php:539
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:66
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:53
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:225
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:135
-#: elementor-pro/modules/woocommerce/widgets/products.php:71
+#: elementor-pro/modules/woocommerce/widgets/products.php:72
 #: elementor-pro/modules/woocommerce/widgets/single-elements.php:47
 msgid "Rating"
 msgstr "Notation"
@@ -8628,7 +8638,7 @@ msgstr "Sélectionner"
 
 #: elementor-pro/modules/dynamic-tags/tags/author-url.php:54
 #: elementor-pro/modules/forms/widgets/form.php:47
-#: elementor-pro/modules/gallery/widgets/gallery.php:248
+#: elementor-pro/modules/gallery/widgets/gallery.php:267
 #: elementor-pro/modules/popup/display-settings/timing.php:103
 #: elementor-pro/modules/social/widgets/facebook-embed.php:61
 #: elementor-pro/modules/social/widgets/facebook-embed.php:77
@@ -8665,8 +8675,8 @@ msgid "Column Width"
 msgstr "Largeur de colonne"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:199
-#: elementor-pro/modules/carousel/widgets/base.php:74
-#: elementor-pro/modules/carousel/widgets/base.php:88
+#: elementor-pro/modules/carousel/widgets/base.php:75
+#: elementor-pro/modules/carousel/widgets/base.php:89
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:693
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:47
 #: elementor-pro/modules/dynamic-tags/pods/tags/pods-date.php:65
@@ -8678,19 +8688,19 @@ msgstr "Largeur de colonne"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:119
 #: elementor-pro/modules/forms/widgets/form.php:259
 #: elementor-pro/modules/forms/widgets/form.php:586
-#: elementor-pro/modules/gallery/widgets/gallery.php:129
+#: elementor-pro/modules/gallery/widgets/gallery.php:137
 #: elementor-pro/modules/lottie/widgets/lottie.php:369
-#: elementor-pro/modules/motion-fx/controls-group.php:143
+#: elementor-pro/modules/motion-fx/controls-group.php:160
 #: elementor-pro/modules/theme-builder/documents/theme-page-document.php:48
 #: elementor-pro/modules/theme-elements/widgets/breadcrumbs.php:73
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:53
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:309
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:73
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:329
 msgid "Default"
 msgstr "Par défaut"
 
 #: elementor-pro/modules/forms/widgets/form.php:193
 #: elementor-pro/modules/forms/widgets/form.php:294
-#: elementor-pro/modules/woocommerce/widgets/products.php:143
+#: elementor-pro/modules/woocommerce/widgets/products.php:120
 msgid "Rows"
 msgstr "Rangées"
 
@@ -8698,13 +8708,13 @@ msgstr "Rangées"
 #: elementor-pro/modules/blockquote/widgets/blockquote.php:784
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:561
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1004
-#: elementor-pro/modules/carousel/widgets/base.php:385
-#: elementor-pro/modules/carousel/widgets/base.php:443
+#: elementor-pro/modules/carousel/widgets/base.php:397
+#: elementor-pro/modules/carousel/widgets/base.php:455
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:414
-#: elementor-pro/modules/carousel/widgets/reviews.php:119
-#: elementor-pro/modules/carousel/widgets/reviews.php:253
-#: elementor-pro/modules/carousel/widgets/reviews.php:337
-#: elementor-pro/modules/carousel/widgets/reviews.php:400
+#: elementor-pro/modules/carousel/widgets/reviews.php:136
+#: elementor-pro/modules/carousel/widgets/reviews.php:270
+#: elementor-pro/modules/carousel/widgets/reviews.php:354
+#: elementor-pro/modules/carousel/widgets/reviews.php:417
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:350
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:638
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1206
@@ -8712,7 +8722,7 @@ msgstr "Rangées"
 #: elementor-pro/modules/forms/widgets/form.php:573
 #: elementor-pro/modules/forms/widgets/login.php:91
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:691
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1017
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:1028
 #: elementor-pro/modules/popup/document.php:664
 #: elementor-pro/modules/posts/skins/skin-cards.php:202
 #: elementor-pro/modules/posts/skins/skin-cards.php:272
@@ -8722,8 +8732,8 @@ msgstr "Rangées"
 #: elementor-pro/modules/slides/widgets/slides.php:889
 #: elementor-pro/modules/social/widgets/facebook-button.php:73
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:665
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:199
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:591
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:219
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:611
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:390
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:453
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:148
@@ -8749,14 +8759,14 @@ msgstr "Taille"
 #: elementor-pro/modules/forms/widgets/form.php:314
 #: elementor-pro/modules/forms/widgets/form.php:1257
 #: elementor-pro/modules/forms/widgets/login.php:526
-#: elementor-pro/modules/gallery/widgets/gallery.php:490
-#: elementor-pro/modules/gallery/widgets/gallery.php:640
-#: elementor-pro/modules/gallery/widgets/gallery.php:697
-#: elementor-pro/modules/gallery/widgets/gallery.php:1098
+#: elementor-pro/modules/gallery/widgets/gallery.php:509
+#: elementor-pro/modules/gallery/widgets/gallery.php:659
+#: elementor-pro/modules/gallery/widgets/gallery.php:716
+#: elementor-pro/modules/gallery/widgets/gallery.php:1117
 #: elementor-pro/modules/lottie/widgets/lottie.php:600
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:440
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:698
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:953
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:451
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:709
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:964
 #: elementor-pro/modules/popup/document.php:600
 #: elementor-pro/modules/posts/skins/skin-base.php:488
 #: elementor-pro/modules/posts/skins/skin-classic.php:113
@@ -8800,7 +8810,7 @@ msgstr "Compact"
 #: elementor-pro/modules/theme-builder/documents/header-footer-base.php:36
 #: elementor-pro/modules/theme-builder/widgets/post-content.php:47
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:63
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:443
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:463
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:483
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:913
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1113
@@ -8855,8 +8865,8 @@ msgid "New Form"
 msgstr "Nouveau formulaire"
 
 #: elementor-pro/modules/assets-manager/asset-types/icons/templates.php:13
-#: elementor-pro/modules/carousel/widgets/reviews.php:154
-#: elementor-pro/modules/carousel/widgets/reviews.php:504
+#: elementor-pro/modules/carousel/widgets/reviews.php:171
+#: elementor-pro/modules/carousel/widgets/reviews.php:521
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:272
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:527
 #: elementor-pro/modules/forms/classes/getresponse-handler.php:88
@@ -8867,7 +8877,7 @@ msgstr "Nouveau formulaire"
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:261
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:334
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:348
-#: elementor-pro/modules/woocommerce/widgets/categories.php:149
+#: elementor-pro/modules/woocommerce/widgets/categories.php:139
 msgid "Name"
 msgstr "Nom"
 
@@ -8913,7 +8923,7 @@ msgstr "Envoyer"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1004
 #: elementor-pro/modules/forms/widgets/form.php:608
 #: elementor-pro/modules/forms/widgets/login.php:107
-#: elementor-pro/modules/gallery/widgets/gallery.php:797
+#: elementor-pro/modules/gallery/widgets/gallery.php:816
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:867
 #: elementor-pro/modules/lottie/widgets/lottie.php:99
 #: elementor-pro/modules/lottie/widgets/lottie.php:705
@@ -8925,11 +8935,11 @@ msgstr "Envoyer"
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:71
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:272
 #: elementor-pro/modules/theme-elements/widgets/breadcrumbs.php:47
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:406
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:426
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:181
 #: elementor-pro/modules/woocommerce/widgets/archive-description.php:57
 #: elementor-pro/modules/woocommerce/widgets/breadcrumb.php:85
-#: elementor-pro/modules/woocommerce/widgets/categories.php:241
+#: elementor-pro/modules/woocommerce/widgets/categories.php:231
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:108
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:70
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:53
@@ -8951,17 +8961,17 @@ msgstr "Alignement"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1008
 #: elementor-pro/modules/forms/widgets/form.php:612
 #: elementor-pro/modules/forms/widgets/login.php:111
-#: elementor-pro/modules/gallery/widgets/gallery.php:801
-#: elementor-pro/modules/gallery/widgets/gallery.php:1071
+#: elementor-pro/modules/gallery/widgets/gallery.php:820
+#: elementor-pro/modules/gallery/widgets/gallery.php:1090
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:246
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:342
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:495
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:871
 #: elementor-pro/modules/lottie/widgets/lottie.php:103
 #: elementor-pro/modules/lottie/widgets/lottie.php:709
-#: elementor-pro/modules/motion-fx/controls-group.php:79
+#: elementor-pro/modules/motion-fx/controls-group.php:80
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:127
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:383
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:394
 #: elementor-pro/modules/popup/document.php:273
 #: elementor-pro/modules/posts/skins/skin-base.php:65
 #: elementor-pro/modules/posts/skins/skin-base.php:414
@@ -8984,14 +8994,14 @@ msgstr "Alignement"
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:508
 #: elementor-pro/modules/woocommerce/widgets/archive-description.php:61
 #: elementor-pro/modules/woocommerce/widgets/breadcrumb.php:89
-#: elementor-pro/modules/woocommerce/widgets/categories.php:245
+#: elementor-pro/modules/woocommerce/widgets/categories.php:235
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:112
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:74
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:57
 #: elementor-pro/modules/woocommerce/widgets/product-rating.php:145
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:164
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:154
 #: elementor-pro/modules/woocommerce/widgets/product-short-description.php:55
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:150
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:141
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:105
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:984
 msgid "Left"
@@ -9006,17 +9016,17 @@ msgstr "À gauche"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1012
 #: elementor-pro/modules/forms/widgets/form.php:616
 #: elementor-pro/modules/forms/widgets/login.php:115
-#: elementor-pro/modules/gallery/widgets/gallery.php:805
-#: elementor-pro/modules/gallery/widgets/gallery.php:1075
+#: elementor-pro/modules/gallery/widgets/gallery.php:824
+#: elementor-pro/modules/gallery/widgets/gallery.php:1094
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:603
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:875
 #: elementor-pro/modules/lottie/widgets/lottie.php:107
 #: elementor-pro/modules/lottie/widgets/lottie.php:713
-#: elementor-pro/modules/motion-fx/controls-group.php:83
-#: elementor-pro/modules/motion-fx/controls-group.php:106
+#: elementor-pro/modules/motion-fx/controls-group.php:84
+#: elementor-pro/modules/motion-fx/controls-group.php:107
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:131
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:347
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:387
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:358
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:398
 #: elementor-pro/modules/popup/document.php:239
 #: elementor-pro/modules/popup/document.php:277
 #: elementor-pro/modules/popup/document.php:308
@@ -9033,18 +9043,18 @@ msgstr "À gauche"
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:79
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:280
 #: elementor-pro/modules/theme-elements/widgets/breadcrumbs.php:55
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:414
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:434
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:190
 #: elementor-pro/modules/woocommerce/widgets/archive-description.php:65
 #: elementor-pro/modules/woocommerce/widgets/breadcrumb.php:93
-#: elementor-pro/modules/woocommerce/widgets/categories.php:249
+#: elementor-pro/modules/woocommerce/widgets/categories.php:239
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:116
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:78
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:61
 #: elementor-pro/modules/woocommerce/widgets/product-rating.php:149
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:168
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:158
 #: elementor-pro/modules/woocommerce/widgets/product-short-description.php:59
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:154
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:145
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:109
 msgid "Center"
 msgstr "Centrer"
@@ -9061,17 +9071,17 @@ msgstr "Centrer"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1016
 #: elementor-pro/modules/forms/widgets/form.php:620
 #: elementor-pro/modules/forms/widgets/login.php:119
-#: elementor-pro/modules/gallery/widgets/gallery.php:809
-#: elementor-pro/modules/gallery/widgets/gallery.php:1079
+#: elementor-pro/modules/gallery/widgets/gallery.php:828
+#: elementor-pro/modules/gallery/widgets/gallery.php:1098
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:250
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:350
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:503
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:879
 #: elementor-pro/modules/lottie/widgets/lottie.php:111
 #: elementor-pro/modules/lottie/widgets/lottie.php:717
-#: elementor-pro/modules/motion-fx/controls-group.php:87
+#: elementor-pro/modules/motion-fx/controls-group.php:88
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:135
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:391
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:402
 #: elementor-pro/modules/popup/document.php:281
 #: elementor-pro/modules/posts/skins/skin-base.php:66
 #: elementor-pro/modules/posts/skins/skin-base.php:422
@@ -9094,14 +9104,14 @@ msgstr "Centrer"
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:512
 #: elementor-pro/modules/woocommerce/widgets/archive-description.php:69
 #: elementor-pro/modules/woocommerce/widgets/breadcrumb.php:97
-#: elementor-pro/modules/woocommerce/widgets/categories.php:253
+#: elementor-pro/modules/woocommerce/widgets/categories.php:243
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:120
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:82
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:65
 #: elementor-pro/modules/woocommerce/widgets/product-rating.php:153
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:172
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:162
 #: elementor-pro/modules/woocommerce/widgets/product-short-description.php:63
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:158
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:149
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:113
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:988
 msgid "Right"
@@ -9109,7 +9119,7 @@ msgstr "À droite"
 
 #: elementor-pro/modules/forms/widgets/form.php:624
 #: elementor-pro/modules/forms/widgets/login.php:123
-#: elementor-pro/modules/gallery/widgets/gallery.php:155
+#: elementor-pro/modules/gallery/widgets/gallery.php:163
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:883
 #: elementor-pro/modules/theme-builder/widgets/post-content.php:71
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:87
@@ -9124,9 +9134,9 @@ msgstr "Justifié"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:180
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:456
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:486
-#: elementor-pro/modules/carousel/widgets/reviews.php:301
-#: elementor-pro/modules/carousel/widgets/reviews.php:365
-#: elementor-pro/modules/carousel/widgets/reviews.php:533
+#: elementor-pro/modules/carousel/widgets/reviews.php:318
+#: elementor-pro/modules/carousel/widgets/reviews.php:382
+#: elementor-pro/modules/carousel/widgets/reviews.php:550
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:61
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:100
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:719
@@ -9136,8 +9146,8 @@ msgstr "Justifié"
 #: elementor-pro/modules/pricing/widgets/price-table.php:223
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:159
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:219
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:305
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:567
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:325
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:587
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:95
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:123
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:850
@@ -9155,7 +9165,7 @@ msgstr "Position de l’icône"
 #: elementor-pro/modules/forms/widgets/form.php:701
 #: elementor-pro/modules/pricing/widgets/price-table.php:565
 #: elementor-pro/modules/query-control/controls/group-control-query.php:310
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:177
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:197
 msgid "Before"
 msgstr "Avant"
 
@@ -9190,7 +9200,7 @@ msgstr "Répondre à"
 
 #: elementor-pro/modules/forms/actions/email.php:135
 #: elementor-pro/modules/posts/skins/skin-base.php:322
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:41
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:61
 msgid "Meta Data"
 msgstr "Métadonnée"
 
@@ -9234,7 +9244,7 @@ msgstr "Message non valide"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:616
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:795
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:835
-#: elementor-pro/modules/carousel/widgets/reviews.php:418
+#: elementor-pro/modules/carousel/widgets/reviews.php:435
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:618
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:730
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:891
@@ -9244,8 +9254,8 @@ msgstr "Message non valide"
 #: elementor-pro/modules/forms/widgets/form.php:1089
 #: elementor-pro/modules/forms/widgets/form.php:1597
 #: elementor-pro/modules/forms/widgets/login.php:378
-#: elementor-pro/modules/gallery/widgets/gallery.php:213
-#: elementor-pro/modules/gallery/widgets/gallery.php:908
+#: elementor-pro/modules/gallery/widgets/gallery.php:237
+#: elementor-pro/modules/gallery/widgets/gallery.php:927
 #: elementor-pro/modules/lottie/widgets/lottie.php:757
 #: elementor-pro/modules/posts/skins/skin-base.php:463
 #: elementor-pro/modules/posts/skins/skin-base.php:577
@@ -9260,7 +9270,7 @@ msgstr "Message non valide"
 #: elementor-pro/modules/slides/widgets/slides.php:839
 #: elementor-pro/modules/theme-builder/skins/post-comments-skin-classic.php:168
 #: elementor-pro/modules/theme-elements/widgets/post-navigation.php:473
-#: elementor-pro/modules/woocommerce/widgets/categories.php:296
+#: elementor-pro/modules/woocommerce/widgets/categories.php:286
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:319
 #: elementor-pro/modules/woocommerce/widgets/menu-cart.php:608
 #: elementor-pro/modules/woocommerce/widgets/product-add-to-cart.php:253
@@ -9268,8 +9278,8 @@ msgstr "Message non valide"
 #: elementor-pro/modules/woocommerce/widgets/product-images.php:88
 #: elementor-pro/modules/woocommerce/widgets/product-images.php:129
 #: elementor-pro/modules/woocommerce/widgets/product-price.php:141
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:188
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:174
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:178
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:165
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:156
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:205
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:277
@@ -9310,19 +9320,19 @@ msgstr "Espacement"
 #: elementor-pro/modules/forms/widgets/login.php:533
 #: elementor-pro/modules/forms/widgets/login.php:617
 #: elementor-pro/modules/forms/widgets/login.php:679
-#: elementor-pro/modules/gallery/widgets/gallery.php:1105
-#: elementor-pro/modules/gallery/widgets/gallery.php:1138
-#: elementor-pro/modules/gallery/widgets/gallery.php:1159
-#: elementor-pro/modules/gallery/widgets/gallery.php:1199
+#: elementor-pro/modules/gallery/widgets/gallery.php:1124
+#: elementor-pro/modules/gallery/widgets/gallery.php:1157
+#: elementor-pro/modules/gallery/widgets/gallery.php:1178
+#: elementor-pro/modules/gallery/widgets/gallery.php:1218
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:845
 #: elementor-pro/modules/lottie/widgets/lottie.php:731
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:447
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:471
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:491
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:539
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:705
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:739
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:778
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:458
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:482
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:502
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:550
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:716
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:750
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:789
 #: elementor-pro/modules/posts/skins/skin-cards.php:169
 #: elementor-pro/modules/pricing/widgets/price-table.php:1102
 #: elementor-pro/modules/pricing/widgets/price-table.php:1189
@@ -9343,7 +9353,7 @@ msgstr "Espacement"
 #: elementor-pro/modules/theme-builder/widgets/post-excerpt.php:100
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:568
 #: elementor-pro/modules/theme-elements/widgets/breadcrumbs.php:116
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:639
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:659
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:292
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:362
 #: elementor-pro/modules/theme-elements/widgets/search-form.php:494
@@ -9373,7 +9383,7 @@ msgstr "Couleur du texte"
 
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1062
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1104
-#: elementor-pro/modules/carousel/widgets/base.php:342
+#: elementor-pro/modules/carousel/widgets/base.php:354
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:172
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:425
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1276
@@ -9385,8 +9395,8 @@ msgstr "Couleur du texte"
 #: elementor-pro/modules/forms/widgets/form.php:1458
 #: elementor-pro/modules/forms/widgets/login.php:473
 #: elementor-pro/modules/forms/widgets/login.php:643
-#: elementor-pro/modules/gallery/widgets/gallery.php:497
-#: elementor-pro/modules/gallery/widgets/gallery.php:549
+#: elementor-pro/modules/gallery/widgets/gallery.php:516
+#: elementor-pro/modules/gallery/widgets/gallery.php:568
 #: elementor-pro/modules/posts/skins/skin-cards.php:363
 #: elementor-pro/modules/posts/skins/skin-classic.php:139
 #: elementor-pro/modules/posts/skins/skin-classic.php:177
@@ -9464,14 +9474,14 @@ msgstr "Marges internes du texte"
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1289
 #: elementor-pro/modules/forms/widgets/form.php:1368
 #: elementor-pro/modules/forms/widgets/login.php:610
-#: elementor-pro/modules/gallery/widgets/gallery.php:542
-#: elementor-pro/modules/gallery/widgets/gallery.php:664
-#: elementor-pro/modules/gallery/widgets/gallery.php:1131
+#: elementor-pro/modules/gallery/widgets/gallery.php:561
+#: elementor-pro/modules/gallery/widgets/gallery.php:683
+#: elementor-pro/modules/gallery/widgets/gallery.php:1150
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:524
 #: elementor-pro/modules/lottie/widgets/lottie.php:635
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:464
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:732
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:984
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:475
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:743
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:995
 #: elementor-pro/modules/popup/document.php:631
 #: elementor-pro/modules/posts/skins/skin-base.php:504
 #: elementor-pro/modules/posts/skins/skin-classic.php:151
@@ -9502,10 +9512,10 @@ msgstr "Au survol"
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:513
 #: elementor-pro/modules/forms/widgets/form.php:1473
 #: elementor-pro/modules/forms/widgets/login.php:657
-#: elementor-pro/modules/gallery/widgets/gallery.php:343
-#: elementor-pro/modules/gallery/widgets/gallery.php:363
-#: elementor-pro/modules/gallery/widgets/gallery.php:383
-#: elementor-pro/modules/gallery/widgets/gallery.php:409
+#: elementor-pro/modules/gallery/widgets/gallery.php:362
+#: elementor-pro/modules/gallery/widgets/gallery.php:382
+#: elementor-pro/modules/gallery/widgets/gallery.php:402
+#: elementor-pro/modules/gallery/widgets/gallery.php:428
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:429
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:536
 #: elementor-pro/modules/lottie/widgets/lottie.php:388
@@ -9618,8 +9628,8 @@ msgstr "Intégrez vos éléments sauvegardés."
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:334
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:771
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:472
-#: elementor-pro/modules/carousel/widgets/reviews.php:184
-#: elementor-pro/modules/carousel/widgets/reviews.php:513
+#: elementor-pro/modules/carousel/widgets/reviews.php:201
+#: elementor-pro/modules/carousel/widgets/reviews.php:530
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:306
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:539
 #: elementor-pro/modules/dynamic-tags/tags/contact-url.php:164
@@ -9628,11 +9638,11 @@ msgstr "Intégrez vos éléments sauvegardés."
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1072
 #: elementor-pro/modules/forms/actions/discord.php:64
 #: elementor-pro/modules/forms/actions/slack.php:74
-#: elementor-pro/modules/gallery/widgets/gallery.php:87
-#: elementor-pro/modules/gallery/widgets/gallery.php:444
-#: elementor-pro/modules/gallery/widgets/gallery.php:449
-#: elementor-pro/modules/gallery/widgets/gallery.php:466
-#: elementor-pro/modules/gallery/widgets/gallery.php:868
+#: elementor-pro/modules/gallery/widgets/gallery.php:95
+#: elementor-pro/modules/gallery/widgets/gallery.php:463
+#: elementor-pro/modules/gallery/widgets/gallery.php:468
+#: elementor-pro/modules/gallery/widgets/gallery.php:485
+#: elementor-pro/modules/gallery/widgets/gallery.php:887
 #: elementor-pro/modules/library/wp-widgets/elementor-library.php:97
 #: elementor-pro/modules/lottie/widgets/lottie.php:128
 #: elementor-pro/modules/posts/skins/skin-base.php:210
@@ -9653,12 +9663,12 @@ msgstr "Intégrez vos éléments sauvegardés."
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:171
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:176
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:1313
-#: elementor-pro/modules/woocommerce/widgets/categories.php:308
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:73
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:59
+#: elementor-pro/modules/woocommerce/widgets/categories.php:298
+#: elementor-pro/modules/woocommerce/widgets/product-related.php:63
+#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:50
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:168
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:132
-#: elementor-pro/modules/woocommerce/widgets/products.php:68
+#: elementor-pro/modules/woocommerce/widgets/products.php:69
 #: elementor-pro/modules/woocommerce/widgets/single-elements.php:46
 msgid "Title"
 msgstr "Titre"
@@ -9669,8 +9679,8 @@ msgstr "Titre"
 #: elementor-pro/modules/query-control/controls/group-control-related.php:60
 #: elementor-pro/modules/query-control/module.php:80
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:83
-#: elementor-pro/modules/woocommerce/widgets/categories.php:87
-#: elementor-pro/modules/woocommerce/widgets/products.php:79
+#: elementor-pro/modules/woocommerce/widgets/categories.php:77
+#: elementor-pro/modules/woocommerce/widgets/products.php:80
 msgid "Manual Selection"
 msgstr "Sélection manuelle"
 
@@ -9685,18 +9695,18 @@ msgstr "Position de l’image"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:428
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:570
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:1035
-#: elementor-pro/modules/gallery/widgets/gallery.php:827
+#: elementor-pro/modules/gallery/widgets/gallery.php:846
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:282
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:346
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:499
 #: elementor-pro/modules/lottie/widgets/lottie.php:256
-#: elementor-pro/modules/motion-fx/controls-group.php:102
-#: elementor-pro/modules/motion-fx/controls-group.php:213
-#: elementor-pro/modules/motion-fx/controls-group.php:256
-#: elementor-pro/modules/motion-fx/controls-group.php:303
-#: elementor-pro/modules/motion-fx/controls-group.php:349
-#: elementor-pro/modules/motion-fx/controls-group.php:392
-#: elementor-pro/modules/motion-fx/controls-group.php:438
+#: elementor-pro/modules/motion-fx/controls-group.php:103
+#: elementor-pro/modules/motion-fx/controls-group.php:230
+#: elementor-pro/modules/motion-fx/controls-group.php:273
+#: elementor-pro/modules/motion-fx/controls-group.php:320
+#: elementor-pro/modules/motion-fx/controls-group.php:366
+#: elementor-pro/modules/motion-fx/controls-group.php:409
+#: elementor-pro/modules/motion-fx/controls-group.php:455
 #: elementor-pro/modules/popup/document.php:238
 #: elementor-pro/modules/popup/document.php:304
 #: elementor-pro/modules/posts/skins/skin-base.php:64
@@ -9715,29 +9725,29 @@ msgstr "En haut"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:131
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1256
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:1258
-#: elementor-pro/modules/carousel/widgets/base.php:171
+#: elementor-pro/modules/carousel/widgets/base.php:172
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:169
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:454
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:65
 #: elementor-pro/modules/dynamic-tags/tags/current-date-time.php:37
 #: elementor-pro/modules/dynamic-tags/tags/current-date-time.php:55
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:53
-#: elementor-pro/modules/gallery/widgets/gallery.php:237
-#: elementor-pro/modules/gallery/widgets/gallery.php:328
-#: elementor-pro/modules/gallery/widgets/gallery.php:448
-#: elementor-pro/modules/gallery/widgets/gallery.php:465
-#: elementor-pro/modules/gallery/widgets/gallery.php:726
-#: elementor-pro/modules/gallery/widgets/gallery.php:728
-#: elementor-pro/modules/gallery/widgets/gallery.php:967
-#: elementor-pro/modules/gallery/widgets/gallery.php:969
+#: elementor-pro/modules/gallery/widgets/gallery.php:256
+#: elementor-pro/modules/gallery/widgets/gallery.php:347
+#: elementor-pro/modules/gallery/widgets/gallery.php:467
+#: elementor-pro/modules/gallery/widgets/gallery.php:484
+#: elementor-pro/modules/gallery/widgets/gallery.php:745
+#: elementor-pro/modules/gallery/widgets/gallery.php:747
+#: elementor-pro/modules/gallery/widgets/gallery.php:986
+#: elementor-pro/modules/gallery/widgets/gallery.php:988
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:435
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:526
 #: elementor-pro/modules/lottie/widgets/lottie.php:127
 #: elementor-pro/modules/lottie/widgets/lottie.php:174
 #: elementor-pro/modules/lottie/widgets/lottie.php:220
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:157
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:315
-#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:363
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:319
+#: elementor-pro/modules/nav-menu/widgets/nav-menu.php:374
 #: elementor-pro/modules/payments/classes/payment-button.php:270
 #: elementor-pro/modules/posts/skins/skin-base.php:67
 #: elementor-pro/modules/posts/skins/skin-cards.php:462
@@ -9751,7 +9761,7 @@ msgstr "En haut"
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:287
 #: elementor-pro/modules/theme-builder/classes/conditions-manager.php:77
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:153
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:308
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:328
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:500
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:623
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:917
@@ -9773,16 +9783,13 @@ msgstr "Ratio de l'image"
 msgid "Image Width"
 msgstr "Largeur de l'image"
 
-#: elementor-pro/modules/gallery/widgets/gallery.php:166
+#: elementor-pro/modules/gallery/widgets/gallery.php:174
 #: elementor-pro/modules/posts/skins/skin-base.php:176
 #: elementor-pro/modules/posts/widgets/portfolio.php:78
 #: elementor-pro/modules/share-buttons/widgets/share-buttons.php:194
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:123
 #: elementor-pro/modules/woocommerce/skins/skin-classic.php:38
-#: elementor-pro/modules/woocommerce/widgets/categories.php:52
-#: elementor-pro/modules/woocommerce/widgets/product-related.php:56
-#: elementor-pro/modules/woocommerce/widgets/product-upsell.php:42
-#: elementor-pro/modules/woocommerce/widgets/products.php:117
+#: elementor-pro/modules/woocommerce/widgets/base-widget.php:36
 msgid "Columns"
 msgstr "Colonnes"
 
@@ -9804,7 +9811,7 @@ msgstr "Extrait"
 msgid "Excerpt Length"
 msgstr "Longueur de l'extrait"
 
-#: elementor-pro/modules/carousel/widgets/reviews.php:750
+#: elementor-pro/modules/carousel/widgets/reviews.php:767
 #: elementor-pro/modules/posts/skins/skin-base.php:274
 #: elementor-pro/modules/posts/skins/skin-base.php:728
 msgid "Read More"
@@ -9828,7 +9835,7 @@ msgstr "Lire la suite »"
 #: elementor-pro/modules/query-control/controls/group-control-query.php:135
 #: elementor-pro/modules/query-control/controls/group-control-query.php:176
 #: elementor-pro/modules/query-control/controls/group-control-query.php:234
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:75
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:95
 msgid "Author"
 msgstr "Auteur"
 
@@ -9836,8 +9843,8 @@ msgstr "Auteur"
 #: elementor-pro/modules/posts/skins/skin-base.php:331
 #: elementor-pro/modules/theme-builder/skins/post-comments-skin-classic.php:80
 #: elementor-pro/modules/theme-elements/widgets/post-comments.php:39
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:78
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:251
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:98
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:271
 msgid "Comments"
 msgstr "Commentaires"
 
@@ -9846,7 +9853,7 @@ msgid "Separator Between"
 msgstr "Séparateur entre"
 
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:58
-#: elementor-pro/modules/gallery/widgets/gallery.php:151
+#: elementor-pro/modules/gallery/widgets/gallery.php:159
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:74
 #: elementor-pro/modules/nav-menu/widgets/nav-menu.php:108
 #: elementor-pro/modules/popup/document.php:153
@@ -9856,7 +9863,7 @@ msgstr "Séparateur entre"
 #: elementor-pro/modules/social/widgets/facebook-button.php:58
 #: elementor-pro/modules/social/widgets/facebook-page.php:54
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:248
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:48
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:68
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:503
 #: elementor-pro/modules/video-playlist/widgets/video-playlist.php:636
 #: elementor-pro/modules/woocommerce/widgets/categories.php:44
@@ -9870,20 +9877,20 @@ msgstr "Mise en page"
 #: elementor-pro/modules/call-to-action/widgets/call-to-action.php:461
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:143
 #: elementor-pro/modules/carousel/widgets/media-carousel.php:158
-#: elementor-pro/modules/carousel/widgets/reviews.php:245
-#: elementor-pro/modules/carousel/widgets/reviews.php:493
+#: elementor-pro/modules/carousel/widgets/reviews.php:262
+#: elementor-pro/modules/carousel/widgets/reviews.php:510
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:342
 #: elementor-pro/modules/carousel/widgets/testimonial-carousel.php:516
 #: elementor-pro/modules/dynamic-tags/tags/lightbox.php:48
 #: elementor-pro/modules/dynamic-tags/tags/lightbox.php:58
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:57
 #: elementor-pro/modules/flip-box/widgets/flip-box.php:607
-#: elementor-pro/modules/gallery/widgets/gallery.php:480
+#: elementor-pro/modules/gallery/widgets/gallery.php:499
 #: elementor-pro/modules/posts/skins/skin-base.php:437
 #: elementor-pro/modules/pricing/widgets/price-list.php:84
 #: elementor-pro/modules/pricing/widgets/price-list.php:303
 #: elementor-pro/modules/theme-elements/widgets/author-box.php:297
-#: elementor-pro/modules/woocommerce/widgets/categories.php:267
+#: elementor-pro/modules/woocommerce/widgets/categories.php:257
 #: elementor-pro/modules/woocommerce/widgets/products-base.php:127
 msgid "Image"
 msgstr "Image"
@@ -9928,8 +9935,8 @@ msgstr "Afficher le titre"
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:317
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:395
 #: elementor-pro/modules/hotspot/widgets/hotspot.php:447
-#: elementor-pro/modules/motion-fx/controls-group.php:42
-#: elementor-pro/modules/motion-fx/controls-group.php:157
+#: elementor-pro/modules/motion-fx/controls-group.php:43
+#: elementor-pro/modules/motion-fx/controls-group.php:174
 #: elementor-pro/modules/payments/classes/payment-button.php:228
 #: elementor-pro/modules/payments/classes/payment-button.php:326
 #: elementor-pro/modules/posts/skins/skin-base.php:78
@@ -9937,7 +9944,7 @@ msgstr "Afficher le titre"
 #: elementor-pro/modules/posts/widgets/portfolio.php:165
 #: elementor-pro/modules/posts/widgets/portfolio.php:229
 #: elementor-pro/modules/pricing/widgets/price-table.php:166
-#: elementor-pro/modules/theme-elements/widgets/post-info.php:431
+#: elementor-pro/modules/theme-elements/widgets/post-info.php:451
 #: elementor-pro/modules/woocommerce/widgets/product-meta.php:90
 msgid "Off"
 msgstr "Inactif"
