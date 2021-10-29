@@ -1,35 +1,32 @@
 <?php
-	if ( function_exists( 'mail' ) ) {
-			echo 'mail() is available';
-	} else {
-			echo 'mail() has been disabled';
-	}
-
 	/*
-		* Enable error reporting
-		*/
+	* Enable error reporting
+	*/
 	ini_set( 'display_errors', 1 );
 	error_reporting( E_ALL );
 
-	/*
-		* Setup email addresses and change it to your own
-		*/
-	$from = "email@communaute-prod.cleverapps.io";
-	$to = "davidwatrelot@gmail.com";
-	$subject = "Simple test for mail function";
-	$message = "This is a test to check if php mail function sends out the email";
+
+if ( function_exists( 'mail' ) ) {
+			echo "mail() est  disponible";
+	} else {
+			echo "mail() n'est pas disponible";
+	}
+
+echo "<br><br>";
+
+if(isset($_GET['from'])) {
+	$from = $_GET['from'];
+	$to = $_GET['to'];
+	$subject = "Test pour la fonction de messagerie php";
+	$message = "Ceci est un test pour vérifier si la fonction de messagerie php envoie l'e-mail ";
 	$headers = "From:" . $from;
 
-	/*
-		* Test php mail function to see if it returns "true" or "false"
-		* Remember that if mail returns true does not guarantee
-		* that you will also receive the email
-		*/
 	if(mail($to,$subject,$message, $headers))  {
-		echo "Test email send.";
-	} 
-	else 
-	{
-		echo "Failed to send.";
-	}
+		echo "Test email envoyé à ".$to;
+	} else {
+		echo "Échec de l'envoi à ".$to;
+	}		
+} else {
+	echo "Pour envoyer un email test, il faut renseiger les 2 variables <i>from</i> et <i>to</i> dans l'url et recharger la page. <br>Exemple: https://communaute-prod.cleverapps.io/test.php?from=sophie.garcia@beta.gouv.fr&to=davidwatrelot@gmail.com";
+}
 ?>
