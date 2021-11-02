@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-10-25 16:26+0200\n"
+"PO-Revision-Date: 2021-11-02 15:34+0100\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -1251,7 +1251,7 @@ msgstr "Seulement moi"
 
 #: bp-activity/classes/class-bp-activity-component.php:211
 msgid "Search Feed&hellip;"
-msgstr "Recherche Feed&hellip;"
+msgstr "Rechercher dans le fil d'activités&hellip;"
 
 #: bp-activity/classes/class-bp-activity-component.php:288
 #: bp-activity/classes/class-bp-activity-component.php:423
@@ -27081,10 +27081,8 @@ msgstr ""
 "\">annulez la modification en attente</a>."
 
 #: bp-settings/classes/class-bp-rest-account-settings-endpoint.php:131
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to see the account settings."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr "Désolé, vous n’êtes pas autorisé à voir les paramètres du compte."
 
 #: bp-settings/classes/class-bp-rest-account-settings-endpoint.php:222
 msgid "A unique name for the setting navigation."
@@ -27099,10 +27097,8 @@ msgid "The position of the current navigation item."
 msgstr ""
 
 #: bp-settings/classes/class-bp-rest-account-settings-endpoint.php:240
-#, fuzzy
-#| msgid "Pending users list navigation"
 msgid "A unique link for the navigation."
-msgstr "Navigation dans la liste de usagers en attente"
+msgstr "Un lien unique pour la navigation."
 
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:115
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:158
@@ -27313,10 +27309,8 @@ msgid "Upload Limit Exceeded"
 msgstr "Limite de transfert dépassée"
 
 #: bp-templates/bp-nouveau/buddypress/assets/_attachments/uploader.php:21
-#, fuzzy
-#| msgid "Drop your file here"
 msgid "Drop your image here"
-msgstr "Déposez votre fichier ici"
+msgstr "Déposez votre image ici"
 
 #: bp-templates/bp-nouveau/buddypress/assets/_attachments/uploader.php:25
 #: bp-templates/bp-nouveau/buddypress/assets/_attachments/uploader.php:27

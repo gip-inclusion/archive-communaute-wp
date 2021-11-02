@@ -7,7 +7,7 @@ div#login form#loginform p.forgetmenot label {
 }
 
 .login form#loginform label[for="user_login"]::before, 
-.login form#loginform label[for="user_pass"]::before, 
-.user-pass-wrap .wp-pwd::before {
+.login form#loginform label[for="user_pass"]::before {
   top: 32px !important;
+	z-index: 1;
 }

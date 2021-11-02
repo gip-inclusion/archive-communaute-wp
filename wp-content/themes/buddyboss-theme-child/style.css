@@ -8,8 +8,9 @@ Version: 0.1.0
 */
 
 .entry-title,
-.page-title {
-	display: none;
+.page-title,
+.entry-header {
+	display: none !important;
 }
 
 .tribe-events-widget .tribe-events-widget-events-list__view-more-link {
