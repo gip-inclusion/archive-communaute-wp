@@ -1,3 +1,6 @@
+/*!
+ * Filter Everything seo rules admin 1.4.1
+ */
 (function($) {
     "use strict";
 

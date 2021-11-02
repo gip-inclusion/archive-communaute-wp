@@ -111,7 +111,7 @@ class SortingWidget extends \WP_Widget
                 'class'   => 'widefat',
                 'name'    => esc_attr( $this->get_field_name('orders') . '[]'),
                 'id'      => esc_attr( $this->get_field_id( 'orders' ) . '-' . $i ),
-                'options' => array( 'asc' => 'ASC', 'desc' => 'DESC' ),
+                'options' => array( 'asc' => esc_html_x('ASC', 'sorting', 'filter-everything'), 'desc' => esc_html_x('DESC', 'sorting', 'filter-everything') ),
                 'value'   => $orders[$k]
             );
 
@@ -153,7 +153,7 @@ class SortingWidget extends \WP_Widget
                     'class'   => 'widefat',
                     'name'    => esc_attr( $this->get_field_name('orders') . '[]'),
                     'id'      => esc_attr( $this->get_field_id( 'orders' ) . '-' . $i ),
-                    'options' => array( 'asc' => 'ASC', 'desc' => 'DESC' )
+                    'options' => array( 'asc' => esc_html_x('ASC', 'sorting', 'filter-everything'), 'desc' => esc_html_x('DESC', 'sorting', 'filter-everything') )
                 );
 
                 $orderbiesSelect = new Select($orderbiesConfig);

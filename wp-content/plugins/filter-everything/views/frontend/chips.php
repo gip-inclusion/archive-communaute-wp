@@ -14,7 +14,7 @@ if ( ! defined('WPINC') ) {
 }
 
 ?>
-<ul class="wpc-filter-chips-list wpc-filter-chips-<?php echo esc_attr( $setid ); ?>" data-set="<?php echo esc_attr( $setid ); ?>">
+<ul class="wpc-filter-chips-list wpc-filter-chips-<?php echo esc_attr( $setid ); ?><?php if( ! $chips ){echo ' wpc-empty-chips-container';} ?>" data-set="<?php echo esc_attr( $setid ); ?>">
 <?php if( $chips ) : ?>
     <?php foreach( $chips as $chip ): ?>
     <li class="wpc-filter-chip <?php echo esc_attr( $chip['class'] ); ?>">

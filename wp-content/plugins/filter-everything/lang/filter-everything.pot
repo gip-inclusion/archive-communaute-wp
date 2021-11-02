@@ -53,12 +53,8 @@ msgstr ""
 msgid "Title will be created automatically"
 msgstr ""
 
-#: pro/Admin/Admin.php:168
-msgid "Special Pop-up Filters widget "
-msgstr ""
-
 #: pro/Admin/Admin.php:170
-msgid "Try to use Pop-up Filter widget"
+msgid "Enable Pop-up Filter widget"
 msgstr ""
 
 #: pro/Admin/MetaBoxes.php:16
@@ -723,11 +719,7 @@ msgid "Select Post Type you need to filter"
 msgstr ""
 
 #: src/Admin/FilterSet.php:51
-msgid "Hide empty Terms"
-msgstr ""
-
-#: src/Admin/FilterSet.php:56
-msgid "Hide empty terms in initial Filters widget"
+msgid "Empty Terms"
 msgstr ""
 
 #: src/Admin/FilterSet.php:61
@@ -739,11 +731,7 @@ msgid "Display number of posts in a term"
 msgstr ""
 
 #: src/Admin/FilterSet.php:71
-msgid "Order №"
-msgstr ""
-
-#: src/Admin/FilterSet.php:76
-msgid "Filter Set with a higher value will have higher priority"
+msgid "Priority"
 msgstr ""
 
 #: src/Admin/FilterSet.php:129
@@ -825,10 +813,6 @@ msgstr ""
 msgid "Select terms"
 msgstr ""
 
-#: src/Admin/FilterSet.php:240
-msgid "&mdash; Enter new or Select Meta Key &mdash;"
-msgstr ""
-
 #: src/Admin/FilterSet.php:252
 msgid "Show this Filter Set if page is:"
 msgstr ""
@@ -836,71 +820,6 @@ msgstr ""
 #: src/Admin/FilterSet.php:268
 #, php-format
 msgid "Author: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:83
-msgid "Save"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:104
-msgid "Status:"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:109
-msgid "Privately Published"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:112
-msgid "Published"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:115
-msgid "Scheduled"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:118
-msgid "Pending Review"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:122
-msgid "Draft"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:140
-#, php-format
-msgid "Scheduled for: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:143
-#, php-format
-msgid "Published on: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:148
-#, php-format
-msgid "Schedule for: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:151
-#, php-format
-msgid "Publish on: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:172
-#, php-format
-msgid "Revisions: %s"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:242
-msgid "Delete permanently"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:244
-msgid "Move to Trash"
-msgstr ""
-
-#: src/Admin/MetaBoxes.php:272
-msgid "Submit for Review"
 msgstr ""
 
 #: src/Admin/Widgets/FiltersWidget.php:12
@@ -1026,7 +945,7 @@ msgid "AJAX"
 msgstr ""
 
 #: src/Settings/Tabs/ExperimentalTab.php:30
-msgid "Show AJAX loading icon (on desktop only)"
+msgid "AJAX loading icon (on desktop only)"
 msgstr ""
 
 #: src/Settings/Tabs/ExperimentalTab.php:32
@@ -1034,11 +953,11 @@ msgid "Show icon"
 msgstr ""
 
 #: src/Settings/Tabs/ExperimentalTab.php:36
-msgid "Use the Wait Cursor (on desktop only)"
+msgid "Wait Cursor (on desktop only)"
 msgstr ""
 
 #: src/Settings/Tabs/ExperimentalTab.php:38
-msgid "Wait Cursor for AJAX"
+msgid "Use Wait Cursor for AJAX"
 msgstr ""
 
 #: src/Settings/Tabs/ExperimentalTab.php:42
@@ -1162,7 +1081,7 @@ msgid "Filter Container max height, px"
 msgstr ""
 
 #: src/Settings/Tabs/SettingsTab.php:79
-msgid "Selected Terms above the posts container"
+msgid "Selected Filters (Chips) integration"
 msgstr ""
 
 #: src/Settings/Tabs/SettingsTab.php:81
@@ -1318,11 +1237,6 @@ msgid "Premium support"
 msgstr ""
 
 msgid ""
-"The Filter Everything plugin provides interface allows to create filters "
-"that help users quickly find posts or products of interest."
-msgstr ""
-
-msgid ""
 "<a href=\"%s\" target=\"_blank\">Documentation</a>. Please, read our "
 "documentation."
 msgstr ""
@@ -1354,10 +1268,10 @@ msgstr ""
 msgid "WooCommerce"
 msgstr ""
 
-msgid "filter by Product price"
+msgid "filter by Product price (Custom Field Num)"
 msgstr ""
 
-msgid "filter by Product Stock status"
+msgid "filter by Product Stock status (Custom Field)"
 msgstr ""
 
 msgid "by Sale Price (Custom Field Num) or on Sale Status (Custom Field Exists)"
@@ -1366,34 +1280,34 @@ msgstr ""
 msgid "by Sales Count"
 msgstr ""
 
-msgid "by Backorders Status"
+msgid "by Backorders Status (Custom Field)"
 msgstr ""
 
-msgid "by Downloadable Status"
+msgid "by Downloadable Status (Custom Field)"
 msgstr ""
 
-msgid "by Sold Individually status"
+msgid "by Sold Individually status (Custom Field)"
 msgstr ""
 
 msgid "by Stock Quantity (Custom Field Num)"
 msgstr ""
 
-msgid "by Product Virtual status"
+msgid "by Product Virtual status (Custom Field)"
 msgstr ""
 
-msgid "product Length"
+msgid "by product Length"
 msgstr ""
 
-msgid "product Width"
+msgid "by product Width"
 msgstr ""
 
-msgid "product Height"
+msgid "by product Height"
 msgstr ""
 
-msgid "product Weight"
+msgid "by product Weight"
 msgstr ""
 
-msgid "<li><strong>_wc_average_rating</strong> filter by Product Average Rating. Optionally use <a href=\"%s\" target=\"_blank\">Product Visibility</a> taxonomy instead"
+msgid "<tr><th>_wc_average_rating</th><td>filter by Product Average Rating. Optionally use <a href=\"%s\" target=\"_blank\">Product Visibility</a> taxonomy instead</td></tr>"
 msgstr ""
 
 msgid "Popular Meta keys"
@@ -1420,7 +1334,7 @@ msgstr ""
 msgid "Count, dynamic recount in terms"
 msgstr ""
 
-msgid "Allows to hide empty terms"
+msgid "Sorting widget"
 msgstr ""
 
 msgid "Custom URL prefixes for filters"
@@ -1435,16 +1349,19 @@ msgstr ""
 msgid "Filtering Custom WP Queries"
 msgstr ""
 
-msgid "Prefixes order in URLs"
+msgid "Smart filtering by Woo product variations"
 msgstr ""
 
 msgid "SEO Rules, indexing filtering result pages by Search Engines"
 msgstr ""
 
-msgid "Individual Filter Sets for any page including Single"
+msgid "Individual Filter Sets for any pages and archives"
 msgstr ""
 
-msgid "Special widget for Mobile Devices"
+msgid "Special Pop-up Filters widget for Mobile Devices"
+msgstr ""
+
+msgid "Special Pop-up Filters Widget for Mobile"
 msgstr ""
 
 msgid "Individual AJAX containers for Filter Sets"
@@ -1477,7 +1394,7 @@ msgstr ""
 msgid "%s #%s"
 msgstr ""
 
-msgid "No WP Queries matched to selected post type \"%s\" found on the page"
+msgid "No WP Queries matched to the post type \"%s\" found on the page"
 msgstr ""
 
 msgid "Search"
@@ -1498,13 +1415,13 @@ msgstr ""
 msgid "Select WP Query, that should be filtered"
 msgstr ""
 
-msgid "Opening widgets buttons"
+msgid "Buttons for opening widgets"
 msgstr ""
 
-msgid "Hide widget buttons"
+msgid "Hide opening widget buttons"
 msgstr ""
 
-msgid "Do not display opening widgets buttons. I will insert them myself with shortcodes."
+msgid "Do not display opening widgets buttons automatically. I will insert them myself via shortcodes."
 msgstr ""
 
 msgid "Note: if you will modify the query on the selected page, do not forget to update the current Filter Set."
@@ -1528,13 +1445,10 @@ msgstr ""
 msgid "Use improved dropdowns instead of regular ones (jQuery Select2)"
 msgstr ""
 
-msgid "An error occurred while searching for the WP Queries for the selected Post type. Please try to select a different Post type or page."
-msgstr ""
-
 msgid "a-z, 0-9, \"_\" and \"-\" symbols supported only"
 msgstr ""
 
-msgid "Compatibility with Page builders"
+msgid "Compatibility with any Page builder"
 msgstr ""
 
 msgid "Var Name for URL"
@@ -1615,28 +1529,14 @@ msgstr ""
 msgid "Possible reasons: 1) Filter\'s criteria doesn\'t contain any terms yet and you have to add them 2) Terms may be created, but no one post that should be filtered attached to these terms 3) You excluded all possible terms in Filter\'s options."
 msgstr ""
 
-msgid "By title from lowest to highest"
-msgstr ""
-
-msgid "By title from highest to lowest"
-msgstr ""
-
-msgid "By date from lowest to highest"
-msgstr ""
-
-msgid "By date from highest to lowest"
-msgstr ""
-
 msgid "Item #"
 msgstr ""
 
 msgid "Order By"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Title"
-msgstr ""
-
-msgid "Meta key"
 msgstr ""
 
 msgid "Order"
@@ -1648,13 +1548,13 @@ msgstr ""
 msgid "Preview selected location in a new tab"
 msgstr ""
 
-msgid "Used for Variations"
+msgid "Use for Variations"
 msgstr ""
 
-msgid "If checked, filtering will take into account variations created with this attribute"
+msgid "If checked, filtering will take into account variations with this attribute or meta key"
 msgstr ""
 
-msgid "Check this box if you have products with variations by this attribute.<br />And don\'t tick if it is used on the product Attributes tab only.<br />Relevant for variable products only."
+msgid "Check this box if products have variations with this meta key or this attribute.<br />And don\'t check the box if they don\'t have.<br />Relevant for variable products only."
 msgstr ""
 
 msgid "Default (no sorting)"
@@ -1666,6 +1566,7 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Author"
 msgstr ""
 
@@ -1675,28 +1576,44 @@ msgstr ""
 msgid "Name (post slug)"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Date"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Number of comments"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Product price"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Product sales number"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Product rating"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Product reviews number"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Meta key"
 msgstr ""
 
+msgctxt "sorting"
 msgid "Meta key numeric"
+msgstr ""
+
+msgctxt "sorting"
+msgid "ASC"
+msgstr ""
+
+msgctxt "sorting"
+msgid "DESC"
 msgstr ""
 
 msgid "Default sorting"
@@ -1747,5 +1664,119 @@ msgstr ""
 msgid "Hide Woocommerce default sorting dropdown"
 msgstr ""
 
-msgid ""
+msgid "Pop-up Filters Widget compatibility mode"
+msgstr ""
+
+msgid "Enable compatibility mode"
+msgstr ""
+
+msgid "Please enable this, if the widget doesn\'t appear"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "In stock"
+msgstr ""
+
+msgid "On backorder"
+msgstr ""
+
+msgid "Out of stock"
+msgstr ""
+
+msgid "WooCommerce archive description"
+msgstr ""
+
+msgid "WooCommerce no products found"
+msgstr ""
+
+msgid "WooCommerce before Shop loop"
+msgstr ""
+
+msgid "WooCommerce before main content"
+msgstr ""
+
+msgid "Select or enter hooks"
+msgstr ""
+
+msgid "Select where to show Chips on your site. Or enter your theme\'s hooks. For example: before_main_content"
+msgstr ""
+
+msgid "N/A"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Clear search"
+msgstr ""
+
+msgid "Search field"
+msgstr ""
+
+msgid "Adds search field above the terms list"
+msgstr ""
+
+msgid "Never hide"
+msgstr ""
+
+msgid "Always hide"
+msgstr ""
+
+msgid "Hide in the initial Filter only"
+msgstr ""
+
+msgid "To hide or not a Filter terms that do not contain posts"
+msgstr ""
+
+msgid "Tooltip"
+msgstr ""
+
+msgid "Will appear next to the Filter Label"
+msgstr ""
+
+msgid "Entities, whose terms should display in SEO data without force lowercasing"
+msgstr ""
+
+msgid "By default all terms is H1, SEO title and Description are displayed in lowercase. If you need to display them exactly as term names, specify them in this field."
+msgstr ""
+
+msgid "Comma separated entities. E.g. \"pa_brand,product_cat,_stock_status\""
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Styled checkboxes and radio buttons"
+msgstr ""
+
+msgid "Enable styling"
+msgstr ""
+
+msgid "Filter Set with a higher value will be shown first on a page with several Filter Sets"
+msgstr ""
+
+msgid "View details"
+msgstr ""
+
+msgid "Visit website"
+msgstr ""
+
+msgid "Filter Everything — WordPress & WooCommerce product filter plugin, that allows you to design flexible filtering system."
+msgstr ""
+
+msgid "It is fast, convenient and intuitive, and also contains unique features for SEO (in PRO version)."
+msgstr ""
+
+msgid "<a href=\"%s\" target=\"_blank\">Documentation</a>. Common information how to work with the plugin can be found in our documentation."
+msgstr ""
+
+msgid "<a href=\"%s\" target=\"_blank\">Support</a>. Create a technical support request if you are unable to resolve the issue yourself."
+msgstr ""
+
+msgid "Edit var names."
 msgstr ""

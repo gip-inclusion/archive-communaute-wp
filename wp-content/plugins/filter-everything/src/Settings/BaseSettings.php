@@ -121,18 +121,19 @@ abstract class BaseSettings implements TabInterface{
     public function selectCallback($args)
     {
         $options = isset($args['options']) ? $args['options'] : [];
-
+        $class = isset( $args['class'] ) ? $args['class'] : 'filter-settings-select';
         $value = $this->getOption($args['label_for']);
 
         $multiple = ! empty($args['multiple']) ? 'multiple' : null;
 
-        $select = '<select name="%s[%s]%s" class="filter-settings-select" placeholder="%s" id="%s" %s>';
+        $select = '<select name="%s[%s]%s" class="%s" placeholder="%s" id="%s" %s>';
 
         printf(
             $select,
             esc_attr($this->optionName),
             esc_attr($args['label_for']),
             $multiple ? '[]' : '',
+            $class,
             esc_attr($args['placeholder']),
             esc_attr($args['id']),
             $multiple
@@ -156,6 +157,10 @@ abstract class BaseSettings implements TabInterface{
 
         if (isset($args['help'])) {
             printf('<p>%s</p>', esc_html($args['help']));
+        }
+
+        if( isset( $args['description'] ) ){
+            printf( '<p class="description">%s</p>', esc_html( $args['description'] ) );
         }
 
     }
@@ -243,8 +248,15 @@ abstract class BaseSettings implements TabInterface{
             return;
         }
         $i = 1;
+
         foreach ( (array) $wp_settings_fields[ $page ][ $section ] as $field ) {
             $class = '';
+
+            if( $field['id'] === 'bottom_widget_compatibility' ){
+                if( flrt_get_option('show_bottom_widget') === 'on' ){
+                    $field['args']['class'] .= ' wpc-opened';
+                }
+            }
 
             if ( ! empty( $field['args']['class'] ) ) {
                 $class = ' class="' . esc_attr( $field['args']['class'] ) . '"';

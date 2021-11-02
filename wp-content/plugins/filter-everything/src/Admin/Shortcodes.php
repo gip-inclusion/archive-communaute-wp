@@ -78,6 +78,7 @@ class Shortcodes
         $all_widgets  = get_option( 'widget_wpc_sorting_widget' );
         $possible_ids = [];
         $arguments    = [];
+        $widget_id    = 0;
 
         if( isset( $atts['id'] ) ){
             $widget_id = preg_replace('/[^\d]?/', '', $atts['id'] );

@@ -1,5 +1,5 @@
 /*!
- * Filter Everything set admin 1.3.1
+ * Filter Everything set admin 1.4.1
  */
 (function($) {
     "use strict";
@@ -300,13 +300,7 @@
 
             $el.find('.wpc-field-exclude').select2({
                 width: '100%',
-                placeholder: wpcSelect2Vars.excludePlaceholder,
-            });
-
-            $el.find('.wpc-field-ename').select2({
-                width: '100%',
-                tags: true,
-                placeholder: wpcSelect2Vars.enamePlaceHolder
+                placeholder: wpcSetVars.excludePlaceholder,
             });
 
             // Fire this event to load exclude terms for first filter
@@ -334,9 +328,9 @@
         });
 
         $('.wpc-form-fields-table:not(.wpc-filter-post_meta_num) .wpc-field-exclude, .wpc-form-fields-table:not(.wpc-filter-post_meta_exists) .wpc-field-exclude').select2({
-
+            dropdownCssClass: 'wpc-filter-everything-dropdown',
             width: '100%',
-            placeholder: wpcSelect2Vars.excludePlaceholder
+            placeholder: wpcSetVars.excludePlaceholder
         });
 
         $('body').on('click', '.notice-dismiss', function(e){
@@ -487,9 +481,18 @@
         });
 
         $('body').on('change', '.wpc-field-view', function(){
-            let val = $(this).find('option:selected').text();
-            let target = $(this).parents('.wpc-filter-item').find('.wpc-filter-head li.wpc-filter-view');
-            target.text(val);
+            let optionName = $(this).find('option:selected').text();
+            let optionVal  = $(this).find('option:selected').val();
+            let $divFilterItem = $(this).parents('.wpc-filter-item');
+            let target = $divFilterItem.find('.wpc-filter-head li.wpc-filter-view');
+            let allowedViews = ['checkboxes', 'radio', 'labels'];
+            target.text(optionName);
+
+            if( allowedViews.includes(optionVal) ){
+                $divFilterItem.find('.wpc-field-search-tr').show();
+            }else{
+                $divFilterItem.find('.wpc-field-search-tr').hide();
+            }
         });
 
         $( '.wpc-filter-set-wrapper .wpc-filters-list' ).sortable({
@@ -584,6 +587,8 @@
 
         // Get set location fields
         $('body').on('change', '#wpc_set_fields-post_type', function (){
+
+            $("#wpc-filters-list").attr('data-posttype', $(this).val() );
 
             if( wpcSetVars.filtersPro < 1){
                 return true;
@@ -748,12 +753,17 @@
     {
         let val = entitySelect.val();
         let fid = entitySelect.parents('.wpc-filter-item').data('fid');
+        let additionalClass = '';
+
+        if( val.startsWith('taxonomy_pa_') ){
+            additionalClass = ' taxonomy-product-attribute';
+        }
 
         if( val.indexOf('taxonomy') !== -1 ){
             val = 'taxonomy';
         }
 
-        $("#wpc-filter-id-"+fid+" .wpc-form-fields-table").attr('class', 'wpc-form-fields-table wpc-filter-'+val);
+        $("#wpc-filter-id-"+fid+" .wpc-form-fields-table").attr('class', 'wpc-form-fields-table wpc-filter-'+val+additionalClass);
     }
 
     function syncEntityWithPrefix( entitySelect )
@@ -828,6 +838,7 @@
     {
         let val = entitySelect.val();
         let fid = entitySelect.parents('.wpc-filter-item').data('fid');
+        let posttype = $("#wpc-filters-list").attr('data-posttype');
 
         if( val.indexOf('taxonomy') !== -1 ){
             $.each( wpcSetVars.postTypesTaxList, function ( pType, taxesArray ){
@@ -838,39 +849,11 @@
                         }else{
                             $("#wpc-filter-id-"+fid+" .wpc-field-hierarchy-tr").hide();
                         }
-
-                        if( theTax['name'].startsWith('taxonomy_pa_') ){
-                            $("#wpc-filter-id-"+fid+" .wpc-field-for-variations-tr").show();
-                        }else{
-                            $("#wpc-filter-id-"+fid+" .wpc-field-for-variations-tr").hide();
-                        }
-                        return;
                     }
                 });
             });
         }
     }
-
-    // function handleUsedForVariationsField( entitySelect )
-    // {
-    //     let val = entitySelect.val();
-    //     let fid = entitySelect.parents('.wpc-filter-item').data('fid');
-    //
-    //     if( val.indexOf('taxonomy') !== -1 ){
-    //         $.each( wpcSetVars.postTypesTaxList, function ( pType, taxesArray ){
-    //             $.each( taxesArray, function ( index, theTax ){
-    //                 if( theTax['name'] === val ){
-    //                     if( theTax['name'].startsWith('taxonomy_pa_') ){
-    //                         $("#wpc-filter-id-"+fid+" .wpc-field-for-variations-tr").show();
-    //                     }else{
-    //                         $("#wpc-filter-id-"+fid+" .wpc-field-for-variations-tr").hide();
-    //                     }
-    //                     return;
-    //                 }
-    //             });
-    //         });
-    //     }
-    // }
 
     function handleMetaKeyField( entitySelect )
     {
@@ -922,7 +905,7 @@
                     target.html('');
                     target.select2({
                         width: '100%',
-                        placeholder: wpcSelect2Vars.excludePlaceholder,
+                        placeholder: wpcSetVars.excludePlaceholder,
                         data: response.terms,
                         disabled: false
                     })

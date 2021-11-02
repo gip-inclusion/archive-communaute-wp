@@ -4,7 +4,7 @@ Donate link: https://wpdeveloper.net
 Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, knowledge, table of content, TOC, knowledgebase, faqs, doc page, best documentation plugin, support ticket, customer support, instant answer bot, bot, help articles, better docs
 Requires at least: 4.0
 Tested up to: 5.8
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -158,6 +158,12 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+
+= 1.9.6 - 01/11/2021 =
+- Fixed: Conflict with Imagify plugin
+- Fixed: Admin Menus not highlighting properly
+- Few minor bug fix and improvements
 
 = 1.9.5 - 18/10/2021 =
 - Few minor bug fix and improvements

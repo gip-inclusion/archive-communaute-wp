@@ -450,19 +450,24 @@ class EntityManager
 
     private function makeFiltersQuery()
     {
-        global $wpdb;
+        $transient_key = 'wpc_filters_query';
+        if ( false === ( $results = get_transient( $transient_key ) ) ) {
+            global $wpdb;
 
-        $sql[] = "SELECT {$wpdb->posts}.ID, {$wpdb->posts}.post_title, {$wpdb->posts}.post_content,";
-        $sql[] = "{$wpdb->posts}.post_name, {$wpdb->posts}.post_parent, {$wpdb->posts}.menu_order";
-        $sql[] = "FROM {$wpdb->posts}";
-        $sql[] = "WHERE {$wpdb->posts}.post_type = '%s'";
-        $sql[] = "AND {$wpdb->posts}.post_status = 'publish'";
-        $sql[] = "ORDER BY {$wpdb->posts}.menu_order ASC, {$wpdb->posts}.ID DESC";
+            $sql[] = "SELECT {$wpdb->posts}.ID, {$wpdb->posts}.post_title, {$wpdb->posts}.post_content,";
+            $sql[] = "{$wpdb->posts}.post_name, {$wpdb->posts}.post_parent, {$wpdb->posts}.menu_order";
+            $sql[] = "FROM {$wpdb->posts}";
+            $sql[] = "WHERE {$wpdb->posts}.post_type = '%s'";
+            $sql[] = "AND {$wpdb->posts}.post_status = 'publish'";
+            $sql[] = "ORDER BY {$wpdb->posts}.menu_order ASC, {$wpdb->posts}.ID DESC";
 
-        $sql = implode(' ', $sql);
+            $sql = implode(' ', $sql);
 
-        $query      = $wpdb->prepare( $sql, FLRT_FILTERS_POST_TYPE );
-        $results    = $wpdb->get_results( $query, OBJECT );
+            $query      = $wpdb->prepare( $sql, FLRT_FILTERS_POST_TYPE );
+            $results    = $wpdb->get_results( $query, OBJECT );
+
+            set_transient( $transient_key, $results, FLRT_TRANSIENT_PERIOD_HOURS * HOUR_IN_SECONDS );
+        }
 
         if( ! $results ){
             return [];
@@ -685,6 +690,9 @@ class EntityManager
         return $actual;
     }
 
+    /**
+     * Should always return postIDs
+     */
     public function getAlreadyFilteredPostIds( $setId, $exceptEntity = false )
     {
         /**
@@ -693,28 +701,24 @@ class EntityManager
 
         $wpManager              = Container::instance()->getWpManager();
         $allWpQueriedPostIds    = $this->getAllSetWpQueriedPostIds( $setId );
+
         $postIds                = $allWpQueriedPostIds ? $allWpQueriedPostIds : [];
 
         if( $wpManager->getQueryVar('wpc_is_filter_request') ){
-            $filteredPostsIds        = $this->collectFilteredPostsIds( $setId );
+            $filteredPostsIdsKeys        = $this->collectFilteredPostsIds( $setId );
 
             $allWpQueriedPostIdsKeys = array_flip( $allWpQueriedPostIds );
             $allWpQueriedPostIdsKeys = apply_filters( 'wpc_from_products_to_variations', $allWpQueriedPostIdsKeys );
 
             if( $exceptEntity ){
-                unset($filteredPostsIds[$exceptEntity->getName()]);
+                unset($filteredPostsIdsKeys[$exceptEntity->getName()]);
             }
 
-            if(! empty( $filteredPostsIds ) ) {
-                $intersection_keys = $this->getBetweenFiltersIntersect($filteredPostsIds, $allWpQueriedPostIdsKeys);
-                // Replace back from Variation IDs to Product IDs
-                $intersection_values = apply_filters( 'wpc_from_variations_to_products', $intersection_keys );
+            if(! empty( $filteredPostsIdsKeys ) ) {
+                $intersection_keys = $this->getBetweenFiltersIntersect($filteredPostsIdsKeys, $allWpQueriedPostIdsKeys);
 
-                if( defined('FLRT_FILTERS_PRO') && FLRT_FILTERS_PRO ){
-                    $postIds = $intersection_values;
-                }else{
-                    $postIds = array_flip($intersection_values);
-                }
+                // Replace back from Variation IDs to Product IDs
+                $postIds = apply_filters( 'wpc_from_variations_to_products', array_flip($intersection_keys) );
             }
         }
 
@@ -841,7 +845,7 @@ class EntityManager
                 }
 
                 if ($entity instanceof PostMetaNumEntity) {
-                    $postsIn = $this->getAlreadyFilteredPostIds( $setId, $entity );
+                    $postsIn = apply_filters( 'wpc_min_and_max_values_post_meta_num', $this->getAlreadyFilteredPostIds( $setId, $entity ), $entity );
                     $entity->updateMinAndMaxValues($postsIn);
                 }
 
@@ -977,7 +981,7 @@ class EntityManager
         }
 
         $betweenFiltersIntersect = $this->getBetweenFiltersIntersect( $filteredPostsIds, $allPostsIds );
-        $finalInterSection = apply_filters( 'wpc_from_variations_to_products', array_intersect_key( $betweenFiltersIntersect, $termPostsIds ) );
+        $finalInterSection = apply_filters( 'wpc_from_variations_to_products', array_flip( array_intersect_key( $betweenFiltersIntersect, $termPostsIds ) ) );
 
         return count( $finalInterSection );
     }

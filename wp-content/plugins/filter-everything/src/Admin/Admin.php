@@ -23,6 +23,8 @@ class Admin
         add_action( 'init', array( $this, 'initTabs' ), 11 );
 
         add_action( 'admin_init', array( $this, 'init' ) );
+
+        add_filter( 'wpc_general_filters_settings', [$this, 'generalFilterSettings'] );
     }
 
     public function init()
@@ -77,7 +79,8 @@ class Admin
         return flrt_get_icon_svg();
     }
 
-    public function checkPermissions(){
+    public function checkPermissions()
+    {
         $screen     = get_current_screen();
         $post_types = [ FLRT_FILTERS_SET_POST_TYPE, FLRT_FILTERS_POST_TYPE ];
 
@@ -90,6 +93,48 @@ class Admin
                 wp_die( esc_html__( 'Sorry, you are not allowed to access this page.' ) );
             }
         }
+    }
+
+    public function generalFilterSettings( $settings )
+    {
+        $result_terms   = [];
+
+        // Chips hooks
+        $maybe_saved_terms  = flrt_get_option('show_terms_in_content', []);
+        $theme_dependencies = flrt_get_theme_dependencies();
+
+        $current_terms = $settings['common_settings']['fields']['show_terms_in_content']['options'];
+
+        if( flrt_is_woocommerce() ){
+            $woocommerce_terms = array(
+                'woocommerce_archive_description' => esc_html__('WooCommerce archive description', 'filter-everything' ),
+                'woocommerce_no_products_found' => esc_html__('WooCommerce no products found', 'filter-everything' ),
+                'woocommerce_before_shop_loop' => esc_html__('WooCommerce before Shop loop', 'filter-everything' ),
+                'woocommerce_before_main_content' => esc_html__('WooCommerce before main content', 'filter-everything' )
+            );
+
+            $result_terms = array_merge( $current_terms, $woocommerce_terms );
+        }
+
+        if( $maybe_saved_terms && is_array( $maybe_saved_terms )){
+            foreach ($maybe_saved_terms as $hook ){
+                if( ! in_array( $hook, array_keys( $result_terms ) ) ){
+                    $result_terms[$hook] = $hook;
+                }
+            }
+        }
+
+        if( isset( $theme_dependencies['chips_hook'] ) && ! empty( $theme_dependencies['chips_hook'] )){
+            foreach ($theme_dependencies['chips_hook'] as $hook ){
+                if( ! in_array( $hook, array_keys( $result_terms ) ) ){
+                    $result_terms[$hook] = $hook;
+                }
+            }
+        }
+
+        $settings['common_settings']['fields']['show_terms_in_content']['options'] = $result_terms;
+
+        return $settings;
     }
 
 }

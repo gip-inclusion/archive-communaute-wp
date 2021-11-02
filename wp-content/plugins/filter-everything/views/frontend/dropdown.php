@@ -41,13 +41,18 @@ $noSelectUrl = ( empty( $filter['values'] ) ) ? $url_manager->getResetUrl() : $u
                                     ?></option>
                             <?php } ?><!-- end foreach -->
                     </select>
-            <?php  else:  ?>
-                    <p><?php esc_html_e('There are no terms yet', 'filter-everything' );
+            <?php  else:
 
-                    if( flrt_is_debug_mode() ){
-                        echo '&nbsp;'.flrt_help_tip(
-                                esc_html__('Possible reasons: 1) Filter\'s criteria doesn\'t contain any terms yet and you have to add them 2) Terms may be created, but no one post that should be filtered attached to these terms 3) You excluded all possible terms in Filter\'s options.', 'filter-everything')
-                            );
+                    if( ! flrt_is_filter_request() ){
+                        ?><p><?php esc_html_e('There are no terms yet', 'filter-everything' );
+
+                        if( flrt_is_debug_mode() ){
+                            echo '&nbsp;'.flrt_help_tip(
+                                    esc_html__('Possible reasons: 1) Filter\'s criteria doesn\'t contain any terms yet and you have to add them 2) Terms may be created, but no one post that should be filtered attached to these terms 3) You excluded all possible terms in Filter\'s options.', 'filter-everything')
+                                );
+                        }
+                    }else{
+                        esc_html_e('N/A', 'filter-everything' );
                     }
                     ?></p>
             <?php endif; ?><!-- end if -->

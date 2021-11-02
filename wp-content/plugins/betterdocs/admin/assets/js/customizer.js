@@ -170,7 +170,7 @@
     
     wp.customize( 'betterdocs_doc_page_cat_icon_size_layout1', function( value ) {
         value.bind( function( to ) {
-            $( '.docs-cat-title > img' ).css( 'height', to + 'px' );
+            $( '.docs-cat-title img' ).css( 'height', to + 'px' );
         } );
     });
     
@@ -854,7 +854,7 @@
     
     wp.customize( 'betterdocs_sidebar_icon_size', function( value ) {
         value.bind( function( to ) {
-            $( '.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title > img' ).css( 'height', to + 'px' );
+            $( '.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title img' ).css( 'height', to + 'px' );
         } );
     });
 

@@ -1,63 +1,59 @@
 === Filter Everything&nbsp;— WooCoomerce Product & WordPress Filter ===
 Contributors: stepasyuk
 Tags: woocommerce product filter, woocommerce filter, product filter, post filter, ajax filter, product filter woocommerce, filter, taxonomy filter, post type filter, woocommerce products filter, category filter, price filter
-Stable tag: 1.3.2
+Stable tag: 1.4.1
 Requires at least: 4.6
-Tested up to: 5.8
+Tested up to: 5.8.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Filters everything in WordPress & WooCommerce: Products, any Post types, by Any Criteria. Supports AJAX. Compatible with WPML, ACF and others popular. Just Try it.
+Filters everything in WordPress & WooCommerce: Products, any Post types, by Any Criteria. Compatible with WPML, ACF and others popular. Supports AJAX. Just Try it.
 
 == Description ==
-Next generation of **WordPress Filter** (and also **WooCommerce Product Filter**) that allows you to build Powerful Faceted filtering system by any criteria. It filters any post types including Custom and Products, well-designed and have useful filtering options.
+Next generation of **WordPress Filter** (and also **WooCommerce Product Filter**) that allows you to build Powerful Faceted filtering system by any criteria. It filters any post types including Custom Post Types and Products, well-designed and has useful filtering options.
 
 ### Filters everything in WordPress & WooCommerce
 That is any Post types including WooCommerce Products and custom Post types. For example Products, Posts, Pages, Recipes, Real estate objects, Cars — **everything**.
+
+### Video review from WPTuts
+https://www.youtube.com/watch?v=g1_qlJvNdsg
 
 ### Filters by Any Criteria
 They are Categories, Tags, custom Taxonomies, WooCommerce attributes, Custom Fields including created with ACF, Authors etc.
 
 No need to list all possible filters you can create &mdash; they can be any, but most popular are:
-* Price, Sale price
-* Brand
-* Product Category, Tag
-* Custom Taxonomy 
-* Custom Fields including created with ACF plugin
+* [Price](https://demo.filtereverything.pro/example/by-price/), [Sale price](https://demo.filtereverything.pro/example/by-sale-price/)
+* [Brand](https://demo.filtereverything.pro/product-category/electronics/smartphones/)
+* [Product Category](https://demo.filtereverything.pro/), Tag
+* [Custom Taxonomy](https://demo.filtereverything.pro/posts/)
+* [Custom Fields](https://demo.filtereverything.pro/example/acf/) including created with ACF plugin
 * Size, Color - any WooCommerce attributes
-* Width, Height, Length, Weight 
-* On sale status 
-* In Stock status 
-* Downloadable, Backordered, Featured product statuses 
-* Product type
-* Shipping Class
-* Product Visibility
-* Featured image (exists/not exists)
-* Views count 
-* Cooking time 
+* [Width, Height, Length](https://demo.filtereverything.pro/example/by-length-width-height/), [Weight](https://demo.filtereverything.pro/example/by-weight/)
+* [On sale](https://demo.filtereverything.pro/example/by-sale/) status
+* [In Stock](https://demo.filtereverything.pro/example/by-stock/) status
+* [Downloadable](https://demo.filtereverything.pro/example/by-downloadable/), [Backordered](https://demo.filtereverything.pro/example/by-backorders/), [Featured](https://demo.filtereverything.pro/example/by-featured/) product statuses
+* [Product type](https://demo.filtereverything.pro/example/by-type/)
+* [Shipping Class](https://demo.filtereverything.pro/example/by-shipping/)
+* [Product Visibility](https://demo.filtereverything.pro/example/by-rating/)
+* [Featured image](https://demo.filtereverything.pro/posts/) exists/not exists
+* [Views count](https://demo.filtereverything.pro/posts/)
+* Cooking time
 * Calories
-* Author 
+* [Author](https://demo.filtereverything.pro/posts/)
 * ... **any**
 
 ### Advanced settings for a Filter
-Including URL variable name, frontend view, logic, sorting and excluding options as well as filter collapsing/expanding, hierarchical structure, tooltips and others.
-
-### Customizable Sorting Dropdown
-With unlimited sorting options to cover 99% of possible sorting needs.
+Including URL variable name, frontend view, logic, sorting and excluding options as well as filter collapsing/expanding, hierarchical structure, tooltips, search field and others.
 
 ### Supports AJAX
 Thus your visitors can faster to filter and to find relevant products or posts.
 
+### Supports filtering values in any languages
+Among them [Chinese, Arabic, Hebrew, Hindi](https://demo.filtereverything.pro/example/acf/checkbox-%D7%A9%D7%81%D6%B0%D7%9C%D7%95%D6%B9%D7%A9%D7%81%D6%B8%D7%94-or-%D8%A7%D8%AB%D9%86%D9%8A%D9%86-or-%E0%A4%9A%E0%A4%BE%E0%A4%B0-or-%E4%B8%AD%E6%96%87%E5%96%AE%E5%AD%97%E7%9A%84%E4%BE%8B%E5%AD%90/) etc
+
 ### Compatible with Themes and popular Plugins
 Compatible with WPML, ACF and others popular. Supports color schemes to allow you easily integrate with your design
-
-### Supports customization of the filter views
-You can use one of the default views Checkboxes, Radio buttons, Labels, Dropdown or Range with slider.
-But also you can modify each of them by [overriding its template](https://filtereverything.pro/resources/templates-overriding/) in your theme.
-
-### Customizable URL vars
-Allows you to control names of the GET variables in filtering pages URLs.
 
 ### Responsive, Mobile ready
 
@@ -115,7 +111,7 @@ Uploading via FTP
 4. After installation, you will find a new menu item “Filters”
 5. Read the documentation to [get started](https://filtereverything.pro/resources/quickstart/)
 
-== Screenshots ==
+== Screenshots == 
 
 1. Common Filters view
 2. Filtering Smartphones
@@ -126,9 +122,28 @@ Uploading via FTP
 
 == Changelog ==
 
-= 1.3.2 =
-*Release Date - 16 October 2021*
+= 1.4.1 =
+*Release Date - 01 November 2021*
+* Dev   - Improved performance by adding SQL queries caches
+* Dev   - Added support filtering values on any language (Chinese, Arabic, Hebrew and so on)
+* Fix 	- Fixed bug with Custom Field Num filter for non-product posts
+* Fix   - Fixed bug with AND logic for filters by hierarchical taxonomies
+* Fix   - Meta key Dropdown field was replaced with Input without suggestions due to performance issues
+* Fix   - Fixed Sorting Dropdown field for AJAX filtering
+* Fix   - Improved compatibility with the WP Query that already contains this term. "Term already in Query" check.
+* Tweak - Improved "Hide empty Terms" by adding new option "Hide in the initial Filter only"
+* Tweak - Added Russian translations
+
+= 1.4.0 =
+*Release Date - 22 October 2021*
+* Dev   - Added search field to a filter
+* Dev   - Improved Chips integration
+* Fix   - Fixed small issue with Polylang
 * Fix 	- Fixed bug with range slider values on filtering pages
+* Fix   - Removed 'user_trailingslashit' for 'get_post_type_archive_link' in 'getCommonLocationTerms' method
+* Tweak - Improved chips design to make them more lightweight
+* Tweak - Added ability to translate stock status terms
+* Tweak - Added pjax compatibility
 
 = 1.3.1 =
 *Release Date - 01 October 2021*
@@ -139,18 +154,25 @@ Uploading via FTP
 *Release Date - 01 October 2021*
 * Dev   - Added Sorting widget with unlimited sorting options. Elementor compatible.
 * Dev   - Added Sorting shortcode
+* Dev   - Added option 'Use for Variations' to filter more accurately by Product Attributes and variations
+* Dev   - Added 'any' to search results query when post type are not specified
 * Dev   - Improved uninstall hook to avoid deleting data when both PRO and Free versions installed
 * Dev   - Made [fe_widget] shortcode available in Free version also
 * Bug   - Added suppress_filters=true to querySets to avoid conflict with Avada Builder product ordering
 * Fix   - Fixed JS error with reading of undefined 'wpcHandler'
+* Fix   - Fixed filtering by variation attributes
 * Fix   - Removed 'flrt_fix_elementor_query_args' fix
 * Fix   - Fixed compatibility issue with Divi theme
+* Tweak - Added hook 'post_type_archive_title' to replace H1 titles
 * Tweak - Added option to hide Woocommerce dropdown in Experimental options
 * Tweak - Reduced Select2 dropdowns height on desktops
-* Tweak - improved widgets to be compatible with new interface
+* Tweak - Added preview link to the location field
 
 = 1.2.5 =
 *Release Date - 03 September 2021*
+* Dev   - Added hook 'wpc_filter_sets_posts_per_page'
+* Tweak - Improved error message about allowed URL prefixes
+* Tweak - Improved list with unnecessary GET parameters
 * Fix   - Fixed bug in free version with PHP Warning on login page
 
 = 1.2.4 =
@@ -162,12 +184,12 @@ Uploading via FTP
 * Fix   - Hotfix for filtering by ACF fields
 = 1.2.2 =
 *Release Date - 18 August 2021*
-* Dev   - Added variable products for filtering support (PRO)
+* Dev   - Added variable products for filtering support
 * Fix   - Resolved problem with 'include_children' query param
 * Dev   - Added debugging messages to the Filters widget to make it configuring more clear.
 * Fix   - Fixed problem with Select2 dropdowns width after resizing window
-* Fix   - Added wrappers for filter query and hidden queries fields to avoid problems with the jQuery find method. (PRO)
-* Fix   - Fixed problem with SEO plugins in Multisite mode (PRO)
+* Fix   - Added wrappers for filter query and hidden queries fields to avoid problems with the jQuery find method.
+* Fix   - Fixed problem with SEO plugins in Multisite mode
 * Fix   - Add correct comparison of decimal values for PostMetaNum Filter.
 * Tweak - Added Filter label to a chip title.
 * Tweak - Added explanation message to the AJAX option checkbox
@@ -379,5 +401,20 @@ Uploading via FTP
 
 == Upgrade Notice ==
 
-= 1.3.2 =
+= 1.4.1 =
+* Dev   - Improved performance by adding SQL queries caches
+* Dev   - Added search field to a filter
+* Dev   - Added support filtering values on any language (Chinese, Arabic, Hebrew and so on)
+* Dev   - Improved Chips integration
+* Fix   - Fixed small issue with Polylang
 * Fix 	- Fixed bug with range slider values on filtering pages
+* Fix 	- Fixed bug with Custom Field Num filter for non-product posts
+* Fix   - Fixed bug with AND logic for filters by hierarchical taxonomies
+* Fix   - Meta key Dropdown field was replaced with Input without suggestions due to performance issues
+* Fix   - Fixed Sorting Dropdown field for AJAX filtering
+* Fix   - Improved compatibility with the WP Query that already contains this term. "Term already in Query" check.
+* Tweak - Improved "Hide empty Terms" by adding new option "Hide in the initial Filter only"
+* Tweak - Added Russian translations
+* Tweak - Improved chips design to make them more lightweight
+* Tweak - Added ability to translate stock status terms
+* Tweak - Added pjax compatibility

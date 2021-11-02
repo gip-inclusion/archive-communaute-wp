@@ -382,7 +382,8 @@ function flrt_excluded_taxonomies()
         'template_category',
         'element_category',
         'fusion_tb_category',
-        'slide-page'
+        'slide-page',
+        'elementor_font_type'
     );
 
     return apply_filters( 'wpc_excluded_taxonomies', $excluded_taxonomies );
@@ -714,6 +715,7 @@ function flrt_filter_class($filter, $default_classes = [] )
 {
     $classes = array(
         'wpc-filters-section',
+        'wpc-filters-section-'.esc_attr($filter['ID']),
         'wpc-filter-'.esc_attr($filter['e_name']),
         'wpc-filter-'.esc_attr($filter['entity']),
         'wpc-filter-layout-'.esc_attr($filter['view'])
@@ -1026,4 +1028,16 @@ function flrt_get_active_plugins(){
     }
 
     return $active_plugins;
+}
+
+function flrt_get_terms_transient_key( $salt ){
+    return 'wpc_terms_' . $salt;
+}
+
+function flrt_get_post_ids_transient_key( $salt ){
+    return 'wpc_posts_' . $salt;
+}
+
+function flrt_get_variations_transient_key( $salt ){
+    return 'wpc_variations_' . $salt;
 }

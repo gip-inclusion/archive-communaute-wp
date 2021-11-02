@@ -156,70 +156,63 @@ class PostMetaEntity implements Entity
         global $wpdb;
 
         $e_name = wp_unslash( $this->entityName );
+        $transient_key = flrt_get_terms_transient_key( $e_name );
 
-        $sql[] = "SELECT {$wpdb->postmeta}.post_id,{$wpdb->postmeta}.meta_value,{$wpdb->posts}.post_type";
-        $sql[] = "FROM {$wpdb->postmeta}";
-        $sql[] = "LEFT JOIN {$wpdb->posts} ON ({$wpdb->postmeta}.post_id = {$wpdb->posts}.ID)";
+        if ( false === ( $result = get_transient( $transient_key ) ) ) {
 
-        /**
-         * @todo make it through apply_filter();
-         */
-        if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
-            $sql[] = "LEFT JOIN {$wpdb->prefix}icl_translations AS wpml_translations";
-            $sql[] = "ON {$wpdb->postmeta}.post_id = wpml_translations.element_id";
+            $sql[] = "SELECT {$wpdb->postmeta}.post_id,{$wpdb->postmeta}.meta_value,{$wpdb->posts}.post_type";
+            $sql[] = "FROM {$wpdb->postmeta}";
+            $sql[] = "LEFT JOIN {$wpdb->posts} ON ({$wpdb->postmeta}.post_id = {$wpdb->posts}.ID)";
 
-            if( ! empty( $this->postTypes ) ){
-                $sql[] = "AND wpml_translations.element_type IN(";
-                    foreach( $this->postTypes as $type ){
-                        $LANG_IN[] = $wpdb->prepare( "CONCAT('post_', '%s')", $type );
+            /**
+             * @todo make it through apply_filter();
+             */
+            if (flrt_wpml_active() && defined('ICL_LANGUAGE_CODE')) {
+                $sql[] = "LEFT JOIN {$wpdb->prefix}icl_translations AS wpml_translations";
+                $sql[] = "ON {$wpdb->postmeta}.post_id = wpml_translations.element_id";
+
+                if (!empty($this->postTypes)) {
+                    $sql[] = "AND wpml_translations.element_type IN(";
+                    foreach ($this->postTypes as $type) {
+                        $LANG_IN[] = $wpdb->prepare("CONCAT('post_', '%s')", $type);
                     }
-                    $sql[] = implode(",", $LANG_IN );
+                    $sql[] = implode(",", $LANG_IN);
+                    $sql[] = ")";
+                }
+            }
+
+            $sql[] = "WHERE {$wpdb->postmeta}.meta_key = %s";
+
+            if (!empty($this->postTypes)) {
+                $sql[] = "AND {$wpdb->posts}.post_type IN(";
+                foreach ($this->postTypes as $type) {
+                    $IN[] = $wpdb->prepare("%s", $type);
+                }
+                $sql[] = implode(",", $IN);
                 $sql[] = ")";
             }
+
+            /**
+             * @todo make it through apply_filter();
+             */
+            if (flrt_wpml_active() && defined('ICL_LANGUAGE_CODE')) {
+                $sql[] = $wpdb->prepare("AND wpml_translations.language_code = '%s'", ICL_LANGUAGE_CODE);
+            }
+
+            $sql[] = "ORDER BY {$wpdb->postmeta}.meta_id ASC";
+            /**
+             * @notice It would be great to make LEFT JOIN posts where post type is post type from the filter SET
+             * But it seems we can't know post type on this stage of WP loading (in RequestParser).
+             */
+
+            $sql = implode(' ', $sql);
+
+            $sql = $wpdb->prepare($sql, $e_name);
+            $result = $wpdb->get_results($sql, ARRAY_A);
+
+            set_transient( $transient_key, $result, FLRT_TRANSIENT_PERIOD_HOURS * HOUR_IN_SECONDS );
         }
 
-        $sql[] = "WHERE {$wpdb->postmeta}.meta_key = %s";
-
-        if( ! empty( $this->postTypes ) ){
-            $sql[] = "AND {$wpdb->posts}.post_type IN(";
-                foreach( $this->postTypes as $type ){
-                    $IN[] = $wpdb->prepare( "%s", $type );
-                }
-                $sql[] = implode(",", $IN );
-            $sql[] = ")";
-        }
-
-//        if( flrt_is_woocommerce() && in_array( 'product', $this->postTypes ) ){
-//            // Do not take into account product variations
-//            $sql[] = "AND {$wpdb->posts}.post_type != 'product_variation'";
-//        }
-
-        // Do not take into account variable products if it requires
-        // We will attach their terms later
-//        if( $include_variations_later ){
-//            $sql[] = "AND {$wpdb->posts}.ID NOT IN(";
-//            $sql[] = "SELECT DISTINCT {$wpdb->posts}.post_parent";
-//            $sql[] = "FROM {$wpdb->posts}";
-//            $sql[] = "WHERE {$wpdb->posts}.post_type = 'product_variation' )";
-//        }
-
-        /**
-         * @todo make it through apply_filter();
-         */
-        if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
-            $sql[] = $wpdb->prepare("AND wpml_translations.language_code = '%s'", ICL_LANGUAGE_CODE);
-        }
-
-        $sql[] = "ORDER BY {$wpdb->postmeta}.meta_id ASC";
-        /**
-         * @notice It would be great to make LEFT JOIN posts where post type is post type from the filter SET
-         * But it seems we can't know post type on this stage of WP loading (in RequestParser).
-         */
-
-        $sql = implode(' ', $sql);
-
-        $sql        = $wpdb->prepare( $sql, $e_name );
-        $result     = $wpdb->get_results( $sql, ARRAY_A );
 
         return $this->convertSelectResult( $result );
     }

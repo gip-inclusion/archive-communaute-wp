@@ -66,37 +66,46 @@ class TaxonomyEntity implements Entity
         return $terms;
     }
 
-    public function getTermTaxonomyPostsIds( $termTaxonomyIds )
+    public function getTermTaxonomyPostsIds( $termTaxonomyIds, $filter )
     {
         global $wpdb;
-
         $include_variation_atts = false;
 
-        if( defined('FLRT_FILTERS_PRO') && FLRT_FILTERS_PRO ) {
-            if( strpos( $this->getName(), 'pa_' ) === 0 ) {
-                $include_variation_atts = true;
+        // Check if it is already stored
+        $transient_key = flrt_get_post_ids_transient_key( $filter['slug'] );
+
+        if ( false === ( $results = get_transient( $transient_key ) ) ) {
+
+            // It wasn't there, so regenerate the data and save the transient
+            if( defined('FLRT_FILTERS_PRO') && FLRT_FILTERS_PRO ) {
+                if( strpos( $this->getName(), 'pa_' ) === 0 ) {
+                    $include_variation_atts = true;
+                }
             }
+
+            $query[] = "SELECT DISTINCT {$wpdb->term_relationships}.term_taxonomy_id,{$wpdb->term_relationships}.object_id";
+
+            if( $include_variation_atts ){
+                $query[] = ", tm.slug";
+            }
+
+            $query[] = "FROM {$wpdb->term_relationships}";
+
+            if( $include_variation_atts ){
+                $query[] = "LEFT JOIN {$wpdb->term_taxonomy} AS tt";
+                $query[] = "ON ( {$wpdb->term_relationships}.term_taxonomy_id = tt.term_taxonomy_id )";
+                $query[] = "LEFT JOIN {$wpdb->terms} AS tm";
+                $query[] = "ON ( tt.term_id = tm.term_id )";
+            }
+
+            $query[] = "WHERE {$wpdb->term_relationships}.term_taxonomy_id IN ('" . implode("','", $termTaxonomyIds) . "')";
+
+            $query = implode(' ', $query);
+
+            $results = $wpdb->get_results($query, ARRAY_A);
+
+            set_transient( $transient_key, $results, FLRT_TRANSIENT_PERIOD_HOURS * HOUR_IN_SECONDS );
         }
-        $query[] = "SELECT DISTINCT {$wpdb->term_relationships}.term_taxonomy_id,{$wpdb->term_relationships}.object_id";
-
-        if( $include_variation_atts ){
-            $query[] = ", tm.slug";
-        }
-
-        $query[] = "FROM {$wpdb->term_relationships}";
-
-        if( $include_variation_atts ){
-            $query[] = "LEFT JOIN {$wpdb->term_taxonomy} AS tt";
-            $query[] = "ON ( {$wpdb->term_relationships}.term_taxonomy_id = tt.term_taxonomy_id )";
-            $query[] = "LEFT JOIN {$wpdb->terms} AS tm";
-            $query[] = "ON ( tt.term_id = tm.term_id )";
-        }
-
-        $query[] = "WHERE {$wpdb->term_relationships}.term_taxonomy_id IN ('" . implode("','", $termTaxonomyIds) . "')";
-
-        $query = implode(' ', $query);
-
-        $results = $wpdb->get_results($query, ARRAY_A);
 
         $taxonomy_terms = apply_filters( 'wpc_term_taxonomy_terms', $results, $this );
 
@@ -108,7 +117,7 @@ class TaxonomyEntity implements Entity
         // Fix for counts for parent, when 'include_children=true'
         // Add posts from children terms to their parents
         // To make correct counts for their parents
-        if( ! empty( $this->descendants ) ){
+        if( ! empty( $this->descendants ) && $filter['logic'] === 'or' ){
             // array of parents term_ids, that have children
             $parents = array_keys( $this->descendants );
 
@@ -131,18 +140,28 @@ class TaxonomyEntity implements Entity
         $termTaxonomyIds     = [];
         $em                  = Container::instance()->getEntityManager();
         $allWpQueriedPostIds = $em->getAllSetWpQueriedPostIds( $setId );
+        $relatedFilters      = $em->getSetsRelatedFilters( array( array( 'ID' => $setId) ) );
 
-
-        if( $this->getName() === 'product_shipping_class' ){
-            $allWpQueriedPostIds = apply_filters( 'wpc_from_products_to_variations', array_flip($allWpQueriedPostIds) );
-            $allWpQueriedPostIds = array_flip( $allWpQueriedPostIds );
+        $the_filter = [];
+        foreach ( $relatedFilters as $filter ){
+            if( isset( $filter['e_name'] ) && $filter['e_name'] === $this->getName() ){
+                $the_filter = $filter;
+                break;
+            }
         }
 
         foreach ( $this->getAllExistingTerms() as $term ){
             $termTaxonomyIds[] = $term->term_taxonomy_id;
         }
 
-        $termPosts = $this->getTermTaxonomyPostsIds( $termTaxonomyIds );
+        $termPosts = $this->getTermTaxonomyPostsIds( $termTaxonomyIds, $the_filter );
+
+        if( $this->getName() === 'product_shipping_class' ){
+
+            foreach ( $termPosts as $term_id => $the_posts ){
+                $termPosts[$term_id] = apply_filters( 'wpc_from_variations_to_products', $the_posts );
+            }
+        }
 
         foreach( $this->items as $index => $term ){
             if( isset( $termPosts[$term->term_taxonomy_id] ) ){
@@ -333,7 +352,9 @@ class TaxonomyEntity implements Entity
         }
 
         $normalized_tax_query['taxonomy'] = $tax_query['taxonomy'];
-        $normalized_tax_query['field']    = $tax_query['field'];
+        if( isset( $tax_query['field'] ) ){
+            $normalized_tax_query['field']    = $tax_query['field'];
+        }
 
         if( is_array($tax_query['terms']) ){
             $normalized_tax_query['terms']    = implode( '-', $tax_query['terms'] );
@@ -363,13 +384,6 @@ class TaxonomyEntity implements Entity
      * @return mixed object WP_Query|string;
     */
     public function addTermsToWpQuery($queried_value, $wp_query ){
-        if( $term = $this->isTermAlreadyInQuery( $queried_value, $wp_query ) ){
-            // It is be better to return 404 result and process it in WpManager
-            /**
-             * @todo replace with with just false. Or better - show this only in debug mode.
-             */
-            return 'Term already in query';
-        }
         /**
          * @feature Include children should be optionally configured in Settings. Maybe.
         */
@@ -378,6 +392,10 @@ class TaxonomyEntity implements Entity
             'field'             => 'slug',
             'terms'             => $queried_value['values'],
         );
+
+        if( isset( $queried_value['logic'] ) && $queried_value['logic'] === 'and' ){
+            $args['include_children'] = false;
+        }
 
         $args['operator'] = $this->getSqlLogicOperator( $queried_value );
 
@@ -388,19 +406,6 @@ class TaxonomyEntity implements Entity
         }
 
         $this->addTaxQueryArray( $args );
-
-//        if ($queried_value['used_for_variations'] === 'yes') {
-//            if (strpos($queried_value['e_name'], 'pa_') === 0) {
-//                $meta_query = array(
-//                    array(
-//                        'key' => 'attribute_' . $queried_value['e_name'],
-//                        'value' => $queried_value['values'],
-//                        'compare' => 'IN'
-//                    )
-//                );
-//                $wp_query->set('meta_query', $meta_query);
-//            }
-//        }
 
         $already_existing_tax_query = $wp_query->get('tax_query');
 

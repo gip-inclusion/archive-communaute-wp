@@ -190,7 +190,7 @@ function betterdocs_customize_css() {
 			margin-bottom: <?php echo $output['betterdocs_doc_page_column_content_space_counter'] ?>px;
 			<?php } ?>
 		}
-		.docs-cat-title > img { 
+		.docs-cat-title img {
 			height: <?php echo $output['betterdocs_doc_page_cat_icon_size_layout1'] ?>px; 
 		}
 		.betterdocs-category-box.single-kb .docs-single-cat-wrap img { 
@@ -493,7 +493,7 @@ function betterdocs_customize_css() {
 		.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-single-cat-wrap .docs-cat-title-wrap {
 			background-color: <?php echo $output['betterdocs_sidebar_title_bg_color'] ?>;
 		}
-		.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title > img{
+		.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title img {
 			height: <?php echo $output['betterdocs_sidebar_icon_size'] ?>px;
 		}
 		.betterdocs-sidebar-content.betterdocs-category-sidebar .docs-cat-title-inner .docs-cat-heading{

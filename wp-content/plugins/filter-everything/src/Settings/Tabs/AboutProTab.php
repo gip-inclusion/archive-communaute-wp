@@ -69,7 +69,7 @@ class AboutProTab extends BaseSettings{
                 <td valign="top"><span class="yes"></span></td>
             </tr>
             <tr>
-                <td valign="top"><?php esc_html_e('Allows to hide empty terms', 'filter-everything' ); ?></td>
+                <td valign="top"><?php esc_html_e('Sorting widget', 'filter-everything' ); ?></td>
                 <td valign="top"><span class="yes"></span></td>
                 <td valign="top"><span class="yes"></span></td>
             </tr>
@@ -84,7 +84,7 @@ class AboutProTab extends BaseSettings{
                 <td valign="top"><span class="yes"></span></td>
             </tr>
             <tr>
-                <td valign="top"><?php esc_html_e('Compatibility with Page builders', 'filter-everything' ); ?></td>
+                <td valign="top"><?php esc_html_e('Compatibility with any Page builder', 'filter-everything' ); ?></td>
                 <td valign="top"><span class="yes"></span></td>
                 <td valign="top"><span class="no">—</span></td>
             </tr>
@@ -99,7 +99,7 @@ class AboutProTab extends BaseSettings{
                 <td valign="top"><span class="no">—</span></td>
             </tr>
             <tr>
-                <td valign="top"><?php esc_html_e('Prefixes order in URLs', 'filter-everything' ); ?></td>
+                <td valign="top"><?php esc_html_e('Smart filtering by Woo product variations', 'filter-everything' ); ?></td>
                 <td valign="top"><span class="yes"></span></td>
                 <td valign="top"><span class="no">—</span></td>
             </tr>
@@ -109,12 +109,12 @@ class AboutProTab extends BaseSettings{
                 <td valign="top"><span class="no">—</span></td>
             </tr>
             <tr>
-                <td valign="top"><?php esc_html_e('Individual Filter Sets for any page including Single', 'filter-everything' ); ?></td>
+                <td valign="top"><?php esc_html_e('Individual Filter Sets for any pages and archives', 'filter-everything' ); ?></td>
                 <td valign="top"><span class="yes"></span></td>
                 <td valign="top"><span class="no">—</span></td>
             </tr>
             <tr>
-                <td valign="top"><?php esc_html_e('Special widget for Mobile Devices', 'filter-everything' ); ?></td>
+                <td valign="top"><?php esc_html_e('Special Pop-up Filters widget for Mobile Devices', 'filter-everything' ); ?></td>
                 <td valign="top"><span class="yes"></span></td>
                 <td valign="top"><span class="no">—</span></td>
             </tr>

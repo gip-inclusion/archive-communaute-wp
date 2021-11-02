@@ -77,7 +77,7 @@ class Chips
 
             foreach ( $this->queried  as $slug => $filter ) {
 
-                if( $filter['show_chips'] !== 'yes' ){
+                if( isset( $filter['show_chips'] ) && ( $filter['show_chips'] !== 'yes' ) ){
                     continue;
                 }
 

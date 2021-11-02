@@ -20,7 +20,13 @@ if ( ! defined('WPINC') ) {
 <div class="<?php echo flrt_filter_class( $filter ); // Already escaped ?>" data-fid="<?php echo esc_attr( $filter['ID'] ); ?>">
     <?php flrt_filter_header( $filter, $terms ); // Safe, escaped ?>
     <div class="<?php echo esc_attr( flrt_filter_content_class( $filter ) ); ?>">
-        <ul class="wpc-filters-ul-list wpc-filters-radio">
+        <?php if( $filter['search'] === 'yes' ):  ?>
+            <div class="wpc-filter-search-wrapper wpc-filter-search-wrapper-<?php echo esc_attr( $filter['ID'] ); ?>">
+                <input class="wpc-filter-search-field" type="text" value="" placeholder="<?php esc_html_e('Search', 'filter-everything' ) ?>" />
+                <button class="wpc-search-clear" type="button" title="<?php esc_html_e('Clear search', 'filter-everything' ) ?>"><span class="wpc-search-clear-icon">&#215;</span></button>
+            </div>
+        <?php endif; ?>
+        <ul class="wpc-filters-ul-list wpc-filters-radio wpc-filters-list-<?php echo esc_attr( $filter['ID'] ); ?>">
             <?php if( ! empty( $terms ) ): ?>
 
                 <?php foreach ( $terms as $id => $term_object ){
@@ -46,15 +52,21 @@ if ( ! defined('WPINC') ) {
                     </li>
                 <?php } ?><!-- end foreach -->
 
-            <?php  else:  ?>
-                    <li><?php esc_html_e('There are no terms yet', 'filter-everything' );
-                    if( flrt_is_debug_mode() ){
-                        echo '&nbsp;'.flrt_help_tip(
-                            esc_html__('Possible reasons: 1) Filter\'s criteria doesn\'t contain any terms yet and you have to add them 2) Terms may be created, but no one post that should be filtered attached to these terms 3) You excluded all possible terms in Filter\'s options.', 'filter-everything')
-                        );
+            <?php  else:
+                    if( ! flrt_is_filter_request() ){
+                        ?>
+                        <li><?php esc_html_e('There are no terms yet', 'filter-everything' );
+                        if( flrt_is_debug_mode() ){
+                            echo '&nbsp;'.flrt_help_tip(
+                                esc_html__('Possible reasons: 1) Filter\'s criteria doesn\'t contain any terms yet and you have to add them 2) Terms may be created, but no one post that should be filtered attached to these terms 3) You excluded all possible terms in Filter\'s options.', 'filter-everything')
+                            );
+                        }
+                        ?></li>
+                <?php }else{
+                        esc_html_e('N/A', 'filter-everything' );
                     }
-                    ?></li>
-            <?php endif; ?><!-- end if -->
+
+                    endif; ?><!-- end if -->
         </ul>
     </div>
 </div>

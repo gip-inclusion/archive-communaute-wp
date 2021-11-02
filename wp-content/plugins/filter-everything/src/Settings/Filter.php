@@ -40,6 +40,7 @@ class Filter
                     'used_for_variations' => '',
                     'range_slider' => '',
                     'step'       => '',
+                    'search'     => '',
                     'tooltip'    => ''
             )
         );

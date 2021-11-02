@@ -141,13 +141,11 @@ class AuthorEntity implements Entity
 
     private function getAuthors()
     {
-        global $wpdb;
-        $container  = Container::instance();
-        $key        = 'wpc_author_entity';
+        $transient_key = flrt_get_terms_transient_key( $this->getName() );
 
-        $terms = $container->getParam( $key );
+        if ( false === ( $result = get_transient( $transient_key ) ) ) {
 
-        if( ! $terms ) {
+            global $wpdb;
             $this->postTypes = apply_filters('wpc_filter_author_query_post_types', get_post_types(array('public' => true)));
 
             $IN = [];
@@ -197,17 +195,12 @@ class AuthorEntity implements Entity
             $sql[] = "ORDER BY {$wpdb->users}.ID ASC";
             $sql = implode(' ', $sql);
 
-            $users = $wpdb->get_results($sql, ARRAY_A);
+            $result = $wpdb->get_results($sql, ARRAY_A);
 
-            $terms = $this->convertToStandardTerms($users);
-
-            if( $terms ){
-                $container->storeParam( $key, $terms );
-            }
-
+            set_transient( $transient_key, $result, FLRT_TRANSIENT_PERIOD_HOURS * HOUR_IN_SECONDS );
         }
 
-        return $terms;
+        return $this->convertToStandardTerms($result);;
     }
 
     private function convertToStandardTerms( $users ){

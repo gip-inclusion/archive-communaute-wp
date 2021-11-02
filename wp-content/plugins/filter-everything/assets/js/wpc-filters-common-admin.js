@@ -1,5 +1,5 @@
 /*!
- * Filter Everything common admin 1.3.1
+ * Filter Everything common admin 1.4.1
  */
 (function($) {
     "use strict";
@@ -9,8 +9,10 @@
         $(document).on('click', '#show_bottom_widget', function (e){
             if( $(this).is(':checked') ){
                 $('#show_open_close_button').parent('label').addClass('wpc-inactive-settings-field');
+                $('.wpc-bottom-widget-compatibility').addClass('wpc-opened');
             }else{
                 $('#show_open_close_button').parent('label').removeClass('wpc-inactive-settings-field');
+                $('.wpc-bottom-widget-compatibility').removeClass('wpc-opened');
             }
         });
 
@@ -44,6 +46,21 @@
 
         $(document).on( 'click', '.free-version .wpc-field-sortable-handle', function (){
             alert( wpcFiltersAdminCommon.prefixesOrderAvailableInPro );
+        });
+
+        let wpcUserAgent = navigator.userAgent.toLowerCase();
+        let wpcIsAndroid = wpcUserAgent.indexOf("android") > -1;
+        let wpcAllowSearchField = 0;
+        if(wpcIsAndroid) {
+            wpcAllowSearchField = Infinity;
+        }
+
+        $("#show_terms_in_content").select2({
+            width: '80%',
+            placeholder: wpcFiltersAdminCommon.chipsPlaceholder,
+            dropdownCssClass: 'wpc-filter-everything-dropdown',
+            minimumResultsForSearch: wpcAllowSearchField,
+            tags: true
         });
 
     }); // End $(document).ready();

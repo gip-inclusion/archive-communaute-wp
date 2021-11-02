@@ -35,6 +35,10 @@ class FiltersWidget extends \WP_Widget
         $show_selected_class = ( !empty( $instance['chips'] ) ) ? ' wpc-show-on-desktop' : '';
         $show_count          = ( !empty( $instance['show_count'] ) ) ? $instance['show_count'] : '';
         $set_id              = isset( $instance['id'] ) ? preg_replace('/[^\d]?/', '', $instance['id'] ) : 0;
+        $popup_title         = esc_html__('Filters', 'filter-everything');
+        if( ! empty( $title ) ){
+            $popup_title = $title;
+        }
 
         // Display nothing if preview mode
         if( isset( $_GET['legacy-widget-preview'] ) || isset( $_GET['_locale'] ) ){
@@ -117,6 +121,7 @@ class FiltersWidget extends \WP_Widget
         $set                    = $fss->getSet( $theSet['ID'] );
         $chipsObj               = new Chips(true, array($setId) );
         $chips                  = $chipsObj->getChips();
+
         $set_edit_url           = ( isset( $theSet['ID'] )) ? admin_url('post.php?post='.$theSet['ID'].'&action=edit') : admin_url( 'edit.php?post_type=filter-set' );
 
         $related_filters        = $em->getSetsRelatedFilters( array( $theSet ) );
@@ -149,151 +154,187 @@ class FiltersWidget extends \WP_Widget
             flrt_filters_button($setId, $widgetContentClass);
         }
 
-        echo '<div class="wpc-filters-widget-content'.esc_attr($widgetContentClass).'">';
-        echo '<div class="wpc-filters-widget-controls-container">
-    <div class="wpc-filters-widget-controls-wrapper">
-        <div class="wpc-filters-widget-controls-item wpc-filters-widget-controls-one">
-            <a class="wpc-filters-close-button" href="'.esc_url($actionUrl).'">' . esc_html__('Cancel', 'filter-everything') . '</a>
-        </div>
-        <div class="wpc-filters-widget-controls-item wpc-filters-widget-controls-two">
-            <a class="wpc-filters-apply-button wpc-posts-loaded" href="'.esc_url($actionUrl).'">' . wp_kses( sprintf( __('Show %s', 'filter-everything'), '<span class="wpc-filters-found-posts-wrapper">(<span class="wpc-filters-found-posts">'.esc_html($found_posts).'</span>)</span>'),
-            array( 'span' => array('class'=>true) )
-            ). '</a>
-        </div>
-    </div>
-</div>';
-
-        if ( ! empty( $title ) ) {
-            echo '<div class="wpc-filter-set-widget-title">'."\n";
-            echo $before_title . $title . $after_title;
-            echo '</div>'."\n";
-        }
-
         echo flrt_spinner_html();
 
-        echo '<div class="wpc-filters-scroll-container">';
+            echo '<div class="wpc-filters-widget-content'.esc_attr($widgetContentClass).'">';
+                    echo '<div class="wpc-widget-close-container">
+                            <a class="wpc-widget-close-icon">
+                                <span class="wpc-icon-html-wrapper">
+                                <span class="wpc-icon-line-1"></span><span class="wpc-icon-line-2"></span><span class="wpc-icon-line-3"></span>
+                                </span>
+                            </a>';
 
-            echo '<div class="wpc-filters-widget-wrapper">'."\r\n";
+                    echo '<span class="wpc-widget-popup-title">'.$popup_title.'</span>';
+                echo '</div>';
+                echo '<div class="wpc-filters-widget-containers-wrapper">'."\r\n";
+                echo '<div class="wpc-filters-widget-top-container">';
+                    echo '<div class="wpc-widget-top-inside">';
 
-                    if( $show_count ){
-                        flrt_posts_found( $setId );
-                    }
-
-                    // Add selected terms for mobile widget
-                    echo '<div class="wpc-inner-widget-chips-wrapper'.esc_attr($show_selected_class).'">';
-                    $templateManager->includeFrontView( 'chips', array( 'chips' => $chips, 'setid' => $setId ) );
+                        // Add selected terms for mobile widget
+                        echo '<div class="wpc-inner-widget-chips-wrapper'.esc_attr($show_selected_class).'">';
+                        $templateManager->includeFrontView( 'chips', array( 'chips' => $chips, 'setid' => $setId ) );
+                        echo '</div>';
                     echo '</div>';
+                echo '</div>';
 
-                    foreach ( $related_filters as $filter ){
+                if ( ! empty( $title ) ) {
+                    echo '<div class="wpc-filter-set-widget-title">'."\n";
+                    echo $before_title . $title . $after_title;
+                    echo '</div>'."\n";
+                }
 
-                        $entityObj  = $em->getEntityByFilter( $filter, $posType );
-                        $entityObj->setExcludedTerms( $filter['exclude'] );
+                echo '<div class="wpc-filters-scroll-container">';
 
-                        $terms = $entityObj->getTerms();
-                        $terms = apply_filters( 'wpc_items_after_calc_term_count', $terms );
+                    echo '<div class="wpc-filters-widget-wrapper">'."\r\n";
 
-                        if( $filter['hierarchy'] === 'yes' ){
-                           $has_not_empty_children = flrt_get_parents_with_not_empty_children( $terms, 'count' );
-                        }
-
-                        // Create a list with excluded empty terms
-                        if( ( $set['hide_empty']['value'] === 'yes' ) || ( isset( $set['hide_empty_filter'] ) && $set['hide_empty_filter']['value'] === 'yes' ) ){
-                            $allWpQueriedPostIds = $em->getAllSetWpQueriedPostIds( $setId );
-
-                            $checkTerms = $terms;
-
-                            foreach ($checkTerms as $index => $term) {
-                                if( $filter['hierarchy'] === 'yes' ){
-
-                                    if( empty( array_intersect( $allWpQueriedPostIds, $term->posts ) )
-                                        && ! in_array( $term->term_id, $has_not_empty_children ) ){
-                                        unset($checkTerms[$index]);
-                                    }
-
-                                }else{
-                                    if( empty( array_intersect( $allWpQueriedPostIds, $term->posts ) ) ){
-                                        unset($checkTerms[$index]);
-                                    }
-                                }
-
+                            if( $show_count ){
+                                flrt_posts_found( $setId );
                             }
 
-                        }
+                            foreach ( $related_filters as $filter ){
 
-                        // Remove empty terms, if such option is enabled
-                        if( $set['hide_empty']['value'] === 'yes' && ($filter['entity'] !== 'post_meta_num') ) {
-                            $terms = $checkTerms;
-                        }
+                                $entityObj  = $em->getEntityByFilter( $filter, $posType );
+                                $entityObj->setExcludedTerms( $filter['exclude'] );
 
-                        // Hide Filter if there are no posts in its terms
-                        if( isset( $set['hide_empty_filter'] )
-                            &&
-                            $set['hide_empty_filter']['value'] === 'yes' ){
+                                $terms = $entityObj->getTerms();
+                                $terms = apply_filters( 'wpc_items_after_calc_term_count', $terms );
 
-                                if( $filter['entity'] === 'post_meta_num' ){
-                                    // Temporary not ideal solution
-                                    if( $terms[0]->max === NULL && $terms[1]->min === NULL ){
-                                        // Huh, finally
-                                        continue;
+                                if( $filter['hierarchy'] === 'yes' ){
+                                    $hierarchy_key = 'cross_count';
+                                    if( $set['hide_empty']['value'] === 'initial' ){
+                                        $hierarchy_key = 'count';
                                     }
-                                }else{
-                                    if( empty( $checkTerms ) ){
-                                        // Huh, finally
-                                        continue;
-                                    }
+                                   $has_not_empty_children = flrt_get_parents_with_not_empty_children( $terms, $hierarchy_key );
                                 }
-                        }
 
-                        $terms = flrt_extract_objects_vars( $terms, array(
-                            'term_id',
-                            'slug',
-                            'name',
-                            'count',
-                            'cross_count',
-                            'max',
-                            'min',
-                            'absMax',
-                            'absMin',
-                            'parent')
-                        );
+                                // Create a list with excluded empty terms
+                                if( ( $set['hide_empty']['value'] === 'yes' ) || ( $set['hide_empty']['value'] === 'initial' ) || ( isset( $set['hide_empty_filter'] ) && $set['hide_empty_filter']['value'] === 'yes' ) ){
+                                    $allWpQueriedPostIds = $em->getAllSetWpQueriedPostIds( $setId );
+                                    $checkTerms = $terms;
 
-                        // Hook terms before display to allow developers modify them.
-                        $terms = apply_filters( 'wpc_terms_before_display', $terms, $filter, $set, $urlManager );
+                                    if( $set['hide_empty']['value'] === 'initial' ){
+                                        foreach ($checkTerms as $index => $term) {
+                                            if( $filter['hierarchy'] === 'yes' ){
 
-                        $templateManager->includeFrontView(
-                                apply_filters( 'wpc_view_include_filename', $filter['view'], $filter ),
-                                array(
-                                    'filter'        => $filter,
-                                    'terms'         => $terms,
-                                    'set'           => $set,
-                                    'url_manager'   => $urlManager
-                                )
-                        );
-                    }
+                                                if(  empty( array_intersect( $allWpQueriedPostIds, $term->posts ) )
+                                                    && ! in_array( $term->term_id, $has_not_empty_children ) ){
+                                                    unset($checkTerms[$index]);
+                                                }
 
-                echo '</div>'."\r\n";
+                                            }else{
+                                                if( empty( array_intersect( $allWpQueriedPostIds, $term->posts ) )  ){
+                                                    unset($checkTerms[$index]);
+                                                }
+                                            }
+                                        }
+                                    }else{
+                                        foreach ($checkTerms as $index => $term) {
+                                            if( $filter['hierarchy'] === 'yes' ){
 
-            echo '</div>' . "\r\n";
+                                                if(  $term->cross_count === 0
+                                                    && ! in_array( $term->term_id, $has_not_empty_children ) ){
+                                                    unset($checkTerms[$index]);
+                                                }
 
-            if( current_user_can( 'manage_options' ) ){
-                echo '<div class="wpc-edit-filter-set">';
-                echo sprintf(
-                    wp_kses(
-                        __( '<a href="%s">Edit</a> Filter Set', 'filter-everything' ),
-                        array( 'a' => array('href' => true) )
-                    ),
-                    $set_edit_url
-                );
-                echo '</div>';
-            }
+                                            }else{
+                                                if( $term->cross_count === 0 ){
+                                                    unset($checkTerms[$index]);
+                                                }
+                                            }
+                                        }
+                                    }
 
-            echo '</div>' . "\r\n";
+                                }
+
+                                // Remove empty terms, if such option is enabled
+                                if( ( $set['hide_empty']['value'] === 'yes' || $set['hide_empty']['value'] === 'initial' ) && ($filter['entity'] !== 'post_meta_num') ) {
+                                    $terms = $checkTerms;
+                                }
+
+                                // Hide entire Filter if there are no posts in its terms
+                                if( isset( $set['hide_empty_filter'] )
+                                    &&
+                                    $set['hide_empty_filter']['value'] === 'yes' ){
+
+                                        if( $filter['entity'] === 'post_meta_num' ){
+                                            // Temporary not ideal solution
+                                            if( $terms[0]->max === NULL && $terms[1]->min === NULL ){
+                                                // Huh, finally
+                                                continue;
+                                            }
+                                        }else{
+                                            if( empty( $checkTerms ) ){
+                                                // Huh, finally
+                                                continue;
+                                            }
+                                        }
+                                }
+
+                                $terms = flrt_extract_objects_vars( $terms, array(
+                                    'term_id',
+                                    'slug',
+                                    'name',
+                                    'count',
+                                    'cross_count',
+                                    'max',
+                                    'min',
+                                    'absMax',
+                                    'absMin',
+                                    'parent')
+                                );
+
+                                // Hook terms before display to allow developers modify them.
+                                $terms = apply_filters( 'wpc_terms_before_display', $terms, $filter, $set, $urlManager );
+
+                                $templateManager->includeFrontView(
+                                        apply_filters( 'wpc_view_include_filename', $filter['view'], $filter ),
+                                        array(
+                                            'filter'        => $filter,
+                                            'terms'         => $terms,
+                                            'set'           => $set,
+                                            'url_manager'   => $urlManager
+                                        )
+                                );
+                            }
+
+                        echo '</div>'."\r\n";
+
+                    echo '</div>' . "\r\n";
+
+                echo '<div class="wpc-filters-widget-controls-container">
+                    <div class="wpc-filters-widget-controls-wrapper">
+                        <div class="wpc-filters-widget-controls-item wpc-filters-widget-controls-one">
+                            <a class="wpc-filters-apply-button wpc-posts-loaded" href="'.esc_url($actionUrl).'">' . wp_kses( sprintf( __('Show %s', 'filter-everything'), '<span class="wpc-filters-found-posts-wrapper">(<span class="wpc-filters-found-posts">'.esc_html($found_posts).'</span>)</span>'),
+                                array( 'span' => array('class'=>true) )
+                            ). '</a>
+                        </div>
+                        <div class="wpc-filters-widget-controls-item wpc-filters-widget-controls-two">
+                            <a class="wpc-filters-close-button" href="'.esc_url($actionUrl).'">' . esc_html__('Cancel', 'filter-everything') . '</a>
+                        </div>
+                    </div>
+                </div>';
+
+                if( current_user_can( 'manage_options' ) ){
+                    echo '<div class="wpc-edit-filter-set">';
+                    echo sprintf(
+                        wp_kses(
+                            __( '<a href="%s">Edit</a> Filter Set', 'filter-everything' ),
+                            array( 'a' => array('href' => true) )
+                        ),
+                        $set_edit_url
+                    );
+                    echo '</div>';
+                }
+
+                echo '</div>' . "\r\n";
+            echo '</div>' . "\r\n"; // end .wpc-filters-widget-content
 
             // Show button, that opens bottom filters container
             $wpc_mobile_width = flrt_get_mobile_width();
             echo '<style type="text/css">
 @media screen and (max-width: '.$wpc_mobile_width.'px) {
     .wpc_show_bottom_widget .wpc-filters-widget-controls-container,
+    .wpc_show_bottom_widget .wpc-filters-widget-top-container,
     .wpc_show_open_close_button .wpc-filters-open-button-container,
     .wpc_show_bottom_widget .wpc-filters-open-button-container{
             display: block;

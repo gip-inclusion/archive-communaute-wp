@@ -8,7 +8,7 @@ if ( ! defined('WPINC') ) {
 add_filter( 'wpc_label_singular_posts_found_msg', 'mb_strtolower' );
 add_filter( 'wpc_label_plural_posts_found_msg', 'mb_strtolower' );
 
-add_filter( 'wpc_filter_post_meta_exists_term_name', 'flrt_ucfirst_term_slug_name' );
+//add_filter( 'wpc_filter_post_meta_exists_term_name', 'flrt_ucfirst_term_slug_name' );
 add_filter( 'wpc_filter_post_meta_num_term_name', 'flrt_ucfirst_term_slug_name' );
 add_filter( 'wpc_filter_post_meta_term_name', 'flrt_ucfirst_term_slug_name' );
 if( ! function_exists('flrt_ucfirst_term_slug_name') ) {
@@ -19,15 +19,51 @@ if( ! function_exists('flrt_ucfirst_term_slug_name') ) {
     }
 }
 
+add_filter( 'wpc_filter_post_meta_exists_term_name', 'flrt_custom_field_exists_name' );
+if( ! function_exists( 'flrt_custom_field_exists_name' ) ){
+    function flrt_custom_field_exists_name( $term_name ){
+        if( $term_name === 'yes'  ){
+            return esc_html__('Yes', 'filter-everything');
+        }else if( $term_name === 'no' ){
+            return esc_html__('No', 'filter-everything');
+        }
+        return $term_name;
+    }
+}
+
+add_filter( 'wpc_filter_post_meta_term_name', 'flrt_stock_status_term_name', 10, 2 );
+if( ! function_exists('flrt_stock_status_term_name') ) {
+    function flrt_stock_status_term_name($term_name, $e_name)
+    {
+        if ($e_name === '_stock_status') {
+            $term_name = strtolower($term_name);
+            if ($term_name === "instock") {
+                $term_name = esc_html__('In stock', 'filter-everything');
+            }
+
+            if ($term_name === "onbackorder") {
+                $term_name = esc_html__('On backorder', 'filter-everything');
+            }
+
+            if ($term_name === "outofstock") {
+                $term_name = esc_html__('Out of stock', 'filter-everything');
+            }
+        }
+
+        return $term_name;
+    }
+}
+
 add_filter( 'wpc_filter_post_meta_exists_term_name', 'flrt_on_sale_term_name', 15, 2 );
 if( ! function_exists('flrt_on_sale_term_name') ) {
     function flrt_on_sale_term_name( $term_name, $entity )
     {
         if( $entity === '_sale_price' ){
-            if( strtolower( $term_name ) === 'yes' ){
+            $term_name = strtolower( $term_name );
+            if( $term_name === 'yes' ){
                 $term_name = esc_html__('On Sale', 'filter-everything');
             }
-            if( strtolower( $term_name ) === 'no' ){
+            if( $term_name  === 'no' ){
                 $term_name = esc_html__('Regular price', 'filter-everything');
             }
         }

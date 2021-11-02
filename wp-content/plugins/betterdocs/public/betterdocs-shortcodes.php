@@ -81,7 +81,7 @@ function betterdocs_category_grid($atts, $content = null)
 		),
 		$atts
 	);
-	
+
 	$post_counter_check       = ( $get_args['post_counter'] == 'true' ) ? true : false;
 	$post_icon_check          = ( $get_args['icon'] == 'true' ) ? true : false;
 	$masonry_check            = ( $get_args['masonry'] == 'true' ) ? true : false;
@@ -89,7 +89,7 @@ function betterdocs_category_grid($atts, $content = null)
     $nested_subcategory       = ( $nested_subcategory == 1 && $nested_subcategory_check  != false ) || ($nested_subcategory_check  == true && $nested_subcategory  == 1);
     $masonry = ($masonry_layout == 1 && $masonry_check   == '') || ($masonry_check == true && $masonry_check != "false");
 	$taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['kb_slug'], $nested_subcategory);
-	if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) {
+    if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) {
 		$class = ['betterdocs-categories-wrap category-grid white-bg'];
 		if (!is_singular('docs') && !is_tax('doc_category') && !is_tax('doc_tag')) {
 			if ($get_args['sidebar_list'] == true) {
@@ -142,7 +142,7 @@ function betterdocs_category_grid($atts, $content = null)
                 $count = $term->count;
                 $get_term_count = betterdocs_get_postcount($count, $term_id, $nested_subcategory);
                 $term_count = apply_filters('betterdocs_postcount', $get_term_count, $get_args['multiple_knowledge_base'], $term_id, $term_slug, $count, $nested_subcategory);
-				$current_term_id = isset( $current_post_cat_id[0]->term_id ) ? $current_post_cat_id[0]->term_id : '';
+                $current_term_id = isset( $current_post_cat_id[0]->term_id ) ? $current_post_cat_id[0]->term_id : '';
 				if ($term_count > 0) {
 					if (is_single() && ( $current_term_id == $term_id || ( $nested_subcategory == 1 && in_array($term_id, $ancestors )  ) ) ) {
 						// set active category class in single page
@@ -185,7 +185,7 @@ function betterdocs_category_grid($atts, $content = null)
 									echo '<div class="docs-item-count"><span>' . $term_count . '</span></div>';
 								}
 
-								echo '<svg class="cat-list-arrow-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+								echo '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="cat-list-arrow-down svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 									<path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
 								</svg>
 							</div>

@@ -165,7 +165,8 @@ class PostMetaNumEntity implements Entity
 
     private function getTermPosts( $edge, $value )
     {   global $wpdb;
-        $postIds = [];
+        $postIds    = [];
+        $postTypes  = [];
 
         foreach ( $this->postTypes as $postType ){
             $pieces[] = $wpdb->prepare( "%s", $postType );
@@ -180,7 +181,7 @@ class PostMetaNumEntity implements Entity
 
         $type = $this->isDecimal( 0, $value) ? 'DECIMAL(15,6)' : 'SIGNED';
 
-        $sql[] = "SELECT DISTINCT {$wpdb->postmeta}.post_id";
+        $sql[] = "SELECT DISTINCT {$wpdb->postmeta}.post_id,{$wpdb->posts}.post_type";
         $sql[] = "FROM {$wpdb->postmeta}";
         $sql[] = "LEFT JOIN {$wpdb->posts} ON ({$wpdb->postmeta}.post_id = {$wpdb->posts}.ID)";
         $sql[] = "WHERE {$wpdb->postmeta}.meta_key = %s";
@@ -196,10 +197,11 @@ class PostMetaNumEntity implements Entity
         if( ! empty( $result ) ){
             foreach( $result as $post){
                 $postIds[] = $post['post_id'];
+                $postTypes[$post['post_id']] = $post['post_type'];
             }
         }
 
-        return $postIds;
+        return array( 'posts' => $postIds, 'post_types' => $postTypes);
     }
 
     function populateTermsWithPostIds( $setId, $post_type )
@@ -217,65 +219,98 @@ class PostMetaNumEntity implements Entity
 
             foreach( $this->items as $index => $term ){
                 if( isset( $values[$term->slug] ) ){
-                    $this->items[$index]->posts = $this->getTermPosts( $term->slug, $values[$term->slug] );
+                    $term_posts = $this->getTermPosts( $term->slug, $values[$term->slug] );
+                    $this->items[$index]->posts = $term_posts['posts']; // $this->getTermPosts( $term->slug, $values[$term->slug] );
+                    $this->items[$index]->post_types = $term_posts['post_types'];
                 }
             }
         }
     }
 
     public function selectTerms( $postsIn = [] ){
-        global $wpdb;
-        /**
-         * @feature This almost duplicates PostMetaEntity method and should be fixed.
-         */
 
-        foreach ( $this->postTypes as $postType ){
-            $pieces[] = $wpdb->prepare( "%s", $postType );
-        }
-        $IN = implode(", ", $pieces );
+        $transient_key = flrt_get_terms_transient_key( $this->getName() );
+        if ( false === ( $result = get_transient( $transient_key ) ) ) {
+            global $wpdb;
 
-        $sql[] = "SELECT min( FLOOR( {$wpdb->postmeta}.meta_value ) ) as min, max( CEILING( {$wpdb->postmeta}.meta_value ) ) as max";
-        $sql[] = "FROM {$wpdb->postmeta}";
-        $sql[] = "LEFT JOIN {$wpdb->posts} ON ({$wpdb->postmeta}.post_id = {$wpdb->posts}.ID)";
-
-        if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
-            $sql[] = "LEFT JOIN {$wpdb->prefix}icl_translations AS wpml_translations";
-            $sql[] = "ON {$wpdb->postmeta}.post_id = wpml_translations.element_id";
-
-            if( ! empty( $this->postTypes ) ){
-
-                $sql[] = "AND wpml_translations.element_type IN(";
-
-                foreach( $this->postTypes as $type ){
-                    $LANG_IN[] = $wpdb->prepare( "CONCAT('post_', '%s')", $type );
+            $IN = false;
+            if( ! empty( $this->postTypes ) && isset($this->postTypes[0]) && $this->postTypes[0] ){
+                foreach ( $this->postTypes as $postType ){
+                    $pieces[] = $wpdb->prepare( "%s", $postType );
                 }
-                $sql[] = implode(",", $LANG_IN );
+                $IN = implode(", ", $pieces );
+            }
 
-                $sql[] = ")";
+            $sql[] = "SELECT {$wpdb->postmeta}.post_id,{$wpdb->postmeta}.meta_value";
+            $sql[] = "FROM {$wpdb->postmeta}";
+            $sql[] = "LEFT JOIN {$wpdb->posts} ON ({$wpdb->postmeta}.post_id = {$wpdb->posts}.ID)";
 
+            if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
+                $sql[] = "LEFT JOIN {$wpdb->prefix}icl_translations AS wpml_translations";
+                $sql[] = "ON {$wpdb->postmeta}.post_id = wpml_translations.element_id";
+
+                if( ! empty( $this->postTypes ) ){
+
+                    $sql[] = "AND wpml_translations.element_type IN(";
+
+                    foreach( $this->postTypes as $type ){
+                        $LANG_IN[] = $wpdb->prepare( "CONCAT('post_', '%s')", $type );
+                    }
+                    $sql[] = implode(",", $LANG_IN );
+
+                    $sql[] = ")";
+
+                }
+            }
+
+            $sql[] = "WHERE {$wpdb->postmeta}.meta_key = %s";
+
+            if( $IN ){
+                $sql[] = "AND {$wpdb->posts}.post_type IN( {$IN} )";
+            }
+
+            if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
+                $sql[] = $wpdb->prepare("AND wpml_translations.language_code = '%s'", ICL_LANGUAGE_CODE);
+            }
+
+            $sql = implode(' ', $sql);
+
+            $e_name     = wp_unslash( $this->entityName );
+            $sql        = $wpdb->prepare( $sql, $e_name );
+
+            $result     = $wpdb->get_results( $sql, ARRAY_A );
+
+            set_transient( $transient_key, $result, FLRT_TRANSIENT_PERIOD_HOURS * HOUR_IN_SECONDS );
+        }
+
+        $new_result = [];
+        $min_and_max = [
+            'min' => 0,
+            'max' => 0
+        ];
+
+        if( ! empty( $result ) ){
+            if( ! empty( $postsIn ) ){
+                foreach ( $result as $single_post ){
+                    if( in_array( $single_post['post_id'], $postsIn ) ){
+                        $new_result[ $single_post['post_id'] ] = $single_post['meta_value'];
+                    }
+                }
+            }else{
+                foreach ( $result as $single_post ){
+                    $new_result[ $single_post['post_id'] ] = $single_post['meta_value'];
+                }
             }
         }
 
-        $sql[] = "WHERE {$wpdb->postmeta}.meta_key = %s";
-        $sql[] = "AND {$wpdb->posts}.post_type IN( {$IN} )";
-
-        if( flrt_wpml_active() && defined( 'ICL_LANGUAGE_CODE' ) ){
-            $sql[] = $wpdb->prepare("AND wpml_translations.language_code = '%s'", ICL_LANGUAGE_CODE);
+        if( ! empty( $new_result ) ){
+            $min_and_max = [
+                'min' => floor( min( $new_result ) ),
+                'max' => floor( max( $new_result ) )
+            ];
         }
 
-        if( ! empty( $postsIn ) ){
-            $postsIn = implode(",", $postsIn );
-            $sql[] = "AND {$wpdb->posts}.ID IN( {$postsIn} )";
-        }
-
-        $sql = implode(' ', $sql);
-
-        $e_name     = wp_unslash( $this->entityName );
-        $sql        = $wpdb->prepare( $sql, $e_name );
-
-        $result     = $wpdb->get_results( $sql, ARRAY_A );
-
-        return $this->convertSelectResult( $result[0] );
+        return $this->convertSelectResult( $min_and_max );
     }
 
     public function updateMinAndMaxValues( $postsIn )

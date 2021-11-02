@@ -249,7 +249,7 @@ a.docs-single-cat-wrap:hover,
   display: flex;
   align-items: center;
 }
-.docs-cat-title > img {
+.docs-cat-title img {
   width: auto;
 }
 .docs-cat-title-inner {
@@ -431,7 +431,7 @@ a.docs-single-cat-wrap:hover,
 .betterdocs-sidebar-content .docs-cat-title-inner .docs-cat-heading::after {
   top: 8px;
 }
-.betterdocs-sidebar-content .docs-cat-title > img {
+.betterdocs-sidebar-content .docs-cat-title img {
   width: auto;
 }
 .betterdocs-sidebar-content .betterdocs-categories-wrap {

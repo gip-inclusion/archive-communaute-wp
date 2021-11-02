@@ -1,4 +1,4 @@
-/*! elementor - v3.4.6 - 19-10-2021 */
+/*! elementor - v3.4.7 - 31-10-2021 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["lightbox"],{
 
 /***/ "../assets/dev/js/frontend/utils/lightbox/lightbox.js":
@@ -751,7 +751,7 @@ module.exports = elementorModules.ViewModule.extend({
       if ('youtube' === videoType) {
         this.prepareYTVideo(apiObject, videoID, $videoContainer, $videoWrapper, $playIcon);
       } else if ('vimeo' === videoType) {
-        this.prepareVimeoVideo(apiObject, videoID, $videoContainer, $videoWrapper, $playIcon);
+        this.prepareVimeoVideo(apiObject, videoURL, $videoContainer, $videoWrapper, $playIcon);
       }
     });
     $playIcon.addClass(classes.playing).removeClass(classes.hidden);
@@ -787,10 +787,10 @@ module.exports = elementorModules.ViewModule.extend({
       }
     });
   },
-  prepareVimeoVideo: function (Vimeo, videoId, $videoContainer, $videoWrapper, $playIcon) {
+  prepareVimeoVideo: function (Vimeo, videoURL, $videoContainer, $videoWrapper, $playIcon) {
     const classes = this.getSettings('classes'),
           vimeoOptions = {
-      id: videoId,
+      url: videoURL,
       autoplay: true,
       transparent: false,
       playsinline: false
@@ -1016,4 +1016,4 @@ module.exports = elementorModules.ViewModule.extend({
 /***/ })
 
 }]);
-//# sourceMappingURL=lightbox.adc17e3be937246718ee.bundle.js.map
+//# sourceMappingURL=lightbox.8c3d45f71a9a1ecd69fc.bundle.js.map

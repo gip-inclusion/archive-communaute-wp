@@ -474,7 +474,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap .docs-cat-icon' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
+                    '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap img' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
                 ],
             ]
         );

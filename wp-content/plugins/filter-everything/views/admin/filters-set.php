@@ -6,6 +6,7 @@
 
     $post_id    = $post->ID;
     $filters    = flrt_get_configured_filters( $post_id );
+
     $filterSet  = \FilterEverything\Filter\Container::instance()->getFilterSetService();
 
 ?>
@@ -18,6 +19,7 @@
             <?php
 
             $attributes = $filterSet->getPostTypeField($post_id);
+            $post_type  = ( isset( $attributes['post_type']['value'] ) && $attributes['post_type']['value'] ) ? $attributes['post_type']['value'] : $attributes['post_type']['default'];
             flrt_include_admin_view('filter-field', array(
                     'field_key'  => key($attributes),
                     'attributes' =>  reset($attributes)
@@ -46,7 +48,7 @@
                 );
             ?>
     </div>
-    <div class="wpc-filters-list">
+    <div id="wpc-filters-list" class="wpc-filters-list" data-posttype="<?php echo $post_type; ?>">
 
         <?php if( $filters ):
 

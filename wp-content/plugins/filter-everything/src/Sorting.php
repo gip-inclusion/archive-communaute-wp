@@ -20,25 +20,25 @@ class Sorting
             'default'   => esc_html__('Default (no sorting)', 'filter-everything'),
             'id'        => esc_html__('By ID', 'filter-everything'),
             'random'    => esc_html__('Random','filter-everything'),
-            'author'    => esc_html__('Author', 'filter-everything'),
-            'title'     => esc_html__('Title', 'filter-everything'),
+            'author'    => esc_html_x('Author', 'sorting', 'filter-everything'),
+            'title'     => esc_html_x('Title', 'sorting', 'filter-everything'),
             'slug'      => esc_html__('Name (post slug)', 'filter-everything'),
-            'date'      => esc_html__('Date', 'filter-everything'),
-            'comments'  => esc_html__('Number of comments', 'filter-everything')
+            'date'      => esc_html_x('Date', 'sorting', 'filter-everything'),
+            'comments'  => esc_html_x('Number of comments', 'sorting','filter-everything')
         );
 
         if ( class_exists( 'WooCommerce' ) ) {
             $this->sortingOptions += array(
-                'price'          => esc_html__( 'Product price', 'filter-everything' ),
-                'sales_number'   => esc_html__( 'Product sales number', 'filter-everything' ),
-                'rating'         => esc_html__( 'Product rating', 'filter-everything' ),
-                'reviews_number' => esc_html__( 'Product reviews number', 'filter-everything' )
+                'price'          => esc_html_x( 'Product price', 'sorting','filter-everything' ),
+                'sales_number'   => esc_html_x( 'Product sales number', 'sorting','filter-everything' ),
+                'rating'         => esc_html_x( 'Product rating', 'sorting','filter-everything' ),
+                'reviews_number' => esc_html_x( 'Product reviews number', 'sorting','filter-everything' )
             );
         }
 
         $this->sortingOptions += array(
-            'm' => esc_html__('Meta key', 'filter-everything'),
-            'n' => esc_html__('Meta key numeric', 'filter-everything')
+            'm' => esc_html_x('Meta key', 'sorting','filter-everything'),
+            'n' => esc_html_x('Meta key numeric', 'sorting', 'filter-everything')
         );
 
         $this->sortingDefaults = array(
@@ -84,12 +84,19 @@ class Sorting
 
         $args =  $this->getOrderbyValue();
 
+        if( ! $wp_query->get('flrt_query_hash') ){
+            return $wp_query;
+        }
+
         if( isset( $args['orderby'] ) ){
             if( $args['orderby'] === 'default' ){
                 return $wp_query;
             }
 
-            $wp_query->set( 'orderby', $args['orderby'] );
+            if( $args['orderby'] !== 'price' ){
+                $wp_query->set( 'orderby', $args['orderby'] );
+            }
+
         }
 
         if( isset( $args['order'] ) ){

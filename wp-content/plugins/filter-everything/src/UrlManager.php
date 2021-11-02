@@ -118,6 +118,7 @@ class UrlManager
         }
 
         $formAction = preg_replace('%\/page/[0-9]+%', '', $fullPath);
+        $formAction = preg_replace('%\/comment\-page\-[0-9]+%', '', $formAction);
         $formAction = preg_replace('%\/[0-9]+[\/]?$%m', '', $formAction);
 
         $formAction = FLRT_PERMALINKS_ENABLED ? user_trailingslashit( $formAction ) : rtrim( $formAction, '/' ) . '/';
@@ -318,6 +319,9 @@ class UrlManager
         /**
          * @bug if filter is present in two sets logic gets incorrect
          */
+
+        $termSlugs = array_map('urlencode', $termSlugs);
+
         $termSlugs  = $fse->sortTerms( $termSlugs );
         $terms      = implode( $fse->getLogicSeparator( $filter ), $termSlugs );
         $segment    .= $terms;

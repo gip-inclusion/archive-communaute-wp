@@ -41,4 +41,5 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php endforeach; ?>
     </select>
 </form>
+<div class="wpc-after-sorting-form"></div>
 <?php endif; ?>

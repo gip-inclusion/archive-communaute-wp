@@ -72,13 +72,18 @@ class FilterSet
                 'settings'      => true
             ),
             'hide_empty' => array(
-                'type'          => 'Checkbox',
-                'label'         => esc_html__('Hide empty Terms', 'filter-everything'),
+                'type'          => 'Select',
+                'label'         => esc_html__('Empty Terms', 'filter-everything'),
                 'name'          => $this->generateFieldName('hide_empty'),
                 'id'            => $this->generateFieldId('hide_empty'),
                 'class'         => 'wpc-field-hide-empty',
+                'options'       => array(
+                    'no' => esc_html__('Never hide', 'filter-everything'),
+                    'yes' => esc_html__('Always hide', 'filter-everything'),
+                    'initial' => esc_html__('Hide in the initial Filter only', 'filter-everything')
+                ),
                 'default'       => 'yes',
-                'instructions'  => esc_html__('Hide empty terms in initial Filters widget', 'filter-everything'),
+                'instructions'  => esc_html__('To hide or not a Filter terms that do not contain posts', 'filter-everything'),
                 'settings'      => true
             ),
             'show_count' => array(
@@ -101,7 +106,7 @@ class FilterSet
     {
         if (!$this->hooksRegistered) {
             add_filter('wpc_input_type_select', array($this, 'addCustomLabel'), 10, 2);
-            add_action('admin_print_scripts', array($this, 'includeAdminJs'));
+            add_action('admin_print_scripts', array($this, 'includeAdminJs'), 9999);
 
             add_filter( 'post_updated_messages', [$this, 'filterSetActionsMessages'] );
             add_filter( 'bulk_post_updated_messages', [ $this, 'filterSetBulkActionsMessages' ], 10, 2 );
@@ -237,7 +242,7 @@ class FilterSet
             $select2ver = '4.1.0';
 
             // Filter Set script
-            wp_enqueue_script('wpc-filters-admin-filter-set', FLRT_PLUGIN_URL . 'assets/js/wpc-filter-set-admin'.$suffix.'.js', array('jquery', 'wp-util', 'jquery-ui-sortable'), $ver );
+            wp_enqueue_script('wpc-filters-admin-filter-set', FLRT_PLUGIN_URL . 'assets/js/wpc-filter-set-admin'.$suffix.'.js', array('jquery', 'wp-util', 'jquery-ui-sortable', 'select2'), $ver );
 
             $l10n = array(
                 'filterSlugs'       => $this->getExistingFilterSlugs(),
@@ -245,7 +250,9 @@ class FilterSet
                 'moreOptions'       => esc_html__( 'More options', 'filter-everything' ),
                 'lessOptions'       => esc_html__( 'Less options', 'filter-everything' ),
                 'filtersPro'        => defined( 'FLRT_FILTERS_PRO' ),
-                'wPQuerySelectId'   => $this->generateFieldId('wp_filter_query')
+                'wPQuerySelectId'   => $this->generateFieldId('wp_filter_query'),
+                'excludePlaceholder' => esc_html__('Select terms', 'filter-everything' ),
+//                'enamePlaceHolder'   => esc_html__( '&mdash; Enter new or Select Meta Key &mdash;', 'filter-everything')
             );
 
             wp_localize_script( 'wpc-filters-admin-filter-set', 'wpcSetVars', $l10n );
@@ -254,10 +261,6 @@ class FilterSet
             wp_enqueue_script( 'select2', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
             wp_enqueue_style('select2', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
 
-            wp_localize_script('select2', 'wpcSelect2Vars', array(
-                'excludePlaceholder' => esc_html__('Select terms', 'filter-everything' ),
-                'enamePlaceHolder'   => esc_html__( '&mdash; Enter new or Select Meta Key &mdash;', 'filter-everything')
-            ) );
         }
     }
 
@@ -321,12 +324,12 @@ class FilterSet
         $allowed_types  = [];
         $post_types     = get_post_types( array( 'public' => true ), 'objects' );
         $exclude        = apply_filters( 'wpc_filter_post_types', [] );
-
+       
         foreach ( $post_types as $type ){
             if( in_array( $type->name, $exclude ) ){
                 continue;
             }
-            $allowed_types[$type->name] = $type->labels->singular_name;
+            $allowed_types[$type->name] = isset( $type->labels->name ) ? $type->labels->name : $type->labels->singular_name;
         }
 
         return $allowed_types;
@@ -867,7 +870,7 @@ class FilterSet
 
         // Validate hide_empty
         if( isset( $setFields['hide_empty'] ) ){
-            if( ! in_array( $setFields['hide_empty'], array( 'yes', 'no' ), true ) ){
+            if( ! in_array( $setFields['hide_empty'], array( 'yes', 'no', 'initial' ), true ) ){
                 $this->errors[] = 23; // Invalid empty field
                 return false;
             }

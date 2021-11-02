@@ -24,14 +24,13 @@ class WpManager
         $permalinksEnabled = ( defined( 'FLRT_FILTERS_PRO' ) && ! empty( $rewrite ) );
         define( 'FLRT_PERMALINKS_ENABLED', $permalinksEnabled );
 
-        $this->requestParser = new RequestParser($this->prepareRequest());
+        $this->requestParser = new RequestParser( $this->prepareRequest() );
         $this->em = Container::instance()->getEntityManager();
     }
 
     public function parseRequest($WP)
     {
         if ($this->requestParser->detectFilterRequest()) {
-
             foreach ($this->requestParser->getQueryVars() as $key => $queryVar) {
                 $this->setQueryVar($key, $queryVar);
             }
@@ -93,7 +92,7 @@ class WpManager
                  * requested.
                  */
                 // Here we should fill queried_values with correct logic
-                if (!$this->populateQueriedValuesWithAdditionalParams($sets)) {
+                if ( ! $this->populateQueriedValuesWithAdditionalParams( $sets) ) {
                     self::make_404($wp_query, 'Forbidden filter requested 2');
                     return true;
                 }
@@ -156,6 +155,7 @@ class WpManager
 
                 if( ! $wp_query->get('flrt_query_clone') && in_array( $queried_value_key, $set_filter_keys ) ){
                     $wpc_main_query = $this->em->addTermsToWpQuery($queried_value, $wp_query);
+
                     if (!($wpc_main_query instanceof \WP_Query)) {
                         return true;
                     }

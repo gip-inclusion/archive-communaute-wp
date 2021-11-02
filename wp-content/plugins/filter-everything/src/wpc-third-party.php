@@ -44,13 +44,12 @@ if( ! function_exists('flrt_wp') ){
         }
 
         // Add selected terms to the top
-        if( flrt_is_woocommerce() ) {
-            add_action('woocommerce_no_products_found', 'flrt_add_selected_terms_above_the_top');
-            add_action('woocommerce_before_shop_loop', 'flrt_add_selected_terms_above_the_top', 5);
-        }else {
-            if (isset($theme_dependencies['chips_hook']) && is_array($theme_dependencies['chips_hook'])) {
-                foreach ($theme_dependencies['chips_hook'] as $chips_hook) {
-                    add_action($chips_hook, 'flrt_add_selected_terms_above_the_top');
+        $chips_hooks  = flrt_get_option('show_terms_in_content', []);
+
+        if( $chips_hooks ){
+            if( is_array( $chips_hooks ) && ! empty( $chips_hooks ) ){
+                foreach ( $chips_hooks as $hook ){
+                    add_action( $hook, 'flrt_add_selected_terms_above_the_top' );
                 }
             }
         }
@@ -64,9 +63,7 @@ function wpc_add_selected_terms_above_the_top(){
 
 function flrt_add_selected_terms_above_the_top()
 {
-    if( flrt_get_option( 'show_terms_in_content' ) === 'on' ){
-        flrt_show_selected_terms(true);
-    }
+    flrt_show_selected_terms(true);
 }
 
 function flrt_get_theme_dependencies(){
@@ -313,6 +310,13 @@ function flrt_get_theme_dependencies(){
             'button_hook'       => '',
             'chips_hook'        => ''
         ),
+        'woodmart' => array(
+            'posts_container'   => '.site-content',
+            'sidebar_container' => '#secondary',
+            'primary_color'     => '#83b735',
+            'button_hook'       => '',
+            'chips_hook'        => array( 'woodmart_shop_filters_area', 'woodmart_main_loop')
+        )
     );
 
     $theme_dependencies = apply_filters( 'wpc_theme_dependencies', $theme_dependencies );
@@ -389,10 +393,9 @@ function flrt_fix_elementor_query_args( $query_args ){
 }
 
 function flrt_wpml_active(){
-    if ( function_exists('icl_object_id') ) {
+    if( defined('WPML_PLUGIN_BASENAME') ){
         return true;
     }
-
     return false;
 }
 

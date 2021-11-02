@@ -48,7 +48,7 @@ class AdminHooks
                 'title'   => esc_html__( 'Overview', 'filter-everything' ),
                 'content' =>
                     '<p><strong>' . esc_html__( 'Overview', 'filter-everything' ) . '</strong></p>' .
-                    '<p>' . esc_html__( 'Filter Everything — WordPress & WooCommerce product filter plugin, that allows to design any filtering system.', 'filter-everything' ) . '</p>'.
+                    '<p>' . esc_html__( 'Filter Everything — WordPress & WooCommerce product filter plugin, that allows you to design flexible filtering system.', 'filter-everything' ) . '</p>'.
                     '<p>' . esc_html__( 'It is fast, convenient and intuitive, and also contains unique features for SEO (in PRO version).', 'filter-everything' ) . '</p>'
             )
         );

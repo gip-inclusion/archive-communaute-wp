@@ -79,10 +79,9 @@ class FilterFields
                 'required' => true
             ),
             'e_name' => array(
-                'type' => 'Select',
+                'type' => 'Text',
                 'label' => esc_html__(  'Meta Key', 'filter-everything' ),
                 'class' => 'wpc-field-ename',
-                'options' => $this->metaKeysOptions(),
                 'instructions' => esc_html__( 'Name of the Custom Field. Please, see Popular Meta keys at the bottom', 'filter-everything'),
                 'required' => true
             ),
@@ -180,6 +179,13 @@ class FilterFields
                 ),
                 'default'       => 1
             ),
+            'search' => array(
+                'type'          => 'Checkbox',
+                'label'         => esc_html__( 'Search field', 'filter-everything' ),
+                'class'         => 'wpc-field-search',
+                'default'       => 'no',
+                'instructions'  => esc_html__( 'Adds search field above the terms list', 'filter-everything' )
+            ),
             'tooltip' => array(
                 'type'          => 'Text',
                 'label'         => esc_html__( 'Tooltip', 'filter-everything' ),
@@ -190,54 +196,6 @@ class FilterFields
         );
 
         $this->defaultFields = apply_filters( 'wpc_filter_default_fields', $defaultFields, $this );
-    }
-
-    private function metaKeysOptions()
-    {
-        $metaKeys   = $this->getMetaKeys();
-        $newKeys    = [ '' => '' ];
-
-        if( $metaKeys ){
-            $excludedMetaKeys   = flrt_get_forbidden_meta_keys();
-
-            foreach ( $metaKeys as $key ) {
-
-                if( ! preg_match('/[a-z]/i', $key ) ){
-                    continue;
-                }
-
-                if( in_array( $key, $excludedMetaKeys ) ){
-                    continue;
-                }
-
-                if( $key !== esc_attr( $key ) ){
-                    continue;
-                }
-
-                $newKeys[$key] = $key;
-            }
-        }
-
-        return $newKeys;
-    }
-
-    private function getMetaKeys()
-    {
-        global $wpdb;
-
-        if(! is_admin()){
-            return array();
-        }
-
-        $limit = apply_filters( 'wpc_post_meta_keys_limit', 100 );
-
-        $keys = $wpdb->get_col( $wpdb->prepare("SELECT DISTINCT meta_key FROM {$wpdb->postmeta} ORDER BY meta_key LIMIT %d", $limit ) );
-
-        if ( $keys ) {
-            natcasesort( $keys );
-        }
-
-        return apply_filters( 'wpc_default_meta_keys', $keys );
     }
 
     public static function getViewOptions()
@@ -337,6 +295,8 @@ class FilterFields
             }
 
         }
+
+        $short_entity .= isset( $filter['view'] ) ? ' wpc-view-'.$filter['view'] : '';
 
         $belongs = $this->filterBelongsToPostType( $filter['parent'], $filter['entity'], $filter['e_name'] );
 

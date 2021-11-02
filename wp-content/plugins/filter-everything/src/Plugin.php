@@ -32,6 +32,7 @@ class Plugin
 
     public function register_hooks(){
         $postData = Container::instance()->getThePost();
+        $getData  = Container::instance()->getTheGet();
 
         if( ! is_admin() ){
             add_filter( 'do_parse_request', array( $this->wpManager, 'customParseRequest' ), 10, 3 );
@@ -70,6 +71,40 @@ class Plugin
         // Disable single search result redirect
         add_filter( 'woocommerce_redirect_single_search_result', '__return_false' );
 
+        add_action( 'save_post', [$this, 'resetTransitions'] );
+        add_action( 'delete_post', [$this, 'resetTransitions'] );
+        add_action( 'woocommerce_ajax_save_product_variations', [$this, 'resetTransitions'] );
+
+        if( isset( $getData['reset_filters_cache'] ) && $getData['reset_filters_cache'] == true ){
+            $this->resetTransitions();
+        }
+    }
+
+    public function resetTransitions()
+    {
+         $em = Container::instance()->getEntityManager();
+         $all_filters = $em->getGlobalConfiguredSlugs();
+
+         if( is_array( $all_filters ) ){
+             foreach ( $all_filters as $entityEname => $slug ){
+                    // For terms it should be entity name
+                    $parts = explode( '#', $entityEname, 2 );
+                    $e_name = isset( $parts[1] ) ? $parts[1] : '';
+
+                    $terms_transient_key    = flrt_get_terms_transient_key( $e_name );
+                    $post_ids_transient_key = flrt_get_post_ids_transient_key( $slug );
+                    $var_meta_transient_key = flrt_get_variations_transient_key( 'attribute_'. $e_name );
+
+                    delete_transient( $terms_transient_key );
+                    delete_transient( $post_ids_transient_key );
+                    delete_transient( $var_meta_transient_key );
+             }
+         }
+
+         delete_transient('wpc_posts_variations');
+         delete_transient('wpc_filters_query');
+
+         unset( $terms_transient_key, $post_ids_transient_key, $var_meta_transient_key, $all_filters, $em );
     }
 
     public function prepareEntities()
@@ -184,7 +219,7 @@ class Plugin
         $css = '';
 
             if( $maxHeight ){
-                $css .= '.wpc-filters-section:not(.wpc-filter-post_meta_num,.wpc-filter-layout-dropdown) .wpc-filter-content:not(.wpc-filter-has-hierarchy){
+                $css .= '.wpc-filters-section:not(.wpc-filter-post_meta_num,.wpc-filter-layout-dropdown) .wpc-filter-content:not(.wpc-filter-has-hierarchy) ul.wpc-filters-ul-list{
                         max-height: '.$maxHeight.'px;
                         overflow-y: auto;
                 }'."\r\n";
@@ -234,9 +269,17 @@ class Plugin
                 body .wpc-filter-chips-list li.wpc-filter-chip:not(.wpc-chip-reset-all) a, 
                 body#colibri .wpc-filter-chips-list li.wpc-filter-chip:not(.wpc-chip-reset-all) a,
                 .wpc-filter-chips-list li.wpc-filter-chip:not(.wpc-chip-reset-all) a{
+                    /*background-color: '.$color.';
+                    color: '.$contrastColor.';*/
+                    border-color: '.$color.';
+                }'."\r\n";
+
+                $css .= '.widget-area .widget .wpc-filters-widget-controls-container a.wpc-filters-apply-button, 
+                .widget .wpc-filters-widget-controls-container a.wpc-filters-apply-button, 
+                .wpc-filters-widget-main-wrapper .wpc-filters-widget-controls-container a.wpc-filters-apply-button{
+                    border-color: '.$color.';
                     background-color: '.$color.';
                     color: '.$contrastColor.';
-                    border-color: '.$color.';
                 }'."\r\n";
 
                 $css .= '.widget-area .widget .wpc-filter-chips-list li.wpc-filter-chip:not(.wpc-chip-reset-all) a:hover, 
@@ -249,14 +292,32 @@ class Plugin
                     opacity: 0.75;
                 }'."\r\n";
 
-                $css .= '.wpc-filter-chips-list a:hover .wpc-chip-remove-icon, 
-                .widget-area .widget .wpc-filter-chips-list a:hover .wpc-chip-remove-icon{
-                    color: '.$contrastColor.';
-                }'."\r\n";
+//                $css .= '.wpc-filter-chips-list a:hover .wpc-chip-remove-icon,
+//                .widget-area .widget .wpc-filter-chips-list a:hover .wpc-chip-remove-icon{
+//                    color: '.$contrastColor.';
+//                }'."\r\n";
 
                 $css .= '.star-rating span,
                 .star-rating span:before{
                     color: '.$color.';
+                }'."\r\n";
+
+                $css .= 'body a.wpc-filters-open-widget:active, a.wpc-filters-open-widget:active, 
+                .wpc-filters-open-widget:active{
+                    border-color: '.$color.';
+                    background-color: '.$color.';
+                    color: '.$contrastColor.';
+                }'."\r\n";
+
+                $css .= 'a.wpc-filters-open-widget:active span.wpc-icon-line-1:after,
+                a.wpc-filters-open-widget:active span.wpc-icon-line-2:after,
+                a.wpc-filters-open-widget:active span.wpc-icon-line-3:after{
+                    background-color: '.$color.';
+                    border-color: '.$contrastColor.';
+                }'."\r\n";
+
+                $css .= 'a.wpc-filters-open-widget:active .wpc-icon-html-wrapper span{
+                    background-color: '.$contrastColor.';
                 }'."\r\n";
 
                 $css .= '@media screen and (min-width: '.$wpc_mobile_width.'px) {'."\r\n";
@@ -266,6 +327,7 @@ class Plugin
                         color: '.$contrastColor.';
                         background-color: '.$color.';
                     }'."\r\n";
+
                 $css .= '#secondary .wpc-filters-labels li.wpc-term-item input+label:hover a,
                     body .wpc-filters-labels li.wpc-term-item input+label:hover a,
                     body#colibri .wpc-filters-labels li.wpc-term-item input+label:hover a,
@@ -277,6 +339,7 @@ class Plugin
                     .wpc-filters-widget-main-wrapper input.wpc-label-input+label:hover{
                         border-color: '.$color.';
                     }'."\r\n";
+
                 $css .= '}'."\r\n";
             }
             if( $styled_inputs ){
@@ -514,11 +577,24 @@ class Plugin
     public static function activate()
     {
         if ( ! get_option('wpc_filter_settings') ) {
+            $default_show_terms_in_content  = [];
+            $theme_dependencies             = flrt_get_theme_dependencies();
+
+            if( flrt_is_woocommerce() ){
+                $default_show_terms_in_content = ['woocommerce_no_products_found', 'woocommerce_archive_description'];
+            }
+
+            if ( isset( $theme_dependencies['chips_hook'] ) && is_array( $theme_dependencies['chips_hook'] ) ) {
+                foreach ( $theme_dependencies['chips_hook'] as $compat_chips_hook ) {
+                    $default_show_terms_in_content[] = $compat_chips_hook;
+                }
+            }
+
             $defaultOptions = array(
                 'primary_color'              => '#0570e2',
                 'container_height'           => '350',
                 'show_open_close_button'     => '',
-                'show_terms_in_content'      => 'on',
+                'show_terms_in_content'      => $default_show_terms_in_content,
                 'widget_debug_messages'      => 'on'
             );
 
@@ -639,6 +715,7 @@ class Plugin
     {
         $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
         $ver    = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? rand(0, 1000) : FLRT_PLUGIN_VER;
+        $select2ver = '4.1.0';
 
         wp_register_script( 'jquery-tiptip', FLRT_PLUGIN_URL . 'assets/js/jquery-tiptip/jquery.tipTip' . $suffix . '.js', array( 'jquery' ), $ver, true );
         wp_enqueue_script('jquery-tiptip');
@@ -646,11 +723,19 @@ class Plugin
         wp_enqueue_script('wpc-filters-admin', FLRT_PLUGIN_URL . 'assets/js/wpc-filters-common-admin' . $suffix . '.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'), $ver );
 
         $l10n = array(
-            'prefixesOrderAvailableInPro' => esc_html__( 'Editing the order of URL prefixes is available in PRO version', 'filter-everything' )
+            'prefixesOrderAvailableInPro' => esc_html__( 'Editing the order of URL prefixes is available in PRO version', 'filter-everything' ),
+            'chipsPlaceholder' => esc_html__( 'Select or enter hooks', 'filter-everything' )
         );
         wp_localize_script( 'wpc-filters-admin', 'wpcFiltersAdminCommon', $l10n );
 
         $screen = get_current_screen();
+
+        if( property_exists( $screen, 'base' ) && strpos( $screen->base, '_page_filters-settings' )  !== false ){
+            // Select2
+            wp_enqueue_script( 'select2', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
+            wp_enqueue_style('select2', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
+        }
+
         if( property_exists( $screen, 'base' ) && $screen->base === 'widgets' ){
             wp_enqueue_script('wpc-widgets', FLRT_PLUGIN_URL . 'assets/js/wpc-widgets' . $suffix . '.js', array('jquery'), $ver );
             $l10n = array(
@@ -694,6 +779,7 @@ class Plugin
         $autoScroll         = false;
         $waitCursor         = false;
         $wpcUseSelect2      = false;
+        $wpcPopupCompatMode = false;
         $autoScrollOffset   = apply_filters( 'wpc_auto_scroll_offset', 150 );
         $wpc_mobile_width   = flrt_get_mobile_width();
         $per_page           = [];
@@ -717,6 +803,11 @@ class Plugin
         if( flrt_get_experimental_option( 'use_wait_cursor' ) === 'on' ){
             $waitCursor = true;
         }
+
+        if( flrt_get_option('bottom_widget_compatibility') ){
+            $wpcPopupCompatMode = true;
+        }
+
         //@todo This appears on login page and produce not an array error
         foreach( $sets as $set ){
             if( $set['filtered_post_type'] === 'product' && function_exists('wc_get_default_products_per_row') ){
@@ -758,7 +849,8 @@ class Plugin
                 'wpcAutoScrollOffset'        => $autoScrollOffset,
                 'wpcWaitCursor'              => $waitCursor,
                 'wpcPostsPerPage'            => $per_page,
-                'wpcUseSelect2'              => $wpcUseSelect2
+                'wpcUseSelect2'              => $wpcUseSelect2,
+                'wpcPopupCompatMode'         => $wpcPopupCompatMode
             )
         );
     }

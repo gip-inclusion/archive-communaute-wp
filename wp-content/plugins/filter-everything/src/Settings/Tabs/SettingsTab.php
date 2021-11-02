@@ -22,7 +22,6 @@ class SettingsTab extends BaseSettings
     public function initSettings()
     {
         register_setting($this->group, $this->optionName);
-
         /**
          * @see https://developer.wordpress.org/reference/functions/add_settings_field/
         */
@@ -84,10 +83,13 @@ class SettingsTab extends BaseSettings
                         'label' => '',
                     ),
                     'show_terms_in_content' => array(
-                        'type'  => 'checkbox',
-                        'title' => esc_html__('Selected Terms above the posts container', 'filter-everything'),
+                        'type'  => 'select',
+                        'title' => esc_html__('Selected Filters (Chips) integration', 'filter-everything'),
                         'id'    => 'show_terms_in_content',
                         'label' => esc_html__('Try to show selected terms above the posts container', 'filter-everything'),
+                        'options' => array(),
+                        'multiple' => true,
+                        'description' => esc_html__( 'Select where to show Chips on your site. Or enter your theme\'s hooks. For example: before_main_content', 'filter-everything' )
                     ),
                     'widget_debug_messages' => array(
                         'type'  => 'checkbox',

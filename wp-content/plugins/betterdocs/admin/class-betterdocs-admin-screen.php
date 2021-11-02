@@ -2,15 +2,15 @@
 class Betterdocs_Admin_Screen
 {
     public function __construct() {
-        add_filter( 'manage_docs_posts_columns', array($this, 'set_custom_edit_action_columns') );
-        add_action( 'manage_docs_posts_custom_column' , array($this, 'custom_action_column'), 10, 2 );
-        add_filter( 'manage_edit-docs_columns', array($this, 'sort_columns') );
-        add_action('admin_menu', array( $this, 'menu_page') );
-        add_filter('parent_file', array($this, 'highlight_admin_menu'), 10, 2);
+        add_filter( 'manage_docs_posts_columns', array( $this, 'set_custom_edit_action_columns' ) );
+        add_action( 'manage_docs_posts_custom_column' , array($this, 'custom_action_column' ), 10, 2 );
+        add_filter( 'manage_edit-docs_columns', array( $this, 'sort_columns' ) );
+        add_action( 'admin_menu', array( $this, 'menu_page' ) );
+        add_filter( 'parent_file', array( $this, 'highlight_admin_menu' ) );
 
         global $pagenow;
         if ($pagenow == 'edit-tags.php') {
-            add_filter( 'submenu_file', array( $this, 'highlight_admin_submenu'), 10, 2);
+            add_filter( 'submenu_file', array( $this, 'highlight_admin_submenu' ), 10, 2 );
         }
     }
 
@@ -101,6 +101,7 @@ class Betterdocs_Admin_Screen
     public function highlight_admin_menu($parent_file)
     {
         global $current_screen;
+
         if( $this->menu_slug === 'betterdocs-admin' && in_array( $current_screen->id, array( 'edit-doc_tag', 'edit-doc_category' ) ) ) {
             $parent_file = 'betterdocs-admin';
         } else {
@@ -108,12 +109,13 @@ class Betterdocs_Admin_Screen
                 $parent_file = 'edit.php?post_type=docs';
             }
         }
-        return $parent_file;
+        return apply_filters('betterdocs_highlight_admin_menu', $parent_file);
     }
 
-    public function highlight_admin_submenu( $parent_file, $submenu_file )
+    public function highlight_admin_submenu($submenu_file)
     {
         global $current_screen, $pagenow;
+
         if ( $current_screen->post_type == 'docs' ) {
             if ( $pagenow == 'post.php' ) {
                 $submenu_file = 'edit.php?post_type=docs';
@@ -131,14 +133,16 @@ class Betterdocs_Admin_Screen
                 $submenu_file = 'edit-tags.php?taxonomy=knowledge_base&post_type=docs';
             }
         }
+
         if( 'betterdocs_page_betterdocs-settings' == $current_screen->id ) {
             $submenu_file = 'betterdocs-settings';
         }
+
         if( 'betterdocs_page_betterdocs-setup' == $current_screen->id ) {
             $submenu_file = 'betterdocs-setup';
         }
 
-        return $submenu_file;
+        return apply_filters('betterdocs_highlight_admin_submenu', $submenu_file);
     }
 
     public function header_template()

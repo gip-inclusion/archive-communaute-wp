@@ -2,10 +2,10 @@
 Contributors: jcatama
 Donate link: https://www.paypal.me/jcatama
 Tags: buddyboss, buddypress, learndash, forums, groups, discussions, topics
-Requires at least: 5.4
-Tested up to: 5.7
-Stable tag: 1.0.1
-Requires PHP: 7.2
+Requires at least: 5.7
+Tested up to: 5.8
+Stable tag: 1.2.0
+Requires PHP: 7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,18 +29,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 • Enable/disable auto subscription to forum & discussions in group module.
 • Exclude topic/discussion type.
 • Enable/disable subscribe/unsubscribe button in forum cards. (Using Buddyboss Font Cheatsheet)
-• Change the subcribe/unscribe logo for forum cards. 
+• Change the subcribe/unscribe logo for forum cards.
 • Enable/disable "Remove subscription" button in /forums/subscriptions page.
 
 == Frequently Asked Questions ==
 
 = Free to use ? =
 
-Yes it is 100% free to use and distribute
-
-= I want to support this project =
-
-Donate link: https://www.paypal.me/jcatama
+Yes it is 100% free to use and distribute.
 
 == Screenshots ==
 
@@ -50,8 +46,16 @@ Donate link: https://www.paypal.me/jcatama
 
 == Changelog ==
 
+= 1.2.1 =
+* Fixed: index.css not found.
+
+= 1.2.0 =
+* Add translation support.
+* Plugin improvements.
+* Fixed: User subscriptions is being reset when joining or leaving a group.
+
 = 1.0.1 =
-* Added popover in subcribe & usubcribe button
+* Added popover in subcribe & usubcribe button.
 
 = 1.0.0 =
-* Initial Release
+* Initial Release.

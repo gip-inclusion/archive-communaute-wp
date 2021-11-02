@@ -94,6 +94,7 @@ class WalkerCheckbox extends \Walker
         $checked        = ( in_array( $term->slug, $filter['values'] ) ) ? 1 : 0;
         $id             = $id ? $id : $term->term_id;
         $toggleButton   = '';
+        $visibility_class = '';
 
         // Don't generate an element if the term name is empty.
         if ( '' === $term_name ) {
@@ -119,6 +120,15 @@ class WalkerCheckbox extends \Walker
 
         $output     .= "\t<li";
         $cross_count = isset( $term->cross_count ) ? esc_attr( $term->cross_count ) : '';
+
+        if( in_array( $id, $this->parent_opened_elements ) ){
+            $visibility_class = ' wpc-opened';
+        }
+
+        if( $this->max_depth > 0) {
+            $visibility_class = ' '. flrt_get_status_css_class( $id, FLRT_HIERARCHY_LIST_COOKIE_NAME );
+        }
+
         $css_classes = array(
             0 => 'wpc-checkbox-item',
             1 => 'wpc-term-item',
@@ -140,17 +150,8 @@ class WalkerCheckbox extends \Walker
         }
 
         $css_classes = implode( ' ', $css_classes );
+        $css_classes .= $visibility_class;
         $css_classes = $css_classes ? ' class="' . esc_attr( $css_classes ) . '"' : '';
-
-        $visibility_class = '';
-
-        if( $this->max_depth > 0) {
-            $visibility_class = ' '. flrt_get_status_css_class( $id, FLRT_HIERARCHY_LIST_COOKIE_NAME );
-        }
-
-        if( in_array( $id, $this->parent_opened_elements ) ){
-            $visibility_class = ' wpc-opened';
-        }
 
         $output .= $css_classes;
         $output .= ' id="'.flrt_term_id('term', $filter, $id, false).'">';

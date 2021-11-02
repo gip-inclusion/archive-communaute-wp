@@ -3,7 +3,7 @@
 Plugin Name: Filter Everything&nbsp;— WooCoomerce Product & WordPress Filter
 Plugin URI: https://filtereverything.pro
 Description: Filters everything in WordPress & WooCommerce: Products, any Post types, by Any Criteria. Supports AJAX. Compatible with WPML, ACF and others popular.
-Version: 1.3.2
+Version: 1.4.1
 Author: Andrii Stepasiuk
 Author URI: https://filtereverything.pro/about/
 Text Domain: filter-everything
@@ -29,7 +29,7 @@ if( ! class_exists( 'FlrtFilter' ) ):
             $this->define( 'FLRT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
             $this->define( 'FLRT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
             $this->define( 'FLRT_PLUGIN_BASENAME', plugin_basename(__FILE__) );
-            $this->define( 'FLRT_PLUGIN_VER', '1.3.2' );
+            $this->define( 'FLRT_PLUGIN_VER', '1.4.1' );
             $this->define( 'FLRT_PLUGIN_LINK', 'https://filtereverything.pro' );
             $this->define( 'FLRT_PLUGIN_DEBUG', false );
             $this->define( 'FLRT_TEMPLATES_DIR_NAME', 'filters' );
@@ -41,6 +41,8 @@ if( ! class_exists( 'FlrtFilter' ) ):
             $this->define( 'FLRT_STATUS_COOKIE_NAME', 'wpcContainersStatus' );
             $this->define( 'FLRT_HIERARCHY_LIST_COOKIE_NAME', 'wpcHierarchyListStatus' );
             $this->define( 'FLRT_OPEN_CLOSE_BUTTON_COOKIE_NAME', 'wpcWidgetStatus' );
+            $this->define( 'FLRT_TRANSIENT_PERIOD_HOURS', 12 );
+
 
             require_once FLRT_PLUGIN_DIR . 'src/wpc-helpers.php';
 
@@ -117,6 +119,9 @@ if( ! class_exists( 'FlrtFilter' ) ):
             // Convert old post_name format to new. Since v1.1.24
             add_action( 'init', [$this, 'convertSetLocations'], -1 );
 
+            // Backward compatibility. From v1.3.2
+            add_action( 'init', [$this, 'convertShowChipsInContent'], -1 );
+
             add_action( 'init', [ $this, 'oneTwoThreeGo' ] );
 
             add_action( 'init', [$this, 'loadTextdomain'], 0 );
@@ -126,6 +131,31 @@ if( ! class_exists( 'FlrtFilter' ) ):
             register_uninstall_hook(__FILE__, ['FilterEverything\Filter\Plugin', 'uninstall']);
 
             add_action('after_switch_theme', ['FilterEverything\Filter\Plugin', 'switchTheme'] );
+        }
+
+        public function convertShowChipsInContent()
+        {
+            // Backward compatibility. From v1.3.2
+            $filter_settings = get_option('wpc_filter_settings');
+
+            if (isset($filter_settings['show_terms_in_content']) && $filter_settings['show_terms_in_content'] === 'on') {
+                $new_chips_hooks = [];
+                $theme_dependencies = flrt_get_theme_dependencies();
+
+                if (flrt_is_woocommerce()) {
+                    $new_chips_hooks[] = 'woocommerce_no_products_found';
+                    $new_chips_hooks[] = 'woocommerce_archive_description';
+                }
+
+                if (isset($theme_dependencies['chips_hook']) && is_array($theme_dependencies['chips_hook'])) {
+                    foreach ($theme_dependencies['chips_hook'] as $compat_chips_hook) {
+                        $new_chips_hooks[] = $compat_chips_hook;
+                    }
+                }
+
+                $filter_settings['show_terms_in_content'] = $new_chips_hooks;
+                update_option('wpc_filter_settings', $filter_settings);
+            }
         }
 
         public function convertSetLocations()

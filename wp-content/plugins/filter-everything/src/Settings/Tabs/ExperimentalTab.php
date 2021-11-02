@@ -29,15 +29,15 @@ class ExperimentalTab extends BaseSettings
                     'fields' => array(
                         'use_loader' => array(
                             'type'  => 'checkbox',
-                            'title' => esc_html__('Show AJAX loading icon (on desktop only)', 'filter-everything'),
+                            'title' => esc_html__('AJAX loading icon (on desktop only)', 'filter-everything'),
                             'id'    => 'use_loader',
                             'label' => esc_html__('Show icon', 'filter-everything'),
                         ),
                         'use_wait_cursor' => array(
                             'type'  => 'checkbox',
-                            'title' => esc_html__('Use the Wait Cursor (on desktop only)', 'filter-everything'),
+                            'title' => esc_html__('Wait Cursor (on desktop only)', 'filter-everything'),
                             'id'    => 'use_wait_cursor',
-                            'label' => esc_html__('Wait Cursor for AJAX', 'filter-everything'),
+                            'label' => esc_html__('Use Wait Cursor for AJAX', 'filter-everything'),
                         ),
                         'dark_overlay' => array(
                             'type'  => 'checkbox',
@@ -54,13 +54,13 @@ class ExperimentalTab extends BaseSettings
                     )
                 ),
                 'layout_settings' => array(
-                    'label'  => esc_html__('Layout settings', 'filter-everything'),
+                    'label'  => esc_html__('Appearance', 'filter-everything'),
                     'fields' => array(
                         'styled_inputs' => array(
                             'type'  => 'checkbox',
-                            'title' => esc_html__('Styled inputs', 'filter-everything'),
+                            'title' => esc_html__('Styled checkboxes and radio buttons', 'filter-everything'),
                             'id'    => 'styled_inputs',
-                            'label' => esc_html__('Use styled inputs', 'filter-everything'),
+                            'label' => esc_html__('Enable styling', 'filter-everything'),
                         ),
                         'select2_dropdowns' => array(
                             'type'  => 'checkbox',

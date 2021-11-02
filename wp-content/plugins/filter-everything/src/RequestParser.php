@@ -80,6 +80,7 @@ class RequestParser
     public function queryStringParam( $key )
     {
         $container  = Container::instance();
+        $em         = $container->getEntityManager();
         $get        = $container->getTheGet();
         $post       = $container->getThePost();
 
@@ -89,17 +90,25 @@ class RequestParser
             if( isset( $parts['query'] ) ){
                 parse_str( $parts['query'], $output );
                 if( isset( $output[$key] ) ){
-                    return $output[$key];
+                    return $this->urlEncodeGetValues( $output[$key] );
                 }
             }
-
         }
 
         if( isset( $get[$key] ) ){
-            return $get[$key];
+            return $this->urlEncodeGetValues( $get[$key] );
         }
 
         return false;
+    }
+
+    private function urlEncodeGetValues( $values )
+    {
+        $queriedValues  = explode( FLRT_QUERY_TERMS_SEPARATOR, $values );
+        $queriedValues  = array_map( 'urlencode', $queriedValues );
+        $queriedValues  = array_map( 'mb_strtolower', $queriedValues );
+
+        return implode(FLRT_QUERY_TERMS_SEPARATOR, $queriedValues);
     }
 
     private function extractValuesFromQuery( $slug ){
@@ -147,7 +156,8 @@ class RequestParser
     }
 
     public function setRequest( $request ){
-        $this->request = urldecode( strtolower( trim( $request, '/' ) ) );
+//        $this->request = urldecode( strtolower( trim( $request, '/' ) ) );
+        $this->request = strtolower( trim( $request, '/' ) );
     }
 
     /**
@@ -161,6 +171,8 @@ class RequestParser
     }
 
     public function cleanUpRequestPathFromFilterSegments( $request_path ){
+        // Otherwise it will be URL encoded and uppercase
+        $request_path = strtolower($request_path);
 
         foreach( $this->getPathSegments() as $segment ){
             if( $this->checkSlugInSegmentForCleaningNativePath( $segment ) ){
@@ -277,6 +289,7 @@ class RequestParser
         $queriedValues  = $em->safeImplodeFilterValues( $queriedValues, FLRT_QUERY_TERMS_SEPARATOR );
 
         foreach ( $queriedValues as $k => $value ) {
+
             if ( ! in_array($value, $allEntityTerms) ) {
                 unset( $queriedValues[$k] );
                 $this->set_404( 'Term does not exist - ' . $value );
@@ -303,7 +316,11 @@ class RequestParser
 
         $em = Container::instance()->getEntityManager();
         $allEntityTerms = $em->getEntityAllTermsSlugs( $slug );
-        $filters        = $em->getAllFiltersBySlug( $slug, array('logic', 'slug') );
+
+        // TEMPORARY
+        //$allEntityTerms = array_map( 'urldecode', $allEntityTerms );
+
+        $filters        = $em->getAllFiltersBySlug( $slug, array( 'logic', 'slug' ) );
 
         $segmentParams  = $em->safeExplodeFilterValues( $segmentParams, $slug, $this->separator, false );
         $logicSeparator = $this->extractLogicSeparator( $segmentParams, $filters );
