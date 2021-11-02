@@ -27,6 +27,6 @@ if(isset($_GET['from'])) {
 		echo "Échec de l'envoi à ".$to;
 	}		
 } else {
-	echo "Pour envoyer un email test, il faut renseiger les 2 variables <i>from</i> et <i>to</i> dans l'url et recharger la page. <br>Exemple: https://communaute-prod.cleverapps.io/test.php?from=email@communaute-prod.cleverapps.io&to=davidwatrelot@gmail.com";
+	echo "Pour envoyer un email test, il faut renseiger les 2 variables <i>from</i> et <i>to</i> dans l'url et recharger la page. <br>Exemple: https://communaute.inclusion.beta.gouv.fr/test.php?from=email@inclusion.beta.gouv.fr&to=davidwatrelot@gmail.com";
 }
 ?>
