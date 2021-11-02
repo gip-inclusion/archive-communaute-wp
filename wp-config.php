@@ -42,7 +42,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('WP_DEBUG', false);
     define('WP_DEBUG_LOG', false);
     define('WP_DEBUG_DISPLAY', false);
-   # define('WP_CACHE', true); 
+    define('WP_CACHE', true); 
   }
 
 /**
