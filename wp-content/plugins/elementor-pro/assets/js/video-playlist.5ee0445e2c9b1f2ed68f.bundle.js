@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.4.0 - 29-08-2021 */
+/*! elementor-pro - v3.5.0 - 01-11-2021 */
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["video-playlist"],{
 
 /***/ "../modules/video-playlist/assets/js/frontend/base-tabs.js":
@@ -360,18 +360,22 @@ class VideoPlaylistHandler extends _baseTabs.default {
     };
   }
 
-  bindEvents() {
-    super.bindEvents(); // TODO: Remove - When elements-handler-manager will have a method for receiving the instance.
-
-    if (this.isEdit) {
-      elementor.channels.editor.on('elementorPlaylistWidget:fetchVideoData', e => {
+  initEditorListeners() {
+    super.initEditorListeners();
+    this.editorListeners.push({
+      event: 'elementorPlaylistWidget:fetchVideoData',
+      to: elementor.channels.editor,
+      callback: e => {
         this.getCurrentPlayerSelected().setVideoProviderData().then(() => {
           e.currentItem = this.getCurrentItemSelected();
           elementor.channels.editor.trigger('elementorPlaylistWidget:setVideoData', e);
         });
-      });
-    } // Handle the click on the image overlay.
+      }
+    });
+  }
 
+  bindEvents() {
+    super.bindEvents(); // Handle the click on the image overlay.
 
     this.elements.$imageOverlay.on({
       click: e => {
@@ -749,22 +753,23 @@ function toggleInnerTabs(event, clickedTab, widgetObject) {
 }
 
 function handleInnerTabs(event, widgetObject) {
-  event.preventDefault(); // Handle click on tab on mobile mode.
+  const clickedTarget = event.target;
+  const clickedTagType = clickedTarget.tagName; // Handle click on tab on desktop mode.
 
-  if (event.target.classList.contains('e-tab-mobile-title')) {
-    const $clickedTab = jQuery(event.target);
+  if (clickedTarget.classList.contains('e-inner-tab-title-text')) {
+    event.preventDefault();
+    const $clickedTab = jQuery(clickedTarget).parent('.e-inner-tab-title');
     toggleInnerTabs(event, $clickedTab, widgetObject);
-    return;
-  } // Handle click on tab on Desktop mode.
+  } // Handle click on tab on mobile mode.
 
 
-  if ('A' === event.target.tagName) {
-    const $clickedTab = jQuery(event.target).parent('.e-inner-tab-title');
+  if (clickedTarget.classList.contains('e-tab-mobile-title')) {
+    const $clickedTab = jQuery(clickedTarget);
     toggleInnerTabs(event, $clickedTab, widgetObject);
   } // Handle click on show-less buttons in tab content.
 
 
-  if ('BUTTON' === event.target.tagName) {
+  if ('button' === clickedTagType.toLowerCase()) {
     onTabContentButtonsClick(event, widgetObject);
   }
 }
@@ -1081,7 +1086,7 @@ class playerVimeo extends _playerBase.default {
     }
 
     const videoId = await this.playerObject.getVideoId();
-    const response = await fetch('http://vimeo.com/api/v2/video/' + videoId + '.json');
+    const response = await fetch('https://vimeo.com/api/v2/video/' + videoId + '.json');
     const videoData = await response.json();
     this.playlistItem.duration = this.formatDuration(videoData[0].duration);
     this.playlistItem.video_title = videoData[0].title;
@@ -1430,4 +1435,4 @@ function setVideoParams(playlistId, playlistItemsArray, videoId) {
 /***/ })
 
 }]);
-//# sourceMappingURL=video-playlist.e873e3a62e9daaac1d31.bundle.js.map
+//# sourceMappingURL=video-playlist.5ee0445e2c9b1f2ed68f.bundle.js.map

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-13 13:42:49+00:00\n"
-"PO-Revision-Date: 2021-10-22 15:13+0200\n"
+"PO-Revision-Date: 2021-11-02 17:37+0100\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -190,10 +190,8 @@ msgstr ""
 
 #: bbpress/form-reply-activity.php:40 bbpress/form-reply-success.php:15
 #: inc/plugins/bbpress-helper.php:96
-#, fuzzy
-#| msgid "Reply to:"
 msgid "Reply to"
-msgstr "En réponse à:"
+msgstr "Répondre à"
 
 #: bbpress/form-reply-activity.php:61 bbpress/form-reply.php:62
 #: bbpress/form-topic.php:83
@@ -235,10 +233,8 @@ msgid "Notify me of replies via email"
 msgstr "Me prévenir des réponses par courriel"
 
 #: bbpress/form-reply-activity.php:144
-#, fuzzy
-#| msgid "Reply"
 msgid "Post Reply"
-msgstr "Réponse"
+msgstr "Publier une réponse"
 
 #: bbpress/form-reply-activity.php:172 bbpress/form-reply.php:192
 msgid "The discussion &#8216;%s&#8217; is closed to new replies."
@@ -263,16 +259,12 @@ msgid "Discussion Title"
 msgstr "Titre de la discussion"
 
 #: bbpress/form-reply-success.php:33
-#, fuzzy
-#| msgid "You cannot reply to this discussion."
 msgid "Your reply has been posted to the discussion"
-msgstr "Vous ne pouvez pas répondre à cette discussion."
+msgstr "Votre réponse a été publiée dans la discussion"
 
 #: bbpress/form-reply-success.php:36
-#, fuzzy
-#| msgid "Mail Reply"
 msgid "View Reply"
-msgstr "Répondre par courriel"
+msgstr "Voir la réponse"
 
 #: bbpress/form-reply.php:41
 msgid "Reply to:"
@@ -327,16 +319,16 @@ msgstr "Vous devez être connecté pour créer de nouvelles discussions."
 #: bbpress/loop-blocked-single-reply.php:46
 #: template-parts/unread-messages.php:386
 msgid "This content has been hidden as the member is suspended."
-msgstr ""
+msgstr "Ce contenu a été masqué car le membre est suspendu."
 
 #: bbpress/loop-blocked-single-reply.php:48
 #: template-parts/unread-messages.php:388
 msgid "This content has been hidden as you have blocked this member."
-msgstr ""
+msgstr "Ce contenu a été masqué car vous avez bloqué ce membre."
 
 #: bbpress/loop-blocked-single-reply.php:50
 msgid "This content has been hidden from site admin."
-msgstr ""
+msgstr "Ce contenu a été caché de l’administrateur du site."
 
 #: bbpress/loop-replies.php:35
 #: inc/custom-fonts/classes/class-buddyboss-custom-fonts-cpt.php:287
@@ -382,10 +374,8 @@ msgid "Favorite"
 msgstr "Favoris"
 
 #: bbpress/loop-replies.php:102
-#, fuzzy
-#| msgid "Import Options"
 msgid "More Options"
-msgstr "Options d'importation"
+msgstr "Plus d’options"
 
 #: bbpress/loop-replies.php:127 functions.php:100
 msgid "updated"
@@ -460,10 +450,8 @@ msgid "in reply to: "
 msgstr "en réponse à: "
 
 #: bbpress/loop-single-reply.php:119
-#, fuzzy
-#| msgid "Mentions"
 msgid "More actions"
-msgstr "Mentions"
+msgstr "Plus d'actions"
 
 #: bbpress/loop-topics.php:29
 msgid "Discussions tagged with '%s' "
@@ -581,17 +569,13 @@ msgstr "actif %s"
 
 #: buddypress/groups/single/cover-image-header.php:48
 #: buddypress/members/single/cover-image-header.php:50
-#, fuzzy
-#| msgid "Change Profile Photo"
 msgid "Change Cover Photo"
-msgstr "Changer la Photo de Profil"
+msgstr "Editer la photo de couverture"
 
 #: buddypress/groups/single/cover-image-header.php:54
 #: buddypress/members/single/cover-image-header.php:55
-#, fuzzy
-#| msgid "Cover Photo"
 msgid "Reposition Cover Photo"
-msgstr "Image de couverture"
+msgstr "Reposition de la photo de couverture"
 
 #: buddypress/groups/single/cover-image-header.php:59
 #: buddypress/members/single/cover-image-header.php:60
@@ -600,17 +584,13 @@ msgstr "Enregistrer les changements"
 
 #: buddypress/groups/single/cover-image-header.php:60
 #: buddypress/members/single/cover-image-header.php:61
-#, fuzzy
-#| msgid "Remove cover photo"
 msgid "Drag to move cover photo"
-msgstr "Supprimer l'image de la couverture"
+msgstr "Glisser pour déplacer la photo de couverture"
 
 #: buddypress/groups/single/cover-image-header.php:62
 #: buddypress/groups/single/cover-image-header.php:64
 #: buddypress/members/single/cover-image-header.php:63
 #: buddypress/members/single/cover-image-header.php:65
-#, fuzzy
-#| msgid "Cover Photo"
 msgid "Cover photo"
 msgstr "Image de couverture"
 
@@ -673,7 +653,7 @@ msgstr "Invitations au groupe"
 
 #: buddypress/members/single/groups/invites.php:43
 msgid "Invited by %1$s &middot; %2$s."
-msgstr ""
+msgstr "Invité par %1$s &middot; %2$s."
 
 #: buddypress/members/single/invites/sent-invites.php:11
 msgid "Invitations were sent successfully to the following email addresses:"
@@ -803,10 +783,8 @@ msgid "Account Settings"
 msgstr "Paramètres du compte"
 
 #: buddypress/search/results-page-content.php:12
-#, fuzzy
-#| msgid "No results found!"
 msgid "No results found"
-msgstr "Pas de résultats trouvés!"
+msgstr "Aucun résultat trouvé"
 
 #. translators: %s: search query.
 #: buddypress/search/results-page-content.php:14 search.php:24
@@ -1027,6 +1005,8 @@ msgid ""
 "Warning: Access Restricted. Please enable BuddyBoss Theme License key <a "
 "href=\"%s\">HERE</a> and try again."
 msgstr ""
+"Avertissement: accès restreint. Veuillez activer la clé de licence du thème "
+"BuddyBoss <a href=\"%s\">ICI</a> et réessayer."
 
 #: inc/admin/admin-init.php:541 inc/admin/admin-init.php:617
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:663
@@ -1109,6 +1089,8 @@ msgstr ""
 #: inc/admin/admin-init.php:762
 msgid "This panel is set to be Read-Only. Saving is disabled."
 msgstr ""
+"Ce panneau est configuré pour être en lecture seule. L'enregistrement est "
+"désactivé."
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:239
 msgid "Font Family"
@@ -1248,10 +1230,8 @@ msgid "Add"
 msgstr "Ajouter"
 
 #: inc/admin/options/custom-css.php:4399
-#, fuzzy
-#| msgid "My Progress"
 msgid "Quiz Progress"
-msgstr "Ma progression"
+msgstr "Progression du quiz"
 
 #: inc/admin/options-init.php:79
 msgid "Desktop Logo (Dark Mode)"
@@ -1888,68 +1868,60 @@ msgid "Typography"
 msgstr "Typographie"
 
 #: inc/admin/options-init.php:880
-#, fuzzy
-#| msgid "Boss"
 msgid "ss"
-msgstr "Boss"
+msgstr "ss"
 
 #: inc/admin/options-init.php:888
-#, fuzzy
-#| msgid "Border Color"
 msgid "Brand Colors"
-msgstr "Couleur de la bordure"
+msgstr "Couleurs de la marque"
 
 #: inc/admin/options-init.php:893
 msgid "Primary color"
-msgstr ""
+msgstr "Couleur primaire"
 
 #: inc/admin/options-init.php:894
 msgid "Used for links, icons, buttons, highlights, and the mobile titlebar."
 msgstr ""
+"Utilisé pour les liens, les icônes, les boutons, les surlignages et la barre "
+"de titre mobile."
 
 #: inc/admin/options-init.php:901
-#, fuzzy
-#| msgid "Font color"
 msgid "Secondary color"
-msgstr "Couleur de la police"
+msgstr "Couleur secondaire"
 
 #: inc/admin/options-init.php:902
 msgid "Used for various theme elements, hover links color and icons."
 msgstr ""
+"Utilisé pour divers éléments de thème, le survol des liens de couleur et des "
+"icônes."
 
 #: inc/admin/options-init.php:909
-#, fuzzy
-#| msgid "Font color"
 msgid "Accent color"
-msgstr "Couleur de la police"
+msgstr "Couleur d’accentuation"
 
 #: inc/admin/options-init.php:910
 msgid "Used for various theme elements."
-msgstr ""
+msgstr "Utilisé pour divers éléments thématiques."
 
 #: inc/admin/options-init.php:918
-#, fuzzy
-#| msgid "Link Color"
 msgid "Link Colors"
-msgstr "Couleur du lien"
+msgstr "Couleurs du lien"
 
 #: inc/admin/options-init.php:923
-#, fuzzy
-#| msgid "Hearing Aid"
 msgid "Heading links"
-msgstr "Auditif"
+msgstr "Liens titre"
 
 #: inc/admin/options-init.php:924
 msgid ""
 "Page/post title colors and supplementary links color when some elements "
 "needs it"
 msgstr ""
+"Couleurs des titres des pages et des liens supplémentaires lorsque certains "
+"éléments en ont besoin"
 
 #: inc/admin/options-init.php:931
-#, fuzzy
-#| msgid "Footer Secondary Menu"
 msgid "Secondary menu links"
-msgstr "Menu secondaire du pied de page"
+msgstr "Liens du menu secondaire"
 
 #: inc/admin/options-init.php:932
 msgid "Secondary menu items and alternate links color"
@@ -2166,10 +2138,8 @@ msgid "The main content area of the theme"
 msgstr "Le nom du thème parent."
 
 #: inc/admin/options-init.php:1106
-#, fuzzy
-#| msgid "Cover Image Width"
 msgid "Cover Image Background"
-msgstr "Largeur de l'image de couverture"
+msgstr "Arrière-plan Image de couverture"
 
 #: inc/admin/options-init.php:1107
 msgid ""
@@ -2243,26 +2213,20 @@ msgid "Change default button border radius."
 msgstr ""
 
 #: inc/admin/options-init.php:1167
-#, fuzzy
-#| msgid "Text Color"
 msgid "Text Colors"
-msgstr "Couleur du texte"
+msgstr "Couleurs du texte"
 
 #: inc/admin/options-init.php:1172
-#, fuzzy
-#| msgid "Button Text"
 msgid "Body Text"
-msgstr "Texte du bouton"
+msgstr "Corps de texte"
 
 #: inc/admin/options-init.php:1173
 msgid "Paragraphs and main content text"
-msgstr ""
+msgstr "Paragraphes et texte principal du contenu"
 
 #: inc/admin/options-init.php:1180
-#, fuzzy
-#| msgid "Paste Text"
 msgid "Alternate Text"
-msgstr "Coller du texte"
+msgstr "Texte alternatif"
 
 #: inc/admin/options-init.php:1181
 msgid "Supplementary text color"
@@ -2293,28 +2257,20 @@ msgid "Alert color for 'Warning' notices."
 msgstr ""
 
 #: inc/admin/options-init.php:1235
-#, fuzzy
-#| msgid "Custom Login/Register Screen"
 msgid "Login / Register Screens"
-msgstr "Connexion personnalisée/Écran d'enregistrement"
+msgstr "Connexion / Inscription : Ecran"
 
 #: inc/admin/options-init.php:1240
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Login / Register Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Connexion / Enregistrement Couleur de fond"
 
 #: inc/admin/options-init.php:1241
-#, fuzzy
-#| msgid "Background Color"
 msgid "Background color for the page"
-msgstr "Couleur d’arrière-plan"
+msgstr "Couleur d’arrière-plan de la page"
 
 #: inc/admin/options-init.php:1248
-#, fuzzy
-#| msgid "Login / Register"
 msgid "Login / Register Text Color"
-msgstr "Connexion / Inscription"
+msgstr "Connexion / Enregistrement Couleur du texte"
 
 #: inc/admin/options-init.php:1249
 msgid "Text color used in form inputs"
@@ -2337,10 +2293,8 @@ msgid "Links and buttons color when hovered"
 msgstr ""
 
 #: inc/admin/options-init.php:1359
-#, fuzzy
-#| msgid "Default Cover Image"
 msgid "Default Color Scheme"
-msgstr "Image de couverture par défaut"
+msgstr "Schéma de couleur par défaut"
 
 #: inc/admin/options-init.php:1360
 msgid "Reset all colors back to the default color scheme"
@@ -2815,17 +2769,13 @@ msgid "Default Cover Image"
 msgstr "Image de couverture par défaut"
 
 #: inc/admin/options-init.php:2092 inc/admin/options-init.php:2121
-#, fuzzy
-#| msgid ""
-#| "You can optionally upload your own image to always use a default cover "
-#| "photo. Ideal size is 1300px by 225px or larger."
 msgid ""
 "You can optionally upload your own image to always use a default cover "
 "photo. Ideal size is 1300px by 300px or larger."
 msgstr ""
-"Vous pouvez optionnellement télécharger votre propre pour toujours utiliser "
-"une photo de couverture par défaut. La taille idéale est de 1300px par 225px "
-"ou plus."
+"Vous pouvez éventuellement télécharger votre propre image pour toujours "
+"utiliser une photo de couverture par défaut. La taille idéale est de 1300 "
+"pixels sur 300 pixels ou plus."
 
 #: inc/admin/options-init.php:2099
 msgid "Social Groups"
@@ -2981,10 +2931,8 @@ msgstr ""
 "cours."
 
 #: inc/admin/options-init.php:2300
-#, fuzzy
-#| msgid "Course Author"
 msgid "Course Author Bio"
-msgstr "Auteur du cours"
+msgstr "Biographie de l'auteur du cours"
 
 #: inc/admin/options-init.php:2301
 msgid ""
@@ -3029,29 +2977,19 @@ msgid "Course Difficulty"
 msgstr "Difficulté du cours"
 
 #: inc/admin/options-init.php:2406
-#, fuzzy
-#| msgid "Lesson "
 msgid "Lessons List"
-msgstr "Leçon "
+msgstr "Liste des leçons"
 
 #: inc/admin/options-init.php:2407
-#, fuzzy
-#| msgid "Display the course date on courses, lessons and topics."
 msgid "Display the lessons list on lessons, quizzes and topics."
-msgstr ""
-"Afficher la date de la formation sur les formations, les modules et les "
-"cours."
+msgstr "Afficher la liste des leçons sur les cours, les quiz et les sujets."
 
 #: inc/admin/options-init.php:2417
-#, fuzzy
-#| msgid ""
-#| "Display the list of enrolled course participants on courses, lessons and "
-#| "topics."
 msgid ""
 "Display the list of enrolled course participants on courses, lessons and "
 "quizzes."
 msgstr ""
-"Affichez la liste des participants inscrits au cours, aux leçons et aux "
+"Affichez la liste des participantes inscrites au cours, aux leçons et aux "
 "sujets abordés."
 
 #: inc/admin/options-init.php:2436
@@ -3592,10 +3530,8 @@ msgstr ""
 
 #: inc/lib/buddyboss-updater/includes/functions.php:211
 #: inc/lib/buddyboss-updater/includes/functions.php:275
-#, fuzzy
-#| msgid "BuddyBoss Wall"
 msgid "BuddyBoss Platform Pro"
-msgstr "Mur BuddyBoss"
+msgstr "Plateforme BuddyBoss Pro"
 
 #: inc/lib/buddyboss-updater/includes/functions.php:231
 #: inc/lib/buddyboss-updater/includes/functions.php:235
@@ -3605,16 +3541,12 @@ msgstr "Thème Boss"
 #: inc/lib/buddyboss-updater/includes/functions.php:319
 #: inc/lib/buddyboss-updater/includes/functions.php:323
 #: inc/lib/buddyboss-updater/includes/functions.php:340
-#, fuzzy
-#| msgid "BuddyPress Member Types"
 msgid "BuddyPress User Blog"
-msgstr "Types de Membres BuddyPress"
+msgstr "Blogue des Membres BuddyPress"
 
 #: inc/lib/buddyboss-updater/includes/functions.php:336
-#, fuzzy
-#| msgid "Social/Brand"
 msgid "Social Blogger"
-msgstr "Social/marque"
+msgstr "Social Blogger"
 
 #: inc/lib/buddyboss-updater/includes/vendor/license.php:127
 #: inc/lib/buddyboss-updater/includes/vendor/license.php:164
@@ -3758,19 +3690,14 @@ msgid "License Key"
 msgstr "Clé de licence"
 
 #: inc/lib/buddyboss-updater/includes/views/package.php:50
-#, fuzzy
-#| msgid ""
-#| "You can find the license key for your product by going to the <a href="
-#| "\"https://buddyboss.com/my-account/?part=mysubscriptions\" target=\"_blank"
-#| "\" rel=\"noopener\" >My Subscriptions</a> page in your account area."
 msgid ""
 "You can find the license key for your product by going to the <a href="
 "\"https://www.buddyboss.com/my-account/?tab=mysubscriptions\" target=\"_blank"
 "\" rel=\"noopener\" >My Subscriptions</a> page in your account area."
 msgstr ""
-"Vous pouvez trouver la clé de licence de votre produit en allant sur la page "
-"<a href=\"https://buddyboss.com/my-account/?part=mysubscriptions\" target="
-"\"_blank\" rel=\"noopener\" >Mes abonnements</a> dans votre espace client."
+"Vous pouvez trouver la clé de licence pour votre produit en allant à la page "
+"<a href=\"https://www.buddyboss.com/my-account/?tab=mysubscriptions\" target="
+"\"_blank\" rel=\"noopener\">Mes abonnements</a> dans votre zone de compte."
 
 #: inc/lib/buddyboss-updater/includes/views/package.php:72
 msgid ""
@@ -3793,10 +3720,8 @@ msgid "Type your reply here"
 msgstr ""
 
 #: inc/plugins/bbpress-helper.php:476 inc/plugins/bbpress-helper.php:477
-#, fuzzy
-#| msgid "Mail Reply"
 msgid "Quick Reply"
-msgstr "Répondre par courriel"
+msgstr "Réponse rapide"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:16
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:54
@@ -4100,58 +4025,42 @@ msgstr "Infos-Bulles"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:564
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1317
-#, fuzzy
-#| msgid "Log Out"
 msgid "Logged Out"
-msgstr "Déconnexion"
+msgstr "Déconnecté[e]"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:577
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1357
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1377
-#, fuzzy
-#| msgid "Sign In"
 msgid "Sign In Color"
-msgstr "Se connecter"
+msgstr "Couleur de l’inscription"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:589
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "Sign In Hover Color"
-msgstr "Couleur du menu au survol"
+msgstr "Couleur de l'inscription au survol"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:601
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1421
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1452
-#, fuzzy
-#| msgid "Link Color"
 msgid "Sign Up Color"
-msgstr "Couleur du lien"
+msgstr "Couleur de l'inscription"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:613
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "Sign Up Hover Color"
-msgstr "Couleur du menu au survol"
+msgstr "Couleur de survol de connexion"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:625
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1432
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1463
-#, fuzzy
-#| msgid "Background Color"
 msgid "Sign Up Background Color"
-msgstr "Couleur d’arrière-plan"
+msgstr "Couleur d’arrière-plan de connexion"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:637
-#, fuzzy
-#| msgid "Menu Item Hover Background Color"
 msgid "Sign Up Hover Background Color"
-msgstr "Couleur de fond du survol des éléments de menu"
+msgstr "Couleur de fond au survol pour la connexion"
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:648
-#, fuzzy
-#| msgid "Border Radius"
 msgid "Sign Up Border Radius"
-msgstr "Rayon de la bordure"
+msgstr "Limite de connexion"
 
 #: inc/plugins/beaver-themer-helper.php:109
 msgid "Before Page"
@@ -5232,10 +5141,8 @@ msgid "File"
 msgstr "Fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:837
-#, fuzzy
-#| msgid "Default"
 msgid "File: Default"
-msgstr "Par défaut"
+msgstr "Fichier : Défaut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:842
 #, fuzzy
@@ -6667,23 +6574,17 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2222
-#, fuzzy
-#| msgid "Video: Off"
 msgid "Video: Album"
-msgstr "Vidéo: Désactivée"
+msgstr "Vidéo : Album"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2227
-#, fuzzy
-#| msgid "My Albums"
 msgid "Video: Albums"
-msgstr "Mes Albums"
+msgstr "Vidéo : Albums"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2232
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2237
-#, fuzzy
-#| msgid "Video: Off"
 msgid "Video: Alt"
-msgstr "Vidéo: Désactivée"
+msgstr "Vidéo : Alt"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2242
 msgid "Video: Off"
@@ -9743,10 +9644,8 @@ msgid "Section"
 msgstr "Section"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-empty.php:4
-#, fuzzy
-#| msgid "No results found!"
 msgid "No Templates Found"
-msgstr "Pas de résultats trouvés!"
+msgstr "Aucun modèle trouvé"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-header.php:8
 #, fuzzy
@@ -9790,16 +9689,12 @@ msgid "Search Templates:"
 msgstr "Résultats de la recherche"
 
 #: inc/plugins/elementor/templates/types/page.php:46
-#, fuzzy
-#| msgid "Pages:"
 msgid "Pages"
-msgstr "Pages:"
+msgstr "Pages"
 
 #: inc/plugins/elementor/templates/types/section.php:46
-#, fuzzy
-#| msgid "Section"
 msgid "Sections"
-msgstr "Section"
+msgstr "Sections"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:111
 #, fuzzy
@@ -9824,16 +9719,12 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-review.php:138
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:177
 #: inc/plugins/elementor/widgets/members/bb-members.php:213
-#, fuzzy
-#| msgid "Avatar"
 msgid "Show Avatar"
-msgstr "Avatar"
+msgstr "Afficher l'Avatar"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:169
-#, fuzzy
-#| msgid "Content"
 msgid "Show Content"
-msgstr "Contenu"
+msgstr "Afficher le contenu"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:178
 msgid "Show Content Media"
@@ -9888,23 +9779,16 @@ msgid "Enter heading text"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-activity.php:279
-#, fuzzy
-#| msgid "Activity"
 msgid "Activity Link Text"
-msgstr "Activité"
+msgstr "Texte du lien d'activité"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:284
-#, fuzzy
-#| msgid "Activity"
 msgid "All Activity"
-msgstr "Activité"
+msgstr "Toutes les activités"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:285
-#, fuzzy
-#| msgctxt "Last activity date in infobar"
-#| msgid "Last activity on %s"
 msgid "Enter activity link text"
-msgstr "Dernière activité le: %s"
+msgstr "Entrez le texte du lien d’activité"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:307
 #: inc/plugins/elementor/widgets/bb-activity.php:399
@@ -10361,10 +10245,8 @@ msgid "Greeting & Description"
 msgstr "Description du champ"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:134
-#, fuzzy
-#| msgid "Welcome Screen"
 msgid "Welcome"
-msgstr "Écran de bienvenue"
+msgstr "Bienvenue"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:135
 msgid "Enter greeting text"
@@ -10397,10 +10279,8 @@ msgid "Greeting Color"
 msgstr "Sélectionner une couleur"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:291
-#, fuzzy
-#| msgid "Description Here"
 msgid "Description Color"
-msgstr "Description Ici"
+msgstr "Couleur de la description"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:304
 #, fuzzy
@@ -10416,52 +10296,38 @@ msgid "Typography Name"
 msgstr "Menu Typographie"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:40
-#, fuzzy
-#| msgid "Activity"
 msgid "Forums Activity"
-msgstr "Activité"
+msgstr "Activité des forums"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:95
-#, fuzzy
-#| msgid "Forum Title"
 msgid "Show Forum Title"
-msgstr "Titre du forum"
+msgstr "Afficher le titre du forum"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:104
 #: inc/plugins/elementor/widgets/bb-forums.php:152
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:186
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Meta Data"
-msgstr "Afficher les détails"
+msgstr "Afficher les méta-données"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:113
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:194
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:364
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:401
-#, fuzzy
-#| msgid "Shower"
 msgid "Show Excerpt"
-msgstr "Douche"
+msgstr "Afficher l’extrait"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:122
-#, fuzzy
-#| msgid "Select Icon"
 msgid "Show Reply Icon"
-msgstr "Sélectionnez une icône"
+msgstr "Afficher l’icône de réponse"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:134
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:215
-#, fuzzy
-#| msgid "Social Links"
 msgid "Show Link"
-msgstr "Réseaux sociaux"
+msgstr "Afficher le lien"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:149
-#, fuzzy
-#| msgid "New discussion"
 msgid "View Discussion"
-msgstr "Nouvelle discussion"
+msgstr "Voir la discussion"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:150
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:177
@@ -10469,39 +10335,29 @@ msgstr "Nouvelle discussion"
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:230
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:231
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:258
-#, fuzzy
-#| msgid "Button Text"
 msgid "Enter button text"
-msgstr "Texte du bouton"
+msgstr "Entrer le texte du bouton"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:161
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:664
-#, fuzzy
-#| msgid "My Discussions"
 msgid "My Discussions Button"
-msgstr "Mes discussions"
+msgstr "Bouton Mes discussions"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:176
-#, fuzzy
-#| msgid "My Discussions"
 msgid "View My Discussions"
-msgstr "Mes discussions"
+msgstr "Voir mes sujets"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:188
 msgid "No Forums Paragraph Text"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:193
-#, fuzzy
-#| msgid "You do not have any courses yet."
 msgid "You don't have any discussions yet."
-msgstr "Vous n’avez pas encore de cours."
+msgstr "Vous n'avez pas créé de sujet."
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:194
-#, fuzzy
-#| msgid "Enter your custom copyright text."
 msgid "Enter no forums paragraph text"
-msgstr "Entrez votre texte de droit d'auteur personnalisé."
+msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:203
 #, fuzzy
@@ -10520,16 +10376,12 @@ msgid "Enter no forums button text"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:345
-#, fuzzy
-#| msgid "Site Title"
 msgid "Topic Title"
-msgstr "Titre du site"
+msgstr "Titre du sujet"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:395
-#, fuzzy
-#| msgid "Start Date"
 msgid "Meta Data"
-msgstr "Date de début"
+msgstr "Métadonnées"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:445
 #: inc/plugins/elementor/widgets/bb-tabs.php:138
@@ -10539,29 +10391,23 @@ msgstr "Date de début"
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:355
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:131
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:661
-#, fuzzy
-#| msgid "Excerpt View"
 msgid "Excerpt"
-msgstr "Vue en résumé"
+msgstr "Extrait"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:497
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:549
 #: inc/plugins/elementor/widgets/bb-tabs.php:580
 #: inc/plugins/elementor/widgets/bb-tabs.php:1189
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:604
-#, fuzzy
-#| msgid "Button Set"
 msgid "Button"
-msgstr "Ensemble de boutons"
+msgstr "Bouton"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:607
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:675
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:714
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1130
-#, fuzzy
-#| msgid "Alignment"
 msgid "Button Alignment"
-msgstr "Alignement"
+msgstr "Alignement du bouton"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:616
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:684
@@ -10775,16 +10621,12 @@ msgid "Button text if progress is less than 100%"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:213
-#, fuzzy
-#| msgid "Complete"
 msgid "Complete Profile"
-msgstr "Terminé"
+msgstr "Profil complet"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:223
-#, fuzzy
-#| msgid "Edit Profile"
 msgid "Edit Profile Button Text"
-msgstr "Editer le profil"
+msgstr "Modifier le texte du bouton de profil"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:224
 msgid "Button text once progress hits 100%"
@@ -12575,10 +12417,8 @@ msgid "Please Wait..."
 msgstr "Veuillez patienter..."
 
 #: inc/theme/functions.php:370
-#, fuzzy
-#| msgid "Choose"
 msgid "Choose a file"
-msgstr "Choisir"
+msgstr "Choisir un fichier"
 
 #: inc/theme/functions.php:413
 msgid "Choose or Upload an Image"
@@ -12632,24 +12472,19 @@ msgid "Reset Password"
 msgstr "Réinitialiser le mot de passe"
 
 #: inc/theme/login.php:174
-#, fuzzy
-#| msgid ""
-#| "<div>Forgot your password?</div><p class=\"message\">Enter your email "
-#| "address. You will receive a link to create a new password via email.</p>"
 msgid ""
 "<div>Forgot your password?</div><p class=\"message\">Please enter your email "
 "address. You will receive an email with instructions on how to reset your "
 "password.</p>"
 msgstr ""
-"<div>Vous avez oublié votre mot de passe ?</div><p class=\"message\">Entrez "
-"votre adresse e-mail. Vous recevrez un lien pour créer un nouveau mot de "
-"passe par courriel.</p>"
+"<div>Vous avez oublié votre mot de passe ?</div><p class=\"message"
+"\">Veuillez saisir votre adresse électronique. Vous recevrez un courrier "
+"électronique contenant les instructions pour réinitialiser votre mot de "
+"passe.</p>"
 
 #: inc/theme/login.php:176
-#, fuzzy
-#| msgid "Request resend link"
 msgid "Request reset link"
-msgstr "Renvoyer un nouveau lien"
+msgstr "Demander un lien de réinitialisation"
 
 #: inc/theme/login.php:179
 msgid "Password has been updated"
@@ -13084,9 +12919,6 @@ msgid "Return to the Dashboard"
 msgstr "Retour au tableau de bord"
 
 #: inc/theme-activation.php:349 inc/theme-activation.php:2995
-#, fuzzy
-#| msgid "The following plugin was activated successfully:"
-#| msgid_plural "The following plugins were activated successfully:"
 msgid "The following plugin was activated successfully:"
 msgstr "L’extension suivante a été activée avec succès:"
 
@@ -13674,10 +13506,8 @@ msgstr ""
 #: lifterlms/assignment/template-single-assignment-content.php:59
 #: lifterlms/lesson/template-single-lesson-content.php:60
 #: lifterlms/quiz/template-single-quizz-content.php:59
-#, fuzzy
-#| msgid "Lesson "
 msgid "Lesson"
-msgstr "Leçon "
+msgstr "Leçon"
 
 #: lifterlms/assignment/template-single-assignment-content.php:63
 msgid ", Assignment"
@@ -13712,16 +13542,12 @@ msgid "Earned on"
 msgstr "Gagné sur"
 
 #: lifterlms/content-certificate.php:55
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable sharing"
-msgstr "Désactiver"
+msgstr "Désactiver le partage"
 
 #: lifterlms/content-certificate.php:55
-#, fuzzy
-#| msgid "Enable Subscribe"
 msgid "Enable sharing"
-msgstr "Activer formulaire d'inscription"
+msgstr "Activer le partage"
 
 #: lifterlms/content-certificate.php:69
 msgid "Back to My Certificates"
@@ -13734,10 +13560,8 @@ msgstr[0] "Formateur"
 msgstr[1] "Formateurs"
 
 #: lifterlms/course/course-index-loop.php:61
-#, fuzzy
-#| msgid "Start %s"
 msgid "Start Course"
-msgstr "Démarrer le %s"
+msgstr "Démarrer le Cours"
 
 #: lifterlms/course/course-index-loop.php:123 lifterlms/loop/content.php:46
 msgid "%s Lesson"
@@ -14146,7 +13970,7 @@ msgstr "Voir les détails de la formation"
 
 #: template-parts/content-maintenance.php:61
 msgid "Days"
-msgstr ""
+msgstr "Jours"
 
 #: template-parts/content-maintenance.php:65
 msgid "Hours"
@@ -14158,7 +13982,7 @@ msgstr "Minutes"
 
 #: template-parts/content-maintenance.php:73
 msgid "Seconds"
-msgstr ""
+msgstr "Secondes"
 
 #: template-parts/content-none.php:13
 msgid "No results found!"
@@ -14344,26 +14168,20 @@ msgid "My Albums"
 msgstr "Mes Albums"
 
 #: template-parts/header-profile-menu.php:416
-#, fuzzy
-#| msgid "Document"
 msgid "Documents"
-msgstr "Document"
+msgstr "Documents"
 
 #: template-parts/header-profile-menu.php:421
 msgid "My Documents"
 msgstr "Mes documents"
 
 #: template-parts/header-profile-menu.php:443
-#, fuzzy
-#| msgid "Video"
 msgid "Videos"
-msgstr "Vidéo"
+msgstr "Vidéos"
 
 #: template-parts/header-profile-menu.php:448
-#, fuzzy
-#| msgid "Play Video"
 msgid "My Videos"
-msgstr "Lancer la vidéo"
+msgstr "Mes vidéos"
 
 #: template-parts/header-profile-menu.php:470
 msgid "Email Invites"
@@ -14379,7 +14197,7 @@ msgstr "Afficher la boîte de réception"
 
 #: template-parts/notification-dropdown.php:21
 msgid "Mark all as read"
-msgstr ""
+msgstr "Marquer tous les messages comme lu"
 
 #: template-parts/notification-dropdown.php:31
 msgid "View Notifications"
@@ -14408,14 +14226,12 @@ msgstr "Usager supprimé"
 #: template-parts/unread-messages.php:306
 #: template-parts/unread-messages.php:400
 msgid "Suspended Member"
-msgstr ""
+msgstr "Membre suspendu"
 
 #: template-parts/unread-messages.php:308
 #: template-parts/unread-messages.php:402
-#, fuzzy
-#| msgid "All Members"
 msgid "Blocked Member"
-msgstr "Tous les membres"
+msgstr "Membre bloqué"
 
 #: template-parts/unread-messages.php:340
 msgid "sent a photo"
@@ -14426,28 +14242,20 @@ msgid "sent some photos"
 msgstr "a envoyé des photos"
 
 #: template-parts/unread-messages.php:354
-#, fuzzy
-#| msgid "sent a gif"
 msgid "sent a video"
-msgstr "a envoyé un gif"
+msgstr "a envoyé une vidéo"
 
 #: template-parts/unread-messages.php:356
-#, fuzzy
-#| msgid "sent some photos"
 msgid "sent some videos"
-msgstr "a envoyé des photos"
+msgstr "envoyé des vidéos"
 
 #: template-parts/unread-messages.php:368
-#, fuzzy
-#| msgid "sent a photo"
 msgid "sent a document"
-msgstr "a envoyé une photo"
+msgstr "a envoyé un document"
 
 #: template-parts/unread-messages.php:370
-#, fuzzy
-#| msgid "sent some photos"
 msgid "sent some documents"
-msgstr "a envoyé des photos"
+msgstr "a envoyé quelques documents"
 
 #: template-parts/unread-messages.php:379
 msgid "sent a gif"
@@ -14458,16 +14266,12 @@ msgid "You"
 msgstr "Vous"
 
 #: template-parts/unread-messages.php:419
-#, fuzzy
-#| msgid "No new messages"
 msgid "No new messages!"
-msgstr "Pas de nouveau message"
+msgstr "Pas de nouveau message !"
 
 #: template-parts/unread-notifications.php:18
-#, fuzzy
-#| msgid "Marker"
 msgid "Mark Read"
-msgstr "Marqueur"
+msgstr "Marquer comme lu"
 
 #: template-parts/unread-notifications.php:26
 msgid "No new notifications"
@@ -14596,27 +14400,21 @@ msgstr "Bonjour %1$s"
 
 #. translators: 1: user display name 2: logout url
 #: woocommerce/myaccount/dashboard.php:47
-#, fuzzy
-#| msgid "not %1$s? <a href=\"%2$s\">Log out</a>"
 msgid "Hello %1$s (not %1$s? <a href=\"%2$s\">Log out</a>)"
-msgstr "pas %1$s? <a href=\"%2$s\">Déconnectez-vous</a>"
+msgstr ""
+"Bonjour %1$s (vous n'êtes pas %1$s ? <a href=\"%2$s\">Se déconnecter</a>)"
 
 #. translators: 1: Orders URL 2: Address URL 3: Account URL.
 #: woocommerce/myaccount/dashboard.php:57
-#, fuzzy
-#| msgid ""
-#| "From your account dashboard you can view your <a href=\"%1$s\">recent "
-#| "orders</a>, manage your <a href=\"%2$s\">shipping and billing addresses</"
-#| "a>, and <a href=\"%3$s\">edit your password and account details</a>."
 msgid ""
 "From your account dashboard you can view your <a href=\"%1$s\">recent "
 "orders</a>, manage your <a href=\"%2$s\">billing address</a>, and <a href="
 "\"%3$s\">edit your password and account details</a>."
 msgstr ""
-"À partir de votre tableau de bord, vous pouvez visualiser vos <a href=\"%1$s"
-"\">commandes récentes</a>, gérer vos <a href=\"%2$s\">adresses de livraison "
-"et de facturation</a> ainsi que <a href=\"%3$s\">changer votre mot de passe "
-"et les détails de votre compte</a>."
+"À partir du tableau de bord de votre compte, vous pouvez afficher vos <a "
+"href=\"%1$s\">commandes récentes,</a>gérer votre <a href=\"%2$s\">adresse de "
+"facturation</a>et modifier les détails de votre mot de passe et de votre <a "
+"href=\"%3$s\">compte</a>."
 
 #. translators: 1: Orders URL 2: Addresses URL 3: Account URL.
 #: woocommerce/myaccount/dashboard.php:60
@@ -14980,8 +14778,6 @@ msgid "Home"
 msgstr "Accueil"
 
 #: memberpress/account/nav.php:24
-#, fuzzy
-#| msgid "Log Out"
 msgctxt "ui"
 msgid "Log Out"
 msgstr "Déconnexion"
@@ -15283,8 +15079,6 @@ msgid ""
 msgstr "Vous avez déjà fait ce %1$s %2$d fois, vous ne pouvez plus le refaire."
 
 #: learndash/ld30/shortcodes/course_list_template.php:260
-#, fuzzy
-#| msgid "%s"
 msgctxt "Start ribbon"
 msgid "%s"
 msgstr "%s"
@@ -15321,12 +15115,10 @@ msgid "%1$d of %2$d"
 msgstr "%1$d de %2$d"
 
 #: template-parts/entry-meta.php:51 template-parts/entry-meta.php:81
-#, fuzzy
-#| msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgctxt "comments title"
 msgid "1 <span class=\"bb-comment-text\">Comment</span>"
 msgid_plural "%1$s <span class=\"bb-comment-text\">Comments</span>"
-msgstr[0] "Modifier <span class=\"screen-reader-text\">%s</span>"
+msgstr[0] "1 <span class=\"bb-comment-text\">commentaire</span>"
 msgstr[1] "Modifier <span class=\"screen-reader-text\">%s</span>"
 
 #: tribe-events/single-event.php:28
