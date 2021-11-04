@@ -30,7 +30,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_CHARSET', 'utf8');
   
     define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_LOG', '/wp-content/debug.log');
     define('WP_DEBUG_DISPLAY', true);
   } else {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
