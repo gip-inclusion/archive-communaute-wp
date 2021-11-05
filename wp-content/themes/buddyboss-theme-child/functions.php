@@ -38,3 +38,14 @@ add_filter('wp_mail_from', 'custom_mail_from');
 // 	$phpmailer->FromName   = SMTP_NAME;
 // }
 // add_action('phpmailer_init', 'custom_send_smtp_email');
+
+
+
+function delete_script_version($src) {
+  $parts = explode('?', $src);
+  return $parts[0];
+}
+add_filter('script_loader_src', 'delete_script_version', 15, 1);
+add_filter('style_loader_src', 'delete_script_version', 15, 1);
+
+remove_action('wp_head', 'wp_generator');
