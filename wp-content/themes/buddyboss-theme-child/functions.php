@@ -20,10 +20,10 @@ function custom_mail_from($email) {
 add_filter('wp_mail_from', 'custom_mail_from');
 
 
-function custom_mail_from_name($name) {
-  return 'La communauté de l’inclusion';
-}
-add_filter('wp_mail_from_name', 'custom_mail_from_name');
+// function custom_mail_from_name($name) {
+//   return 'La communauté de l’inclusion';
+// }
+// add_filter('wp_mail_from_name', 'custom_mail_from_name');
 
 
 // function custom_send_smtp_email($phpmailer) {
