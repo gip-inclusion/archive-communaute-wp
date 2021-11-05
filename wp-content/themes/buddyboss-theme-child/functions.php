@@ -20,7 +20,21 @@ function custom_mail_from($email) {
 add_filter('wp_mail_from', 'custom_mail_from');
 
 
-// function custom_mail_from_name($name) {
-//   return 'My Name';
+function custom_mail_from_name($name) {
+  return 'La communauté de l’inclusion';
+}
+add_filter('wp_mail_from_name', 'custom_mail_from_name');
+
+
+// function custom_send_smtp_email($phpmailer) {
+//   $phpmailer->isSMTP();
+// 	$phpmailer->Host       = SMTP_HOST;
+// 	$phpmailer->SMTPAuth   = SMTP_AUTH;
+// 	$phpmailer->Port       = SMTP_PORT;
+// 	$phpmailer->Username   = SMTP_USER;
+// 	$phpmailer->Password   = SMTP_PASS;
+// 	$phpmailer->SMTPSecure = SMTP_SECURE;
+// 	$phpmailer->From       = SMTP_FROM;
+// 	$phpmailer->FromName   = SMTP_NAME;
 // }
-// add_filter('wp_mail_from_name', 'custom_mail_from_name');
+// add_action('phpmailer_init', 'custom_send_smtp_email');
