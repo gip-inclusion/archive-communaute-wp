@@ -1,6 +1,3 @@
-CHANGELOG
-=========
-
 # Journal des modifications
 
 ## [01] - 2021-10-22
@@ -19,4 +16,4 @@ CHANGELOG
 - Suppression de plusieurs plug-ins inutiles ou redondants
 
 
-## [02] - 2021-11-01
+## [02] - 2021-11-08
