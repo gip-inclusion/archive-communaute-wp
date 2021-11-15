@@ -49,3 +49,13 @@ add_filter('script_loader_src', 'delete_script_version', 15, 1);
 add_filter('style_loader_src', 'delete_script_version', 15, 1);
 
 remove_action('wp_head', 'wp_generator');
+
+
+function is_post_type($type) {
+  global $wp_query;
+  if($type == get_post_type($wp_query->post->ID)) {
+    return true;
+  } else {
+    return false;
+  }
+}
