@@ -479,7 +479,7 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 			}
 
 			foreach ( $quizzes as $quiz ) {
-				if ( learndash_is_quiz_complete( $user_id, $quiz['post']->ID ) ) {
+				if ( learndash_is_quiz_complete( $user_id, $quiz['post']->ID, $course_id ) ) {
 					$completed ++;
 				}
 			}
@@ -1737,7 +1737,7 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 								foreach ( $topic_quizzes as $topic_quiz ) {
 									$navigation_urls[] = [
 										'url'      => learndash_get_step_permalink( $topic_quiz['post']->ID, $course_id ),
-										'complete' => learndash_is_quiz_complete( get_current_user_id(), $topic_quiz['post']->ID ) ? 'yes' : 'no',
+										'complete' => learndash_is_quiz_complete( get_current_user_id(), $topic_quiz['post']->ID, $course_id ) ? 'yes' : 'no',
 									];
 								}
 							endif;
@@ -1751,7 +1751,7 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 						foreach ( $lesson_quizzes as $lesson_quiz ) {
 							$navigation_urls[] = [
 								'url'      => learndash_get_step_permalink( $lesson_quiz['post']->ID, $course_id ),
-								'complete' => learndash_is_quiz_complete( get_current_user_id(), $lesson_quiz['post']->ID ) ? 'yes' : 'no',
+								'complete' => learndash_is_quiz_complete( get_current_user_id(), $lesson_quiz['post']->ID, $course_id ) ? 'yes' : 'no',
 							];
 						}
 					endif;
@@ -1764,7 +1764,7 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 				foreach ( $course_quizzes as $course_quiz ) {
 					$navigation_urls[] = [
 						'url'      => learndash_get_step_permalink( $course_quiz['post']->ID, $course_id ),
-						'complete' => learndash_is_quiz_complete( get_current_user_id(), $course_quiz['post']->ID ) ? 'yes' : 'no',
+						'complete' => learndash_is_quiz_complete( get_current_user_id(), $course_quiz['post']->ID, $course_id ) ? 'yes' : 'no',
 					];
 				}
 			endif;

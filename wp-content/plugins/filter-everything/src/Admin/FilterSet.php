@@ -242,7 +242,7 @@ class FilterSet
             $select2ver = '4.1.0';
 
             // Filter Set script
-            wp_enqueue_script('wpc-filters-admin-filter-set', FLRT_PLUGIN_URL . 'assets/js/wpc-filter-set-admin'.$suffix.'.js', array('jquery', 'wp-util', 'jquery-ui-sortable', 'select2'), $ver );
+            wp_enqueue_script('wpc-filters-admin-filter-set', FLRT_PLUGIN_URL . 'assets/js/wpc-filter-set-admin'.$suffix.'.js', array('jquery', 'wp-util', 'jquery-ui-sortable', 'select2fe'), $ver );
 
             $l10n = array(
                 'filterSlugs'       => $this->getExistingFilterSlugs(),
@@ -258,8 +258,8 @@ class FilterSet
             wp_localize_script( 'wpc-filters-admin-filter-set', 'wpcSetVars', $l10n );
 
             // Select2
-            wp_enqueue_script( 'select2', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
-            wp_enqueue_style('select2', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
+            wp_enqueue_script( 'select2fe', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
+            wp_enqueue_style('select2fe', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
 
         }
     }

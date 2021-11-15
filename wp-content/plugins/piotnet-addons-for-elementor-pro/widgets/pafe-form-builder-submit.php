@@ -2474,6 +2474,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2489,6 +2492,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'placeholder' => $default_message,
 				'label_block' => true,
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2636,6 +2642,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2651,6 +2660,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'placeholder' => $default_message,
 				'label_block' => true,
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 

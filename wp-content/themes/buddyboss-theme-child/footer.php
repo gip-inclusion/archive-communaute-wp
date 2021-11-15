@@ -29,6 +29,7 @@
 
 <?php wp_footer(); ?>
 
+
 <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -43,12 +44,13 @@
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Matomo Code -->
+
 
 <?php
  // If pages aide/doc alors injection code hotjar 
   if (is_post_type('docs') || is_post_type_archive('docs')) {
     echo "
+    <!-- Hotjar Tracking Code for https://communaute.inclusion.beta.gouv.fr/ -->
     <script>
       (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};

@@ -1,7 +1,7 @@
 === Filter Everything&nbsp;— WooCoomerce Product & WordPress Filter ===
 Contributors: stepasyuk
 Tags: woocommerce product filter, woocommerce filter, product filter, post filter, ajax filter, product filter woocommerce, filter, taxonomy filter, post type filter, woocommerce products filter, category filter, price filter
-Stable tag: 1.4.1
+Stable tag: 1.4.4
 Requires at least: 4.6
 Tested up to: 5.8.1
 Requires PHP: 5.7
@@ -121,6 +121,20 @@ Uploading via FTP
 6. URL prefixes settings
 
 == Changelog ==
+= 1.4.4 =
+*Release Date - 10 November 2021*
+* Fix   - Fixed Select2 version compatibility problem on Filter Set and Filter Settings pages
+* Fix   - Fixed Search field option for range and radio buttons views
+* Tweak - Disabled Search field for Select2 dropdowns for the Sorting widget
+
+= 1.4.3 =
+*Release Date - 08 November 2021*
+* Fix   - Fixed PHP notice
+* Fix   - Fixed conflict with WP tags autocomplete field
+
+= 1.4.2 =
+*Release Date - 02 November 2021*
+* Fix   - Disabled debugging
 
 = 1.4.1 =
 *Release Date - 01 November 2021*
@@ -130,6 +144,7 @@ Uploading via FTP
 * Fix   - Fixed bug with AND logic for filters by hierarchical taxonomies
 * Fix   - Meta key Dropdown field was replaced with Input without suggestions due to performance issues
 * Fix   - Fixed Sorting Dropdown field for AJAX filtering
+* Fix   - Fixed bug with paginate links for comments
 * Fix   - Improved compatibility with the WP Query that already contains this term. "Term already in Query" check.
 * Tweak - Improved "Hide empty Terms" by adding new option "Hide in the initial Filter only"
 * Tweak - Added Russian translations
@@ -137,12 +152,19 @@ Uploading via FTP
 = 1.4.0 =
 *Release Date - 22 October 2021*
 * Dev   - Added search field to a filter
+* Dev   - Improved Pop-up filters widget design and behavior
+* Dev   - Added compatibility checkbox for Pop-up filters widget on mobile
+* Dev   - Added support of brand images for WooCommerce brand attributes
+* Dev   - Improved Custom Field Num filtering for product variations
 * Dev   - Improved Chips integration
+* Dev   - Improved filtering by variations. Added checkbox "Use for variations" to Custom Fields
 * Fix   - Fixed small issue with Polylang
+* Fix   - Fixed bug with paginate links
 * Fix 	- Fixed bug with range slider values on filtering pages
 * Fix   - Removed 'user_trailingslashit' for 'get_post_type_archive_link' in 'getCommonLocationTerms' method
 * Tweak - Improved chips design to make them more lightweight
 * Tweak - Added ability to translate stock status terms
+* Tweak - Improved behavior of the "Hide empty terms" feature - now it always hide empty terms
 * Tweak - Added pjax compatibility
 
 = 1.3.1 =
@@ -401,20 +423,10 @@ Uploading via FTP
 
 == Upgrade Notice ==
 
-= 1.4.1 =
-* Dev   - Improved performance by adding SQL queries caches
-* Dev   - Added search field to a filter
-* Dev   - Added support filtering values on any language (Chinese, Arabic, Hebrew and so on)
-* Dev   - Improved Chips integration
-* Fix   - Fixed small issue with Polylang
-* Fix 	- Fixed bug with range slider values on filtering pages
-* Fix 	- Fixed bug with Custom Field Num filter for non-product posts
-* Fix   - Fixed bug with AND logic for filters by hierarchical taxonomies
-* Fix   - Meta key Dropdown field was replaced with Input without suggestions due to performance issues
-* Fix   - Fixed Sorting Dropdown field for AJAX filtering
-* Fix   - Improved compatibility with the WP Query that already contains this term. "Term already in Query" check.
-* Tweak - Improved "Hide empty Terms" by adding new option "Hide in the initial Filter only"
-* Tweak - Added Russian translations
-* Tweak - Improved chips design to make them more lightweight
-* Tweak - Added ability to translate stock status terms
-* Tweak - Added pjax compatibility
+= 1.4.4 =
+* Fix   - Fixed Select2 version compatibility problem on Filter Set and Filter Settings pages
+* Fix   - Fixed Search field option for range and radio buttons views
+* Fix   - Fixed PHP notice
+* Fix   - Fixed conflict with WP tags autocomplete field
+* Fix   - Disabled debugging
+* Tweak - Disabled Search field for Select2 dropdowns for the Sorting widget

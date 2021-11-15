@@ -159,6 +159,9 @@ class UrlManager
             $wpManager      = $container->getWpManager();
             $get            = $container->getTheGet();
 
+            // For compatibility with some Nginx configurations
+            unset($get['q']);
+
             $this->resetUrl = home_url( $wpManager->getQueryVar('wp_request') );
             $requested = $wpManager->getQueryVar('queried_values', [] );
             $pos = strpos($this->resetUrl, '/page');

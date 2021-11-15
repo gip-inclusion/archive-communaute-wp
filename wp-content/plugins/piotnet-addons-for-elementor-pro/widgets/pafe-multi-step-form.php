@@ -106,6 +106,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Enter the same form id for all fields in all steps, with latin character and no space. E.g order_form', 'pafe' ),
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2439,6 +2442,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2454,6 +2460,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'placeholder' => $default_message,
 				'label_block' => true,
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2594,6 +2603,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 
@@ -2609,6 +2621,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'placeholder' => $default_message,
 				'label_block' => true,
 				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
 			]
 		);
 

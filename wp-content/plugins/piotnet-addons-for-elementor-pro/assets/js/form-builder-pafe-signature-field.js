@@ -69,11 +69,12 @@ jQuery(document).ready(function($) {
     			widthOuter = parseInt( $(this).closest('.elementor-form-fields-wrapper').width() ); 
 
 			if(widthOuter > 0) {
-				if (width > widthOuter) {
+				if (width > widthOuter || Number.isNaN(width)) {
 					$(this).attr('width',widthOuter);
 				} else {
 					$(this).attr('width',width);
 				}
+				$(this).attr('height',$(this).css('height'));
 			}
 			
     	});
@@ -81,8 +82,8 @@ jQuery(document).ready(function($) {
 
     resizeSignature();
 
-    $(window).on('resize', function () {
-        resizeSignature();
-    });
+    // $(window).on('resize', function () {
+    //     resizeSignature();
+    // });
 
 });

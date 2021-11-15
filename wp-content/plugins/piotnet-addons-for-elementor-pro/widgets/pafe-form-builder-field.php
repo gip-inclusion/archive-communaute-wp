@@ -62,6 +62,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			'stripe_payment' => __( 'Stripe Payment', 'pafe' ),
 			'honeypot' => __( 'Honeypot', 'pafe' ),
 			'color' => __( 'Color Picker', 'pafe' ),
+			'iban' => __( 'Iban', 'pafe' ),
 		];
 
 		if( get_option( 'pafe-features-submit-post', 2 ) == 2 || get_option( 'pafe-features-submit-post', 2 ) == 1 ) {
@@ -1145,9 +1146,22 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 								'hidden',
 								'html',
 								'honeypot',
+								'iban'
 							],
 						],
 					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'iban_invalid_message',
+			[
+				'label' => __( 'Invalid Message', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'This IBAN is invalid.',
+				'condition' => [
+					'field_type' => 'iban'
 				],
 			]
 		);
@@ -4846,7 +4860,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
-		if ($item['field_type'] == 'address_autocomplete') {
+		if ($item['field_type'] == 'address_autocomplete' || $item['field_type'] == 'iban') {
 			$this->add_render_attribute(
 				[
 					'input' . $i => [
@@ -5478,10 +5492,16 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					case 'password':
 					case 'hidden':
 					case 'color':
+					case 'iban':
 						if(!empty($item['field_type_repassword']) && !empty($item['field_type_password_shortcode'])){
 							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-is-repassword', $item['field_type_password_shortcode'] );
 							$msg_dont_match = !empty($item['msg_password_dont_match']) ? $item['msg_password_dont_match'] : "Passwords Don't Match";
 							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-repassword-msg', $msg_dont_match );
+						}
+						if($item['field_type'] == 'iban'){
+							$iban_mesg = !empty($settings['iban_invalid_message']) ? $settings['iban_invalid_message'] : 'This IBAN is invalid.';
+							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-iban-field');
+							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-iban-msg', $iban_mesg);
 						}
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						echo '<input size="1" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';

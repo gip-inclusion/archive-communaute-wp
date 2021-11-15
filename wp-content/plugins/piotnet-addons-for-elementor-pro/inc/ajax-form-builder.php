@@ -241,6 +241,22 @@
 			$message = str_replace( '[payment_status]', $failed, $message );
 		}
 
+		if ($payment_status == 'open') {
+			$message = str_replace( '[payment_status]', 'Open', $message );
+		}
+
+		if ($payment_status == 'paid') {
+			$message = str_replace( '[payment_status]', 'Paid', $message );
+		}
+
+		if ($payment_status == 'canceled') {
+			$message = str_replace( '[payment_status]', 'Canceled', $message );
+		}
+
+		if ($payment_status == 'expired') {
+			$message = str_replace( '[payment_status]', 'Expired', $message );
+		}
+
 		if (!empty($payment_id)) {
 			$message = str_replace( '[payment_id]', $payment_id, $message );
 		}
@@ -879,6 +895,13 @@
 					$form_submission['payment_status'] = $payment_status;
 				}
 
+				//Mollie
+				if(!empty($_POST['mollie_payment_id'])){
+					$payment_id = $_POST['mollie_payment_id'];
+					$mollie_api_key = get_option('piotnet-addons-for-elementor-pro-mollie-api-key');
+					$payment_status = pafe_get_mollie_payment_status($payment_id, $mollie_api_key);
+					$form_submission['payment_status'] = $payment_status;
+				}
 				// Recaptcha
 
 				$recaptcha_check = 1;
@@ -3692,6 +3715,9 @@
 						}
 
 						$message = replace_email($form['settings']['email_content'], $fields, '', '', '', '', '', $form_database_post_id );
+						if(!empty($form['settings']['mollie_enable'])){
+							$message = replace_email($form['settings']['email_content'], $fields, $payment_status, '', '', '', '', $form_database_post_id );
+						}
 
 						if ( ! empty( $form['settings']['pafe_stripe_status_succeeded'] ) && ! empty( $form['settings']['pafe_stripe_status_pending'] ) && ! empty( $form['settings']['pafe_stripe_status_failed'] ) ) {
 							$message = replace_email($form['settings']['email_content'], $fields, $payment_status, $payment_id, $form['settings']['pafe_stripe_status_succeeded'], $form['settings']['pafe_stripe_status_pending'], $form['settings']['pafe_stripe_status_failed'], $form_database_post_id );
@@ -3976,5 +4002,25 @@
 		$response = curl_exec($curl);
 		curl_close($curl);
 
+	}
+	function pafe_get_mollie_payment_status($id, $api_key){
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => 'https://api.mollie.com/v2/payments/'.$id,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'GET',
+		CURLOPT_HTTPHEADER => array(
+			'Authorization: Bearer '.$api_key
+		),
+		));
+		$response = curl_exec($curl);
+		curl_close($curl);
+		$response = json_decode($response);
+		return $response->status;
 	}
 ?>

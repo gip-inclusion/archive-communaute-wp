@@ -465,7 +465,8 @@
         align-self: flex-start; }
     #bbpress-forums#bbpress-forums .bs-forums-items .item-avatar img {
       border-radius: 50%;
-      margin-top: 0; }
+      margin-top: 0;
+      image-rendering: -webkit-optimize-contrast; }
     #bbpress-forums#bbpress-forums .bs-forums-items .item-avatar .bbp-author-name {
       display: none !important; }
   #bbpress-forums#bbpress-forums .bs-forums-items .bs-sorting-list {

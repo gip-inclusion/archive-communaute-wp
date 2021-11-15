@@ -4491,7 +4491,8 @@ a.custom-logo-link {
 
 .user-link img {
   border-radius: 50%;
-  max-width: 36px; }
+  max-width: 36px;
+  image-rendering: -webkit-optimize-contrast; }
 
 .header-aside {
   display: -webkit-box;

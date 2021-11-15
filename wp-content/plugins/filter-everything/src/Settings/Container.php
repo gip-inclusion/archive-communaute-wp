@@ -143,9 +143,6 @@ class Container
     public function getTheGet()
     {
         if( ! $this->getParam('get') ){
-            if( isset( $_GET['q'] ) ){
-                unset( $_GET['q'] );
-            }
             $this->storeParam( 'get', $_GET );
         }
 

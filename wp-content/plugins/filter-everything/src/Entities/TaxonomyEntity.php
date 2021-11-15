@@ -70,6 +70,11 @@ class TaxonomyEntity implements Entity
     {
         global $wpdb;
         $include_variation_atts = false;
+        $ids = [];
+
+        if(! isset( $filter['slug'] ) ){
+            return $ids;
+        }
 
         // Check if it is already stored
         $transient_key = flrt_get_post_ids_transient_key( $filter['slug'] );
@@ -109,7 +114,6 @@ class TaxonomyEntity implements Entity
 
         $taxonomy_terms = apply_filters( 'wpc_term_taxonomy_terms', $results, $this );
 
-        $ids = [];
         foreach ($taxonomy_terms as $key => $result) {
             $ids[$result['term_taxonomy_id']][] = (int) $result['object_id'];
         }
@@ -138,11 +142,12 @@ class TaxonomyEntity implements Entity
     public function populateTermsWithPostIds( $setId, $post_type )
     {
         $termTaxonomyIds     = [];
+        $termPosts           = [];
+        $the_filter          = [];
         $em                  = Container::instance()->getEntityManager();
         $allWpQueriedPostIds = $em->getAllSetWpQueriedPostIds( $setId );
         $relatedFilters      = $em->getSetsRelatedFilters( array( array( 'ID' => $setId) ) );
 
-        $the_filter = [];
         foreach ( $relatedFilters as $filter ){
             if( isset( $filter['e_name'] ) && $filter['e_name'] === $this->getName() ){
                 $the_filter = $filter;
@@ -154,7 +159,9 @@ class TaxonomyEntity implements Entity
             $termTaxonomyIds[] = $term->term_taxonomy_id;
         }
 
-        $termPosts = $this->getTermTaxonomyPostsIds( $termTaxonomyIds, $the_filter );
+        if( ! empty( $the_filter ) ){
+            $termPosts = $this->getTermTaxonomyPostsIds( $termTaxonomyIds, $the_filter );
+        }
 
         if( $this->getName() === 'product_shipping_class' ){
 

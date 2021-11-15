@@ -287,7 +287,7 @@ class FiltersWidget extends \WP_Widget
                                 $terms = apply_filters( 'wpc_terms_before_display', $terms, $filter, $set, $urlManager );
 
                                 $templateManager->includeFrontView(
-                                        apply_filters( 'wpc_view_include_filename', $filter['view'], $filter ),
+                                        apply_filters( 'wpc_view_include_filename', $filter['view'], $filter, $set ),
                                         array(
                                             'filter'        => $filter,
                                             'terms'         => $terms,

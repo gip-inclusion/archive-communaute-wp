@@ -732,8 +732,8 @@ class Plugin
 
         if( property_exists( $screen, 'base' ) && strpos( $screen->base, '_page_filters-settings' )  !== false ){
             // Select2
-            wp_enqueue_script( 'select2', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
-            wp_enqueue_style('select2', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
+            wp_enqueue_script( 'select2fe', FLRT_PLUGIN_URL . "assets/js/select2/select2".$suffix.".js", array('jquery'), $select2ver );
+            wp_enqueue_style('select2fe', FLRT_PLUGIN_URL . "assets/css/select2/select2".$suffix.".css", '', $select2ver );
         }
 
         if( property_exists( $screen, 'base' ) && $screen->base === 'widgets' ){

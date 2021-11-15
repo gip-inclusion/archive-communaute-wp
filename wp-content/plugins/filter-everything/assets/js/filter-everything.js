@@ -1,5 +1,5 @@
 /*!
- * Filter Everything 1.4.1
+ * Filter Everything 1.4.4
  */
 (function ($) {
     "use strict";
@@ -404,7 +404,7 @@
 
                 return $dr_wrapper;
             },
-            minimumResultsForSearch: wpcAllowSearchField
+            minimumResultsForSearch: Infinity
         });
     }
 

@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the ElementsKit Lite package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ElementsKit Lite 2.3.7\n"
+"Project-Id-Version: ElementsKit Lite 2.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elementskit-lite\n"
-"POT-Creation-Date: 2021-09-26 10:37:17+00:00\n"
+"POT-Creation-Date: 2021-11-07 13:44:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -454,32 +454,32 @@ msgstr ""
 msgid "ElementsKit Header Footer"
 msgstr ""
 
-#: helpers/utils.php:164 widgets/caldera-forms/caldera-forms.php:37
+#: helpers/utils.php:177 widgets/caldera-forms/caldera-forms.php:37
 #: widgets/caldera-forms/caldera-forms.php:62
 msgid "Select Form"
 msgstr ""
 
-#: helpers/utils.php:169
+#: helpers/utils.php:182
 msgid "Create a form first"
 msgstr ""
 
-#: helpers/utils.php:183
+#: helpers/utils.php:196
 msgid "Select Ninja Form"
 msgstr ""
 
-#: helpers/utils.php:190 widgets/fluent-forms/fluent-forms.php:54
+#: helpers/utils.php:203 widgets/fluent-forms/fluent-forms.php:54
 msgid "Create a Form First"
 msgstr ""
 
-#: helpers/utils.php:201 widgets/tablepress/tablepress.php:45
+#: helpers/utils.php:214 widgets/tablepress/tablepress.php:45
 msgid "Select Table"
 msgstr ""
 
-#: helpers/utils.php:208
+#: helpers/utils.php:221
 msgid "(no name)"
 msgstr ""
 
-#: helpers/utils.php:214
+#: helpers/utils.php:227
 msgid "Create a Table First"
 msgstr ""
 

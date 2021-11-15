@@ -426,6 +426,8 @@ function flrt_query_string_form_fields($values = null, $exclude = [], $current_k
     if ( is_null( $values ) ) {
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $values = Container::instance()->getTheGet();
+        // For compatibility with some Nginx configurations
+        unset($values['q']);
     } elseif ( is_string( $values ) ) {
         $url_parts = wp_parse_url( $values );
         $values    = [];
@@ -478,6 +480,9 @@ function flrt_get_query_string_parameters()
     $container  = Container::instance();
     $get        = $container->getTheGet();
     $post       = $container->getThePost();
+
+    // For compatibility with some Nginx configurations
+    unset($get['q']);
 
     if( isset( $post['flrt_ajax_link'] ) ){
         $parts = parse_url( $post['flrt_ajax_link'] );

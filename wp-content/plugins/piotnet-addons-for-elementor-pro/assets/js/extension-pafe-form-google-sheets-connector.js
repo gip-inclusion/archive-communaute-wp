@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 			}
 		});
 
-		var row = '',
+		var row = [],
 			fieldList = $wrapper.data('pafe-form-google-sheets-connector-field-list'),
 			columnArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
 			fieldColumns = [];
@@ -72,11 +72,11 @@ jQuery(document).ready(function($) {
             	}  
 	        }
 
-	        row += '"'+value+'",';
+	        //row += '"'+value+'",';
+	          row.push(value);
         }
-	   
 	    // Submission
-	    row = row.slice(0, -1);
+	    //row = row.slice(0, -1);
 	    // Config
 	    var gs_sid = $wrapper.data('pafe-form-google-sheets-connector'); // Enter your Google Sheet ID here
 	    var gs_clid = $wrapper.data('pafe-form-google-sheets-connector-clid'); // Enter your API Client ID here
@@ -85,7 +85,12 @@ jQuery(document).ready(function($) {
 	    var gs_tab =  $wrapper.data('pafe-form-google-sheets-connector-tab');
 	    var gs_atok = false;
 	    var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/'+gs_sid+'/values/'+gs_tab+'A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
-	    var gs_body = '{"majorDimension":"ROWS", "values":[['+row+']]}';
+	    //var gs_body = '{"majorDimension":"ROWS", "values":[['+row+']]}';
+	    var gs_body = {
+	    	majorDimension: "ROWS",
+	    	values: [row]
+	    }
+	    gs_body = JSON.stringify(gs_body);
 
 	    // HTTP Request Token Refresh
 	    var xhr = new XMLHttpRequest();

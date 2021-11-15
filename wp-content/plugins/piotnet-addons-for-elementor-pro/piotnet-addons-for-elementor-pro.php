@@ -3,23 +3,23 @@
  * Plugin Name: Piotnet Addons For Elementor Pro
  * Description: Piotnet Addons For Elementor Pro (PAFE Pro) adds many new features for Elementor
  * Plugin URI:  https://pafe.piotnet.com/
- * Version:     6.4.13
+ * Version:     6.4.14
  * Author:      Luong Huu Phuoc (Louis Hufer)
  * Author URI:  https://piotnet.com/
  * Text Domain: pafe
  * Domain Path: /languages
- * Elementor tested up to: 3.4.5
- * Elementor Pro tested up to: 3.4.2
+ * Elementor tested up to: 3.4.7
+ * Elementor Pro tested up to: 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PAFE_PRO_VERSION', '6.4.13' );
-define( 'PAFE_PRO_PREVIOUS_STABLE_VERSION', '6.4.12' );
+define( 'PAFE_PRO_VERSION', '6.4.14' );
+define( 'PAFE_PRO_PREVIOUS_STABLE_VERSION', '6.4.13' );
 
 final class Piotnet_Addons_For_Elementor_Pro {
 
-	const VERSION = '6.4.13';
+	const VERSION = '6.4.14';
 	const MINIMUM_ELEMENTOR_VERSION = '2.8.0';
 	const MINIMUM_PHP_VERSION = '5.4';
 	const TAB_PAFE = 'tab_pafe';
@@ -224,6 +224,8 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		add_action('manage_pafe-formabandonment_posts_custom_column', [$this,'pafe_form_builder_filter_column_content'], 10, 2);
 
 		add_filter('manage_pafe-form-database_posts_columns', [$this,'pafe_form_builder_filter_column'], 10);
+		add_filter( 'woocommerce_order_item_get_formatted_meta_data',[$this,'pafe_unset_redirect_order_item_meta_data'], 10, 2);
+
 		add_action('manage_pafe-form-database_posts_custom_column', [$this,'pafe_form_builder_filter_column_content'], 10, 2);
 
 		add_action('admin_footer', [$this,'pafe_form_builder_filter_export_btn'] );
@@ -550,6 +552,16 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 		}
 	}
+	
+    public function pafe_unset_redirect_order_item_meta_data($formatted_meta){
+	    foreach( $formatted_meta as $key => $meta ){
+	        if ($meta->key == 'pafe_woocommerce_checkout_redirect') {
+	            unset($formatted_meta[$key]);
+	        }
+	    }
+	    
+	    return $formatted_meta;
+    }
 
 	public function pafe_apply_custom_price_to_cart_item( $cart ) {
 		if ( class_exists( 'WooCommerce' ) ) {  

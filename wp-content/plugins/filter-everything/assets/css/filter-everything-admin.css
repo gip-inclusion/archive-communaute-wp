@@ -1,5 +1,5 @@
 /*!
- * Filter Everything admin 1.4.1
+ * Filter Everything admin 1.4.4
  */
 #filters-seo-rules .inside,
 #filters-set-items .inside{
@@ -229,7 +229,7 @@ label[for="wpc_seo_rules-wp_entity"],
     color: #666666;
     margin: 0;
 }
-.wpc-view-radio .wpc-field-search-tr,
+.wpc-view-range .wpc-field-search-tr,
 .wpc-view-dropdown .wpc-field-search-tr,
 .wpc-field-for-variations-tr,
 .wpc-field-hierarchy-tr,

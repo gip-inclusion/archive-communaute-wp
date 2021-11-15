@@ -1,8 +1,8 @@
 === BuddyBoss Theme ===
 Contributors: BuddyBoss
 Requires at least: 4.9.1
-Tested up to: 5.8.1
-Version: 1.7.8.1
+Tested up to: 5.8.2
+Version: 1.7.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,15 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.7.9 =
+* Profiles - Cross-browser compatibility added for profile picture image quality
+* LearnDash - Fixed course sidebar issue not showing quiz completed
+* LearnDash - Learndash templates updated to the latest version
+* Elementor - Minor fix to load right size profile picture on the dashboard template
+* GamiPress - Fixed UI issues with the latest update
+* Compatibility - Fixed LearnDash courses search compatibility issue with ‘LearnDash Ratings, Reviews, and Feedback’ plugin
+* Compatibility - Fixed WordPress minor compatibility UI issue in Widgets screen
 
 = 1.7.8.1 =
 * Coding Standards - Fixed critical code refactoring issue

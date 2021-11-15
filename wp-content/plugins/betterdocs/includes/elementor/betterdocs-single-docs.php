@@ -34,6 +34,10 @@ class BetterDocs_Single_Docs extends Single_Base
         return 'docs';
     }
 
+    public static function get_type() {
+        return 'docs';
+    }
+
     public static function get_title()
     {
         return __('Single Doc', 'betterdocs');

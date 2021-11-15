@@ -3,7 +3,7 @@
 Plugin Name: Filter Everything&nbsp;— WooCoomerce Product & WordPress Filter
 Plugin URI: https://filtereverything.pro
 Description: Filters everything in WordPress & WooCommerce: Products, any Post types, by Any Criteria. Supports AJAX. Compatible with WPML, ACF and others popular.
-Version: 1.4.1
+Version: 1.4.4
 Author: Andrii Stepasiuk
 Author URI: https://filtereverything.pro/about/
 Text Domain: filter-everything
@@ -29,7 +29,7 @@ if( ! class_exists( 'FlrtFilter' ) ):
             $this->define( 'FLRT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
             $this->define( 'FLRT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
             $this->define( 'FLRT_PLUGIN_BASENAME', plugin_basename(__FILE__) );
-            $this->define( 'FLRT_PLUGIN_VER', '1.4.1' );
+            $this->define( 'FLRT_PLUGIN_VER', '1.4.4' );
             $this->define( 'FLRT_PLUGIN_LINK', 'https://filtereverything.pro' );
             $this->define( 'FLRT_PLUGIN_DEBUG', false );
             $this->define( 'FLRT_TEMPLATES_DIR_NAME', 'filters' );
