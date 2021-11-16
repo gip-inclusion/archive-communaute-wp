@@ -16,3 +16,7 @@ Version: 0.1.0
 .tribe-events-widget .tribe-events-widget-events-list__view-more-link {
   text-transform: initial !important;
 }
+
+.activity-inner {
+  word-break: initial !important;
+}
