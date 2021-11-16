@@ -1,9 +1,9 @@
 === Filter Everything&nbsp;— WooCoomerce Product & WordPress Filter ===
 Contributors: stepasyuk
 Tags: woocommerce product filter, woocommerce filter, product filter, post filter, ajax filter, product filter woocommerce, filter, taxonomy filter, post type filter, woocommerce products filter, category filter, price filter
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 Requires at least: 4.6
-Tested up to: 5.8.1
+Tested up to: 5.8.2
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,7 +50,7 @@ Including URL variable name, frontend view, logic, sorting and excluding options
 Thus your visitors can faster to filter and to find relevant products or posts.
 
 ### Supports filtering values in any languages
-Among them [Chinese, Arabic, Hebrew, Hindi](https://demo.filtereverything.pro/example/acf/checkbox-%D7%A9%D7%81%D6%B0%D7%9C%D7%95%D6%B9%D7%A9%D7%81%D6%B8%D7%94-or-%D8%A7%D8%AB%D9%86%D9%8A%D9%86-or-%E0%A4%9A%E0%A4%BE%E0%A4%B0-or-%E4%B8%AD%E6%96%87%E5%96%AE%E5%AD%97%E7%9A%84%E4%BE%8B%E5%AD%90/) etc
+Among them Chinese, Arabic, Hebrew, Hindi etc
 
 ### Compatible with Themes and popular Plugins
 Compatible with WPML, ACF and others popular. Supports color schemes to allow you easily integrate with your design
@@ -121,6 +121,10 @@ Uploading via FTP
 6. URL prefixes settings
 
 == Changelog ==
+= 1.4.5 =
+*Release Date - 15 November 2021*
+* Fix   - Fixed Select2 version compatibility problem on Filter Set and Filter Settings pages
+
 = 1.4.4 =
 *Release Date - 10 November 2021*
 * Fix   - Fixed Select2 version compatibility problem on Filter Set and Filter Settings pages
@@ -423,7 +427,7 @@ Uploading via FTP
 
 == Upgrade Notice ==
 
-= 1.4.4 =
+= 1.4.5 =
 * Fix   - Fixed Select2 version compatibility problem on Filter Set and Filter Settings pages
 * Fix   - Fixed Search field option for range and radio buttons views
 * Fix   - Fixed PHP notice

@@ -1,5 +1,5 @@
 /*!
- * Filter Everything common admin 1.4.4
+ * Filter Everything common admin 1.4.5
  */
 (function($) {
     "use strict";
@@ -58,7 +58,6 @@
         $("#show_terms_in_content").select2({
             width: '80%',
             placeholder: wpcFiltersAdminCommon.chipsPlaceholder,
-            dropdownCssClass: 'wpc-filter-everything-dropdown',
             minimumResultsForSearch: wpcAllowSearchField,
             tags: true
         });

@@ -1,5 +1,5 @@
 /*!
- * Filter Everything set admin 1.4.4
+ * Filter Everything set admin 1.4.5
  */
 (function($) {
     "use strict";
@@ -328,7 +328,6 @@
         });
 
         $('.wpc-form-fields-table:not(.wpc-filter-post_meta_num) .wpc-field-exclude, .wpc-form-fields-table:not(.wpc-filter-post_meta_exists) .wpc-field-exclude').select2({
-            dropdownCssClass: 'wpc-filter-everything-dropdown',
             width: '100%',
             placeholder: wpcSetVars.excludePlaceholder
         });
