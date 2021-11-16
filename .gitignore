@@ -21,3 +21,6 @@ debug.log
 
 # App
 wp-content/uploads/
+
+# Clever-cloud related things
+.clever.json
