@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_539f1e47-f36a-4e0e-8d21-152dbdf31760",
+      "org_id": "orga_2816e5a4-5fbe-46b1-b3bd-f771a017eab5",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_539f1e47-f36a-4e0e-8d21-152dbdf31760.git",
+      "name": "c3-staging",
+      "alias": "c3-staging"
+    }
+  ]
+}
