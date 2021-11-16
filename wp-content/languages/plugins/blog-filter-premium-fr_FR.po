@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-25 15:56+0200\n"
-"PO-Revision-Date: 2021-10-25 15:59+0200\n"
+"PO-Revision-Date: 2021-11-16 11:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -29,7 +29,7 @@ msgstr "Paramètres des filtres de blog"
 
 #: blog-filter-settings.php:19
 msgid "Blog Filter Settings Page"
-msgstr ""
+msgstr "Page Paramètres du filtre de blog"
 
 #: blog-filter-settings.php:26
 msgid "Template Settings"
@@ -311,11 +311,11 @@ msgstr ""
 
 #: blog-filter-settings.php:522
 msgid "Pagination & Load More Settings"
-msgstr ""
+msgstr "Pagination et chargement de plus de paramètres"
 
 #: blog-filter-settings.php:527
 msgid "Pagination"
-msgstr ""
+msgstr "Pagination"
 
 #: blog-filter-settings.php:538 blog-filter-shortcode.php:138
 msgid "Load More"
@@ -323,7 +323,7 @@ msgstr "Charger plus"
 
 #: blog-filter-settings.php:549
 msgid "Load On Scroll"
-msgstr ""
+msgstr "Charger au scroll"
 
 #: blog-filter-settings.php:561
 msgid "Pagination / Load More Button Color"
@@ -379,7 +379,7 @@ msgstr ""
 
 #: blog-filter-settings.php:695
 msgid "Blog Search Field"
-msgstr ""
+msgstr "Champ de recherche de blog"
 
 #: blog-filter-settings.php:706
 msgid "Text For Search"
@@ -465,7 +465,7 @@ msgstr "Copier le Shortcode"
 
 #: blog-filter-shortcode.php:144
 msgid "No More Posts"
-msgstr "Fin des machins"
+msgstr "Fin des articles"
 
 #: templates/blog-filter-content.php:78 templates/blog-filter-content.php:113
 #: templates/blog-filter-content.php:184 templates/blog-filter-content.php:227
