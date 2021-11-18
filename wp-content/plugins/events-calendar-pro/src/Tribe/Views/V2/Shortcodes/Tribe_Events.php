@@ -605,7 +605,7 @@ class Tribe_Events extends Shortcode_Abstract {
 		 *
 		 * @see TEC-3157
 		 */
-		$should_display = ! ( is_admin() && ! tribe( 'context' )->doing_ajax() );
+		$should_display = true;
 
 		/**
 		 * If we should display the shortcode.

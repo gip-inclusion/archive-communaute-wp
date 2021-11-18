@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit170f41c6939e2f2b02ec01f701640c06
+class ComposerStaticInitf7a9517f0770793b451a4f4168818bcd
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -25,8 +25,20 @@ class ComposerStaticInit170f41c6939e2f2b02ec01f701640c06
         'Tribe\\Events\\Aggregator\\Processes\\Batch_Imports' => __DIR__ . '/../..' . '/src/Tribe/Aggregator/Processes/Batch_Imports.php',
         'Tribe\\Events\\Aggregator\\Record\\Batch_Queue' => __DIR__ . '/../..' . '/src/Tribe/Aggregator/Record/Batch_Queue.php',
         'Tribe\\Events\\Collections\\Lazy_Post_Collection' => __DIR__ . '/../..' . '/src/Tribe/Collections/Lazy_Post_Collection.php',
+        'Tribe\\Events\\Editor\\Hooks' => __DIR__ . '/../..' . '/src/Tribe/Editor/Hooks.php',
         'Tribe\\Events\\Editor\\Objects\\Editor_Object_Interface' => __DIR__ . '/../..' . '/src/Tribe/Editor/Objects/Editor_Object_Interface.php',
         'Tribe\\Events\\Editor\\Objects\\Event' => __DIR__ . '/../..' . '/src/Tribe/Editor/Objects/Event.php',
+        'Tribe\\Events\\Event_Status\\Admin_Template' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Admin_Template.php',
+        'Tribe\\Events\\Event_Status\\Classic_Editor' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Classic_Editor.php',
+        'Tribe\\Events\\Event_Status\\Compatibility\\Events_Control_Extension\\JSON_LD' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Compatibility/Events_Control_Extension/JSON_LD.php',
+        'Tribe\\Events\\Event_Status\\Compatibility\\Events_Control_Extension\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Compatibility/Events_Control_Extension/Service_Provider.php',
+        'Tribe\\Events\\Event_Status\\Event_Meta' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Event_Meta.php',
+        'Tribe\\Events\\Event_Status\\Event_Status_Provider' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Event_Status_Provider.php',
+        'Tribe\\Events\\Event_Status\\JSON_LD' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/JSON_LD.php',
+        'Tribe\\Events\\Event_Status\\Models\\Event' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Models/Event.php',
+        'Tribe\\Events\\Event_Status\\Status_Labels' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Status_Labels.php',
+        'Tribe\\Events\\Event_Status\\Template' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Template.php',
+        'Tribe\\Events\\Event_Status\\Template_Modifications' => __DIR__ . '/../..' . '/src/Tribe/Event_Status/Template_Modifications.php',
         'Tribe\\Events\\I18n' => __DIR__ . '/../..' . '/src/Tribe/I18n.php',
         'Tribe\\Events\\Integrations\\Beaver_Builder' => __DIR__ . '/../..' . '/src/Tribe/Integrations/Beaver_Builder.php',
         'Tribe\\Events\\Integrations\\Fusion\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Integrations/Fusion/Service_Provider.php',
@@ -112,9 +124,9 @@ class ComposerStaticInit170f41c6939e2f2b02ec01f701640c06
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit170f41c6939e2f2b02ec01f701640c06::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit170f41c6939e2f2b02ec01f701640c06::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit170f41c6939e2f2b02ec01f701640c06::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$classMap;
 
         }, null, ClassLoader::class);
     }

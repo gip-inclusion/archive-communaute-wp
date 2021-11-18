@@ -508,7 +508,6 @@ div.tribe-community-events-list {
 						display: block;
 						height: 0;
 						left: 50%;
-						margin-left: -1;
 						margin-left: calc(var(var(--tec-spacer-2) * -1));
 						position: absolute;
 						width: 0;

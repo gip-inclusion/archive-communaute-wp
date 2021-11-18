@@ -141,7 +141,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * This leverages the submenu_file filter as if it were an action, as it is the last action before
 	 * the rendering of the menu where we can alter the URL of the Events menu item.
 	 *
-	 * @since TBD
+	 * @since 5.10.0
 	 *
 	 * @param string|null $submenu_file
 	 *

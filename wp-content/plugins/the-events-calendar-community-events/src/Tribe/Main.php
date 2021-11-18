@@ -18,7 +18,7 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		/**
 		 * The current version of Community Events
 		 */
-		const VERSION = '4.8.8';
+		const VERSION = '4.8.9';
 
 		/**
 		 * Singleton instance variable
@@ -413,6 +413,9 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 			add_action( 'tribe_community_before_login_form', [ $this, 'output_login_form_notices' ] );
 			add_action( 'admin_enqueue_scripts', array( $this, 'maybe_enqueue_admin_assets' ), 20 );
 
+			// Create our own title filter since the one for WP Router is unreliable.
+			add_filter( 'document_title_parts', [ $this, 'filter_document_title' ] );
+
 			// Binding the Implementations needs to happen to plugins_loaded
 			$this->bind_implementations();
 		}
@@ -670,6 +673,32 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		 */
 		public function disable_comments_on_page() {
 			return Tribe__Events__Templates::getTemplateHierarchy( 'community/blank-comments-template' );
+		}
+
+		/**
+		 * Filter the document title for front end pages.
+		 *
+		 * @since 5.2.1
+		 *
+		 * @param array $title_parts The current page's title information.
+		 */
+		public function filter_document_title( $title_parts ) {
+			global $wp;
+
+			$current_url = home_url( $wp->request );
+			// Array of front end slugs and their titles. Currently, only needed for the list.
+			$slugs = [
+				$this->rewriteSlugs['list'] => esc_html__( 'My Events', 'tribe-events-community' ),
+			];
+			foreach( $slugs as $slug => $page_title ) {
+				// If the current URL begins with the slug path, let's override the title.
+				$url_path = home_url( $this->getCommunityRewriteSlug() . '/' . $slug );
+				if ( 0 === strpos( $current_url, $url_path ) ) {
+					$title_parts['title'] = $page_title;
+				}
+			}
+
+			return $title_parts;
 		}
 
 		/**

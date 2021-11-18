@@ -50,8 +50,8 @@ do_action( 'tribe_community_events_before_list_navigation' );
 <div class="tribe-event-list-search">
 	<form role="search" method="get" class="tribe-search-form" action="">
 		<div>
-			<label class="screen-reader-text" for="s">Search for:</label>
-			<input type="search" value="<?php echo isset( $_GET['event-search'] ) ? esc_html( $_GET['event-search'] ) : ''; ?>" name="event-search" placeholder="<?php echo esc_html__( 'Search Event Titles', 'tribe-events-community' ); ?>"" />
+			<label class="screen-reader-text" for="s"><?php esc_html_e( 'Search for:', 'tribe-events-community' ); ?></label>
+			<input type="search" value="<?php echo isset( $_GET['event-search'] ) ? esc_attr( $_GET['event-search'] ) : ''; ?>" name="event-search" placeholder="<?php esc_attr_e( 'Search Event Titles', 'tribe-events-community' ); ?>" />
 			<input type="submit" id="search-submit" value="Search"/>
 		</div>
 	</form>
