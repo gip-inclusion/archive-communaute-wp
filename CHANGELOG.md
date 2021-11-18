@@ -17,3 +17,5 @@
 
 
 ## [02] - 2021-11-08
+- Fix bug Elementor
+- Création du staging (Thx Clément)
