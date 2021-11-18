@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc6ae8259d742711036294545a08a09e6
+class ComposerStaticInit70affa720466e4bcae013be25dac42c2
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -194,12 +194,16 @@ class ComposerStaticInitc6ae8259d742711036294545a08a09e6
         'Tribe\\Log\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Log/Service_Provider.php',
         'Tribe\\Models\\Post_Types\\Base' => __DIR__ . '/../..' . '/src/Tribe/Models/Post_Types/Base.php',
         'Tribe\\Models\\Post_Types\\Nothing' => __DIR__ . '/../..' . '/src/Tribe/Models/Post_Types/Nothing.php',
+        'Tribe\\Onboarding\\Hints_Abstract' => __DIR__ . '/../..' . '/src/Tribe/Onboarding/Hints_Abstract.php',
+        'Tribe\\Onboarding\\Main' => __DIR__ . '/../..' . '/src/Tribe/Onboarding/Main.php',
+        'Tribe\\Onboarding\\Tour_Abstract' => __DIR__ . '/../..' . '/src/Tribe/Onboarding/Tour_Abstract.php',
         'Tribe\\PUE\\Update_Prevention' => __DIR__ . '/../..' . '/src/Tribe/PUE/Update_Prevention.php',
         'Tribe\\Repository\\Core_Read_Interface' => __DIR__ . '/../..' . '/src/Tribe/Repository/Core_Read_Interface.php',
         'Tribe\\Repository\\Filter_Validation' => __DIR__ . '/../..' . '/src/Tribe/Repository/Filter_Validation.php',
         'Tribe\\Service_Providers\\Body_Classes' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Body_Classes.php',
         'Tribe\\Service_Providers\\Crons' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Crons.php',
         'Tribe\\Service_Providers\\Dialog' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Dialog.php',
+        'Tribe\\Service_Providers\\Onboarding' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Onboarding.php',
         'Tribe\\Service_Providers\\PUE' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/PUE.php',
         'Tribe\\Service_Providers\\Shortcodes' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Shortcodes.php',
         'Tribe\\Service_Providers\\Tooltip' => __DIR__ . '/../..' . '/src/Tribe/Service_Providers/Tooltip.php',
@@ -245,10 +249,10 @@ class ComposerStaticInitc6ae8259d742711036294545a08a09e6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc6ae8259d742711036294545a08a09e6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc6ae8259d742711036294545a08a09e6::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc6ae8259d742711036294545a08a09e6::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc6ae8259d742711036294545a08a09e6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit70affa720466e4bcae013be25dac42c2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit70affa720466e4bcae013be25dac42c2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit70affa720466e4bcae013be25dac42c2::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit70affa720466e4bcae013be25dac42c2::$classMap;
 
         }, null, ClassLoader::class);
     }

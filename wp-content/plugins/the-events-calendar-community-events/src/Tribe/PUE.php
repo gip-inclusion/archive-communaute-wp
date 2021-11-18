@@ -21,7 +21,7 @@ if ( ! class_exists( 'Tribe__Events__Community__PUE' ) ) {
 		/**
 		 * @var string plugin update url
 		 */
-		private static $update_url = 'http://tri.be/';
+		private static $update_url = 'https://pue.theeventscalendar.com/';
 
 		/**
 		 * @var string plugin file name

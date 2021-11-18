@@ -3,10 +3,10 @@
 Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, aguseo, barry.hughes, bordoni, borkweb, brianjessee, GeoffBel, geoffgraham,jentheo, leahkoerper, lucatume, neillmcshea, patriciahillebrandt, tribecari, vicskf, zbtirrell
 Tags: widget, events, simple, tooltips, grid, month, list, calendar, event, venue, community, registration, api, dates, date, plugin, posts, sidebar, template, theme, time, google maps, google, maps, conference, workshop, concert, meeting, seminar, summit, forum, shortcode, The Events Calendar, The Events Calendar PRO
 Donate link: https://evnt.is/29
-Requires at least: 4.9.14
+Requires at least: 5.6
 Tested up to: 5.8.1
-Stable tag: 4.8.8
-Requires PHP: 5.6
+Stable tag: 4.8.9
+Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,12 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [4.8.9] 2021-11-17 =
+
+* Fix - Corrected typo and added translation for text on the events list page. [CE-124]
+* Fix - Corrected document titles on paginated "My Events" pages. [CE-132]
+* Language - 0 new strings added, 61 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.8.8] 2021-09-27 =
 

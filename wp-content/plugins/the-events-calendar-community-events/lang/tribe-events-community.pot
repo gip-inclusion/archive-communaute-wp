@@ -4,11 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Events Calendar: Community Events 4.8.9\n"
 "Report-Msgid-Bugs-To: http://m.tri.be/191x\n"
-"POT-Creation-Date: 2021-09-23 06:38:53+00:00\n"
+"POT-Creation-Date: 2021-11-15 18:11:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-09-23 06:38\n"
+"PO-Revision-Date: 2021-11-15 18:11\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 
@@ -61,257 +61,257 @@ msgctxt "Tribe Community Events fallback post title"
 msgid "Auto Draft"
 msgstr ""
 
-#: src/Tribe/Main.php:626 src/Tribe/Submission_Handler.php:333
+#: src/Tribe/Main.php:629 src/Tribe/Submission_Handler.php:333
 msgid "%s is required"
 msgstr ""
 
-#: src/Tribe/Main.php:712 src/Tribe/Main.php:1304
-msgid "Edit a Venue"
-msgstr ""
-
-#: src/Tribe/Main.php:730 src/Tribe/Main.php:1305
-msgid "Edit an Organizer"
-msgstr ""
-
-#: src/Tribe/Main.php:735 src/Tribe/Main.php:1303
-msgid "Edit an Event"
-msgstr ""
-
-#: src/Tribe/Main.php:778
-msgid "Redirect"
-msgstr ""
-
-#: src/Tribe/Main.php:783 src/Tribe/Main.php:1119 src/Tribe/Main.php:1415
-#: src/Tribe/Templates.php:94
-msgid "Submit an Event"
-msgstr ""
-
-#: src/Tribe/Main.php:824 src/Tribe/Main.php:1296
-msgid "Remove an Event"
-msgstr ""
-
-#: src/Tribe/Main.php:855 src/Tribe/Main.php:1394
+#: src/Tribe/Main.php:691 src/Tribe/Main.php:884 src/Tribe/Main.php:1423
 #: src/admin-views/community-options-template.php:483
 #: src/views/community/event-list-shortcode.php:39
 #: src/views/community/event-list.php:34
 msgid "My Events"
 msgstr ""
 
-#: src/Tribe/Main.php:966
+#: src/Tribe/Main.php:741 src/Tribe/Main.php:1333
+msgid "Edit a Venue"
+msgstr ""
+
+#: src/Tribe/Main.php:759 src/Tribe/Main.php:1334
+msgid "Edit an Organizer"
+msgstr ""
+
+#: src/Tribe/Main.php:764 src/Tribe/Main.php:1332
+msgid "Edit an Event"
+msgstr ""
+
+#: src/Tribe/Main.php:807
+msgid "Redirect"
+msgstr ""
+
+#: src/Tribe/Main.php:812 src/Tribe/Main.php:1148 src/Tribe/Main.php:1444
+#: src/Tribe/Templates.php:94
+msgid "Submit an Event"
+msgstr ""
+
+#: src/Tribe/Main.php:853 src/Tribe/Main.php:1325
+msgid "Remove an Event"
+msgstr ""
+
+#: src/Tribe/Main.php:995
 msgid "Not found."
 msgstr ""
 
-#: src/Tribe/Main.php:1220
+#: src/Tribe/Main.php:1249
 msgid "Delete"
 msgstr ""
 
-#: src/Tribe/Main.php:1223
+#: src/Tribe/Main.php:1252
 msgid "Delete All"
 msgstr ""
 
-#: src/Tribe/Main.php:1224
+#: src/Tribe/Main.php:1253
 msgid ""
 "Are you sure you want to permanently delete all instances of this recurring "
 "event?"
 msgstr ""
 
-#: src/Tribe/Main.php:1226
+#: src/Tribe/Main.php:1255
 msgid ""
 "Are you sure you want to permanently delete this instance of a recurring "
 "event?"
 msgstr ""
 
-#: src/Tribe/Main.php:1282 src/views/community/modules/image.php:95
+#: src/Tribe/Main.php:1311 src/views/community/modules/image.php:95
 msgid "Remove image"
 msgstr ""
 
-#: src/Tribe/Main.php:1297
+#: src/Tribe/Main.php:1326
 msgid "Remove a Venue"
 msgstr ""
 
-#: src/Tribe/Main.php:1298
+#: src/Tribe/Main.php:1327
 msgid "Remove an Organizer"
 msgstr ""
 
-#: src/Tribe/Main.php:1299 src/Tribe/Main.php:1306
+#: src/Tribe/Main.php:1328 src/Tribe/Main.php:1335
 msgid "Unknown Post Type"
 msgstr ""
 
-#: src/Tribe/Main.php:1471
+#: src/Tribe/Main.php:1500
 msgid "This shortcode can only be used in pages."
 msgstr ""
 
-#: src/Tribe/Main.php:1631
+#: src/Tribe/Main.php:1660
 msgid "Community Events Submission"
 msgstr ""
 
-#: src/Tribe/Main.php:1719 src/Tribe/Main.php:1787
+#: src/Tribe/Main.php:1748 src/Tribe/Main.php:1816
 msgid "You do not have permission to delete this event."
 msgstr ""
 
-#: src/Tribe/Main.php:1732
+#: src/Tribe/Main.php:1761
 msgid "Trashed Event: "
 msgstr ""
 
-#: src/Tribe/Main.php:1735
+#: src/Tribe/Main.php:1764
 msgid "There was an error trashing your event: "
 msgstr ""
 
-#: src/Tribe/Main.php:1740
+#: src/Tribe/Main.php:1769
 msgid "Deleted Event: "
 msgstr ""
 
-#: src/Tribe/Main.php:1743
+#: src/Tribe/Main.php:1772
 msgid "There was an error deleting your event: "
 msgstr ""
 
-#: src/Tribe/Main.php:1748
+#: src/Tribe/Main.php:1777
 msgid "This event does not appear to exist."
 msgstr ""
 
-#: src/Tribe/Main.php:1778
+#: src/Tribe/Main.php:1807
 msgid "Trashed Event #"
 msgstr ""
 
-#: src/Tribe/Main.php:1781
+#: src/Tribe/Main.php:1810
 msgid "Deleted Event #"
 msgstr ""
 
-#: src/Tribe/Main.php:1784
+#: src/Tribe/Main.php:1813
 msgid "This event (#%s) does not appear to exist."
 msgstr ""
 
-#: src/Tribe/Main.php:1803
+#: src/Tribe/Main.php:1832
 msgctxt "As in \"go back to previous page\""
 msgid "Back"
 msgstr ""
 
-#: src/Tribe/Main.php:1851
+#: src/Tribe/Main.php:1880
 msgid ""
 "%sWarning:%s You are editing a recurring %3$s. Changes will be applied to "
 "all occurrences of this %3$s."
 msgstr ""
 
-#: src/Tribe/Main.php:1860
+#: src/Tribe/Main.php:1889
 msgid "%s not found."
 msgstr ""
 
-#: src/Tribe/Main.php:1876 src/Tribe/Shortcode/Abstract.php:113
+#: src/Tribe/Main.php:1905 src/Tribe/Shortcode/Abstract.php:113
 msgid "Please log in first."
 msgstr ""
 
-#: src/Tribe/Main.php:1882 src/Tribe/Shortcode/Abstract.php:119
+#: src/Tribe/Main.php:1911 src/Tribe/Shortcode/Abstract.php:119
 msgid "You do not have permission to edit this %s."
 msgstr ""
 
-#: src/Tribe/Main.php:1888
+#: src/Tribe/Main.php:1917
 msgid ""
 "The file you attempted to upload exceeded the maximum file size of %1$s."
 msgstr ""
 
-#: src/Tribe/Main.php:2072 src/views/community/columns/title.php:39
+#: src/Tribe/Main.php:2101 src/views/community/columns/title.php:39
 msgid "View"
 msgstr ""
 
-#: src/Tribe/Main.php:2078 src/views/community/columns/title.php:45
+#: src/Tribe/Main.php:2107 src/views/community/columns/title.php:45
 msgid "Edit"
 msgstr ""
 
-#: src/Tribe/Main.php:2238
+#: src/Tribe/Main.php:2267
 msgid "Lost your password?"
 msgstr ""
 
-#: src/Tribe/Main.php:2366
+#: src/Tribe/Main.php:2395
 msgctxt "failed login message"
 msgid "%1$sERROR%2$s: Invalid username, email address, or incorrect password."
 msgstr ""
 
-#: src/Tribe/Main.php:2394
+#: src/Tribe/Main.php:2423
 msgid "Venue not found."
 msgstr ""
 
-#: src/Tribe/Main.php:2399
+#: src/Tribe/Main.php:2428
 msgid "Please log in to edit this venue"
 msgstr ""
 
-#: src/Tribe/Main.php:2403
+#: src/Tribe/Main.php:2432
 msgid "You do not have permission to edit this venue."
 msgstr ""
 
-#: src/Tribe/Main.php:2431
+#: src/Tribe/Main.php:2460
 msgid "Venue updated."
 msgstr ""
 
-#: src/Tribe/Main.php:2441
+#: src/Tribe/Main.php:2470
 msgid "Venue name cannot be blank."
 msgstr ""
 
-#: src/Tribe/Main.php:2445
+#: src/Tribe/Main.php:2474
 msgid "There was a problem updating your venue, please try again."
 msgstr ""
 
-#: src/Tribe/Main.php:2482
+#: src/Tribe/Main.php:2511
 msgid "Organizer not found."
 msgstr ""
 
-#: src/Tribe/Main.php:2486
+#: src/Tribe/Main.php:2515
 msgid "Only an Organizer can be edited on this page."
 msgstr ""
 
-#: src/Tribe/Main.php:2490
+#: src/Tribe/Main.php:2519
 msgid "Please log in to edit this organizer"
 msgstr ""
 
-#: src/Tribe/Main.php:2494
+#: src/Tribe/Main.php:2523
 msgid "You do not have permission to edit this organizer."
 msgstr ""
 
-#: src/Tribe/Main.php:2511
+#: src/Tribe/Main.php:2540
 msgid "There was a problem updating this organizer, please try again."
 msgstr ""
 
-#: src/Tribe/Main.php:2515
+#: src/Tribe/Main.php:2544
 msgid "Organizer name cannot be blank."
 msgstr ""
 
-#: src/Tribe/Main.php:2535
+#: src/Tribe/Main.php:2564
 msgid "%1$s required"
 msgstr ""
 
-#: src/Tribe/Main.php:2556
+#: src/Tribe/Main.php:2585
 msgid "Organizer updated."
 msgstr ""
 
-#: src/Tribe/Main.php:2731
+#: src/Tribe/Main.php:2760
 msgid "Please log in to view your events"
 msgstr ""
 
-#: src/Tribe/Main.php:2993
+#: src/Tribe/Main.php:3022
 msgid "The requested page number was not found."
 msgstr ""
 
-#: src/Tribe/Main.php:3292
+#: src/Tribe/Main.php:3321
 msgid "Community"
 msgstr ""
 
-#: src/Tribe/Main.php:3309
+#: src/Tribe/Main.php:3338
 msgid "This template is also used for Community Events."
 msgstr ""
 
-#: src/Tribe/Main.php:3604
+#: src/Tribe/Main.php:3633
 msgid "Community: Submit %s"
 msgstr ""
 
-#: src/Tribe/Main.php:3612
+#: src/Tribe/Main.php:3641
 msgid "Community: My %s"
 msgstr ""
 
-#: src/Tribe/Main.php:3621 src/Tribe/Templates.php:47
+#: src/Tribe/Main.php:3650 src/Tribe/Templates.php:47
 #: tribe-community-events.php:55
 msgid "Community Events"
 msgstr ""
 
-#: src/Tribe/Main.php:3637
+#: src/Tribe/Main.php:3666
 msgid "Settings"
 msgstr ""
 
@@ -948,6 +948,7 @@ msgid "Add New"
 msgstr ""
 
 #: src/views/community/event-list-shortcode.php:65
+#: src/views/community/event-list.php:53
 msgid "Search for:"
 msgstr ""
 

@@ -3,10 +3,10 @@
 Contributors: theeventscalendar, borkweb, bordoni, brianjessee, aguseo, camwynsp, GeoffBel, geoffgraham, jentheo, leahkoerper, lucatume, neillmcshea, paulskim, vicskf, zbtirrell, juanfra
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, the events calendar, widget, pro
 Donate link: https://evnt.is/29
-Requires at least: 4.9.18
-Stable tag: 5.9.2.1
-Tested up to: 5.8.1
-Requires PHP: 5.6
+Requires at least: 5.6
+Stable tag: 5.10.0
+Tested up to: 5.8.2
+Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -207,6 +207,14 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.10.0] 2022-11-17 =
+
+* Feature - Add a `Mini Calendar` block that is based on the `Mini Calendar` widget to the block editor which users can drag around to any position they want it to appear. [ECP-974]
+* Feature - Add event status options of scheduled, canceled, and postponed with display of the latter two on Pro views and widgets. [TEC-3465]
+* Tweak - Update the `Calendar Manager` label to `Events Manager` under the general event settings page in order to have a consistent nomenclature of features. [ECP-955]
+* Fix - Ensure the Calendar Manager link isn't inserted into inappropriate pages. [ECP-982]
+* Language - 0 new strings added, 16 updated, 1 fuzzied, and 1 obsoleted
 
 = [5.9.2.1] 2021-10-14 =
 

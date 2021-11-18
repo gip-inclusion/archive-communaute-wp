@@ -52,7 +52,7 @@ if ( empty( $terms_description ) ) {
 			cols="100"
 			class="event-terms-description"
 			readonly
-		><?php echo stripslashes(esc_html( $terms_description )); ?></textarea>
+		><?php echo esc_html( $terms_description ); ?></textarea>
 		<br />
 		<input
 			type="checkbox"
