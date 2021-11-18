@@ -23,7 +23,7 @@
 
 	<body <?php body_class(); ?>>
 
-    <?php wp_body_open(); ?>
+		<?php wp_body_open(); ?>
 
 		<?php if (!is_singular('llms_my_certificate')):
 		 
