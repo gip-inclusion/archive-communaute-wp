@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [01] - 2021-10-22
+## [01] - 2021-11-22
 ### Ajouté / corrigé
 - Mise en production finale
 - Migration des sous-domaines et redirection des anciennes urls du forum discourse (Thx Clement)
@@ -8,6 +8,7 @@
 - Fix des nombreux problèmes de traduction
 - Fix de bugs graphiques
 - Ajout et configuration de plusieurs nouveaux plug-ins
+- Création d’un environnement de staging
 
 ### Modifié
 - Mise à jour des plug-ins 
