@@ -17,5 +17,16 @@
 
 
 ## [02] - 2021-11-08
-- Fix bug Elementor
-- Création du staging (Thx Clément)
+- Ajout d'un script Hotjar sur les pages /assitance et /doc 
+- Ajout d'un script Matomo
+- Mise à jour du core wp et des plugins
+- Suppression panique d'un plugin de sécurité bloquant en prod (limit-login)
+- Création du staging sur clevercloud (Thx Clément)
+- Ajout de tarte au citron
+- Fix de la traduciton Française du plugin blog-filter-premium
+- Ajout d'un plugin de connexion à Zapier
+- Fix d'un bug Elementor en prod (mais persistant en staging)
+- Ajout de plugins d'export d'utilisateurs
+
+
+## [03] - 2021-11-22
