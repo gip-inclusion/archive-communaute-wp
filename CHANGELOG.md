@@ -2,6 +2,8 @@
 
 ## [03] - 2021-11-22
 ### Ajouté / Corrigé
+- Modification de traduction sur le fil d'actualité
+- Correction affichage des images de couverture d'événements rognés
 
 ### Modifié
 
