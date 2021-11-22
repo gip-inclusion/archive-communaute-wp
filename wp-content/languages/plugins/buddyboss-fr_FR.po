@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2021-10-13 13:43:54+00:00\n"
-"PO-Revision-Date: 2021-11-08 16:41+0100\n"
+"PO-Revision-Date: 2021-11-22 14:07+0100\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -15876,7 +15876,7 @@ msgstr "Autres raisons pour l'édition:"
 #: bp-moderation/classes/class-bp-moderation-activity.php:530
 #: bp-templates/bp-nouveau/includes/functions.php:1531
 msgid "Post"
-msgstr "Article"
+msgstr "Publier"
 
 #: bp-forums/templates/default/bbpress/form-reply.php:170
 msgid "The discussion \"%s\" is closed to new replies."
