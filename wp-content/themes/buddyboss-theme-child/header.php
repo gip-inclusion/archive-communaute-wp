@@ -22,12 +22,13 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+
 		<?php 
-			if (strstr($_SERVER['SERVER_NAME'], '.local')) {
-				echo '<p style="text-align:center;padding:8px;margin:0;background-color:MediumBlue;color:white;font-weight:700;position:sticky;top:0;z-index:1000;">LOCAL</p>';
-			} elseif (strstr($_SERVER['SERVER_NAME'], '.cleverapps.io')) {
-				echo '<p style="text-align:center;padding:8px;margin:0;background-color:Crimson;color:white;font-weight:700;position:sticky;top:0;z-index:1000;">STAGING</p>';
-			} 
+		if (strstr($_SERVER['SERVER_NAME'], '.local')) {
+			echo '<p style="text-align:center;padding:8px;margin:0;background-color:MediumBlue;color:white;font-weight:700;position:sticky;top:0;z-index:1000;">LOCAL</p>';
+		} elseif (strstr($_SERVER['SERVER_NAME'], '.cleverapps.io')) {
+			echo '<p style="text-align:center;padding:8px;margin:0;background-color:Crimson;color:white;font-weight:700;position:sticky;top:0;z-index:1000;">STAGING</p>';
+		} 		
 		?>
 		
 		<?php wp_body_open(); ?>
