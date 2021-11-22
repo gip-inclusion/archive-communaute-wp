@@ -20,3 +20,23 @@ Version: 0.1.0
 .activity-inner {
   word-break: initial !important;
 }
+
+.bs-single-body .tribe-events-event-image {
+  padding-top: 0 !important;
+  background: transparent !important;
+  overflow: initial !important;
+}
+
+.bs-single-body .tribe-events-event-image img {
+  position: initial !important;
+  top: initial !important;
+  bottom: initial !important;
+  left: initial !important;
+  right: initial !important;
+  margin: initial !important;
+  z-index: initial !important;
+  min-height: initial !important;
+  width: initial !important;
+  min-width: initial !important;
+  object-fit: initial !important;
+}
