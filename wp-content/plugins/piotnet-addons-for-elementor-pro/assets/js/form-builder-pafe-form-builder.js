@@ -503,7 +503,13 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 
             var totalFieldContent = eval(calculation);
         		$fieldWidget.find('.pafe-calculated-fields-form__value').html(round(totalFieldContent, roundingDecimals, decimalsSymbol, separatorsSymbol, decimalsShow).replace('NaN',0));
-            	$fieldCurrent.val(roundValue(totalFieldContent, roundingDecimals, decimalsShow));
+
+				var oldVal = $fieldCurrent.val();
+				var newVal = roundValue(totalFieldContent, roundingDecimals, decimalsShow);
+				$fieldCurrent.val(newVal);
+				if (oldVal != newVal) {
+					$fieldCurrent.change();
+				}
         });
     }
 
@@ -3719,10 +3725,15 @@ jQuery(document).ready(function($) {
 
         	if (!isNaN(totalFieldContent)) {
         		$fieldWidget.find('.pafe-calculated-fields-form__value').html(round(totalFieldContent, roundingDecimals, decimalsSymbol, separatorsSymbol, decimalsShow).replace('NaN',0));
-	        	$fieldCurrent.val(roundValue(totalFieldContent, roundingDecimals, decimalsShow));
-	            	//$fieldCurrent.change();
-	            
-	            var fieldNameCalc = $(this).attr('name').replace('[]','').replace('form_fields[','').replace(']','');  
+
+				var oldVal = $fieldCurrent.val();
+				var newVal = roundValue(totalFieldContent, roundingDecimals, decimalsShow);
+	        	$fieldCurrent.val(newVal);
+				if (oldVal != newVal) {
+					$fieldCurrent.change();
+				}
+
+				var fieldNameCalc = $(this).attr('name').replace('[]','').replace('form_fields[','').replace(']','');
 				pafeCalculatedFieldsForm(fieldNameCalc);
         	}
 
@@ -4908,10 +4919,16 @@ jQuery(document).ready(function($) {
 		var val = $(this).val();
 		var min = $(this).attr('min');
 		var max = $(this).attr('max');
+		var isChanged = false;
 		if(parseInt(min) > parseInt(val)){
+			isChanged = true;
 			$(this).val(min);
 		}else if(parseInt(val) > parseInt(max)){
+			isChanged = true;
 			$(this).val(max);
+		}
+		if (isChanged) {
+			$(this).change();
 		}
 	}, 500));
 
@@ -4919,16 +4936,22 @@ jQuery(document).ready(function($) {
 		var self = this;
 		var min = $(this).attr('min');
 		var max = $(this).attr('max');
-          setTimeout(function(e) {
+		setTimeout(function(e) {
+			var isChanged = false;
 			var val2 = $(self).val();
-				if(parseInt(min) > parseInt(val2)){
-					$(self).val(min);
-				}else if(parseInt(val2) > parseInt(max)){
-					$(self).val(max);
-				}
-          }, 0);
+			if(parseInt(min) > parseInt(val2)){
+				isChanged = true;
+				$(self).val(min);
+			}else if(parseInt(val2) > parseInt(max)){
+				isChanged = true;
+				$(self).val(max);
+			}
+			if (isChanged) {
+				$(this).change();
+			}
+		}, 0);
 	});
- 
+
 	$(document).on('click','[data-pafe-form-builder-trigger-success]',function(){
 		if ($(this).closest('.elementor-element').find('[data-pafe-form-builder-submit-update-user-profile]').length == 0) {
 			var formId = $(this).attr('data-pafe-form-builder-trigger-success'),

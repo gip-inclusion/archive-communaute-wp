@@ -4,6 +4,7 @@ use \WP_Query;
 use \SgpbPopupConfig;
 use \SgpbDataConfig;
 
+
 class Actions
 {
 	public $customPostTypeObj;
@@ -69,31 +70,34 @@ class Actions
 	}
 
 	private function checkIfLicenseIsActive($license, $itemId, $storeURL, $key) {
+		/* TODO change the domain to a valid domain name! from store url before the production */
 		$transient = 'sgpb-license-key-'.$key.'-requested';
 		if ( false !== ( $value = get_transient( $transient ) ) ) {
 			return;
 		}
-		$apiParams = array(
-			'edd_action' => 'activate_license',
-			'license'    => $license,
-			'item_id'    => $itemId, // The ID of the item in EDD
-			'url'        => home_url()
+		$params = array(
+			'woo_sl_action'     => 'status-check',
+			'licence_key'       => $license,
+			'product_unique_id' => $itemId,
+			'domain'            => home_url()
 		);
-		$response = wp_remote_post($storeURL, array('timeout' => 15, 'sslverify' => false, 'body' => $apiParams));
+		$requestUri = 'https://popup-builder.com/index.php?'.http_build_query($params);
+		$response = wp_remote_get($requestUri);
 		if (!is_wp_error($response) || 200 == wp_remote_retrieve_response_code($response)) {
 			$licenseData = json_decode(wp_remote_retrieve_body($response));
-			update_option('sgpb-license-status-'.$key, $licenseData->license);
-			set_transient($transient, $licenseData->item_name, WEEK_IN_SECONDS);
+			$status = isset($licenseData[0]->licence_status) && $licenseData[0]->licence_status === 'active' ? 'valid' : $licenseData[0]->licence_status;
+			update_option('sgpb-license-status-'.$key, $status);
+			set_transient($transient, $licenseData[0]->status_code, WEEK_IN_SECONDS);
 		}
-
 	}
 	public function updatesInit()
 	{
-		if (!class_exists('sgpb\EDD_SL_Plugin_Updater')) {
+		if (!class_exists('sgpb\WOOSL_CodeAutoUpdate')) {
 			// load our custom updater if it doesn't already exist
-			require_once(SG_POPUP_LIBS_PATH .'EDD_SL_Plugin_Updater.php');
+			require_once(SG_POPUP_LIBS_PATH .'WOOSL_CodeAutoUpdate.php');
 		}
 		$licenses = (new License())->getLicenses();
+
 		foreach ($licenses as $license) {
 			$key = @$license['key'];
 			$storeURL = @$license['storeURL'];
@@ -138,13 +142,13 @@ class Actions
 			if(empty($version)) {
 				continue;
 			}
-			$sgpbUpdater = new EDD_SL_Plugin_Updater($storeURL, $pluginMainFilePath, array(
-				'version' 	=> $version,		// current version number
-				'license' 	=> $licenseKey,	// license key (used get_option above to retrieve from DB)
-				'item_id'   => $license['itemId'],	// id of this plugin
-				'author' 	=> $license['autor'],	// author of this plugin
-				'beta'      => false // set to true if you wish customers to receive update notifications of beta releases
-			));
+			$sgpbUpdater = new WOOSL_CodeAutoUpdate(
+				'https://popup-builder.com/index.php',
+				$pluginMainFilePath,
+				$itemId,
+				$licenseKey,
+				$version
+			);
 		}
 	}
 	public function custom_admin_js()

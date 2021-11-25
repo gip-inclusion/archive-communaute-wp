@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '4917ba7452e7b8edefe73adec4f2c5660425caf8',
+    'reference' => '53cc555b4e4c636b64c89e494c524d5bb54bda30',
     'name' => 'buddyboss/buddyboss-platform',
   ),
   'versions' => 
@@ -50,7 +50,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '4917ba7452e7b8edefe73adec4f2c5660425caf8',
+      'reference' => '53cc555b4e4c636b64c89e494c524d5bb54bda30',
     ),
     'composer/installers' => 
     array (
@@ -149,12 +149,12 @@ private static $installed = array (
     ),
     'symfony/process' => 
     array (
-      'pretty_version' => 'v5.3.7',
-      'version' => '5.3.7.0',
+      'pretty_version' => 'v5.3.12',
+      'version' => '5.3.12.0',
       'aliases' => 
       array (
       ),
-      'reference' => '38f26c7d6ed535217ea393e05634cb0b244a1967',
+      'reference' => 'e498803a6e95ede78e9d5646ad32a2255c033a6a',
     ),
   ),
 );

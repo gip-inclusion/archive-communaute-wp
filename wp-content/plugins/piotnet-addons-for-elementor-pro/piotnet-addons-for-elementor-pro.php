@@ -3,23 +3,23 @@
  * Plugin Name: Piotnet Addons For Elementor Pro
  * Description: Piotnet Addons For Elementor Pro (PAFE Pro) adds many new features for Elementor
  * Plugin URI:  https://pafe.piotnet.com/
- * Version:     6.4.14
+ * Version:     6.4.15
  * Author:      Luong Huu Phuoc (Louis Hufer)
  * Author URI:  https://piotnet.com/
  * Text Domain: pafe
  * Domain Path: /languages
- * Elementor tested up to: 3.4.7
- * Elementor Pro tested up to: 3.5.0
+ * Elementor tested up to: 3.4.8
+ * Elementor Pro tested up to: 3.5.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PAFE_PRO_VERSION', '6.4.14' );
-define( 'PAFE_PRO_PREVIOUS_STABLE_VERSION', '6.4.13' );
+define( 'PAFE_PRO_VERSION', '6.4.15' );
+define( 'PAFE_PRO_PREVIOUS_STABLE_VERSION', '6.4.14' );
 
 final class Piotnet_Addons_For_Elementor_Pro {
 
-	const VERSION = '6.4.14';
+	const VERSION = '6.4.15';
 	const MINIMUM_ELEMENTOR_VERSION = '2.8.0';
 	const MINIMUM_PHP_VERSION = '5.4';
 	const TAB_PAFE = 'tab_pafe';

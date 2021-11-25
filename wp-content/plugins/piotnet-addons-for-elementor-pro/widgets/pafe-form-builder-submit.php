@@ -614,6 +614,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                     '' => __( 'Choose', 'pafe' ),
                     'meta' => __( 'User Meta Key', 'pafe' ),
                     'acf' => __( 'ACF Field', 'pafe' ),
+                    'metabox' => __( 'MetaBox Field', 'pafe' ),
                 ],
                 'description' => __( 'If you want to update user password, you have to create a password field and confirm password field', 'pafe' ),
             ]
@@ -920,6 +921,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					'url' => __( 'Website', 'pafe' ),
 					'meta' => __( 'User Meta Key', 'pafe' ),
 					'acf' => __( 'ACF Field', 'pafe' ),
+					'metabox' => __( 'MetaBox Field', 'pafe' ),
 				],
 				'description' => __( 'If you want to update user password, you have to create a password field and confirm password field', 'pafe' ),
 			]

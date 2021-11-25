@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.2
-Version: 1.7.9
+Version: 1.8.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,10 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.8.0 =
+* Licenses - Fixed PHP warning on license update
+* LearnDash - Fixed course sidebar listing, order issue with lessons
 
 = 1.7.9 =
 * Profiles - Cross-browser compatibility added for profile picture image quality
@@ -86,7 +90,7 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 * LifterLMS - Fixed Courses page performance issue
 * LearnDash - Fixed sidebar template global variable issue
 * LearnDash - Fixed 'Start Course' issue in group redirecting to wrong course URL
-* LearnDash - Fixed post and pages hash link conflict with LearnDash 
+* LearnDash - Fixed post and pages hash link conflict with LearnDash
 
 = 1.7.3 =
 * Profiles - Fixed profile action button minor UI issue
@@ -788,7 +792,7 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 
 = 1.0.1 =
 * Forums - Nicer Tagging interface when replying
-* LearnDash - Fixed issue with messaging the course 
+* LearnDash - Fixed issue with messaging the course
 * LearnDash - Dark Mode improvements
 * Events Calendar Pro - Styling improvements
 * WP Job Manager - Styling improvements
