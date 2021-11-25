@@ -42,16 +42,6 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('WP_DEBUG', true);
     define('WP_DEBUG_LOG', false);
     define('WP_DEBUG_DISPLAY', false);
-
-    // define('SMTP_USER', getenv('CC_MTA_AUTH_USER©'));
-    // define('SMTP_PASS', getenv('CC_MTA_AUTH_PASSWORD'));
-    // define('SMTP_HOST', getenv('CC_MTA_SERVER_HOST'));
-    // define('SMTP_FROM', 'noreply@inclusion.beta.gouv.fr');
-    // define('SMTP_NAME', 'La communauté de l’inclusion');
-    // define('SMTP_PORT', getenv('CC_MTA_SERVER_PORT'));
-    // define('SMTP_SECURE', 'tls');
-    // define('SMTP_AUTH', true);
-    // define('SMTP_DEBUG', 0);  
   }
 
 /**
@@ -112,6 +102,7 @@ define('AUTOSAVE_INTERVAL', 86400);
 define('WP_POST_REVISIONS', 1);
 define('ALLOW_UNFILTERED_UPLOADS', false);
 define('FORCE_SSL_ADMIN', true);
+define('WP_MEMORY_LIMIT', '256');
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 
 /** Chemin absolu vers le dossier de WordPress. */
