@@ -8,7 +8,7 @@ Tags: popup, pop up, wordpress popup, popup maker, exit popup, popup builder, wo
 Requires at least: 4.2
 Tested up to: 5.8
 Requires PHP: 5.3.3
-Stable tag: 4.0.4
+Stable tag: 4.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,9 @@ Go to the Popup Builder settings and set your desired options.
 13. Facebook popup
 
 == Changelog ==
+
+= Version 4.0.5 =
+* Bug fixes and improvements
 
 = Version 4.0.4 =
 * Bug fixed related to JS files that some 3rd party plugins minify on our side

@@ -1420,17 +1420,17 @@
 
 														if ($field_type == 'date_picker') {
 															$time = strtotime( $item_value );
-															
+
 															if (empty($item_value)) {
 																$item_value = '';
 															} else {
-																$item_value = date('Ymd',$time);
+																$item_value = date($field_object['return_format'],$time);
 															}
 														}
 
 														if ($field_type == 'time') {
 															$time = strtotime( $item_value );
-															$item_value = date('H:i:s',$time);
+															$item_value = date($field_object['return_format'],$time);
 														}
 
 														// if ($meta_type == 'google_map') {
@@ -3422,17 +3422,17 @@
 							    				}
 
 												if (!empty($user_meta_item['register_user_meta']) && !empty($user_meta_item['register_user_meta_field_id'])) {
-													$register_user_meta_key = $user_meta['register_user_meta'];
+													$register_user_meta = $user_meta_item['register_user_meta'];
 													$register_user_meta_value = '';
 
-													if ($user_meta['register_user_meta'] == 'meta' || $user_meta['register_user_meta'] == 'acf') {
-														if (!empty($user_meta['register_user_meta_key'])) {
-															$register_user_meta_key = $user_meta['register_user_meta_key'];
+													if ($user_meta_item['register_user_meta'] == 'meta' || $user_meta_item['register_user_meta'] == 'acf' || $user_meta_item['register_user_meta'] == 'metabox') {
+														if (!empty($user_meta_item['register_user_meta_key'])) {
+															$register_user_meta_key = $user_meta_item['register_user_meta_key'];
 														}
 													}
-													if ( $register_user_meta_key == 'acf' ) {
-														$meta_type = $user_meta['register_user_meta_type'];
-														$custom_field_value = pafe_get_field_value($user_meta['register_user_meta_field_id'], $fields);
+													if ( $register_user_meta == 'acf' ) {
+														$meta_type = $user_meta_item['register_user_meta_type'];
+														$custom_field_value = pafe_get_field_value($user_meta_item['register_user_meta_field_id'], $fields);
 
 														if ($meta_type == 'image') {
 															$image_array = explode(',', $custom_field_value);
@@ -3485,9 +3485,63 @@
 																$custom_field_value = date('H:i:s',$time);
 															}
 														}
-														update_field( $user_meta_key, $custom_field_value, 'user_' . $user_id );
+														update_field( $register_user_meta_key, $custom_field_value, 'user_' . $register_user );
+													} elseif (function_exists('rwmb_set_meta') && $register_user_meta == 'metabox') {
+														$meta_type = $user_meta['register_user_meta_type'];
+														$custom_field_value = pafe_get_field_value($user_meta['register_user_meta_field_id'], $fields);
+
+														if ($meta_type == 'image') {
+															$image_array = explode(',', $custom_field_value);
+															$image_id = attachment_url_to_postid( $image_array[0] );
+															if (!empty($image_id)) {
+																$custom_field_value = $image_id;
+															}
+														}
+
+														if ($meta_type == 'gallery') {
+															$images_array = explode(',', $custom_field_value);
+															$images_id = '';
+															foreach ($images_array as $images_item) {
+																if (!empty($images_item)) {
+																	$image_id = attachment_url_to_postid( $images_item );
+																	if (!empty($image_id)) {
+																		$images_id .= $image_id . ',';
+																	}
+																}
+															}
+															if (!empty($images_id)) {
+																$custom_field_value = explode(',', $images_id);
+															}
+														}
+
+														if ($meta_type == 'date') {
+															$time = strtotime( $custom_field_value );
+															if (empty($custom_field_value)) {
+																$custom_field_value = '';
+															} else {
+																$custom_field_value = date('Y-m-d',$time);
+															}
+														}
+
+														if ($meta_type == 'time') {
+															$time = strtotime( $custom_field_value );
+															$custom_field_value = date('H:i',$time);
+														}
+
+														if ($meta_type == 'select') {
+															if (strpos($custom_field_value, ',') !== false) {
+																$custom_field_value = explode(',', $custom_field_value);
+															}
+														}
+
+														if ($meta_type == 'checkbox') {
+															$custom_field_value = explode(',', $custom_field_value);
+														}
+
+														rwmb_set_meta( $register_user, $register_user_meta_key, $custom_field_value, $custom_field_value );
+
 													} else {
-														update_user_meta( $user_id, $user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
+														update_user_meta( $register_user, $register_user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
 													}
 												}
 											}
@@ -3563,7 +3617,7 @@
 										$user_meta_key = $user_meta['update_user_meta'];
 										$user_meta_value = '';
 
-										if ($user_meta['update_user_meta'] == 'meta' || $user_meta['update_user_meta'] == 'acf') {
+										if ($user_meta['update_user_meta'] == 'meta' || $user_meta['update_user_meta'] == 'acf' || $user_meta['update_user_meta'] == 'metabox') {
 											if (!empty($user_meta['update_user_meta_key'])) {
 												$user_meta_key = $user_meta['update_user_meta_key'];
 											}
@@ -3675,6 +3729,60 @@
 												// }
 
 												update_field( $user_meta_key, $custom_field_value, 'user_' . $user_id );
+											} elseif (function_exists('rwmb_set_meta') && $register_user_meta == 'metabox') {
+												$meta_type = $user_meta['update_user_meta_type'];
+												$custom_field_value = pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields);
+
+												if ($meta_type == 'image') {
+													$image_array = explode(',', $custom_field_value);
+													$image_id = attachment_url_to_postid( $image_array[0] );
+													if (!empty($image_id)) {
+														$custom_field_value = $image_id;
+													}
+												}
+
+												if ($meta_type == 'gallery') {
+													$images_array = explode(',', $custom_field_value);
+													$images_id = '';
+													foreach ($images_array as $images_item) {
+														if (!empty($images_item)) {
+															$image_id = attachment_url_to_postid( $images_item );
+															if (!empty($image_id)) {
+																$images_id .= $image_id . ',';
+															}
+														}
+													}
+													if (!empty($images_id)) {
+														$custom_field_value = explode(',', $images_id);
+													}
+												}
+
+												if ($meta_type == 'date') {
+													$time = strtotime( $custom_field_value );
+													if (empty($custom_field_value)) {
+														$custom_field_value = '';
+													} else {
+														$custom_field_value = date('Y-m-d',$time);
+													}
+												}
+
+												if ($meta_type == 'time') {
+													$time = strtotime( $custom_field_value );
+													$custom_field_value = date('H:i',$time);
+												}
+
+												if ($meta_type == 'select') {
+													if (strpos($custom_field_value, ',') !== false) {
+														$custom_field_value = explode(',', $custom_field_value);
+													}
+												}
+
+												if ($meta_type == 'checkbox') {
+													$custom_field_value = explode(',', $custom_field_value);
+												}
+
+												rwmb_set_meta( $user_id, $user_meta_key, $custom_field_value, $custom_field_value );
+
 											} else {
 												update_user_meta( $user_id, $user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
 											}
