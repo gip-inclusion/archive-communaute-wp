@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 13:42:49+00:00\n"
-"PO-Revision-Date: 2021-11-02 17:37+0100\n"
+"POT-Creation-Date: 2021-11-25 07:07:24+00:00\n"
+"PO-Revision-Date: 2021-11-25 14:58+0100\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "404"
 msgstr "404"
 
-#: archive-sfwd-courses.php:30 archive-sfwd-courses.php:31
+#: archive-sfwd-courses.php:30 archive-sfwd-courses.php:31 bbpress.php:40
 #: inc/admin/options-init.php:312 inc/admin/options-init.php:353
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:97
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1857
@@ -61,7 +61,7 @@ msgstr "404"
 #: inc/plugins/elementor/widgets/courses/templates/learndash-courses-template.php:36
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-courses-template.php:45
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:281
-#: learndash/ld30/shortcodes/profile.php:119
+#: learndash/ld30/shortcodes/profile.php:167
 #: lifterlms/course/course-index.php:20
 #: lifterlms/membership/membership-index.php:20 searchform.php:15
 #: template-parts/bbpress-banner.php:108 template-parts/header-aside.php:93
@@ -140,8 +140,8 @@ msgstr "Forums"
 msgid "Original Post"
 msgstr "Publication originale"
 
-#: bbpress/content-single-topic.php:73 learndash/ld30/lesson.php:109
-#: learndash/ld30/quiz.php:85
+#: bbpress/content-single-topic.php:73 learndash/ld30/lesson.php:118
+#: learndash/ld30/quiz.php:99
 #: lifterlms/assignment/template-single-assignment-content.php:61
 #: lifterlms/lesson/template-single-lesson-content.php:63
 #: lifterlms/quiz/template-single-quizz-content.php:61
@@ -412,6 +412,7 @@ msgstr "Réponses"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:232
 #: inc/theme/template-functions.php:1862 inc/theme/template-functions.php:1875
 #: inc/theme/template-functions.php:1983 inc/theme/template-functions.php:1998
+#: learndash/ld30/focus/comments_list.php:120
 msgid "Reply"
 msgstr "Réponse"
 
@@ -553,6 +554,10 @@ msgstr "Editer le profil de %s"
 msgid "Edit"
 msgstr "Editer"
 
+#: bbpress.php:39 template-parts/bbpress-banner.php:107
+msgid "Search forums..."
+msgstr "Rechercher des forums ..."
+
 #: buddypress/common/nav/directory-nav.php:10 docs/tabs-nouveau.php:2
 msgid "Directory menu"
 msgstr "Menu du répertoire"
@@ -602,7 +607,7 @@ msgstr "Changer la photo de groupe"
 #: buddypress/groups/single/members/leaders.php:15
 #: buddypress/groups/single/members-loop.php:15
 #: buddypress/members/members-loop.php:16
-#: learndash/ld30/template-course-author-details.php:52
+#: learndash/ld30/template-course-author-details.php:49
 msgid "Message"
 msgstr "Message"
 
@@ -694,7 +699,7 @@ msgstr "Nom"
 #: inc/lib/buddyboss-updater/includes/views/package.php:68
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:684
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:689
-#: inc/theme/login.php:168 learndash/ld30/modules/login-modal.php:246
+#: inc/theme/login.php:168 learndash/ld30/modules/login-modal.php:389
 #: paid-memberships-pro/pages/account.php:107
 msgid "Email"
 msgstr "Adresse courriel"
@@ -799,11 +804,9 @@ msgstr "Aucun résultat pour '%s"
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:717
 #: inc/plugins/lifterlms-helper.php:1710 inc/plugins/lifterlms-helper.php:1789
 #: inc/theme/login.php:406 inc/theme/template-functions.php:722
-#: learndash/ld30/learndash-sidebar.php:195
-#: learndash/ld30/lesson/partials/row.php:117
-#: learndash/ld30/lesson/partials/row.php:137
-#: learndash/ld30/shortcodes/course_list_template.php:284
-#: learndash/ld30/shortcodes/course_list_template.php:335
+#: learndash/ld30/learndash-sidebar.php:198
+#: learndash/ld30/shortcodes/course_list_template.php:288
+#: learndash/ld30/shortcodes/course_list_template.php:339
 #: learndash/ld30/template-course-item.php:80
 #: learndash/ld30/template-course-item.php:102
 #: lifterlms/loop/featured-image.php:44
@@ -1925,217 +1928,165 @@ msgstr "Liens du menu secondaire"
 
 #: inc/admin/options-init.php:932
 msgid "Secondary menu items and alternate links color"
-msgstr ""
+msgstr "Couleur des éléments du menu secondaire et des liens alternatifs"
 
 #: inc/admin/options-init.php:939
 msgid "Secondary and headings hover color"
-msgstr ""
+msgstr "Couleur du survol des rubriques et des secondaires"
 
 #: inc/admin/options-init.php:940
 msgid "Secondary menu items and alternate hover links color"
-msgstr ""
+msgstr "Éléments du menu secondaire et couleur des liens de survol alternatifs"
 
 #: inc/admin/options-init.php:946 inc/admin/options-init.php:947
 msgid "Secondary menu active links color"
-msgstr ""
+msgstr "Couleur des liens actifs du menu secondaire"
 
 #: inc/admin/options-init.php:955
-#, fuzzy
-#| msgid "Border Color"
 msgid "Header Colors"
-msgstr "Couleur de la bordure"
+msgstr "Couleurs d'en-tête"
 
 #: inc/admin/options-init.php:960
-#, fuzzy
-#| msgid "Body Background"
 msgid "Header Background"
-msgstr "Arrière plan du corps"
+msgstr "Arrière-plan de l’en-tête"
 
 #: inc/admin/options-init.php:961
 msgid "The area at the top, containing logo, navigation, and user dropdown"
 msgstr ""
+"La zone en haut, contenant le logo, la navigation et la liste déroulante des "
+"utilisateurs"
 
 #: inc/admin/options-init.php:969
 msgid ""
 "Site title, only visible if no <a href=\"%s\" class=\"redux-group-tab-link-a"
 "\" data-key=\"0\" data-rel=\"0\">logo</a> is uploaded"
 msgstr ""
+"Titre du site, visible uniquement si aucun <a href=\"%s\" class=\"redux-"
+"group-tab-link-a\" data-key=\"0\" data-rel=\"0\">logo</a> n'est téléchargé"
 
 #: inc/admin/options-init.php:976
-#, fuzzy
-#| msgid "Link Color"
 msgid "Header Links Color"
-msgstr "Couleur du lien"
+msgstr "Couleur des liens de l’en-tête"
 
 #: inc/admin/options-init.php:977
-#, fuzzy
-#| msgid "Messages Icon Color"
 msgid "Menu and Icons Links Color"
-msgstr "Couleur icônes des messages"
+msgstr "Couleur des liens des menus et des icônes"
 
 #: inc/admin/options-init.php:984
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "Header Hover Links Color"
-msgstr "Couleur du menu au survol"
+msgstr "Titre : Couleurs des liens au survol"
 
 #: inc/admin/options-init.php:985
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "Menu and Icons Hover Links Color"
-msgstr "Couleur du menu au survol"
+msgstr "Menu et icônes Couleur des liens de survol"
 
 #: inc/admin/options-init.php:992
-#, fuzzy
-#| msgid "Header Gradient Color Option"
 msgid "Header Active Links Color"
-msgstr "Option Gradient de couleur en entête"
+msgstr "Header : Couleur des liens actifs"
 
 #: inc/admin/options-init.php:993
-#, fuzzy
-#| msgid "Menu Item Color"
 msgid "Menu Active Links Color"
-msgstr "Couleur de l’élément du Menu"
+msgstr "Menu : Couleur des liens actifs"
 
 #: inc/admin/options-init.php:1000 inc/admin/options-init.php:1001
 msgid "Sub Menu Hover and Active Links Color"
-msgstr ""
+msgstr "Couleur des liens actifs et du survol des sous-menus"
 
 #: inc/admin/options-init.php:1009
-#, fuzzy
-#| msgid "BuddyPanel"
 msgid "BuddyPanel Colors"
-msgstr "BuddyPanel"
+msgstr "Couleur BuddyPanel"
 
 #: inc/admin/options-init.php:1014
-#, fuzzy
-#| msgid "Body Background"
 msgid "BuddyPanel Background"
-msgstr "Arrière plan du corps"
+msgstr "Arrière plan BuddyPanel"
 
 #: inc/admin/options-init.php:1015
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "BuddyPanel background color"
-msgstr "Couleur de fond de compteur"
+msgstr "BuddyPanel : Couleur arrière plan"
 
 #: inc/admin/options-init.php:1022
-#, fuzzy
-#| msgid "BuddyPanel - Logged in users"
 msgid "BuddyPanel Links Color"
-msgstr "BuddyPanel - Utilisateurs connectés"
+msgstr "Couleur Liens BuddyPanel"
 
 #: inc/admin/options-init.php:1023
-#, fuzzy
-#| msgid "BuddyPanel Default State"
 msgid "BuddyPanel menu items color"
-msgstr "État par défaut de BuddyPanel"
+msgstr "BuddyPanel : Couleur des éléments du menu"
 
 #: inc/admin/options-init.php:1030
-#, fuzzy
-#| msgid "BuddyPanel - Logged in users"
 msgid "BuddyPanel Hover Links Color"
-msgstr "BuddyPanel - Utilisateurs connectés"
+msgstr "Couleur Liens au survol BuddyPanel"
 
 #: inc/admin/options-init.php:1031
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "BuddyPanel menu items hover color"
-msgstr "Couleur du menu au survol"
+msgstr "BuddyPanel Menu : Couleur des éléments au survol"
 
 #: inc/admin/options-init.php:1038
 msgid "BuddyPanel Active Links Color"
-msgstr ""
+msgstr "BuddyPanel : Couleur des liens actifs"
 
 #: inc/admin/options-init.php:1039
-#, fuzzy
-#| msgid "BuddyPanel Default State"
 msgid "BuddyPanel menu items active color"
-msgstr "État par défaut de BuddyPanel"
+msgstr "BuddyPanel : Couleur active des éléments du menu"
 
 #: inc/admin/options-init.php:1047
-#, fuzzy
-#| msgid "Font Color"
 msgid "Footer Colors"
-msgstr "Couleur de la police"
+msgstr "Couleurs du pied de Page"
 
 #: inc/admin/options-init.php:1052
-#, fuzzy
-#| msgid "Footer Widget Columns"
 msgid "Footer Widgets Background"
-msgstr "Colonnes de widget du pied de page"
+msgstr "Arrière-plan Footer Widgets"
 
 #: inc/admin/options-init.php:1053
-#, fuzzy
-#| msgid ""
-#| "Enable footer widget area. You will then need to add widgets at "
-#| "<em>Appearance &gt; Widgets</em>."
 msgid ""
 "Only visible if you have added widgets to the footer at <em>Appearance &gt; "
 "Widgets</em>"
 msgstr ""
-"Activer la zone de widget de pied de page. Vous devrez ensuite ajouter des "
-"widgets dans <em>Apparence &gt; Widgets</em>."
+"Visible uniquement si vous avez ajouté des widgets au pied de page à "
+"<em>Apparence &gt; Widgets</em>"
 
 #: inc/admin/options-init.php:1060
-#, fuzzy
-#| msgid "Footer Background Color"
 msgid "Footer Background"
-msgstr "Couleur d’arrière-plan du pied de page"
+msgstr "Arrière-plan du pied de page"
 
 #: inc/admin/options-init.php:1061
 msgid "The main footer area at the bottom of the site"
-msgstr ""
+msgstr "La zone principale de bas de page en bas du site"
 
 #: inc/admin/options-init.php:1068
-#, fuzzy
-#| msgid "Link Color"
 msgid "Footer Links Color"
-msgstr "Couleur du lien"
+msgstr "Couleur des liens de pied de page"
 
 #: inc/admin/options-init.php:1069
-#, fuzzy
-#| msgid "Menu Item Color"
 msgid "Footer menu items color"
-msgstr "Couleur de l’élément du Menu"
+msgstr "Footer : Couleur des éléments de menu"
 
 #: inc/admin/options-init.php:1076
-#, fuzzy
-#| msgid "Footer Background Color"
 msgid "Footer Hover Links Color"
-msgstr "Couleur d’arrière-plan du pied de page"
+msgstr "Footer : Couleur liens au survol"
 
 #: inc/admin/options-init.php:1077
-#, fuzzy
-#| msgid "Menu Item Hover Color"
 msgid "Footer menu items hover color"
-msgstr "Couleur du menu au survol"
+msgstr "Footer Menu : Couleur des éléments au survol"
 
 #: inc/admin/options-init.php:1084
-#, fuzzy
-#| msgid "Footer Background Color"
 msgid "Footer Active Links Color"
-msgstr "Couleur d’arrière-plan du pied de page"
+msgstr "Footer : Couleur des liens actifs"
 
 #: inc/admin/options-init.php:1085
 msgid "Footer menu items active color"
-msgstr ""
+msgstr "Couleur active des éléments du menu de bas de page"
 
 #: inc/admin/options-init.php:1093
-#, fuzzy
-#| msgid "Body Font"
 msgid "Body Elements"
-msgstr "Police du corps"
+msgstr "Body Eléments"
 
 #: inc/admin/options-init.php:1098
 msgid "Body Background"
 msgstr "Arrière plan du corps"
 
 #: inc/admin/options-init.php:1099
-#, fuzzy
-#| msgid "The name of the parent theme."
 msgid "The main content area of the theme"
-msgstr "Le nom du thème parent."
+msgstr "Le nom du thème parent"
 
 #: inc/admin/options-init.php:1106
 msgid "Cover Image Background"
@@ -2147,70 +2098,63 @@ msgid ""
 "\"javascript:void(0);\" class=\"redux-group-tab-link-a\" data-key=\"4\" data-"
 "rel=\"11\">Cover Images</a> options area"
 msgstr ""
+"Visible uniquement si vous avez activé l'option Grouper les images de "
+"couverture dans la zone d'options des images de <a href=\"javascript:void(0);"
+"\" class=\"redux-group-tab-link-a\" data-key=\"4\" data-rel="
+"\"11\">couverture</a>"
 
 #: inc/admin/options-init.php:1114
-#, fuzzy
-#| msgid "Background Color"
 msgid "Light Background Blocks"
-msgstr "Couleur d’arrière-plan"
+msgstr "Blocs de fond clair"
 
 #: inc/admin/options-init.php:1115
 msgid ""
 "Light background elements used for sub menu blocks, some header backgrounds "
 "or other supplementary elements"
 msgstr ""
+"Éléments d'arrière-plan légers utilisés pour les sous-blocs de menu, "
+"certains arrière-plans d'en-tête ou d'autres éléments supplémentaires"
 
 #: inc/admin/options-init.php:1122
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Content Blocks Background"
-msgstr "Couleur de fond de compteur"
+msgstr "Arrière-plan Bloc de contenu"
 
 #: inc/admin/options-init.php:1123
 msgid "Content blocks and widget containers background color"
-msgstr ""
+msgstr "Couleur de fond des blocs de contenu et des conteneurs de widgets"
 
 #: inc/admin/options-init.php:1130
 msgid "Content Blocks Border"
-msgstr ""
+msgstr "Bordure des blocs de contenu"
 
 #: inc/admin/options-init.php:1131
 msgid "Content blocks and widget containers border color"
 msgstr ""
+"Couleur de la bordure des blocs de contenu et des conteneurs de widgets"
 
 #: inc/admin/options-init.php:1138
-#, fuzzy
-#| msgid "Body Background"
 msgid "Tooltips Background"
-msgstr "Arrière plan du corps"
+msgstr "Arrière plan Tooltips"
 
 #: inc/admin/options-init.php:1139
-#, fuzzy
-#| msgid "Footer Background Color"
 msgid "Tooltips background color"
-msgstr "Couleur d’arrière-plan du pied de page"
+msgstr "Tooltips : Couleur arrière plan"
 
 #: inc/admin/options-init.php:1146
-#, fuzzy
-#| msgid "Tooltips"
 msgid "Tooltips Color"
-msgstr "Infos-Bulles"
+msgstr "Infos-Bulles Couleur"
 
 #: inc/admin/options-init.php:1147
-#, fuzzy
-#| msgid "Tooltips"
 msgid "Tooltips color"
-msgstr "Infos-Bulles"
+msgstr "Infos-Bulles Couleur"
 
 #: inc/admin/options-init.php:1154
-#, fuzzy
-#| msgid "Border Radius"
 msgid "Button Border Radius"
-msgstr "Rayon de la bordure"
+msgstr "Rayon de bordure de bouton"
 
 #: inc/admin/options-init.php:1155
 msgid "Change default button border radius."
-msgstr ""
+msgstr "Modifier le rayon de la bordure du bouton par défaut."
 
 #: inc/admin/options-init.php:1167
 msgid "Text Colors"
@@ -2230,31 +2174,31 @@ msgstr "Texte alternatif"
 
 #: inc/admin/options-init.php:1181
 msgid "Supplementary text color"
-msgstr ""
+msgstr "Couleur supplémentaire du texte"
 
 #: inc/admin/options-init.php:1189
 msgid "Notices / Alerts"
-msgstr ""
+msgstr "Notices / Alertes"
 
 #: inc/admin/options-init.php:1195
 msgid "Alert color for default notices"
-msgstr ""
+msgstr "Couleur d'alerte pour les avis de défaut"
 
 #: inc/admin/options-init.php:1203
 msgid "Alert color for 'Loading' notices"
-msgstr ""
+msgstr "Couleur d'alerte pour les notices \"Chargement\""
 
 #: inc/admin/options-init.php:1211
 msgid "Alert color for 'Success' notices"
-msgstr ""
+msgstr "Couleur d'alerte pour les notices \"Succès\""
 
 #: inc/admin/options-init.php:1219
 msgid "Alert color for 'Error' notices"
-msgstr ""
+msgstr "Couleur d'alerte pour les notices \"Erreur\""
 
 #: inc/admin/options-init.php:1227
 msgid "Alert color for 'Warning' notices."
-msgstr ""
+msgstr "Couleur d'alerte pour les notices \"Avertissement »."
 
 #: inc/admin/options-init.php:1235
 msgid "Login / Register Screens"
@@ -2274,23 +2218,23 @@ msgstr "Connexion / Enregistrement Couleur du texte"
 
 #: inc/admin/options-init.php:1249
 msgid "Text color used in form inputs"
-msgstr ""
+msgstr "Couleur de texte utilisée dans les entrées de forme"
 
 #: inc/admin/options-init.php:1256
 msgid "Login / Register Links and Button Color"
-msgstr ""
+msgstr "Connexion / Enregistrement des liens et couleur des boutons"
 
 #: inc/admin/options-init.php:1257
 msgid "Links and buttons color"
-msgstr ""
+msgstr "Couleur des liens et des boutons"
 
 #: inc/admin/options-init.php:1264
 msgid "Login / Register Links and Button Hover Color"
-msgstr ""
+msgstr "Connexion/Inscription : Couleur des liens et des boutons au survol"
 
 #: inc/admin/options-init.php:1265
 msgid "Links and buttons color when hovered"
-msgstr ""
+msgstr "Couleur des liens et des boutons au survol"
 
 #: inc/admin/options-init.php:1359
 msgid "Default Color Scheme"
@@ -2298,7 +2242,7 @@ msgstr "Schéma de couleur par défaut"
 
 #: inc/admin/options-init.php:1360
 msgid "Reset all colors back to the default color scheme"
-msgstr ""
+msgstr "Rétablissement de toutes les couleurs au schéma de couleurs par défaut"
 
 #: inc/admin/options-init.php:1372
 msgid "Styling"
@@ -3422,15 +3366,15 @@ msgstr "Licence BuddyBoss"
 msgid "License Keys"
 msgstr "Clés de licence"
 
-#: inc/lib/buddyboss-updater/includes/admin.php:526
+#: inc/lib/buddyboss-updater/includes/admin.php:532
 msgid "Dismiss this notice."
 msgstr "Ignorer cet avertissement."
 
-#: inc/lib/buddyboss-updater/includes/admin.php:558
+#: inc/lib/buddyboss-updater/includes/admin.php:564
 msgid "activate your product licenses"
 msgstr "activer les licences de vos produits"
 
-#: inc/lib/buddyboss-updater/includes/admin.php:559
+#: inc/lib/buddyboss-updater/includes/admin.php:565
 msgid ""
 "<strong>Your BuddyBoss products are almost ready.</strong> To get started, "
 "please %s."
@@ -3438,18 +3382,18 @@ msgstr ""
 "<strong>Vos produits BuddyBoss sont presque prêts.</strong> Pour commencer, "
 "s'il vous plaît %s."
 
-#: inc/lib/buddyboss-updater/includes/admin.php:588
+#: inc/lib/buddyboss-updater/includes/admin.php:594
 msgid "here"
 msgstr "ici"
 
-#: inc/lib/buddyboss-updater/includes/admin.php:589
+#: inc/lib/buddyboss-updater/includes/admin.php:595
 msgid "This license for <strong>%s</strong> is invalid or incomplete. %s"
 msgstr "Cette licence pour <strong>%s</strong> est invalide ou incomplète. %s"
 
-#: inc/lib/buddyboss-updater/includes/admin.php:746
-#: inc/lib/buddyboss-updater/includes/admin.php:778
-#: inc/lib/buddyboss-updater/includes/admin.php:862
-#: inc/lib/buddyboss-updater/includes/admin.php:868
+#: inc/lib/buddyboss-updater/includes/admin.php:752
+#: inc/lib/buddyboss-updater/includes/admin.php:784
+#: inc/lib/buddyboss-updater/includes/admin.php:874
+#: inc/lib/buddyboss-updater/includes/admin.php:880
 msgid ""
 "Your account was successfully connected. No new activations have been made. "
 "If you are attempting to activate a new license key, please make sure that "
@@ -3461,15 +3405,15 @@ msgstr ""
 "vous que le produit est installé sur votre site et qu'une clé de licence "
 "active est disponible dans votre compte BuddyBoss.com."
 
-#: inc/lib/buddyboss-updater/includes/admin.php:839
+#: inc/lib/buddyboss-updater/includes/admin.php:845
 msgid ""
 "Congratulations! License keys for the following product(s) have been "
 "activated: %s"
 msgstr ""
 "Félicitations! Les clés de licence du produit suivant ont été activées: %s"
 
-#: inc/lib/buddyboss-updater/includes/admin.php:857
-#: inc/lib/buddyboss-updater/includes/admin.php:870
+#: inc/lib/buddyboss-updater/includes/admin.php:869
+#: inc/lib/buddyboss-updater/includes/admin.php:882
 msgid ""
 "The connection was successful, however, no license key was activated. We "
 "could not find any active license in your account, for any of the installed "
@@ -6747,6 +6691,7 @@ msgstr "Apparence"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:164
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:137
+#: learndash/ld30/lesson/partials/row.php:299
 msgid "Collapse"
 msgstr "Réduire"
 
@@ -7676,7 +7621,7 @@ msgstr "CC"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:750
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2292
-#: learndash/ld30/shortcodes/profile/course-row.php:52
+#: learndash/ld30/shortcodes/profile/course-row.php:78
 #: learndash/ld30/template-single-course-sidebar.php:352
 msgid "Certificate"
 msgstr "Certificat"
@@ -8387,9 +8332,10 @@ msgstr "Compresser"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1940
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:142
-#: learndash/ld30/lesson/listing.php:81
-#: learndash/ld30/lesson/partials/row.php:209
-#: learndash/ld30/shortcodes/profile/course-row.php:39
+#: learndash/ld30/lesson/listing.php:159
+#: learndash/ld30/lesson/partials/row.php:299
+#: learndash/ld30/lesson/partials/row.php:301
+#: learndash/ld30/shortcodes/profile/course-row.php:64
 msgid "Expand"
 msgstr "Développer"
 
@@ -9613,7 +9559,7 @@ msgstr[1] "membres"
 msgid "more"
 msgstr "plus"
 
-#: inc/plugins/buddypress-helper.php:279
+#: inc/plugins/buddypress-helper.php:281
 msgid "%d result"
 msgid_plural "%d results"
 msgstr[0] "%d résultat"
@@ -9633,10 +9579,8 @@ msgstr "Mettre à jour Elementor maintenant"
 
 #: inc/plugins/elementor/templates/classes/config.php:47
 #: inc/plugins/elementor/templates/scripts/template-modal-header-logo.php:9
-#, fuzzy
-#| msgid "BuddyBoss Theme"
 msgid "BuddyBoss Elementor Sections"
-msgstr "BuddyBoss Theme"
+msgstr "Sections BuddyBoss Elementor"
 
 #: inc/plugins/elementor/templates/documents/section.php:28
 #: inc/plugins/elementor/templates/types/section.php:35
@@ -9648,45 +9592,33 @@ msgid "No Templates Found"
 msgstr "Aucun modèle trouvé"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-header.php:8
-#, fuzzy
-#| msgid "BuddyBoss Theme"
 msgid "BuddyBoss Templates"
-msgstr "BuddyBoss Theme"
+msgstr "Modèles BuddyBoss"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-insert-button.php:8
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:47
-#, fuzzy
-#| msgid "Insert More"
 msgid "Insert"
-msgstr "Insérer plus"
+msgstr "Insérer"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:15
-#, fuzzy
-#| msgid "Update Elementor Now"
 msgid "Elementor Pro"
-msgstr "Mettre à jour Elementor maintenant"
+msgstr "Elementor Pro"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:34
-#, fuzzy
-#| msgid "Ecommerce"
 msgid "WooCommerce"
-msgstr "Ecommerce"
+msgstr "WooCommerce"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:37
 msgid "The Events Calendar"
-msgstr ""
+msgstr "The Events Calendar"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-loading.php:13
-#, fuzzy
-#| msgid "Padding"
 msgid "Loading"
-msgstr "Marges intérieures"
+msgstr "Chargement"
 
 #: inc/plugins/elementor/templates/scripts/template-modal-search-item.php:6
-#, fuzzy
-#| msgid "Search Results"
 msgid "Search Templates:"
-msgstr "Résultats de la recherche"
+msgstr "Modèles de recherche :"
 
 #: inc/plugins/elementor/templates/types/page.php:46
 msgid "Pages"
@@ -9697,18 +9629,14 @@ msgid "Sections"
 msgstr "Sections"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:111
-#, fuzzy
-#| msgid "Activity"
 msgid "Activity Count"
-msgstr "Activité"
+msgstr "Nombre d’activités"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:129
 #: inc/plugins/elementor/widgets/bb-forums.php:113
 #: inc/plugins/elementor/widgets/members/bb-members.php:155
-#, fuzzy
-#| msgid "Show Sidepanel"
 msgid "Row Space"
-msgstr "Afficher le panneau latéral"
+msgstr "Espacement de rangée"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:151
 msgid "Show All Activity Link"
@@ -9731,44 +9659,32 @@ msgid "Show Content Media"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-activity.php:190
-#, fuzzy
-#| msgid "Actions"
 msgid "Show Actions"
-msgstr "Actions"
+msgstr "Afficher les actions"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:202
-#, fuzzy
-#| msgid "Life Buoy"
 msgid "Like Button"
-msgstr "Bouée de sauvetage"
+msgstr "Bouton \"J'aime\""
 
 #: inc/plugins/elementor/widgets/bb-activity.php:215
-#, fuzzy
-#| msgid "Comments"
 msgid "Show Comments"
-msgstr "Commentaires"
+msgstr "Afficher les commentaires"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:228
-#, fuzzy
-#| msgid "Comment: Activity"
 msgid "Show Edit Activity"
-msgstr "Commentaire: Activité"
+msgstr "Afficher l’activité modifier"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:242
-#, fuzzy
-#| msgid "Comment: Activity"
 msgid "Show Delete Activity"
-msgstr "Commentaire: Activité"
+msgstr "Afficher l'activité de suppression"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:265
 #: inc/plugins/elementor/widgets/bb-forums.php:192
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:180
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:205
 #: inc/plugins/elementor/widgets/members/bb-members.php:263
-#, fuzzy
-#| msgid "Review Text"
 msgid "Heading Text"
-msgstr "Texte de  l'avis"
+msgstr "Texte d’en-tête"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:271
 #: inc/plugins/elementor/widgets/bb-forums.php:198
@@ -9776,7 +9692,7 @@ msgstr "Texte de  l'avis"
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:211
 #: inc/plugins/elementor/widgets/members/bb-members.php:269
 msgid "Enter heading text"
-msgstr ""
+msgstr "Entrez le texte du titre"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:279
 msgid "Activity Link Text"
@@ -9862,16 +9778,12 @@ msgid "Background"
 msgstr "Arrière-plan"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:346
-#, fuzzy
-#| msgid "Activity"
 msgid "All Activity Link"
-msgstr "Activité"
+msgstr "Tous les liens d'activité"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:355
-#, fuzzy
-#| msgid "Link Color"
 msgid "All Activity Link Color"
-msgstr "Couleur du lien"
+msgstr "Toute la couleur de lien d’activité"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:368
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:162
@@ -9888,7 +9800,7 @@ msgstr "Avatar"
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:373
 #: inc/plugins/elementor/widgets/members/bb-members.php:455
 msgid "Opacity (%)"
-msgstr ""
+msgstr "Opacité (%)"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:443
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:443
@@ -9915,48 +9827,34 @@ msgid "Spacing"
 msgstr "Espacement"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:473
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Header"
-msgstr "Menu Typographie"
+msgstr "Typographie d’en-tête"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:482
 #: inc/plugins/elementor/widgets/bb-forums.php:463
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Content"
-msgstr "Menu Typographie"
+msgstr "Contenu typographique"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:490
-#, fuzzy
-#| msgid "Font Color"
 msgid "Content Color"
-msgstr "Couleur de la police"
+msgstr "Couleur du contenu"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:743
-#, fuzzy
-#| msgid "Sort by date"
 msgid "Post an Update"
-msgstr "Trier par date"
+msgstr "Publier une mise à jour"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:43
-#, fuzzy
-#| msgid "Dashboard"
 msgid "Dashboard Grid"
-msgstr "Tableau de bord"
+msgstr "Grille de tableau de bord"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:91
-#, fuzzy
-#| msgid "Grid View"
 msgid "Grid"
-msgstr "Vue en grille"
+msgstr "Grille"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:114
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:380
-#, fuzzy
-#| msgid "Description"
 msgid "Show Description"
-msgstr "Description"
+msgstr "Afficher la description"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:123
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:550
@@ -9967,29 +9865,23 @@ msgstr "Description"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:143
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1066
-#, fuzzy
-#| msgid "Tooltips"
 msgid "Show Tooltip"
-msgstr "Infos-Bulles"
+msgstr "Montrer l'Info-bulle"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:152
-#, fuzzy
-#| msgid "Tooltips"
 msgid "Tooltip"
-msgstr "Infos-Bulles"
+msgstr "Info-bulle"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:190
 #: inc/plugins/elementor/widgets/bb-tabs.php:169
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:284
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:338
 msgid "https://your-link.com"
-msgstr ""
+msgstr "https://votre-lien.com"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:197
-#, fuzzy
-#| msgid "Grid View"
 msgid "Grid Items"
-msgstr "Vue en grille"
+msgstr "Éléments Grille"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:202
 msgid "First item on the list"
@@ -10021,56 +9913,42 @@ msgid "Above"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:262
-#, fuzzy
-#| msgid "Social Links"
 msgid "Show Icon Link"
-msgstr "Réseaux sociaux"
+msgstr "Afficher le lien icône"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:271
-#, fuzzy
-#| msgid "Separator"
 msgid "Show Separator"
-msgstr "Séparateur"
+msgstr "Afficher le séparateur"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:331
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:576
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:563
-#, fuzzy
-#| msgid "Icons Shadow"
 msgid "Box Shadow"
-msgstr "Ombre d'Icones"
+msgstr "Ombre de la boîte"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:354
-#, fuzzy
-#| msgid "Regular"
 msgid "Rectangular"
-msgstr "Normal"
+msgstr "Rectangulaire"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:387
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:94
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:93
-#, fuzzy
-#| msgid "Images Option"
 msgid "Image Ratio"
-msgstr "Option des images"
+msgstr "Ratio de l’image"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:475
 #: inc/plugins/elementor/widgets/bb-forums.php:404
 #: inc/plugins/elementor/widgets/bb-review.php:814
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:424
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Title"
-msgstr "Menu Typographie"
+msgstr "Titre de la typographie"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:494
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:515
 #: inc/plugins/elementor/widgets/bb-review.php:822
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:432
-#, fuzzy
-#| msgid "Site Title Color"
 msgid "Title Color"
-msgstr "Couleur du titre du site"
+msgstr "Couleur du titre"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:508
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:554
@@ -10098,10 +9976,8 @@ msgid "Hover"
 msgstr "Survol"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:531
-#, fuzzy
-#| msgid "Letter Spacing"
 msgid "Title Spacing"
-msgstr "Espacement des lettres"
+msgstr "Espacement du titre"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:559
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:608
@@ -10171,22 +10047,16 @@ msgstr "Couleur"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:571
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:322
-#, fuzzy
-#| msgid "Typography h2.site-description"
 msgid "Typography Description"
-msgstr "Typography h2.site-description"
+msgstr "Description de la typographie"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:579
-#, fuzzy
-#| msgid "Description"
 msgid "Description Spacing"
-msgstr "Description"
+msgstr "Description Espacement"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:599
-#, fuzzy
-#| msgid "Button Link"
 msgid "Icon Link"
-msgstr "Lien du bouton"
+msgstr "Lien de l'icône"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:619
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:541
@@ -10211,38 +10081,28 @@ msgid "Border Color"
 msgstr "Couleur de la bordure"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:650
-#, fuzzy
-#| msgid "Tooltips"
 msgid "Tooltips Position"
-msgstr "Infos-Bulles"
+msgstr "Position des info-bulles"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:655
-#, fuzzy
-#| msgid "Download"
 msgid "Down"
-msgstr "Télécharger"
+msgstr "Bas"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:706
 #: inc/plugins/elementor/widgets/bb-tabs.php:758
 #: inc/plugins/elementor/widgets/bb-tabs.php:870
 #: inc/plugins/elementor/widgets/bb-tabs.php:953
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:579
-#, fuzzy
-#| msgid "Vertical Align"
 msgid "Vertical Position"
-msgstr "Alignement vertical"
+msgstr "Position verticale"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:41
-#, fuzzy
-#| msgid "Dashboard"
 msgid "Dashboard Intro"
-msgstr "Tableau de bord"
+msgstr "Intro tableau de bord"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:129
-#, fuzzy
-#| msgid "Field Description"
 msgid "Greeting & Description"
-msgstr "Description du champ"
+msgstr "Message d'accueil et description"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:134
 msgid "Welcome"
@@ -10250,50 +10110,38 @@ msgstr "Bienvenue"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:135
 msgid "Enter greeting text"
-msgstr ""
+msgstr "Entrer le texte du message d’accueil"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:149
-#, fuzzy
-#| msgid "Return to the Dashboard"
 msgid "to your Member Dashboard"
-msgstr "Retour au tableau de bord"
+msgstr "retour à votre tableau de bord"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:150
-#, fuzzy
-#| msgid "Enter your custom copyright text."
 msgid "Enter your introductory text"
-msgstr "Entrez votre texte de droit d'auteur personnalisé."
+msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:242
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:915
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:341
-#, fuzzy
-#| msgid "Icons Shadow"
 msgid "Shadow"
-msgstr "Ombre d'Icones"
+msgstr "Ombre"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:279
-#, fuzzy
-#| msgid "Select Color"
 msgid "Greeting Color"
-msgstr "Sélectionner une couleur"
+msgstr "Couleur de salutation"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:291
 msgid "Description Color"
 msgstr "Couleur de la description"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:304
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Greeting"
-msgstr "Menu Typographie"
+msgstr "Salutation de typographie"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:313
 #: inc/plugins/elementor/widgets/bb-review.php:885
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Name"
-msgstr "Menu Typographie"
+msgstr "Nom typographie"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:40
 msgid "Forums Activity"
@@ -10349,7 +10197,7 @@ msgstr "Voir mes sujets"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:188
 msgid "No Forums Paragraph Text"
-msgstr ""
+msgstr "Aucun texte de paragraphe de forum"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:193
 msgid "You don't have any discussions yet."
@@ -10360,20 +10208,16 @@ msgid "Enter no forums paragraph text"
 msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:203
-#, fuzzy
-#| msgid "Button Text"
 msgid "No Forums Button Text"
-msgstr "Texte du bouton"
+msgstr "Texte du bouton Pas de forum"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:208
-#, fuzzy
-#| msgid "Forums"
 msgid "Explore Forums"
-msgstr "Forums"
+msgstr "Explorez les forums"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:209
 msgid "Enter no forums button text"
-msgstr ""
+msgstr "Texte du bouton Ne pas entrer dans les forums"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:345
 msgid "Topic Title"
@@ -10432,135 +10276,99 @@ msgstr "Centre"
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:627
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:739
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1254
-#, fuzzy
-#| msgid "Button Link"
 msgid "Button Padding"
-msgstr "Lien du bouton"
+msgstr "Rembourrage du Bouton"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:651
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:818
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:643
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:758
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1273
-#, fuzzy
-#| msgid "Button Set"
 msgid "Button Border"
-msgstr "Ensemble de boutons"
+msgstr "Bordure de bouton"
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:983
 #: inc/plugins/elementor/widgets/courses/templates/learndash-activity-template.php:165
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-activity-template.php:153
-#, fuzzy
-#| msgid "You need to be loggedin."
 msgid "You are not logged in."
-msgstr "Vous devez être connecté."
+msgstr "Vous n'êtes pas connecté(e)."
 
 #: inc/plugins/elementor/widgets/bb-forums.php:95
-#, fuzzy
-#| msgid "Forums"
 msgid "Forums Count"
-msgstr "Forums"
+msgstr "Les forums comptent"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:134
-#, fuzzy
-#| msgid "Show Forum Banner"
 msgid "Show All Forums Link"
-msgstr "Afficher la bannière du forum"
+msgstr "Afficher tous les forums Lien"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:161
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Meta Replies"
-msgstr "Afficher les détails"
+msgstr "Afficher les réponses méta"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:173
 msgid "Show Last Reply"
-msgstr ""
+msgstr "Afficher la dernière réponse"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:206
-#, fuzzy
-#| msgid "Forum Title"
 msgid "Forum Link Text"
-msgstr "Titre du forum"
+msgstr "Texte du lien du forum"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:211
-#, fuzzy
-#| msgid "Forums"
 msgid "All Forums"
-msgstr "Forums"
+msgstr "Tous les forums"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:212
-#, fuzzy
-#| msgid "Enter your custom copyright text."
 msgid "Enter forum link text"
-msgstr "Entrez votre texte de droit d'auteur personnalisé."
+msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:273
 msgid "All Forums Link"
-msgstr ""
+msgstr "Lien vers tous les forums"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:282
-#, fuzzy
-#| msgid "Link Color"
 msgid "All Forums Link Color"
-msgstr "Couleur du lien"
+msgstr "Tous les forums lien couleur"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:423
 #: inc/plugins/elementor/widgets/bb-forums.php:445
-#, fuzzy
-#| msgid "Link Color"
 msgid "Title/Links Color"
-msgstr "Couleur du lien"
+msgstr "Couleur du titre / des liens"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:471
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:452
-#, fuzzy
-#| msgid "Separator Color"
 msgid "Meta Data Color"
-msgstr "Couleur du séparateur"
+msgstr "Couleur des métadonnées"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:483
-#, fuzzy
-#| msgid "Mail Reply All"
 msgid "Last Reply Color"
-msgstr "Courrier Répondre à tous"
+msgstr "Couleur de dernière réponse"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:576
 #: inc/plugins/elementor/widgets/bb-forums.php:579
-#, fuzzy
-#| msgid "Replies"
 msgid " Replies"
-msgstr "Réponses"
+msgstr " Réponses"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:576
 #: inc/plugins/elementor/widgets/bb-forums.php:579
-#, fuzzy
-#| msgid "Reply"
 msgid " Reply"
-msgstr "Réponse"
+msgstr " Répondre"
 
 #: inc/plugins/elementor/widgets/bb-forums.php:637
-#, fuzzy
-#| msgid "Discussion"
 msgid "Start a Discussion"
-msgstr "Discussion"
+msgstr "Lancer une discussion"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:38
-#, fuzzy
-#| msgid "Profile Photo"
 msgid "Profile Completion"
-msgstr "Photo de profil"
+msgstr "Achèvement du profil"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:88
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:142
 msgid "Skin"
-msgstr ""
+msgstr "Apparence"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:93
-#, fuzzy
-#| msgid "Line Chart"
 msgid "Linear"
-msgstr "Graphique linéaire"
+msgstr "Linéaire"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:136
 #: template-parts/header-profile-menu.php:27
@@ -10574,30 +10382,24 @@ msgid "Cover Photo"
 msgstr "Image de couverture"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:167
-#, fuzzy
-#| msgid "Widget"
 msgid "Hide Widget"
-msgstr "Widget"
+msgstr "Masquer le widget"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:168
 msgid "Hide widget once progress hits 100%"
-msgstr ""
+msgstr "Cacher le widget lorsque la progression atteint 100%"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:174
-#, fuzzy
-#| msgid "Profile Dropdown"
 msgid "Profile Complete Button"
-msgstr "Liste déroulante du profil"
+msgstr "Bouton de profil complet"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:185
 msgid "Complete your profile"
-msgstr ""
+msgstr "Merci de compléter votre profil"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:195
-#, fuzzy
-#| msgid "Complete"
 msgid "Completion Text"
-msgstr "Terminé"
+msgstr "Texte de Complétion"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:200
 #: inc/plugins/lifterlms-helper.php:1510 inc/plugins/lifterlms-helper.php:1580
@@ -10610,15 +10412,15 @@ msgstr "Terminé"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:201
 msgid "Enter completion text"
-msgstr ""
+msgstr "Saisir le texte de complétion"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:207
 msgid "Complete Profile Button Text"
-msgstr ""
+msgstr "Texte du bouton de profil complet"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:208
 msgid "Button text if progress is less than 100%"
-msgstr ""
+msgstr "Texte de bouton si le progrès est inférieur à 100%"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:213
 msgid "Complete Profile"
@@ -10630,7 +10432,7 @@ msgstr "Modifier le texte du bouton de profil"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:224
 msgid "Button text once progress hits 100%"
-msgstr ""
+msgstr "Texte du bouton une fois que la progression atteint 100%"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:249
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1051
@@ -10639,10 +10441,8 @@ msgstr "Largeur"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:277
 #: inc/plugins/elementor/widgets/members/bb-members.php:373
-#, fuzzy
-#| msgid "Border style"
 msgid "Border Type"
-msgstr "Style de bordure"
+msgstr "Type de bordure de l'élément"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:290
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1090
@@ -10650,126 +10450,90 @@ msgid "Border Width"
 msgstr "Largeur de la bordure"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:332
-#, fuzzy
-#| msgid "My Progress"
 msgid "Progress Graph"
-msgstr "Ma progression"
+msgstr "Graphique des progrès"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:353
-#, fuzzy
-#| msgid "Border Width"
 msgid "Progress Graph Border Width"
-msgstr "Largeur de la bordure"
+msgstr "Largeur de la bordure du graphique de progression"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:378
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Heading"
-msgstr "Menu Typographie"
+msgstr "Typographie : Titre"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:387
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:542
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1109
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Progress Value"
-msgstr "Menu Typographie"
+msgstr "Valeur de progression de la typographie"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:396
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Progress Info"
-msgstr "Menu Typographie"
+msgstr "Typographie : Info de progression"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:405
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Progress Data"
-msgstr "Menu Typographie"
+msgstr "Typographie : Données de progression"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:413
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:433
-#, fuzzy
-#| msgid "Dropdown Background Color"
 msgid "Details Completion Background Color"
-msgstr "Couleur d’arrière-plan du menu déroulant"
+msgstr "Détails Finition Couleur d'arrière-plan"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:428
-#, fuzzy
-#| msgid "Color"
 msgid "Colors"
-msgstr "Couleur"
+msgstr "Couleurs"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:445
-#, fuzzy
-#| msgid "Custom Heading Color"
 msgid "Heading Color"
-msgstr "Personnaliser la couleur de l'en-tête"
+msgstr "Couleur de l'entête"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:457
-#, fuzzy
-#| msgid "Custom Heading Color"
 msgid "Completion Color"
-msgstr "Personnaliser la couleur de l'en-tête"
+msgstr "Couleur d'achèvement"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:469
-#, fuzzy
-#| msgid "Palette Colors"
 msgid "Incomplete Color"
-msgstr "Couleurs de Palette"
+msgstr "Couleur incomplète"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:479
-#, fuzzy
-#| msgid "Border Color"
 msgid "Progress Border Color"
-msgstr "Couleur de la bordure"
+msgstr "Progrès couleur de la bordure"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:490
-#, fuzzy
-#| msgid "Border Color"
 msgid "Progress Number Color"
-msgstr "Couleur de la bordure"
+msgstr "Couleur du numéro de progression"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:498
-#, fuzzy
-#| msgid "Text Color"
 msgid "Progress Text Color"
-msgstr "Couleur du texte"
+msgstr "Couleur du texte de progression"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:509
-#, fuzzy
-#| msgid "Profile Dropdown"
 msgid "Details Dropdown"
-msgstr "Liste déroulante du profil"
+msgstr "Liste déroulante des détails"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:514
-#, fuzzy
-#| msgid "Header"
 msgid "Show Header"
-msgstr "En-tête"
+msgstr "Afficher l’en-tête"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:523
 msgid "Show Completion Icon"
-msgstr ""
+msgstr "Afficher l'icône de complétion"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:529
 msgid "Show Completion Status"
-msgstr ""
+msgstr "Afficher l'état d'achèvement"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:536
-#, fuzzy
-#| msgid "Counter Shadow"
 msgid "Details Container Shadow"
-msgstr "Contre-Ombre"
+msgstr "Détails Container Shadow"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:743
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:757
 #: inc/plugins/elementor/widgets/courses/templates/learndash-activity-template.php:122
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-activity-template.php:109
-#, fuzzy
-#| msgid "%s"
 msgid "%"
-msgstr "%s"
+msgstr "%"
 
 #: inc/plugins/elementor/widgets/bb-review.php:42
 #: inc/plugins/woocommerce-helper.php:182
@@ -10781,41 +10545,29 @@ msgstr "Avis"
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:164
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:35
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:35
-#, fuzzy
-#| msgid "Media"
 msgid "Show Media"
-msgstr "Média"
+msgstr "Afficher l’image"
 
 #: inc/plugins/elementor/widgets/bb-review.php:120
-#, fuzzy
-#| msgid "Sorting"
 msgid "Show Rating"
-msgstr "Tri"
+msgstr "Afficher l’évaluation"
 
 #: inc/plugins/elementor/widgets/bb-review.php:129
-#, fuzzy
-#| msgid "Custom Heading"
 msgid "Show Heading"
-msgstr "En-tête personnalisée"
+msgstr "Voir l'en-tête"
 
 #: inc/plugins/elementor/widgets/bb-review.php:147
 #: inc/plugins/elementor/widgets/members/bb-members.php:222
-#, fuzzy
-#| msgid "Show more"
 msgid "Show Name"
-msgstr "Voir plus"
+msgstr "Afficher le nom"
 
 #: inc/plugins/elementor/widgets/bb-review.php:156
-#, fuzzy
-#| msgid "Show Instructors Filter"
 msgid "Show Author Title"
-msgstr "Afficher le filtre des professeurs"
+msgstr "Afficher le titre de l'auteur"
 
 #: inc/plugins/elementor/widgets/bb-review.php:165
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Date"
-msgstr "Afficher les détails"
+msgstr "Afficher la date"
 
 #: inc/plugins/elementor/widgets/bb-review.php:218
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:178
@@ -10825,59 +10577,47 @@ msgstr "Source"
 
 #: inc/plugins/elementor/widgets/bb-review.php:222
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:182
-#, fuzzy
-#| msgid "YouTube Play"
 msgid "YouTube"
-msgstr "Lecture YouTube"
+msgstr "YouTube"
 
 #: inc/plugins/elementor/widgets/bb-review.php:223
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:183
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: inc/plugins/elementor/widgets/bb-review.php:243
 #: inc/plugins/elementor/widgets/bb-review.php:265
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:203
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:225
 msgid "Enter your URL"
-msgstr ""
+msgstr "Saisir votre URL"
 
 #: inc/plugins/elementor/widgets/bb-review.php:280
-#, fuzzy
-#| msgid "Slides Options"
 msgid "Video Options"
-msgstr "Options de diapositives"
+msgstr "Options vidéo"
 
 #: inc/plugins/elementor/widgets/bb-review.php:290
-#, fuzzy
-#| msgid "Airplay"
 msgid "Autoplay"
-msgstr "Diffusion"
+msgstr "Lecture automatique"
 
 #: inc/plugins/elementor/widgets/bb-review.php:314
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:260
-#, fuzzy
-#| msgid "Form Controls"
 msgid "Player Controls"
-msgstr "Contrôles de formulaire"
+msgstr "Contrôles de lecture"
 
 #: inc/plugins/elementor/widgets/bb-review.php:328
 msgid "Modest Branding"
-msgstr ""
+msgstr "Image de marque modeste"
 
 #: inc/plugins/elementor/widgets/bb-review.php:340
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:334
-#, fuzzy
-#| msgid "Font Color"
 msgid "Controls Color"
-msgstr "Couleur de la police"
+msgstr "Couleur des contrôles"
 
 #: inc/plugins/elementor/widgets/bb-review.php:353
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:275
-#, fuzzy
-#| msgid "Privacy"
 msgid "Privacy Mode"
-msgstr "Confidentialité"
+msgstr "Mode privé"
 
 #: inc/plugins/elementor/widgets/bb-review.php:355
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:277
@@ -10885,95 +10625,76 @@ msgid ""
 "When you turn on privacy mode, YouTube won't store information about "
 "visitors on your website unless they play the video."
 msgstr ""
+"Lorsque vous activez le mode confidentialité, YouTube ne stocke pas les "
+"informations relatives aux visiteurs de votre site Web à moins qu'ils ne "
+"jouent la vidéo."
 
 #: inc/plugins/elementor/widgets/bb-review.php:366
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:289
-#, fuzzy
-#| msgid "Site Title"
 msgid "Intro Title"
-msgstr "Titre du site"
+msgstr "Titre d'intro"
 
 #: inc/plugins/elementor/widgets/bb-review.php:380
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:304
-#, fuzzy
-#| msgid "Tablet: Portrait"
 msgid "Intro Portrait"
-msgstr "Tablette: Portrait"
+msgstr "Portrait d'Intro"
 
 #: inc/plugins/elementor/widgets/bb-review.php:394
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:319
-#, fuzzy
-#| msgid "Inbox: Outline"
 msgid "Intro Byline"
-msgstr "Boîte de réception: Aperçu"
+msgstr "Texte d'introduction"
 
 #: inc/plugins/elementor/widgets/bb-review.php:408
-#, fuzzy
-#| msgid "Button Text"
 msgid "Play Button Text"
-msgstr "Texte du bouton"
+msgstr "Texte du bouton de lecture"
 
 #: inc/plugins/elementor/widgets/bb-review.php:414
 msgid "Enter play button text"
-msgstr ""
+msgstr "Entrer le texte du bouton de lecture"
 
 #: inc/plugins/elementor/widgets/bb-review.php:423
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:746
-#, fuzzy
-#| msgid "Palette Colors"
 msgid "Play Button Color"
-msgstr "Couleurs de Palette"
+msgstr "Couleur du Bouton JOUER"
 
 #: inc/plugins/elementor/widgets/bb-review.php:436
 #: inc/plugins/elementor/widgets/bb-review.php:459
 #: inc/plugins/elementor/widgets/bb-review.php:695
-#, fuzzy
-#| msgid "Rating: Half"
 msgid "Rating"
-msgstr "Note: la moitié"
+msgstr "Évaluation"
 
 #: inc/plugins/elementor/widgets/bb-review.php:446
-#, fuzzy
-#| msgid "Stethoscope"
 msgid "Scope"
-msgstr "Stéthoscope"
+msgstr "Portée"
 
 #: inc/plugins/elementor/widgets/bb-review.php:474
-#, fuzzy
-#| msgid "Header Style"
 msgid "Star Style"
-msgstr "Style d’en-tête"
+msgstr "Le style des étoiles"
 
 #: inc/plugins/elementor/widgets/bb-review.php:482
 #: inc/plugins/elementor/widgets/bb-tabs.php:392
-#, fuzzy
-#| msgid "Inbox: Outline"
 msgid "Outline"
-msgstr "Boîte de réception: Aperçu"
+msgstr "Contour"
 
 #: inc/plugins/elementor/widgets/bb-review.php:508
 msgid "Enter title text"
-msgstr ""
+msgstr "Saisissez un texte de titre"
 
 #: inc/plugins/elementor/widgets/bb-review.php:517
-#, fuzzy
-#| msgid "Reviews"
 msgid "Review"
 msgstr "Avis"
 
 #: inc/plugins/elementor/widgets/bb-review.php:523
-#, fuzzy
-#| msgid "Enter your custom copyright text."
 msgid "Enter your review text"
-msgstr "Entrez votre texte de droit d'auteur personnalisé."
+msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/bb-review.php:554
 msgid "Enter author name"
-msgstr ""
+msgstr "Entrez le nom de l'auteur"
 
 #: inc/plugins/elementor/widgets/bb-review.php:569
 msgid "Enter author title"
-msgstr ""
+msgstr "Entrez le titre de l'auteur"
 
 #: inc/plugins/elementor/widgets/bb-review.php:578
 #: lifterlms/myaccount/my-orders.php:27 lifterlms/myaccount/my-orders.php:40
@@ -10986,136 +10707,98 @@ msgstr "Date"
 #: inc/plugins/elementor/widgets/bb-review.php:604
 #: inc/plugins/elementor/widgets/bb-tabs.php:328
 #: inc/plugins/elementor/widgets/bb-tabs.php:847
-#, fuzzy
-#| msgid "Text Width"
 msgid "Media Width"
-msgstr "Largeur du texte"
+msgstr "Largeur des supports"
 
 #: inc/plugins/elementor/widgets/bb-review.php:617
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:516
-#, fuzzy
-#| msgid "Media"
 msgid "Media Size"
-msgstr "Média"
+msgstr "Taille des médias"
 
 #: inc/plugins/elementor/widgets/bb-review.php:640
-#, fuzzy
-#| msgid "Word Spacing"
 msgid "Media Spacing"
-msgstr "Espacement des mots"
+msgstr "Espacement des supports"
 
 #: inc/plugins/elementor/widgets/bb-review.php:717
-#, fuzzy
-#| msgid "Select Color"
 msgid "Star Color"
-msgstr "Sélectionner une couleur"
+msgstr "Couleur des étoiles"
 
 #: inc/plugins/elementor/widgets/bb-review.php:728
-#, fuzzy
-#| msgid "Link Color"
 msgid "Blank Color"
-msgstr "Couleur du lien"
+msgstr "Couleur blanche"
 
 #: inc/plugins/elementor/widgets/bb-review.php:757
-#, fuzzy
-#| msgid "Letter Spacing"
 msgid "Stars Spacing"
-msgstr "Espacement des lettres"
+msgstr "Espacement des étoiles"
 
 #: inc/plugins/elementor/widgets/bb-review.php:834
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Excerpt"
-msgstr "Menu Typographie"
+msgstr "Typographie Extrait"
 
 #: inc/plugins/elementor/widgets/bb-review.php:842
-#, fuzzy
-#| msgid "Text Color"
 msgid "Excerpt Color"
-msgstr "Couleur du texte"
+msgstr "Couleur de l’extrait"
 
 #: inc/plugins/elementor/widgets/bb-review.php:893
-#, fuzzy
-#| msgid "Display Name Color"
 msgid "Name Color"
-msgstr "Couleur d'affichage du Nom"
+msgstr "Couleur du nom"
 
 #: inc/plugins/elementor/widgets/bb-review.php:905
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Author Title"
-msgstr "Menu Typographie"
+msgstr "Typographie Auteur Titre"
 
 #: inc/plugins/elementor/widgets/bb-review.php:913
-#, fuzzy
-#| msgid "Site Title Color"
 msgid "Author Title Color"
-msgstr "Couleur du titre du site"
+msgstr "Couleur du titre de l'auteur"
 
 #: inc/plugins/elementor/widgets/bb-review.php:925
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Date"
-msgstr "Menu Typographie"
+msgstr "Date de typographie"
 
 #: inc/plugins/elementor/widgets/bb-review.php:933
-#, fuzzy
-#| msgid "Palette Colors"
 msgid "Date Color"
-msgstr "Couleurs de Palette"
+msgstr "Couleur de la date"
 
 #: inc/plugins/elementor/widgets/bb-review.php:971
-#, fuzzy
-#| msgid "Avatar Size"
 msgid "Avatar Spacing"
-msgstr "Taille de l'avatar"
+msgstr "Espacement des avatars"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:41
-#, fuzzy
-#| msgid "After Content"
 msgid "Tabbed Content"
-msgstr "Après le contenu"
+msgstr "Contenu par onglet"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:103
 #: inc/plugins/elementor/widgets/bb-tabs.php:379
 #: inc/plugins/elementor/widgets/bb-tabs.php:923
 msgid "Tabs"
-msgstr ""
+msgstr "Onglets"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:112
-#, fuzzy
-#| msgid "Table"
 msgid "Tab"
-msgstr "Tableau"
+msgstr "Onglet"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:141
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:134
-#, fuzzy
-#| msgid "Description Here"
 msgid "Type your description here"
-msgstr "Description Ici"
+msgstr "Saisir la description ici"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:176
-#, fuzzy
-#| msgid "WPML Text"
 msgid "Link Text"
-msgstr "Texte WPML"
+msgstr "Texte du lien"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:189
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:347
 msgid "Items"
-msgstr ""
+msgstr "Articles"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:194
 msgid "Tab #1"
-msgstr ""
+msgstr "Onglet N°1"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:195
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:352
-#, fuzzy
-#| msgid "Title"
 msgid "Title #1"
-msgstr "Titre"
+msgstr "Titre N° 1"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:196
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:353
@@ -11124,25 +10807,24 @@ msgid ""
 "Vestibulum dapibus nunc ac augue. Aenean tellus metus, bibendum sed, posuere "
 "ac, mattis non, nunc. Aenean imperdiet. Aenean imperdiet."
 msgstr ""
+"Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. "
+"Vestibulum dapibus nunc ac augue. Aenean tellus metus, bibendum sed, posuere "
+"ac, mattis non, nunc. Aenean imperdiet. Aenean imperdiet."
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:198
 #: inc/plugins/elementor/widgets/bb-tabs.php:205
 #: inc/plugins/elementor/widgets/bb-tabs.php:212
-#, fuzzy
-#| msgid "Learn More"
 msgid "Learn more"
 msgstr "En savoir plus"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:201
 msgid "Tab #2"
-msgstr ""
+msgstr "Onglet N°2"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:202
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:356
-#, fuzzy
-#| msgid "Title"
 msgid "Title #2"
-msgstr "Titre"
+msgstr "Titre #2"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:203
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:357
@@ -11153,17 +10835,20 @@ msgid ""
 "aliquam ultrices mauris. Morbi nec metus. Donec mi odio, faucibus at, "
 "scelerisque quis, convallis in, nisi."
 msgstr ""
+"Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, chez "
+"malesuada velit leo quis pede. Proin viverra, ligula sit amet ultrices "
+"semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Sed "
+"aliquam ultrices mauris. Morbi nec metus. Donec mi odio, faucibus à, "
+"scelerisque quis, convallis in, nisi."
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:208
 msgid "Tab #3"
-msgstr ""
+msgstr "Onglet N°3"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:209
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:360
-#, fuzzy
-#| msgid "Title"
 msgid "Title #3"
-msgstr "Titre"
+msgstr "Titre N° 3"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:210
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:361
@@ -11173,115 +10858,87 @@ msgid ""
 "nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in "
 "dolor. Cras dapibus."
 msgstr ""
+"Morbi mattis ullamcorper velit. Sed hendrerit. Suspendisse enim turpis, "
+"dictum sed, iaculis a, condimentum nca, nisi. Vestibulum facilisis, purus "
+"nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in "
+"dolor. Cras dapibus."
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:235
-#, fuzzy
-#| msgid "Style"
 msgid "Style 1"
-msgstr "Style"
+msgstr "Style 1"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:236
-#, fuzzy
-#| msgid "Style"
 msgid "Style 2"
-msgstr "Style"
+msgstr "Style 2"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:257
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:413
-#, fuzzy
-#| msgid "Location Arrow"
 msgid "Show Navigation Arrows"
-msgstr "Position de la flèche"
+msgstr "Afficher les flèches de navigation"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:266
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:422
-#, fuzzy
-#| msgid "%s Navigation"
 msgid "Show Navigation Dots"
-msgstr "%s Navigation"
+msgstr "Montrer les points de navigation"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:284
 #: inc/plugins/elementor/widgets/bb-tabs.php:803
-#, fuzzy
-#| msgid "Position"
 msgid "Media Position"
-msgstr "Position"
+msgstr "Position des médias"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:305
 #: inc/plugins/elementor/widgets/bb-tabs.php:824
-#, fuzzy
-#| msgid "Media Controls"
 msgid "Media Ratio"
-msgstr "Commandes de médias"
+msgstr "Ratio médias"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:351
 #: inc/plugins/elementor/widgets/bb-tabs.php:895
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:604
-#, fuzzy
-#| msgid "Connection: Pending"
 msgid "Content Padding"
-msgstr "Connexion: En attente"
+msgstr "Marge(s) intérieure(s)"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:450
 #: inc/plugins/elementor/widgets/bb-tabs.php:1022
-#, fuzzy
-#| msgid "Border"
 msgid "Tabs Border"
-msgstr "Bordure"
+msgstr "Bordure des Onglets"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:481
-#, fuzzy
-#| msgid "Padding"
 msgid "Tabs Padding"
-msgstr "Marges intérieures"
+msgstr "Onglets padding"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:499
 #: inc/plugins/elementor/widgets/bb-tabs.php:1050
-#, fuzzy
-#| msgid "Spacing"
 msgid "Tabs Spacing"
-msgstr "Espacement"
+msgstr "Onglets espacement"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:711
-#, fuzzy
-#| msgid "Navigation"
 msgid "Navigation Color"
-msgstr "Navigation"
+msgstr "Couleur des liens de navigation"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:722
-#, fuzzy
-#| msgid "Notifications Icon Color"
 msgid "Navigation Accent Color"
-msgstr "Couleur icônes des notifications"
+msgstr "Couleur d'accent de navigation"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:734
 #: inc/plugins/elementor/widgets/bb-tabs.php:932
-#, fuzzy
-#| msgid "Background Position"
 msgid "Horizontal Position"
-msgstr "Position de l’arrière-plan"
+msgstr "Position horizontal"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:1084
-#, fuzzy
-#| msgid "Avatar Border Radius"
 msgid "Container Border Radius"
-msgstr "Rayon de la Bordure de l'avatar"
+msgstr "Arrondi de la bordure du conteneur"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:1102
 msgid "Subtitle"
 msgstr "Sous-titre"
 
 #: inc/plugins/elementor/widgets/bb-tabs.php:1297
-#, fuzzy
-#| msgid "Border Style"
 msgid "Bottom Border Size"
-msgstr "Style de bordure"
+msgstr "Taille de bordure inférieure"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:66
-#, fuzzy
-#| msgid "Comment: Activity"
 msgid "Course Activity"
-msgstr "Commentaire: Activité"
+msgstr "Activité du cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:134
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:123
@@ -11290,95 +10947,73 @@ msgid ""
 "UPDATE the template otherwise LMS widgets settings will be deleted. <br/"
 ">Please deactivate either of the LMS plugin and try again."
 msgstr ""
+"Avertissement: plusieurs plug-ins LMS actifs ont été détectés (%s)<br/> "
+"Veuillez ne pas METTRE À JOUR le modèle, sinon les paramètres des widgets "
+"LMS seront supprimés.<br/> Veuillez désactiver l'un des plugins LMS et "
+"réessayer."
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:143
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:132
 msgid "LMS"
-msgstr ""
+msgstr "LMS"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:153
-#, fuzzy
-#| msgid "Number of posts to show:"
 msgid "Number of courses"
-msgstr "Nombre d’articles à afficher:"
+msgstr "Nombre de formations"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:173
-#, fuzzy
-#| msgid "Show Forum Banner"
 msgid "Show Progress Bar"
-msgstr "Afficher la bannière du forum"
+msgstr "Afficher la barre de progression"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:185
-#, fuzzy
-#| msgid "Show Categories Filter"
 msgid "Show Course Title"
-msgstr "Montrer les filtres de catégories"
+msgstr "Titre de la formation"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:203
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Dots"
-msgstr "Afficher les détails"
+msgstr "Afficher les points"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:230
-#, fuzzy
-#| msgid "Continue"
 msgid "Continue Course"
-msgstr "Continuer"
+msgstr "Continuer la formation"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:242
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1119
-#, fuzzy
-#| msgid "My Courses"
 msgid "My Courses Button"
-msgstr "Mes cours"
+msgstr "Bouton Mes cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:257
-#, fuzzy
-#| msgid "My Courses"
 msgid "View My Courses"
-msgstr "Mes cours"
+msgstr "Voir mes cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:269
-#, fuzzy
-#| msgid "My Courses"
 msgid "My Courses Custom Link"
-msgstr "Mes cours"
+msgstr "Lien personnalisé Mes cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:278
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:332
-#, fuzzy
-#| msgid "Custom Logo"
 msgid "Custom Link"
-msgstr "Logo personnalisé"
+msgstr "Lien personnalisé"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:294
 msgid "No Courses Paragraph Text"
-msgstr ""
+msgstr "Aucun texte de paragraphe de cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:299
-#, fuzzy
-#| msgid "You do not have any courses yet."
 msgid "You don't have any ongoing courses."
-msgstr "Vous n’avez pas encore de cours."
+msgstr "Vous n'avez pas de cours en cours."
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:300
-#, fuzzy
-#| msgid "Enter your custom copyright text."
 msgid "Enter no courses paragraph text"
-msgstr "Entrez votre texte de droit d'auteur personnalisé."
+msgstr "Entrez votre texte de droit d'auteur personnalisé"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:309
-#, fuzzy
-#| msgid "Button Text"
 msgid "No Courses Button Text"
-msgstr "Texte du bouton"
+msgstr "Texte du bouton Aucun cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:314
-#, fuzzy
-#| msgid "All Courses"
 msgid "Explore Courses"
-msgstr "Tous les cours"
+msgstr "Explorer les cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:315
 msgid "Enter no courses button text"
@@ -11389,148 +11024,106 @@ msgid "Explore Courses Custom Link"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:433
-#, fuzzy
-#| msgid "Media Player"
 msgid "Media Overlay"
-msgstr "Lecteur multimédia"
+msgstr "Superposition des médias"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:443
-#, fuzzy
-#| msgid "Overlay Opacity"
 msgid "Overlay"
-msgstr "Opacité de la couleur de superposition"
+msgstr "Superposition"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:452
-#, fuzzy
-#| msgid "Course Date"
 msgid "Course Title"
-msgstr "Date du cours"
+msgstr "Titre de la formation"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:779
-#, fuzzy
-#| msgid "Course Tracks"
 msgid "Course Overlap"
-msgstr "Pistes de Cours"
+msgstr "Chevauchement des cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:780
 msgid "Show courses/lessons overlapped."
-msgstr ""
+msgstr "Afficher les cours / leçons se chevauchent."
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:923
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:897
 msgid "Dots"
-msgstr ""
+msgstr "Points"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:936
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1075
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:165
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:164
-#, fuzzy
-#| msgid "Select Color"
 msgid "Active Color"
-msgstr "Sélectionner une couleur"
+msgstr "Couleur active"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:951
-#, fuzzy
-#| msgid "Font Color"
 msgid "Inactive Color"
-msgstr "Couleur de la police"
+msgstr "Inactive Color"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1024
-#, fuzzy
-#| msgid "My Progress"
 msgid "Progress Bar"
-msgstr "Ma progression"
+msgstr "Barre de progression"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1057
-#, fuzzy
-#| msgid "My Progress"
 msgid "Show Progress Value"
-msgstr "Ma progression"
+msgstr "Afficher la valeur de progression"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1097
-#, fuzzy
-#| msgid "Phone Volume Control"
 msgid "Progress Value Color"
-msgstr "Contrôle du volume du téléphone"
+msgstr "Couleur de la valeur de progression"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:65
-#, fuzzy
-#| msgid "Course Author"
 msgid "Course Grid"
-msgstr "Auteur du cours"
+msgstr "Add-on grille de cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:146
-#, fuzzy
-#| msgid "Glass"
 msgid "Classic"
-msgstr "Verre"
+msgstr "Classique"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:147
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:520
-#, fuzzy
-#| msgid "Hover"
 msgid "Cover"
-msgstr "Survol"
+msgstr "Couverture"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:173
-#, fuzzy
-#| msgid "Posts Page"
 msgid "Posts Per Page"
-msgstr "Page des articles"
+msgstr "Articles par page"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:182
 msgid "Show Featured Row"
-msgstr ""
+msgstr "Afficher la ligne en vedette"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:203
-#, fuzzy
-#| msgid "Search Courses..."
 msgid "Search Courses"
-msgstr "Rechercher des Cours ..."
+msgstr "Rechercher un cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:212
-#, fuzzy
-#| msgid "%s Navigation"
 msgid "Courses Navigation"
-msgstr "%s Navigation"
+msgstr "Navigation des cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:221
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:689
-#, fuzzy
-#| msgid "Navigation"
 msgid "Pagination"
-msgstr "Navigation"
+msgstr "Pagination"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:230
-#, fuzzy
-#| msgid "Filter"
 msgid "Filters"
-msgstr "Filtre"
+msgstr "Filtres"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:239
-#, fuzzy
-#| msgid "Order number:"
 msgid "Order by Filter"
-msgstr "Numéro de commande:"
+msgstr "Réordonner par filtre"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:252
-#, fuzzy
-#| msgid "Show Categories Filter"
 msgid "Category Filter"
-msgstr "Montrer les filtres de catégories"
+msgstr "Filtrer par catégorie"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:269
-#, fuzzy
-#| msgid "Show Instructors Filter"
 msgid "Instructors Filter"
 msgstr "Afficher le filtre des professeurs"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:281
-#, fuzzy
-#| msgid "Filter"
 msgid "Grid Filter"
-msgstr "Filtre"
+msgstr "Filtre de grille"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:439
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:930
@@ -11546,207 +11139,144 @@ msgstr "Actif"
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:457
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:499
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:530
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Counter Background"
-msgstr "Couleur de fond de compteur"
+msgstr "Arrière-plan du compteur"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:572
-#, fuzzy
-#| msgid "Letter Spacing"
 msgid "Counter Spacing"
-msgstr "Espacement des lettres"
+msgstr "Espacement des compteurs"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:725
-#, fuzzy
-#| msgid "Location Arrow"
 msgid "Pagination Arrows"
-msgstr "Position de la flèche"
+msgstr "Flèches de pagination"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:766
-#, fuzzy
-#| msgid "Space Between"
 msgid "Space between"
 msgstr "Espace entre"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:789
-#, fuzzy
-#| msgid "Members"
 msgid "Page Numbers"
-msgstr "Membres"
+msgstr "Numéros de pages"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:866
-#, fuzzy
-#| msgid "Current password"
 msgid "Current Page Color"
-msgstr "Mot de passe actuel"
+msgstr "Couleur de la page actuelle"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:878
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Current Page Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Couleur d’arrière-plan de page actuelle"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:912
-#, fuzzy
-#| msgid "Arrows"
 msgid "Page Arrows"
-msgstr "Flèches"
+msgstr "Flèches de page"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:44
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:44
-#, fuzzy
-#| msgid "Custom Heading Position"
 msgid "Content Position"
-msgstr "Personnaliser la position de l'en-tête"
+msgstr "Position du contenu"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:68
-#, fuzzy
-#| msgid "Position"
 msgid "Avatar Position"
-msgstr "Position"
+msgstr "Position de l'avatar"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:120
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:119
-#, fuzzy
-#| msgid "Post Status"
 msgid "Show Status"
-msgstr "Statut de l’article"
+msgstr "Afficher l'état de l'annonce"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:133
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:132
-#, fuzzy
-#| msgid "My Progress"
 msgid "Progress"
-msgstr "Ma progression"
+msgstr "Progression"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:142
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:141
-#, fuzzy
-#| msgid "My Progress"
 msgid "Show Progress"
-msgstr "Ma progression"
+msgstr "Afficher la progression"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:285
-#, fuzzy
-#| msgid "Author URL"
 msgid "Author"
-msgstr "URL de l'auteur"
+msgstr "Auteur"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:294
-#, fuzzy
-#| msgid "Show more"
 msgid "Show Author"
-msgstr "Voir plus"
+msgstr "Afficher l’auteur"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:399
-#, fuzzy
-#| msgctxt "ui"
-#| msgid "Price:"
 msgid "Price"
-msgstr "Prix:"
+msgstr "Prix"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:411
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:293
-#, fuzzy
-#| msgid "Show more"
 msgid "Show Price"
-msgstr "Voir plus"
+msgstr "Afficher le prix"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:461
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:448
-#, fuzzy
-#| msgid "Font Size"
 msgid "Box Size"
-msgstr "Taille de la police"
+msgstr "Taille de la boîte"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:523
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:510
-#, fuzzy
-#| msgid "Body Background"
 msgid "Media Background"
-msgstr "Arrière plan du corps"
+msgstr "Arrière-plan des médias"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:532
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:519
-#, fuzzy
-#| msgid "Footer Background Color"
 msgid "Overlay Background Color"
-msgstr "Couleur d’arrière-plan du pied de page"
+msgstr "Définir la couleur de recouvrement de l'arrière plan"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:68
-#, fuzzy
-#| msgid "Footer Description"
 msgid "Footer Position"
-msgstr "Description du pied de page"
+msgstr "Footer Position"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:302
-#, fuzzy
-#| msgid "Border Color"
 msgid "Price Color"
-msgstr "Couleur de la bordure"
+msgstr "Couleur du prix"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:316
 msgid "Free Label Color"
-msgstr ""
+msgstr "Couleur de l’étiquette gratuite"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:331
-#, fuzzy
-#| msgid "Typography"
 msgid "Price Typography"
-msgstr "Typographie"
+msgstr "Typographie du prix"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:342
-#, fuzzy
-#| msgid "Enrolled on"
 msgid "Show Enroll Button"
-msgstr "Inscrits sur"
+msgstr "Inscrites sur"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:351
-#, fuzzy
-#| msgid "Enrolled on"
 msgid "Enroll Button Color"
-msgstr "Inscrits sur"
+msgstr "Inscrites sur"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:366
-#, fuzzy
-#| msgid "Custom Typography"
 msgid "Enroll Button Typography"
-msgstr "Typographie personnalisée"
+msgstr "Inscription de la typographie des boutons"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:377
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Timestamps"
-msgstr "Afficher les détails"
+msgstr "Afficher Timestamps"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:386
-#, fuzzy
-#| msgid "Messages Icon Color"
 msgid "Meta Tags Color"
-msgstr "Couleur icônes des messages"
+msgstr "Couleur des balises Meta"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:401
-#, fuzzy
-#| msgid "Typography"
 msgid "Meta Tags Typography"
-msgstr "Typographie"
+msgstr "Typographie des balises Meta"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:412
-#, fuzzy
-#| msgid "Text Color"
 msgid "Time Color"
-msgstr "Couleur du texte"
+msgstr "Couleur de l’horaire"
 
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:427
-#, fuzzy
-#| msgid "Typography"
 msgid "Time Typography"
-msgstr "Typographie"
+msgstr "Typographie du Temps"
 
 #: inc/plugins/elementor/widgets/courses/templates/learndash-activity-template.php:116
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-activity-template.php:103
-#: learndash/ld30/learndash-sidebar.php:212
+#: learndash/ld30/learndash-sidebar.php:215
 msgid "% Completed"
 msgstr "% Complété"
 
@@ -11766,208 +11296,160 @@ msgid "My Courses"
 msgstr "Mes cours"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:373
-#, fuzzy
-#| msgid "Slides Options"
 msgid "Slider Options"
-msgstr "Options de diapositives"
+msgstr "Options du diaporama"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:389
-#, fuzzy
-#| msgid "Site Title"
 msgid "Show Title"
-msgstr "Titre du site"
+msgstr "Afficher le titre"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:431
 msgid "Infinite Loop"
-msgstr ""
+msgstr "Boucle infinie"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:442
 msgid "Slider"
 msgstr "Slider"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:450
-#, fuzzy
-#| msgid "Header Height"
 msgid "Slider Height"
-msgstr "Hauteur de l’en tête"
+msgstr "Hauteur du diaporama"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:473
-#, fuzzy
-#| msgid "Slides Options"
 msgid "Slides Spacing"
-msgstr "Options de diapositives"
+msgstr "Espacement des diapositives"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:496
-#, fuzzy
-#| msgid "Padding"
 msgid "Center Padding"
-msgstr "Marges intérieures"
+msgstr "Marges internes centré"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:521
-#, fuzzy
-#| msgid "Continue"
 msgid "Contain"
-msgstr "Continuer"
+msgstr "Contient"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:522
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:700
-#, fuzzy
-#| msgid "Button Set"
 msgid "Play Button Size"
-msgstr "Ensemble de boutons"
+msgstr "Taille du bouton Play"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:723
 msgid "Play Arrow Size"
-msgstr ""
+msgstr "Taille Flèche"
 
 #: inc/plugins/elementor/widgets/gallery/bb-gallery.php:757
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Play Button Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Couleur d’arrière-plan du bouton"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:117
-#, fuzzy
-#| msgid "Default Fonts"
 msgid "Default Groups Order"
-msgstr "Polices par défaut"
+msgstr "Ordre des groupes par défaut"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:121
 #: inc/plugins/elementor/widgets/members/bb-members.php:117
 msgid "Newest"
-msgstr ""
+msgstr "Plus récent"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:122
 #: inc/plugins/elementor/widgets/members/bb-members.php:118
 msgid "Popular"
-msgstr ""
+msgstr "Populaire"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:131
-#, fuzzy
-#| msgid "Groups"
 msgid "Group Types"
-msgstr "Groupes"
+msgstr "Types de groupe"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:141
-#, fuzzy
-#| msgid "Groups %s"
 msgid "Groups Count"
-msgstr "Groupes %s"
+msgstr "Nombre de groupes"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:159
-#, fuzzy
-#| msgid "Social Groups"
 msgid "Show All Groups Link"
-msgstr "Groupes sociaux"
+msgstr "Afficher le lien de tous les groupes"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:168
 #: inc/plugins/elementor/widgets/members/bb-members.php:204
-#, fuzzy
-#| msgid "File Types"
 msgid "Show Filter Types"
-msgstr "Types de Fichiers"
+msgstr "Afficher les types de filtres"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:219
 msgid "Groups Link Text"
-msgstr ""
+msgstr "Groupes Lien Texte"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:224
-#, fuzzy
-#| msgid "Groups"
 msgid "All Groups"
-msgstr "Groupes"
+msgstr "Tous les groupes"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:225
-#, fuzzy
-#| msgid "Enter your license key below"
 msgid "Enter groups link text"
-msgstr "Entrez votre clé de licence ci-dessous"
+msgstr "Entrez le texte du lien des groupes"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:286
 msgid "All Groups Link"
-msgstr ""
+msgstr "Lien de tous les groupes"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:295
-#, fuzzy
-#| msgid "Link Color"
 msgid "All Groupss Link Color"
-msgstr "Couleur du lien"
+msgstr "Tous les Groupes : Couleur des liens"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:444
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Meta Data"
-msgstr "Menu Typographie"
+msgstr "Typographie Meta Data"
 
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:463
 #: inc/plugins/elementor/widgets/members/bb-members.php:364
-#, fuzzy
-#| msgid "File Types"
 msgid "Filter Types"
-msgstr "Types de Fichiers"
+msgstr "Types de filtres"
 
 #: inc/plugins/elementor/widgets/groups/templates/bb-groups-template.php:34
 #: inc/plugins/elementor/widgets/members/templates/bb-members-template.php:37
-#, fuzzy
-#| msgid "Active"
 msgid "active"
-msgstr "Actif"
+msgstr "actif"
 
 #: inc/plugins/elementor/widgets/groups/templates/bb-groups-template.php:35
 #: inc/plugins/elementor/widgets/members/templates/bb-members-template.php:38
 msgid "popular"
-msgstr ""
+msgstr "populaire"
 
 #: inc/plugins/elementor/widgets/groups/templates/bb-groups-template.php:36
 #: inc/plugins/elementor/widgets/members/templates/bb-members-template.php:39
 msgid "newest"
-msgstr ""
+msgstr "plus récent"
 
 #: inc/plugins/elementor/widgets/groups/templates/bb-groups-template.php:108
 msgid "No groups matched the current filter."
-msgstr ""
+msgstr "Aucun projet ne correspond au filtre actuel."
 
 #: inc/plugins/elementor/widgets/groups/templates/bb-groups-template.php:110
-#, fuzzy
-#| msgid "Create Group"
 msgid "Create a group"
-msgstr "Créer un groupe"
+msgstr "Créer un groupe d'alignement"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:137
 msgid "Show Logo Image"
-msgstr ""
+msgstr "Afficher l’image du logo"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:145
-#, fuzzy
-#| msgid "Navigation"
 msgid "Show Navigation"
-msgstr "Navigation"
+msgstr "Afficher la navigation du carrousel"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:172
-#, fuzzy
-#| msgid "Required Update not Available"
 msgid "There are no menus available."
-msgstr "Mise à jour requise non disponible"
+msgstr "Il n’y a pas de menus disponibles."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:172
 msgid "Start by creating one <a href=\"%s\" target=\"_blank\">here</a>."
-msgstr ""
+msgstr "Commencez par en créer un <a href=\"%s\" target=\"_blank\">ici</a>."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:185
-#, fuzzy
-#| msgid "Header Bar"
 msgid "Show Header Bar"
-msgstr "Barre d'en-tête"
+msgstr "Afficher la barre d'en-tête"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:194
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:220
-#, fuzzy
-#| msgid "Position"
 msgid "Logo Position"
-msgstr "Position"
+msgstr "Position du logo"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:349
 #: learndash/ld30/learndash-sidebar.php:85 template-parts/header-aside.php:77
@@ -11978,16 +11460,17 @@ msgstr "Mode sombre"
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:350
 msgid "Show \"dark mode\" toggle icon on a single lesson/topic page."
 msgstr ""
+"Afficher l'icône de bascule «mode sombre» sur une seule page de leçon / "
+"sujet."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:365
-#, fuzzy
-#| msgid "Sidebar"
 msgid "Sidebar Toggle"
-msgstr "Barre latérale"
+msgstr "Basculement de la barre latérale"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:366
 msgid "Show \"sidebar\" toggle icon on a single lesson/topic page."
 msgstr ""
+"Afficher l'icône de bascule \"sidebar\" sur une seule page de cours/sujet."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:393
 msgid "Replace default search icon with one of your choice."
@@ -12009,41 +11492,31 @@ msgid "Replace default cart icon with one of your choice."
 msgstr "Remplacez l'icône du panier par défaut par une icône de votre choix."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:451
-#, fuzzy
-#| msgid "Dark Mode"
 msgid "Dark Mode Icon"
-msgstr "Mode sombre"
+msgstr "Icône de mode nuit"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:452
-#, fuzzy
-#| msgid "Replace default cart icon with one of your choice."
 msgid "Replace default dark mode icon with one of your choice."
-msgstr "Remplacez l'icône du panier par défaut par une icône de votre choix."
+msgstr ""
+"Remplacez l'icône du mode nuit par défaut par une icône de votre choix."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:464
-#, fuzzy
-#| msgid "Page Sidebar"
 msgid "Toggle Sidebar Icon"
-msgstr "Barre latérale des pages"
+msgstr "Basculer l'icône de la barre latérale"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:465
-#, fuzzy
-#| msgid "Replace default search icon with one of your choice."
 msgid "Replace default toggle sidebar icon with one of your choice."
 msgstr ""
-"Remplacez l'icône de recherche par défaut par une icône de votre choix."
+"Remplacez l'icône par défaut de la barre latérale par une icône de votre "
+"choix."
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:568
-#, fuzzy
-#| msgid "Menu"
 msgid "Sub Menu"
-msgstr "Menu"
+msgstr "Sous-menu"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:654
-#, fuzzy
-#| msgid "Header Bar"
 msgid "Header Bar Layout"
-msgstr "Barre d'en-tête"
+msgstr "Disposition de la barre d’en-tête"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:772
 msgid "Typography Tooltips"
@@ -12074,16 +11547,12 @@ msgid "All Icons"
 msgstr "Toutes les icônes"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:937
-#, fuzzy
-#| msgid "Cart Icon"
 msgid "Dark Icon"
-msgstr "Icône du panier"
+msgstr "Icône foncée"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:949
-#, fuzzy
-#| msgid "Toggle Down"
 msgid "Sidebar Toggle Icon"
-msgstr "Basculer vers le bas"
+msgstr "Icône de bascule de la barre latérale"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:975
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1157
@@ -12107,71 +11576,48 @@ msgid "Dropdown Background Color"
 msgstr "Couleur d’arrière-plan du menu déroulant"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1338
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Sign In"
-msgstr "Menu Typographie"
+msgstr "Typographie de connexion"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1392
-#, fuzzy
-#| msgid "Sign up"
 msgid "Sign Up"
 msgstr "S'inscrire"
 
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1402
-#, fuzzy
-#| msgid "Typography Menu"
 msgid "Typography Sign Up"
-msgstr "Menu Typographie"
+msgstr "Typographie Inscrivez-vous"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:113
-#, fuzzy
-#| msgid "Default Cover Image"
 msgid "Default Members Order"
-msgstr "Image de couverture par défaut"
+msgstr "Ordre des membres par défaut"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:127
-#, fuzzy
-#| msgid "Profile: Type"
 msgid "Profile Types"
-msgstr "Profil: Type"
+msgstr "Types de profils"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:137
-#, fuzzy
-#| msgid "Members"
 msgid "Members Count"
-msgstr "Membres"
+msgstr "Nombre de membres"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:195
-#, fuzzy
-#| msgid "All Members"
 msgid "Show All Members Link"
-msgstr "Tous les membres"
+msgstr "Afficher le lien de tous les membres"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:231
-#, fuzzy
-#| msgid "Show Details"
 msgid "Show Online Status"
-msgstr "Afficher les détails"
+msgstr "Afficher le statut en ligne"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:240
-#, fuzzy
-#| msgctxt "Last activity date in infobar"
-#| msgid "Last activity on %s"
 msgid "Show Last Activity Tooltips"
-msgstr "Dernière activité le: %s"
+msgstr "Afficher les info-bulles de la dernière activité"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:241
-#, fuzzy
-#| msgid "Title that will be shown on forum index banner area."
 msgid "Tooltips will be shown on member avatar."
-msgstr "Titre qui sera affiché sur la bannière d'index du forum."
+msgstr "Les info-bulles seront affichées sur l'avatar du membre."
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:277
-#, fuzzy
-#| msgid "Member Links"
 msgid "Member Link Text"
-msgstr "Liens des membres"
+msgstr "Libellé du lien"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:282
 #: lifterlms/profile/members.php:53
@@ -12180,44 +11626,34 @@ msgstr "Tous les membres"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:283
 msgid "Enter member link text"
-msgstr ""
+msgstr "Entrez le texte du lien du membre"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:344
-#, fuzzy
-#| msgid "All Members"
 msgid "All Members Link"
-msgstr "Tous les membres"
+msgstr "Tous les membres lien"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:353
-#, fuzzy
-#| msgid "All Members"
 msgid "All Members Link Color"
-msgstr "Tous les membres"
+msgstr "Couleur du lien de tous les membres"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:496
-#, fuzzy
-#| msgid "Status"
 msgid "Online Status"
-msgstr "Statut"
+msgstr "Statut en ligne"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:541
 msgid "Online Status Border"
-msgstr ""
+msgstr "Bordure d’état en ligne"
 
 #: inc/plugins/elementor/widgets/members/bb-members.php:552
-#, fuzzy
-#| msgid "Avatar Border Radius"
 msgid "Online Status Border Radius"
-msgstr "Rayon de la Bordure de l'avatar"
+msgstr "Rayon de la bordure d’état en ligne"
 
 #: inc/plugins/elementor/widgets/members/templates/bb-members-template.php:108
-#, fuzzy
-#| msgid "Sorry, no memberships were found."
 msgid "Sorry, no members were found."
-msgstr "Désolé, aucune adhésion n’a été trouvée."
+msgstr "Désolé, aucun membre trouvé."
 
 #: inc/plugins/learndash-compat.php:31
-#: learndash/ld30/focus/comments_list.php:42
+#: learndash/ld30/focus/comments_list.php:79
 msgid "Your response is awaiting for approval."
 msgstr "Votre réponse est en attente d’approbation."
 
@@ -12287,14 +11723,14 @@ msgid "Continue"
 msgstr "Continuer"
 
 #: inc/plugins/lifterlms-helper.php:1510
-#: learndash/ld30/learndash-sidebar.php:208
-#: learndash/ld30/learndash-sidebar.php:268
-#: learndash/ld30/learndash-sidebar.php:299
-#: learndash/ld30/learndash-sidebar.php:348
-#: learndash/ld30/learndash-sidebar.php:402
-#: learndash/ld30/shortcodes/course_list_template.php:127
-#: learndash/ld30/shortcodes/course_list_template.php:134
-#: learndash/ld30/shortcodes/profile.php:85
+#: learndash/ld30/learndash-sidebar.php:211
+#: learndash/ld30/learndash-sidebar.php:271
+#: learndash/ld30/learndash-sidebar.php:302
+#: learndash/ld30/learndash-sidebar.php:351
+#: learndash/ld30/learndash-sidebar.php:405
+#: learndash/ld30/shortcodes/course_list_template.php:131
+#: learndash/ld30/shortcodes/course_list_template.php:138
+#: learndash/ld30/shortcodes/profile.php:106
 #: learndash/ld30/template-single-course-sidebar.php:146
 msgid "Completed"
 msgstr "Terminé"
@@ -12453,7 +11889,7 @@ msgstr "Adresse email"
 msgid "Password"
 msgstr "Mot de passe"
 
-#: inc/theme/login.php:167 learndash/ld30/modules/login-modal.php:242
+#: inc/theme/login.php:167 learndash/ld30/modules/login-modal.php:385
 #: paid-memberships-pro/pages/account.php:106
 #: woocommerce/myaccount/form-login.php:92
 msgid "Username"
@@ -12548,8 +11984,8 @@ msgid "Widgets in this area will be shown on Pages."
 msgstr "Les widgets dans cette zone seront affichés sur les pages."
 
 #: inc/theme/sidebars.php:37
-msgid "Activity &rarr; Directory Left"
-msgstr "Activité &rarr ; Répertoire Gauche"
+msgid "Activity → Directory Left"
+msgstr "Activité → Répertoire gauche"
 
 #: inc/theme/sidebars.php:39 inc/theme/sidebars.php:50
 msgid "Widgets in this area will be shown on the News Feed page."
@@ -12557,12 +11993,12 @@ msgstr ""
 "Les widgets dans cette zone seront affichés sur la page Fil d'actualités."
 
 #: inc/theme/sidebars.php:48
-msgid "Activity &rarr; Directory Right"
-msgstr "Activité &rarr ; Répertoire Droite"
+msgid "Activity → Directory Right"
+msgstr "Activité → Répertoire droit"
 
 #: inc/theme/sidebars.php:60
-msgid "Members &rarr; Directory"
-msgstr "Membres &rarr ; Répertoire"
+msgid "Members → Directory"
+msgstr "Membres → Répertoire"
 
 #: inc/theme/sidebars.php:62
 msgid "Widgets in this area will be shown on the Members directory."
@@ -12570,8 +12006,8 @@ msgstr ""
 "Les widgets dans cette zone seront affichés dans le répertoire des membres."
 
 #: inc/theme/sidebars.php:71
-msgid "Members &rarr; Single Profile"
-msgstr "Membres &rarr; Profil unique'"
+msgid "Members → Single Profile"
+msgstr "Membres → Profil individuel"
 
 #: inc/theme/sidebars.php:73
 msgid "Widgets in this area will be shown on individual member profiles."
@@ -12580,8 +12016,8 @@ msgstr ""
 "membres."
 
 #: inc/theme/sidebars.php:82
-msgid "Members &rarr; User Activity"
-msgstr "Membres &rarr; Activité utilisateur"
+msgid "Members → User Activity"
+msgstr "Membres → Journal"
 
 #: inc/theme/sidebars.php:84
 msgid "Widgets in this area will be shown on the user activity page."
@@ -12590,8 +12026,8 @@ msgstr ""
 "l’utilisateur."
 
 #: inc/theme/sidebars.php:95
-msgid "Groups &rarr; Directory"
-msgstr "Groupes &rarr; Répertoire"
+msgid "Groups → Directory"
+msgstr "Répertoire des Groupes"
 
 #: inc/theme/sidebars.php:97
 msgid "Widgets in this area will be shown on the Groups directory."
@@ -12599,8 +12035,8 @@ msgstr ""
 "Les Widgets dans cette zone seront affichés sur le répertoire des Groupes."
 
 #: inc/theme/sidebars.php:106
-msgid "Groups &rarr; Single Group"
-msgstr "Groupes &rarr ; Groupe simple"
+msgid "Groups → Single Group"
+msgstr "Groupes → Groupe individuel"
 
 #: inc/theme/sidebars.php:108
 msgid "Widgets in this area will be shown on individual groups."
@@ -12608,16 +12044,16 @@ msgstr ""
 "Les widgets dans cette zone seront affichés sur des groupes individuels."
 
 #: inc/theme/sidebars.php:117
-msgid "Groups &rarr; Group Activity"
-msgstr "Groupes &rarr; Activité de groupe"
+msgid "Groups → Group Activity"
+msgstr "Groupes → Activité de groupe"
 
 #: inc/theme/sidebars.php:119
 msgid "Widgets in this area will be shown on group activity."
 msgstr "Les widgets dans cette zone seront affichés sur l’activité du groupe."
 
 #: inc/theme/sidebars.php:131
-msgid "Forums &rarr; Directory & Single"
-msgstr "Forums &rarr ; Répertoire & Single"
+msgid "Forums → Directory & Single"
+msgstr "Forums → Répertoire & Individuel"
 
 #: inc/theme/sidebars.php:133
 msgid ""
@@ -12628,61 +12064,47 @@ msgstr ""
 "discussions et les pages simples."
 
 #: inc/theme/sidebars.php:144
-msgid "WooCommerce &rarr; Shop"
-msgstr "Barre latérale Boutique Woocommerce"
+msgid "WooCommerce → Shop"
+msgstr "Boutique → WooCommerce"
 
 #: inc/theme/sidebars.php:146
-#, fuzzy
-#| msgid "Widgets in this area will be shown on Shop Directory."
 msgid "Widgets in this area will be shown on Shop directory."
 msgstr ""
 "Les widgets dans cette zone seront affichés dans le répertoire de la "
 "boutique."
 
 #: inc/theme/sidebars.php:157
-#, fuzzy
-#| msgid "LearnDash &rarr; Courses"
-msgid "LearnDash &rarr; Courses Directory"
-msgstr "LearnDash &rarr; Cours"
+msgid "LearnDash → Courses Directory"
+msgstr "Répertoire des cours → LearnDash"
 
 #: inc/theme/sidebars.php:159
-#, fuzzy
-#| msgid "Widgets in this area will be shown on the Groups directory."
 msgid "Widgets in this area will be shown on Courses directory."
 msgstr ""
-"Les Widgets dans cette zone seront affichés sur le répertoire des Groupes."
+"Les widgets de cette zone seront affichés dans le répertoire des cours."
 
 #: inc/theme/sidebars.php:168
-#, fuzzy
-#| msgid "LearnDash &rarr; Courses"
-msgid "LearnDash &rarr; Course Sidebar"
-msgstr "LearnDash &rarr; Cours"
+msgid "LearnDash → Course Sidebar"
+msgstr "Barre latérale du cours learnDash →"
 
 #: inc/theme/sidebars.php:170
-#, fuzzy
-#| msgid "Widgets in this area will be shown on individual groups."
 msgid "Widgets in this area will be shown on individual courses."
-msgstr ""
-"Les widgets dans cette zone seront affichés sur des groupes individuels."
+msgstr "Les widgets de cette zone seront affichés sur les cours individuels."
 
 #: inc/theme/sidebars.php:175
-#, fuzzy
-#| msgid "LearnDash Sidebar"
-msgid "LearnDash &rarr; Lesson Sidebar"
-msgstr "Barre latérale de LearnDash"
+msgid "LearnDash → Lesson Sidebar"
+msgstr "Barre latérale de la leçon LearnDash →"
 
 #: inc/theme/sidebars.php:177
-#, fuzzy
-#| msgid "Widgets in this area will be shown on individual groups."
 msgid ""
 "Widgets in this area will be shown on individual Lessons, Topics, and "
 "Quizzes."
 msgstr ""
-"Les widgets dans cette zone seront affichés sur des groupes individuels."
+"Les widgets de cette zone seront affichés dans les leçons, sujets et "
+"questionnaires individuels."
 
 #: inc/theme/sidebars.php:184
-msgid "Lifter &rarr; Courses"
-msgstr "Lifter &rarr; Cours"
+msgid "Lifter → Courses"
+msgstr "Cours de → Lifter"
 
 #: inc/theme/sidebars.php:186
 msgid "Widgets in this area will be shown on courses page."
@@ -12798,7 +12220,7 @@ msgstr "Vous devez être connecté."
 
 #: inc/theme/template-functions.php:2185
 msgid "Edit Post Privacy"
-msgstr ""
+msgstr "Modifier la confidentialité de la publication"
 
 #: inc/theme/widgets.php:21
 msgid "Your site's most recent Posts. Option to display post featured image."
@@ -13215,49 +12637,44 @@ msgstr "Exporter les événements"
 msgid "Apply for job"
 msgstr "Postuler"
 
-#: learndash/ld30/assignment/partials/row.php:42
+#: learndash/ld30/assignment/partials/row.php:59
 msgid "Delete this uploaded Assignment"
 msgstr "Effacer ce devoir téléversé"
 
-#: learndash/ld30/assignment/partials/row.php:43
+#: learndash/ld30/assignment/partials/row.php:60
 msgid "Delete Assignment"
 msgstr "Supprimer le devoir"
 
-#: learndash/ld30/assignment/partials/row.php:58
-#: learndash/ld30/shortcodes/profile/assignment-row.php:9
+#: learndash/ld30/assignment/partials/row.php:81
+#: learndash/ld30/shortcodes/profile/assignment-row.php:25
 msgid "Download Assignment"
 msgstr "Télécharger le devoir"
 
-#: learndash/ld30/assignment/partials/row.php:134
-#: learndash/ld30/shortcodes/profile/assignment-row.php:75
+#: learndash/ld30/assignment/partials/row.php:179
+#: learndash/ld30/shortcodes/profile/assignment-row.php:89
 msgid "Waiting Review"
 msgstr "En attente de révision"
 
-#: learndash/ld30/assignment/partials/row.php:148
-#: learndash/ld30/shortcodes/profile/assignment-row.php:89
-msgid "%s/%s Points Awarded "
-msgstr "%s/ %s points attribués "
-
-#: learndash/ld30/assignment/partials/row.php:151
-#: learndash/ld30/shortcodes/profile/assignment-row.php:92
+#: learndash/ld30/assignment/partials/row.php:203
+#: learndash/ld30/shortcodes/profile/assignment-row.php:113
 msgid "Approved"
 msgstr "Approuvé"
 
-#: learndash/ld30/course.php:104
+#: learndash/ld30/course.php:119
 msgid "You've earned a certificate!"
 msgstr "Vous avez obtenu un certificat!"
 
-#: learndash/ld30/course.php:108 learndash/ld30/modules/certificate-link.php:6
+#: learndash/ld30/course.php:123 learndash/ld30/modules/certificate-link.php:31
 msgid "Download Certificate"
 msgstr "Télécharger le Certificat"
 
-#: learndash/ld30/course.php:202 learndash/ld30/course.php:204
-#: learndash/ld30/shortcodes/profile.php:121
-#: learndash/ld30/shortcodes/profile.php:123
+#: learndash/ld30/course.php:245 learndash/ld30/course.php:247
+#: learndash/ld30/shortcodes/profile.php:171
+#: learndash/ld30/shortcodes/profile.php:174
 msgid "Expand All"
 msgstr "Développer tout"
 
-#: learndash/ld30/course.php:202 learndash/ld30/shortcodes/profile.php:121
+#: learndash/ld30/course.php:245 learndash/ld30/shortcodes/profile.php:172
 msgid "Collapse All"
 msgstr "Tout réduire"
 
@@ -13266,46 +12683,46 @@ msgstr "Tout réduire"
 msgid "Light Mode"
 msgstr "Mode Jour"
 
-#: learndash/ld30/learndash-sidebar.php:137
-#: learndash/ld30/learndash-sidebar.php:387
-#: learndash/ld30/lesson/partials/row.php:29
-#: learndash/ld30/quiz/partials/row.php:21
+#: learndash/ld30/learndash-sidebar.php:140
+#: learndash/ld30/learndash-sidebar.php:390
+#: learndash/ld30/lesson/partials/row.php:40
+#: learndash/ld30/quiz/partials/row.php:32
 msgid "You don't currently have access to this content"
 msgstr "Vous n’avez pas accès à ce contenu actuellement"
 
-#: learndash/ld30/learndash-sidebar.php:210
-#: learndash/ld30/learndash-sidebar.php:274
-#: learndash/ld30/learndash-sidebar.php:307
-#: learndash/ld30/learndash-sidebar.php:354
-#: learndash/ld30/learndash-sidebar.php:408
+#: learndash/ld30/learndash-sidebar.php:213
+#: learndash/ld30/learndash-sidebar.php:277
+#: learndash/ld30/learndash-sidebar.php:310
+#: learndash/ld30/learndash-sidebar.php:357
+#: learndash/ld30/learndash-sidebar.php:411
 msgid "Not Completed"
 msgstr "Incomplet"
 
-#: learndash/ld30/learndash-sidebar.php:427
+#: learndash/ld30/learndash-sidebar.php:430
 #: lifterlms/lesson/template-single-lesson-sidebar.php:107
 msgid "Participants"
 msgstr "Participants"
 
-#: learndash/ld30/learndash-sidebar.php:476
+#: learndash/ld30/learndash-sidebar.php:479
 #: lifterlms/lesson/template-single-lesson-sidebar.php:146
 msgid "Show more"
 msgstr "Voir plus"
 
-#: learndash/ld30/lesson/partials/row.php:38
+#: learndash/ld30/lesson/partials/row.php:61
 msgid "Please login to view sample content"
 msgstr ""
 
-#: learndash/ld30/lesson.php:125 learndash/ld30/quiz.php:95
-#: learndash/ld30/topic.php:137
+#: learndash/ld30/lesson.php:134 learndash/ld30/quiz.php:109
+#: learndash/ld30/topic.php:141
 msgid "Expires at"
 msgstr "Expire"
 
-#: learndash/ld30/lesson.php:125 learndash/ld30/quiz.php:95
-#: learndash/ld30/topic.php:137
+#: learndash/ld30/lesson.php:134 learndash/ld30/quiz.php:109
+#: learndash/ld30/topic.php:141
 msgid "Expired at"
 msgstr "Expiré"
 
-#: learndash/ld30/modules/login-modal.php:25
+#: learndash/ld30/modules/login-modal.php:59
 #: learndash/ld30/template-single-course-sidebar.php:251
 #: woocommerce/myaccount/form-login.php:29
 #: woocommerce/myaccount/form-login.php:46
@@ -13313,57 +12730,50 @@ msgstr "Expiré"
 msgid "Login"
 msgstr "Connexion"
 
-#: learndash/ld30/modules/login-modal.php:35
-msgid ""
-"Accessing this course requires a login, please enter your credentials below!"
-msgstr ""
-"Pour accéder à ce programme vous devez d’abord vous connecter.\n"
-"Merci d’entrer vos données ci-dessous!"
-
-#: learndash/ld30/modules/login-modal.php:51
+#: learndash/ld30/modules/login-modal.php:97
 msgid "Incorrect username or password. Please try again"
 msgstr "Identifiant ou mot de passe incorrect. Essayez à nouveau"
 
-#: learndash/ld30/modules/login-modal.php:68
+#: learndash/ld30/modules/login-modal.php:116
 msgid "Please check your email for the password reset link."
 msgstr ""
 "Vous trouverez le lien de réinitialisation de votre mot de passe dans vos "
 "mails."
 
-#: learndash/ld30/modules/login-modal.php:114
+#: learndash/ld30/modules/login-modal.php:174
 msgid "Lost Your Password?"
 msgstr "Mot de passe oublié?"
 
-#: learndash/ld30/modules/login-modal.php:143
-#: learndash/ld30/modules/login-modal.php:262
+#: learndash/ld30/modules/login-modal.php:208
+#: learndash/ld30/modules/login-modal.php:456
 #: woocommerce/myaccount/form-login.php:83
 #: woocommerce/myaccount/form-login.php:120
 msgid "Register"
 msgstr "S'inscrire"
 
-#: learndash/ld30/modules/login-modal.php:153
+#: learndash/ld30/modules/login-modal.php:216
 msgid "Don't have an account? Register one!"
 msgstr ""
 "Pas encore de compte ? \n"
 "Enregistrez-vous!"
 
-#: learndash/ld30/modules/login-modal.php:169
+#: learndash/ld30/modules/login-modal.php:271
 msgid "Registration requires a username."
 msgstr "L’inscription nécessite un nom d’utilisateur."
 
-#: learndash/ld30/modules/login-modal.php:170
+#: learndash/ld30/modules/login-modal.php:272
 msgid "Registration requires a valid email."
 msgstr "L’inscription nécessite un e-mail valide."
 
-#: learndash/ld30/modules/login-modal.php:171
+#: learndash/ld30/modules/login-modal.php:273
 msgid "Invalid username."
 msgstr "Nom d’utilisateur invalide."
 
-#: learndash/ld30/modules/login-modal.php:172
+#: learndash/ld30/modules/login-modal.php:274
 msgid "Invalid email."
 msgstr "Email invalide."
 
-#: learndash/ld30/modules/login-modal.php:209
+#: learndash/ld30/modules/login-modal.php:307
 msgid "Registration successful, please check your email to set your password."
 msgstr ""
 "Votre compte a été créé avec succès. Je vous donne rendez-vous dans vos "
@@ -13371,21 +12781,17 @@ msgstr ""
 "N’oubliez pas de vérifier vos spams ou l’onglet promotion de Gmail si vous "
 "ne trouvez pas ce mail."
 
-#: learndash/ld30/modules/login-modal.php:221
+#: learndash/ld30/modules/login-modal.php:339
 msgid "Register an Account"
 msgstr "Créer un compte"
 
-#: learndash/ld30/modules/login-modal.php:259
+#: learndash/ld30/modules/login-modal.php:454
 msgid "Registration confirmation will be emailed to you."
 msgstr "La confirmation d’inscription vous sera envoyée par courriel."
 
-#: learndash/ld30/modules/progress.php:74
-msgid "%s/%s Steps"
-msgstr "%s/%s étapes"
-
-#: learndash/ld30/shortcodes/course_list_template.php:78
-#: learndash/ld30/shortcodes/course_list_template.php:115
-#: learndash/ld30/shortcodes/course_list_template.php:274
+#: learndash/ld30/shortcodes/course_list_template.php:82
+#: learndash/ld30/shortcodes/course_list_template.php:119
+#: learndash/ld30/shortcodes/course_list_template.php:278
 #: learndash/ld30/template-course-item.php:91
 #: learndash/ld30/template-single-course-sidebar.php:191
 #: learndash/ld30/template-single-course-sidebar.php:278
@@ -13393,47 +12799,54 @@ msgstr "%s/%s étapes"
 msgid "Free"
 msgstr "Gratuit"
 
-#: learndash/ld30/shortcodes/course_list_template.php:124
-#: learndash/ld30/shortcodes/course_list_template.php:131
+#: learndash/ld30/shortcodes/course_list_template.php:128
+#: learndash/ld30/shortcodes/course_list_template.php:135
 msgid "Enrolled"
 msgstr "Inscrit"
 
-#: learndash/ld30/shortcodes/course_list_template.php:278
+#: learndash/ld30/shortcodes/course_list_template.php:282
 #: learndash/ld30/template-course-item.php:95
 #: learndash/ld30/template-single-course-sidebar.php:129
 #: lifterlms/course/course-index-loop.php:70
 msgid "Not Enrolled"
 msgstr "Non inscrit"
 
-#: learndash/ld30/shortcodes/course_list_template.php:283
+#: learndash/ld30/shortcodes/course_list_template.php:287
 #: learndash/ld30/template-course-item.php:79
 #: learndash/ld30/template-course-item.php:101
 msgid "Start "
 msgstr "Démarrer "
 
-#: learndash/ld30/shortcodes/course_list_template.php:321
+#: learndash/ld30/shortcodes/course_list_template.php:325
 #: learndash/ld30/template-course-item.php:120
 #: learndash/ld30/template-course-item.php:125
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
-#: learndash/ld30/shortcodes/course_list_template.php:326
+#: learndash/ld30/shortcodes/course_list_template.php:330
 msgid "%1$s %2$s "
 msgstr "%1$s %2$s "
 
-#: learndash/ld30/shortcodes/course_list_template.php:335
+#: learndash/ld30/shortcodes/course_list_template.php:339
 msgid "0 "
 msgstr "0 "
 
-#: learndash/ld30/shortcodes/profile.php:72
+#. translators: placeholder: %1$s: Current points, %2$s: Maximum points
+#: learndash/ld30/shortcodes/profile/assignment-row.php:107
+#, fuzzy
+#| msgid "%s/%s Points Awarded "
+msgid "%1$s/%2$s Points Awarded "
+msgstr "%s/ %s points attribués "
+
+#: learndash/ld30/shortcodes/profile.php:93
 msgid "Edit profile"
 msgstr "Modifier mon profil"
 
-#: learndash/ld30/shortcodes/profile.php:90
+#: learndash/ld30/shortcodes/profile.php:111
 msgid "Certificates"
 msgstr "Certificats"
 
-#: learndash/ld30/shortcodes/profile.php:97
+#: learndash/ld30/shortcodes/profile.php:119
 msgid "Points"
 msgstr "Points"
 
@@ -13570,23 +12983,23 @@ msgstr[0] "Leçon %s"
 msgstr[1] "Leçons %s"
 
 #: lifterlms/course/course-index-loop.php:190
-#: lifterlms/membership/membership-index-loop.php:100
+#: lifterlms/membership/membership-index-loop.php:101
 msgid "Starts from"
 msgstr "Commence à partir de"
 
 #: lifterlms/course/course-index-loop.php:193
 #: lifterlms/course/template-single-course-sidebar.php:101
-#: lifterlms/membership/membership-index-loop.php:103
+#: lifterlms/membership/membership-index-loop.php:104
 msgid "See Plans"
 msgstr "Voir les plans"
 
 #: lifterlms/course/course-index-loop.php:223
-#: lifterlms/membership/membership-index-loop.php:127
+#: lifterlms/membership/membership-index-loop.php:129
 msgid "Enrolled on"
 msgstr "Inscrits sur"
 
 #: lifterlms/course/course-index-loop.php:232
-#: lifterlms/membership/membership-index-loop.php:131
+#: lifterlms/membership/membership-index-loop.php:133
 msgid "Expires on"
 msgstr "Expire le"
 
@@ -13919,10 +13332,6 @@ msgstr "Ajouter cette histoire aux favoris pour la lire plus tard"
 #: template-parts/entry-meta.php:100 template-parts/share.php:40
 msgid "Remove bookmark"
 msgstr "Supprimer le signet"
-
-#: template-parts/bbpress-banner.php:107
-msgid "Search forums..."
-msgstr "Rechercher des forums ..."
 
 #: template-parts/content-bbpress.php:34
 #: template-parts/content-buddypress.php:41 template-parts/content-page.php:33
@@ -15002,7 +14411,7 @@ msgstr " et "
 
 #. translators: placeholders: %1$s: Comment Date, %2$s: Comment Time
 #: inc/plugins/learndash-compat.php:49
-#: learndash/ld30/focus/comments_list.php:60
+#: learndash/ld30/focus/comments_list.php:102
 msgctxt "placeholders: comment date, comment time"
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
@@ -15031,8 +14440,21 @@ msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr "inconnu"
 
-#: learndash/ld30/course.php:179
-msgctxt "Course Content Label"
+#. translators: placeholder: comment count.
+#: learndash/ld30/assignment/partials/row.php:146
+msgctxt "placeholder: comment count"
+msgid "%d Comments"
+msgstr "%d Commentaires"
+
+#. translators: placeholders: points current, points max.
+#: learndash/ld30/assignment/partials/row.php:197
+msgctxt "placeholders: points current, points max"
+msgid "%1$s/%2$s Points Awarded "
+msgstr "%1$s/%2$s Points gagnés "
+
+#. translators: placeholder: Course.
+#: learndash/ld30/course.php:209
+msgctxt "placeholder: Course"
 msgid "%s Content"
 msgstr "Contenu du %s"
 
@@ -15042,64 +14464,109 @@ msgid "Back to %s"
 msgstr "Retour aux %s"
 
 #. translators: Course Status Label.
-#: learndash/ld30/lesson/listing.php:53
+#: learndash/ld30/lesson/listing.php:76
 msgctxt "Lesson Content Label"
 msgid "%s Content"
 msgstr "Contenu du %s"
 
-#: learndash/ld30/lesson/listing.php:66
+#. translators: placeholder: Lesson Complete Percentage
+#: learndash/ld30/lesson/listing.php:110
 msgctxt "Lesson Complete Percentage"
 msgid "%s%% Complete"
 msgstr "%s%% terminé"
 
-#: learndash/ld30/lesson/listing.php:67
-msgctxt "Lesson Steps Complete"
+#. translators: placeholder: %1$s: Lesson Steps Complete %2$s: Total lesson
+#. steps
+#: learndash/ld30/lesson/listing.php:134
+msgctxt "%1$s: Lesson Steps Complete %2$s: Total lesson steps"
 msgid "%1$d/%2$d Steps"
 msgstr "%1$d/%2$d étape(s)"
 
-#: learndash/ld30/modules/progress.php:50
+#. translators: placeholders: Topic Count, Topic/Topics Label.
+#: learndash/ld30/lesson/partials/row.php:169
+msgctxt "placeholders: Topic Count, Topic/Topics Label"
+msgid "%1$d %2$s"
+msgid_plural "%1$d %2$s"
+msgstr[0] "%1$d %2$s"
+msgstr[1] "%1$s %2$s"
+
+#. translators: placeholders: Quiz Count, Quiz/Quizzes Label.
+#: learndash/ld30/lesson/partials/row.php:195
+msgctxt "placeholders: Quiz Count, Quiz/Quizzes Label"
+msgid "%1$d %2$s"
+msgid_plural "%1$d %2$s"
+msgstr[0] "%1$d %2$s"
+msgstr[1] "%1$s %2$s"
+
+#. translators: placeholder: course.
+#: learndash/ld30/modules/login-modal.php:75
+msgctxt "placeholder: course"
+msgid ""
+"Accessing this %s requires a login. Please enter your credentials below!"
+msgstr ""
+"L'accès à ce %s nécessite une connexion. Veuillez saisir vos informations "
+"d'identification ci-dessous !"
+
+#. translators: placeholder: Lesson Progress
+#: learndash/ld30/modules/progress.php:108
 msgctxt "Placeholder: Lesson Progress"
 msgid "%s Progress"
 msgstr "Progression du %s"
 
-#: learndash/ld30/modules/progress.php:58
+#. translators: placeholder: Progress percentage
+#: learndash/ld30/modules/progress.php:124
 msgctxt "placeholder: Progress percentage"
 msgid "%s%% Complete"
 msgstr "%s%% terminé"
 
-#: learndash/ld30/modules/progress.php:72
+#. translators: Last activity date in infobar.
+#: learndash/ld30/modules/progress.php:145
 msgctxt "Last activity date in infobar"
 msgid "Last activity on %s"
 msgstr "Dernière activité le: %s"
 
-#: learndash/ld30/quiz.php:229
+#. translators: placeholders: completed steps, total steps.
+#: learndash/ld30/modules/progress.php:151
+msgctxt "placeholders: completed steps, total steps"
+msgid "%1$d/%2$d Steps"
+msgstr "%1$d/%2$d étape(s)"
+
+#. translators: placeholders: quiz, attempts count.
+#: learndash/ld30/quiz.php:284
 msgctxt "placeholders: quiz, attempts count"
 msgid ""
 "You have already taken this %1$s %2$d time(s) and may not take it again."
 msgstr "Vous avez déjà fait ce %1$s %2$d fois, vous ne pouvez plus le refaire."
 
-#: learndash/ld30/shortcodes/course_list_template.php:260
+#: learndash/ld30/shortcodes/course_list_template.php:264
 msgctxt "Start ribbon"
 msgid "%s"
 msgstr "%s"
 
-#: learndash/ld30/shortcodes/course_list_template.php:265
+#: learndash/ld30/shortcodes/course_list_template.php:269
 msgctxt "Start ribbon"
 msgid "Start %s "
 msgstr "Commencer %s "
 
-#: learndash/ld30/shortcodes/profile.php:116
+#. translators: placeholder: commentd count.
+#: learndash/ld30/shortcodes/profile/assignment-row.php:60
+msgctxt "placeholder: commented count"
+msgid "%d Comments"
+msgstr "%d Commentaires"
+
+#. translators: Profile Course Content Label
+#: learndash/ld30/shortcodes/profile.php:160
 msgctxt "Profile Course Content Label"
 msgid "Your %s"
 msgstr "Vos %s"
 
 #. translators: placeholder: Courses.
-#: learndash/ld30/shortcodes/profile.php:152
+#: learndash/ld30/shortcodes/profile.php:214
 msgctxt "placeholder: Courses"
 msgid "No %s found"
 msgstr "Aucun %s trouvé"
 
-#: learndash/ld30/template-banner.php:56
+#: learndash/ld30/template-banner.php:57
 msgctxt "link: View Course details"
 msgid "View %s details"
 msgstr "Voir le détail de %s"
@@ -15136,6 +14603,9 @@ msgstr "Qté"
 msgctxt "hash before order number"
 msgid "#"
 msgstr "#"
+
+#~ msgid "%s/%s Steps"
+#~ msgstr "%s/%s étapes"
 
 #~ msgid "Main Forum"
 #~ msgstr "Forum principal"
