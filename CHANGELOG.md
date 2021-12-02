@@ -6,6 +6,9 @@
 - Correction affichage des images de couverture d'événements rognés
 
 ### Modifié
+- Mise à jour du core WP et des plugins
+- Recherche de l'origine et voir même de la solution pour le bug des sur l'affichage des accordéons
+- Recherche de l'origine et voir même de la solution pour le bug des evenemnts et actus non affichés
 
 ### Supprimé
 
