@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf7a9517f0770793b451a4f4168818bcd
+class ComposerStaticInitf1913b0061ffb7c2ba47b42e76035538
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -118,15 +118,21 @@ class ComposerStaticInitf7a9517f0770793b451a4f4168818bcd
         'Tribe\\Events\\Views\\V2\\Widgets\\Service_Provider' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Service_Provider.php',
         'Tribe\\Events\\Views\\V2\\Widgets\\Widget_Abstract' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Widget_Abstract.php',
         'Tribe\\Events\\Views\\V2\\Widgets\\Widget_List' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/Widgets/Widget_List.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Google_Calendar' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Links/Google_Calendar.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Link_Abstract' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Links/Link_Abstract.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Link_Interface' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Links/Link_Interface.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\iCal' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Links/iCal.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\iCalendar_Export' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Links/iCalendar_Export.php',
         'Tribe\\Events\\Views\\V2\\iCalendar\\Request' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/Request.php',
+        'Tribe\\Events\\Views\\V2\\iCalendar\\iCalendar_Handler' => __DIR__ . '/../..' . '/src/Tribe/Views/V2/iCalendar/iCalendar_Handler.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf7a9517f0770793b451a4f4168818bcd::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf1913b0061ffb7c2ba47b42e76035538::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf1913b0061ffb7c2ba47b42e76035538::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf1913b0061ffb7c2ba47b42e76035538::$classMap;
 
         }, null, ClassLoader::class);
     }

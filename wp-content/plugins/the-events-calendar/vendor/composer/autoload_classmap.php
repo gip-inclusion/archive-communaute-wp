@@ -103,5 +103,11 @@ return array(
     'Tribe\\Events\\Views\\V2\\Widgets\\Service_Provider' => $baseDir . '/src/Tribe/Views/V2/Widgets/Service_Provider.php',
     'Tribe\\Events\\Views\\V2\\Widgets\\Widget_Abstract' => $baseDir . '/src/Tribe/Views/V2/Widgets/Widget_Abstract.php',
     'Tribe\\Events\\Views\\V2\\Widgets\\Widget_List' => $baseDir . '/src/Tribe/Views/V2/Widgets/Widget_List.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Google_Calendar' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Links/Google_Calendar.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Link_Abstract' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Links/Link_Abstract.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\Link_Interface' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Links/Link_Interface.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\iCal' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Links/iCal.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\Links\\iCalendar_Export' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Links/iCalendar_Export.php',
     'Tribe\\Events\\Views\\V2\\iCalendar\\Request' => $baseDir . '/src/Tribe/Views/V2/iCalendar/Request.php',
+    'Tribe\\Events\\Views\\V2\\iCalendar\\iCalendar_Handler' => $baseDir . '/src/Tribe/Views/V2/iCalendar/iCalendar_Handler.php',
 );

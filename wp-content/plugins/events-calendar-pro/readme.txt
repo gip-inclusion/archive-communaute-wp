@@ -4,7 +4,7 @@ Contributors: theeventscalendar, borkweb, bordoni, brianjessee, aguseo, camwynsp
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, the events calendar, widget, pro
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Stable tag: 5.10.0
+Stable tag: 5.11.0
 Tested up to: 5.8.2
 Requires PHP: 7.1
 License: GPLv2 or later
@@ -208,7 +208,12 @@ Our Premium Plugins:
 
 == Changelog ==
 
-= [5.10.0] 2022-11-17 =
+= [5.11.0] 2021-12-02 =
+
+* Feature - Hook into new TEC subscribe to calendar functionality to adapt for shortcodes. [TEC-4131]
+* Language - 1 new strings added, 58 updated, 0 fuzzied, and 1 obsoleted
+
+= [5.10.0] 2021-11-17 =
 
 * Feature - Add a `Mini Calendar` block that is based on the `Mini Calendar` widget to the block editor which users can drag around to any position they want it to appear. [ECP-974]
 * Feature - Add event status options of scheduled, canceled, and postponed with display of the latter two on Pro views and widgets. [TEC-3465]
