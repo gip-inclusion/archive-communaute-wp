@@ -70,7 +70,6 @@ class Actions
 	}
 
 	private function checkIfLicenseIsActive($license, $itemId, $storeURL, $key) {
-		/* TODO change the domain to a valid domain name! from store url before the production */
 		$transient = 'sgpb-license-key-'.$key.'-requested';
 		if ( false !== ( $value = get_transient( $transient ) ) ) {
 			return;
