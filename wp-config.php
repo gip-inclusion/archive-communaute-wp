@@ -21,9 +21,7 @@
  */
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
-define('WP_DEBUG', false);
-define('WP_DEBUG_LOG', false);
-define('WP_DEBUG_DISPLAY', false);
+
 
 /** Nom de la base de données de WordPress. */
 if (strstr($_SERVER['SERVER_NAME'], '.local')) {
@@ -32,22 +30,27 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_PASSWORD', '');
     define('DB_HOST', 'localhost');
     define('DB_CHARSET', 'utf8');
-    ini_set('display_errors', 0);
-    ini_set('error_reporting', E_ALL);
+    define('WP_DEBUG', true);
+    define('WP_DEBUG_LOG', false);
+    define('WP_DEBUG_DISPLAY', true);
 } else if ($_SERVER['SERVER_NAME'] === 'communaute-inclusion-staging.cleverapps.io') {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
     define('DB_USER', getenv('MYSQL_ADDON_USER'));
     define('DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
     define('DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT'));
     define('DB_CHARSET', 'utf8');
-    ini_set('display_errors', 0);
-    ini_set('error_reporting', E_ALL);
+    define('WP_DEBUG', true);
+    define('WP_DEBUG_LOG', false);
+    define('WP_DEBUG_DISPLAY', true);
 } else {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
     define('DB_USER', getenv('MYSQL_ADDON_USER'));
     define('DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
     define('DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT'));
     define('DB_CHARSET', 'utf8');
+    define('WP_DEBUG', false);
+    define('WP_DEBUG_LOG', false);
+    define('WP_DEBUG_DISPLAY', false);    
 }
 /**
  * Type de collation de la base de données.
