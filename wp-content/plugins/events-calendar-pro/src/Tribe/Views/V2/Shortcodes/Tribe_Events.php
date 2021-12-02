@@ -433,7 +433,7 @@ class Tribe_Events extends Shortcode_Abstract {
 		$db_arguments       = $this->get_database_arguments();
 		$db_arguments['id'] = $shortcode_id;
 
-		// If the value is the same it's already on the Database.
+		// If the value is the same it's already in the Database.
 		if ( $db_arguments === $this->get_arguments() ) {
 			return true;
 		}
@@ -832,7 +832,6 @@ class Tribe_Events extends Shortcode_Abstract {
 	 * @return array The translated shortcode arguments.
 	 */
 	public function args_to_repository( array $repository_args, array $arguments, $context, $view ) {
-
 		if ( ! empty( $arguments['tag'] ) || ! empty( $arguments['category'] ) ) {
 			$operand = Arr::get( $arguments, 'tax-operand', 'OR' );
 
