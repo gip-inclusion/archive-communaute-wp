@@ -30,7 +30,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_CHARSET', 'utf8');
 
     define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_LOG', false);
     define('WP_DEBUG_DISPLAY', true);
 } else  if (strstr($_SERVER['SERVER_NAME'], '.cleverapps.io')) {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
@@ -40,9 +40,8 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_CHARSET', 'utf8');
 
     define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_LOG', false);
     define('WP_DEBUG_DISPLAY', true);
-
 } else {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
     define('DB_USER', getenv('MYSQL_ADDON_USER'));
@@ -50,7 +49,7 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT'));
     define('DB_CHARSET', 'utf8');
 
-    define('WP_DEBUG', true);
+    define('WP_DEBUG', false);
     define('WP_DEBUG_LOG', false);
     define('WP_DEBUG_DISPLAY', false);
 }
