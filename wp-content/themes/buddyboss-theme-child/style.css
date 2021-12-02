@@ -25,6 +25,7 @@ Version: 0.1.0
   padding-top: 0 !important;
   background: transparent !important;
   overflow: initial !important;
+  text-align: center;
 }
 
 .bs-single-body .tribe-events-event-image img {
@@ -39,4 +40,8 @@ Version: 0.1.0
   width: initial !important;
   min-width: initial !important;
   object-fit: initial !important;
+}
+
+.tribe-events-event-image img {
+  display: inline-block  !important;
 }
