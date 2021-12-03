@@ -59,15 +59,3 @@ function is_post_type($type) {
     return false;
   }
 }
-
-//Disable WordPress Deprecated Warnings
-add_filter('deprecated_function_trigger_error', 'disable_all_deprecated_warnings');
-add_filter('deprecated_argument_trigger_error', 'disable_all_deprecated_warnings');
-add_filter('deprecated_file_trigger_error',     'disable_all_deprecated_warnings');
-
-//Not to trigger any errors when a deprecated function or method is called.
-add_filter( 'deprecated_hook_trigger_error', 'disable_all_deprecated_warnings');
-
-function disable_all_deprecated_warnings($bolean) {
-  return false;
-}
