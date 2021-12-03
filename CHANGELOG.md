@@ -3,12 +3,12 @@
 ## [03] - 2021-11-22
 ### Ajouté / Corrigé
 - Modification de traduction sur le fil d'actualité
-- Correction affichage des images de couverture d'événements rognés
+- Correction d'affichage des images de couverture d'événements rognés
+- Correction des bugs sur les actualités et les événements (Thx Clever)
 
 ### Modifié
-- Mise à jour du core WP et des plugins
-- Recherche de l'origine et voir même de la solution pour le bug des sur l'affichage des accordéons
-- Recherche de l'origine et voir même de la solution pour le bug des evenemnts et actus non affichés
+- Mise à jour du core WP et de plusieurs plugins
+- Recherche de solutions pour le bug d''affichage des "accordéons"
 
 ### Supprimé
 
