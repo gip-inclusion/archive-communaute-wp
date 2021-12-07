@@ -1,5 +1,16 @@
 # Journal des modifications
 
+## [04] - 2021-12-06
+### Ajouté / Corrigé
+- Synchronisation des db depuis prod -> staging et local
+
+### Modifié
+- Mise à jour du core WP et de plusieurs plugins
+
+
+### Supprimé
+
+
 ## [03] - 2021-11-22
 ### Ajouté / Corrigé
 - Modification de traduction sur le fil d'actualité
@@ -8,9 +19,8 @@
 
 ### Modifié
 - Mise à jour du core WP et de plusieurs plugins
-- Recherche de solutions pour le bug d''affichage des "accordéons"
+- Recherche de solutions pour le bug d'affichage des "accordéons"
 
-### Supprimé
 
 
 ## [02] - 2021-11-08
