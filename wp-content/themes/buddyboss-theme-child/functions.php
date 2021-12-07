@@ -59,3 +59,11 @@ function is_post_type($type) {
     return false;
   }
 }
+
+
+function custom_register_nav_menu(){
+  register_nav_menus( array(
+    'header-menu-mobile'		=> 'Primary Mobile',
+  ) );
+}
+add_action( 'after_setup_theme', 'custom_register_nav_menu', 0 );
