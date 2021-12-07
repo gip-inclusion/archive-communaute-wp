@@ -45,3 +45,18 @@ Version: 0.1.0
 .tribe-events-event-image img {
   display: inline-block  !important;
 }
+
+#tribe-events .tribe-events-button, 
+#tribe-events .tribe-events-button:hover, 
+#tribe-bar-form .tribe-bar-submit input[type="submit"], 
+#tribe-bar-form .tribe-bar-submit input[type="submit"]:hover, 
+.tribe-events-venue .tribe-events-venue-meta a.tribe-events-gmap, 
+.tribe-common .tribe-common-c-btn, 
+.tribe-common a.tribe-common-c-btn, 
+.tribe-common .tribe-common-c-btn:hover, 
+.tribe-common a.tribe-common-c-btn:hover, 
+.tribe-events-venue .tribe-events-venue-meta a.tribe-events-gmap:hover,
+.tribe-events .tribe-events-calendar-month .tribe-events-calendar-month__body .tribe-events-calendar-month__day .tribe-events-calendar-month__multiday-event-bar-inner,
+.tribe-events .tribe-events-calendar-month .tribe-events-calendar-month__body .tribe-events-calendar-month__day:hover::after {
+  background-color: #18a47d !important;
+}
