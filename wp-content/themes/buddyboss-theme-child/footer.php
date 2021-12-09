@@ -100,6 +100,8 @@
   tarteaucitron.user.matomoId = 146;
   tarteaucitron.user.matomoHost = "https://stats.data.gouv.fr/";
   (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+  tarteaucitron.user.googleFonts = ['Roboto'];
+  (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
 </script>
               
 </body>

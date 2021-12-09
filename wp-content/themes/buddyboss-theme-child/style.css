@@ -7,6 +7,11 @@ Template: buddyboss-theme
 Version: 0.1.0
 */
 
+
+:root {
+  --tec-font-weight-bold: 600 !important;
+}
+
 .entry-title,
 .page-title,
 .entry-header {
@@ -59,4 +64,9 @@ Version: 0.1.0
 .tribe-events .tribe-events-calendar-month .tribe-events-calendar-month__body .tribe-events-calendar-month__day .tribe-events-calendar-month__multiday-event-bar-inner,
 .tribe-events .tribe-events-calendar-month .tribe-events-calendar-month__body .tribe-events-calendar-month__day:hover::after {
   background-color: #18a47d !important;
+}
+
+.activity-content b, 
+.activity-content strong {
+  font-weight: var(--tec-font-weight-bold);
 }
