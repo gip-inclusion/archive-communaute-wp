@@ -3,6 +3,9 @@
 ## [04] - 2021-12-06
 ### Ajouté / Corrigé
 - Synchronisation des db depuis prod -> staging et local
+- Correction du bug de chargement de la liste des actualités de la ressourcerie
+- Ajout d'un menu mobile différencié
+- Correction du bug de mise en gras sur le fil d'actualités
 
 ### Modifié
 - Mise à jour du core WP et de plusieurs plugins
