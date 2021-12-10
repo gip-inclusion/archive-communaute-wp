@@ -107,7 +107,7 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
 define('EMPTY_TRASH_DAYS', 7);
 define('AUTOSAVE_INTERVAL', 86400);
-define('WP_POST_REVISIONS', 1);
+define('WP_POST_REVISIONS', true);
 define('ALLOW_UNFILTERED_UPLOADS', false);
 define('FORCE_SSL_ADMIN', true);
 define('WP_MEMORY_LIMIT', '256');
