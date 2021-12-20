@@ -22,10 +22,7 @@ echo '<a href="' . get_term_link($term->slug, 'knowledge_base') . '" class="el-b
 
     if ($settings['show_title']) {
         echo '<' . $settings['title_tag'] . ' class="el-betterdocs-cb-cat-title">' . $term->name . '</' . $settings['title_tag'] . '>';
-<<<<<<< HEAD
         echo '<p class="el-betterdocs-cb-cat-desc">' . $term->description . '</p>';
-=======
->>>>>>> 0223c1af0971e130bc93a2b6fcade5a7ca63fa0b
     }
 
     if ($settings['show_count']) {
