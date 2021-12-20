@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '53cc555b4e4c636b64c89e494c524d5bb54bda30',
+    'reference' => '9789ee974dd1fc42fe85df2dfb89c7487f052cd5',
     'name' => 'buddyboss/buddyboss-platform',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '53cc555b4e4c636b64c89e494c524d5bb54bda30',
+      'reference' => '9789ee974dd1fc42fe85df2dfb89c7487f052cd5',
     ),
     'composer/installers' => 
     array (
@@ -99,12 +99,12 @@
     ),
     'symfony/filesystem' => 
     array (
-      'pretty_version' => 'v5.3.4',
-      'version' => '5.3.4.0',
+      'pretty_version' => 'v5.4.0',
+      'version' => '5.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '343f4fe324383ca46792cae728a3b6e2f708fb32',
+      'reference' => '731f917dc31edcffec2c6a777f3698c33bea8f01',
     ),
     'symfony/polyfill-ctype' => 
     array (
@@ -114,6 +114,15 @@
       array (
       ),
       'reference' => '46cd95797e9df938fdd2b03693b5fca5e64b01ce',
+    ),
+    'symfony/polyfill-mbstring' => 
+    array (
+      'pretty_version' => 'v1.23.1',
+      'version' => '1.23.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9174a3d80210dca8daa7f31fec659150bbeabfc6',
     ),
     'symfony/polyfill-php80' => 
     array (
@@ -126,12 +135,12 @@
     ),
     'symfony/process' => 
     array (
-      'pretty_version' => 'v5.3.12',
-      'version' => '5.3.12.0',
+      'pretty_version' => 'v5.4.0',
+      'version' => '5.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e498803a6e95ede78e9d5646ad32a2255c033a6a',
+      'reference' => '5be20b3830f726e019162b26223110c8f47cf274',
     ),
   ),
 );
