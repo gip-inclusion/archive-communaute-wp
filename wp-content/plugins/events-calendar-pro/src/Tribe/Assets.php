@@ -74,7 +74,7 @@ class Tribe__Events__Pro__Assets {
 
 		tribe_asset(
 			$pro,
-			'tribe_events-premium-admin',
+			'tribe_events-premium-admin-style',
 			'events-admin.css',
 			[],
 			'admin_enqueue_scripts',
@@ -518,7 +518,7 @@ class Tribe__Events__Pro__Assets {
 	/**
 	 * Check whether the current page is an edit post type page.
 	 *
-	 * @since TBD
+	 * @since 5.11.1
 	 *
 	 * @return bool
 	 */

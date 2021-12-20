@@ -71,7 +71,7 @@ if ( ! class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		 */
 		public $template_namespace = 'events-pro';
 
-		const VERSION = '5.11.0';
+		const VERSION = '5.11.1';
 
 		/**
 		 * The Events Calendar Required Version
@@ -1302,8 +1302,8 @@ if ( ! class_exists( 'Tribe__Events__Pro__Main' ) ) {
 
 		/**
 		 * Load widget assets on block editor pages.
-		 * 
-		 * @since TBD
+		 *
+		 * @since 5.11.1
 		 *
 		 * @param boolean $load_assets Whether to load widget assets or not.
 		 * @param string  $hook        A string of the current page php file.
@@ -1314,7 +1314,7 @@ if ( ! class_exists( 'Tribe__Events__Pro__Main' ) ) {
 			if ( is_admin() && get_current_screen()->is_block_editor ) {
 				return true;
 			}
-			
+
 			return $load_assets;
 		}
 

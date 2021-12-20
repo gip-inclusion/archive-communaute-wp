@@ -168,7 +168,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * Filter the iCal link args to allow shortcodes
 	 * to pass through params that would be "hidden" in their params otherwise.
 	 *
-	 * @since TBD
+	 * @since 5.11.1
 	 *
 	 * @param array<string|mixed> $args The array of args (params) that will be added to the URL.
 	 * @param View_Interface      $view The view instance.
