@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.2
-Version: 1.8.0
+Version: 1.8.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,10 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.8.1 =
+* LearnDash - Fixed lessons assignment not clickable issue
+* MemberPress - Fixed 'Terms of service' option not showing issue for logged in members
 
 = 1.8.0 =
 * Licenses - Fixed PHP warning on license update

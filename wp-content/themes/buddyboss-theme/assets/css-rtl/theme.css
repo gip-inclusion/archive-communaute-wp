@@ -6546,6 +6546,10 @@ form.search-form {
   margin-right: 15px;
   margin-top: 10px; }
 
+/*Recent Comments Widget*/
+.widget_recent_comments .wp-block-latest-comments__comment-link {
+  word-break: break-word; }
+
 .blog .site-main {
   position: relative;
   padding-bottom: 0; }
