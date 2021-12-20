@@ -1082,6 +1082,34 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'min_files',
+            [
+                'label' => __( 'Min Files', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'condition' => [
+                    'field_type' => 'image_upload',
+                    'allow_multiple_upload' => 'true',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'min_files_message',
+            [
+                'label' => __( 'Min Files Message', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __( 'Please upload the minimum number of images.', 'pafe' ),
+                'placeholder' => __( 'Please upload the minimum number of images.', 'pafe' ),
+                'label_block' => true,
+                'render_type' => 'none',
+                'condition' => [
+                    'field_type' => 'image_upload',
+                    'allow_multiple_upload' => 'true',
+                ],
+            ]
+        );
+
 		// $this->add_control(
 		// 	'max_files' => [
 		// 		'label' => __( 'Max. Files', 'pafe' ),
@@ -2693,6 +2721,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			'multi_step_form_autonext',
 			[
 				'label' => __( 'Automatically move to the next step after selecting - Multi Step Form', 'pafe' ),
+				'label_block' => true,
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'default' => '',
 				'label_on' => 'Yes',
@@ -4047,6 +4076,25 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_responsive_control(
+            'label_text_align',
+            [
+                'type'        => \Elementor\Controls_Manager::SELECT,
+                'label'       => __( 'Text Align', 'elementor-pro' ),
+                'label_block' => true,
+                'value'       => '',
+                'options'     => [
+                    ''       => __( 'Default', 'elementor' ),
+                    'left'   => __( 'Left', 'elementor' ),
+                    'center' => __( 'Center', 'elementor' ),
+                    'right'  => __( 'Right', 'elementor' ),
+                ],
+                'selectors'   => [
+                    '{{WRAPPER}} .elementor-field-label' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+
 		$this->add_control(
 			'label_color',
 			[
@@ -4095,6 +4143,26 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
+
+        $this->add_responsive_control(
+            'field_text_align',
+            [
+                'type'        => \Elementor\Controls_Manager::SELECT,
+                'label'       => __( 'Text Align', 'elementor-pro' ),
+                'label_block' => true,
+                'value'       => '',
+                'options'     => [
+                    ''       => __( 'Default', 'elementor' ),
+                    'left'   => __( 'Left', 'elementor' ),
+                    'center' => __( 'Center', 'elementor' ),
+                    'right'  => __( 'Right', 'elementor' ),
+                ],
+                'selectors'   => [
+                    '{{WRAPPER}} .elementor-field-group .elementor-field' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .elementor-field-group .pafe-field-container' => 'justify-content: {{VALUE}};',
+                ],
+            ]
+        );
 
 		$this->add_control(
 			'field_text_color',
@@ -4441,6 +4509,11 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		if ( $item['field_required'] ) {
 			$this->add_required_attribute( 'textarea' . $item_index );
 		}
+
+        if ( ! empty( $item['invalid_message'] ) ) {
+            $this->add_render_attribute( 'textarea' . $i, 'oninvalid', "this.setCustomValidity('" . $item['invalid_message'] . "')" );
+            $this->add_render_attribute( 'textarea' . $i, 'onchange', "this.setCustomValidity('')" );
+        }
 
 		if ( ! empty( $item['max_length'] ) ) {
 			$this->add_render_attribute( 'textarea' . $i, 'maxlength', $item['max_length'] );
@@ -5345,7 +5418,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		$item_index = 0;		
-		$settings['field_id'] = !empty($settings['field_id']) ? $settings['field_id'] : $this->get_id();
+		$settings['field_id'] = !empty($settings['field_id']) ? $settings['field_id'] : str_replace(['0','1','2','3','4','5','6','7','8','9'], ['a','b','c','d','e','f','g','h','i','j'], $this->get_id());
 		$field_type = $settings['field_type'];
 		$field_id = $settings['field_id'];
 		$form_id = $settings['form_id'];
@@ -5554,6 +5627,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						}
 						break;
 					case 'image_upload':
+                        echo '<div data-pafe-form-builder-image-upload-check></div>';
 						$name = $this->get_field_name_shortcode($this->get_attribute_name( $item ));
 						$value = $this->get_value_edit_post($name);
 
@@ -5576,6 +5650,14 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						if ( ! empty( $item['max_files'] ) ) {
 							echo 'data-pafe-form-builder-image-upload-max-files="' . $item['max_files'] . '" ';
 						}
+
+                        if ( ! empty( $item['min_files'] ) ) {
+							echo 'data-pafe-form-builder-image-upload-min-files="' . $item['min_files'] . '" ';
+						}
+
+                        if ( ! empty( $item['min_files_message'] ) ) {
+                            echo 'data-pafe-form-builder-image-upload-min-files-message="' . $item['min_files_message'] . '" ';
+                        }
 
 						echo '>';
 						echo '<input type="file" accept="image/*" name="upload" style="display:none;"';	

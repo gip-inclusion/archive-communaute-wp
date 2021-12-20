@@ -228,37 +228,20 @@
 		$message = str_replace( [ "[remove_line_if_field_empty]" ], '', $message );
 
 		$message = str_replace( [ "\r\n", "\n", "\r" ], '', $message );
-
-		if ($payment_status == 'succeeded') {
-			$message = str_replace( '[payment_status]', $succeeded, $message );
-		}
-
-		if ($payment_status == 'pending') {
-			$message = str_replace( '[payment_status]', $pending, $message );
-		}
-
-		if ($payment_status == 'failed') {
-			$message = str_replace( '[payment_status]', $failed, $message );
-		}
-
-		if ($payment_status == 'open') {
-			$message = str_replace( '[payment_status]', 'Open', $message );
-		}
-
-		if ($payment_status == 'paid') {
-			$message = str_replace( '[payment_status]', 'Paid', $message );
-		}
-
-		if ($payment_status == 'canceled') {
-			$message = str_replace( '[payment_status]', 'Canceled', $message );
-		}
-
-		if ($payment_status == 'expired') {
-			$message = str_replace( '[payment_status]', 'Expired', $message );
-		}
-
-		if (!empty($payment_id)) {
-			$message = str_replace( '[payment_id]', $payment_id, $message );
+		if(!empty($payment_status['type']) && $payment_status['type'] == 'mollie'){
+			$message = str_replace( '[payment_status]', $succeeded[$payment_status['status']], $message );
+		}else{
+			if ($payment_status == 'succeeded') {
+				$message = str_replace( '[payment_status]', $succeeded, $message );
+			}
+	
+			if ($payment_status == 'pending') {
+				$message = str_replace( '[payment_status]', $pending, $message );
+			}
+	
+			if ($payment_status == 'failed') {
+				$message = str_replace( '[payment_status]', $failed, $message );
+			}
 		}
 
 		if (!empty($submit_id)) {
@@ -330,7 +313,7 @@
 					}
 				}
 
-				if (empty($repeater_id)) {
+				if (isset($field['repeater_id']) && empty($repeater_id)) {
 					if (!empty($repeater_id_one) && !empty($repeater_content)) {
 						$search_repeater = "[repeater id='" . $repeater_id_one . "']";
 						$message = str_replace($search_repeater, $repeater_content, $message);
@@ -2316,13 +2299,13 @@
 											if($form['settings']['pdfgenerator_font_family'] == 'default'){
 												$pdf->SetFont('dejavubold','',$item['font_size']['size'] * $pfd_font_ratio);	
 											}else{
-												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'B',$form['settings']['pdfgenerator_font_size']['size']);
+												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'B',$item['font_size']['size']);
 											}
 										}else{
 											if($form['settings']['pdfgenerator_font_family'] == 'default'){
 												$pdf->SetFont('dejavu-bolditalic','',$item['font_size']['size'] * $pfd_font_ratio);
 											}else{
-												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'BI',$form['settings']['pdfgenerator_font_size']['size']);
+												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'BI',$item['font_size']['size']);
 											}
 										}
 									}else{
@@ -2336,9 +2319,9 @@
 												$pdf_font_family = substr($form['settings']['pdfgenerator_font_family'], strrpos($form['settings']['pdfgenerator_font_family'], '/')+1);
 												$pdf_font_name = strtolower(substr($pdf_font_family ,0,(strpos($pdf_font_family ,'.'))));
 												$pdf->AddFont($pdf_font_name,'',$form['settings']['pdfgenerator_font_family'],true);
-												$pdf->SetFont($pdf_font_name,'',$pdf_content_font_size);
+												$pdf->SetFont($pdf_font_name,'',$item['font_size']['size']);
 											}else{
-												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'',$pdf_content_font_size);
+												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'',$item['font_size']['size']);
 											}
 										}
 									}
@@ -2470,6 +2453,9 @@
 						}
 						if($form['settings']['pdfgenerator_custom_export_file'] == 'yes' && !empty($form['settings']['pdfgenerator_export_file_name'])){
 							$pdf_file_name = replace_email($form['settings']['pdfgenerator_export_file_name'],$fields,$payment_status, $payment_id, '', '', '', $form_database_post_id);
+							if(!empty($form['settings']['pdfgenerator_save_file'])){
+								$pdf_file_name = $pdf_file_name . '_'. uniqid();
+							}
 						}else{
 							$pdf_file_name = $form_database_post_id;
 						}
@@ -3139,15 +3125,18 @@
 							}
 						}
 
-		    //     		if (!empty($form['settings']['remote_request_header_list'])) {
-						// 	$wp_args['headers'] = array();
-						// 	foreach ($form['settings']['remote_request_header_list'] as $item) {
-						// 		if (!empty($item['remote_request_header_parameter']) && !empty($item['remote_request_header_value'])) {
-						// 			$wp_args['headers'][$item['remote_request_header_parameter']] = replace_email($item['remote_request_header_value'], $fields);
-						// 		}
-						// 	}
-						// }
+		        		if (!empty($form['settings']['remote_request_header']) && !empty($form['settings']['remote_request_header_list'])) {
+							$wp_args['headers'] = array();
+							foreach ($form['settings']['remote_request_header_list'] as $item) {
+								if (!empty($item['remote_request_header_parameter']) && !empty($item['remote_request_header_value'])) {
+									$wp_args['headers'][$item['remote_request_header_parameter']] = replace_email($item['remote_request_header_value'], $fields);
+								}
+							}
+						}
 
+						if(!empty($wp_args['headers']['Content-Type']) && $wp_args['headers']['Content-Type'] == 'application/json'){
+							$wp_args['body'] = json_encode($wp_args['body']);
+						}
 						$res = wp_remote_request(replace_email($form['settings']['remote_request_url'], $fields), $wp_args);
 
 					}
@@ -3824,11 +3813,19 @@
 
 						$message = replace_email($form['settings']['email_content'], $fields, '', '', '', '', '', $form_database_post_id );
 						if(!empty($form['settings']['mollie_enable'])){
-							$message = replace_email($form['settings']['email_content'], $fields, $payment_status, '', '', '', '', $form_database_post_id );
+							$mollie_payment['status'] = $payment_status;
+							$mollie_payment['type'] = 'mollie';
+							$mollie_status['open'] = !empty($form['settings']['pafe_mollie_message_open']) ? $form['settings']['pafe_mollie_message_open'] : 'Payment open';
+							$mollie_status['canceled'] = !empty($form['settings']['pafe_mollie_message_canceled']) ? $form['settings']['pafe_mollie_message_canceled'] : 'Payment canceled';
+							$mollie_status['authorized'] = !empty($form['settings']['pafe_mollie_message_authorized']) ? $form['settings']['pafe_mollie_message_authorized'] : 'Payment authorized';
+							$mollie_status['pending'] = !empty($form['settings']['pafe_mollie_message_pending']) ? $form['settings']['pafe_mollie_message_pending'] : 'Payment pending';
+							$mollie_status['paid'] = !empty($form['settings']['pafe_mollie_message_succeeded']) ? $form['settings']['pafe_mollie_message_succeeded'] : 'Payment succeeded';
+							$mollie_status['expired'] = !empty($form['settings']['pafe_mollie_message_expired']) ? $form['settings']['pafe_mollie_message_expired'] : 'Payment expired';
+							$message = replace_email($message, $fields, $mollie_payment, '', $mollie_status, '', '', $form_database_post_id );
 						}
 
 						if ( ! empty( $form['settings']['pafe_stripe_status_succeeded'] ) && ! empty( $form['settings']['pafe_stripe_status_pending'] ) && ! empty( $form['settings']['pafe_stripe_status_failed'] ) ) {
-							$message = replace_email($form['settings']['email_content'], $fields, $payment_status, $payment_id, $form['settings']['pafe_stripe_status_succeeded'], $form['settings']['pafe_stripe_status_pending'], $form['settings']['pafe_stripe_status_failed'], $form_database_post_id );
+							$message = replace_email($message, $fields, $payment_status, $payment_id, $form['settings']['pafe_stripe_status_succeeded'], $form['settings']['pafe_stripe_status_pending'], $form['settings']['pafe_stripe_status_failed'], $form_database_post_id );
 						}
 
 						$reply_to = $form['settings']['email_reply_to'];
@@ -3898,7 +3895,17 @@
 						}
 
 						$message = replace_email($form['settings']['email_content_2'], $fields, '', '', '', '', '', $form_database_post_id );
-
+						if(!empty($form['settings']['mollie_enable'])){
+							$mollie_payment['status'] = $payment_status;
+							$mollie_payment['type'] = 'mollie';
+							$mollie_status['open'] = !empty($form['settings']['pafe_mollie_message_open']) ? $form['settings']['pafe_mollie_message_open'] : 'Payment open';
+							$mollie_status['canceled'] = !empty($form['settings']['pafe_mollie_message_canceled']) ? $form['settings']['pafe_mollie_message_canceled'] : 'Payment canceled';
+							$mollie_status['authorized'] = !empty($form['settings']['pafe_mollie_message_authorized']) ? $form['settings']['pafe_mollie_message_authorized'] : 'Payment authorized';
+							$mollie_status['pending'] = !empty($form['settings']['pafe_mollie_message_pending']) ? $form['settings']['pafe_mollie_message_pending'] : 'Payment pending';
+							$mollie_status['paid'] = !empty($form['settings']['pafe_mollie_message_succeeded']) ? $form['settings']['pafe_mollie_message_succeeded'] : 'Payment succeeded';
+							$mollie_status['expired'] = !empty($form['settings']['pafe_mollie_message_expired']) ? $form['settings']['pafe_mollie_message_expired'] : 'Payment expired';
+							$message = replace_email($message, $fields, $mollie_payment, '', $mollie_status, '', '', $form_database_post_id );
+						}
 						if ( ! empty( $form['settings']['pafe_stripe_status_succeeded'] ) && ! empty( $form['settings']['pafe_stripe_status_pending'] ) && ! empty( $form['settings']['pafe_stripe_status_failed'] ) ) {
 							$message = replace_email($form['settings']['email_content_2'], $fields, $payment_status, $payment_id, $form['settings']['pafe_stripe_status_succeeded'], $form['settings']['pafe_stripe_status_pending'], $form['settings']['pafe_stripe_status_failed'], $form_database_post_id );
 						}
@@ -3939,9 +3946,14 @@
 						// }
 
 					}
-
 					foreach ($attachment as $attachment_item) {
-						unlink($attachment_item);
+						if(empty($form['settings']['pdfgenerator_save_file'])){
+							unlink($attachment_item);
+						}else{
+							if($pdf_file_name . '.pdf' != basename($attachment_item)){
+								unlink($attachment_item);
+							}
+						}
 					}
 
 					$failed_status = 0;

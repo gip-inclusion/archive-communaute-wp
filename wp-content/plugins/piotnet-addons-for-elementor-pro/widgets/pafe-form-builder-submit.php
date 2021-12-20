@@ -423,7 +423,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Metadata Shortcode', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => __( '<div class="pafe-metarata-shortcode"><div class="pafe-metadata-shortcode-item"><label>Submit ID</label><div><input type="text" value="[submit_id]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Page URL</label><div><input type="text" value="[page_url]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Remote IP</label><div><input type="text" value="[remote_ip]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>User Agent</label><div><input type="text" value="[user_agent]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Date Submit</label><div><input type="text" value="[date_submit]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Time Submit</label><div><input type="text" value="[time_submit]" readonly></div></div></div>', 'pafe' ),
+				'raw' => __( '<div class="pafe-metarata-shortcode"><div class="pafe-metadata-shortcode-item"><label>Submit ID</label><div><input type="text" value="[submit_id]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Page URL</label><div><input type="text" value="[page_url]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Remote IP</label><div><input type="text" value="[remote_ip]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>User Agent</label><div><input type="text" value="[user_agent]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Date Submit</label><div><input type="text" value="[date_submit]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Time Submit</label><div><input type="text" value="[time_submit]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Payment Status</label><div><input type="text" value="[payment_status]" readonly=""></div></div></div>', 'pafe' ),
 			]
 		);
 		$this->end_controls_section();
@@ -2409,6 +2409,54 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					],
 				]
 			);
+			$this->add_control(
+				'pafe_mollie_message_open',
+				[
+					'label' => __( 'Open Message', 'pafe' ),
+					'label_block' => true,
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( 'Payment open', 'pafe' ),
+					'condition' => [
+						'mollie_enable' => 'yes',
+					],
+				]
+			);
+			$this->add_control(
+				'pafe_mollie_message_canceled',
+				[
+					'label' => __( 'Canceled Message', 'pafe' ),
+					'label_block' => true,
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( 'Payment canceled', 'pafe' ),
+					'condition' => [
+						'mollie_enable' => 'yes',
+					],
+				]
+			);
+			$this->add_control(
+				'pafe_mollie_message_authorized',
+				[
+					'label' => __( 'Authorized Message', 'pafe' ),
+					'label_block' => true,
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( 'Payment authorized', 'pafe' ),
+					'condition' => [
+						'mollie_enable' => 'yes',
+					],
+				]
+			);
+			$this->add_control(
+				'pafe_mollie_message_expired',
+				[
+					'label' => __( 'Expired Message', 'pafe' ),
+					'label_block' => true,
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( 'Payment expired', 'pafe' ),
+					'condition' => [
+						'mollie_enable' => 'yes',
+					],
+				]
+			);
 		}
 		$this->end_controls_section();
 		$this->start_controls_section(
@@ -3153,7 +3201,17 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'separator' => 'before',
 			)
 		);
-
+		$this->add_control(
+			'remote_request_header',
+			[
+				'label' => __( 'Header arguments', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
 		$repeater = new \Elementor\Repeater();
 
 		$repeater->add_control(
@@ -3184,6 +3242,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'title_field' => '{{{ remote_request_header_parameter }}} = {{{ remote_request_header_value }}}',
 				'label' => __( 'Header arguments. E.g content-type = application/php, x-powered-by = PHP/5.3.3', 'pafe' ),
 				'separator' => 'before',
+				'condition' => [
+					'remote_request_header' => 'yes'
+				]
 			)
 		);
 
@@ -4911,9 +4972,11 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label_on' => __( 'Yes', 'pafe' ),
 				'label_off' => __( 'No', 'pafe' ),
 				'return_value' => 'yes',
+				'description' => __( 'Only A4 size.', 'pafe' ),
 				'default' => '',
 				'condition' => [
-					'pdfgenerator_set_custom' => 'yes'
+					'pdfgenerator_set_custom' => 'yes',
+					'pdfgenerator_size' => 'a4'
 				]
 			]
 		);
@@ -5019,6 +5082,18 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => $pdf_fonts,
+			]
+		);
+		$this->add_control(
+			'pdfgenerator_save_file',
+			[
+				'label' => __( 'Save file after submit', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'render_type' => 'none',
+				'default' => '',
 			]
 		);
 		$this->add_control(

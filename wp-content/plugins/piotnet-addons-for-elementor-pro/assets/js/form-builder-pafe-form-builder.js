@@ -189,7 +189,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 }
 
 (function ($) {
-
 	var WidgetPafeFormBuilderHandlerDate = function ($scope, $) {
 
         var $elements = $scope.find('.elementor-date-field');
@@ -296,257 +295,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 		};
 		$.each($elements, function (i, $element) {
 			addTimePicker($element);
-		});
-
-	};
-
-	function FormatNumberBy3(num, decpoint, sep) {
-		const parts = (num+"").split(".");
-		var integerPart = Number(parts[0]).toLocaleString('en-US');
-		var floatPart = "";
-		if (parts.length > 1) {
-			floatPart = "." + parts[1];
-		}
-		num = integerPart + floatPart;
-		num = num.replace(/\./g, '|');
-		num = num.replace(/\,/g, sep);
-		num = num.replace(/\|/g, decpoint);
-		return num;
-	}
-
-	function round(value, decimals, decimalsSymbol, seperatorsSymbol, decimalsShow) {
-		var afterRound = Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-		if (decimalsShow == '') {
-			return FormatNumberBy3( afterRound, decimalsSymbol, seperatorsSymbol );
-		} else {
-			var afterFixed = Number(afterRound.toFixed(decimals));
-			var formattedNumber = FormatNumberBy3( afterFixed, decimalsSymbol, seperatorsSymbol );
-			if (decimals > 0) {
-				if (Number.isInteger(afterFixed)) {
-					formattedNumber += decimalsSymbol + '0'.repeat(decimals);
-				} else if (typeof(afterFixed) === 'number') {
-					const decimalsCurrent = formattedNumber.length - formattedNumber.indexOf(decimalsSymbol) - 1;
-					formattedNumber += '0'.repeat(decimals -decimalsCurrent);
-				}
-			}
-			return formattedNumber;
-		}
-	}
-
-	function roundValue(value, decimals, decimalsShow) {
-		var afterRound = Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-		if (decimalsShow == '') {
-			return afterRound;
-		} else {
-			return Number(afterRound.toFixed(decimals));
-		}
-	}
-
-	function pafeCalculatedFieldsForm() {
-        $(document).find('[data-pafe-form-builder-calculated-fields]').each(function(){
-            var $fieldWidget = $(this).closest('.elementor-element'),
-            	$fieldCurrent = $(this),
-            	formID = $fieldCurrent.data('pafe-form-builder-form-id'),
-                calculation = $fieldCurrent.data('pafe-form-builder-calculated-fields'),
-                roundingDecimals = $fieldCurrent.data('pafe-form-builder-calculated-fields-rounding-decimals'),
-                decimalsSymbol = $fieldCurrent.data('pafe-form-builder-calculated-fields-rounding-decimals-decimals-symbol'),
-                decimalsShow = $fieldCurrent.data('pafe-form-builder-calculated-fields-rounding-decimals-show'),
-				separatorsSymbol = $fieldCurrent.data('pafe-form-builder-calculated-fields-rounding-decimals-seperators-symbol'),
-                $repeater = $(this).closest('[data-pafe-form-builder-repeater-form-id]');
-
-            if (calculation.indexOf('field id') == -1) {
-
-	            // Loop qua tat ca field trong form
-	            $('[name^="form_fields"][data-pafe-form-builder-form-id="' + formID + '"]').each(function(){
-
-	            	var $repeater_field = $(this).closest('[data-pafe-form-builder-repeater-form-id]');
-
-	                if ($(this).attr('id') != undefined) {
-	                    var fieldName = $(this).attr('name').replace('[]','').replace('form_fields[','').replace(']',''),
-	                        $fieldSelector = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + ']"]'),
-	                        fieldType = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + ']"]').attr('type');
-
-	                    if($fieldSelector.length > 0) {
-
-	                        if (fieldType == 'radio' || fieldType == 'checkbox') {
-	                            var fieldValue = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + ']"]:checked').val();
-	                        } else {
-	                        	if ($fieldSelector.val() !== null) {
-	                        		var fieldValue = $fieldSelector.val().trim();
-	                        	}
-	                        }
-
-	                        if (fieldValue == undefined) {
-	                            fieldValue = 0;
-	                        } else {
-	                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
-	                            if (isNaN(fieldValue)) {
-	                                fieldValue = 0;
-	                            }
-	                        }
-
-							window[fieldName] = fieldValue;
-	                    }
-
-	                    if (fieldName.indexOf('[]') !== -1) {
-	                        fieldName = fieldName.replace('[]','');
-	                        var $fieldSelectorMultiple = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]');
-	                        if($fieldSelectorMultiple.length > 0) {
-	                            fieldTypeMultiple = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]').attr('type');
-	                            var fieldValueMultiple = $fieldSelectorMultiple.val(),
-	                                fieldValueMultiple = [];
-
-	                            if (fieldTypeMultiple == 'checkbox') {
-	                                $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]:checked').each(function (index,element) {
-	                                    fieldValueMultiple.push($(this).val());
-	                                });
-	                            } else {
-	                                fieldValueMultiple = $fieldSelectorMultiple.val();
-	                                if (fieldValueMultiple == null) {
-	                                    var fieldValueMultiple = [];
-	                                }
-	                            }
-
-	                            var fieldValueMultipleTotal = 0;
-
-	                            for (var j = 0; j < fieldValueMultiple.length; j++) {
-	                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol);
-	                                if (isNaN(fieldValue)) {
-	                                    fieldValue = 0;
-	                                }
-	                                fieldValueMultipleTotal += fieldValue;
-	                            }
-
-	                            window[fieldName] = fieldValueMultipleTotal;
-	                        }
-	                    }
-	                }
-	            });
-
-            } else {
-            	var fieldNameArray = calculation.match(/\"(.*?)\"/g);
-            	if (fieldNameArray != null) {
-	            	for (var j = 0; j<fieldNameArray.length; j++) {
-	            		var fieldNameSlug = fieldNameArray[j].replace('"','').replace('"',''),
-	            			$fieldSelectorExist = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name^="form_fields[' + fieldNameSlug + ']"]'),
-	                        $fieldSelector = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldNameSlug + ']"]');
-
-	                    if($fieldSelectorExist.length > 0) {  
-
-	                    	var fieldName = $fieldSelectorExist.attr('name').replace('[]','').replace('form_fields[','').replace(']',''),
-		                        fieldType = $fieldSelectorExist.attr('type');
-
-		                    if($fieldSelector.length > 0) {
-
-		                        if (fieldType == 'radio' || fieldType == 'checkbox') {
-		                            var fieldValue = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + ']"]:checked').val();
-		                        } else {
-		                        	if ($fieldSelector.val() !== null) {
-		                        		var fieldValue = $fieldSelector.val().trim();
-		                        	}
-		                        }
-
-		                        if (fieldValue == undefined) {
-		                            fieldValue = 0;
-		                        } else {
-		                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
-		                            if (isNaN(fieldValue)) {
-		                                fieldValue = 0;
-		                            }
-		                        }
-
-		                        window[fieldName] = fieldValue;
-		                    }
-
-		                    if (fieldName.indexOf('[]') !== -1) {
-		                        fieldName = fieldName.replace('[]','');
-		                        var $fieldSelectorMultiple = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]');
-		                        if($fieldSelectorMultiple.length > 0) {
-		                            fieldTypeMultiple = $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]').attr('type');
-		                            var fieldValueMultiple = $fieldSelectorMultiple.val(),
-		                                fieldValueMultiple = [];
-
-		                            if (fieldTypeMultiple == 'checkbox') {
-		                                $(document).find('[data-pafe-form-builder-form-id="' + formID + '"][name="form_fields[' + fieldName + '][]"]:checked').each(function (index,element) {
-		                                    fieldValueMultiple.push($(this).val());
-		                                });
-		                            } else {
-		                                fieldValueMultiple = $fieldSelectorMultiple.val();
-		                                if (fieldValueMultiple == null) {
-		                                    var fieldValueMultiple = [];
-		                                }
-		                            }
-
-		                            var fieldValueMultipleTotal = 0;
-
-		                            for (var j = 0; j < fieldValueMultiple.length; j++) {
-		                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol);
-		                                if (isNaN(fieldValue)) {
-		                                    fieldValue = 0;
-		                                }
-		                                fieldValueMultipleTotal += fieldValue;
-		                            }
-
-		                            window[fieldName] = fieldValueMultipleTotal;
-		                        }
-		                    }
-	                    }
-	            	}
-            	}
-            }
-
-            var calculation = calculation
-				.replace(/\[field id=/g, '')
-				.replace(/\"]/g, '')
-				.replace(/\"/g, '')
-				.replace(/--/g, '+');
-
-            var totalFieldContent = eval(calculation);
-        		$fieldWidget.find('.pafe-calculated-fields-form__value').html(round(totalFieldContent, roundingDecimals, decimalsSymbol, separatorsSymbol, decimalsShow).replace('NaN',0));
-
-				var oldVal = $fieldCurrent.val();
-				var newVal = roundValue(totalFieldContent, roundingDecimals, decimalsShow);
-				$fieldCurrent.val(newVal);
-				if (oldVal != newVal) {
-					$fieldCurrent.change();
-				}
-        });
-    }
-
-	var WidgetPafeFormBuilderHandlerRangeSlider = function ($scope, $) {
-
-	    var $elements = $scope.find('[data-pafe-form-builder-range-slider]');
-
-		if (!$elements.length) {
-			return;
-		}
-
-		$.each($elements, function (i, $element) {
-			var optionsString = $($element).data('pafe-form-builder-range-slider');
-	        var options = {};
-			var items = optionsString.split(',');
-			for (var j = 0; j < items.length; j++) {
-			    var current = items[j].trim().split(':');
-			    if (current[0] != undefined && current[1] != undefined) {
-			    	var current1 = current[1].trim().replace('"','').replace('"','');
-			    	if (current1 == "false" || current1 == "true") {
-			    		if (current1 == "false") {
-			    			options[current[0]] = false;
-			    		} else {
-			    			options[current[0]] = true;
-			    		}
-			    	} else {
-			    		options[current[0]] = current1;
-			    	}
-			    }
-			}
-
-			options.onStart = function (data) {
-	            //pafeConditionalLogicFormCheck();
-	            pafeCalculatedFieldsForm();
-	        };
-
-			$($element).ionRangeSlider(options);
 		});
 
 	};
@@ -1272,17 +1020,12 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
     };
 
 	$(window).on('elementor/frontend/init', function () {
-
         elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeFormBuilderHandlerDate);
         elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeFormBuilderHandlerTime);
-        //elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeFormBuilderHandlerRangeSlider);
         elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeFormBuilderHandlerImageSelect);
         elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeFormBuilderHandlerStripe);
         elementorFrontend.hooks.addAction('frontend/element_ready/pafe-form-builder-field.default', WidgetPafeNumberSpinerHandler);
-
     });
- 
-
 
     function getIndexColumn(column) {
 		var columnArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
@@ -1299,7 +1042,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 
 		return index;
 	}
-
 })(jQuery);
 
 jQuery(document).ready(function( $ ) { 
@@ -1485,13 +1227,26 @@ jQuery(document).ready(function( $ ) {
 							$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
 							error++;
 						} else {
-
 							if ( $(this).data('pafe-form-builder-image-select') != undefined ) {
 								if ( $(this).closest('.pafe-image-select-field').find('.image_picker_selector').find('.selected').length < $(this).data('pafe-form-builder-image-select-min-select') ) {
 									$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').html($(this).data('pafe-form-builder-image-select-min-select-message'));
 									error++;
 								} else {
 									$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').remove();
+								}
+							}
+
+							var $label = $(this).closest('.pafe-field-container').find('label'),
+								$container = $(this).closest('.pafe-field-container'),
+								minFiles = 1;
+							if ($label.attr('data-pafe-form-builder-image-upload-min-files') != undefined) {
+								minFiles = parseInt($label.attr('data-pafe-form-builder-image-upload-min-files'));
+								var filesCurrent = $container.find('.pafe-form-builder-image-upload-uploaded').length;
+								if ( filesCurrent < minFiles ) {
+									$container.find('[data-pafe-form-builder-image-upload-check]').html($label.attr('data-pafe-form-builder-image-upload-min-files-message'));
+									error++;
+								} else {
+									$container.find('[data-pafe-form-builder-image-upload-check]').remove();
 								}
 							}
 
@@ -2272,7 +2027,7 @@ jQuery(document).ready(function($) {
 	                            type = conditionals[i]['pafe_conditional_logic_form_type'],
 	                            errorCurrent = error;
 	                        if (type == 'number') {
-	                            value = parseInt( value );
+	                            value = parseFloat( value );
 	                        }
 
 	                        if(fieldName == show) {
@@ -2301,7 +2056,7 @@ jQuery(document).ready(function($) {
 			                            	}
 	                                        
 	                                    } else {
-	                                        var fieldIfValue = $fieldIfSelector.val(); 
+	                                        var fieldIfValue = $fieldIfSelector.val();
 	                                    }
 	                                    
 	                                    if (fieldIfValue != undefined && fieldIfValue.indexOf(';') !== -1) {
@@ -2313,7 +2068,7 @@ jQuery(document).ready(function($) {
 	                                        if (fieldIfValue == undefined) {
 	                                            fieldIfValue = 0;
 	                                        } else {
-	                                            fieldIfValue = parseInt( fieldIfValue );
+	                                            fieldIfValue = parseFloat( fieldIfValue );
 	                                            if (isNaN(fieldIfValue)) {
 	                                                fieldIfValue = 0;
 	                                            }
@@ -3318,7 +3073,20 @@ jQuery(document).ready(function($) {
 		}
 	}
 
+	function evalWithVariables(func, vars) {
+		try {
+			return new Function("v", "with (v) { return (" + func +")}")(vars);
+		} catch (err) {
+			return undefined;
+		}
+	}
+
 	function pafeCalculatedFieldsForm(fieldNameElement) {
+		if (fieldNameElement === '' || !window['pafe-calculated-data']) {
+			window['pafe-calculated-data'] = {} // clear calculated-data
+		}
+		const calculated_data = window['pafe-calculated-data'];
+
 		var selector = '[data-pafe-form-builder-calculated-fields]';
 		if (fieldNameElement != '') {
 			fieldNameElement = '[field id="' + fieldNameElement + '"]';
@@ -3373,9 +3141,9 @@ jQuery(document).ready(function($) {
 	                        	var $repeaterAll = $(document).find('[data-pafe-form-builder-repeater-form-id="' + $repeater.data('pafe-form-builder-repeater-form-id') + '"]'),
 									repeaterIndex = $repeater.index() - $repeaterAll.index();
 
-								window['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValue;
+								calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValue;
 	                        } else {
-	                        	window[fieldName] = fieldValue;
+								calculated_data[fieldName] = fieldValue;
 	                        }
 	                    }
 
@@ -3424,9 +3192,9 @@ jQuery(document).ready(function($) {
 		                        	var $repeaterAll = $(document).find('[data-pafe-form-builder-repeater-form-id="' + $repeater.data('pafe-form-builder-repeater-form-id') + '"]'),
 										repeaterIndex = $repeater.index() - $repeaterAll.index();
 
-									window['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValueMultipleTotal;
+									calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValueMultipleTotal;
 		                        } else {
-		                        	window[fieldName] = fieldValueMultipleTotal;
+									calculated_data[fieldName] = fieldValueMultipleTotal;
 		                        }
 	                            
 	                        }
@@ -3480,10 +3248,10 @@ jQuery(document).ready(function($) {
 		                        	fieldValue = $fieldSelector.attr('data-pafe-form-builder-form-booking-price');
 		                        }
 
-		                        window[fieldName] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+								calculated_data[fieldName] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
 
 		                        if ($fieldSelector.closest('[data-pafe-form-builder-conditional-logic]').length > 0 && $fieldSelector.closest('.elementor-element').css('display') == 'none') {
-		                        	window[fieldName] = 0;
+									calculated_data[fieldName] = 0;
 		                        }
 		                    }
 
@@ -3517,7 +3285,7 @@ jQuery(document).ready(function($) {
 				                        	fieldValue = 0;
 				                        }
 
-				                        window['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+										calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
 			                    	});
 		                    	}
 		                    }
@@ -3561,7 +3329,7 @@ jQuery(document).ready(function($) {
 			                        	fieldValueMultipleTotal = 0;
 			                        }
 
-		                            window[fieldName] = fieldValueMultipleTotal;
+									calculated_data[fieldName] = fieldValueMultipleTotal;
 		                        }
 
 		                        if ($repeater_field.length > 0) {
@@ -3602,7 +3370,7 @@ jQuery(document).ready(function($) {
 					                        	fieldValueMultipleTotal = 0;
 					                        }
 
-					                        window['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValueMultipleTotal;
+											calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = fieldValueMultipleTotal;
 				                    	});
 			                    	}
 			                    }
@@ -3619,25 +3387,28 @@ jQuery(document).ready(function($) {
 
 	            var keyValues = [], global = window; // window for browser environments
 
-	            for (var prop in global) {
+	            for (var prop in calculated_data) {
 					if (prop.indexOf('piotnet_') == 0) {
-						window[prop] = 0;
+						calculated_data[prop] = 0;
 						
 					}
 				}
 
-				for (var prop in global) {
+				for (var prop in calculated_data) {
 					if (prop.indexOf('pafe_') == 0) {
 						var propArray = prop.split('_piotnetpafe');
 						var propNew = propArray[0].replace('pafe_','piotnet_');
-						window[propNew] += window[prop];
+						if (calculated_data[propNew] == null) { // TODO not in
+							calculated_data[propNew] = 0;
+						}
+						calculated_data[propNew] += calculated_data[prop];
 					}
 				}
 
-				for (var prop in global) {
+				for (var prop in calculated_data) {
 					if (prop.indexOf('piotnet_') == 0) {
 						var propNew = prop.replace('piotnet_','');
-						window[propNew] = window[prop];
+						calculated_data[propNew] = calculated_data[prop];
 					}
 				}
 			}
@@ -3667,7 +3438,7 @@ jQuery(document).ready(function($) {
 			}
 
 			if ($repeaterAll.length > 0) {
-				for (var prop in global) {
+				for (var prop in calculated_data) {
 					if (prop.indexOf('pafe_') == 0 && prop.indexOf('_piotnetpafe'+repeaterIndex+'x') !== -1 ) {
 						var propArray = prop.split('_piotnetpafe');
 						var fieldNameArraySplit = propArray[0].split('pafe_');
@@ -3684,8 +3455,8 @@ jQuery(document).ready(function($) {
 				for (var jx = 0; jx<fieldNameArray.length; jx++) {
 					var fieldName = fieldNameArray[jx].replace('"','').replace('"',''); 
 					
-					if (window[fieldName] == undefined) {
-						window[fieldName] = 0;
+					if (calculated_data[fieldName] == undefined) {
+						calculated_data[fieldName] = 0;
 					}
 				}
 			}
@@ -3696,7 +3467,7 @@ jQuery(document).ready(function($) {
 				.replace(/\"/g, '')
 				.replace(/--/g, '+');
 
-            var totalFieldContent = eval(calculation);
+            var totalFieldContent = evalWithVariables(calculation, calculated_data);
 
         	if ($(this).attr('data-pafe-form-builder-calculated-fields-coupon-code') != undefined) {
         		var $couponCodeFields = $(document).find('[name="form_fields[' + $(this).attr('data-pafe-form-builder-calculated-fields-coupon-code').replace('[field id="','').replace('"]','') + ']"]' );
@@ -3730,7 +3501,11 @@ jQuery(document).ready(function($) {
 				var newVal = roundValue(totalFieldContent, roundingDecimals, decimalsShow);
 	        	$fieldCurrent.val(newVal);
 				if (oldVal != newVal) {
-					$fieldCurrent.change();
+					if ($fieldCurrent.closest('.pafe-form-builder-conditional-logic-hidden').length > 0 && oldVal == '') {
+						// Pass
+					} else {
+						$fieldCurrent.change();
+					}
 				}
 
 				var fieldNameCalc = $(this).attr('name').replace('[]','').replace('form_fields[','').replace(']','');
@@ -5076,6 +4851,8 @@ jQuery(document).ready(function($) {
 	});
 	function pafeLivePreview(field) {
 		if ($(document).find('[data-pafe-form-builder-live-preview]').length > 0) {
+			let section = $(field).closest('section').attr('data-pafe-form-builder-repeater-form-id');
+			var $livePreview;
 			var fieldValue = $(field).val(),
                 fieldType = $(field).attr('type'),
 				fieldId = $(field).attr('id');
@@ -5090,7 +4867,11 @@ jQuery(document).ready(function($) {
                    fieldValue = allVals.join(", ");
 
                 }
-				var $livePreview = $(document).find('[data-pafe-form-builder-live-preview="' + fieldName + '"]');
+				if(section){
+					$livePreview = $(field).closest('section').find('[data-pafe-form-builder-live-preview="' + fieldName + '"]');
+				}else{
+					$livePreview = $(document).find('[data-pafe-form-builder-live-preview="' + fieldName + '"]');
+				}
 				$livePreview.each(function(){
 					$(this).html(fieldValue);
 				});
