@@ -70,3 +70,7 @@ Version: 0.1.0
 .activity-content strong {
   font-weight: var(--tec-font-weight-bold);
 }
+
+.el-betterdocs-category-box-post .el-betterdocs-cb-cat-icon {
+  height: auto !important;
+}
