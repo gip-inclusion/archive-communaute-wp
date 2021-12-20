@@ -2036,7 +2036,9 @@ div.bb-lms-header.quiz-fix .bb-position {
     border: 0; }
   .learndash-wrapper .learndash_content_wrap .ld-content-actions {
     border: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1; }
   .learndash-wrapper .learndash_content_wrap .sfwd-mark-complete:after {
     display: none; }
   .learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button {
@@ -8936,6 +8938,12 @@ Due to the split circle of progress-left and progress right, we must use the ani
 
 .ld-icon.ld-icon-comments:before {
   content: '\e80B'; }
+
+article.sfwd-assignment {
+  position: relative;
+  z-index: 1; }
+  article.sfwd-assignment a {
+    word-break: break-word; }
 
 body:not(.bb-dark-theme) .sfwd-light-mode {
   display: none; }
