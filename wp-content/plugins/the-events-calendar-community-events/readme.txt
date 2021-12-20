@@ -5,7 +5,7 @@ Tags: widget, events, simple, tooltips, grid, month, list, calendar, event, venu
 Donate link: https://evnt.is/29
 Requires at least: 5.6
 Tested up to: 5.8.1
-Stable tag: 4.8.9
+Stable tag: 4.8.10
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -162,6 +162,11 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [4.8.10] 2021-12-15 =
+
+* Fix - Use datepicker format from the date utils library to autofill the start and end dates. [CE-135]
+* Language - 0 new strings added, 1 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.8.9] 2021-11-17 =
 

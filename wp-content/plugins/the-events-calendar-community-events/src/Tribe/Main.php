@@ -18,7 +18,7 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		/**
 		 * The current version of Community Events
 		 */
-		const VERSION = '4.8.9';
+		const VERSION = '4.8.10';
 
 		/**
 		 * Singleton instance variable

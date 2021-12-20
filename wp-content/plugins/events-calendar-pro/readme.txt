@@ -4,7 +4,7 @@ Contributors: theeventscalendar, borkweb, bordoni, brianjessee, aguseo, camwynsp
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, the events calendar, widget, pro
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Stable tag: 5.11.0
+Stable tag: 5.11.1
 Tested up to: 5.8.2
 Requires PHP: 7.1
 License: GPLv2 or later
@@ -207,6 +207,14 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [5.11.1] 2021-12-14 =
+
+* Fix - Avoid loading the same CSS file twice. [CE-13]
+* Fix - Correct pagination on shortcodes when the date parameter has been set. [ECP-362]
+* Fix - Properly observe the disabling of JSON-LD output on widget blocks in the block editor. [TEC-4077]
+* Tweak - Ensure the `Hide location search` setting doesn't get applied on the Event Manager page. [ECP-948]
+* Language - 0 new strings added, 1 updated, 0 fuzzied, and 0 obsoleted
 
 = [5.11.0] 2021-12-02 =
 

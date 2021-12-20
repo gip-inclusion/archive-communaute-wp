@@ -451,6 +451,7 @@ class Widget_Month extends Widget_Abstract {
 		$default_args = $this->get_default_shortcode_args();
 		$args         = [
 			'month_events_per_day' => $this->arguments['count'],
+			'jsonld'               => $this->arguments['jsonld_enable'],
 		];
 
 		if ( ! empty( $this->arguments['filters'] ) ) {
