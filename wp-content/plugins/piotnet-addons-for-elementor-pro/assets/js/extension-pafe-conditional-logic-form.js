@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
                             type = conditionals[i]['pafe_conditional_logic_form_type'];
 
                         if (type == 'number') {
-                            value = parseInt( value );
+                            value = parseFloat( value );
                         }
 
                         // Neu field nay chi hien thi khi co dieu kien
@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
                                         if (fieldIfValue == undefined) {
                                             fieldIfValue = 0;
                                         } else {
-                                            fieldIfValue = parseInt( fieldIfValue );
+                                            fieldIfValue = parseFloat( fieldIfValue );
                                             if (isNaN(fieldIfValue)) {
                                                 fieldIfValue = 0;
                                             }
@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
 
                                     if (fieldIfTypeMultiple == 'checkbox') {
                                         $form.find('[name="form_fields[' + fieldIf + '][]"]:checked').each(function () {
-                                            fieldIfValueMultiple[i++] = $(this).val();
+                                            fieldIfValueMultiple.push($(this).val());
                                         });
                                     } else {
                                         fieldIfValueMultiple = $fieldIfSelectorMultiple.val();
@@ -240,7 +240,7 @@ jQuery(document).ready(function($) {
                     type = conditionals[i]['pafe_conditional_logic_form_type'];
 
                 if (type == 'number') {
-                    value = parseInt( value );
+                    value = parseFloat( value );
                 }
 
                 if(fieldNameSubmit == show) {
@@ -267,7 +267,7 @@ jQuery(document).ready(function($) {
                                 if (fieldIfValue == undefined) {
                                     fieldIfValue = 0;
                                 } else {
-                                    fieldIfValue = parseInt( fieldIfValue );
+                                    fieldIfValue = parseFloat( fieldIfValue );
                                     if (isNaN(fieldIfValue)) {
                                         fieldIfValue = 0;
                                     }
@@ -334,7 +334,7 @@ jQuery(document).ready(function($) {
 
                             if (fieldIfTypeMultiple == 'checkbox') {
                                 $form.find('[name="form_fields[' + fieldIf + '][]"]:checked').each(function () {
-                                    fieldIfValueMultiple[i++] = $(this).val();
+                                    fieldIfValueMultiple.push($(this).val());
                                 });
                             } else {
                                 fieldIfValueMultiple = $fieldIfSelectorMultiple.val();

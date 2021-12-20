@@ -77,11 +77,26 @@ function pafeGenerateElementID(length) {
 	return result;
 }
 
+function pafeReplaceID(str) {
+	str = str.replace(new RegExp('0', 'g'), 'a');
+	str = str.replace(new RegExp('1', 'g'), 'b');
+	str = str.replace(new RegExp('2', 'g'), 'c');
+	str = str.replace(new RegExp('3', 'g'), 'd');
+	str = str.replace(new RegExp('4', 'g'), 'e');
+	str = str.replace(new RegExp('5', 'g'), 'f');
+	str = str.replace(new RegExp('6', 'g'), 'g');
+	str = str.replace(new RegExp('7', 'g'), 'h');
+	str = str.replace(new RegExp('8', 'g'), 'i');
+	str = str.replace(new RegExp('9', 'g'), 'j');
+
+	return str;
+}
+
 jQuery(document).ready(function( $ ) {
 	elementor.hooks.addAction( 'panel/open_editor/widget/pafe-form-builder-field', function( panel, model, view ) {
 		var $element = panel.$el.find( '.elementor-form-field-shortcode' ),
 			$fieldID = panel.$el.find( '[data-setting="field_id"]' ),
-			elementID = pafeGenerateElementID(10);
+			elementID = pafeReplaceID(model.attributes.id);
 
 		if ( $element.length ) {
 			var id = $fieldID.val().trim();

@@ -67,6 +67,12 @@
     width: 100%;
 }
 
+[data-pafe-form-builder-image-upload-check] {
+    color: red;
+    width: 100%;
+}
+
+
 .pafe-form-builder-image-upload-placeholder {
   position: relative;
   border: solid 1px #eaeaea;
@@ -337,6 +343,11 @@ body:not(.elementor-editor-active) .elementor-field-type-select_autocomplete .el
   .pafe-field-inline, .pafe-label-inline{
     width: 100% !important;
   }
+}
+
+.elementor-field-label {
+    display: block;
+    width: 100%;
 }
 
 

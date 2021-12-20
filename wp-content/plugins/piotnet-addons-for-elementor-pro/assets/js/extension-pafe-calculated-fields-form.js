@@ -23,13 +23,13 @@ jQuery(document).ready(function($) {
                         if (fieldValue == undefined) {
                             fieldValue = 0;
                         } else {
-                            fieldValue = parseInt( fieldValue );
+                            fieldValue = parseFloat( fieldValue );
                             if (isNaN(fieldValue)) {
                                 fieldValue = 0;
                             }
                         }
 
-                        window[fieldName] = parseInt( fieldValue );
+                        window[fieldName] = parseFloat( fieldValue );
                     }
 
                     if (fieldName.indexOf('[]') !== -1) {
@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
                             fieldValueMultipleTotal = 0;
 
                             for (var j = 0; j < fieldValueMultiple.length; j++) {
-                                fieldValue = parseInt( fieldValueMultiple[j] );
+                                fieldValue = parseFloat( fieldValueMultiple[j] );
                                 if (isNaN(fieldValue)) {
                                     fieldValue = 0;
                                 }
