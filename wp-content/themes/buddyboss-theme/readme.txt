@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.2
-Version: 1.8.1
+Version: 1.8.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,14 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.8.2 =
+* Forums - Fixed activity 'Read more' link issue not taking to a specific reply
+* Theme Options - Fixed 'Dark Mode' logo issue when third 'Header Style' selected
+* LearnDash - Fixed Quiz Summary style issues
+* LearnDash - Fixed courses count issue when category filter applied
+* LearnDash - Fixed lesson critical issue when message component disabled
+* LearnDash - Fixed lesson sidebar issue to show lesson and topic count properly
 
 = 1.8.1 =
 * LearnDash - Fixed lessons assignment not clickable issue

@@ -171,9 +171,15 @@ if ( is_user_logged_in() ) {
 				__( 'Unread %s', 'buddyboss-theme' ),
 				'<span class="count">' . bp_core_number_format( $count ) . '</span>'
 			);
+			$read = sprintf(
+				/* translators: %s: Unread notification count for the current user */
+					__( 'Read %s', 'buddyboss-theme' ),
+					'<span class="count">' . bp_core_number_format( $count ) . '</span>'
+				);			
 		} else {
 			$title  = __( 'Notifications', 'buddyboss-theme' );
 			$unread = __( 'Unread', 'buddyboss-theme' );
+			$read = __( 'Read', 'buddyboss-theme' );
 		}
 
 		?>
@@ -187,7 +193,7 @@ if ( is_user_logged_in() ) {
 						<a class="ab-item" href="<?php echo esc_url( $notifications_link ); ?>"><?php echo $unread; ?></a>
 					</li>
 					<li id="wp-admin-bar-my-account-notifications-read">
-						<a class="ab-item" href="<?php echo esc_url( trailingslashit( $notifications_link . 'read' ) ); ?>"><?php esc_html_e( 'Read', 'buddyboss-theme' ); ?></a>
+						<a class="ab-item" href="<?php echo esc_url( trailingslashit( $notifications_link . 'read' ) ); ?>"><?php echo $read; ?></a>
 					</li>
 				</ul>
 			</div>

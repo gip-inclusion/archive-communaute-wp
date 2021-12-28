@@ -1121,6 +1121,7 @@ if ( ! class_exists( 'BP_Zoom_Blocks' ) ) {
 				'alternative_host_ids'   => $alternative_host_ids,
 				'title'                  => $title,
 				'description'            => $description,
+				'type'                   => $type,
 			);
 
 			$recurrence_obj = array();
@@ -1174,7 +1175,6 @@ if ( ! class_exists( 'BP_Zoom_Blocks' ) ) {
 
 				$recurrence_obj['repeat_interval'] = $repeat_interval;
 
-				$data['type']              = $type;
 				$data['recurrence']        = $recurrence_obj;
 				$data['registration_type'] = $registration_type;
 			}
