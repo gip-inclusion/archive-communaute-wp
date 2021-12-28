@@ -6,12 +6,15 @@
 - Correction du bug de chargement de la liste des actualités de la ressourcerie
 - Ajout d'un menu mobile différencié
 - Correction du bug de mise en gras sur le fil d'actualités
+- Correction d'une erreur de traduction BuddyBoss
 
 ### Modifié
 - Mise à jour du core WP et de plusieurs plugins
-
+- Mise à jour du theme BuddyBoss
+- Création d'un nouveau template Betterdocs pour permettre la modification de la mise en forme de la page "/Aide"
 
 ### Supprimé
+- Suppression de plugins inutiles (Filter Bar Extension, Filter Everything et WP U Like)
 
 
 ## [03] - 2021-11-22
