@@ -70,16 +70,16 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				.bb-custom-ld-focus-mode-enabled:not(.bb-custom-ld-logo-enabled) .site-header-container .ld-focus-custom-logo .bb-logo.bb-logo-dark,
 				.bb-dark-theme.bb-custom-ld-focus-mode-enabled:not(.bb-custom-ld-logo-enabled) .site-header-container .ld-focus-custom-logo img,
 				.bb-sfwd-aside.bb-dark-theme:not(.bb-custom-ld-logo-enabled) .site-header-container #site-logo .bb-logo,
-				.buddypanel .site-branding h2 img.bb-logo.bb-logo-dark,
-				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding h2 img.bb-logo,
+				.buddypanel .site-branding div img.bb-logo.bb-logo-dark,
+				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding div img.bb-logo,
 				.buddypanel .site-branding h1 img.bb-logo.bb-logo-dark,
 				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding h1 img.bb-logo{display:none;}
 
 				.llms-sidebar.bb-dark-theme .site-header-container #site-logo .bb-logo.bb-logo-dark,
 				.bb-dark-theme.bb-custom-ld-focus-mode-enabled:not(.bb-custom-ld-logo-enabled) .site-header-container .ld-focus-custom-logo .bb-logo.bb-logo-dark,
 				.bb-sfwd-aside.bb-dark-theme .site-header-container #site-logo .bb-logo.bb-logo-dark,
-				.buddypanel .site-branding h2 img.bb-logo,
-				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding h2 img.bb-logo.bb-logo-dark,
+				.buddypanel .site-branding div img.bb-logo,
+				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding div img.bb-logo.bb-logo-dark,
 				.buddypanel .site-branding h1 img.bb-logo,
 				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding h1 img.bb-logo.bb-logo-dark{display:inline;}
 
@@ -100,7 +100,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				.llms-sidebar.bb-dark-theme #site-logo .site-title img.bb-logo.bb-logo-dark,
 				.bb-sfwd-aside.bb-dark-theme #site-logo .site-title img.bb-logo.bb-logo-dark,
 				.bb-custom-ld-focus-mode-enabled .site-header-container .ld-focus-custom-logo .bb-logo.bb-logo-dark,
-				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding h2 img.bb-logo.bb-logo-dark {
+				.bb-sfwd-aside.bb-dark-theme .buddypanel .site-branding div img.bb-logo.bb-logo-dark {
 					width: <?php echo buddyboss_theme_get_option( 'logo_dark_size' ); ?>px;
 				}
 			<?php } ?>

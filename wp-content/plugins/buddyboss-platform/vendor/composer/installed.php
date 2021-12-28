@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '9789ee974dd1fc42fe85df2dfb89c7487f052cd5',
+    'reference' => '3597bd5f9adbe1ddeb826b2fc0f2260ff32aaab0',
     'name' => 'buddyboss/buddyboss-platform',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '9789ee974dd1fc42fe85df2dfb89c7487f052cd5',
+      'reference' => '3597bd5f9adbe1ddeb826b2fc0f2260ff32aaab0',
     ),
     'composer/installers' => 
     array (
