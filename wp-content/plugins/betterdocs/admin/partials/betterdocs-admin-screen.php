@@ -58,7 +58,7 @@ $post_type_object = get_post_type_object( $post_type );
                                 <option value="all"><?php esc_html_e('All Categories', 'betterdocs') ?></option>
                                 <?php
                                 $selected = (isset($_GET['doc_category'])) ? $_GET['doc_category'] : '';
-                                BetterDocs_Helper::term_options('doc_category', $selected);
+                                echo BetterDocs_Helper::term_options('doc_category', $selected);
                                 ?>
                             </select>
                             <?php do_action('betterdocs_admin_filter_after_category'); ?>

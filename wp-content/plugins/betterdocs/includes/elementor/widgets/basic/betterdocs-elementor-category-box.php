@@ -1,4 +1,5 @@
 <?php
+
 use Elementor\Controls_Manager;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
@@ -10,24 +11,29 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class BetterDocs_Elementor_Category_Box extends Widget_Base {
+class BetterDocs_Elementor_Category_Box extends Widget_Base
+{
 
     use \Better_Docs_Elementor\Traits\Template_Query;
 
-    public function get_name () {
+    public function get_name()
+    {
         return 'betterdocs-category-box';
     }
 
-    public function get_title () {
+    public function get_title()
+    {
         return __('BetterDocs Category Box', 'betterdocs');
     }
 
-    public function get_icon () {
+    public function get_icon()
+    {
         return 'betterdocs-icon-category-box';
     }
 
-    public function get_categories () {
-        return ['docs-archive'];
+    public function get_categories()
+    {
+        return ['docs-archive', 'betterdocs-elements'];
     }
 
     public function get_style_depends()
@@ -37,20 +43,22 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
         ];
     }
 
-    public function get_keywords () {
+    public function get_keywords()
+    {
         return [
             'knowledgebase',
             'knowledge Base',
             'documentation',
             'doc',
             'kb',
-            'betterdocs', 
-            'docs', 
+            'betterdocs',
+            'docs',
             'category-box'
         ];
     }
 
-    public function get_custom_help_url() {
+    public function get_custom_help_url()
+    {
         return 'https://betterdocs.co/docs/betterdocs-category-box';
     }
 
@@ -84,7 +92,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
                 'label_block' => true
             ]
         );
-        
+
         $this->add_responsive_control(
             'box_column',
             [
@@ -101,7 +109,10 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
                 ],
                 'prefix_class'       => 'elementor-grid%s-',
                 'frontend_available' => true,
-                'label_block'        => true
+                'label_block'        => true,
+                'condition' => [
+                    'layout_template' => ['layout-2', 'default']
+                ]
             ]
         );
 
@@ -165,11 +176,26 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
         );
 
         $this->add_control(
+            'listview-show-description',
+            [
+                'label'        => __('Show Category Description', 'betterdocs'),
+                'type'         => Controls_Manager::SWITCHER,
+                'label_on'     => __('Show', 'betterdocs'),
+                'label_off'    => __('Hide', 'betterdocs'),
+                'return_value' => 'true',
+                'default'      => 'true',
+                'condition' => [
+                    'layout_template' => 'layout-3'
+                ]
+            ]
+        );
+
+        $this->add_control(
             'count_prefix',
             [
                 'label'     => __('Prefix', 'betterdocs'),
                 'type'      => Controls_Manager::TEXT,
-                'dynamic'     => [ 'active' => true ],
+                'dynamic'     => ['active' => true],
                 'condition' => [
                     'show_count' => 'true',
                     'layout_template' => 'default'
@@ -182,7 +208,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label'     => __('Suffix', 'betterdocs'),
                 'type'      => Controls_Manager::TEXT,
-                'dynamic'     => [ 'active' => true ],
+                'dynamic'     => ['active' => true],
                 'default'   => __('articles', 'betterdocs'),
                 'condition' => [
                     'show_count' => 'true',
@@ -196,7 +222,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label'     => __('Suffix Singular', 'betterdocs'),
                 'type'      => Controls_Manager::TEXT,
-                'dynamic'     => [ 'active' => true ],
+                'dynamic'     => ['active' => true],
                 'default'   => __('article', 'betterdocs'),
                 'condition' => [
                     'show_count' => 'true',
@@ -217,6 +243,12 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label' => __('Box', 'betterdocs'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'layout_template' => [
+                        'layout-2',
+                        'default'
+                    ]
+                ]
             ]
         );
 
@@ -292,6 +324,64 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
 
         $this->end_controls_tab();
 
+        //Add Border Bottom Normal State
+        $this->add_control(
+            'category_box_border_bottom',
+            [
+                'label'         => __('Border Bottom', 'betterdocs'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_on'      => __('Show', 'betterdocs'),
+                'label_off'     => __('Hide', 'betterdocs'),
+                'return_value'  => 'true',
+                'default'       => 'false',
+                'condition' => [
+                    'layout_template' => 'default'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'category_box_border_bottom_size',
+            [
+                'label'       => __('Border Bottom Size', 'betterdocs'),
+                'type'        => Controls_Manager::SLIDER,
+                'size_units'  =>  ['px', 'em'],
+                'range'      => [
+                    'px' => [
+						'min' => 0,
+						'max' => 1000,
+					]
+                ],
+                'default'    => [
+                    'size' => 10,
+                    'unit' => 'px',
+                ],
+                'condition' => [
+                    'category_box_border_bottom' => 'true',
+                    'layout_template' => 'default'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-box-post .el-betterdocs-cb-inner' => 'border-bottom:{{SIZE}}{{UNIT}} solid #880380D4;',
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'category_box_border_color',
+            [
+                'label'     => __('Border Bottom Color', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'default'   => ' #880380D4',
+                'condition' => [
+                    'category_box_border_bottom' => 'true',
+                    'layout_template' => 'default'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-box-post .el-betterdocs-cb-inner' => 'border-bottom-color:{{VALUE}};',
+                ]
+            ]
+        );
+
         // Hover State Tab
         $this->start_controls_tab(
             'card_hover',
@@ -358,6 +448,63 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             ]
         );
 
+        //Add Border Bottom On Hover
+        $this->add_control(
+            'category_box_border_bottom_hover',
+            [
+                'label'         => __('Border Bottom Hover', 'betterdocs'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_on'      => __('Show', 'betterdocs'),
+                'label_off'     => __('Hide', 'betterdocs'),
+                'return_value'  => 'true',
+                'default'       => 'false',
+                'condition' => [
+                    'layout_template' => 'default'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'category_box_border_bottom_size_hover',
+            [
+                'label'       => __('Border Bottom Size Hover', 'betterdocs'),
+                'type'        => Controls_Manager::SLIDER,
+                'size_units'  =>  ['px', 'em'],
+                'range'      => [
+                    'px' => [
+						'min' => 0,
+						'max' => 1000,
+					]
+                ],
+                'default'    => [
+                    'size' => 10,
+                    'unit' => 'px',
+                ],
+                'condition' => [
+                    'category_box_border_bottom_hover' => 'true',
+                    'layout_template' => 'default'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-box-post .el-betterdocs-cb-inner:hover' => 'border-bottom:{{SIZE}}{{UNIT}} solid #880380D4;',
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'category_box_border_color_hover',
+            [
+                'label'     => esc_html__('Border Color Hover', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'condition' => [
+                    'category_box_border_bottom_hover' => 'true',
+                    'layout_template' => 'default'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-box-post .el-betterdocs-cb-inner:hover' => 'border-bottom-color:{{VALUE}};',
+                ]
+            ]
+        );
+
         $this->end_controls_tab();
 
         $this->end_controls_tabs();
@@ -373,13 +520,19 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label' => __('Icon', 'betterdocs'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'layout_template' => [
+                        'layout-2',
+                        'default'
+                    ]
+                ]
             ]
         );
 
         $this->add_control(
             'category_settings_area',
             [
-                'label' => __( 'Area', 'betterdocs' ),
+                'label' => __('Area', 'betterdocs'),
                 'type' =>   Controls_Manager::HEADING
             ]
         );
@@ -405,7 +558,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
         $this->add_control(
             'category_settings_icon',
             [
-                'label' => __( 'Icon', 'betterdocs' ),
+                'label' => __('Icon', 'betterdocs'),
                 'type' =>   Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -592,13 +745,19 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label' => __('Title', 'betterdocs'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'layout_template' => [
+                        'layout-2',
+                        'default'
+                    ]
+                ]
             ]
         );
 
         $this->add_control(
             'title_styles_area_heading',
             [
-                'label' => __( 'Area', 'betterdocs' ),
+                'label' => __('Area', 'betterdocs'),
                 'type' =>   Controls_Manager::HEADING,
                 'condition' => [
                     'layout_template'   => 'Layout_2'
@@ -755,6 +914,12 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             [
                 'label' => __('Count', 'betterdocs'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'layout_template' => [
+                        'layout-2',
+                        'default'
+                    ]
+                ]
             ]
         );
 
@@ -989,10 +1154,18 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
         $this->end_controls_tabs();
 
         $this->end_controls_section(); # end of 'Count Styles'
+
+        /**
+         * Layout 3 Controls (List View Category)
+         */
+        $this->box_setting_style();
+        $this->icon_setting_style();
+        $this->category_title_style();
+        $this->category_article_count();
     }
 
 
-	protected function render()
+    protected function render()
     {
         $settings = $this->get_settings_for_display();
 
@@ -1018,7 +1191,6 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
         $terms_object = array(
             'taxonomy' => 'doc_category',
             'order'    => $settings['order'],
-            'orderby'  => $settings['orderby'],
             'offset'   => $settings['offset'],
             'number'   => $settings['box_per_page'],
         );
@@ -1027,26 +1199,29 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             $terms_object['parent'] = 0;
         }
 
-        if ($settings['include'])
-        {
+        if ($settings['include']) {
             $terms_object['include'] = array_diff($settings['include'], (array) $settings['exclude']);
         }
 
-        if ($settings['exclude'])
-        {
+        if ($settings['exclude']) {
             $terms_object['exclude'] = $settings['exclude'];
+        }
+
+        if ($settings['orderby'] == 'betterdocs_order') {
+            $terms_object['meta_key'] = 'doc_category_order';
+            $terms_object['orderby'] = 'meta_value_num';
+            $terms_object['order'] = 'ASC';
+        } else {
+            $terms_object['orderby'] = $settings['orderby'];
         }
 
 
         $default_multiple_kb = BetterDocs_Elementor::get_betterdocs_multiple_kb_status();
 
-        if ($settings['layout_template'] == 'Layout_2')
-        {
+        if ($settings['layout_template'] == 'Layout_2') {
             $settings['layout_template'] = 'layout-2';
         }
-
-        if($default_multiple_kb) 
-        {
+        if ($default_multiple_kb) {
             $object = get_queried_object();
             if (empty($settings['selected_knowledge_base']) && is_tax('knowledge_base')) {
                 $meta_value = $object->slug;
@@ -1065,10 +1240,15 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
                 ),
             );
 
-            $taxonomy_objects = get_terms( $terms_object );
+            $taxonomy_objects = get_terms($terms_object);
 
-            $html = '<div ' . $this->get_render_attribute_string('bd_category_box_wrapper') . '>';
+            $html  = '<div ' . $this->get_render_attribute_string('bd_category_box_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_box_inner') . '>';
+
+            if( $settings['layout_template'] === 'layout-3' ) {
+                $html = '';
+                $html .=  '<div class="betterdocs-archive-list-view"><div class="betterdocs-categories-wrap betterdocs-category-box betterdocs-category-box-pro pro-layout-3 layout-flex betterdocs-list-view ash-bg">';
+            }
 
             if (file_exists($this->get_template($settings['layout_template'])))
             {
@@ -1101,6 +1281,11 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             $html = '<div ' . $this->get_render_attribute_string('bd_category_box_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_box_inner') . '>';
 
+            if( $settings['layout_template'] === 'layout-3' ) {
+                $html = '';
+                $html .=  '<div class="betterdocs-archive-list-view"><div class="betterdocs-categories-wrap betterdocs-category-box betterdocs-category-box-pro pro-layout-3 layout-flex betterdocs-list-view ash-bg single-kb">';
+            }
+
             if (file_exists($this->get_template($settings['layout_template'])))
             {
                 if ($taxonomy_objects && !is_wp_error($taxonomy_objects))
@@ -1116,8 +1301,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
                             $html .= BetterDocs_Elementor::include_with_variable($this->get_template($settings['layout_template']), ['term' => $term, 'term_count' => $term_count, 'settings' => $settings, 'default_multiple_kb' => $default_multiple_kb]);
                         }
                     }
-                } else
-                {
+                } else {
                     $html .= '<p class="no-posts-found">' . __('No posts found!', 'betterdocs') . '</p>';
                 }
                 wp_reset_postdata();
@@ -1128,8 +1312,707 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base {
             $html .= '</div>';
             $html .= '</div>';
 
-            echo $html; 
+            echo $html;
         }
+    }
 
+    public function box_setting_style() {
+        /**
+         * ----------------------------------------------------------
+         * Section: Box Styles
+         * ----------------------------------------------------------
+         */
+         $this->start_controls_section(
+             'listview_box_secion',
+             [
+                 'label' => __('Category Box', 'betterdocs'),
+                 'tab'   => Controls_Manager::TAB_STYLE,
+                 'condition' => [
+                    'layout_template' => 'layout-3'
+                ]
+             ]
+         );
+ 
+ 
+         $this->start_controls_tabs('box_background_color_tabs');
+ 
+         /** Normal State Tab Start **/
+         $this->start_controls_tab(
+            'box_background_color_normal',
+            [
+                'label' => esc_html__('Normal', 'betterdocs')
+            ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_wholebox_margin_normal',
+             [
+                 'label'      => __('Box Margin', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_wholebox_padding_normal',
+             [
+                 'label'      => __('Box Padding', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_control(
+             'box_background_color_normal_heading',
+             [
+                 'label'     => __('Background Color', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Background::get_type(),
+             [
+                 'name'     => 'box_background_color_1',
+                 'types'    => [ 'classic', 'gradient', 'video' ],
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap'
+             ]
+         );
+ 
+         $this->add_control(
+             'box_border_color_normal_heading',
+             [
+                 'label'     => __('Box Border', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'box_border_normal',
+                 'label' => __( 'Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Box_Shadow::get_type(),
+             [
+                 'name' => 'box_shadow_normal',
+                 'label' => __( 'Box Shadow', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap'
+             ]
+         );
+ 
+ 
+         $this->add_control(
+             'inner_boxes_normal_heading',
+             [
+                 'label'     => __('Category Box', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_inner_boxes_margin_normal',
+             [
+                 'label'      => __('Box Margin', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_inner_boxes_padding_normal',
+             [
+                 'label'      => __('Box Padding', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'all_box_border_normal',
+                 'label' => __( 'All Boxes Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap'
+             ]
+         );
+ 
+         $this->add_control(
+            'all_box_background_color_normal',
+            [
+                'label'     => esc_html__('Color', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .docs-single-cat-wrap' => 'background-color: {{VALUE}};',
+                ]
+            ]
+        );
+ 
+         $this->add_group_control(
+             Group_Control_Box_Shadow::get_type(),
+             [
+                 'name' => 'all_box_shadow_normal',
+                 'label' => __( 'Box Shadow', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap'
+             ]
+         );
+ 
+         $this->end_controls_tab();
+         /** Normal State Tab End **/
+ 
+         /** Hover State Tab Start **/
+         $this->start_controls_tab(
+             'box_background_color_hover',
+             [
+                  'label' => esc_html__('Hover', 'betterdocs')
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_wholebox_margin_hover',
+             [
+                 'label'      => __('Box Margin', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_wholebox_padding_hover',
+             [
+                 'label'      => __('Box Padding', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_control(
+             'box_background_color_hover_heading',
+             [
+                 'label'     => __('Background Color Hover', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Background::get_type(),
+             [
+                 'name'     => 'box_background_color_2',
+                 'types'    => [ 'classic', 'gradient'],
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap:hover'
+             ]
+         );
+ 
+         $this->add_control(
+             'box_border_color_hover_heading',
+             [
+                 'label'     => __('Box Border Hover', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'box_border_hover',
+                 'label' => __( 'Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap:hover'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Box_Shadow::get_type(),
+             [
+                 'name' => 'box_shadow_hover',
+                 'label' => __( 'Box Shadow Hover', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap:hover'
+             ]
+         );
+         $this->add_control(
+             'cat_boxes_hover_heading',
+             [
+                 'label'     => __('Category Box Hover', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_inner_boxes_margin_hover',
+             [
+                 'label'      => __('Box Margin', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'listview_inner_boxes_padding_hover',
+             [
+                 'label'      => __('Box Padding', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'all_box_border_hover',
+                 'label' => __( 'All Boxes Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap:hover'
+             ]
+         );
+ 
+         $this->add_control(
+            'all_box_background_color_hover',
+            [
+                'label'     => esc_html__('Color', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .docs-single-cat-wrap:hover' => 'background-color: {{VALUE}};',
+                ]
+            ]
+        );
+ 
+         $this->add_group_control(
+             Group_Control_Box_Shadow::get_type(),
+             [
+                 'name' => 'all_box_shadow_hover',
+                 'label' => __( 'Box Shadow Hover', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap:hover'
+             ]
+         );
+         $this->end_controls_tab();
+         /** Hover State Tab End **/
+ 
+         $this->end_controls_tabs();
+         $this->end_controls_section();
+ 
+    }
+ 
+    public function icon_setting_style() {
+         /**
+          * ----------------------------------------------------------
+          * Section: Icon Styles
+          * ----------------------------------------------------------
+          */
+         $this->start_controls_section(
+             'cat_boxes_icon_style',
+             [
+                 'label' => __('Category Icon', 'betterdocs'),
+                 'tab'   => Controls_Manager::TAB_STYLE,
+                 'condition' => [
+                    'layout_template' => 'layout-3'
+                ]
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'cat_boxes_icon_height',
+             [
+                 'label'      => esc_html__('Height', 'betterdocs'),
+                 'type'       => Controls_Manager::SLIDER,
+                 'size_units' => ['px', '%', 'em'],
+                 'range'      => [
+                     'px' => [
+                         'max' => 500,
+                     ],
+                 ],
+                 'selectors'  => [
+                     '{{WRAPPER}} .docs-single-cat-wrap img' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
+                 ]
+             ]
+         );
+ 
+         $this->start_controls_tabs('cat_boxes_icon_tabs');
+ 
+         /** Normal State Tab Start **/
+         $this->start_controls_tab(
+             'cat_boxes_icon_normal',
+             ['label' => esc_html__('Normal', 'betterdocs')]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_icon_bc_heading',
+             [
+                 'label'     => __('Icon Background Color', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Background::get_type(),
+             [
+                 'name'     => 'box_icon_background_colors',
+                 'types'    => [ 'classic', 'gradient'],
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap img',
+                 'exclude'  => [
+                     'image'
+                 ]
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_icon_border_heading',
+             [
+                 'label'     => __('Icon Border', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'cat_boxes_icon_border',
+                 'label' => __( 'Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap img'
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'icon_border_radius_normal_layout_3',
+             [
+                 'label'      => esc_html__('Icon Border Radius', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', 'em', '%'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .docs-single-cat-wrap img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                 ]
+             ]
+         );
+ 
+         $this->end_controls_tab();
+         /** Normal State Tab End **/
+ 
+         /** Hover State Tab Start **/
+         $this->start_controls_tab(
+             'cat_boxes_icon_hover',
+             [
+                'label' => esc_html__('Hover', 'betterdocs')
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_icon_bc_hover_heading',
+             [
+                 'label'     => __('Icon Background Hover Color', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Background::get_type(),
+             [
+                 'name'     => 'box_icon_background_colors_hover',
+                 'types'    => [ 'classic', 'gradient'],
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap img:hover',
+                 'exclude'  => [
+                     'image'
+                 ]
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_icon_border_heading_hover',
+             [
+                 'label'     => __('Icon Border Hover', 'betterdocs'),
+                 'type'      => Controls_Manager::HEADING,
+                 'separator' => 'before'
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Border::get_type(),
+             [
+                 'name' => 'cat_boxes_icon_border_hover',
+                 'label' => __( 'Border', 'betterdocs' ),
+                 'selector' => '{{WRAPPER}} .docs-single-cat-wrap img:hover'
+             ]
+         );
+ 
+ 
+         $this->add_responsive_control(
+             'cat_boxes_icon_border_radius_hover',
+             [
+                 'label'      => esc_html__('Icon Border Radius', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', 'em', '%'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .docs-single-cat-wrap img:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                 ]
+             ]
+         );
+ 
+         /** Hover State Tab End **/
+         $this->end_controls_tabs();
+         $this->end_controls_section();
+ 
+    }
+ 
+    public function category_title_style() {
+         /**
+          * ----------------------------------------------------------
+          * Section: Category Title Styles
+          * ----------------------------------------------------------
+          */
+         $this->start_controls_section(
+             'cat_boxes_title_style',
+             [
+                 'label' => __('Category Title', 'betterdocs'),
+                 'tab'   => Controls_Manager::TAB_STYLE,
+                 'condition' => [
+                    'layout_template' => 'layout-3'
+                ]
+             ]
+         );
+ 
+         $this->start_controls_tabs('cat_boxes_title_icon_tabs');
+ 
+         /** Normal State Tab Start **/
+         $this->start_controls_tab(
+             'cat_boxes_title_icon_normal',
+             [
+                 'label' => esc_html__('Normal', 'betterdocs')
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_title_color',
+             [
+                 'label'     => esc_html__('Category Title Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .title-count .docs-cat-title' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxes_title_typo_normal',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count .docs-cat-title'
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'cat_boxes_title_spacing_normal',
+             [
+                 'label'      => __('Title Spacing', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+         $this->end_controls_tab();
+         /** Normal State Tab End **/ 
+ 
+         /** Hover State Tab Start **/
+         $this->start_controls_tab(
+             'cat_boxes_title_icon_hover',
+             [
+                 'label' => esc_html__('Hover', 'betterdocs')
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxes_title_color_hover',
+             [
+                 'label'     => esc_html__('Category Title Hover Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .title-count .docs-cat-title:hover' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxes_title_typo_normal_hover',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count .docs-cat-title:hover'
+             ]
+         );
+ 
+         $this->add_responsive_control(
+             'cat_boxes_title_spacing_hover',
+             [
+                 'label'      => __('Title Spacing Hover', 'betterdocs'),
+                 'type'       => Controls_Manager::DIMENSIONS,
+                 'size_units' => ['px', '%', 'em'],
+                 'selectors'  => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                 ]
+             ]
+         );
+ 
+ 
+         $this->end_controls_tab();
+         /** Hover State Tab End **/ 
+ 
+         $this->end_controls_tabs();
+         $this->end_controls_section();
+    }
+ 
+    public function category_article_count(){
+         /**
+          * ----------------------------------------------------------
+          * Section: Category Articles Styles
+          * ----------------------------------------------------------
+          */
+         $this->start_controls_section(
+             'cat_boxes_articles_style',
+             [
+                 'label' => __('Category Article', 'betterdocs'),
+                 'tab'   => Controls_Manager::TAB_STYLE,
+                 'condition' => [
+                    'layout_template' => 'layout-3'
+                ]
+             ]
+         );
+ 
+         $this->start_controls_tabs('cat_articles_tabs');
+ 
+         /** Normal State Tab Start **/
+         $this->start_controls_tab(
+             'cat_articles_normal',
+             [
+                 'label' => esc_html__('Normal', 'betterdocs')
+             ]
+         );
+ 
+           $this->add_control(
+             'cat_boxes_articles_color',
+             [
+                 'label'     => esc_html__('Category Article Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count span' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxex_articles_typo_normal',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count span'
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxex_articles_show_desc_color_normal',
+             [
+                 'label'     => esc_html__('Description Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count .cat-description' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxex_articles_show_desc_typo_normal',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count .cat-description',
+             ]
+         );
+ 
+         $this->end_controls_tab();
+         /** Normal State Tab End **/
+ 
+          /** Hover State Tab Start **/
+          $this->start_controls_tab(
+             'cat_articles_hover',
+             [
+                'label' => esc_html__('Hover', 'betterdocs')
+             ]
+         );
+ 
+           $this->add_control(
+             'cat_boxes_articles_color_hover',
+             [
+                 'label'     => esc_html__('Category Article Hover Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count span:hover' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxex_articles_typo_hover',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count span:hover'
+             ]
+         );
+ 
+         $this->add_control(
+             'cat_boxex_articles_show_desc_color_hover',
+             [
+                 'label'     => esc_html__('Description Color', 'betterdocs'),
+                 'type'      => Controls_Manager::COLOR,
+                 'selectors' => [
+                     '{{WRAPPER}} .betterdocs-categories-wrap .title-count .cat-description:hover' => 'color: {{VALUE}};',
+                 ]
+             ]
+         );
+ 
+         $this->add_group_control(
+             Group_Control_Typography::get_type(),
+             [
+                 'name'     => 'cat_boxex_articles_show_desc_typo_hover',
+                 'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .title-count .cat-description:hover'
+             ]
+         );
+ 
+         $this->end_controls_tab();
+         /** Hover State Tab End **/
+         
+        $this->end_controls_tabs();
+        $this->end_controls_section();
     }
 }

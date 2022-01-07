@@ -714,7 +714,6 @@ span.wp-picker-input-wrap {
     text-transform: uppercase;
     text-align: center;
     position: absolute;
-    top: 5px;
     line-height: 1;
     padding: 3px 6px;
     border-radius: 2px;
@@ -1314,11 +1313,11 @@ body.wp-admin.rtl .ui-datepicker {
 }
 
 .betterdocs-settings-form-wrapper {
-    flex: 6;
+    flex: 10;
 }
 
 .betterdocs-settings-right {
-    flex: 3;
+    flex: 2;
     background: #fff;
     margin: 6px 0px 0px 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .07);
@@ -1423,7 +1422,7 @@ h4.betterdocs-admin-title {
     border: 1px solid rgb(235, 235, 235);
 } 
 .betterdocs-section-inner-tab > ul {
-    width: 20%;
+    width: 25%;
     list-style: none;
     margin: 0px;
     background-color: #eff1f3;
@@ -1454,8 +1453,7 @@ h4.betterdocs-admin-title {
 }    
 .betterdocs-section-inner-tab > div.betterdocs-section-inner-tab-contents {
     flex: 1;
-    padding: 20px;
-    margin-left: 30px;
+    padding: 20px 15px;
 }
 
 .betterdocs-section-inner-tab  div.betterdocs-section-inner-tab-content {

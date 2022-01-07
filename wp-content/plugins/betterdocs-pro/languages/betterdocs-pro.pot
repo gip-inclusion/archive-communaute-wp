@@ -620,7 +620,7 @@ msgid "How did you feel?"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://wpdeveloper.net"
+msgid "https://wpdeveloper.com"
 msgstr ""
 
 #. URI of the plugin

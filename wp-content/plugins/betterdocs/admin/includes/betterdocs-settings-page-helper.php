@@ -132,6 +132,20 @@ function betterdocs_settings_args(){
                                     'default'     => 1,
                                     'priority'    => 10,
                                 ),
+                                'advance_search' => apply_filters( 'betterdocs_advance_search_settings', array(
+                                    'type'        => 'checkbox',
+                                    'label'       => __('Enable Advanced Search' , 'betterdocs'),
+                                    'default'     => '',
+                                    'priority'    => 10,
+                                    'disable' => true,
+                                )),
+                                'popular_keyword_limit' => apply_filters( 'betterdocs_popular_keyword_limit_settings', array(
+                                    'type'        => 'number',
+                                    'label'       => __('Minimum amount of Keywords Search' , 'betterdocs'),
+                                    'default'     => 5,
+                                    'priority'    => 10,
+                                    'disable' => true,
+                                )),
                                 'search_placeholder' => array(
                                     'type'        => 'text',
                                     'label'       => __('Search Placeholder' , 'betterdocs'),
@@ -193,7 +207,7 @@ function betterdocs_settings_args(){
                                 ),
                                 'alphabetically_order_term' => array(
                                     'type'        => 'checkbox',
-                                    'label'       => __('Order Category Alphabetically' , 'betterdocs'),
+                                    'label'       => __('Order Terms Alphabetically' , 'betterdocs'),
                                     'default'     => '',
                                     'priority'    => 10,
                                 ),

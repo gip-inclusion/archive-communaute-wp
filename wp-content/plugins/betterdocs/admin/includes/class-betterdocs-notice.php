@@ -794,7 +794,7 @@ class BetterDocs_Notice {
 
     public function dismiss_button_scripts(){
         ?>
-        <script type="text/javascript">
+        <script>
             jQuery(document).ready( function($) {
                 if( $('.notice').length > 0 ) {
                     $('.notice').on('click', 'button.notice-dismiss', function (e) {
@@ -841,7 +841,7 @@ class BetterDocs_Notice {
         $page_slug = ( isset( $upsale_args['page_slug'] ) ) ? $upsale_args['page_slug'] : '';
 
         ?>
-        <script type="text/javascript">
+        <script>
             jQuery(document).ready( function($) {
                 <?php if( ! empty( $plugin_slug ) && ! empty( $plugin_file ) ) : ?>
                 $('#plugin-install-core-<?php echo $this->plugin_name; ?>').on('click', function (e) {
@@ -936,7 +936,7 @@ if( ! class_exists( 'Betterdocs_Pro' ) ) {
                 ]
             ),
             'support' => array(
-                'link' => 'https://wpdeveloper.net/support',
+                'link' => 'https://wpdeveloper.com/support',
                 'label' => __( 'I need help', $notice->text_domain ),
                 'icon_class' => 'dashicons dashicons-sos',
             ),
@@ -958,7 +958,7 @@ if( ! class_exists( 'Betterdocs_Pro' ) ) {
     $notice->thumbnail( 'review', plugins_url( 'admin/assets/img/betterdocs-icon.svg', BETTERDOCS_BASENAME ) );
 
     $notice->classes( 'update_10kuser', 'notice is-dismissible' );
-    $notice->message( 'update_10kuser', '<p>'. __( 'Join us to celebrate 20,000+ happy users of BetterDocs & get exclusive <strong>20% OFF</strong> with coupon code <em><strong>‘July20’</strong></em> while upgrading to PRO. <a class="button button-small" href="https://betterdocs.co/get/betterdocs-20k" target="_blank">Upgrade to PRO</a> ', $notice->text_domain ) .'</p>' );
+    $notice->message( 'update_10kuser', '<p>'. __( 'Enjoy Holiday & get exclusive <strong>20% OFF</strong> with coupon code <em><strong>‘Holiday’</strong></em> while upgrading to PRO. <a class="button button-small" href="https://betterdocs.co/upgrade" target="_blank">Upgrade to PRO</a> ', $notice->text_domain ) .'</p>' );
 
     /**
      * Current Notice End Time.

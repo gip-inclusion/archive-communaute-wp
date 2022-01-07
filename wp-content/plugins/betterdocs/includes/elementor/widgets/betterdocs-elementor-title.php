@@ -29,7 +29,7 @@ class BetterDocs_Elementor_Title extends Widget_Base {
     }
 
     public function get_categories () {
-        return ['betterdocs-elements'];
+        return ['betterdocs-elements-single'];
     }
 
     public function get_keywords () {
@@ -201,6 +201,44 @@ class BetterDocs_Elementor_Title extends Widget_Base {
                     '{{WRAPPER}} .elementor-heading-title' => 'mix-blend-mode: {{VALUE}}',
                 ],
                 'separator' => 'none',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_padding',
+            [
+                'label'      => esc_html__('Title Padding', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'    => [
+                    "top"    => '0',
+                    "right"  => '0',
+                    "bottom" => '0',
+                    "left"   => '0',
+                    "isLinked" => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .elementor-heading-title'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_margin',
+            [
+                'label'      => esc_html__('Title Margin', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'    => [
+                    "top"    => '0',
+                    "right"  => '0',
+                    "bottom" => '0',
+                    "left"   => '0',
+                    "isLinked" => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .elementor-heading-title'  => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
             ]
         );
 

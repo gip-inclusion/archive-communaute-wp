@@ -3,7 +3,7 @@ use \Elementor\Plugin;
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://wpdeveloper.net
+ * @link       https://wpdeveloper.com
  * @since      1.0.0
  *
  * @package    BetterDocs
@@ -18,7 +18,7 @@ use \Elementor\Plugin;
  *
  * @package    BetterDocs
  * @subpackage BetterDocs/public
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
 class BetterDocs_Public {
 
@@ -72,6 +72,7 @@ class BetterDocs_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_register_style( 'simplebar', plugin_dir_url(__FILE__) . 'css/simplebar.css', array(), $this->version, 'all' );
 		wp_register_style($this->plugin_name, BETTERDOCS_PUBLIC_URL . 'css/betterdocs-public.css', array(), $this->version, 'all');
 		wp_register_style('betterdocs-category-grid', BETTERDOCS_URL . 'includes/elementor/assets/betterdocs-category-grid.css', array(), $this->version, 'all');
 		wp_register_style('betterdocs-category-box', BETTERDOCS_URL . 'includes/elementor/assets/betterdocs-category-box.css', array(), $this->version, 'all');
@@ -101,6 +102,7 @@ class BetterDocs_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_register_script('simplebar', plugin_dir_url(__FILE__) . 'js/simplebar.js', array( 'jquery' ), $this->version, true);
         wp_register_script('clipboard', BETTERDOCS_PUBLIC_URL . 'js/clipboard.min.js', array( 'jquery' ), $this->version, true);
         wp_register_script($this->plugin_name, BETTERDOCS_PUBLIC_URL . 'js/betterdocs-public.js', array( 'jquery' ), $this->version, true);
 		wp_register_script('betterdocs-category-grid', BETTERDOCS_URL . 'includes/elementor/assets/betterdocs-category-grid.js', [ 'jquery' ], '1.0.0', true);
@@ -108,6 +110,7 @@ class BetterDocs_Public {
 
     public function enqueue_scripts()
     {
+		wp_enqueue_script('simplebar');
         wp_enqueue_script($this->plugin_name);
         wp_enqueue_script('clipboard');
         wp_localize_script($this->plugin_name, 'betterdocspublic', array(
@@ -116,6 +119,7 @@ class BetterDocs_Public {
             'copy_text' => esc_html__('Copied','betterdocs'),
             'sticky_toc_offset' => BetterDocs_DB::get_settings('sticky_toc_offset'),
             'nonce' => wp_create_nonce( 'betterdocs_submit_data' ),
+            'search_keyword' => get_option( 'betterdocs_search_data' )
         ));
     }
 
@@ -193,9 +197,16 @@ class BetterDocs_Public {
 	public function get_docs_single_template($single_template) 
 	{
 		if (is_singular('docs')) {
-			$single_template = plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/template-single/layout-1.php';
+			$layout_select = get_theme_mod('betterdocs_single_layout_select', 'layout-1');
+			if ($layout_select === 'layout-4') {
+				$single_template = BETTERDOCS_PUBLIC_PATH . 'partials/template-single/layout-4.php';
+			} elseif ($layout_select === 'layout-5') {
+				$single_template = BETTERDOCS_PUBLIC_PATH . 'partials/template-single/layout-5.php';
+			} else {
+				$single_template = BETTERDOCS_PUBLIC_PATH . 'partials/template-single/layout-1.php';
+			}
 		}
-		return $single_template;
+        return apply_filters('betterdocs_single_template', $single_template);
 	}
 
 	/**
@@ -443,4 +454,24 @@ class BetterDocs_Public {
         $links[] = sprintf('<a href="admin.php?page=betterdocs-settings">' . esc_html__('Settings','betterdocs') . '</a>');
         return $links;
 	}
+
+    public static function search()
+    {
+        $output = betterdocs_generate_output();
+        $live_search = BetterDocs_DB::get_settings('live_search');
+        $search_placeholder = BetterDocs_DB::get_settings('search_placeholder');
+        $search_heading_switch = $output['betterdocs_live_search_heading_switch'];
+        $search_heading = $output['betterdocs_live_search_heading'];
+        $search_subheading = $output['betterdocs_live_search_subheading'];
+
+        if ( $live_search == 1 ) {
+            $html = '<div class="betterdocs-search-form-wrap">'. do_shortcode( '[betterdocs_search_form 
+                placeholder="'.$search_placeholder.'" 
+                enable_heading="'.$search_heading_switch.'"
+                heading="'.$search_heading.'" 
+                subheading="'.$search_subheading.'"]').'</div>';
+
+            return apply_filters('betterdocs_search_section', $html);
+        }
+    }
 }

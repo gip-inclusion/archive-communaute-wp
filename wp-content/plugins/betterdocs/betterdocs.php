@@ -4,9 +4,9 @@
  * Plugin Name:       BetterDocs
  * Plugin URI:        https://betterdocs.co/
  * Description:       Create stunning Knowledge base for your WordPress website and reduce support pressure with the help of BetterDocs. Get access to amazing templates and create fully customizable KB within minutes.
- * Version:           1.9.7
+ * Version:           2.0.3
  * Author:            WPDeveloper
- * Author URI:        https://wpdeveloper.net
+ * Author URI:        https://wpdeveloper.com
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       betterdocs
@@ -18,7 +18,7 @@ if (!defined('WPINC')) {
 	die;
 }
 
-define('BETTERDOCS_VERSION', '1.9.7');
+define('BETTERDOCS_VERSION', '2.0.3');
 define('BETTERDOCS_DIR_PATH', plugin_dir_path(__FILE__));
 define('BETTERDOCS_URL', plugin_dir_url(__FILE__));
 define('BETTERDOCS_PUBLIC_URL', BETTERDOCS_URL . 'public/');
@@ -35,7 +35,7 @@ define('BETTERDOCS_PUBLIC_PATH', BETTERDOCS_ROOT_DIR_PATH . 'public/');
  */
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('polylang/polylang.php')) {
-    define( 'PLL_WPML_COMPAT', false );
+	define('PLL_WPML_COMPAT', false);
 }
 
 /**

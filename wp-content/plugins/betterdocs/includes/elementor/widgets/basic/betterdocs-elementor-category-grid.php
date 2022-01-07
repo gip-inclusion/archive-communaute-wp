@@ -1,4 +1,5 @@
 <?php
+
 use Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Border;
@@ -10,27 +11,33 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class BetterDocs_Elementor_Category_Grid extends Widget_Base {
+class BetterDocs_Elementor_Category_Grid extends Widget_Base
+{
 
     use \Better_Docs_Elementor\Traits\Template_Query;
 
-    public function get_name () {
+    public function get_name()
+    {
         return 'betterdocs-category-grid';
     }
 
-    public function get_title () {
+    public function get_title()
+    {
         return __('BetterDocs Category Grid', 'betterdocs');
     }
 
-    public function get_icon () {
+    public function get_icon()
+    {
         return 'betterdocs-icon-category-grid';
     }
 
-    public function get_categories () {
-        return ['docs-archive'];
+    public function get_categories()
+    {
+        return ['docs-archive', 'betterdocs-elements'];
     }
 
-    public function get_keywords () {
+    public function get_keywords()
+    {
         return [
             'knowledgebase',
             'knowledge base',
@@ -48,11 +55,13 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         return ['betterdocs-category-grid'];
     }
 
-    public function get_script_depends() {
-        return [ 'masonry', 'betterdocs-category-grid' ];
+    public function get_script_depends()
+    {
+        return ['masonry', 'betterdocs-category-grid'];
     }
 
-    public function get_custom_help_url() {
+    public function get_custom_help_url()
+    {
         return 'https://betterdocs.co/docs/betterdocs-category-grid';
     }
 
@@ -94,7 +103,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
                 'type' => Controls_Manager::SELECT2,
                 'options' => [
                     'grid'  => __('Grid', 'betterdocs'),
-                    'fit-to-screen'  => __( 'Fit to Screen', 'betterdocs' ),
+                    'fit-to-screen'  => __('Fit to Screen', 'betterdocs'),
                     'masonry' => __('Masonry', 'betterdocs'),
                 ],
                 'default' => 'grid',
@@ -279,110 +288,110 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
 
         $this->start_controls_tabs('grid_style_tab');
 
-            // Normal State Tab
-            $this->start_controls_tab(
-                'grid_normal',
-                ['label' => esc_html__('Normal', 'betterdocs')]
-            );
+        // Normal State Tab
+        $this->start_controls_tab(
+            'grid_normal',
+            ['label' => esc_html__('Normal', 'betterdocs')]
+        );
 
-            $this->add_group_control(
-                Group_Control_Background::get_type(),
-                [
-                    'name'     => 'grid_bg', // Legacy control id 'content_area_bg'
-                    'types'    => ['classic', 'gradient'],
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name'     => 'grid_bg', // Legacy control id 'content_area_bg'
+                'types'    => ['classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'grid_box_shadow',
+                'label' => __('Box Shadow', 'betterdocs'),
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
+            ]
+        );
+
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'grid_border',
+                'label' => __('Border', 'betterdocs'),
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'grid_border_radius',
+            [
+                'label' => __('Border Radius', 'betterdocs'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
-            );
+            ]
+        );
 
-            $this->add_group_control(
-                Group_Control_Box_Shadow::get_type(),
-                [
-                    'name' => 'grid_box_shadow',
-                    'label' => __( 'Box Shadow', 'betterdocs' ),
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
+        $this->end_controls_tab();
+
+        // Hover State Tab
+        $this->start_controls_tab(
+            'grid_hover',
+            ['label' => esc_html__('Hover', 'betterdocs')]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name'     => 'grid_bg_hover',
+                'types'    => ['classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'grid_hover_box_shadow',
+                'label' => __('Box Shadow', 'betterdocs'),
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
+            ]
+        );
+
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'grid_hover_border',
+                'label' => __('Border', 'betterdocs'),
+                'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'grid_hover_border_radius',
+            [
+                'label' => __('Border Radius', 'betterdocs'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
-            );
+            ]
+        );
 
-
-            $this->add_group_control(
-                Group_Control_Border::get_type(),
-                [
-                    'name' => 'grid_border',
-                    'label' => __( 'Border', 'betterdocs' ),
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner',
-                ]
-            );
-
-            $this->add_responsive_control(
-                'grid_border_radius',
-                [
-                    'label' => __( 'Border Radius', 'betterdocs' ),
-                    'type' => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px', '%', 'em' ],
-                    'selectors' => [
-                        '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    ]
-                ]
-            );
-
-            $this->end_controls_tab();
-
-            // Hover State Tab
-            $this->start_controls_tab(
-                'grid_hover',
-                ['label' => esc_html__('Hover', 'betterdocs')]
-            );
-
-            $this->add_group_control(
-                Group_Control_Background::get_type(),
-                [
-                    'name'     => 'grid_bg_hover',
-                    'types'    => ['classic', 'gradient'],
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
-                ]
-            );
-
-            $this->add_group_control(
-                Group_Control_Box_Shadow::get_type(),
-                [
-                    'name' => 'grid_hover_box_shadow',
-                    'label' => __( 'Box Shadow', 'betterdocs' ),
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
-                ]
-            );
-
-
-            $this->add_group_control(
-                Group_Control_Border::get_type(),
-                [
-                    'name' => 'grid_hover_border',
-                    'label' => __( 'Border', 'betterdocs' ),
-                    'selector' => '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover',
-                ]
-            );
-
-            $this->add_responsive_control(
-                'grid_hover_border_radius',
-                [
-                    'label' => __( 'Border Radius', 'betterdocs' ),
-                    'type' => Controls_Manager::DIMENSIONS,
-                    'size_units' => [ 'px', '%', 'em' ],
-                    'selectors' => [
-                        '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    ]
-                ]
-            );
-
-            $this->end_controls_tab();
+        $this->end_controls_tab();
 
         $this->end_controls_tabs(); # end of $this->start_controls_tabs('grid_style_tab');
 
         $this->add_responsive_control(
             'grid_padding',
             [
-                'label' => __( 'Grid Padding', 'betterdocs' ),
+                'label' => __('Grid Padding', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -393,9 +402,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_responsive_control(
             'column_padding', // Legacy control id
             [
-                'label' => __( 'Grid Spacing', 'betterdocs' ),
+                'label' => __('Grid Spacing', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-category-grid-post .el-betterdocs-cg-inner' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -444,7 +453,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'header_icon_border', // Legacy control name change it with 'border_size' if anything happens.
-                'label' => __( 'Border', 'betterdocs' ),
+                'label' => __('Border', 'betterdocs'),
                 'selector' => '{{WRAPPER}} .el-betterdocs-cg-header .el-betterdocs-cat-icon',
             ]
         );
@@ -452,9 +461,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'header_icon_border_radius',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-cg-header .el-betterdocs-cat-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
@@ -463,8 +472,8 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
 
         $this->end_controls_tab();
 
-            // Hover State Tab
-            $this->start_controls_tab(
+        // Hover State Tab
+        $this->start_controls_tab(
             'icon_hover',
             ['label' => esc_html__('Hover', 'betterdocs')]
         );
@@ -485,7 +494,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'header_icon_border_hover', // Legacy control name change it with 'border_size' if anything happens.
-                'label' => __( 'Border', 'betterdocs' ),
+                'label' => __('Border', 'betterdocs'),
                 'selector' => '{{WRAPPER}} .el-betterdocs-cg-header .el-betterdocs-cat-icon:hover',
             ]
         );
@@ -493,9 +502,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'header_icon_border_radius_hover',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-cg-header .el-betterdocs-cat-icon:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
@@ -610,34 +619,34 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'title_border', // Legacy control name change it with 'border_size' if anything happens.
-                'label'    => __( 'Border', 'betterdocs' ),
+                'label'    => __('Border', 'betterdocs'),
                 'fields_options' => [
-	                'border' => [
-		                'default' => 'solid',
-	                ],
-	                'width' => [
-		                'default'      => [
-			                'top'      => '0',
-			                'right'    => '0',
-			                'bottom'   => '2',
-			                'left'     => '0',
-			                'isLinked' => false,
-		                ],
-	                ],
-	                'color' => [
-		                'default' => '#8E0AE9',
-	                ],
+                    'border' => [
+                        'default' => 'solid',
+                    ],
+                    'width' => [
+                        'default'      => [
+                            'top'      => '0',
+                            'right'    => '0',
+                            'bottom'   => '2',
+                            'left'     => '0',
+                            'isLinked' => false,
+                        ],
+                    ],
+                    'color' => [
+                        'default' => '#8E0AE9',
+                    ],
                 ],
                 'selector' => '{{WRAPPER}} .el-betterdocs-cg-header-inner, {{WRAPPER}} .layout-2 .el-betterdocs-cat-title',
             ]
         );
-	  
+
         $this->add_control(
             'title_border_radius',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .layout-2 .el-betterdocs-cat-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .el-betterdocs-cg-header'   => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -681,7 +690,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'title_border_hover', // Legacy control name change it with 'border_size' if anything happens.
-                'label' => __( 'Border', 'betterdocs' ),
+                'label' => __('Border', 'betterdocs'),
                 'selector' => '{{WRAPPER}} .el-betterdocs-cg-header-inner:hover, {{WRAPPER}} .layout-2 .el-betterdocs-cat-title:hover',
             ]
         );
@@ -689,9 +698,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'title_border_radius_hover',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .layout-2 .el-betterdocs-cat-title:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -781,7 +790,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             ]
         );
 
-        $this->start_controls_tabs( 'count_settings_tabs' );
+        $this->start_controls_tabs('count_settings_tabs');
 
         // Normal State Tab
         $this->start_controls_tab(
@@ -830,7 +839,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'count_border', // Legacy control name change it with 'border_size' if anything happens.
-                'label' => __( 'Border', 'betterdocs' ),
+                'label' => __('Border', 'betterdocs'),
                 'selector' => '{{WRAPPER}} .el-betterdocs-item-count',
                 'condition' => [
                     'layout_template!' => 'Layout_2'
@@ -841,9 +850,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'count_border_radius',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-item-count' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -877,7 +886,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
                         'step'  => 100,
                     ],
                 ],
-                'size_units'            => [ 'px' ],
+                'size_units'            => ['px'],
                 'selectors'             => [
                     '{{WRAPPER}} .el-betterdocs-item-count' => 'transition: {{SIZE}}ms;',
                     '{{WRAPPER}} .el-betterdocs-item-count:after' => 'transition: {{SIZE}}ms;',
@@ -927,7 +936,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'count_border_hover', // Legacy control name change it with 'border_size' if anything happens.
-                'label' => __( 'Border', 'betterdocs' ),
+                'label' => __('Border', 'betterdocs'),
                 'selector' => '{{WRAPPER}} .el-betterdocs-item-count:hover',
                 'condition' => [
                     'layout_template!' => 'Layout_2'
@@ -938,9 +947,9 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'count_border_radius_hover',
             [
-                'label' => __( 'Border Radius', 'betterdocs' ),
+                'label' => __('Border Radius', 'betterdocs'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .el-betterdocs-item-count:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1052,7 +1061,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'list_icon',
             [
-                'label' => __( 'Icon', 'betterdocs' ),
+                'label' => __('Icon', 'betterdocs'),
                 'type' => Controls_Manager::ICONS,
                 'default'   => [
                     'value'     => 'far fa-file-alt',
@@ -1193,7 +1202,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'nested_list_title_closed_icon',
             [
-                'label' => __( 'Collapse Icon', 'betterdocs' ),
+                'label' => __('Collapse Icon', 'betterdocs'),
                 'type' => Controls_Manager::ICONS,
                 'default'   => [
                     'value'     => 'fas fa-angle-right',
@@ -1205,7 +1214,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'nested_list_title_open_icon',
             [
-                'label' => __( 'Open Icon', 'betterdocs' ),
+                'label' => __('Open Icon', 'betterdocs'),
                 'type' => Controls_Manager::ICONS,
                 'default'   => [
                     'value'     => 'fas fa-angle-down',
@@ -1291,7 +1300,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         $this->add_control(
             'button_icon',
             [
-                'label' => __( 'Icon', 'betterdocs' ),
+                'label' => __('Icon', 'betterdocs'),
                 'type' => Controls_Manager::ICONS,
                 'default'   => [
                     'value' => 'fas fa-angle-right',
@@ -1310,8 +1319,8 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
                 'type' => Controls_Manager::SELECT,
                 'default' => 'after',
                 'options' => [
-                    'before' => __( 'Before', 'betterdocs' ),
-                    'after' => __( 'After', 'betterdocs' )
+                    'before' => __('Before', 'betterdocs'),
+                    'after' => __('After', 'betterdocs')
                 ],
                 'condition' => [
                     'show_button_icon'  => 'true'
@@ -1429,7 +1438,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
                         'step'  => 100,
                     ],
                 ],
-                'size_units'            => [ 'px' ],
+                'size_units'            => ['px'],
                 'selectors'             => [
                     '{{WRAPPER}} .el-betterdocs-cg-button' => 'transition: {{SIZE}}ms;',
                 ]
@@ -1535,10 +1544,10 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         );
 
         $this->end_controls_section(); # end of 'Button Settings'
-	}
+    }
 
 
-	protected function render()
+    protected function render()
     {
         $settings = $this->get_settings_for_display();
 
@@ -1574,16 +1583,20 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             $terms_object['parent'] = 0;
         }
 
-        if($settings['orderby'] != 'betterdocs_order') {
-            $terms_object['orderby'] =  $settings['orderby'];
-        }
-
-        if ( $settings['include'] ) {
+        if ($settings['include']) {
             $terms_object['include'] = array_diff($settings['include'], (array) $settings['exclude']);
         }
 
-        if($settings['exclude']) {
+        if ($settings['exclude']) {
             $terms_object['exclude'] =  $settings['exclude'];
+        }
+
+        if ($settings['orderby'] == 'betterdocs_order') {
+            $terms_object['meta_key'] = 'doc_category_order';
+            $terms_object['orderby'] = 'meta_value_num';
+            $terms_object['order'] = 'ASC';
+        } else {
+            $terms_object['orderby'] = $settings['orderby'];
         }
 
         $default_multiple_kb = BetterDocs_Elementor::get_betterdocs_multiple_kb_status();
@@ -1591,8 +1604,8 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
         if ($settings['layout_template'] == 'Layout_2') {
             $settings['layout_template'] = 'layout-2';
         }
-        
-        if($default_multiple_kb) {
+
+        if ($default_multiple_kb) {
             $object = get_queried_object();
             if (empty($settings['selected_knowledge_base']) && is_tax('knowledge_base')) {
                 $meta_value = $object->slug;
@@ -1614,69 +1627,67 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
             $taxonomy_objects = get_terms($terms_object);
 
             $html = '<div ' . $this->get_render_attribute_string('bd_category_grid_wrapper') . '>';
-                $html .= '<div '.$this->get_render_attribute_string('bd_category_grid_inner').' data-column="'.$settings['grid_column'].'" data-column-space="'.$settings['grid_space'].'">';
-                if (file_exists($this->get_template($settings['layout_template']))) {
-                    if ($taxonomy_objects && ! is_wp_error( $taxonomy_objects )) {
-                        foreach($taxonomy_objects as $term) {
-                            $term_id = $term->term_id;
-                            $term_slug = $term->slug;
-                            $count = $term->count;
-                            $get_term_count = betterdocs_get_postcount($count, $term_id, $settings['nested_subcategory']);
-                            $term_count = apply_filters('betterdocs_postcount', $get_term_count, $default_multiple_kb, $term_id, $term_slug, $count, $settings['nested_subcategory']);
-                            if ($term_count > 0) {
-                                $html .= BetterDocs_Elementor::include_with_variable($this->get_template($settings['layout_template']), ['term' => $term, 'term_count' => $term_count, 'settings' => $settings, 'default_multiple_kb' => $default_multiple_kb]);
-                            }
+            $html .= '<div ' . $this->get_render_attribute_string('bd_category_grid_inner') . ' data-column="' . $settings['grid_column'] . '" data-column-space="' . $settings['grid_space'] . '">';
+            if (file_exists($this->get_template($settings['layout_template']))) {
+                if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) {
+                    foreach ($taxonomy_objects as $term) {
+                        $term_id = $term->term_id;
+                        $term_slug = $term->slug;
+                        $count = $term->count;
+                        $get_term_count = betterdocs_get_postcount($count, $term_id, $settings['nested_subcategory']);
+                        $term_count = apply_filters('betterdocs_postcount', $get_term_count, $default_multiple_kb, $term_id, $term_slug, $count, $settings['nested_subcategory']);
+                        if ($term_count > 0) {
+                            $html .= BetterDocs_Elementor::include_with_variable($this->get_template($settings['layout_template']), ['term' => $term, 'term_count' => $term_count, 'settings' => $settings, 'default_multiple_kb' => $default_multiple_kb]);
                         }
-                    } else {
-                        $html .= '<p class="no-posts-found">' . __('No posts found!', 'betterdocs') . '</p>';
                     }
-
-                    wp_reset_postdata();
                 } else {
-                    $html .= '<h4>'.__( 'File Not Found', 'betterdocs' ).'</h4>';
+                    $html .= '<p class="no-posts-found">' . __('No posts found!', 'betterdocs') . '</p>';
                 }
-                $html .= '</div>';
-                $html .= '<div class="clearfix"></div>';
 
-                if (\Elementor\Plugin::instance()->editor->is_edit_mode()) {
-                    $this->render_editor_script();
-                }
+                wp_reset_postdata();
+            } else {
+                $html .= '<h4>' . __('File Not Found', 'betterdocs') . '</h4>';
+            }
+            $html .= '</div>';
+            $html .= '<div class="clearfix"></div>';
+
+            if (\Elementor\Plugin::instance()->editor->is_edit_mode()) {
+                $this->render_editor_script();
+            }
             $html .= '</div>';
 
             echo $html;
-
-
         } else {
             $taxonomy_objects = get_terms($terms_object);
 
             $html = '<div ' . $this->get_render_attribute_string('bd_category_grid_wrapper') . '>';
-                $html .= '<div '.$this->get_render_attribute_string('bd_category_grid_inner').' data-column="'.$settings['grid_column'].'" data-column-space="'.$settings['grid_space'].'">';
-                
-                if (file_exists($this->get_template($settings['layout_template']))) {
-                    if($taxonomy_objects && ! is_wp_error( $taxonomy_objects )) {
-                        foreach($taxonomy_objects as $term) {
-                            $term_id = $term->term_id;
-                            $term_slug = $term->slug;
-                            $count = $term->count;
-                            $get_term_count = betterdocs_get_postcount($count, $term_id, $settings['nested_subcategory']);
-                            $term_count = apply_filters('betterdocs_postcount', $get_term_count, $default_multiple_kb, $term_id, $term_slug, $count, $settings['nested_subcategory']);
-                            if ($term_count > 0) {
-                                $html .= BetterDocs_Elementor::include_with_variable($this->get_template($settings['layout_template']), ['term' => $term, 'term_count' => $term_count, 'settings' => $settings, 'default_multiple_kb' => $default_multiple_kb]);
-                            }
-                        }
-                    } else {
-                        $html .= '<p class="no-posts-found">' . __('No posts found!', 'betterdocs') . '</p>';
-                    }
-                    wp_reset_postdata();
-                } else {
-                    $html .= '<h4>'.__( 'File Not Found', 'betterdocs' ).'</h4>';
-                }
-                $html .= '</div>';
-                $html .= '<div class="clearfix"></div>';
+            $html .= '<div ' . $this->get_render_attribute_string('bd_category_grid_inner') . ' data-column="' . $settings['grid_column'] . '" data-column-space="' . $settings['grid_space'] . '">';
 
-                if (\Elementor\Plugin::instance()->editor->is_edit_mode()) {
-                    $this->render_editor_script();
+            if (file_exists($this->get_template($settings['layout_template']))) {
+                if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) {
+                    foreach ($taxonomy_objects as $term) {
+                        $term_id = $term->term_id;
+                        $term_slug = $term->slug;
+                        $count = $term->count;
+                        $get_term_count = betterdocs_get_postcount($count, $term_id, $settings['nested_subcategory']);
+                        $term_count = apply_filters('betterdocs_postcount', $get_term_count, $default_multiple_kb, $term_id, $term_slug, $count, $settings['nested_subcategory']);
+                        if ($term_count > 0) {
+                            $html .= BetterDocs_Elementor::include_with_variable($this->get_template($settings['layout_template']), ['term' => $term, 'term_count' => $term_count, 'settings' => $settings, 'default_multiple_kb' => $default_multiple_kb]);
+                        }
+                    }
+                } else {
+                    $html .= '<p class="no-posts-found">' . __('No posts found!', 'betterdocs') . '</p>';
                 }
+                wp_reset_postdata();
+            } else {
+                $html .= '<h4>' . __('File Not Found', 'betterdocs') . '</h4>';
+            }
+            $html .= '</div>';
+            $html .= '<div class="clearfix"></div>';
+
+            if (\Elementor\Plugin::instance()->editor->is_edit_mode()) {
+                $this->render_editor_script();
+            }
             $html .= '</div>';
 
             echo $html;
@@ -1685,15 +1696,15 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
 
     protected function render_editor_script()
     {
-    ?>
+?>
         <script>
             jQuery(document).ready(function($) {
-                $('.betterdocs-category-grid').each(function () {
+                $('.betterdocs-category-grid').each(function() {
                     let $grid = $(this),
                         $layout_mode = $grid.data('layout-mode'),
                         $column = $grid.data('column'),
                         $column_space = $grid.data('column-space');
-                    if($layout_mode === 'masonry') {
+                    if ($layout_mode === 'masonry') {
                         let masonryItem = $(".el-betterdocs-category-grid-post", $grid);
                         let total_margin = $column * $column_space;
                         masonryItem.css("width", "calc((100% - " + total_margin + "px) / " + parseInt($column) + ")");
@@ -1706,6 +1717,6 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base {
                 });
             });
         </script>
-    <?php
+<?php
     }
 }

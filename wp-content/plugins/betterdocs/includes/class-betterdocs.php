@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://wpdeveloper.net
+ * @link       https://wpdeveloper.com
  * @since      1.0.0
  *
  * @package    BetterDocs
@@ -25,9 +25,10 @@
  * @since      1.0.0
  * @package    BetterDocs
  * @subpackage BetterDocs/includes
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
-class BetterDocs {
+class BetterDocs
+{
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -66,8 +67,9 @@ class BetterDocs {
 	 *
 	 * @since    1.0.0
 	 */
-	public function __construct() {
-		if ( defined( 'BETTER_DOCUMENTATION_VERSION' ) ) {
+	public function __construct()
+	{
+		if (defined('BETTER_DOCUMENTATION_VERSION')) {
 			$this->version = BETTER_DOCUMENTATION_VERSION;
 		} else {
 			$this->version = '1.0.0';
@@ -79,8 +81,8 @@ class BetterDocs {
 		$this->start_plugin_tracking();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		add_action( 'admin_init', array( $this, 'redirect' ) );
-		add_action( 'wp_ajax_optin_wizard_action_betterdocs', array( $this, 'wizard_action' ) );
+		add_action('admin_init', array($this, 'redirect'));
+		add_action('wp_ajax_optin_wizard_action_betterdocs', array($this, 'wizard_action'));
 	}
 
 	/**
@@ -99,22 +101,23 @@ class BetterDocs {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function load_dependencies() {
+	private function load_dependencies()
+	{
 		/**
 		 * Quick Setup Wizard
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/setup-wizard/betterdocs-setup-wizard-config.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/setup-wizard/betterdocs-setup-wizard-config.php';
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-betterdocs-loader.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-betterdocs-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-betterdocs-i18n.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-betterdocs-i18n.php';
 		require_once BETTERDOCS_DIR_PATH . 'includes/class-betterdocs-usage-tracker.php';
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
@@ -135,38 +138,44 @@ class BetterDocs {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-betterdocs-public.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-betterdocs-public.php';
 
 		/**
 		 * The functions responsible for betterdocs helpers
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-betterdocs-helpers.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-betterdocs-helpers.php';
 
 		/**
 		 * The class responsible for registering docs post type and it's category and tags taxonomy
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-betterdocs-docs-post-type.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-betterdocs-docs-post-type.php';
 
 		/**
 		 * The functions responsible for betterdocs shortcodes
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/betterdocs-shortcodes.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/betterdocs-shortcodes.php';
 
 		/**
 		 * The functions responsible for betterdocs breadcrumbs
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/betterdocs-breadcrumbs.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/betterdocs-breadcrumbs.php';
 
 		/**
 		 * The functions responsible for betterdocs customizer
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/customizer/customizer.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/customizer/defaults.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/customizer/customizer.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/customizer/defaults.php';
 
-        /**
-         * The class responsible for registering widget in elementor and extend single page functionality
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/elementor/class-betterdocs-elementor.php';
+		/**
+		 * The class responsible for registering widget in elementor and extend single page functionality
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/elementor/class-betterdocs-elementor.php';
+
+		/**
+		 * The class responsible for registering widget in elementor and extend single page functionality
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/gutenberg/class-betterdocs-gutenberg.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/gutenberg/class-style-handler.php';
 
 		$this->loader = new BetterDocs_Loader();
 	}
@@ -175,49 +184,52 @@ class BetterDocs {
 	 * Optional usage tracker
 	 *
 	 * @since v1.0.0
-	*/
-	public function start_plugin_tracking() {
-		$tracker = BetterDocs_Plugin_Usage_Tracker::get_instance( BETTERDOCS_FILE, [
+	 */
+	public function start_plugin_tracking()
+	{
+		$tracker = BetterDocs_Plugin_Usage_Tracker::get_instance(BETTERDOCS_FILE, [
 			'opt_in'       => true,
 			'goodbye_form' => true,
 			'item_id'      => 'c7b16777b4f1b83f6083'
-		] );
+		]);
 		$tracker->set_notice_options(array(
-			'notice' => __( 'Want to help make <strong>BetterDocs</strong> even more awesome? You can get a <strong>10% discount coupon</strong> for Premium extensions if you allow us to track the usage.', 'betterdocs' ),
-			'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information.
+			'notice' => __('Want to help make <strong>BetterDocs</strong> even more awesome? You can get a <strong>10% discount coupon</strong> for Premium extensions if you allow us to track the usage.', 'betterdocs'),
+			'extra_notice' => __('We collect non-sensitive diagnostic data and plugin usage information.
 			Your site URL, WordPress & PHP version, plugins & themes and email address to send you the
 			discount coupon. This data lets us make sure this plugin always stays compatible with the most
-			popular plugins and themes. No spam, I promise.', 'betterdocs' ),
+			popular plugins and themes. No spam, I promise.', 'betterdocs'),
 		));
 		$tracker->init();
 	}
 
-	public function wizard_action() {
-		if( ! check_ajax_referer( 'betterdocsqswnonce', 'nonce') )  {
+	public function wizard_action()
+	{
+		if (!check_ajax_referer('betterdocsqswnonce', 'nonce')) {
 			return;
 		}
-		if( $this->do_wizard_tracking(true, $_POST) ) {
-			wp_send_json_success( 'done' );
+		if ($this->do_wizard_tracking(true, $_POST)) {
+			wp_send_json_success('done');
 		}
-		wp_send_json_error( 'Something went wrong.' );
+		wp_send_json_error('Something went wrong.');
 	}
 
-	public function do_wizard_tracking( $force = false, $data = [] ) {
-		if( ! class_exists( 'BetterDocs_Plugin_Usage_Tracker' ) ) {
+	public function do_wizard_tracking($force = false, $data = [])
+	{
+		if (!class_exists('BetterDocs_Plugin_Usage_Tracker')) {
 			require_once BETTERDOCS_DIR_PATH . 'includes/class-betterdocs-usage-tracker.php';
 		}
-		$tracker = BetterDocs_Plugin_Usage_Tracker::get_instance( BETTERDOCS_FILE, [
+		$tracker = BetterDocs_Plugin_Usage_Tracker::get_instance(BETTERDOCS_FILE, [
 			'opt_in'       => true,
 			'goodbye_form' => true,
 			'item_id'      => 'c7b16777b4f1b83f6083'
-		] );
+		]);
 		// If the home site hasn't been defined, we just drop out. Nothing much we can do.
-		if ( empty( $tracker::API_URL ) ) {
+		if (empty($tracker::API_URL)) {
 			return false;
 		}
 		// Get our data
 		$body = $tracker->get_data();
-		if( isset( $data['admin_email'] ) && ! empty( $data['admin_email'] ) ) {
+		if (isset($data['admin_email']) && !empty($data['admin_email'])) {
 			$body['email'] = $data['admin_email'];
 		}
 		// Send the data
@@ -233,9 +245,10 @@ class BetterDocs {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function set_locale() {
+	private function set_locale()
+	{
 		$plugin_i18n = new BetterDocs_i18n();
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+		$this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
 	}
 
 	/**
@@ -245,15 +258,16 @@ class BetterDocs {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_admin_hooks() {
+	private function define_admin_hooks()
+	{
 		$plugin_admin = new BetterDocs_Admin($this->get_plugin_name(), $this->get_version());
 		add_action('admin_enqueue_scripts', array($plugin_admin, 'enqueue_styles'));
 		add_action('admin_enqueue_scripts', array($plugin_admin, 'enqueue_scripts'));
-        add_action( 'admin_bar_menu', array( $plugin_admin, 'toolbar_menu'), 32 );
+		add_action('admin_bar_menu', array($plugin_admin, 'toolbar_menu'), 32);
 
-        $this->loader->add_filter('admin_body_class', $plugin_admin, 'body_classes');
-        $admin_screen = new Betterdocs_Admin_Screen();
-        $this->loader->add_action('betterdocs_listing_header', $admin_screen, 'header_template');
+		$this->loader->add_filter('admin_body_class', $plugin_admin, 'body_classes');
+		$admin_screen = new Betterdocs_Admin_Screen();
+		$this->loader->add_action('betterdocs_listing_header', $admin_screen, 'header_template');
 
 		BetterDocs_Settings::init();
 	}
@@ -265,7 +279,8 @@ class BetterDocs {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_public_hooks() {
+	private function define_public_hooks()
+	{
 		$plugin_public = new BetterDocs_Public($this->get_plugin_name(), $this->get_version());
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'load_assets');
 	}
@@ -275,7 +290,8 @@ class BetterDocs {
 	 *
 	 * @since    1.0.0
 	 */
-	public function run() {
+	public function run()
+	{
 		$this->loader->run();
 	}
 
@@ -286,7 +302,8 @@ class BetterDocs {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_plugin_name() {
+	public function get_plugin_name()
+	{
 		return $this->plugin_name;
 	}
 
@@ -296,7 +313,8 @@ class BetterDocs {
 	 * @since     1.0.0
 	 * @return    BetterDocs_Loader    Orchestrates the hooks of the plugin.
 	 */
-	public function get_loader() {
+	public function get_loader()
+	{
 		return $this->loader;
 	}
 
@@ -306,28 +324,30 @@ class BetterDocs {
 	 * @since     1.0.0
 	 * @return    string    The version number of the plugin.
 	 */
-	public function get_version() {
+	public function get_version()
+	{
 		return $this->version;
 	}
 
-	public function is_pro_active(){
-		return defined( 'BETTERDOCS_PRO_VERSION' );
+	public function is_pro_active()
+	{
+		return defined('BETTERDOCS_PRO_VERSION');
 	}
 
-	public function redirect() {
+	public function redirect()
+	{
 		// Bail if no activation transient is set.
-		if ( ! get_transient( '_betterdocs_meta_activation_notice' ) ) {
+		if (!get_transient('_betterdocs_meta_activation_notice')) {
 			return;
 		}
 		// Delete the activation transient.
-		delete_transient( '_betterdocs_meta_activation_notice' );
+		delete_transient('_betterdocs_meta_activation_notice');
 
-		if ( ! is_multisite() ) {
+		if (!is_multisite()) {
 			// Redirect to the welcome page.
-			wp_safe_redirect( add_query_arg( array(
+			wp_safe_redirect(add_query_arg(array(
 				'page'		=> 'betterdocs-setup'
-			), admin_url( 'admin.php?page=betterdocs-setup' ) ) );
+			), admin_url('admin.php?page=betterdocs-setup')));
 		}
 	}
-
 }

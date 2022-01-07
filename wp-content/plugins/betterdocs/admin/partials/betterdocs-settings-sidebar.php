@@ -7,7 +7,7 @@
             <div class="betterdocs-admin-sidebar-cta">
                 <?php     
                     if(class_exists('Betterdocs_Pro')) {
-                        printf( __( '<a rel="nofollow" href="%s" target="_blank">Manage License</a>', 'betterdocs' ), 'https://wpdeveloper.net/account' ); 
+                        printf( __( '<a rel="nofollow" href="%s" target="_blank">Manage License</a>', 'betterdocs' ), 'https://wpdeveloper.com/account' ); 
                     }else{
                         printf( __( '<a rel="nofollow" href="%s" target="_blank">Upgrade to Pro</a>', 'betterdocs' ), 'https://betterdocs.co/upgrade' );
                     }

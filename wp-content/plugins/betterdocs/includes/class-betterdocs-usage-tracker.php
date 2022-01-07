@@ -847,7 +847,7 @@ if( ! class_exists('BetterDocs_Plugin_Usage_Tracker') ) :
 
 			echo $styles;
 			?>
-			<script type="text/javascript">
+			<script>
 				jQuery(document).ready(function($){
 					$("#wpinsights-goodbye-link-<?php echo $class_plugin_name; ?>").on("click",function(){
 						// We'll send the user to this deactivation link when they've completed or dismissed the form

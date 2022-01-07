@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
  * @since      1.3.0
  * @package    BetterDocs
  * @subpackage BetterDocs/elementor
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
 class BetterDocs_Single_Docs extends Single_Base
 {
@@ -111,7 +111,7 @@ class BetterDocs_Single_Docs extends Single_Base
     {
         $categories = [
             // Move to top as active.
-            'betterdocs-elements' => [
+            'betterdocs-elements-single' => [
                 'title'  => __('BetterDocs', 'betterdocs'),
                 'active' => true,
             ],

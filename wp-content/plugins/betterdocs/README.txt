@@ -1,10 +1,11 @@
 === BetterDocs - Best Documentation & Knowledge Base Plugin ===
-Contributors: wpdevteam, re_enter_rupok, asif2bd, emsohel, priyomukul, manzurahammed
-Donate link: https://wpdeveloper.net
+Contributors: wpdevteam, re_enter_rupok, asif2bd, emsohel, priyomukul, manzurahammed, cu121, fencermonir
+Donate link: https://wpdeveloper.com
 Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, knowledge, table of content, TOC, knowledgebase, faqs, doc page, best documentation plugin, support ticket, customer support, instant answer bot, bot, help articles, better docs
 Requires at least: 4.0
 Tested up to: 5.8
-Stable tag: 1.9.7
+Requires PHP: 5.6
+Stable tag: 2.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,49 +15,61 @@ A better Documentation and Knowledgebase plugin for WordPress. Create better Doc
 
 Do you want to reduce your support pressure immediately? How about you creating a stunning and resourceful knowledge base for your customers? 🤔
 
-👨‍💻 82% of customers prefer to support through an online knowledge base and actually get annoyed to create support tickets as its lengthy process. So creating an informative Documentation page can help to enhance your customer experience.
+👨‍💻 82% of customers prefer to support through an online knowledge base and actually get annoyed to create support tickets as it’sits a lengthy process. So creating an informative Documentation page can help to enhance your customer experience.
 
-But how do you create a stunning **docs** page easily in WordPress site without any coding? Well, we’ve got you covered. 😎
+But how do you create a stunning **docs** page easily on WordPress site without any coding? Well, we’ve got you covered. 😎
 
-https://www.youtube.com/watch?v=57BioKfROlo
+https://youtu.be/57BioKfROlo?list=PLWHp1xKHCfxDOGyziODrJ1qYNOC8pbVYA
 
 ## 📒 Create Stunning Knowledge Base To Scale Customer Support ##
 
-[BetterDocs](https://betterdocs.co/) will help you to create & organize your documentation page in a beautiful way that will make your visitors find any help article easily. It will facilitate your client to make faster decisions and get help on the spot by self-servicing instead of avoiding the lengthy conversation.
+[BetterDocs](https://betterdocs.co/) will help you to create & organize your documentation page in a beautiful way that will make your visitors find any help article easily. It will facilitate your client to make faster decisions and get help on the spot by self-servicing instead of avoiding lengthy conversation.
 
 
 ## 🔥 Power Up Knowledge Base To Reduce Support Tickets ##
 
-Let the visitors instantly find the answers they are searching without having to wait for the support team and reduce support workload.
+Let the visitors instantly find the answers they are searching for without having to wait for the support team and reduce support workload.
 
 ### 🌟 Top Features ###
 
-- Stunning premade template designs to create your Docs landing page without any codes
-- Shortcode & page builder widgets to customize documentation page
-- Auto Table of Content or Sticky TOC to provide absolute user experience
-- In-built advanced live search will help visitors to get the exact docs solution
+- Stunning readymade template designs to create your Docs landing page, Single Doc page, & Archive page without any coding
+- In-built theme customization option, or use Shortcodes & page builder widgets to design customize entire documentation page
+- Table of Contents or Sticky TOC to provide an absolute user experience
+- In-built advanced live search to help visitors get the exact docs solution
+- Advanced List View (FREE) & Grid View feature (PRO)
+- Create & manage multiple knowledgebases for all products separately (PRO)
+- Manage roles for your knowledgebase users & give access accordingly
 - Integrated with Analytics to track and evaluate the performance
 - 100% Compatibility with Elementor Page Builder
 - WPML Certified Plugin
-- Advanced List View Editor
+- Gutenberg Blocks [BetterDocs Search Form](https://betterdocs.co/docs/betterdocs-search-box-gutenberg/), [BetterDocs Category Box](https://betterdocs.co/docs/betterdocs-category-grid-gutenberg/) & [BetterDocs Category Grid](https://betterdocs.co/docs/betterdocs-category-grid-gutenberg/) to easily create your Knowledgebase
+- Create [Advanced Search](https://betterdocs.co/docs/betterdocs-advanced-search/) & showcase [Popular Docs](https://betterdocs.co/docs/how-to-feature-popular-docs-on-knowledge-base-using-betterdocs/) with ready layouts (PRO)
 
 ## 🙌 STUNNING READY TEMPLATES FOR DOCS LANDING PAGE ##
 
-BetterDocs offer multiple ready templates to design your WordPress documentation site within a few minutes. Beside, you have full freedom to customize the layout with ease.
+BetterDocs offer multiple ready templates to design your WordPress documentation site within a few minutes. Besides, you have full freedom to customize the layout with ease.
 
+## 🗣️ TRANSLATE SINGLE DOC PAGE WITH WPML ##
 
-## 📋 Interactive Table of Content (TOC) ##
+Translate your BetterDocs Single Docs by using WPML quite easily.
 
-BetterDocs will automatically create a well-managed [Table Of Contents(TOC)](https://wpdeveloper.net/display-toc-wordpress/) while you are writing your documentation. With an effective automated process, it will organize your documentation with its in-built functions and this stunning TOC moves with your scroll, so your visitors can always go to other pages easily.
+https://www.youtube.com/watch?v=db4FB2NUD-g
+
+## 📋 INTERACTIVE TABLE OF CONTENTS (TOC) ##
+
+BetterDocs will automatically create a well-managed [Table Of Contents(TOC)](https://wpdeveloper.com/display-toc-wordpress/) while you are writing your documentation. With an effective automated process, it will organize your documentation with its in-built functions and this stunning TOC moves with your scroll, so your visitors can always go to other pages easily.
 
 ## 🔎 IN-BUILT ADVANCED SEARCH OPTION ##
 
-Assist your visitors to get the exact docs solution and reduce dependency on support with built-in advanced live search option from the top.
-
+Assist your visitors to get the exact docs solution and reduce dependency on support with a built-in advanced live search & advanced search option(PRO) from the top.
 
 ## ⚙️ ADVANCED CUSTOMIZATION OPTION ##
 
-Customize documentation pages from setting or even add shortcode (PRO), page builder widgets and more to get full authority to make it stand out for your web visitors.
+Customize documentation pages from settings or even add shortcode (PRO), page builder widgets, and more to get the full authority to make it stand out for your web visitors.
+
+## ⚡ Fully Compatible With Gutenberg Editor ##
+
+Make an interactive knowledge base site in Gutenberg by using fully functional BetterDocs ready blocks.
 
 ## 💯 100% COMPATIBILITY WITH ELEMENTOR PAGE BUILDER ##
 
@@ -64,11 +77,11 @@ Design amazing single docs and docs archive page without any hassle with [Elemen
 
 ## 🔥 SINGLE DOC TEMPLATE WITH ELEMENTOR ##
 
-Show off your creativity and create an amazing single doc template with Elementor Theme Builder
+Show off your creativity and create an amazing single doc template with advanced elements, and ready layouts with Elementor Theme Builder
 
 ## 🚀 DOCS ARCHIVE TEMPLATE WITH ELEMENTOR ##
 
-Design stunning Docs page and Docs Category archive template with Elementor Theme Builder
+Design stunning Docs page and Docs Category archive template with Elementor Theme Builder.
 
 ## 🤖 INSTANT ANSWER BOT TO REDUCE SUPPORT TICKETS (PRO) ##
 
@@ -77,7 +90,7 @@ Help your customers browse the docs and knowledge base articles right from the c
 
 ## 📊 INSIGHTFUL ANALYTICS TO EVALUATE PERFORMANCE (PRO) ##
 
-Track and evaluate activities on your documentation page and improve customer experience. Also, analyze the site traffic to get insights about your Knowledge Base.
+Track and evaluate activities on your documentation page and improve customer experience. Also, analyze the site traffic to get insights into your Knowledge Base.
 
 ## 🆕 CREATE MULTIPLE KNOWLEDGE BASE (PRO) ##
 
@@ -105,13 +118,13 @@ Want to unlock the advanced features? [Upgrade to our Pro version](http://better
 
 ## 🚀 Backed By A Trusted Team ##
 
-This Documentation plugin is brought to you by the team behind [WPDeveloper](https://wpdeveloper.net/), a dedicated marketplace for WordPress, trusted by 3 Million+ happy users.
+This Documentation plugin is brought to you by the team behind [WPDeveloper](https://wpdeveloper.com/), a dedicated marketplace for WordPress, trusted by 3 Million+ happy users.
 
 ## 👨‍💻 DOCUMENTATION AND SUPPORT ##
 
 - For documentation and tutorials go to our [Documentation](https://betterdocs.co/docs/)
 - For video tutorials go to our [YouTube Playlist](https://www.youtube.com/playlist?list=PLWHp1xKHCfxDOGyziODrJ1qYNOC8pbVYA)
-- If you have any more questions, visit our support on the Plugin’s Forum
+- If you have any more questions, visit our support on the Plugin’s [Forum](https://wordpress.org/support/plugin/betterdocs/)
 - For more information about features, FAQs and documentation, check out our website at [BetterDocs](https://betterdocs.co/)
 
 = Create better Docs, Knowledge Base and wiki with BetterDocs =
@@ -119,8 +132,8 @@ This Documentation plugin is brought to you by the team behind [WPDeveloper](htt
 ## 💙 Loved BetterDocs? ##
 
 - Join our [Facebook Group](https://www.facebook.com/groups/wpdeveloper.net/)
-- Learn from our tutorials on [Youtube Channel](https://wpdeveloper.net/go/youtube-channel)
-- Or rate **Better Docs** on WordPress
+- Learn from our tutorials on [Youtube Channel](https://wpdeveloper.com/go/youtube-channel)
+- Or rate [BetterDocs](https://wordpress.org/support/plugin/betterdocs/reviews/#new-post) on WordPress
 
 ## 🔥 WHAT’S NEXT ##
 
@@ -129,8 +142,11 @@ If you like this docs plugin, then consider checking out our other projects:
 [Essential Addons For Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/) – Most popular Elementor extensions with 1 Million+ active users in the WordPress repository.
 [NotificationX](https://wordpress.org/plugins/notificationx/) – Best Social Proof & FOMO Marketing Solution
 [SchedulePress](https://wordpress.org/plugins/wp-scheduled-posts/) – Complete solution for WordPress Post Scheduling to manage schedules through an editorial calendar.
+[EmbedPress](https://wordpress.org/plugins/embedpress/)- Embed videos, images, posts, audio, maps and upload PDF, DOC, PPT & all other types of content into your WordPress site with one-click and showcase it beautifully for the visitors.
+[Templately](https://wordpress.org/plugins/templately/) Ultimate Template clouds with 1600+ ready templates for Elementor & Gutenberg along with FREE cloud collaboration with your team.
 
-Visit [WPDeveloper](https://wpdeveloper.net) to learn more about how to do better in WordPress with [Help Tutorial, Tips & Tricks](https://wpdeveloper.net/blog)!
+
+Visit [WPDeveloper](https://wpdeveloper.com) to learn more about how to do better in WordPress with [Help Tutorial, Tips & Tricks](https://wpdeveloper.com/blog)!
 
 
 == Installation ==
@@ -158,6 +174,26 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.3 - 23/12/2021 = 
+- Fixed: Few minor bug fix & improvements
+
+= 2.0.2 - 22/12/2021 =
+- Fixed: Betterdocs widgets not showing inside Elementor editor with new Elementor update
+- Fixed: Unclosed HTML tags in breadcrumb
+- Fixed: Pages throwing 404 error when Doc Permalink is set to %doc_category%
+- Fixed: Few minor bug fix & improvements
+
+= 2.0.1 - 14/12/2021 =
+- Fixed: Critical error on PHP 5.6
+- Fixed: Few minor bug fix & improvements
+
+= 2.0.0 - 14/12/2021 =
+- Added: Gutenberg Blocks: Category Grid, Category Box & Search Box
+- Added: 2 New Layouts for Single Docs
+- Fixed: No default background color for single doc content area
+- Fixed: Removed type attribute from script and style tag
+- Fixed: Few minor bug fix & improvements
 
 = 1.9.7 - 07/11/2021 =
 - Fixed: "Type stack does not exist" error inside Elementor Theme Builder

@@ -2,7 +2,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://wpdeveloper.net
+ * @link       https://wpdeveloper.com
  * @since      1.0.0
  *
  * @package    Betterdocs_Pro
@@ -17,7 +17,7 @@
  *
  * @package    Betterdocs_Pro
  * @subpackage Betterdocs_Pro/admin
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
 class Betterdocs_Pro_Admin
 {
@@ -367,7 +367,7 @@ class Betterdocs_Pro_Admin
 
 	public function docs_args($args, $term_id = null)
 	{
-		if (is_null($term_id)) {
+		if (is_null($term_id) || isset($args['orderby'])) {
 			return $args;
 		}
 
@@ -399,7 +399,7 @@ class Betterdocs_Pro_Admin
 			$args['orderby'] = 'post__in';
 			$args['post__in'] = array_merge($new_ids, $docs_order);
 		}
-        //var_dump($args);
+
 		return $args;
 	}
 
