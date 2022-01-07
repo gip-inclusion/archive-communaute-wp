@@ -1,4 +1,4 @@
-/*! elementor - v3.5.1 - 20-12-2021 */
+/*! elementor - v3.5.3 - 28-12-2021 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -4611,6 +4611,8 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports["default"] = exports.Copy = void 0;
 
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
+
 __webpack_require__(/*! core-js/modules/es6.array.map.js */ "../node_modules/core-js/modules/es6.array.map.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
@@ -4644,7 +4646,8 @@ var Copy = /*#__PURE__*/function (_CommandBase) {
       var _args$storageKey = args.storageKey,
           storageKey = _args$storageKey === void 0 ? 'clipboard' : _args$storageKey,
           _args$containers = args.containers,
-          containers = _args$containers === void 0 ? [args.container] : _args$containers;
+          containers = _args$containers === void 0 ? [args.container] : _args$containers,
+          elements = elementor.getPreviewView().$el.find('.elementor-element');
 
       if (!elementor.selection.isSameType()) {
         elementor.notifications.showToast({
@@ -4657,7 +4660,9 @@ var Copy = /*#__PURE__*/function (_CommandBase) {
         return false;
       }
 
-      elementorCommon.storage.set(storageKey, containers.map(function (container) {
+      elementorCommon.storage.set(storageKey, containers.sort(function (first, second) {
+        return elements.index(first.view.el) - elements.index(second.view.el);
+      }).map(function (container) {
         return container.model.toJSON({
           copyHtmlCache: true
         });
@@ -17712,7 +17717,7 @@ module.exports = Marionette.CompositeView.extend({
 
     model = (0, _assign.default)(model, model.custom); // Check whether the container cannot contain a section, in which case we should use an inner-section.
 
-    if ($e.components.get('document/elements').utils.isValidChild(new _element.default(model), container.model) && 'section' === model.elType) {
+    if ('section' === model.elType) {
       model.isInner = true;
     }
 
@@ -17721,7 +17726,7 @@ module.exports = Marionette.CompositeView.extend({
       title: elementor.helpers.getModelLabel(model)
     });
 
-    if (options.shouldWrap || model.isInner) {
+    if (options.shouldWrap) {
       var containerExperiment = elementorCommon.config.experimentalFeatures.container;
       container = $e.run('document/elements/create', {
         model: {

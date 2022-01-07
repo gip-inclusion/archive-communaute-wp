@@ -1,4 +1,4 @@
-/*! elementor - v3.5.1 - 20-12-2021 */
+/*! elementor - v3.5.3 - 28-12-2021 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -30385,7 +30385,8 @@ var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-c
         var dragged = (_elementor$channels$p = elementor.channels.panelElements.request('element:selected')) === null || _elementor$channels$p === void 0 ? void 0 : _elementor$channels$p.model.attributes;
         settings.getDropContainer().view.createElementFromModel({
           elType: dragged.elType,
-          widgetType: dragged.widgetType
+          widgetType: dragged.widgetType,
+          custom: dragged.custom
         }, {
           at: settings.getDropIndex(currentSide, event)
         });
@@ -32003,7 +32004,7 @@ module.exports = Marionette.CompositeView.extend({
 
     model = (0, _assign.default)(model, model.custom); // Check whether the container cannot contain a section, in which case we should use an inner-section.
 
-    if ($e.components.get('document/elements').utils.isValidChild(new _element.default(model), container.model) && 'section' === model.elType) {
+    if ('section' === model.elType) {
       model.isInner = true;
     }
 
@@ -32012,7 +32013,7 @@ module.exports = Marionette.CompositeView.extend({
       title: elementor.helpers.getModelLabel(model)
     });
 
-    if (options.shouldWrap || model.isInner) {
+    if (options.shouldWrap) {
       var containerExperiment = elementorCommon.config.experimentalFeatures.container;
       container = $e.run('document/elements/create', {
         model: {
@@ -32532,8 +32533,6 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _objectSpread2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/objectSpread2 */ "../node_modules/@babel/runtime-corejs2/helpers/objectSpread2.js"));
 
-__webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
-
 var _independent = _interopRequireDefault(__webpack_require__(/*! ./add-section/independent */ "../assets/dev/js/editor/views/add-section/independent.js"));
 
 var BaseSectionsContainerView = __webpack_require__(/*! elementor-views/base-sections-container */ "../assets/dev/js/editor/views/base-sections-container.js");
@@ -32607,14 +32606,8 @@ var Preview = BaseSectionsContainerView.extend({
   },
   createElementFromModel: function createElementFromModel(model) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var shouldWrap = !['container', 'section'].includes(model.elType || (model === null || model === void 0 ? void 0 : model.get('elType')));
-
-    if (!shouldWrap) {
-      delete options.at;
-    }
-
     return BaseSectionsContainerView.prototype.createElementFromModel.call(this, model, (0, _objectSpread2.default)((0, _objectSpread2.default)({}, options), {}, {
-      shouldWrap: shouldWrap
+      shouldWrap: 'container' !== model.elType
     }));
   },
   onRender: function onRender() {
