@@ -2,7 +2,7 @@
 /**
  * This class is responsible for all settings things happening in Betterdocs Plugin
  * 
- * @link       https://wpdeveloper.net
+ * @link       https://wpdeveloper.com
  * @since      1.0.0
  *
  * @package    BetterDocs

@@ -24,6 +24,11 @@
 }
 .customize-control-betterdocs-radio-image .image.ui-buttonset label a {
     display: inline-block;
+    height: auto;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
 }
 .customize-control-betterdocs-radio-image .image.ui-buttonset label a span.ui-button-text {
     width: auto;

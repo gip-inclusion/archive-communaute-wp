@@ -19,6 +19,8 @@ class BetterDocs_DB {
             'category_slug' => 'docs-category',
             'tag_slug' => 'docs-tag',
             'live_search' => 1,
+            'advance_search' => '',
+            'popular_keyword_limit' => 5,
             'search_placeholder' => esc_html__('Search..', 'betterdocs'),
             'search_not_found_text' => esc_html__('Sorry, no docs were found.', 'betterdocs'),
             'search_result_image' => 1,

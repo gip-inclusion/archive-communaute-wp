@@ -24,7 +24,7 @@ class BetterDocs_Elementor_Doc_Date extends Widget_Base {
     }
 
     public function get_categories () {
-        return ['betterdocs-elements'];
+        return ['betterdocs-elements-single'];
     }
 
     public function get_keywords () {

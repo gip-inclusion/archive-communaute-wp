@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) {
  * @since      1.3.0
  * @package    BetterDocs
  * @subpackage BetterDocs/elementor
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
 class BetterDocs_Template_Source extends Elementor\TemplateLibrary\Source_Base {
 

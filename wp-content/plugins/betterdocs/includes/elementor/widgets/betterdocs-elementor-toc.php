@@ -31,7 +31,7 @@ class BetterDocs_Elementor_Toc extends Widget_Base
 
     public function get_categories()
     {
-        return ['betterdocs-elements'];
+        return ['betterdocs-elements-single'];
     }
 
     public function get_keywords()
@@ -91,7 +91,7 @@ class BetterDocs_Elementor_Toc extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'list_hierarchy',
             [
                 'label' => __('List Hierarchy', 'betterdocs'),
@@ -103,7 +103,7 @@ class BetterDocs_Elementor_Toc extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'list_number',
             [
                 'label' => __('List Number', 'betterdocs'),
@@ -115,7 +115,7 @@ class BetterDocs_Elementor_Toc extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'collapsible_toc_mobile',
             [
                 'label' => __('Collapsible on small devices', 'betterdocs'),
@@ -309,6 +309,32 @@ class BetterDocs_Elementor_Toc extends Widget_Base
             ]
         );
 
+
+        $this->add_responsive_control(
+            'title_padding',
+            [
+                'label'      => esc_html__('Title Padding', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-toc .toc-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_margin',
+            [
+                'label'      => esc_html__('Title Margin', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-toc .toc-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
         $this->end_controls_section();
 
         $this->update_control(
@@ -367,13 +393,128 @@ class BetterDocs_Elementor_Toc extends Widget_Base
             ]
         );
 
+        $this->add_responsive_control(
+			'list_border_left_full',
+			[
+				'label' => __( 'Left Border Line', 'betterodcs' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 1,
+				],
+				'selectors' => [
+                    '{{WRAPPER}} .betterdocs-toc ul.betterdocs-hierarchial-toc' => 'border-left: {{SIZE}}{{UNIT}} solid #D2D2D2; position:relative;'
+				],
+			]
+		);
+
+        $this->add_responsive_control(
+            'list_border_left_full_space',
+            [
+                'label'      => esc_html__('Left Border Line Space', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'    => [
+                    "top"    => '0',
+                    "right"  => '0',
+                    "bottom" => '0',
+                    "left"   => '0',
+                    "isLinked" => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-toc > .toc-list li a'  => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'list_border_left_positioning',
+            [
+                'label'      => esc_html__('Left Border Line Positioning', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'    => [
+                    "top"    => '0',
+                    "right"  => '0',
+                    "bottom" => '0',
+                    "left"   => '0',
+                    "isLinked" => false,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-toc ul.betterdocs-hierarchial-toc'  => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'list_border_left_full_color',
+            [
+                'label'     => __('Left Border Line Color', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  .betterdocs-toc ul.betterdocs-hierarchial-toc' => 'border-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+			'list_border_left',
+			[
+				'label' => __( 'Active List Left Border Width', 'betterodcs' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 2,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-toc ul.betterdocs-hierarchial-toc a.active:after' => 'width: {{SIZE}}{{UNIT}}; content:""; position: absolute; height: 1.6em; left: -1px ',
+				],
+			]
+		);
+
+        $this->add_control(
+            'list_border_left_color',
+            [
+                'label'     => __('Active Color Left Border', 'betterdocs'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .betterdocs-toc > .toc-list a.active:after' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
         $this->add_control(
             'list_color',
             [
-                'label'     => esc_html__('Color', 'betterdocs'),
+                'label'     => esc_html__('List Color', 'betterdocs'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .betterdocs-toc ul li a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .betterdocs-toc > .toc-list a.active:before' => 'color: {{VALUE}};'
                 ],
             ]
         );
@@ -381,7 +522,7 @@ class BetterDocs_Elementor_Toc extends Widget_Base
         $this->add_control(
             'list_hover_color',
             [
-                'label'     => esc_html__('Hover Color', 'betterdocs'),
+                'label'     => esc_html__('List Hover Color', 'betterdocs'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .betterdocs-toc ul li a:hover' => 'color: {{VALUE}};',
@@ -400,6 +541,19 @@ class BetterDocs_Elementor_Toc extends Widget_Base
                 ],
             ]
         );
+
+        $this->add_responsive_control(
+            'list_padding',
+            [
+                'label'      => esc_html__('List Item Padding', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-toc ul' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; display: inline-block;',
+                ],
+            ]
+        );
+
 
         $this->end_controls_section(); # end of 'Column Settings'
 

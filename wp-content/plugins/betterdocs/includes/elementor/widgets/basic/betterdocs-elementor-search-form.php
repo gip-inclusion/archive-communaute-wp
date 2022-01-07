@@ -25,7 +25,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
 
     public function get_categories()
     {
-        return ['betterdocs-elements', 'docs-archive'];
+        return ['betterdocs-elements', 'docs-archive', 'betterdocs-elements-single'];
     }
 
     public function get_icon()
@@ -81,6 +81,41 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
     protected function _register_controls()
     {
 
+        $this->start_controls_section(
+            'search_content_placeholders',
+            [
+                'label'   => __('Search Content', 'betterdocs'),
+                'tab'     => Controls_Manager::TAB_CONTENT
+            ]
+        );
+
+        $this->add_control(
+            'section_search_field_placeholder',
+            [
+                'label'   => __('Placeholder', 'betterdocs'),
+                'type'    => Controls_Manager::TEXT,
+                'default' => esc_html__('Search', 'betterdocs')
+            ]
+        );
+
+        $this->add_control(
+            'section_search_field_heading',
+            [
+                'label'   => __('Search Heading', 'betterdocs'),
+                'type'    => Controls_Manager::TEXT,
+            ]
+        );
+
+
+        $this->add_control(
+            'section_search_field_sub_heading',
+            [
+                'label'   => __('Search Subheading', 'betterdocs'),
+                'type'    => Controls_Manager::TEXT,
+            ]
+        );
+
+        $this->end_controls_section();
         /**
          * ----------------------------------------------------------
          * Section: Search Box
@@ -90,6 +125,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             'section_search_box_settings',
             [
                 'label' => __('Search Box', 'betterdocs'),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -120,6 +156,24 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             ]
         );
 
+        $this->add_responsive_control(
+            'search_box_margin',
+            [
+                'label'      => esc_html__('Margin', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'    => [
+                    'top'    => 50,
+                    'right'  => 50,
+                    'bottom' => 50,
+                    'left'   => 50
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-live-search' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ],
+            ]
+        );
+
         $this->end_controls_section(); # end of 'Search Box'
 
         /**
@@ -131,15 +185,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             'section_search_field_settings',
             [
                 'label' => __('Search Field', 'betterdocs'),
-            ]
-        );
-
-        $this->add_control(
-            'section_search_field_placeholder',
-            [
-                'label'   => __('Placeholder', 'betterdocs'),
-                'type'    => Controls_Manager::TEXT,
-                'default' => esc_html__('Search', 'betterdocs')
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -181,6 +227,34 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
                     '{{WRAPPER}} .betterdocs-searchform .betterdocs-search-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'search_box_outer_margin',
+            [
+                'label'      => __('Search Box Margin', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-searchform' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'search_box_outer_width',
+            [
+                'label'      => esc_html__('Size', 'betterdocs'),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'em'],
+                'default'      => [
+                    'unit' => '%',
+                    'size' => 100,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-searchform' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
                 ],
             ]
         );
@@ -277,6 +351,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             'section_search_result_settings',
             [
                 'label' => __('Search Result Box', 'betterdocs'),
+                'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -353,6 +428,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             'section_search_result_item_settings',
             [
                 'label' => __('Search Result List', 'betterdocs'),
+                'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -541,7 +617,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $shortcode = sprintf('[betterdocs_search_form placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
+        $shortcode = sprintf('[betterdocs_search_form enable_heading="true" heading="'.$settings['section_search_field_heading'].'" subheading="'.$settings['section_search_field_sub_heading'].'" placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
         echo do_shortcode(shortcode_unautop($shortcode));
     }
 

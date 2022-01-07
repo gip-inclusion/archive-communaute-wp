@@ -5,6 +5,7 @@ use Elementor\Controls_Manager;
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Typography;
+use Elementor\Core\Schemes;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
@@ -25,7 +26,7 @@ class BetterDocs_Elementor_Content extends Post_Content {
     }
 
     public function get_categories() {
-        return [ 'betterdocs-elements' ];
+        return [ 'betterdocs-elements-single' ];
     }
 
     public function get_keywords() {
@@ -87,6 +88,53 @@ class BetterDocs_Elementor_Content extends Post_Content {
 			]
 		);
 
+		$this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'betterdocs_content_typography',
+                'scheme'   => Schemes\Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .betterdocs-content',
+            ]
+        );
+
+		$this->add_control(
+			'doc_content_color',
+			[
+				'label' => __( 'Doc Content Color', 'betterdocs' ),
+				'type' => Controls_Manager::COLOR,
+				'scheme' => [
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_1,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-content' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'doc_content_title_color',
+			[
+				'label' => __( 'Content Title Color', 'plugin-domain' ),
+				'type' => Controls_Manager::COLOR,
+				'scheme' => [
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_1,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-content .betterdocs-content-heading' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'betterdocs_content_title_typography',
+                'scheme'   => Schemes\Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .betterdocs-content .betterdocs-content-heading',
+            ]
+        );
         $this->end_controls_section();
 	}
 	

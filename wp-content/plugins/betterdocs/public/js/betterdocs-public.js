@@ -4,8 +4,21 @@
     let request;
     let searchForm = $(".betterdocs-searchform");
     let searchField = $(".betterdocs-search-field");
+    let searchCategory = $(".betterdocs-search-category");
+    let popularSearch = $(".betterdocs-popular-search-keyword .popular-keyword");
+
+    /**
+     * Store search data to sessionStorage
+     */
+    sessionStorage.setItem("betterdocs_search_data", betterdocspublic.search_keyword);
 
     // disable from submit on enter
+    popularSearch.on("click", function(e) {
+      e.preventDefault();
+      let popularKeyword = $(this).text();
+      $(this).parent('.betterdocs-popular-search-keyword').siblings('.betterdocs-searchform').find('.betterdocs-search-field').val(popularKeyword).trigger('propertychange');
+    });
+
     searchForm.on("keyup keypress", function(e) {
       searchForm.each(function() {
         let keyCode = e.keyCode || e.which;
@@ -17,39 +30,57 @@
     });
 
     // ajax load titles on keyup to searchbox
-    searchField.on("keyup", function(e) {
+    searchField.on("input propertychange paste", function(e) {
       searchField.each(function() {
+        let thisEvent = $(this);
         let inputVal = $(this).val();
-        let kbSlug = $(this).parent('.betterdocs-searchform').find('.betterdocs-search-kbslug').val();
-        let resultWrapper = $(this).parent().parent(".betterdocs-live-search");
-        let resultList = $(this).parent().parent(".betterdocs-live-search").find(".betterdocs-search-result-wrap");
-        let searchLoader = $(this).parent().find(".docs-search-loader");
-        let searchClose = $(this).parent().find(".docs-search-close");
+        let inputCat = thisEvent.parent('.betterdocs-searchform-input-wrap').siblings('.betterdocs-search-category').find(':selected').val();
+        let resultWrapper = thisEvent.parent().parent(".betterdocs-searchform");
+        let kbSlug = thisEvent.parent().parent('.betterdocs-searchform').find('.betterdocs-search-kbslug').val();
+        liveSearchAction(e, thisEvent, inputVal, inputCat, resultWrapper, kbSlug);
+      });
+    });
 
-        if (
+    $('.betterdocs-searchform .betterdocs-search-category').on("change", function(e) {
+        let thisEvent = $(this);
+        let inputVal = thisEvent.siblings('.betterdocs-searchform-input-wrap').children('.betterdocs-search-field').val();
+        let inputCat = $(this).find(':selected').val();
+        let resultWrapper = thisEvent.parent(".betterdocs-searchform");
+        let kbSlug = thisEvent.parent('.betterdocs-searchform').find('.betterdocs-search-kbslug').val();
+        liveSearchAction(e, thisEvent, inputVal, inputCat, resultWrapper, kbSlug);
+    });
+
+    function liveSearchAction(e, thisEvent, inputVal, inputCat, resultWrapper, kbSlug) {
+      let resultList = thisEvent.parent(".betterdocs-searchform").find(".betterdocs-search-result-wrap");
+      let searchLoader = thisEvent.parent().find(".docs-search-loader");
+      let searchClose = thisEvent.parent().find(".docs-search-close");
+      let search_keyword = sessionStorage.betterdocs_search_data;
+      if (
           e.key != "a" &&
           e.keyCode != 17 &&
           e.keyCode != 91 &&
-          inputVal.length >= 1
-        ) {
-          delay(function() {
-            ajaxLoad(
+          inputVal.length >= 3
+      ) {
+        delay(function() {
+          ajaxLoad(
               inputVal,
+              inputCat,
               kbSlug,
               resultWrapper,
               resultList,
               searchLoader,
-              searchClose
-            );
-          }, 300);
-        } else if (!inputVal.length) {
-          $(this).parent().parent(".betterdocs-live-search").find(".betterdocs-search-result-wrap").addClass("hideArrow");
-          $(this).parent().parent(".betterdocs-live-search").find(".docs-search-result").slideUp(300);
-          searchLoader.hide();
-          searchClose.hide();
-        }
-      });
-    });
+              searchClose,
+              search_keyword
+          );
+        }, 400);
+      } else if (!inputVal.length) {
+        thisEvent.parent().parent(".betterdocs-live-search").find(".betterdocs-search-result-wrap").addClass("hideArrow");
+        thisEvent.parent().parent(".betterdocs-live-search").find(".docs-search-result").slideUp(300);
+        searchLoader.hide();
+        searchClose.hide();
+      }
+    }
+
     $(".docs-search-close").on("click", function() {
       $(this).hide();
       $(".betterdocs-live-search .betterdocs-search-result-wrap").addClass(
@@ -69,11 +100,13 @@
 
     function ajaxLoad(
       inputVal,
+      inputCat,
       kbSlug,
       resultWrapper,
       resultList,
       searchLoader,
-      searchClose
+      searchClose,
+      search_keyword
     ) {
       if (request) {
         request.abort();
@@ -84,7 +117,9 @@
         data: {
           action: "betterdocs_get_search_result",
           search_input: inputVal,
-          kb_slug: kbSlug
+          search_cat: inputCat,
+          kb_slug: kbSlug,
+          search_data: search_keyword,
         },
         beforeSend: function() {
           searchLoader.show();
@@ -92,11 +127,12 @@
           resultList.addClass("hideArrow");
           $(".betterdocs-live-search .docs-search-result").slideUp(400);
         },
-        success: function(html) {
+        success: function(response) {
           resultList.remove();
           searchLoader.hide();
           searchClose.show();
-          resultWrapper.append(html);
+          resultWrapper.append(response.data.post_lists);
+          sessionStorage.setItem("betterdocs_search_data", response.data.search_data);
         }
       });
     }
@@ -162,7 +198,7 @@
     function onScroll() {
       var scrollPos = $(document).scrollTop();
       $(
-        ".sticky-toc-container .betterdocs-toc .toc-list a,.layout2-toc-container .betterdocs-toc .toc-list a"
+        ".sticky-toc-container .betterdocs-toc .toc-list a,.betterdocs-full-sidebar-right .betterdocs-toc .toc-list a"
       ).each(function() {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));

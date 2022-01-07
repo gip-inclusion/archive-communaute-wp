@@ -11,18 +11,16 @@ $output = betterdocs_generate_output();
 ?>
 
 <div class="betterdocs-single-wraper betterdocs-single-bg betterdocs-single-layout1">
-	<?php 
-	$live_search = BetterDocs_DB::get_settings('live_search');
-	if($live_search == 1){
-	?>
-	<div class="betterdocs-search-form-wrap">
-		<?php echo do_shortcode( '[betterdocs_search_form]' ); ?>
-	</div>
-	<?php } ?>
+	<?php
+    $live_search = BetterDocs_DB::get_settings('live_search');
+    if ( $live_search == 1 ) {
+        echo BetterDocs_Public::search();
+    }
+    ?>
 	<div class="betterdocs-content-area">
 		<?php 
 		$enable_sidebar_cat_list = BetterDocs_DB::get_settings('enable_sidebar_cat_list'); 
-		if($enable_sidebar_cat_list == 1){
+		if ( $enable_sidebar_cat_list == 1 ) {
 		?>
         <aside id="betterdocs-sidebar">
             <div class="betterdocs-sidebar-content betterdocs-category-sidebar">
@@ -38,7 +36,7 @@ $output = betterdocs_generate_output();
 			if($enable_toc == 1 && $enable_sticky_toc == 1){
 			?>
 	        <div class="sticky-toc-container">
-	        	<a class="close-toc" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16px" viewBox="0 0 24 24"><path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path></svg></a>
+	        	<a class="close-toc" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"></path></svg></a>
 			</div><!-- #sticky toc -->
 			<?php } ?>
 		</aside><!-- #sidebar -->

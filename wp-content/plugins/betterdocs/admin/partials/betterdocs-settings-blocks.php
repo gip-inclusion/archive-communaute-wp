@@ -15,13 +15,13 @@
         <div class="betterdocs-admin-block betterdocs-admin-block-contribute">
             <header class="betterdocs-admin-block-header">
                 <div class="betterdocs-admin-block-header-icon">
-                    <img src="<?php echo BETTERDOCS_ADMIN_URL; ?>/assets/img/icons/icon-contribute.svg" alt="betterdocs-contribute">
+                    <img src="<?php echo BETTERDOCS_ADMIN_URL; ?>/assets/img/icons/icon-join-community.svg" alt="betterdocs-contribute">
                 </div>
-                <h4 class="betterdocs-admin-title"><?php _e( 'Contribute to BetterDocs', 'betterdocs' ); ?></h4>
+                <h4 class="betterdocs-admin-title"><?php _e( 'Join Our Community', 'betterdocs' ); ?></h4>
             </header>
             <div class="betterdocs-admin-block-content">
-                <p><?php echo sprintf( '%1$s <a target="_blank" rel="nofollow" href="%2$s">Github</a>.', __( 'You can contribute to make BetterDocs better reporting bugs, creating issues, pull requests at', 'betterdocs' ), 'https://betterdocs.co/github/issues' ); ?></p>
-                <a rel="nofollow" href="https://betterdocs.co/github/issues" class="betterdocs-button" target="_blank"><?php _e( 'Report a Bug', 'betterdocs' ); ?></a>
+                <p><?php echo esc_html__('Join the Facebook community and discuss with fellow developers and users. Best way to connect with people and get feedback on your projects.', 'betterdocs') ?></p>
+                <a rel="nofollow" href="https://www.facebook.com/groups/wpdeveloper.net/" class="betterdocs-button" target="_blank"><?php _e( 'Join Now', 'betterdocs' ); ?></a>
             </div>
         </div>
         <div class="betterdocs-admin-block betterdocs-admin-block-need-help">
@@ -33,7 +33,7 @@
             </header>
             <div class="betterdocs-admin-block-content">
                 <p><?php _e('Stuck with something? Get help from live chat or support ticket.', 'betterdocs'); ?></p>
-                <a rel="nofollow" href="https://wpdeveloper.net/support" class="betterdocs-button" target="_blank"><?php _e( 'Initiate a Chat', 'betterdocs' ); ?></a>
+                <a rel="nofollow" href="https://wpdeveloper.com/support" class="betterdocs-button" target="_blank"><?php _e( 'Initiate a Chat', 'betterdocs' ); ?></a>
             </div>
         </div>
         <div class="betterdocs-admin-block betterdocs-admin-block-community">

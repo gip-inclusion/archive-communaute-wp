@@ -42,7 +42,7 @@ class BetterDocs_Customizer_Range_Value_Control extends WP_Customize_Control {
 	public function render_content() {
 		?>
 		<?php if ( ! empty( $this->label ) ) : ?>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<a href="#" title="<?php echo esc_html__('Reset', 'betterdocs') ?>" class="betterdocs-customizer-reset <?php echo esc_html( $this->type ); ?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px"><path d="M 25 2 C 12.321124 2 2 12.321124 2 25 C 2 37.678876 12.321124 48 25 48 C 37.678876 48 48 37.678876 48 25 A 2.0002 2.0002 0 1 0 44 25 C 44 35.517124 35.517124 44 25 44 C 14.482876 44 6 35.517124 6 25 C 6 14.482876 14.482876 6 25 6 C 30.475799 6 35.391893 8.3080175 38.855469 12 L 35 12 A 2.0002 2.0002 0 1 0 35 16 L 46 16 L 46 5 A 2.0002 2.0002 0 0 0 43.970703 2.9726562 A 2.0002 2.0002 0 0 0 42 5 L 42 9.5253906 C 37.79052 4.9067015 31.727675 2 25 2 z"></path></svg></a>
 		<?php endif; ?>
 		<div class="betterdcos-range-slider" data-default-val="<?php echo $this->settings[ 'default' ]->value(); ?>" style="width:100%; display:flex;flex-direction: row;justify-content: flex-start;">
@@ -123,8 +123,8 @@ class BetterDocs_Customizer_Toggle_Control extends WP_Customize_Control {
 	public function render_content() {
 		?>
 		<label>
-			<div style="display:flex;flex-direction: row;justify-content: flex-start;">
-				<span class="customize-control-title" style="flex: 2 0 0; vertical-align: middle;"><?php echo esc_html( $this->label ); ?></span>
+			<div class="betterdocs-customizer-toggle">
+				<span class="customize-control-title betterdocs-customize-control-title betterdocs-customizer-toggle-title"><?php echo esc_html( $this->label ); ?></span>
 				<input id="cb<?php echo $this->instance_number ?>" type="checkbox" data-default-val="<?php echo $this->settings[ 'default' ]->value(); ?>" class="tgl tgl-<?php echo $this->type?> <?php echo $this->type?>" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
 				<label for="cb<?php echo $this->instance_number ?>" class="tgl-btn"></label>
 			</div>
@@ -193,7 +193,7 @@ class BetterDocs_Customizer_Alpha_Color_Control extends WP_Customize_Control {
 		echo '<div class="betterdocs-alpha-color-picker">';
 		// Output the label and description if they were passed in.
 		if ( isset( $this->label ) && '' !== $this->label ) {
-			echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+			echo '<span class="customize-control-title betterdocs-customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
 		}
 		if ( isset( $this->description ) && '' !== $this->description ) {
 			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
@@ -297,7 +297,7 @@ class BetterDocs_Customizer_Gradient_Color_Control extends WP_Customize_Control 
 		echo '<div class="betterdocs-gradient-color-control">';
 		// Output the label and description if they were passed in.
 		if ( isset( $this->label ) && '' !== $this->label ) {
-			echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+			echo '<span class="customize-control-title betterdocs-customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
 		}
 		if ( isset( $this->description ) && '' !== $this->description ) {
 			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
@@ -429,7 +429,7 @@ class BetterDocs_Title_Custom_Control extends WP_Customize_Control{
 	public function render_content(){
 		?>
 		<div <?php echo $this->input_attrs(); ?>>
-		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+		<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<a href="#" title="<?php echo esc_html__('Reset', 'betterdocs') ?>" class="betterdocs-customizer-reset"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px"><path d="M 25 2 C 12.321124 2 2 12.321124 2 25 C 2 37.678876 12.321124 48 25 48 C 37.678876 48 48 37.678876 48 25 A 2.0002 2.0002 0 1 0 44 25 C 44 35.517124 35.517124 44 25 44 C 14.482876 44 6 35.517124 6 25 C 6 14.482876 14.482876 6 25 6 C 30.475799 6 35.391893 8.3080175 38.855469 12 L 35 12 A 2.0002 2.0002 0 1 0 35 16 L 46 16 L 46 5 A 2.0002 2.0002 0 0 0 43.970703 2.9726562 A 2.0002 2.0002 0 0 0 42 5 L 42 9.5253906 C 37.79052 4.9067015 31.727675 2 25 2 z"></path></svg></a>
 		<?php if ( ! empty( $this->description ) ) : ?>
 		<span class="description customize-control-description"><?php echo $this->description; ?></span>
@@ -463,7 +463,7 @@ class BetterDocs_Select_Control extends WP_Customize_Control {
 			?>
 		</select>
 		<?php if( !empty( $this->label ) ) : ?>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<?php endif;
 	}
 
@@ -489,7 +489,7 @@ class BetterDocs_Dimension_Control extends WP_Customize_Control {
 		?>
 		<div class="dimension-field">
 			<input type="number" data-default-val="<?php echo $this->settings[ 'default' ]->value(); ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->input_attrs(); $this->link(); ?>>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		</div>
 		<?php
 	}
@@ -558,7 +558,7 @@ class BetterDocs_Number_Control extends WP_Customize_Control {
 		?>
 		<div class="number-field">
 			<?php if ( ! empty( $this->label ) ) : ?>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<a href="#" title="<?php echo esc_html__('Reset', 'betterdocs') ?>" class="betterdocs-customizer-reset <?php echo esc_html( $this->type ); ?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px"><path d="M 25 2 C 12.321124 2 2 12.321124 2 25 C 2 37.678876 12.321124 48 25 48 C 37.678876 48 48 37.678876 48 25 A 2.0002 2.0002 0 1 0 44 25 C 44 35.517124 35.517124 44 25 44 C 14.482876 44 6 35.517124 6 25 C 6 14.482876 14.482876 6 25 6 C 30.475799 6 35.391893 8.3080175 38.855469 12 L 35 12 A 2.0002 2.0002 0 1 0 35 16 L 46 16 L 46 5 A 2.0002 2.0002 0 0 0 43.970703 2.9726562 A 2.0002 2.0002 0 0 0 42 5 L 42 9.5253906 C 37.79052 4.9067015 31.727675 2 25 2 z"></path></svg></a>
 			<?php endif; ?>
 			<input type="number" data-default-val="<?php echo $this->settings[ 'default' ]->value(); ?>" class="<?php echo $this->type ?>" value="<?php echo esc_attr($this->value()); ?>" <?php $this->input_attrs(); $this->link(); ?>>
@@ -606,7 +606,7 @@ class BetterDocs_Radio_Image_Control extends WP_Customize_Control {
 		$name = '_customize-radio-' . $this->id;
 		?>
 		<?php if ( ! empty( $this->label ) ) : ?>
-		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+		<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<?php endif; ?>
 		<?php if ( ! empty( $this->description ) ) : ?>
 			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>

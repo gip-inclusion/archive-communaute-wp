@@ -10,7 +10,7 @@ use ElementorPro\Modules\ThemeBuilder as ThemeBuilder;
  * @since      1.3.0
  * @package    BetterDocs
  * @subpackage BetterDocs/elementor
- * @author     WPDeveloper <support@wpdeveloper.net>
+ * @author     WPDeveloper <support@wpdeveloper.com>
  */
 class BetterDocs_Elementor
 {
@@ -32,7 +32,8 @@ class BetterDocs_Elementor
             add_action('elementor/documents/register', [__CLASS__, 'register_doc_category_archive']);
             add_filter('elementor/theme/need_override_location', [__CLASS__, 'theme_template_include'], 10, 2);
             add_action('betterdocs/elementor/widgets/query', [__CLASS__, 'betterdocs_query'], 10, 2);
-            add_action('elementor/widgets/widgets_registered', [__CLASS__, 'register_basic_widgets']);
+            add_action('elementor/widgets/register', [__CLASS__, 'register_basic_widgets']);
+            add_action('elementor/elements/categories_registered', [__CLASS__, 'register_widget_categories']);
             add_filter('elementor/editor/localize_settings', [__CLASS__, 'promote_pro_elements']);
             add_action('wp_enqueue_scripts', [__CLASS__, 'editor_load_asset']);
             add_action('elementor/init', [__CLASS__, 'load_basic_widgets']);
@@ -197,9 +198,20 @@ class BetterDocs_Elementor
     {
         foreach (self::get_basic_widget_list() as $value) {
             if (class_exists($value)) {
+                //error_log( print_r(self::get_basic_widget_list(), TRUE) );
                 $widgets_manager->register_widget_type(new $value);
             }
         }
+    }
+
+    public static function register_widget_categories($elements_manager)
+    {
+        $elements_manager->add_category(
+            'betterdocs-elements',
+            [
+                'title' => __('BetterDocs', 'betterdocs'),
+                'icon' => 'font',
+            ], 1);
     }
 
     public static function register_theme_builder_widgets($widgets_manager)
@@ -351,24 +363,6 @@ class BetterDocs_Elementor
         return '';
     }
 
-    /**
-     * This function is responsible for counting doc post under a category.
-     *
-     * @param int $term_count
-     * @param int $term_id
-     * @return int $term_count;
-     */
-    public static function get_doc_post_count($term_count = 0, $term_id)
-    {
-        $tax_terms = get_terms('doc_category', ['child_of' => $term_id]);
-
-        foreach ($tax_terms as $tax_term) {
-            $term_count += $tax_term->count;
-        }
-
-        return $term_count;
-    }
-
     public static function get_multiple_kb_terms($prettify = false, $term_id = true)
     {
         $args = [
@@ -481,7 +475,7 @@ class BetterDocs_Elementor
                     'select2options' => [
                         'placeholder' => __('All Knowledge Base', 'betterdocs'),
                         'allowClear' => true,
-                    ],
+                    ]
                 ]
             );
         }
@@ -659,6 +653,122 @@ class BetterDocs_Elementor
                     'label_off' => __('No', 'betterdocs'),
                     'return_value' => 'true',
                     'default' => false,
+                ]
+            );
+        }
+
+        if($wb->get_name() === 'betterdocs-tab-view-list') {
+
+            $wb->add_control(
+                'tab_posts_query_heading',
+                [
+                    'label' => __('Tab List Posts', 'betterdocs'),
+                    'type' => Controls_Manager::HEADING,
+                    'separator' => 'before',
+                ]
+            );
+
+            $wb->add_control(
+                'post_per_tab',
+                [
+                    'label' => __('Posts Per Tab', 'betterdocs'),
+                    'type' => Controls_Manager::NUMBER,
+                    'default' => '10'
+                ]
+            );
+
+            $wb->add_control(
+                'tab_list_posts_orderby',
+                [
+                    'label' => __('Posts Order By', 'betterdocs'),
+                    'type' => Controls_Manager::SELECT,
+                    'options' => [
+                        'name' => __('Name', 'betterdocs'),
+                        'slug' => __('Slug', 'betterdocs'),
+                        'term_group' => __('Term Group', 'betterdocs'),
+                        'term_id' => __('Term ID', 'betterdocs'),
+                        'id' => __('ID', 'betterdocs'),
+                        'description' => __('Description', 'betterdocs'),
+                        'parent' => __('Parent', 'betterdocs'),
+                        'betterdocs_order' => __('BetterDocs Order', 'betterdocs'),
+                    ],
+                    'default' => 'name',
+                ]
+            );
+
+            $wb->add_control(
+                'tab_list_order',
+                [
+                    'label' => __('Order', 'betterdocs'),
+                    'type' => Controls_Manager::SELECT,
+                    'options' => [
+                        'ASC' => 'Ascending',
+                        'DESC' => 'Descending',
+                    ],
+                    'default' => 'ASC',
+    
+                ]
+            );
+
+            $wb->add_control(
+                'nested_subcategory_tab_list',
+                [
+                    'label' => __('Nested Subcategory', 'betterdocs'),
+                    'type' => Controls_Manager::SWITCHER,
+                    'label_on' => __('Yes', 'betterdocs'),
+                    'label_off' => __('No', 'betterdocs'),
+                    'return_value' => 'true',
+                    'default' => 'true',
+                ]
+            );
+
+            $wb->add_control(
+                'nested_posts_per_page',
+                [
+                    'label' => __('Posts Per Page', 'betterdocs'),
+                    'type' => Controls_Manager::NUMBER,
+                    'default' => '-1',
+                    'condition' => [
+                        'nested_subcategory_tab_list' => 'true'
+                    ]
+                ]
+            );
+
+            $wb->add_control(
+                'nested_sub_cat_order',
+                [
+                    'label' => __('Nested Posts Order', 'betterdocs'),
+                    'type' => Controls_Manager::SELECT,
+                    'options' => [
+                        'ASC' => 'Ascending',
+                        'DESC' => 'Descending',
+                    ],
+                    'default' => 'ASC',
+                    'condition' => [
+                        'nested_subcategory_tab_list' => 'true'
+                    ]
+                ]
+            );
+
+            $wb->add_control(
+                'nested_sub_cat_orderby',
+                [
+                    'label' => __('Nested Posts Order By', 'betterdocs'),
+                    'type' => Controls_Manager::SELECT,
+                    'options' => [
+                        'name' => __('Name', 'betterdocs'),
+                        'slug' => __('Slug', 'betterdocs'),
+                        'term_group' => __('Term Group', 'betterdocs'),
+                        'term_id' => __('Term ID', 'betterdocs'),
+                        'id' => __('ID', 'betterdocs'),
+                        'description' => __('Description', 'betterdocs'),
+                        'parent' => __('Parent', 'betterdocs'),
+                        'betterdocs_order' => __('BetterDocs Order', 'betterdocs'),
+                    ],
+                    'default' => 'name',
+                    'condition' => [
+                        'nested_subcategory_tab_list' => 'true'
+                    ]
                 ]
             );
         }

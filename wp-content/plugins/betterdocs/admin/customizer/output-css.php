@@ -9,11 +9,28 @@
  * This function adds some styles to the WordPress Customizer
  */
 function betterdocs_customizer_styles() { ?>
-	<style type="text/css">
+	<style>
+        .betterdocs-customize-control-title {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .betterdocs-customizer-toggle {
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .betterdocs-customizer-toggle .betterdocs-customizer-toggle-title {
+            flex: 2 0 0;
+            vertical-align: middle;
+            margin: 0;
+        }
 		.customize-control-betterdocs-title .betterdocs-select,
 		.customize-control-betterdocs-title .betterdocs-dimension{
 			display: flex;
 		}
+        .betterdcos-range-slider {
+            margin-bottom: 10px;
+        }
 		.customize-control-betterdocs-range-value .customize-control-title,
 		.customize-control-betterdocs-number .customize-control-title {
 			float: left;
@@ -38,7 +55,7 @@ function betterdocs_customizer_styles() { ?>
 			width: 25%;
 			float: left !important;
 			clear: none !important;
-			margin-top: 0;
+			margin-top: 0 !important;
 			margin-bottom: 12px;
 		}
 		.customize-control.customize-control-betterdocs-dimension .customize-control-title,
@@ -50,7 +67,6 @@ function betterdocs_customizer_styles() { ?>
 		}
 		.betterdocs-customizer-reset {
 			font-size: 22px;
-    		line-height: 26px;
     		margin-left: 5px;
 			transition: unset;
 		}
@@ -61,6 +77,9 @@ function betterdocs_customizer_styles() { ?>
 		.customize-control-title .customize-control-title {
 			margin-bottom: 0;
 		}
+        .betterdocs-alpha-color-picker .customize-control-title {
+            display: block;
+        }
 	</style>
 	<?php
 
@@ -70,7 +89,7 @@ add_action( 'customize_controls_print_styles', 'betterdocs_customizer_styles', 9
 function betterdocs_customize_css() {
 	$output = betterdocs_generate_output();
     ?>
-	<style type="text/css">
+	<style>
 		.betterdocs-wraper.betterdocs-main-wraper {
 			<?php if(!empty(get_theme_mod('betterdocs_doc_page_background_color'))) { ?>
 			background-color: <?php echo get_theme_mod('betterdocs_doc_page_background_color') ?>;
@@ -128,6 +147,13 @@ function betterdocs_customize_css() {
 			padding-left: <?php echo $output['betterdocs_doc_page_column_padding_left'] ?>px; 
 			padding-bottom: <?php echo $output['betterdocs_doc_page_column_padding_bottom'] ?>px; 
 		}
+        <?php if ($output['betterdocs_doc_page_box_border_bottom']) { ?>
+        .betterdocs-categories-wrap.betterdocs-category-box.border-bottom a.docs-single-cat-wrap:hover {
+            border-bottom-style: solid;
+            border-bottom-width: <?php echo $output['betterdocs_doc_page_box_border_bottom_size'] ?>px;
+            border-bottom-color: <?php echo $output['betterdocs_doc_page_box_border_bottom_color'] ?>;
+        }
+        <?php } ?>
 		.betterdocs-categories-wrap.betterdocs-category-box .docs-single-cat-wrap p{
 			<?php if(!empty($output['betterdocs_doc_page_cat_desc_color'])) { ?>
 			color: <?php echo $output['betterdocs_doc_page_cat_desc_color'] ?>;
@@ -258,12 +284,14 @@ function betterdocs_customize_css() {
 			background-color: <?php echo $output['betterdocs_doc_page_article_list_bg_color'] ?>;
 		}
 		.betterdocs-categories-wrap.single-kb .docs-item-container li,
-		.betterdocs-categories-wrap.single-kb .docs-item-container .docs-sub-cat-title {
+		.betterdocs-categories-wrap.single-kb .docs-item-container .docs-sub-cat-title,
+        .betterdocs-popular-list.single-kb ul li {
 			margin-top: <?php echo $output['betterdocs_doc_page_article_list_margin_top'] ?>px;
 			margin-right: <?php echo $output['betterdocs_doc_page_article_list_margin_right'] ?>px;
 			margin-left: <?php echo $output['betterdocs_doc_page_article_list_margin_left'] ?>px;
 		}
-        .betterdocs-categories-wrap.single-kb .docs-item-container li {
+        .betterdocs-categories-wrap.single-kb .docs-item-container li,
+        .betterdocs-popular-list.single-kb ul li {
             margin-bottom: <?php echo $output['betterdocs_doc_page_article_list_margin_bottom'] ?>px;
 			padding-top: <?php echo $output['betterdocs_doc_page_article_list_padding_top'] ?>px;
 			padding-right: <?php echo $output['betterdocs_doc_page_article_list_padding_right'] ?>px;
@@ -275,7 +303,15 @@ function betterdocs_customize_css() {
 			font-size: <?php echo $output['betterdocs_doc_page_list_icon_font_size'] ?>px;
             min-width: <?php echo $output['betterdocs_doc_page_list_icon_font_size'] ?>px;
 		}
-		.betterdocs-categories-wrap.single-kb li a {
+        .betterdocs-popular-list.single-kb ul li svg {
+			font-size: <?php echo $output['betterdocs_doc_page_list_icon_font_size'] ?>px;
+            min-width: <?php echo $output['betterdocs_doc_page_list_icon_font_size'] ?>px;
+		}
+        .betterdocs-popular-list.single-kb ul li svg path {
+			fill: <?php echo $output['betterdocs_doc_page_list_icon_color'] ?>;
+		}
+		.betterdocs-categories-wrap.single-kb li a,
+        .betterdocs-popular-list.single-kb ul li a {
 			color: <?php echo $output['betterdocs_doc_page_article_list_color'] ?>;
 			font-size: <?php echo $output['betterdocs_doc_page_article_list_font_size'] ?>px;
 		}
@@ -294,7 +330,8 @@ function betterdocs_customize_css() {
 			fill: <?php echo $output['betterdocs_doc_page_subcategory_article_list_icon_color'] ?>;
 		}
 		<?php } ?>
-		.betterdocs-categories-wrap.single-kb li a:hover {
+		.betterdocs-categories-wrap.single-kb li a:hover,
+        .betterdocs-popular-list.single-kb ul li a:hover {
 			color: <?php echo $output['betterdocs_doc_page_article_list_hover_color'] ?>;
 		}
 		.betterdocs-categories-wrap.single-kb .docs-item-container .docs-sub-cat-title svg {
@@ -353,6 +390,24 @@ function betterdocs_customize_css() {
 			padding-bottom: <?php echo $output['betterdocs_doc_single_post_content_padding_bottom'] ?>px;
 			padding-left: <?php echo $output['betterdocs_doc_single_post_content_padding_left'] ?>px;
 		}
+		.betterdocs-single-layout4 .betterdocs-content-full {
+			padding-top: <?php echo $output['betterdocs_doc_single_content_area_padding_top'] ?>px;
+			padding-right: <?php echo $output['betterdocs_doc_single_content_area_padding_right'] ?>px;
+			padding-bottom: <?php echo $output['betterdocs_doc_single_content_area_padding_bottom'] ?>px;
+			padding-left: <?php echo $output['betterdocs_doc_single_content_area_padding_left'] ?>px;
+		}
+		.betterdocs-single-layout4 .betterdocs-content-full{
+			background-color: <?php echo $output['betterdocs_doc_single_content_area_bg_color'] ?>;	
+		}
+		.betterdocs-single-layout5 .betterdocs-content-full {
+			padding-top: <?php echo $output['betterdocs_doc_single_content_area_padding_top'] ?>px;
+			padding-right: <?php echo $output['betterdocs_doc_single_content_area_padding_right'] ?>px;
+			padding-bottom: <?php echo $output['betterdocs_doc_single_content_area_padding_bottom'] ?>px;
+			padding-left: <?php echo $output['betterdocs_doc_single_content_area_padding_left'] ?>px;
+		}
+		.betterdocs-single-layout5 .betterdocs-content-full {
+			background-color: <?php echo $output['betterdocs_doc_single_content_area_bg_color'] ?>;	
+		}
 		.betterdocs-single-layout2 .docs-content-full-main .doc-single-content-wrapper {
 			padding-top: <?php echo $output['betterdocs_doc_single_2_post_content_padding_top'] ?>px;
 			padding-right: <?php echo $output['betterdocs_doc_single_2_post_content_padding_right'] ?>px;
@@ -389,6 +444,10 @@ function betterdocs_customize_css() {
 			padding-right: <?php echo $output['betterdocs_doc_single_toc_padding_right'] ?>px;
 			padding-bottom: <?php echo $output['betterdocs_doc_single_toc_padding_bottom'] ?>px;
 			padding-left: <?php echo $output['betterdocs_doc_single_toc_padding_left'] ?>px;
+			margin-top: <?php echo $output['betterdocs_doc_single_toc_margin_top']?>px;
+			margin-right: <?php echo $output['betterdocs_doc_single_toc_margin_right'] ?>px;
+			margin-bottom: <?php echo $output['betterdocs_doc_single_toc_margin_bottom'] ?>px;
+			margin-left: <?php echo $output['betterdocs_doc_single_toc_margin_left'] ?>px;
 		}
 		.betterdocs-entry-content .betterdocs-toc {
 			margin-bottom: <?php echo $output['betterdocs_toc_margin_bottom'] ?>px;
@@ -428,9 +487,13 @@ function betterdocs_customize_css() {
 		.feedback-form-link .feedback-form-icon svg, .feedback-form-link .feedback-form-icon img {
 			width: <?php echo $output['betterdocs_single_doc_feedback_icon_font_size'] ?>px;
 		}
-		.betterdocs-toc > .toc-list a.active {
+		.betterdocs-toc > .toc-list a.active,
+        .betterdocs-toc > .toc-list a.active:before {
 			color: <?php echo $output['betterdocs_toc_active_item_color'] ?>;
 		}
+        .betterdocs-toc > .toc-list a.active:after {
+            background-color: <?php echo $output['betterdocs_toc_active_item_color'] ?>;
+        }
 		.betterdocs-content {
 			color: <?php echo $output['betterdocs_single_content_font_color'] ?>;
 			font-size: <?php echo $output['betterdocs_single_content_font_size'] ?>px;
@@ -683,9 +746,6 @@ function betterdocs_customize_css() {
 			<?php if(!empty($output['betterdocs_live_search_background_image'])) { ?>
 			background-image: url(<?php echo $output['betterdocs_live_search_background_image'] ?>);
 			<?php } ?>
-			<?php if(!empty($output['betterdocs_live_search_background_size'])) { ?>
-			background-size: <?php echo $output['betterdocs_live_search_background_size'] ?>;
-			<?php } ?>
 			<?php if(!empty($output['betterdocs_live_search_background_repeat'])) { ?>
 			background-repeat: <?php echo $output['betterdocs_live_search_background_repeat'] ?>;
 			<?php } ?>
@@ -703,10 +763,11 @@ function betterdocs_customize_css() {
 			margin-right:<?php echo $output['betterdocs_live_search_margin_right'] ?>px;
 			margin-bottom:<?php echo $output['betterdocs_live_search_margin_bottom'] ?>px;
 			margin-left:<?php echo $output['betterdocs_live_search_margin_left'] ?>px;
-			<?php if($output['betterdocs_live_search_custom_background_switch']) {?>
-			width:<?php echo $output['betterdocs_live_search_custom_background_width']."%"?>;
-			height:<?php echo $output['betterdocs_live_search_custom_background_height']."%"?>;
-			<?php } ?>
+			<?php if($output['betterdocs_live_search_custom_background_switch']) { ?>
+                background-size:<?php echo $output['betterdocs_live_search_custom_background_width']."%" .' '. $output['betterdocs_live_search_custom_background_height']."%"?>;
+			<?php } else if(!empty($output['betterdocs_live_search_background_size'])) { ?>
+                background-size: <?php echo $output['betterdocs_live_search_background_size'] ?>;
+            <?php } ?>
 		}
 		.betterdocs-search-heading h2 {
 			line-height: 1.2;
@@ -734,9 +795,15 @@ function betterdocs_customize_css() {
 			padding-bottom: <?php echo $output['betterdocs_search_field_padding_bottom'] ?>px;
 			padding-left: <?php echo $output['betterdocs_search_field_padding_left'] ?>px;
 		}
-		.betterdocs-searchform .betterdocs-search-field{
+		.betterdocs-searchform .betterdocs-search-field {
 			font-size: <?php echo $output['betterdocs_search_field_font_size'] ?>px;
 			color: <?php echo $output['betterdocs_search_field_color'] ?>;
+		}	
+		.betterdocs-searchform .betterdocs-search-field:focus{
+			color: <?php echo $output['betterdocs_search_field_color'] ?>;
+		}
+		.betterdocs-searchform .betterdocs-search-field::placeholder{
+			color: <?php echo $output['betterdocs_search_placeholder_color']?>;
 		}
 		.betterdocs-searchform svg.docs-search-icon {
 			fill: <?php echo $output['betterdocs_search_icon_color'] ?>;
@@ -784,14 +851,14 @@ function betterdocs_customize_css() {
 		.betterdocs-live-search .docs-search-result li:hover {
 			background-color: <?php echo $output['betterdocs_search_result_item_hover_background_color'] ?>;
 		}
-		.betterdocs-live-search .docs-search-result li a:hover {
+		.betterdocs-live-search .docs-search-result li a span:hover {
 			color: <?php echo $output['betterdocs_search_result_item_hover_font_color'] ?>;
 		}
 		.betterdocs-category-box.pro-layout-3 .docs-single-cat-wrap img,
 		.docs-cat-list-2-box img {
 			margin-right: <?php echo $output['betterdocs_doc_page_column_content_space_image'] ?>px;
 		}
-		.betterdocs-wraper .betterdocs-search-form-wrap.cat-layout-4 {
+		.betterdocs-wraper.betterdocs-category-list-2 .betterdocs-search-form-wrap {
 			padding-bottom: <?php echo $output['betterdocs_live_search_padding_bottom'] + 80 ?>px;
 		}
 	</style>

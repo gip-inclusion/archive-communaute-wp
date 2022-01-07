@@ -117,6 +117,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
                     'layout-1'    => esc_html__('Layout 1', 'betterdocs'),
                     'layout-2'    => esc_html__('Layout 2', 'betterdocs'),
                     'layout-3'    => esc_html__('Layout 3', 'betterdocs'),
+                    'layout-4'    => esc_html__('Layout 4', 'betterdocs')
                 ],
             ]
         );
@@ -261,6 +262,29 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+			'column_height',
+			[
+				'label' => __( 'Height', 'plugin-domain' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-categories-wrap' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 
         $this->add_responsive_control(
             'box_seperator_color',
@@ -342,7 +366,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'card_box_shadow_normal',
-                'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap'
+                'selector' => '{{WRAPPER}} .betterdocs-categories-wrap'
             ]
         );
 
@@ -437,7 +461,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'card_box_shadow_hover',
-                'selector' => '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap:hover'
+                'selector' => '{{WRAPPER}} .betterdocs-categories-wrap:hover'
             ]
         );
 
@@ -479,6 +503,40 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             ]
         );
 
+        $this->add_responsive_control(
+            'category_settings_arrow_width_normal',
+            [
+                'label'      => esc_html__('Arrow Width', 'betterdocs'),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'em'],
+                'range'      => [
+                    'px' => [
+                        'max' => 500,
+                    ],
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'category_settings_arrow_height_normal',
+            [
+                'label'      => esc_html__('Arrow Height', 'betterdocs'),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'em'],
+                'range'      => [
+                    'px' => [
+                        'max' => 500,
+                    ],
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->start_controls_tabs('box_icon_styles_tab');
 
         // Normal State Tab
@@ -486,6 +544,17 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             'icon_normal',
             ['label' => esc_html__('Normal', 'betterdocs')]
         );
+
+        $this->add_control(
+			'arrow_color',
+			[
+				'label' => __( 'Arrow Color', 'plugin-domain' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down' => 'color: {{VALUE}}',
+				],
+			]
+		);
 
         $this->add_group_control(
             Group_Control_Background::get_type(),
@@ -548,6 +617,31 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             ]
         );
 
+
+        $this->add_responsive_control(
+            'arrow_padding_normal',
+            [
+                'label'              => esc_html__('Arrow Padding', 'betterdocs'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', 'em', '%'],
+                'selectors'          => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'arrow_margin_normal',
+            [
+                'label'              => esc_html__('Arrow Margin', 'betterdocs'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', 'em', '%'],
+                'selectors'          => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
+            ]
+        );
+
         $this->end_controls_tab();
 
         // Hover State Tab
@@ -555,6 +649,17 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
             'icon_hover',
             ['label' => esc_html__('Hover', 'betterdocs')]
         );
+
+        $this->add_control(
+			'arrow_color_hover',
+			[
+				'label' => __( 'Arrow Color', 'plugin-domain' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
 
         $this->add_group_control(
             Group_Control_Background::get_type(),
@@ -586,6 +691,31 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
 
             ]
         );
+
+        $this->add_responsive_control(
+            'arrow_padding_hover',
+            [
+                'label'              => esc_html__('Arrow Padding', 'betterdocs'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', 'em', '%'],
+                'selectors'          => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'arrow_margin_hover',
+            [
+                'label'              => esc_html__('Arrow Margin', 'betterdocs'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', 'em', '%'],
+                'selectors'          => [
+                    '{{WRAPPER}} .betterdocs-single-layout4 .betterdocs-full-sidebar-left .cat-list-arrow-down:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
+            ]
+        );
+
 
         $this->add_control(
             'category_settings_icon_size_transition',
@@ -667,6 +797,18 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
                 'size_units' => ['px', '%', 'em'],
                 'selectors'  => [
                     '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap .docs-cat-title .docs-cat-heading, .docs-single-cat-wrap-2 .docs-cat-title-inner .docs-cat-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'title_padding',
+            [
+                'label'      => __('Padding', 'betterdocs'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors'  => [
+                    '{{WRAPPER}} .betterdocs-categories-wrap .docs-single-cat-wrap .docs-cat-title .docs-cat-heading, .docs-single-cat-wrap-2 .docs-cat-title-inner .docs-cat-heading' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
@@ -1397,7 +1539,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
         echo '<div class="sticky-toc-container">
             <a class="close-toc" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" viewBox="0 0 24 24">
-                    <path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
+                    <path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z"></path>
                 </svg>
             </a>
         </div>';

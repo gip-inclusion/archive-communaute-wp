@@ -368,9 +368,17 @@ class BetterDocs_Helper
         global $wp_query;
         $terms_object = array(
             'hide_empty' => true,
-            'taxonomy' => 'doc_category',
-            'orderby' => 'name'
+            'taxonomy' => 'doc_category'
         );
+
+        $alphabetically_order_term = BetterDocs_DB::get_settings('alphabetically_order_term');
+        if ( $alphabetically_order_term != 1 ) {
+            $terms_object['meta_key'] = 'doc_category_order';
+            $terms_object['orderby'] = 'meta_value_num';
+            $terms_object['order'] = 'ASC';
+        } else {
+            $terms_object['orderby'] = 'name';
+        }
 
         if ($nested_subcategory == true) {
             $terms_object['parent'] = 0;
@@ -522,8 +530,10 @@ class BetterDocs_Helper
         }
         return false;
     }
+
     public static function term_options($taxonomy, $selected='')
     {
+        $html = '';
         $terms_object = array(
             'taxonomy' => $taxonomy,
             'hide_empty' => false
@@ -533,8 +543,9 @@ class BetterDocs_Helper
         if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) :
             foreach ($taxonomy_objects as $term) :
                 $sel = ($term->slug === $selected) ? ' selected' : '';
-                echo '<option value="' . $term->slug . '"' . $sel . '>' . $term->name . '</option>';
+                $html .= '<option value="' . $term->slug . '"' . $sel . '>' . $term->name . '</option>';
             endforeach;
         endif;
+        return $html;
     }
 }

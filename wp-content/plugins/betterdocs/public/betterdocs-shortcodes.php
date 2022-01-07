@@ -3,7 +3,7 @@
 /**
  * BetterDocs all shortcodes
  *
- * @link       https://wpdeveloper.net
+ * @link       https://wpdeveloper.com
  * @since      1.0.0
  *
  * @package    BetterDocs
@@ -303,7 +303,7 @@ function betterdocs_category_grid($atts, $content = null)
 		return ob_get_clean();
 	}
 	
-	function nested_category_list($term_id, $multiple_kb, $category_id, $post_type, $orderby, $order, $page_cat, $kb_slug='') {
+	function nested_category_list($term_id, $multiple_kb, $category_id, $post_type, $orderby, $order, $page_cat, $kb_slug='', $nested_posts_num = -1) {
 		$sub_categories = BetterDocs_Helper::child_taxonomy_terms($term_id, $multiple_kb, $orderby, $order, $kb_slug);
 		if ($sub_categories) {
 			foreach ($sub_categories as $sub_category) {
@@ -319,7 +319,7 @@ function betterdocs_category_grid($atts, $content = null)
 					<a href="#">' . $sub_category->name . '</a></span>';
 
 				echo '<ul class="' . esc_attr($subcat_class) . '">';
-				$sub_args = BetterDocs_Helper::list_query_arg($post_type, $multiple_kb, $sub_category->slug, -1, $orderby, $order, $kb_slug);
+				$sub_args = BetterDocs_Helper::list_query_arg($post_type, $multiple_kb, $sub_category->slug,  $nested_posts_num, $orderby, $order, $kb_slug);
 				$sub_args = apply_filters('betterdocs_sub_cat_articles_args', $sub_args, $sub_category->term_id);
 				$sub_post_query = new WP_Query($sub_args);
 
@@ -497,9 +497,10 @@ function betterdocs_category_grid($atts, $content = null)
 				'nested_subcategory' => '',
 				'terms' => '',
                 'kb_slug' => '',
+                'title_tag' => 'h2',
 				'multiple_knowledge_base' => false,
 				'disable_customizer_style' => false,
-                'title_tag' => 'h2'
+				'border_bottom' => false
 			),
 			$atts
 		);
@@ -516,6 +517,10 @@ function betterdocs_category_grid($atts, $content = null)
 			} else {
 				$class[] = 'docs-col-' . $column_number;
 			}
+
+            if (isset($get_args['border_bottom']) && $get_args['border_bottom'] == true) {
+                $class[] = 'border-bottom';
+            }
 
 			if ($get_args['disable_customizer_style'] == false) {
 				$class[] = 'single-kb';
@@ -548,9 +553,9 @@ function betterdocs_category_grid($atts, $content = null)
 						}
 						if ($post_count == 1) {
 							if ($term->count == 1) {
-								echo wp_sprintf('<span>%s %s</span>', $term_count, ($count_text_singular) ? $count_text_singular : __('article', 'betterdocs'));
+								echo wp_sprintf('<span class="docs-count">%s %s</span>', $term_count, ($count_text_singular) ? $count_text_singular : __('article', 'betterdocs'));
 							} else {
-								echo wp_sprintf('<span>%s %s</span>', $term_count, ($count_text) ? $count_text : __('articles', 'betterdocs'));
+								echo wp_sprintf('<span class="docs-count">%s %s</span>', $term_count, ($count_text) ? $count_text : __('articles', 'betterdocs'));
 							}
 						}
 					echo '</a>';
@@ -561,72 +566,78 @@ function betterdocs_category_grid($atts, $content = null)
 		return ob_get_clean();
 	}
 
-	/**
-	 * search form with live dropdown result
-	 * *
-	 * @since      1.0.0
-	 * 
-	 */
-	add_shortcode('betterdocs_search_form', 'betterdocs_search_form');
-	function betterdocs_search_form($atts, $content = null)
-	{
+    /**
+     * Advance search search form with live dropdown result
+     * *
+     * @since 1.0.0
+     *
+     */
+    add_shortcode('betterdocs_search_form', 'betterdocs_search_form');
+    function betterdocs_search_form($atts, $content = null)
+    {
         $get_args = shortcode_atts(
-            array(
+            apply_filters('betterdocs_search_form_atts', array(
                 'placeholder' => false,
-            ),
+                'enable_heading' => false,
+                'heading' => false,
+                'subheading' => false
+            )),
             $atts
         );
         do_action( 'betterdocs_before_shortcode_load' );
 
-        //$search_placeholder = esc_html__('Search', 'betterdocs');
-        if ($get_args['placeholder']) {
-            $search_placeholder = $get_args['placeholder'];
-        } else {
-            $search_placeholder = BetterDocs_DB::get_settings('search_placeholder');
-        }
+        ob_start();
+        echo '<div class="betterdocs-live-search">';
+            if ( $get_args['enable_heading'] == true ) {
+                echo '<div class="betterdocs-search-heading">';
+                    if ( $get_args['heading'] == true ) {
+                        echo '<h2> ' . esc_html($get_args['heading']) . ' </h2>';
+                    }
 
-		ob_start();
-		echo '<div class="betterdocs-live-search">';
-			if (get_theme_mod('betterdocs_live_search_heading_switch') == true) {
-				echo '<div class="betterdocs-search-heading">';
-				if (get_theme_mod('betterdocs_live_search_heading')) {
-					echo '<h2> ' . esc_html(get_theme_mod('betterdocs_live_search_heading')) . ' </h2>';
-				}
-				if (get_theme_mod('betterdocs_live_search_heading')) {
-					echo '<h3> ' . get_theme_mod('betterdocs_live_search_subheading') . ' </h3>';
-				}
-				echo '</div>';
-			}
-			echo '<form class="betterdocs-searchform">
-				<svg class="docs-search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38px" viewBox="0 0 50 50" version="1.1">
-					<g id="surface1">
-						<path style=" " d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z "></path>
-					</g>
-				</svg>
-				<input type="text" class="betterdocs-search-field" name="s" placeholder="'. $search_placeholder .'" autocomplete="off" value="'.get_search_query().'">
-				<input type="hidden" value="Search" class="betterdocs-search-submit">';
-                do_action('betterdocs_live_search_field_footer');
-				echo '<svg class="docs-search-loader" width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#444b54">
-					<g fill="none" fill-rule="evenodd">
-						<g transform="translate(1 1)" stroke-width="2">
-							<circle stroke-opacity=".5" cx="18" cy="18" r="18" />
-							<path d="M36 18c0-9.94-8.06-18-18-18">
-								<animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite" />
-							</path>
-						</g>
-					</g>
-				</svg>
-				<svg class="docs-search-close" xmlns="http://www.w3.org/2000/svg" width="38px" viewBox="0 0 128 128">
-					<path fill="#fff" d="M64 14A50 50 0 1 0 64 114A50 50 0 1 0 64 14Z" transform="rotate(-45.001 64 64.001)"></path>
-					<path class="close-border" d="M64,117c-14.2,0-27.5-5.5-37.5-15.5c-20.7-20.7-20.7-54.3,0-75C36.5,16.5,49.8,11,64,11c14.2,0,27.5,5.5,37.5,15.5c10,10,15.5,23.3,15.5,37.5s-5.5,27.5-15.5,37.5C91.5,111.5,78.2,117,64,117z M64,17c-12.6,0-24.4,4.9-33.2,13.8c-18.3,18.3-18.3,48.1,0,66.5C39.6,106.1,51.4,111,64,111c12.6,0,24.4-4.9,33.2-13.8S111,76.6,111,64s-4.9-24.4-13.8-33.2S76.6,17,64,17z"></path>
-					<path class="close-line" d="M53.4,77.6c-0.8,0-1.5-0.3-2.1-0.9c-1.2-1.2-1.2-3.1,0-4.2l21.2-21.2c1.2-1.2,3.1-1.2,4.2,0c1.2,1.2,1.2,3.1,0,4.2L55.5,76.7C54.9,77.3,54.2,77.6,53.4,77.6z"></path>
-					<path class="close-line" d="M74.6,77.6c-0.8,0-1.5-0.3-2.1-0.9L51.3,55.5c-1.2-1.2-1.2-3.1,0-4.2c1.2-1.2,3.1-1.2,4.2,0l21.2,21.2c1.2,1.2,1.2,3.1,0,4.2C76.1,77.3,75.4,77.6,74.6,77.6z"></path>
-				</svg>
-                
-			</form>
-		</div>';
-	return ob_get_clean();
-}
+                    if ( $get_args['subheading'] == true ) {
+                        echo '<h3> ' . esc_html($get_args['subheading']) . ' </h3>';
+                    }
+                echo '</div>';
+            }
+
+            do_action('betterdocs_before_live_search_form', $get_args);
+
+            echo '<form class="betterdocs-searchform betterdocs-advance-searchform">
+                <div class="betterdocs-searchform-input-wrap">
+                    <svg class="docs-search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38px" viewBox="0 0 50 50" version="1.1">
+                        <g id="surface1">
+                            <path style=" " d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z "></path>
+                        </g>
+                    </svg>
+                    <input type="text" class="betterdocs-search-field" name="s" placeholder="'. $get_args['placeholder'] .'" autocomplete="off" value="'.get_search_query().'">
+                    <svg class="docs-search-loader" width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#444b54">
+                        <g fill="none" fill-rule="evenodd">
+                            <g transform="translate(1 1)" stroke-width="2">
+                                <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
+                                <path d="M36 18c0-9.94-8.06-18-18-18">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite" />
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <svg class="docs-search-close" xmlns="http://www.w3.org/2000/svg" width="38px" viewBox="0 0 128 128">
+                        <path fill="#fff" d="M64 14A50 50 0 1 0 64 114A50 50 0 1 0 64 14Z" transform="rotate(-45.001 64 64.001)"></path>
+                        <path class="close-border" d="M64,117c-14.2,0-27.5-5.5-37.5-15.5c-20.7-20.7-20.7-54.3,0-75C36.5,16.5,49.8,11,64,11c14.2,0,27.5,5.5,37.5,15.5c10,10,15.5,23.3,15.5,37.5s-5.5,27.5-15.5,37.5C91.5,111.5,78.2,117,64,117z M64,17c-12.6,0-24.4,4.9-33.2,13.8c-18.3,18.3-18.3,48.1,0,66.5C39.6,106.1,51.4,111,64,111c12.6,0,24.4-4.9,33.2-13.8S111,76.6,111,64s-4.9-24.4-13.8-33.2S76.6,17,64,17z"></path>
+                        <path class="close-line" d="M53.4,77.6c-0.8,0-1.5-0.3-2.1-0.9c-1.2-1.2-1.2-3.1,0-4.2l21.2-21.2c1.2-1.2,3.1-1.2,4.2,0c1.2,1.2,1.2,3.1,0,4.2L55.5,76.7C54.9,77.3,54.2,77.6,53.4,77.6z"></path>
+                        <path class="close-line" d="M74.6,77.6c-0.8,0-1.5-0.3-2.1-0.9L51.3,55.5c-1.2-1.2-1.2-3.1,0-4.2c1.2-1.2,3.1-1.2,4.2,0l21.2,21.2c1.2,1.2,1.2,3.1,0,4.2C76.1,77.3,75.4,77.6,74.6,77.6z"></path>
+                    </svg>
+                </div>';
+
+                do_action('betterdocs_live_search_form_footer', $get_args);
+
+                echo '<input type="hidden" value="Search" class="betterdocs-search-submit">';
+                echo '</form>';
+
+                do_action('betterdocs_after_live_search_form', $get_args);
+
+        echo '</div>';
+        return ob_get_clean();
+    }
 
 /**
  * Get the search result from ajax load.
@@ -637,8 +648,11 @@ function betterdocs_category_grid($atts, $content = null)
 add_action('wp_ajax_nopriv_betterdocs_get_search_result', 'betterdocs_get_search_result');
 add_action('wp_ajax_betterdocs_get_search_result', 'betterdocs_get_search_result');
 function betterdocs_get_search_result() {
-	
 	$search_input = isset($_POST['search_input']) ? sanitize_text_field($_POST['search_input']) : '';
+	$search_cat = isset($_POST['search_cat']) ? sanitize_text_field($_POST['search_cat']) : '';
+	$search_data = isset($_POST['search_data']) ? stripslashes($_POST['search_data']) : '';
+    $search_input = preg_replace('/[^A-Za-z0-9_\- ][]]/', '', strtolower($search_input));
+    $search_keyword_arr = (!empty($search_data) && $search_data != 'undefined') ? unserialize($search_data) : array();
 	$args = array(
 		'post_type'      => 'docs',
 		'post_status'      => 'publish',
@@ -647,7 +661,20 @@ function betterdocs_get_search_result() {
 		's' => $search_input,
 	);
 	$tax_query = '';
+    if($search_cat) {
+        $tax_query = array(
+            array(
+                'taxonomy' => 'doc_category',
+                'field'     => 'slug',
+                'terms'    => $search_cat,
+                'operator' => 'AND',
+                'include_children' => true
+            )
+        );
+    }
+
 	$args['tax_query'] = apply_filters('betterdocs_live_search_tax_query', $tax_query, $_POST);
+
 	$loop = new WP_Query($args);
 	$output = '<div class="betterdocs-search-result-wrap"><ul class="docs-search-result">';
 	if ($loop->have_posts()) :
@@ -684,10 +711,41 @@ function betterdocs_get_search_result() {
 		$output .= '<li>' . BetterDocs_DB::get_settings('search_not_found_text') . '</li>';
 	endif;
 	$output .= '</ul></div>';
-	echo $output;
+    $response[ 'post_lists' ] = $output;
+
+    if ( $output && $search_data != 'undefined' && strlen( $search_input ) >= 4) {
+        if ( array_key_exists( $search_input, $search_keyword_arr ) ) {
+            $search_keyword_arr[$search_input] = $search_keyword_arr[$search_input] + 1;
+        } else {
+            $search_keyword_arr[$search_input] = 1;
+        }
+        update_option('betterdocs_search_data', serialize($search_keyword_arr));
+        $response[ 'search_data' ] = serialize($search_keyword_arr);
+    }
+    wp_send_json_success( $response );
 	wp_reset_postdata();
 	die();
 }
+
+/**
+ * Store search keyword in database
+ * *
+ * @since      2.0.0
+ *
+ */
+/*function betterdocs_store_search_keyword($search_input, $search_data) {
+    if ( strlen( $search_input ) >= 4 ) {
+        $search_input = preg_replace('/[^A-Za-z0-9\- ][]]/', '_', strtolower($search_input));
+        $search_keyword_arr = ($search_data) ? unserialize($search_data) : array();
+        if ( array_key_exists( $search_input, $search_keyword_arr ) ) {
+            $search_keyword_arr[$search_input] = $search_keyword_arr[$search_input] + 1;
+        } else {
+            $search_keyword_arr[$search_input] = 1;
+        }
+        update_option('betterdocs_search_data', serialize($search_keyword_arr));
+    }
+	die();
+}*/
 
 /**
  * feedback form shortcode
