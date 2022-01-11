@@ -66,7 +66,7 @@ html.elementor-html body.bb-sfwd-aside {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "";
+  content: "\e838";
   -webkit-animation: spin 2s infinite linear;
           animation: spin 2s infinite linear;
   width: 20px;
@@ -2387,7 +2387,7 @@ div.bb-lms-header.quiz-fix .bb-position {
 }
 .learndash_next_prev_link a.next-link:after,
 .learndash_next_prev_link span.next-link:after {
-  content: "";
+  content: "\e87b";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -2403,7 +2403,7 @@ div.bb-lms-header.quiz-fix .bb-position {
 }
 .learndash_next_prev_link a.prev-link:before,
 .learndash_next_prev_link span.prev-link:before {
-  content: "";
+  content: "\e87a";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -2561,37 +2561,37 @@ div.bb-lms-header.quiz-fix .bb-position {
   padding-bottom: 0;
 }
 .learndash-wrapper .ld-icon.ld-icon-quiz:before {
-  content: "";
+  content: "\e956";
 }
 .learndash-wrapper .ld-icon.ld-icon-checkmark {
   font-size: 14px;
 }
 .learndash-wrapper .ld-icon.ld-icon-checkmark:before {
-  content: "";
+  content: "\e876";
 }
 .learndash-wrapper .ld-icon.ld-icon-content {
   font-size: 14px;
 }
 .learndash-wrapper .ld-icon.ld-icon-content:before {
-  content: "";
+  content: "\e86e";
 }
 .learndash-wrapper .ld-icon.ld-icon-materials {
   font-size: 14px;
 }
 .learndash-wrapper .ld-icon.ld-icon-materials:before {
-  content: "";
+  content: "\e982";
 }
 .learndash-wrapper .ld-icon.ld-icon-certificate:before {
-  content: "";
+  content: "\e975";
 }
 .learndash-wrapper .ld-icon.ld-icon-assignment:before {
-  content: "";
+  content: "\e96a";
 }
 .learndash-wrapper .ld-icon.ld-icon-search:before {
-  content: "";
+  content: "\e8c6";
 }
 .learndash-wrapper .ld-icon.ld-icon-calendar:before {
-  content: "";
+  content: "\e823";
 }
 .learndash-wrapper .ld-tabs .ld-tabs-navigation:after {
   height: 1px;
@@ -2671,7 +2671,7 @@ div.bb-lms-header.quiz-fix .bb-position {
   color: #007CFF;
 }
 .learndash-wrapper .bb-ld-info-bar .ld-breadcrumbs .ld-breadcrumbs-segments span:after {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-size: 12px;
   text-rendering: auto;
@@ -2782,7 +2782,7 @@ div.bb-lms-header.quiz-fix .bb-position {
           transform: none;
 }
 .learndash-wrapper .ld-alert-warning .ld-alert-icon.ld-icon-alert:before {
-  content: "";
+  content: "\e974";
 }
 @media screen and (max-width: 768px) {
   .learndash-wrapper .ld-alert-warning .ld-alert-content {
@@ -3659,7 +3659,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "";
+  content: "\e956";
   position: absolute;
   right: -30px;
   top: 3px;
@@ -3689,7 +3689,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "";
+  content: "\e982";
   position: absolute;
   right: -30px;
   top: 3px;
@@ -3701,7 +3701,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   margin-left: 0px;
 }
 .learndash-wrapper .ld-table-list .ld-table-list-items div.ld-table-list-item.ld-topic__video a.ld-table-list-item-preview .ld-topic-title:before {
-  content: "";
+  content: "\e97f";
 }
 .learndash-wrapper .ld-status-icon.ld-status-complete,
 .learndash-wrapper .ld-status-icon.ld-quiz-complete {
@@ -3765,7 +3765,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   font-weight: 500;
 }
 .learndash-wrapper .ld-item-list-item-quiz .ld-item-name .ld-item-title:before {
-  content: "";
+  content: "\e956";
   font: normal normal normal 18px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -3814,7 +3814,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   color: #939597;
 }
 .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview .ld-icon-arrow-down:before {
-  content: "";
+  content: "\e984";
   font: normal normal normal 9px/1 "bb-icons";
   speak: none;
   text-decoration: inherit;
@@ -3896,14 +3896,14 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   padding: 0px 10px;
 }
 .learndash-wrapper .ld-table-list-items .ld-table-list-item .ld-table-list-item-quiz .ld-quiz-complete .ld-icon:before {
-  content: "";
+  content: "\e876";
   color: #fff;
 }
 .learndash-wrapper .ld-table-list-items .ld-table-list-item .ld-table-list-item-quiz .ld-quiz-complete {
   border: 0;
 }
 .learndash-wrapper .ld-table-list-items .ld-table-list-item .ld-table-list-item-quiz .ld-quiz-complete ~ .ld-item-title:before {
-  content: "";
+  content: "\e956";
   font: normal normal normal 12px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -3924,7 +3924,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   line-height: 1.6;
 }
 .learndash-wrapper .ld-item-list-item-expanded .ld-table-list-items .ld-table-list-item .ld-table-list-item-quiz .ld-item-title:before {
-  content: "";
+  content: "\e956";
   font: normal normal normal 12px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -3997,7 +3997,7 @@ body.bb-custom-ld-focus-mode-enabled.admin-bar {
   border: 0;
 }
 .learndash-wrapper .ld-status-icon.ld-quiz-complete .ld-icon.ld-icon-quiz:before {
-  content: "";
+  content: "\e876";
 }
 .learndash-wrapper .ld-video {
   padding-top: 0;
@@ -5310,7 +5310,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   font-size: 22px;
 }
 .learndash-wrapper #ld-profile .ld-table-list-column.ld-table-list-column-stats .ld-icon.ld-icon-assignment:before {
-  content: "";
+  content: "\e807";
 }
 .learndash-wrapper #ld-profile .ld-table-list-column.ld-table-list-column-certificate .ld-icon.ld-icon-certificate {
   color: #939597;
@@ -6077,7 +6077,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   height: 16px;
 }
 .widget .bb-course-filters .bs-styled-checkbox:checked + label:after {
-  content: "";
+  content: "\e809";
   display: inline-block;
   font: normal normal normal 14px/1 "bb-icons";
   font-size: inherit;
@@ -7046,7 +7046,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   margin: 10px 0;
 }
 .wpProQuiz_content .wpProQuiz_questionList[data-type=essay] form input[type=file] + label:before {
-  content: "";
+  content: "\e8e3";
   font: normal normal normal 18px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -7123,7 +7123,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
-  content: "";
+  content: "\e81b";
   color: #C8CBCF;
 }
 .wpProQuiz_content .wpProQuiz_sortable:before {
@@ -7180,7 +7180,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
-  content: "";
+  content: "\e81b";
   color: #C8CBCF;
 }
 .wpProQuiz_content .wpProQuiz_matrixSortString .wpProQuiz_sortStringList.ui-sortable li.wpProQuiz_sortStringItem:after {
@@ -7251,7 +7251,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
-  content: "";
+  content: "\e81b";
   color: #C8CBCF;
 }
 .wpProQuiz_content ul.wpProQuiz_questionList[data-type=matrix_sort_answer] li ul.wpProQuiz_maxtrixSortCriterion li.wpProQuiz_sortStringItem:after {
@@ -7732,7 +7732,7 @@ p.wpProQuiz_quiz_time > span {
   top: 48px;
   left: 59px;
   z-index: 160000;
-  content: "";
+  content: "\e80a";
   font-family: "bb-icons";
   font-size: 30px;
   line-height: 30px;
@@ -7971,7 +7971,7 @@ p.wpProQuiz_quiz_time > span {
   border-color: #007CFF;
 }
 .learndash-wrapper .wpProQuiz_content input[type=checkbox].wpProQuiz_questionInput.bbstyled:checked + span:after {
-  content: "";
+  content: "\e809";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -8107,7 +8107,7 @@ dd.course_progress div.course_progress_blue {
   list-style: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "";
+  content: "\e877";
   margin-right: auto;
   margin-left: 15px;
   color: #122B46;
@@ -8414,7 +8414,7 @@ body.buddypress .buddypress-wrap .group_courses .bb-course-excerpt {
   min-height: auto;
 }
 #buddypress ul.courses-group-list .course-link a.button:after {
-  content: "";
+  content: "\e87b";
   font-family: "bb-icons";
   display: inline-block;
   line-height: 1;
@@ -10622,15 +10622,15 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 .ld-icon.ld-icon-download:before {
-  content: "";
+  content: "\e890";
 }
 
 .ld-icon.ld-icon-delete:before {
-  content: "";
+  content: "\e828";
 }
 
 .ld-icon.ld-icon-comments:before {
-  content: "";
+  content: "\e80b";
 }
 
 article.sfwd-assignment {

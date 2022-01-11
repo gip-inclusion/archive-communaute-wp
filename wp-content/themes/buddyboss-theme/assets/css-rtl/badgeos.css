@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .entry-content #badgeos-achievements-container {
   border-top: 0;
 }
@@ -61,11 +60,11 @@
   color: #A3A5A9;
 }
 #badgeos-achievements-container .badgeos-open-close-switch a.show-hide-open:after {
-  content: "";
+  content: "\e879";
   line-height: 21px;
 }
 #badgeos-achievements-container .badgeos-open-close-switch a.show-hide-close:after {
-  content: "";
+  content: "\e87c";
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;

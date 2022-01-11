@@ -51,8 +51,7 @@ TABLE OF CONTENTS:
 
 .theme-hello-content .video-wrapper {
   margin: 0 auto;
-  height: -webkit-calc(100%);
-  height: calc(100%);
+  height: 100%;
 }
 
 .theme-hello-content .video-wrapper .video-container {

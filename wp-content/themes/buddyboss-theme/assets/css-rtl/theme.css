@@ -1542,7 +1542,7 @@ form,
   background: #ddd;
 }
 .bs-styled-checkbox:checked + label:after {
-  content: "";
+  content: "\e876";
   position: absolute;
   right: 3px;
   top: 3px;
@@ -4515,7 +4515,7 @@ strong.breadcrumb_last {
   top: 0;
   right: 0;
   display: inline-block;
-  content: "";
+  content: "\e809";
   width: 22px;
   height: 22px;
   font-family: "bb-icons";
@@ -6140,11 +6140,11 @@ a.bb-close-panel i {
  * could override the icons' styles so we need to force them here.
  */
 .dashicons-admin-site:before {
-  content: "" !important;
+  content: "\f319" !important;
 }
 
 .dashicons-welcome-view-site:before {
-  content: "" !important;
+  content: "\f115" !important;
 }
 
 .side-panel-menu img._mi {
@@ -6336,8 +6336,8 @@ body:not(.bb-page-loaded) .primary-menu {
 }
 .site-header .sub-menu .sub-menu {
   top: -6px;
-  right: -webkit-calc(100% + -16px);
-  right: calc(100% + -16px);
+  right: -webkit-calc(100% - 16px);
+  right: calc(100% - 16px);
 }
 .site-header .sub-menu .menu-item-has-children:not(.hideshow):after {
   line-height: 1;
@@ -6411,7 +6411,7 @@ body:not(.bb-page-loaded) .primary-menu {
   display: none;
 }
 .site-header #primary-navbar .primary-menu .menu-item > .ab-submenu .bb-sub-menu .menu-item.menu-item-has-children:after {
-  content: "";
+  content: "\e827";
   top: 50%;
   -webkit-transform: translate(5px, -50%);
       -ms-transform: translate(5px, -50%);
@@ -6451,7 +6451,7 @@ body:not(.bb-page-loaded) .primary-menu {
   display: none;
 }
 .site-header #primary-navbar #navbar-collapse .sub-menu .wrapper .sub-menu-inner .menu-item.menu-item-has-children > a:before {
-  content: "";
+  content: "\e8ab";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -6642,7 +6642,7 @@ body:not(.bb-page-loaded) .primary-menu {
 
 .primary-menu .menu-item-has-children:not(.hideshow):after,
 #navbar-extend .menu-item-has-children:after {
-  content: "";
+  content: "\e826";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -6809,7 +6809,7 @@ li.hideshow {
   padding-right: 14px;
 }
 .user-wrap.menu-item-has-children #header-my-account-menu ul.has-icon > li.no-icon > a:before, .user-wrap.menu-item-has-children #header-my-account-menu.has-icon > li.no-icon > a:before {
-  content: "";
+  content: "\e98e";
   font-family: "bb-icons";
   font-size: 16px;
   line-height: 1;
@@ -7842,7 +7842,7 @@ body:not(.bb-page-loaded) .post-grid.bb-masonry .hentry {
 }
 .button-load-more-posts.loading:after {
   display: inline-block;
-  content: "";
+  content: "\e838";
   color: inherit;
   font-family: "bb-icons";
   font-size: 18px;
@@ -8394,7 +8394,7 @@ a.bb-like-wrap:hover .like-count {
   position: relative;
 }
 .hentry blockquote.wp-block-quote:before {
-  content: "";
+  content: "\e832";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -8569,7 +8569,7 @@ a.bb-like-wrap:hover .like-count {
   font-size: 21px;
 }
 .bb-bookmark.bookmarked:before {
-  content: "";
+  content: "\e833";
 }
 
 span.post-format-icon {
@@ -9595,10 +9595,10 @@ img.jssocials-share-logo {
   -moz-osx-font-smoothing: grayscale;
 }
 .jssocials-share-logo.fa.fa-twitter:before {
-  content: "";
+  content: "\e83e";
 }
 .jssocials-share-logo.fa.fa-facebook:before {
-  content: "";
+  content: "\e83f";
 }
 
 .full-fi .site-content-grid > .bb-share-container,
@@ -10320,7 +10320,7 @@ span.footer-tagline {
   clear: both;
 }
 #buddypress #bp-new-zoom-meeting-form .submit.loading:after {
-  content: "";
+  content: "\e838";
   font-family: "bb-icons";
   font-size: 18px;
   line-height: 1;
@@ -10332,7 +10332,7 @@ span.footer-tagline {
 }
 
 .meeting-item-container .load-more .button.loading:after {
-  content: "";
+  content: "\e838";
   font-family: "bb-icons";
   font-size: 18px;
   line-height: 1;

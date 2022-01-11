@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .select2-container {
   font-size: 15px;
 }
@@ -273,12 +272,12 @@ body.page-template-page-fullwidth #content .container .content-area .entry-conte
 
 /** Accordion */
 #cs-content .x-accordion .x-accordion-heading .x-accordion-toggle.collapsed:before {
-  content: "";
+  content: "\f0d8";
   color: #939597;
 }
 
 #cs-content .x-accordion .x-accordion-heading .x-accordion-toggle:before {
-  content: "";
+  content: "\f0d7";
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -563,11 +562,11 @@ form.x-search {
   border-radius: 100%;
   padding: 0px;
   font-size: 1.2em;
-  content: "";
+  content: "\e809";
 }
 
 #cs-content .x-pricing-table [class*=x-icon-times]:before {
-  content: "";
+  content: "\e828";
 }
 
 #cs-content .x-pricing-table .x-pricing-column-info ul {
@@ -931,7 +930,7 @@ body.single.single-download .edd-download .entry-content-wrap figure.entry-media
   margin-right: 0;
 }
 #edd_purchase_receipt_products li.edd_download_file a.edd_download_file_link:before {
-  content: "";
+  content: "\e890";
   font-family: "bb-icons";
   speak: none;
   font-style: normal;
@@ -1093,7 +1092,7 @@ body.single.single-download .edd-download .entry-content-wrap figure.entry-media
   font-size: 14px;
 }
 #edd_checkout_form_wrap fieldset#edd_cc_fields #edd_secure_site_wrapper .padlock:before {
-  content: "";
+  content: "\e90d";
   font-family: "bb-icons";
   speak: none;
   font-style: normal;
@@ -1521,7 +1520,7 @@ ul.edd-cart li.edd-cart-item a.edd-remove-from-cart:hover {
 ul.edd-cart li.edd-cart-item a.edd-remove-from-cart:before {
   color: #122B46;
   font-size: 22px;
-  content: "";
+  content: "\e828";
   display: inline-block;
   font-family: "bb-icons";
   text-rendering: auto;
@@ -2574,7 +2573,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
   background: #ddd;
 }
 .gfield_checkbox input[type=checkbox]:checked + label:after {
-  content: "";
+  content: "\e876";
   position: absolute;
   right: 3px;
   top: 3px;
@@ -2728,7 +2727,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
 }
 .nf-form-wrap .nf-help.fa-info-circle:before {
   font-family: "bb-icons";
-  content: "";
+  content: "\e853";
 }
 .nf-form-wrap .nf-help.fa-info-circle:after {
   display: none;
@@ -2818,7 +2817,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
   background-image: none;
 }
 .pika-title button.pika-prev:before {
-  content: "";
+  content: "\e8ab";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -2832,7 +2831,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
   background-image: none;
 }
 .pika-title button.pika-next:before {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -2898,7 +2897,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   margin-left: 3px;
-  content: "";
+  content: "\e809";
   margin-left: 0;
   position: absolute;
   bottom: -5px;
@@ -2955,7 +2954,7 @@ div.gform_wrapper ul.gfield_radio li input[type=radio]:checked + label {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   margin-left: 3px;
-  content: "";
+  content: "\e809";
   margin-left: 0;
   position: absolute;
   bottom: -5px;
@@ -3217,14 +3216,14 @@ div.wpforms-container-full .wpforms-form .wpforms-field-credit-card-expiration s
   margin: 10px 0;
 }
 .bp-user-blog .toggle-sap-widgets.toggle-sap-widgets:before {
-  content: "";
+  content: "\e89b";
 }
 .bp-user-blog .toggle-sap-widgets.toggle-sap-widgets.active {
   font-size: 30px;
   margin: 4px 0;
 }
 .bp-user-blog .toggle-sap-widgets.toggle-sap-widgets.active:before {
-  content: "";
+  content: "\e828";
 }
 .bp-user-blog .toggle-sap-widgets.toggle-sap-widgets svg {
   display: none;
