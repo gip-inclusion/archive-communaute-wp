@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .events-archive.events-gridview #tribe-events-content table.tribe-events-calendar {
   border-bottom-color: #E7E9EC;
   border-top: 1px solid #E7E9EC;
@@ -1011,7 +1010,7 @@ body:not(.bb-page-loaded) .tribe_mini_calendar_widget .tribe-mini-calendar-grid-
   -webkit-tap-highlight-color: transparent;
 }
 #tribe-events-footer ul.tribe-events-sub-nav li.tribe-events-nav-previous a:before {
-  content: "";
+  content: "\e8ab";
   font-family: "bb-icons";
   font-size: 22px;
   text-rendering: auto;
@@ -1032,7 +1031,7 @@ body:not(.bb-page-loaded) .tribe_mini_calendar_widget .tribe-mini-calendar-grid-
   -webkit-tap-highlight-color: transparent;
 }
 #tribe-events-footer ul.tribe-events-sub-nav li.tribe-events-nav-next a:after {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-size: 22px;
   text-rendering: auto;
@@ -1140,7 +1139,7 @@ body:not(.bb-page-loaded) .tribe-events-single #tribe-events-footer ul.tribe-eve
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #fff;
-  content: "";
+  content: "\e804";
   font-size: 70px;
   margin-left: 0;
   position: absolute;
@@ -1858,23 +1857,23 @@ body:not(.bb-page-loaded) .tribe-events-single #tribe-events-footer ul.tribe-eve
   z-index: 9;
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-list:before {
-  content: "";
+  content: "\e82a";
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-month:before {
-  content: "";
+  content: "\e804";
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-week:before {
-  content: "";
+  content: "\e804";
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-day:before {
-  content: "";
+  content: "\e804";
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-map:before {
-  content: "";
+  content: "\e817";
   font-size: 20px;
 }
 #tribe-bar-views #tribe-bar-views-toggle span.tribe-icon-photo:before {
-  content: "";
+  content: "\e848";
 }
 #tribe-bar-views ul.tribe-bar-views-list {
   padding-left: 0;
@@ -1939,18 +1938,18 @@ body:not(.bb-page-loaded) .tribe-events-single #tribe-events-footer ul.tribe-eve
   z-index: 9;
 }
 #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-list:before {
-  content: "";
+  content: "\e82a";
 }
 #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-month:before, #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-week:before, #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-day:before {
-  content: "";
+  content: "\e804";
 }
 #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-map:before {
-  content: "";
+  content: "\e817";
   font-size: 22px;
   right: -3px;
 }
 #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option span.tribe-icon-photo:before {
-  content: "";
+  content: "\e848";
 }
 #tribe-bar-views ul.tribe-bar-views-list .tribe-bar-views-option.tribe-bar-active {
   display: none;
@@ -2144,7 +2143,7 @@ body.no-js #tribe-bar-form {
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #C3C8D2;
-  content: "";
+  content: "\e804";
   margin-left: 0;
   position: absolute;
   bottom: 4px;
@@ -2164,7 +2163,7 @@ body.no-js #tribe-bar-form {
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #C3C8D2;
-  content: "";
+  content: "\e81f";
   margin-left: 0;
   position: absolute;
   bottom: 4px;
@@ -2184,7 +2183,7 @@ body.no-js #tribe-bar-form {
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #C3C8D2;
-  content: "";
+  content: "\e817";
   margin-left: 0;
   position: absolute;
   bottom: 4px;
@@ -2420,7 +2419,7 @@ body.no-js #tribe-bar-form {
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #fff;
-  content: "";
+  content: "\e804";
   font-size: 70px;
   margin-left: 0;
   position: absolute;
@@ -3564,17 +3563,17 @@ h2.tribe-events-page-title a:hover {
   margin-left: 5px;
 }
 .single-tribe_events .bs-single-pri-meta .tribe-events-meta-group.tribe-events-meta-group-details .tribe-events-single-section-title:before {
-  content: "";
+  content: "\e89f";
 }
 .single-tribe_events .bs-single-pri-meta .tribe-events-meta-group.tribe-events-meta-group-venue .tribe-events-single-section-title:before {
-  content: "";
+  content: "\e817";
   font-size: 22px;
   margin-left: 0;
   position: relative;
   top: 1px;
 }
 .single-tribe_events .bs-single-pri-meta .tribe-events-meta-group.tribe-events-meta-group-organizer .tribe-events-single-section-title:before {
-  content: "";
+  content: "\e825";
 }
 .single-tribe_events .tribe-events-venue-map {
   background: #fff;
@@ -3669,7 +3668,7 @@ h2.tribe-events-page-title a:hover {
   -webkit-font-smoothing: antialiased;
   margin-left: 5px;
   color: #fff;
-  content: "";
+  content: "\e804";
   font-size: 70px;
   margin-left: 0;
   position: absolute;
@@ -3863,7 +3862,7 @@ h3.tribe-events-related-events-title {
 }
 #tribe_events_filters_wrapper a#tribe_events_filters_toggle:before,
 #tribe_events_filters_wrapper a#tribe_events_filters_reset:before {
-  content: "";
+  content: "\e8eb";
   font-family: "bb-icons";
   font-size: 13px;
   speak: none;
@@ -3875,7 +3874,7 @@ h3.tribe-events-related-events-title {
   margin-left: 5px;
 }
 #tribe_events_filters_wrapper a#tribe_events_filters_reset:before {
-  content: "";
+  content: "\e8b9";
 }
 #tribe_events_filters_wrapper a#tribe_events_filters_reset span.tribe-reset-icon {
   display: none;
@@ -3891,7 +3890,7 @@ h3.tribe-events-related-events-title {
   display: none;
 }
 #tribe_events_filters_wrapper .tribe-events-filters-content .tribe-events-filters-group-heading:after {
-  content: "";
+  content: "\e826";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -3947,7 +3946,7 @@ h3.tribe-events-related-events-title {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   margin-left: 3px;
-  content: "";
+  content: "\e809";
   margin-left: 0;
   position: absolute;
   bottom: -5px;
@@ -4251,7 +4250,7 @@ body.no-js #tribe_events_filters_form > input[type=submit] {
   border-bottom: 1px solid #E7EAEC;
 }
 #tribe_events_filters_wrapper.tribe-events-filters-vertical .tribe-events-filters-group-heading:after {
-  content: "";
+  content: "\e827";
   left: 0;
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
@@ -4393,7 +4392,7 @@ body.no-js #tribe_events_filters_form > input[type=submit] {
   margin-left: 0;
 }
 .tribe_events_filters_reset.tribe_events_filters_reset .tribe-reset-icon:before {
-  content: "";
+  content: "\e8b7";
 }
 
 #tribe_events_filters_wrapper .tribe-events-filters-group-heading {

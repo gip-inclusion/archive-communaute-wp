@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .group:after {
   content: " ";
   display: table;
@@ -1542,7 +1541,7 @@ form,
   background: #ddd;
 }
 .bs-styled-checkbox:checked + label:after {
-  content: "";
+  content: "\e876";
   position: absolute;
   left: 3px;
   top: 3px;
@@ -4382,7 +4381,7 @@ body.login.login-split-page .login-split {
 }
 
 .login form#loginform label[for=user_login]:before {
-  content: "";
+  content: "\e825";
 }
 
 .login label {
@@ -4393,7 +4392,7 @@ body.login.login-split-page .login-split {
   position: relative;
 }
 .login .user-pass-wrap .wp-pwd:before {
-  content: "";
+  content: "\e829";
   font-size: 20px;
   top: 10px;
 }
@@ -4419,14 +4418,14 @@ body.login.login-split-page .login-split {
   opacity: 0.5;
 }
 .login .user-pass-wrap .wp-pwd .dashicons:before {
-  content: "";
+  content: "\e8fc";
 }
 .login .user-pass-wrap .wp-pwd .dashicons-visibility:before {
-  content: "";
+  content: "\e8be";
 }
 
 .login form#loginform label[for=user_pass]:before {
-  content: "";
+  content: "\e829";
   font-size: 20px;
   top: 12px;
 }
@@ -4440,10 +4439,10 @@ body.login.login-split-page .login-split {
   opacity: 0.5;
 }
 .login form#loginform label[for=user_pass] .label-switch.bb-eye:after {
-  content: "";
+  content: "\e8be";
 }
 .login form#loginform label[for=user_pass] .label-switch:after {
-  content: "";
+  content: "\e8fc";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -4677,7 +4676,7 @@ span.checkbox.on {
 }
 span.checkbox.on:before {
   color: #fff;
-  content: "";
+  content: "\e809";
   font-family: "bb-icons";
   width: 20px;
   height: 20px;

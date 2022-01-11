@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #buddypress .component-navigation.bp-docs-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,7 +81,7 @@ button#mceu_0-open {
 
 .bp-docs .desc a:before,
 .bp-docs .asc a:before {
-  content: "";
+  content: "\e861";
   font: normal normal normal 14px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -91,7 +90,7 @@ button#mceu_0-open {
 }
 
 .bp-docs .asc a:before {
-  content: "";
+  content: "\e864";
 }
 
 .doc-excerpt {

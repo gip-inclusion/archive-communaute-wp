@@ -132,8 +132,8 @@ ul#bp-message-thread-list .bp-message-content-wrap ul, ul#bp-message-thread-list
 }
 
 .bp-messages-content #bp-message-content #whats-new-messages-toolbar {
-  width: -webkit-calc(100% - 125px );
-  width: calc(100% - 125px );
+  width: -webkit-calc(100% - 125px);
+  width: calc(100% - 125px);
   float: left;
 }
 
@@ -242,8 +242,7 @@ ul#bp-message-thread-list .bp-message-content-wrap ul, ul#bp-message-thread-list
 #content .wp-block-woocommerce-product-top-rated li.product,
 #content .wp-block-woocommerce-products-by-attribute li.product,
 #content .wp-block-woocommerce-product-best-sellers li.product {
-    width: -webkit-calc(100%);
-    width: calc(100%);
+    width: 100%;
   }
 }
 #content .elementor-search-form__container input {

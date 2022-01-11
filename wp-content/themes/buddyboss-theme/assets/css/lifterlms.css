@@ -129,7 +129,7 @@ ul.llms-notice {
   left: -14px;
 }
 .llms-person-login-form-wrapper label[for=llms_remember]:before {
-  content: "";
+  content: "\e876";
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -465,7 +465,7 @@ ul.llms-notice {
   -webkit-font-smoothing: antialiased;
 }
 .llms-notification .llms-notification-dismiss.fa-times-circle:before {
-  content: "";
+  content: "\e828";
 }
 
 .llms-button-primary,
@@ -699,7 +699,7 @@ section.llms-instructor-info .llms-author .name {
   margin-top: 30px;
 }
 .single-llms_quiz .llms-quiz-attempt-results .llms-quiz-attempt-question .toggle-answer:before {
-  content: "";
+  content: "\e984";
   font: normal normal normal 9px/1 "bb-icons";
   text-decoration: inherit;
   text-transform: none;
@@ -866,7 +866,7 @@ section.llms-instructor-info .llms-author .name {
   font-size: 14px;
 }
 .single-llms_quiz #llms-quiz-wrapper > .llms-return a:before {
-  content: "";
+  content: "\e8ab";
   font-family: "bb-icons";
   font-size: 20px;
   text-rendering: auto;
@@ -947,8 +947,7 @@ section.llms-instructor-info .llms-author .name {
       flex-wrap: wrap;
 }
 .llms-quiz-ui .llms-question-wrapper.type--picture_reorder ol.llms-question-choices.llms-aq-reorder-list .llms-aq-reorder-item.type--picture {
-  width: -webkit-calc(100% / 3);
-  width: calc(100% / 3);
+  width: 33.3333333333%;
 }
 .llms-quiz-ui ol.llms-question-choices.llms-aq-reorder-list {
   display: -webkit-box;
@@ -986,7 +985,7 @@ section.llms-instructor-info .llms-author .name {
           animation: spin 1s linear infinite;
 }
 .llms-quiz-ui .llms-spinning .llms-spinner:after {
-  content: "";
+  content: "\e838";
   font-family: "bb-icons";
   display: inline-block;
   width: 20px;
@@ -1038,7 +1037,7 @@ section.llms-instructor-info .llms-author .name {
   color: #fff;
 }
 .llms-quiz-ui .llms-error a i.fa.fa-times-circle:before {
-  content: "";
+  content: "\e80a";
 }
 .llms-quiz-ui .llms-quiz-question-wrapper h3.llms-question-text {
   font-size: 18px;
@@ -1171,7 +1170,7 @@ section.llms-instructor-info .llms-author .name {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
-  content: "";
+  content: "\e81b";
   color: #C8CBCF;
 }
 .llms-quiz-ui .llms-question-wrapper.type--reorder .llms-question-choices li > label .llms-marker:before {
@@ -1229,7 +1228,7 @@ section.llms-instructor-info .llms-author .name {
   color: #007CFF;
 }
 .llms-quiz-ui .llms-question-wrapper.type--upload .llms-aq-uploader .fa.fa-upload:before {
-  content: "";
+  content: "\e8e3";
 }
 .llms-quiz-ui .llms-question-wrapper.type--upload .llms-aq-uploader h2 {
   font-size: 18px;
@@ -1502,7 +1501,7 @@ section.llms-instructor-info .llms-author .name {
 }
 .lifterlms .llms-sd-header .llms-sd-title:after {
   font-family: "bb-icons";
-  content: "";
+  content: "\e84b";
   font-size: 1em;
   position: relative;
   width: 22px;
@@ -1654,40 +1653,40 @@ body:not(.logged-in).llms-pointer.is_dashboard .llms-student-dashboard.dashboard
   color: #007CFF;
 }
 .llms-sd-items .dashboard a::before {
-  content: "";
+  content: "\e89f";
 }
 .llms-sd-items .signout a::before {
-  content: "";
+  content: "\e8b4";
 }
 .llms-sd-items .orders a::before {
-  content: "";
+  content: "\e8bd";
 }
 .llms-sd-items .my-grades a::before {
-  content: "";
+  content: "\e868";
 }
 .llms-sd-items .edit-account a::before {
-  content: "";
+  content: "\e80c";
 }
 .llms-sd-items .view-memberships a::before {
-  content: "";
+  content: "\e96e";
 }
 .llms-sd-items .notifications a::before {
-  content: "";
+  content: "\e8a5";
 }
 .llms-sd-items .view-certificates a::before {
-  content: "";
+  content: "\e975";
 }
 .llms-sd-items .view-achievements a::before {
-  content: "";
+  content: "\e931";
 }
 .llms-sd-items .view-courses a::before {
-  content: "";
+  content: "\e957";
 }
 .llms-sd-items .redeem-voucher a::before {
-  content: "";
+  content: "\e981";
 }
 .llms-sd-items .view-groups a::before {
-  content: "";
+  content: "\e96b";
 }
 .llms-sd-items li.llms-sd-item {
   cursor: pointer;
@@ -2603,7 +2602,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
 }
 .single-course.llms-pointer .llms-extra-logged-out i:before,
 .single-course.llms-pointer .llms-extra-locked i:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -3056,7 +3055,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   border: 2px solid;
 }
 .llms-syllabus-wrapper .assignment_section_holder.quizzes_section_holder .llms-lesson-preview.llms-quizz-preview .llms-lesson-link:before {
-  content: "";
+  content: "\e982";
 }
 .llms-syllabus-wrapper .llms-lesson-preview {
   margin-bottom: 10px;
@@ -3068,7 +3067,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   border: 2px solid #007CFF;
   border-radius: 100%;
   background-color: #007CFF;
-  content: "";
+  content: "\e876";
   font-size: 12px;
   color: #fff;
   line-height: 18px;
@@ -3102,7 +3101,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "";
+  content: "\e956";
   position: absolute;
   left: 45px;
   top: 17px;
@@ -3193,7 +3192,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   transition: color 0.3s ease, background 0.3s ease;
 }
 .llms-syllabus-wrapper .llms-lesson-preview .ld-item-details .ld-expand-button .ld-icon-arrow-down:before {
-  content: "";
+  content: "\e984";
   font: normal normal normal 9px/1 "bb-icons";
   speak: none;
   text-decoration: inherit;
@@ -3296,7 +3295,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   margin-top: -2px;
 }
 .llms-syllabus-wrapper .llms-lesson-preview.is-complete .llms-lesson-complete i:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -3329,7 +3328,7 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   margin-top: -2px;
 }
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete i:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -3389,19 +3388,19 @@ body:not(.has-sidebar) .llms-student-dashboard:not(.dashboard) .llms-sd-notifica
   float: left;
 }
 .single-course.llms-pointer .lifterlms_course_information .llms-course-length:before {
-  content: "";
+  content: "\e985";
 }
 .single-course.llms-pointer .lifterlms_course_information .llms-difficulty:before {
-  content: "";
+  content: "\e8f8";
 }
 .single-course.llms-pointer .lifterlms_course_information .llms-tracks:before {
-  content: "";
+  content: "\e923";
 }
 .single-course.llms-pointer .lifterlms_course_information .llms-categories:before {
-  content: "";
+  content: "\e97b";
 }
 .single-course.llms-pointer .lifterlms_course_information .llms-tags:before {
-  content: "";
+  content: "\e92f";
 }
 
 .course .llms-meta-info div.llms-meta p {
@@ -3912,7 +3911,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   border: 2px solid #007CFF;
   border-radius: 100%;
   background-color: #007CFF;
-  content: "";
+  content: "\e876";
   font-size: 12px;
   color: #fff;
   line-height: 18px;
@@ -3946,7 +3945,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "" !important;
+  content: "\e956" !important;
   position: absolute;
   left: 45px;
   top: 17px;
@@ -4040,7 +4039,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   transition: color 0.3s ease, background 0.3s ease;
 }
 .llms-pointer.llms-inner .llms-lesson-preview .ld-item-details .ld-expand-button .ld-icon-arrow-down:before {
-  content: "";
+  content: "\e984";
   font: normal normal normal 9px/1 "bb-icons";
   speak: none;
   text-decoration: inherit;
@@ -4111,7 +4110,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   margin-top: -2px;
 }
 .llms-pointer.llms-inner .llms-lesson-preview.is-complete .llms-lesson-complete i:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -4141,7 +4140,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   margin-top: -2px;
 }
 .llms-pointer.llms-inner .llms-lesson-preview.is-incomplete .llms-lesson-complete i:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -4207,7 +4206,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   line-height: 1;
 }
 .llms-pointer.llms-inner .assignment_section_holder .llms-lesson-preview.llms-quizz-preview .llms-lesson-link:before {
-  content: "" !important;
+  content: "\e982" !important;
 }
 .llms-pointer.llms-inner.lms-side-panel-close .header-maximize-link {
   display: none;
@@ -4350,10 +4349,10 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
 }
 .llms-pointer.llms-inner .lifterlms-lessions-list .llms-syllabus-wrapper .assignment_section_holder.quizzes_section_holder .llms-lesson-preview.llms-quizz-preview.is-incomplete .llms-lesson-link:before,
 .llms-pointer.llms-inner .lifterlms-lessions-list .llms-syllabus-wrapper .assignment_section_holder.quizzes_section_holder .llms-lesson-preview.llms-quizz-preview.is-complete .llms-lesson-link:before {
-  content: "" !important;
+  content: "\e982" !important;
 }
 .llms-pointer.llms-inner .lifterlms-lessions-list .llms-syllabus-wrapper .llms-lesson-preview.llms-quizz-preview.is-complete .llms-lesson-link:after {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 25px;
@@ -4400,7 +4399,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   display: none;
 }
 .llms-pointer.llms-inner .lifterlms-lessions-list .llms-syllabus-wrapper .llms-lesson-preview.is-complete .llms-lesson-link::before {
-  content: "";
+  content: "\e876";
   font-size: 14px;
   position: absolute;
   top: 15px;
@@ -4509,7 +4508,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   display: inline;
 }
 .llms-pointer.llms-inner #lifterlms-page-content #lifterlms-lesson-header .bb-ld-info-bar .ld-breadcrumbs .ld-breadcrumbs-segments span:first-child:after {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-size: 12px;
   text-rendering: auto;
@@ -4618,7 +4617,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   margin-right: 2px;
 }
 .llms-pointer.llms-inner #lifterlms-page-content #lifterlms-lesson-header .bb-position .lifterlms-lesson-nav .lifterlms_next_prev_link a.prev-link:before {
-  content: "";
+  content: "\e87a";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -4630,7 +4629,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   border-radius: 0 50px 50px 0;
 }
 .llms-pointer.llms-inner #lifterlms-page-content #lifterlms-lesson-header .bb-position .lifterlms-lesson-nav .lifterlms_next_prev_link a.next-link:after {
-  content: "";
+  content: "\e87b";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -4759,7 +4758,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   position: relative;
 }
 .llms-pointer.llms-inner #lifterlms-page-content .lifterlms_content_wrap blockquote.wp-block-quote:before {
-  content: "";
+  content: "\e832";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -4907,7 +4906,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   margin-right: 2px;
 }
 .llms-pointer.llms-inner .lifterlms-lesson-nav .lifterlms_next_prev_link a.prev-link:before {
-  content: "";
+  content: "\e87a";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -4919,7 +4918,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   border-radius: 0 50px 50px 0;
 }
 .llms-pointer.llms-inner .lifterlms-lesson-nav .lifterlms_next_prev_link a.next-link:after {
-  content: "";
+  content: "\e87b";
   font: normal normal normal 14px/1 "bb-icons";
   font-size: 16px;
   text-rendering: auto;
@@ -5066,7 +5065,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   transition: color 0.3s ease, background 0.3s ease;
 }
 .llms-syllabus-wrapper .llms-lesson-main .ld-item-details .ld-expand-button .ld-icon-arrow-down:before {
-  content: "";
+  content: "\e984";
   font: normal normal normal 9px/1 "bb-icons";
   speak: none;
   text-decoration: inherit;
@@ -5079,7 +5078,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
 
 .single-llms_assignment #lifterlms-page-content #lifterlms-lesson-header .bb-ld-info-bar .ld-breadcrumbs .ld-breadcrumbs-segments span:nth-child(2):after,
 .single-llms_quiz #lifterlms-page-content #lifterlms-lesson-header .bb-ld-info-bar .ld-breadcrumbs .ld-breadcrumbs-segments span:nth-child(2):after {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-size: 12px;
   text-rendering: auto;
@@ -5223,7 +5222,7 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   position: relative;
 }
 .lifterlms-course-list .bs-search-form:before {
-  content: "";
+  content: "\e81f";
   font-family: bb-icons;
   font-style: normal;
   font-weight: 400;
@@ -6022,7 +6021,7 @@ header.llms-pa-posts--archive a:before {
   position: absolute;
   left: 10px;
   top: 6px;
-  content: "";
+  content: "\e87a";
   font: normal normal normal 14px/1 "bb-icons";
   speak: none;
   display: inline-block;
@@ -6196,7 +6195,7 @@ header.llms-pa-area-header.llms-pa-posts--single a {
 }
 .llms-loop-item.course .llms-pa-permalink:before {
   font-size: 13px;
-  content: "";
+  content: "\e90d";
   display: inline-block;
   font-family: bb-icons;
   font-style: normal;
@@ -6778,7 +6777,7 @@ ul.llms-achievements-loop li.llms-achievement-loop-item:hover {
   display: inline-block;
   color: #939597;
   font-family: "bb-icons";
-  content: "";
+  content: "\e828";
   font-size: 1.5em;
   position: relative;
   width: 22px;
@@ -7006,7 +7005,7 @@ body div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
   list-style: none;
   -webkit-font-smoothing: antialiased;
   color: #007CFF;
-  content: "";
+  content: "\e8e3";
   font-size: 32px;
   display: block;
   margin: 0 auto 10px;
@@ -7311,31 +7310,31 @@ body.bb-sfwd-aside.buddypanel-header .buddypanel .panel-head .bb-toggle-panel {
 }
 
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--0 a:before {
-  content: "";
+  content: "\e971";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-groups a:before {
-  content: "";
+  content: "\e96b";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-courses a:before {
-  content: "";
+  content: "\e957";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-grades a:before {
-  content: "";
+  content: "\e96e";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-memberships a:before {
-  content: "";
+  content: "\e93c";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-achievements a:before {
-  content: "";
+  content: "\e931";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--my-certificates a:before {
-  content: "";
+  content: "\e975";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--notifications a:before {
-  content: "";
+  content: "\e8a5";
 }
 .woocommerce .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--redeem-voucher a:before {
-  content: "";
+  content: "\e981";
 }
 
 .has-sidebar .woocommerce-MyAccount-content .llms-loop-list .llms-loop-item {
@@ -8037,7 +8036,7 @@ ul.llms-payment-gateways li:last-child:after {
   position: relative;
   width: 22px;
   height: 22px;
-  content: "";
+  content: "\e929";
   margin-right: 5px;
 }
 .llms-checkout-section-content .llms-coupon-wrapper .llms-field-button {
@@ -8072,11 +8071,11 @@ ul.llms-payment-gateways li:last-child:after {
   top: -2px;
 }
 .llms-widget-syllabus .llms-collapse-caret .fa-caret-down:before {
-  content: "";
+  content: "\e984";
   font-size: 9px;
 }
 .llms-widget-syllabus .llms-collapse-caret .fa-caret-right:before {
-  content: "";
+  content: "\e984";
   font-size: 9px;
 }
 .llms-widget-syllabus .llms-section--closed i.fa.fa-caret-right {
@@ -8126,7 +8125,7 @@ ul.llms-payment-gateways li:last-child:after {
   margin-top: -2px;
 }
 .llms-widget-syllabus .llms-lesson-complete .fa-check-circle:before {
-  content: "";
+  content: "\e876";
   font-size: 12px;
   position: absolute;
   top: 50%;
@@ -8601,7 +8600,7 @@ ul.llms-payment-gateways li:last-child:after {
   color: #4D5C6D;
 }
 .llms-sl-uploader .fa-upload:before {
-  content: "";
+  content: "\e8e3";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -8618,42 +8617,42 @@ ul.llms-payment-gateways li:last-child:after {
 }
 
 .entry-content .llms-sl-directory .llms-sl-card--student {
-  width: -webkit-calc( 33.3333% - 20px);
-  width: calc( 33.3333% - 20px);
+  width: -webkit-calc(33.3333% - 20px);
+  width: calc(33.3333% - 20px);
 }
 @media screen and (max-width: 1100px) {
   .entry-content .llms-sl-directory .llms-sl-card--student {
-    width: -webkit-calc( 50% - 20px);
-    width: calc( 50% - 20px);
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
   }
 }
 @media screen and (max-width: 540px) {
   .entry-content .llms-sl-directory .llms-sl-card--student {
-    width: -webkit-calc( 100% - 20px);
-    width: calc( 100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: calc(100% - 20px);
   }
 }
 
 body:not(.has-sidebar) .entry-content .llms-sl-directory .llms-sl-card--student {
-  width: -webkit-calc( 25% - 20px);
-  width: calc( 25% - 20px);
+  width: -webkit-calc(25% - 20px);
+  width: calc(25% - 20px);
 }
 @media screen and (max-width: 1100px) {
   body:not(.has-sidebar) .entry-content .llms-sl-directory .llms-sl-card--student {
-    width: -webkit-calc( 33.3333% - 20px);
-    width: calc( 33.3333% - 20px);
+    width: -webkit-calc(33.3333% - 20px);
+    width: calc(33.3333% - 20px);
   }
 }
 @media screen and (max-width: 768px) {
   body:not(.has-sidebar) .entry-content .llms-sl-directory .llms-sl-card--student {
-    width: -webkit-calc( 50% - 20px);
-    width: calc( 50% - 20px);
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
   }
 }
 @media screen and (max-width: 540px) {
   body:not(.has-sidebar) .entry-content .llms-sl-directory .llms-sl-card--student {
-    width: -webkit-calc( 100% - 20px);
-    width: calc( 100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: calc(100% - 20px);
   }
 }
 
@@ -8819,7 +8818,7 @@ button.llms-sl-button {
   }
 }
 .lifterlms .llms-sd-items .sl_profile a:before {
-  content: "";
+  content: "\e971";
 }
 
 .llms-sl-profile-header .llms-achievement__body {
@@ -9001,7 +9000,7 @@ select#llms-sl-instructor-filter-post {
   border-radius: 4px;
 }
 #llms-group-upload-modal .llms-group-uploader .fa-upload:before {
-  content: "";
+  content: "\e8e3";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;
@@ -9164,24 +9163,24 @@ select#llms-sl-instructor-filter-post {
   font-size: 12px;
 }
 .llms-group .fa-pencil:before {
-  content: "";
+  content: "\e8a9";
 }
 .llms-group .fa-times:before {
-  content: "";
+  content: "\e828";
 }
 .llms-group .fa-plus:before {
-  content: "";
+  content: "\e921";
   font-size: 13px;
 }
 .llms-group .fa-users:before {
-  content: "";
+  content: "\e93d";
 }
 .llms-group .fa-archive:before {
-  content: "";
+  content: "\e968";
 }
 
 .llms-group .llms-group-sidebar .card--group-profile-members .fa-pencil:before {
-  content: "";
+  content: "\e921";
   font-size: 13px;
   color: #007CFF;
 }
@@ -9210,10 +9209,10 @@ select#llms-sl-instructor-filter-post {
   font-size: 16px;
 }
 .llms-group-modal .fa-times:before {
-  content: "";
+  content: "\e8f6";
 }
 .llms-group-modal .fa-envelope-o:before {
-  content: "";
+  content: "\e840";
   margin: 0 2px 0 0;
 }
 .llms-group-modal #llms-group-invite-modal-title,
@@ -9252,7 +9251,7 @@ label[for=llms_group_invitation_link] {
   display: inline-block;
   margin-right: 3px;
   font-size: 14px;
-  content: "";
+  content: "\e8c5";
 }
 .llms-group-card-footer .llms-group-button {
   font-weight: 400;
@@ -9505,7 +9504,7 @@ label[for=llms_group_invitation_link] {
 }
 
 .tagify--select::after {
-  content: "";
+  content: "\e826";
   font-family: "bb-icons";
   font-style: normal;
   font-weight: normal;

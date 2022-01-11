@@ -29,7 +29,7 @@ ul.job_listings .listing-bookmarked div.position {
 
 ul.job_listings .listing-bookmarked div.position:after {
   position: absolute;
-  content: "";
+  content: "\e81e";
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -256,7 +256,7 @@ ul.job_listings li.job_listing div.location {
   top: 10px;
 }
 ul.job_listings li.job_listing div.location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -424,7 +424,7 @@ ul.job_listings li.no_job_listings_found {
   position: relative;
 }
 .job_filters .search_jobs .search_keywords:before {
-  content: "";
+  content: "\e81f";
   font-family: "bb-icons";
   font-size: 18px;
   color: #bdbdbd;
@@ -442,7 +442,7 @@ ul.job_listings li.no_job_listings_found {
   position: relative;
 }
 .job_filters .search_jobs .search_location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 22px;
   color: #bdbdbd;
@@ -476,7 +476,7 @@ ul.job_listings li.no_job_listings_found {
   opacity: 0.8;
 }
 .job_filters .search_jobs div.filter_wide .filter_by_tag_cloud a:after {
-  content: "";
+  content: "\e828";
   font-family: "bb-icons";
   font-size: 14px;
   text-rendering: auto;
@@ -485,7 +485,7 @@ ul.job_listings li.no_job_listings_found {
   top: 2px;
 }
 .job_filters .search_jobs div.filter_wide .filter_by_tag_cloud a.active:after {
-  content: "";
+  content: "\e809";
   font-family: "bb-icons";
   font-size: 14px;
   text-rendering: auto;
@@ -574,7 +574,7 @@ ul.job_listings li.no_job_listings_found {
 }
 .job_filters .showing_jobs a.reset span:before {
   font-family: "bb-icons";
-  content: "";
+  content: "\e828";
   font-size: 24px;
   top: 3px;
   margin-right: 2px;
@@ -582,12 +582,12 @@ ul.job_listings li.no_job_listings_found {
 }
 .job_filters .showing_jobs a.rss_link span:before {
   font-family: "bb-icons";
-  content: "";
+  content: "\e89e";
   font-size: 16px;
 }
 .job_filters .showing_jobs a.alert span:before {
   font-family: "bb-icons" !important;
-  content: "";
+  content: "\e8a5";
   font-size: 16px;
 }
 
@@ -601,7 +601,7 @@ ul.job_listings li.no_job_listings_found {
   position: relative;
 }
 .page-header .jobs-search div.search_keywords:before {
-  content: "";
+  content: "\e81f";
   font-family: "bb-icons";
   font-size: 18px;
   color: #bdbdbd;
@@ -616,7 +616,7 @@ ul.job_listings li.no_job_listings_found {
   max-width: 170px;
 }
 .page-header .jobs-search div.search_location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 22px;
   color: #bdbdbd;
@@ -652,7 +652,7 @@ ul.job_listings li.no_job_listings_found {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "bb-icons";
-  content: "" !important;
+  content: "\e875" !important;
 }
 
 #job-manager-alerts > p {
@@ -759,7 +759,7 @@ ul.job_listings li.no_job_listings_found {
   margin-top: 5px;
 }
 #job-manager-alerts table.job-manager-alerts tbody tr td.alert_location > span:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -899,7 +899,7 @@ ul.job_listings li.no_job_listings_found {
   top: 1px;
   font-family: "bb-icons";
   margin-right: 3px;
-  content: "";
+  content: "\e922";
 }
 .bs-row-wrap > a:hover {
   box-shadow: inset 0 0 0 99999px rgba(0, 0, 0, 0.1);
@@ -1005,7 +1005,7 @@ ul.job_listings li.no_job_listings_found {
 }
 .ui-datepicker .ui-datepicker-header a.ui-datepicker-next span:before,
 .ui-datepicker .ui-datepicker-header a.ui-datepicker-prev span:before {
-  content: "";
+  content: "\e827";
   font-family: "bb-icons";
   font-weight: normal;
   speak: none;
@@ -1078,7 +1078,7 @@ ul.job_listings li.no_job_listings_found {
 .job-manager-info:before {
   color: #fff !important;
   font-family: "bb-icons";
-  content: "";
+  content: "\e8c2";
   font-style: normal;
 }
 
@@ -1528,7 +1528,7 @@ article.job_listing ul.job-listing-meta li.location {
   margin-right: 0.5em;
 }
 article.job_listing ul.job-listing-meta li.location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 20px;
   text-rendering: auto;
@@ -1545,7 +1545,7 @@ article.job_listing ul.job-listing-meta li.date-posted {
   margin-right: 0.5em;
 }
 article.job_listing ul.job-listing-meta li.date-posted:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -1553,7 +1553,7 @@ article.job_listing ul.job-listing-meta li.date-posted:before {
   margin-right: 7px;
 }
 article.job_listing ul.job-listing-meta li.position-filled:before {
-  content: "";
+  content: "\e809";
   font-family: "bb-icons" !important;
   font-size: 26px;
   text-rendering: auto;
@@ -1563,7 +1563,7 @@ article.job_listing ul.job-listing-meta li.position-filled:before {
   top: 3px;
 }
 article.job_listing ul.job-listing-meta li.application-deadline:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -1622,7 +1622,7 @@ article.job_listing .entry-content .single_job_listing .company p.name a:hover:b
   color: #7F868F;
 }
 article.job_listing .entry-content .single_job_listing .company p.name a.company_twitter:before {
-  content: "";
+  content: "\e83e";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -1630,7 +1630,7 @@ article.job_listing .entry-content .single_job_listing .company p.name a.company
   margin-right: 7px;
 }
 article.job_listing .entry-content .single_job_listing .company p.name a.website:before {
-  content: "";
+  content: "\e816";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -1747,7 +1747,7 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
   margin-bottom: 10px;
 }
 .single-job_listing article.job_listing .entry-content-job .entry-primary .single_job_listing .job-manager-single-alert-link a:before {
-  content: "";
+  content: "\e839";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -1852,10 +1852,10 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
   top: 1px;
 }
 .single-job_listing article.job_listing .single-job-sidebar .name-meta a.website:before {
-  content: "";
+  content: "\e816";
 }
 .single-job_listing article.job_listing .single-job-sidebar .name-meta a.company_twitter:before {
-  content: "";
+  content: "\e83e";
 }
 .single-job_listing article.job_listing .single-job-sidebar p.tagline {
   font-size: 14px;
@@ -2133,7 +2133,7 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
 }
 #job_preview ul.job-listing-meta li.location:before,
 #resume_preview ul.job-listing-meta li.location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 20px;
   text-rendering: auto;
@@ -2156,7 +2156,7 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
 }
 #job_preview ul.job-listing-meta li.date-posted:before,
 #resume_preview ul.job-listing-meta li.date-posted:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -2176,7 +2176,7 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
 }
 #job_preview ul.job-listing-meta li.application-deadline:before,
 #resume_preview ul.job-listing-meta li.application-deadline:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -2244,13 +2244,13 @@ article.job_listing .entry-content-job .application input.apply-with-facebook {
 #job_preview .single-resume .resume-aside .name a.website:before,
 #resume_preview .single_job_listing .company .name a.website:before,
 #resume_preview .single-resume .resume-aside .name a.website:before {
-  content: "";
+  content: "\e816";
 }
 #job_preview .single_job_listing .company .name a.company_twitter:before,
 #job_preview .single-resume .resume-aside .name a.company_twitter:before,
 #resume_preview .single_job_listing .company .name a.company_twitter:before,
 #resume_preview .single-resume .resume-aside .name a.company_twitter:before {
-  content: "";
+  content: "\e83e";
 }
 #job_preview .single_job_listing .company .tagline,
 #job_preview .single-resume .resume-aside .tagline,
@@ -2460,7 +2460,7 @@ div.resumes .resume_filters .search_resumes .search_keywords {
   position: relative;
 }
 div.resumes .resume_filters .search_resumes .search_keywords:before {
-  content: "";
+  content: "\e81f";
   font-family: "bb-icons";
   font-size: 18px;
   color: #bdbdbd;
@@ -2478,7 +2478,7 @@ div.resumes .resume_filters .search_resumes .search_location {
   position: relative;
 }
 div.resumes .resume_filters .search_resumes .search_location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 22px;
   color: #bdbdbd;
@@ -2546,7 +2546,7 @@ div.resumes .resume_filters .showing_resumes a.reset {
 }
 div.resumes .resume_filters .showing_resumes a.reset:before {
   font-family: "bb-icons";
-  content: "";
+  content: "\e828";
   font-size: 24px;
   top: 3px;
   margin-right: 2px;
@@ -2584,7 +2584,7 @@ ul.resumes li.resume.listing-bookmarked a div.candidate-column {
 }
 ul.resumes li.resume.listing-bookmarked a div.candidate-column:after {
   position: absolute;
-  content: "";
+  content: "\e81e";
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -2685,7 +2685,7 @@ ul.resumes li.resume a .candidate-location-column span.candidate-location:before
   font-size: 18px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "\e817";
   margin: 0 3px 0 0;
 }
 ul.resumes li.resume a .resume-posted-column {
@@ -2705,7 +2705,7 @@ ul.resumes li.resume a .resume-category:before {
   -webkit-font-smoothing: antialiased;
   font-family: "bb-icons";
   margin-right: 2px;
-  content: "";
+  content: "\e8ec";
 }
 @media (max-width: 544px) {
   ul.resumes li.resume a {
@@ -2868,7 +2868,7 @@ body.single-resume .resume-aside .bb-candidate-data p.job-title {
   font-weight: normal;
 }
 body.single-resume .resume-aside .bb-candidate-data p.job-title:before {
-  content: "";
+  content: "\e846";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -2888,13 +2888,13 @@ body.single-resume .resume-aside .bb-candidate-data p.resume-category:before {
   font-family: "bb-icons";
   margin-right: 8px;
   margin-left: 3px;
-  content: "";
+  content: "\e8ec";
 }
 body.single-resume .resume-aside .bb-candidate-data p.location {
   padding: 0;
 }
 body.single-resume .resume-aside .bb-candidate-data p.location a:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 20px;
   text-rendering: auto;
@@ -2912,7 +2912,7 @@ body.single-resume .resume-aside ul.resume-links li {
   line-height: 32px;
 }
 body.single-resume .resume-aside ul.resume-links li.resume-link a:before {
-  content: "";
+  content: "\e809";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -2920,13 +2920,13 @@ body.single-resume .resume-aside ul.resume-links li.resume-link a:before {
   margin-right: 7px;
 }
 body.single-resume .resume-aside ul.resume-links li.resume-link.resume-link-facebook a:before {
-  content: "";
+  content: "\e83f";
 }
 body.single-resume .resume-aside ul.resume-links li.resume-link.resume-link-twitter a:before {
-  content: "";
+  content: "\e83e";
 }
 body.single-resume .resume-aside ul.resume-links li.resume-link.resume-link-instagram a:before {
-  content: "";
+  content: "\e8d3";
   font-size: 14px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -2935,7 +2935,7 @@ body.single-resume .resume-aside ul.resume-links li.resume-link.resume-link-inst
   margin-left: 2px;
 }
 body.single-resume .resume-aside ul.resume-links li.resume-link.resume-link-github a:before {
-  content: "";
+  content: "\e89c";
   font-size: 14px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -2950,7 +2950,7 @@ body.single-resume .resume-aside ul.resume-links li.resume-file a:before {
   font-family: "bb-icons";
   margin-right: 7px;
   margin-left: 1px;
-  content: "";
+  content: "\e8ee";
 }
 body.single-resume .resume-aside ul.resume-links li a {
   color: #939597;
@@ -3015,7 +3015,7 @@ body.single-resume ul.meta li {
   color: #A3A5A9;
 }
 body.single-resume ul.meta li.date-posted:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -3023,7 +3023,7 @@ body.single-resume ul.meta li.date-posted:before {
   margin-right: 7px;
 }
 body.single-resume ul.meta li.resume-category:before {
-  content: "";
+  content: "\e82b";
   font-family: "bb-icons" !important;
   font-size: 20px;
   text-rendering: auto;
@@ -3039,7 +3039,7 @@ body.single-resume ul.meta li.candidate-location a:hover {
   color: #007CFF;
 }
 body.single-resume ul.meta li.candidate-location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 19px;
   text-rendering: auto;
@@ -3223,7 +3223,7 @@ body.single-resume ul.meta li.candidate-location:before {
           align-items: center;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .resume-aside .resume-links .resume-link a:bafore {
-  content: "";
+  content: "\e816";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -3242,7 +3242,7 @@ body.single-resume ul.meta li.candidate-location:before {
   padding-left: 1em;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data p.location a:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 20px;
   text-rendering: auto;
@@ -3255,7 +3255,7 @@ body.single-resume ul.meta li.candidate-location:before {
   font-weight: normal;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data p.job-title:before {
-  content: "";
+  content: "\e846";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -3267,7 +3267,7 @@ body.single-resume ul.meta li.candidate-location:before {
   max-width: 100%;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li.resume-link a:before {
-  content: "";
+  content: "\e816";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -3275,13 +3275,13 @@ body.single-resume ul.meta li.candidate-location:before {
   margin-right: 7px;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li.resume-link.resume-link-facebook a:before {
-  content: "";
+  content: "\e83f";
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li.resume-link.resume-link-twitter a:before {
-  content: "";
+  content: "\e83e";
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li.resume-link.resume-link-instagram a:before {
-  content: "";
+  content: "\e8d3";
   font-size: 14px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -3290,7 +3290,7 @@ body.single-resume ul.meta li.candidate-location:before {
   margin-left: 2px;
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li.resume-link.resume-link-github a:before {
-  content: "";
+  content: "\e89c";
   font-size: 14px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -3305,7 +3305,7 @@ body.single-resume ul.meta li.candidate-location:before {
   font-family: "bb-icons";
   margin-right: 7px;
   margin-left: 1px;
-  content: "";
+  content: "\e8ee";
 }
 #resume_preview .single-resume .entry-content-job .entry-secondary .single-job-sidebar .bb-candidate-data ul.resume-links li a {
   color: #939597;
@@ -3326,7 +3326,7 @@ body.single-resume ul.meta li.candidate-location:before {
   font-family: "bb-icons";
   margin-right: 8px;
   margin-left: 3px;
-  content: "";
+  content: "\e8ec";
 }
 #resume_preview .single-resume ul.meta {
   font-size: 14px;
@@ -3335,7 +3335,7 @@ body.single-resume ul.meta li.candidate-location:before {
   display: none;
 }
 #resume_preview .single-resume ul.meta li.date-posted:before {
-  content: "";
+  content: "\e823";
   font-family: "bb-icons" !important;
   font-size: 18px;
   text-rendering: auto;
@@ -3349,7 +3349,7 @@ body.single-resume ul.meta li.candidate-location:before {
   color: #007CFF;
 }
 #resume_preview .single-resume ul.meta li.candidate-location:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons" !important;
   font-size: 19px;
   text-rendering: auto;
@@ -3564,22 +3564,22 @@ body.single-resume ul.meta li.candidate-location:before {
   margin-right: 7px;
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-edit:before {
-  content: "";
+  content: "\e89b";
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-mark_filled:before {
-  content: "";
+  content: "\e875";
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-mark_not_filled:before {
-  content: "";
+  content: "\e881";
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-duplicate:before {
-  content: "";
+  content: "\e8ac";
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-delete {
   color: #EF3E46;
 }
 #job-manager-job-dashboard .bb-ctrls .bs-dropdown a.job-dashboard-action-delete:before {
-  content: "";
+  content: "\e937";
 }
 
 #resume-manager-candidate-dashboard {
@@ -3661,7 +3661,7 @@ body.single-resume ul.meta li.candidate-location:before {
   font-size: 20px;
 }
 #resume-manager-candidate-dashboard table.resume-manager-resumes tbody tr td.candidate-location > span:before {
-  content: "";
+  content: "\e817";
   font-family: "bb-icons";
   font-size: 18px;
   text-rendering: auto;
@@ -3724,19 +3724,19 @@ body.single-resume ul.meta li.candidate-location:before {
   margin-right: 7px;
 }
 #resume-manager-candidate-dashboard .bb-ctrls .bs-dropdown a.candidate-dashboard-action-edit:before {
-  content: "";
+  content: "\e80c";
 }
 #resume-manager-candidate-dashboard .bb-ctrls .bs-dropdown a.candidate-dashboard-action-publish:before {
-  content: "";
+  content: "\e8be";
 }
 #resume-manager-candidate-dashboard .bb-ctrls .bs-dropdown a.candidate-dashboard-action-hide:before {
-  content: "";
+  content: "\e8fc";
 }
 #resume-manager-candidate-dashboard .bb-ctrls .bs-dropdown a.candidate-dashboard-action-delete {
   color: #EF3E46;
 }
 #resume-manager-candidate-dashboard .bb-ctrls .bs-dropdown a.candidate-dashboard-action-delete:before {
-  content: "";
+  content: "\e938";
 }
 
 #job-manager-job-applications .job-applications ul.job-applications .job-application header h3 {
@@ -3840,7 +3840,7 @@ body.single-resume ul.meta li.candidate-location:before {
   top: 6px;
 }
 .entry-content .job-manager-form .search-choice-close:after {
-  content: "";
+  content: "\e828";
   font: normal normal normal 14px/1 "bb-icons";
   speak: none;
   display: inline-block;

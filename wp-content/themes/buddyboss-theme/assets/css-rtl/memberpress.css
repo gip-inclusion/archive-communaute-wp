@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .mp_wrapper.mp_login_form #mepr_loginform {
   width: 100%;
 }
@@ -55,7 +54,7 @@
   display: none;
 }
 .mp_wrapper.mp_login_form .mepr_username:before {
-  content: "";
+  content: "\e825";
   font-size: 16px;
 }
 .mp_wrapper.mp_login_form .mepr_password .mp-form-label > label {
@@ -74,17 +73,17 @@
   font-size: 16px;
 }
 .mp_wrapper.mp_login_form .mepr_password .button.mp-hide-pw .dashicons:before {
-  content: "";
+  content: "\e8be";
   font-family: "bb-icons";
   font-size: 16px;
   color: #122B46;
   opacity: 0.5;
 }
 .mp_wrapper.mp_login_form .mepr_password .button.mp-hide-pw .dashicons.dashicons-hidden:before {
-  content: "";
+  content: "\e8fc";
 }
 .mp_wrapper.mp_login_form .mepr_password:before {
-  content: "";
+  content: "\e829";
   font-size: 20px;
 }
 .mp_wrapper.mp_login_form label {
@@ -541,7 +540,7 @@
   display: flex;
 }
 #content .mepr-price-menu .mepr-price-box-benefits-item:before {
-  content: "";
+  content: "\e876";
   color: #007CFF;
   font: normal normal normal 15px/1 "bb-icons";
   speak: none;
