@@ -1,5 +1,18 @@
 # Journal des modifications
 
+## [05] - 2022-01-03
+### Ajouté / Corrigé
+- Synchronisation des base de données depuis prod vers le staging / local
+- Recherche d'une solution pour forcer un strong password lors de l'inscription
+
+### Modifié
+- Mise à jour du core WP 
+- Mise a jours des plugins 
+
+### Supprimé
+
+
+
 ## [04] - 2021-12-06
 ### Ajouté / Corrigé
 - Synchronisation des db depuis prod -> staging et local
