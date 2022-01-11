@@ -4,8 +4,8 @@ Contributors: theeventscalendar, borkweb, bordoni, brianjessee, aguseo, camwynsp
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, the events calendar, widget, pro
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Stable tag: 5.11.1
-Tested up to: 5.8.2
+Stable tag: 5.11.2
+Tested up to: 5.8.3
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -208,8 +208,17 @@ Our Premium Plugins:
 
 == Changelog ==
 
+= [5.11.2] 2022-01-10 =
+
+* Version - Events Calendar PRO 5.11.2 is only compatible with The Events Calendar 5.12.3 and higher.
+* Fix - Utilize new hooks in TEC to let ECP control showing mobile default view. [TEC-3826]
+* Fix - Ensure the modifications made through the `tribe_events_views_v2_category_title` are respected. [TEC-4110]
+* Tweak - Boost SEO for category archive pages by fixing the title tag. [TEC-4110]
+* Language - 0 new strings added, 6 updated, 0 fuzzied, and 0 obsoleted
+
 = [5.11.1] 2021-12-14 =
 
+* Feature - Add filters to allow sending Google Maps a region and language param if desired. [ECP-977]
 * Fix - Avoid loading the same CSS file twice. [CE-13]
 * Fix - Correct pagination on shortcodes when the date parameter has been set. [ECP-362]
 * Fix - Properly observe the disabling of JSON-LD output on widget blocks in the block editor. [TEC-4077]
