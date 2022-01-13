@@ -7,8 +7,5 @@
             betterdocs_admin.menu_title +
             "</a>"
         );
-
-        $('body.post-type-docs .wp-list-table td.title .row-actions').remove();
-        $('body.post-type-docs .wp-list-table td.column-action .row-actions').css({"left": 0});
     });
 })(jQuery);

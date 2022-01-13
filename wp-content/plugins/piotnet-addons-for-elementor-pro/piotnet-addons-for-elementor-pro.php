@@ -3,22 +3,22 @@
  * Plugin Name: Piotnet Addons For Elementor Pro
  * Description: Piotnet Addons For Elementor Pro (PAFE Pro) adds many new features for Elementor
  * Plugin URI:  https://pafe.piotnet.com/
- * Version:     6.4.20
+ * Version:     6.4.22
  * Author:      Piotnet Team
  * Author URI:  https://piotnet.com/
  * Text Domain: pafe
  * Domain Path: /languages
- * Elementor tested up to: 3.4.8
+ * Elementor tested up to: 3.5.2
  * Elementor Pro tested up to: 3.5.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PAFE_PRO_VERSION', '6.4.20' );
+define( 'PAFE_PRO_VERSION', '6.4.22' );
 
 final class Piotnet_Addons_For_Elementor_Pro {
 
-	const VERSION = '6.4.20';
+	const VERSION = '6.4.22';
 	const MINIMUM_ELEMENTOR_VERSION = '2.8.0';
 	const MINIMUM_PHP_VERSION = '5.4';
 	const TAB_PAFE = 'tab_pafe';
@@ -153,6 +153,8 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			require_once( __DIR__ . '/inc/ajax-mollie-get-payment.php');
 			require_once( __DIR__ . '/inc/ajax-convertkit-get-field.php');
 			require_once( __DIR__ . '/inc/ajax-convertkit-get-form.php');
+			require_once( __DIR__ . '/inc/ajax-constant-contact-get-custom-field.php');
+			require_once( __DIR__ . '/inc/ajax-constant-contact-get-list.php');
 		}
 		if( get_option( 'pafe-features-woocommerce-checkout', 2 ) == 2 || get_option( 'pafe-features-woocommerce-checkout', 2 ) == 1 ) {
 			require_once( __DIR__ . '/inc/ajax-form-builder-woocommerce-checkout.php' );
@@ -1173,6 +1175,11 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
         register_setting( 'piotnet-addons-for-elementor-pro-sendfox-group', 'piotnet-addons-for-elementor-pro-sendfox-access-token' );
 		register_setting( 'piotnet-addons-for-elementor-pro-convertkit-group', 'piotnet-addons-for-elementor-pro-convertkit-api-key' );
+
+		register_setting( 'piotnet-addons-for-elementor-pro-constant-contact-group', 'piotnet-addons-for-elementor-pro-constant-contact-client-id' );
+		register_setting( 'piotnet-addons-for-elementor-pro-constant-contact-group', 'piotnet-addons-for-elementor-pro-constant-contact-app-secret-id' );
+		register_setting( 'piotnet-addons-for-elementor-pro-constant-contact-group', 'piotnet-constant-contact-access-token' );
+		register_setting( 'piotnet-addons-for-elementor-pro-constant-contact-group', 'piotnet-constant-contact-refresh-token' );
 
         register_setting( 'piotnet-addons-for-elementor-pro-zoho-group', 'piotnet-addons-for-elementor-pro-zoho-domain' );
 		register_setting( 'piotnet-addons-for-elementor-pro-zoho-group', 'piotnet-addons-for-elementor-pro-zoho-client-id' );

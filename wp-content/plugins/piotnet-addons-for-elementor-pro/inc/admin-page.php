@@ -121,6 +121,25 @@ function PAFE_do_remove_license() {
     ];
     return PAFE_License_Service::remove_site($credential);
 }
+function PAFE_constantcontact_get_token($code, $redirect_uri, $api_key, $app_secret){
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => 'https://idfed.constantcontact.com/as/token.oauth2?code='.$code.'&redirect_uri='.$redirect_uri.'&grant_type=authorization_code',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_HTTPHEADER => array(
+        'Authorization: Basic '.base64_encode($api_key.':'.$app_secret)
+    ),
+    ));
+    $response = curl_exec($curl);
+    curl_close($curl);
+    return json_decode($response);
+}
 
 $pafe_username = get_option('piotnet-addons-for-elementor-pro-username');
 $pafe_password = get_option('piotnet-addons-for-elementor-pro-password');
@@ -1007,6 +1026,55 @@ $has_valid_license = PAFE_has_valid_license($license);
                         </table>
                         <?php submit_button(__('Save Settings','pafe')); ?>
                     </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="pafe-bottom">
+            <div class="pafe-bottom__left">
+                <h3><?php _e('Constant contact','pafe'); ?></h3>
+            </div>
+            <div class="pafe-bottom__right">
+                <div class="pafe-license">
+                    <?php
+                        $c_ID = esc_attr( get_option('piotnet-addons-for-elementor-pro-constant-contact-client-id') );
+                        $app_secret = get_option('piotnet-addons-for-elementor-pro-constant-contact-app-secret-id');
+                        $redirectURI = admin_url('admin.php?page=piotnet-addons-for-elementor');
+                        $baseURL = "https://api.cc.email/v3/idfed";
+                        $authURL = $baseURL . "?client_id=" . $c_ID . "&scope=contact_data+campaign_data+account_update+account_read&response_type=code" . "&redirect_uri=" . $redirectURI;
+                    ?>
+                    <form method="post" action="options.php">
+                        <?php settings_fields( 'piotnet-addons-for-elementor-pro-constant-contact-group' ); ?>
+                        <?php do_settings_sections( 'piotnet-addons-for-elementor-pro-constant-contact-group' ); ?>
+                        <table class="form-table">
+                            <tr valign="top">
+                            <th scope="row"><?php _e('API Key','pafe'); ?></th>
+                            <td><input type="text" name="piotnet-addons-for-elementor-pro-constant-contact-client-id" value="<?php echo $c_ID; ?>" class="regular-text"/></td>
+                            </tr>
+                            <tr valign="top">
+                            <th scope="row"><?php _e('App Secret','pafe'); ?></th>
+                            <td><input type="text" name="piotnet-addons-for-elementor-pro-constant-contact-app-secret-id" value="<?php echo $app_secret; ?>" class="regular-text"/></td>
+                            </tr>
+                            <tr valign="top">
+					        <th scope="row"><?php _e('Authorization Redirect URI','pafe'); ?></th>
+					        <td><input type="text" value="<?php echo $redirectURI; ?>" class="regular-text" readonly/></td>
+					        </tr>
+                        </table>
+                        <div class="piotnet-addons-zoho-admin-api">
+                            <?php submit_button(__('Save Settings','pafe')); ?>
+                            <p class="submit"><a class="button button-primary" href="<?php echo $authURL; ?>" authenticate-zoho-crm disabled>Authenticate Constant Contact</a></p>
+                        </div>
+                    </form>
+                    <?php
+                        if(!empty($_GET['code']) && strlen($_GET['code']) == 40){
+                            $token_data = PAFE_constantcontact_get_token($_GET['code'], $redirectURI, $c_ID, $app_secret);
+                            if(!empty($token_data->access_token)){
+                                update_option('piotnet-constant-contact-access-token', $token_data->access_token);
+                                update_option('piotnet-constant-contact-refresh-token', $token_data->refresh_token);
+                                update_option('piotnet-constant-contact-time-get-token', time());
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </div>

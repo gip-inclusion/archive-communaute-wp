@@ -1,10 +1,11 @@
 <?php
 class Betterdocs_Admin_Screen
 {
+    private $menu_slug;
+
     public function __construct() {
+        $this->menu_slug = 'betterdocs-admin';
         add_filter( 'manage_docs_posts_columns', array( $this, 'set_custom_edit_action_columns' ) );
-        add_action( 'manage_docs_posts_custom_column' , array($this, 'custom_action_column' ), 10, 2 );
-        add_filter( 'manage_edit-docs_columns', array( $this, 'sort_columns' ) );
         add_action( 'admin_menu', array( $this, 'menu_page' ) );
         add_filter( 'parent_file', array( $this, 'highlight_admin_menu' ) );
 
@@ -17,25 +18,9 @@ class Betterdocs_Admin_Screen
     public function set_custom_edit_action_columns($columns)
     {
         unset( $columns['comments'] );
-        $columns['action'] = __( 'Action', 'betterdocs' );
         return $columns;
     }
 
-    public function custom_action_column($column, $post_id)
-    {
-        $wp_list_table = new BetterDocs_WP_Posts_List_Table();
-        $post = get_post($post_id);
-        switch ( $column ) {
-            case 'action' :
-                echo $wp_list_table->custom_row_actions( $post );
-                break;
-        }
-    }
-
-    public function sort_columns( $cols ) {
-        $cols += array_splice($cols,array_search('action',array_keys($cols)),1);
-        return $cols;
-    }
     /**
      * Admin Menu Page
      *
@@ -63,7 +48,6 @@ class Betterdocs_Admin_Screen
             ),
         ) );
 
-        $this->menu_slug = 'betterdocs-admin';
         //$betterdocs_admin_output = apply_filters( 'betterdocs_admin_output', array() );
         $betterdocs_admin_output = $this->betterdocs_admin_output();
 
@@ -177,11 +161,6 @@ class Betterdocs_Admin_Screen
         </div>';
 
         echo apply_filters('betterdocs_admin_screen_header_nav',$html);
-    }
-
-    public function betterdocs_menu_slug()
-    {
-        return 'betterdocs-admin';
     }
 
     public function betterdocs_admin_output()

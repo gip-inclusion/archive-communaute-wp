@@ -273,7 +273,7 @@ class BetterDocs_Helper
             $args['posts_per_page'] = $posts_per_grid;
         }
 
-        if ($orderby != 'betterdocs_order' || $orderby != 'none') {
+        if ($orderby != 'betterdocs_order') {
             if ($orderby == '1') {
                 $args['orderby'] = 'title';
             } else {

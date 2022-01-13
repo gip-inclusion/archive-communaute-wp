@@ -578,7 +578,6 @@ function betterdocs_category_grid($atts, $content = null)
         $get_args = shortcode_atts(
             apply_filters('betterdocs_search_form_atts', array(
                 'placeholder' => false,
-                'enable_heading' => false,
                 'heading' => false,
                 'subheading' => false
             )),
@@ -588,7 +587,7 @@ function betterdocs_category_grid($atts, $content = null)
 
         ob_start();
         echo '<div class="betterdocs-live-search">';
-            if ( $get_args['enable_heading'] == true ) {
+            if ( $get_args['heading'] == true || $get_args['subheading'] == true ) {
                 echo '<div class="betterdocs-search-heading">';
                     if ( $get_args['heading'] == true ) {
                         echo '<h2> ' . esc_html($get_args['heading']) . ' </h2>';
@@ -649,7 +648,7 @@ add_action('wp_ajax_nopriv_betterdocs_get_search_result', 'betterdocs_get_search
 add_action('wp_ajax_betterdocs_get_search_result', 'betterdocs_get_search_result');
 function betterdocs_get_search_result() {
 	$search_input = isset($_POST['search_input']) ? sanitize_text_field($_POST['search_input']) : '';
-	$search_cat = isset($_POST['search_cat']) ? sanitize_text_field($_POST['search_cat']) : '';
+	$search_cat = isset($_POST['search_cat']) ? wp_strip_all_tags($_POST['search_cat']) : '';
 	$search_data = isset($_POST['search_data']) ? stripslashes($_POST['search_data']) : '';
     $search_input = preg_replace('/[^A-Za-z0-9_\- ][]]/', '', strtolower($search_input));
     $search_keyword_arr = (!empty($search_data) && $search_data != 'undefined') ? unserialize($search_data) : array();
@@ -657,7 +656,7 @@ function betterdocs_get_search_result() {
 		'post_type'      => 'docs',
 		'post_status'      => 'publish',
 		'posts_per_page'      => -1,
-		'suppress_filters' => false,
+		'suppress_filters' => true,
 		's' => $search_input,
 	);
 	$tax_query = '';
