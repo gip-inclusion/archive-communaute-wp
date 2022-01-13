@@ -14,11 +14,15 @@ function custom_login_style() {
 add_action('login_enqueue_scripts', 'custom_login_style');
 
 
-function custom_mail_from($email) {
+function custom_mail_from($original_email_address) {
   return 'noreply@inclusion.beta.gouv.fr';
 }
 add_filter('wp_mail_from', 'custom_mail_from');
 
+function custom_mail_name($original_email_from) {
+    return 'La communauté';
+}
+add_filter('wp_mail_from_name', 'custom_mail_name');
 
 // function custom_mail_from_name($name) {
 //   return 'La communauté de l’inclusion';

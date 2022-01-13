@@ -5,10 +5,12 @@
 - Synchronisation des bases de données depuis la prod vers le staging / local
 - Recherche de solutions pour forcer un strong password lors de l'inscription
 - Recherche de solution pour dissocier des événements récurrents
+- Correction d'une zone de texte mal encodée (/) dans le formulaire d'ajout d'événement
+- Correction de traduction dans les templates d'email de BuddyBoss
 
 ### Modifié
 - Mise à jour du core WP 
-- Mise a jour des plugins 
+- Mise a jour des plugins
 
 ### Supprimé
 
