@@ -560,9 +560,12 @@
 											if ($fields[$key_field]['attach-files'] == 1) {
 												$attachment[] = WP_CONTENT_DIR . '/uploads/piotnet-addons-for-elementor/' . $filename;
 											} else {
-												$fields[$key_field]['value'] = $fields[$key_field]['value'] . $file_url;
-												if ( $i != (count($file['name']) - 1) ) {
-													$fields[$key_field]['value'] = $fields[$key_field]['value'] . ' , ';
+												if($fields[$key_field]['value'] == '' && in_array($file['name'][$i], $field['file_name'])){
+													$fields[$key_field]['value'] = $file_url;
+												}else{
+													if(in_array($file['name'][$i], $field['file_name']) && $i != (count($file['name']) - 1)){
+														$fields[$key_field]['value'] .= ', ' . $file_url;
+													}
 												}
 											}
 										}
@@ -3230,7 +3233,80 @@
 					        'body' => $sendy_data,
 					    ] );
 					}
-
+					// Constantcontact
+					if (in_array("constantcontact", $form['settings']['submit_actions'])) {
+						$constant_contact_accept = true;
+						if (!empty($form['settings']['constant_contact_acceptance_field']) && !empty($form['settings']['constant_contact_acceptance_field_shortcode'])) {
+							$constantcontact_acceptance_value = pafe_get_field_value($form['settings']['constant_contact_acceptance_field_shortcode'],$fields);
+							if (empty($constantcontact_acceptance_value)) {
+								$constant_contact_accept = false;
+							}
+						}
+						if($constant_contact_accept){
+							$helper = new PAFE_Helper();
+							$constant_contact_token = get_option('piotnet-constant-contact-access-token');
+							$constant_time_get_token = get_option('piotnet-constant-contact-time-get-token');
+							$constant_contact_fields = $form['settings']['constant_contact_fields_map'];
+							$kind = replace_email($form['settings']['constant_contact_kind'],$fields,$payment_status, $payment_id);
+							$kind = !empty($kind) ? $kind : 'home';
+							$data_constant_contact = [];
+							$constant_contact_street_addresses = [];
+							if(!empty($constant_contact_fields)){
+								foreach($constant_contact_fields as $item){
+									$constant_contact_tag = $item['constant_contact_tagname'];
+									$constant_contact_shorcode = $item['constant_contact_shortcode'];
+									switch($constant_contact_tag){
+										case 'email_address':
+											$data_constant_contact['email_address'] = [
+												'address' => replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id),
+												'permission_to_send' => 'implicit'
+											];
+											break;
+										case 'phone_number':
+											$data_constant_contact['phone_numbers'] = [
+												[
+													'phone_number' => replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id),
+													'kind' => $kind
+												]
+											];
+											break;
+										case 'taggings':
+											$taggings = replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id);
+											$data_constant_contact['taggings'] = explode(',', $taggings);
+											break;
+										case 'street':
+										case 'city':
+										case 'state':
+										case 'postal_code':
+										case 'country':
+											$constant_contact_street_addresses['street_addresses'][$constant_contact_tag] = replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id);
+											$constant_contact_street_addresses['street_addresses']['kind'] = $kind;
+											break;
+										default:
+											if(strlen($constant_contact_tag) > 32){
+												$data_constant_contact['custom_fields'] = [
+													[
+														'custom_field_id' => $constant_contact_tag,
+														'value' => replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id)
+													]
+												];
+											}else{
+												$data_constant_contact[$constant_contact_tag] = replace_email($constant_contact_shorcode,$fields,$payment_status, $payment_id);
+											}
+									}
+								}
+								$data_constant_contact['create_source'] = 'Contact';
+								if(time() > intval($constant_time_get_token + 7000)){
+									$constant_contact_key = get_option('piotnet-addons-for-elementor-pro-constant-contact-client-id');
+									$constant_contact_secret = get_option('piotnet-addons-for-elementor-pro-constant-contact-app-secret-id');
+									$constant_contact_refresh_token = get_option('piotnet-constant-contact-refresh-token');
+									$constant_contact_token = $helper->pafe_constant_contact_refresh_token($constant_contact_key, $constant_contact_secret, $constant_contact_refresh_token);
+								}
+								$constant_contact_res = $helper->pafe_constant_contact_create_contact($constant_contact_token, json_encode($data_constant_contact));
+							}
+						}
+						
+					}
 					// Twilio Whatsapp
 					if (in_array("twilio_whatsapp", $form['settings']['submit_actions'])) {
 						if(!empty($form['settings']['whatsapp_form']) && !empty($form['settings']['whatsapp_to']) && !empty($form['settings']['whatsapp_message'])) {
@@ -3419,6 +3495,13 @@
 															$register_user_meta_key = $user_meta_item['register_user_meta_key'];
 														}
 													}
+
+													if ($user_meta_item['register_user_meta'] == 'toolset') {
+														if (!empty($user_meta_item['register_user_meta_key'])) {
+															$register_user_meta_key = 'wpcf-' . $user_meta_item['register_user_meta_key'];
+														}
+													}
+
 													if ( $register_user_meta == 'acf' ) {
 														$meta_type = $user_meta_item['register_user_meta_type'];
 														$custom_field_value = pafe_get_field_value($user_meta_item['register_user_meta_field_id'], $fields);
@@ -3476,8 +3559,8 @@
 														}
 														update_field( $register_user_meta_key, $custom_field_value, 'user_' . $register_user );
 													} elseif (function_exists('rwmb_set_meta') && $register_user_meta == 'metabox') {
-														$meta_type = $user_meta['register_user_meta_type'];
-														$custom_field_value = pafe_get_field_value($user_meta['register_user_meta_field_id'], $fields);
+														$meta_type = $user_meta_item['register_user_meta_type'];
+														$custom_field_value = pafe_get_field_value($user_meta_item['register_user_meta_field_id'], $fields);
 
 														if ($meta_type == 'image') {
 															$image_array = explode(',', $custom_field_value);
@@ -3529,6 +3612,45 @@
 
 														rwmb_set_meta( $register_user, $register_user_meta_key, $custom_field_value, $custom_field_value );
 
+													} elseif ( function_exists('wpcf_admin_fields_get_field') && $register_user_meta == 'toolset' ) {
+														$meta_type = $user_meta_item['register_user_meta_type'];
+														$custom_field_value = pafe_get_field_value($user_meta_item['register_user_meta_field_id'], $fields);
+
+														if ($meta_type == 'image') {
+															$image_array = explode(',', $custom_field_value);
+															if (!empty($image_array)) {
+																update_user_meta( $register_user, $register_user_meta_key, $image_array[0] );
+															}
+														} elseif ($meta_type == 'gallery') {
+															$images_array = explode(',', $custom_field_value);
+															delete_user_meta( $register_user, $register_user_meta_key);
+															foreach ($images_array as $images_item) {
+																if (!empty($images_item)) {
+																	add_user_meta( $register_user, $register_user_meta_key, $images_item );
+																}
+															}
+														} elseif ($meta_type == 'checkbox') {
+															$custom_field_value = explode(',', $custom_field_value);
+
+															$field_toolset = wpcf_admin_fields_get_field($user_meta_item['register_user_meta_key']);
+
+															if (isset($field_toolset['data']['options'])){
+																$res = array();
+																foreach ($field_toolset['data']['options'] as $key => $option){
+																	if (in_array($option['set_value'], $custom_field_value)){
+																		$res[$key] = $option['set_value'];
+																	}
+																}
+																update_post_meta( $register_user, $register_user_meta_key , $res );
+															}
+														} elseif ($meta_type == 'date') {
+															$custom_field_value = strtotime( $custom_field_value );
+															update_user_meta( $register_user, $register_user_meta_key, $custom_field_value );
+														} else {
+
+															update_user_meta( $register_user, $register_user_meta_key, $custom_field_value );
+
+														}
 													} else {
 														update_user_meta( $register_user, $register_user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
 													}
@@ -3609,6 +3731,12 @@
 										if ($user_meta['update_user_meta'] == 'meta' || $user_meta['update_user_meta'] == 'acf' || $user_meta['update_user_meta'] == 'metabox') {
 											if (!empty($user_meta['update_user_meta_key'])) {
 												$user_meta_key = $user_meta['update_user_meta_key'];
+											}
+										}
+
+										if ($user_meta['update_user_meta'] == 'toolset') {
+											if (!empty($user_meta['update_user_meta_key'])) {
+												$user_meta_key = 'wpcf-' . $user_meta['update_user_meta_key'];
 											}
 										}
 
@@ -3718,7 +3846,7 @@
 												// }
 
 												update_field( $user_meta_key, $custom_field_value, 'user_' . $user_id );
-											} elseif (function_exists('rwmb_set_meta') && $register_user_meta == 'metabox') {
+											} elseif (function_exists('rwmb_set_meta') && $user_meta['update_user_meta'] == 'metabox') {
 												$meta_type = $user_meta['update_user_meta_type'];
 												$custom_field_value = pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields);
 
@@ -3772,6 +3900,45 @@
 
 												rwmb_set_meta( $user_id, $user_meta_key, $custom_field_value, $custom_field_value );
 
+											} elseif ( function_exists('wpcf_admin_fields_get_field') && $user_meta['update_user_meta'] == 'toolset' ) {
+												$meta_type = $user_meta['update_user_meta_type'];
+												$custom_field_value = pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields);
+
+												if ($meta_type == 'image') {
+													$image_array = explode(',', $custom_field_value);
+													if (!empty($image_array)) {
+														update_user_meta( $user_id, $user_meta_key, $image_array[0] );
+													}
+												} elseif ($meta_type == 'gallery') {
+													$images_array = explode(',', $custom_field_value);
+													delete_user_meta( $user_id, $user_meta_key);
+													foreach ($images_array as $images_item) {
+														if (!empty($images_item)) {
+															add_user_meta( $user_id, $user_meta_key, $images_item );
+														}
+													}
+												} elseif ($meta_type == 'checkbox') {
+													$custom_field_value = explode(',', $custom_field_value);
+
+													$field_toolset = wpcf_admin_fields_get_field( $user_meta['update_user_meta_key']);
+
+													if (isset($field_toolset['data']['options'])){
+														$res = array();
+														foreach ($field_toolset['data']['options'] as $key => $option){
+															if (in_array($option['set_value'], $custom_field_value)){
+																$res[$key] = $option['set_value'];
+															}
+														}
+														update_post_meta( $user_id, $user_meta_key , $res );
+													}
+												} elseif ($meta_type == 'date') {
+													$custom_field_value = strtotime( $custom_field_value );
+													update_user_meta( $user_id, $user_meta_key, $custom_field_value );
+												} else {
+
+													update_user_meta( $user_id, $user_meta_key, $custom_field_value );
+
+												}
 											} else {
 												update_user_meta( $user_id, $user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
 											}

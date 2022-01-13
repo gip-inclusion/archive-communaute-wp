@@ -85,6 +85,20 @@ jQuery(document).ready(function( $ ) {
 							}
 						}
 
+						var $label = $(this).closest('.pafe-field-container').find('label'),
+								$container = $(this).closest('.pafe-field-container'),
+								minFiles = 1;
+							if ($label.attr('data-pafe-form-builder-image-upload-min-files') != undefined) {
+								minFiles = parseInt($label.attr('data-pafe-form-builder-image-upload-min-files'));
+								var filesCurrent = $container.find('.pafe-form-builder-image-upload-uploaded').length;
+								if ( filesCurrent < minFiles ) {
+									$container.find('[data-pafe-form-builder-image-upload-check]').html($label.attr('data-pafe-form-builder-image-upload-min-files-message'));
+									error++;
+								} else {
+									$container.find('[data-pafe-form-builder-image-upload-check]').remove();
+								}
+							}
+
 						$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html('');
 
 						if ($(this).closest('[data-pafe-signature]').length > 0) {

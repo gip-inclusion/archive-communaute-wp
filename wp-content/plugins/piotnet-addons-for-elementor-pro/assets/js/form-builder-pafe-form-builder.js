@@ -529,10 +529,11 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 										if($(this).hasClass('error')) {
 											error++;
 										} else {
-
+											let nameFileUpload = [];
 											fieldName = $(this).attr('id').replace('form-field-','');
 
 											$.each($(this)[0].files, function(i, file){
+												nameFileUpload.push(file.name);
 												formData.append( fieldName + '[]', file);
 											});
 
@@ -542,6 +543,7 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 											fieldItem['value'] = '';
 											fieldItem['type'] = $(this).attr('type');
 											fieldItem['upload'] = 1;
+											fieldItem['file_name'] = nameFileUpload
 											fieldItem['repeater_id'] = repeaterID;
 											fieldItem['repeater_id_one'] = repeaterIDOne;
 											fieldItem['repeater_label'] = repeaterLabel;
@@ -1297,10 +1299,11 @@ jQuery(document).ready(function( $ ) {
 								if($(this).hasClass('error')) {
 									error++;
 								} else {
-
+									let nameFileUpload = [];
 									fieldName = $(this).attr('id').replace('form-field-','');
 
 									$.each($(this)[0].files, function(i, file){
+										nameFileUpload.push(file.name);
 										formData.append( fieldName + '[]', file);
 									});
 
@@ -1310,6 +1313,7 @@ jQuery(document).ready(function( $ ) {
 									fieldItem['value'] = '';
 									fieldItem['type'] = $(this).attr('type');
 									fieldItem['upload'] = 1;
+									fieldItem['file_name'] = nameFileUpload
 									fieldItem['repeater_id'] = repeaterID;
 									fieldItem['repeater_id_one'] = repeaterIDOne;
 									fieldItem['repeater_label'] = repeaterLabel;
@@ -3015,21 +3019,27 @@ jQuery(document).ready(function($) {
         });
     }
 
-    var $conditionals = $(document).find('body:not(.elementor-editor-active) [data-pafe-form-builder-conditional-logic]');
-	if ($conditionals.length > 0) {
-		pafeConditionalLogicFormCheck($conditionals);
-
+	function pafeScanConditionalLogic() {
+		var $conditionals = $(document).find('body:not(.elementor-editor-active) [data-pafe-form-builder-conditional-logic]');
+		if ($conditionals.length > 0) {
+			pafeConditionalLogicFormCheck($conditionals);
+		}
 	}
 
+	pafeScanConditionalLogic();
+
 	$(document).on('keyup change','[data-pafe-form-builder-form-id]', $.debounce( 200, function(){
-		var $conditionals = $(document).find('body:not(.elementor-editor-active) [data-pafe-form-builder-conditional-logic]');
-			pafeConditionalLogicFormCheck($conditionals);
+		pafeScanConditionalLogic();
 		var $gridCarousel = $(document).find('[data-piotnetgrid-grid-carousel]');
 		if ( $gridCarousel.length > 0 ) {
 			$gridCarousel.trigger('grid_carousels');
 		}
 		})
 	);
+
+	$(document).on( 'elementor/popup/show', function(event, id, instance){
+		pafeScanConditionalLogic();
+	} );
 
 	function FormatNumberBy3(num, decpoint, sep) {
 		const parts = (num+"").split(".");
@@ -4848,6 +4858,17 @@ jQuery(document).ready(function($) {
 			$(this).closest('.pafe-field-container').find('[name="form_fields['+password_show_name+']"]').attr('type', 'password');
 			show_password_icon.removeClass("fa-eye-slash");
 		}
+	});
+	//Enter Submit Form
+	const submitKeyboard = $('[data-pafe-submit-keyboard="true"]');
+	$.each(submitKeyboard, function(index, item){
+		let that = this;
+		let submitID = $(this).attr('data-pafe-form-builder-submit-form-id');
+		$('[data-pafe-form-builder-form-id="'+submitID+'"]').on('keyup', function(e){
+			if(e.keyCode === 13){
+				$(that).trigger('click');
+			}
+		});
 	});
 	function pafeLivePreview(field) {
 		if ($(document).find('[data-pafe-form-builder-live-preview]').length > 0) {

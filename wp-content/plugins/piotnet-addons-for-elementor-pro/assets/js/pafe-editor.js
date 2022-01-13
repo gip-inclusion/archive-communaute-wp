@@ -557,6 +557,31 @@ jQuery(document).ready(function( $ ) {
 			$('[data-pafe-convertkit-fields]').html(response);
 		});
 	});
+	//Constant contact
+	$(document).on('click', '[data-pafe-constant-contact-get-tag-name]', function(){
+		$(this).addClass('loading');
+		let dataAjax = {
+			action: 'pafe_constant_contact_get_custom_field',
+		}
+		$.post(ajaxurl, dataAjax, function(response) {
+			if(response){
+				$('#pafe-constant-contact-tag-name').html(response);
+				$('[data-pafe-constant-contact-get-tag-name]').removeClass('loading');
+			}
+		});
+	});
+	$(document).on('click', '[data-pafe-constant-contact-get-list]', function(){
+		$(this).addClass('loading');
+		let dataAjax = {
+			action: 'pafe_constant_contact_get_list',
+		}
+		$.post(ajaxurl, dataAjax, function(response) {
+			if(response){
+				$('#pafe-constant-contact-list').html(response);
+				$('[data-pafe-constant-contact-get-list]').removeClass('loading');
+			}
+		});
+	})
 	// Distance Calculation Google Maps
 	// $(document).on('click', '[data-setting="pafe_calculated_fields_form_distance_calculation_from_specific_location"], [data-setting="pafe_calculated_fields_form_distance_calculation_to_specific_location"]', function(){
 	// 	var autocomplete = new google.maps.places.Autocomplete(this);
