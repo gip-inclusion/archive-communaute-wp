@@ -77,3 +77,16 @@ Version: 0.1.0
 .el-betterdocs-cb-cat-desc {
   color: #000638;
 }
+
+.social-sharer {
+  background: 0 0;
+  position: fixed;
+  bottom: 12px;
+  left: 20px;
+  width: auto;
+  z-index: 2147483646;
+}
+
+.footer-bottom{
+  padding-bottom: 60px !important;
+}
