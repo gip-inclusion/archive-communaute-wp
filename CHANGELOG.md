@@ -2,12 +2,13 @@
 
 ## [05] - 2022-01-03
 ### Ajouté / Corrigé
-- Synchronisation des base de données depuis prod vers le staging / local
-- Recherche d'une solution pour forcer un strong password lors de l'inscription
+- Synchronisation des bases de données depuis la prod vers le staging / local
+- Recherche de solutions pour forcer un strong password lors de l'inscription
+- Recherche de solution pour dissocier des événements récurrents
 
 ### Modifié
 - Mise à jour du core WP 
-- Mise a jours des plugins 
+- Mise a jour des plugins 
 
 ### Supprimé
 
