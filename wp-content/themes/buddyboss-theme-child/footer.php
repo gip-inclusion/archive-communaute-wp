@@ -29,6 +29,9 @@
 
 <?php wp_footer(); ?>
 
+<div class="social-sharer">
+  <?php echo do_shortcode('[Sassy_Social_Share]') ?>
+</div>
 
 <!-- Matomo -->
 <script>
