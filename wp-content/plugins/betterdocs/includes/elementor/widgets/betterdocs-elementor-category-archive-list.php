@@ -66,6 +66,7 @@ class BetterDocs_Category_Archive_List extends Widget_Base
                 'label' => __('Order By', 'betterdocs'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
+                    'none' => __('No order', 'betterdocs'),
                     'name' => __('Name', 'betterdocs'),
                     'slug' => __('Slug', 'betterdocs'),
                     'term_group' => __('Term Group', 'betterdocs'),

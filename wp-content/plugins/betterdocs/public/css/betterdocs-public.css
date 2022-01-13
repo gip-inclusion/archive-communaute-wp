@@ -778,11 +778,16 @@ a.close-toc {
   background-color: #fff;
   padding: 0;
 }
-.betterdocs-content-heading a.anchor {
+.betterdocs-content a.batterdocs-anchor {
   display: none;
   line-height: 1;
 }
-.betterdocs-content-heading:hover a {
+.betterdocs-content h1:hover a.batterdocs-anchor,
+.betterdocs-content h2:hover a.batterdocs-anchor,
+.betterdocs-content h3:hover a.batterdocs-anchor,
+.betterdocs-content h4:hover a.batterdocs-anchor,
+.betterdocs-content h5:hover a.batterdocs-anchor,
+.betterdocs-content h6:hover a.batterdocs-anchor {
   display: inline-block;
 }
 .betterdocs-single-wraper .betterdocs-content-area {
@@ -961,12 +966,12 @@ a.close-toc {
   margin-left: 20px;
   text-align: right;
 }
-.anchor {
+.batterdocs-anchor {
   position: relative;
   display: inline-block;
 }
 
-.anchor .tooltip-box {
+.batterdocs-anchor .tooltip-box {
   visibility: hidden;
   width: 90px;
   background-color: #555;
@@ -985,7 +990,7 @@ a.close-toc {
   font-weight: normal;
 }
 
-.anchor .tooltip-box::after {
+.batterdocs-anchor .tooltip-box::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -996,12 +1001,12 @@ a.close-toc {
   border-color: #555 transparent transparent transparent;
 }
 
-.anchor:hover .tooltip-box {
+.batterdocs-anchor:hover .tooltip-box {
   visibility: visible;
   opacity: 1;
 }
 
-.betterdocs-single-wraper .betterdocs-content .anchor {
+.betterdocs-single-wraper .betterdocs-content .batterdocs-anchor {
   margin-left: 5px;
   font-size: 0.9em;
 }
