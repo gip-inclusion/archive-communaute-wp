@@ -455,9 +455,9 @@
       });
     }
 
-    if ($(".anchor").length) {
+    if ($(".batterdocs-anchor").length) {
       // tooltips
-      $(".anchor")
+      $(".batterdocs-anchor")
         .hover(
           function() {
             var title = $(this).attr("data-title");
@@ -473,7 +473,7 @@
         .on("click", function(e) {
           // Clipboard
           e.preventDefault();
-          var a = new ClipboardJS(".anchor");
+          var a = new ClipboardJS(".batterdocs-anchor");
           a.on("success", function(e) {
             $(document)
               .find("div.tooltip-box")

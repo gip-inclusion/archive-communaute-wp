@@ -549,6 +549,7 @@ class BetterDocs_Elementor
                 'label' => __('Order By', 'betterdocs'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
+                    'none' => __('No order', 'betterdocs'),
                     'name' => __('Name', 'betterdocs'),
                     'slug' => __('Slug', 'betterdocs'),
                     'term_group' => __('Term Group', 'betterdocs'),
@@ -756,6 +757,7 @@ class BetterDocs_Elementor
                     'label' => __('Nested Posts Order By', 'betterdocs'),
                     'type' => Controls_Manager::SELECT,
                     'options' => [
+                        'none' => __('No order', 'betterdocs'),
                         'name' => __('Name', 'betterdocs'),
                         'slug' => __('Slug', 'betterdocs'),
                         'term_group' => __('Term Group', 'betterdocs'),

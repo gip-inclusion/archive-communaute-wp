@@ -74,7 +74,7 @@ $post_type_object = get_post_type_object( $post_type );
                                 <option value="inherit"<?php echo ('inherit' === $post_status) ? ' selected' : '' ?>><?php esc_html_e('Inherit', 'betterdocs') ?></option>
                             </select>
                             <?php do_action('betterdocs_admin_filter_before_submit'); ?>
-                            <input class="betterdocs-button betterdocs-button-primary betterdocs-search-filter-btn" type="submit" id="search-submit" class="button" value="Search">
+                            <input class="betterdocs-button betterdocs-button-primary betterdocs-search-filter-btn" type="submit" id="search-submit" class="button" value="<?php esc_html_e('Search','betterdocs') ?>">
                         </form>
                     </div>
                 </div>

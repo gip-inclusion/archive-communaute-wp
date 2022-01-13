@@ -165,6 +165,37 @@ class BetterDocs_Customizer_Alpha_Color_Control extends WP_Customize_Control {
 	 * @var array
 	 */
 	public $show_opacity;
+
+    /**
+     * ColorPicker Attributes
+     */
+    public $attributes = '';
+
+    /**
+     * Color palette defaults
+     */
+    public $defaultPalette = array(
+        '#000000',
+        '#ffffff',
+        '#dd3333',
+        '#dd9933',
+        '#eeee22',
+        '#81d742',
+        '#1e73be',
+        '#8224e3',
+    );
+
+    /**
+     * Constructor
+     */
+    public function __construct( $manager, $id, $args = array(), $options = array() ) {
+        parent::__construct( $manager, $id, $args );
+        $this->attributes .= 'data-default-color="' . esc_attr( $this->value() ) . '"';
+        $this->attributes .= 'data-alpha="true"';
+        $this->attributes .= 'data-reset-alpha="' . ( isset( $this->input_attrs['resetalpha'] ) ? $this->input_attrs['resetalpha'] : 'true' ) . '"';
+        $this->attributes .= 'data-custom-width="0"';
+    }
+
 	/**
 	 * Enqueue scripts/styles.
 	 * 
@@ -172,20 +203,28 @@ class BetterDocs_Customizer_Alpha_Color_Control extends WP_Customize_Control {
 	 *
 	 */
 	public function enqueue() {
-		wp_enqueue_script(
-			'betterdocs-customizer-alpha-color-picker',
-			BETTERDOCS_ADMIN_URL . 'assets/js/alpha-color-picker.js',
-			array( 'jquery', 'wp-color-picker' ),
-			rand(),
-			true
-		);
-		wp_enqueue_style(
-			'betterdocs-customizer-alpha-color-picker',
-			BETTERDOCS_ADMIN_URL . 'assets/css/alpha-color-picker.css',
-			array( 'wp-color-picker' ),
-			rand()
-		);
+        wp_enqueue_style( 'wp-color-picker' );
+        wp_register_script(
+            'wp-color-picker-alpha',
+            BETTERDOCS_ADMIN_URL . 'assets/js/wp-color-picker-alpha.min.js',
+            array( 'wp-color-picker' ),
+            rand(), true
+        );
+        wp_add_inline_script(
+            'wp-color-picker-alpha',
+            'jQuery( function() { jQuery( ".betterdocs-alpha-color-control" ).wpColorPicker(); } );'
+        );
+        wp_enqueue_script( 'wp-color-picker-alpha' );
 	}
+
+    /**
+     * Pass our Palette colours to JavaScript
+     */
+    public function to_json() {
+        parent::to_json();
+        $this->json['colorpickerpalette'] = isset( $this->input_attrs['palette'] ) ? $this->input_attrs['palette'] : $this->defaultPalette;
+    }
+
 	/**
 	 * Render the control.
 	 */
@@ -198,196 +237,8 @@ class BetterDocs_Customizer_Alpha_Color_Control extends WP_Customize_Control {
 		if ( isset( $this->description ) && '' !== $this->description ) {
 			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
 		}
-
-		// Process the palette
-		if ( is_array( $this->palette ) ) {
-			$palette = implode( '|', $this->palette );
-		} else {
-			// Default to true.
-			$palette = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
-		}
-		// Support passing show_opacity as string or boolean. Default to true.
-		$show_opacity = ( false === $this->show_opacity || 'false' === $this->show_opacity ) ? 'false' : 'true';
-		// Begin the output. 
 		?>
-		<input class="betterdocs-alpha-color-control" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php esc_attr( $this->link() ); ?>  />
-		
-		<?php
-		echo '</div>';
-	}
-}
-
-/**
- * Gradient Color Customizer Control
- * 
- * Class BetterDocs_Customizer_Gradient_Color_Control
- *
- * @since 1.0.0
- */
-
-class BetterDocs_Customizer_Gradient_Color_Control extends WP_Customize_Control {
-	/**
-	 * Official control name.
-	 *
-	 * @var string
-	 */
-	public $type = 'batterdocs-gradient-color';
-	/**
-	 * Add support for palettes to be passed in.
-	 *
-	 * Supported palette values are true, false, or an array of RGBa and Hex colors.
-	 *
-	 * @var bool
-	 */
-	public $palette;
-	/**
-	 * Add support for showing the opacity value on the slider handle.
-	 *
-	 * @var array
-	 */
-	public $show_opacity;
-
-	public $defaults;
-	public $directions;
-
-	/**
-	 * Enqueue scripts/styles.
-	 * 
-	 * @since 1.0.0
-	 *
-	 */
-	public function enqueue() {
-		wp_enqueue_script(
-			'betterdocs-customizer-alpha-color-picker',
-			BETTERDOCS_ADMIN_URL . 'assets/js/alpha-color-picker.js',
-			array( 'jquery', 'wp-color-picker' ),
-			rand(),
-			true
-		);
-		wp_enqueue_style(
-			'betterdocs-customizer-alpha-color-picker',
-			BETTERDOCS_ADMIN_URL . 'assets/css/alpha-color-picker.css',
-			array( 'wp-color-picker' ),
-			rand()
-		);
-		wp_enqueue_script(
-			'betterdocs-customizer-range-value-control',
-			BETTERDOCS_ADMIN_URL . 'assets/js/customizer-range-value-control.js',
-			array( 'jquery' ),
-			rand(),
-			true
-		);
-		wp_enqueue_style( 
-			'betterdocs-customizer-range-value-control', BETTERDOCS_ADMIN_URL . 'assets/css/customizer-range-value-control.css',
-			array(),
-			rand()
-		);
-		wp_enqueue_script(
-			'betterdocs-customizer-gradient-control',
-			BETTERDOCS_ADMIN_URL . 'assets/js/customizer-gradient-control.js',
-			array( 'jquery' ),
-			rand(),
-			true
-		);
-	}
-	/**
-	 * Render the control.
-	 */
-	public function render_content() {
-		echo '<div class="betterdocs-gradient-color-control">';
-		// Output the label and description if they were passed in.
-		if ( isset( $this->label ) && '' !== $this->label ) {
-			echo '<span class="customize-control-title betterdocs-customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
-		}
-		if ( isset( $this->description ) && '' !== $this->description ) {
-			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
-		}
-
-		// Process the palette
-		if ( is_array( $this->palette ) ) {
-			$palette = implode( '|', $this->palette );
-		} else {
-			// Default to true.
-			$palette = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
-		}
-		// Support passing show_opacity as string or boolean. Default to true.
-		$show_opacity = ( false === $this->show_opacity || 'false' === $this->show_opacity ) ? 'false' : 'true';
-		// Begin the output. 
-
-		if( $this->value() ) {
-			if ( is_array ($this->value())) {
-				$gradient_val = $this->value();
-			} else {
-				$gradient_val = (array) json_decode($this->value());
-			}
-		} else {
-			$gradient_val = $this->defaults;
-		}
-		?>
-		<input type="hidden" value="" class="betterdocs-gradient-color <?php echo esc_attr($this->id) ?>" value="" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
-		<ul>
-			<li class="customize-control customize-control-gradient customize-control-gradient-color-1">
-				 <div class="gradient-color-plate color-plate-left">
-					<label class="gradient-control-label"><?php esc_html_e('Color 1','betterdocs') ?></label>
-					<input class="betterdocs-alpha-color-control gradient-control-field gradient-control-color-1" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo esc_attr( $gradient_val['color1']) ?>" />
-				</div>
-				<div class="gradient-color-plate color-plate-right">
-					<label class="gradient-control-label"><?php esc_html_e('%','betterdocs') ?></label>
-					<input type="number" class="gradient-control-color-1-percent" value="<?php echo esc_attr($gradient_val['color1_percent']) ?>">
-				</div>
-			</li>
-			<li class="customize-control customize-control-gradient customize-control-gradient-color-2">
-				 <div class="gradient-color-plate color-plate-left">
-					<label class="gradient-control-label"><?php esc_html_e('Color 2','betterdocs') ?></label>
-					<input class="betterdocs-alpha-color-control gradient-control-field gradient-control-color-2" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo esc_attr($gradient_val['color2']) ?>" />
-				</div>
-				<div class="gradient-color-plate color-plate-right">
-					<label class="gradient-control-label"><?php esc_html_e('%','betterdocs') ?></label>
-					<input type="number" class="gradient-control-color-2-percent" value="<?php echo esc_attr($gradient_val['color2_percent']) ?>">
-				</div>
-			</li>
-			<li class="customize-control customize-control-gradient customize-control-gradient-color-3">
-				 <div class="gradient-color-plate color-plate-left">
-					<label class="gradient-control-label"><?php esc_html_e('Color 3','betterdocs') ?></label>
-					<input class="betterdocs-alpha-color-control gradient-control-field gradient-control-color-3" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo esc_attr($gradient_val['color3']) ?>" />
-				</div>
-				<div class="gradient-color-plate color-plate-right">
-					<label class="gradient-control-label"><?php esc_html_e('%','betterdocs') ?></label>
-					<input type="number" class="gradient-control-color-3-percent" value="<?php echo esc_attr($gradient_val['color3_percent']) ?>">
-				</div>
-			</li>
-			<li class="customize-control customize-control-gradient customize-control-gradient-color-4">
-				 <div class="gradient-color-plate color-plate-left">
-					<label class="gradient-control-label"><?php esc_html_e('Color 4','betterdocs') ?></label>
-					<input class="betterdocs-alpha-color-control gradient-control-field gradient-control-color-4" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" value="<?php echo esc_attr($gradient_val['color4']) ?>" />
-				</div>
-				<div class="gradient-color-plate color-plate-right">
-					<label class="gradient-control-label"><?php esc_html_e('%','betterdocs') ?></label>
-					<input type="number" class="gradient-control-color-4-percent" value="<?php echo esc_attr($gradient_val['color4_percent']) ?>">
-				</div>
-			</li>
-			<?php  if ( $this->directions ) : ?>
-			<li class="customize-control customize-control-gradient">
-				<label class="gradient-control-label"><?php esc_html_e('Direction','betterdocs') ?></label>
-				<select class="gradient-direction-select gradient-control-field gradient-control-direction">
-					<?php 
-					foreach($this->directions as $key => $value) {
-						$selected = ($key === $gradient_val['direction']) ? ' selected' : '';
-						echo '<option value="' . $key . '"'.$selected.'>' . esc_attr($value) . '</option>';
-					}
-					?>
-				</select>
-			</li>
-			<?php endif; ?>
-			<li class="customize-control">
-				<label class="gradient-control-label"><?php esc_html_e('Angle','betterdocs') ?></label>
-				<div class="betterdcos-range-slider" data-default-val="<?php echo esc_attr($gradient_val['angle'] ); ?>" style="width:100%; display:flex;flex-direction: row;justify-content: flex-start;">
-					<span  style="width:100%; flex: 1 0 0; vertical-align: middle;">
-					<input class="betterdcos-range-slider__range gradient-control-angle" type="range" value="<?php echo esc_attr($gradient_val['angle'] ); ?>" min="-380" max="380" suffix="&#176;">
-					<span class="betterdcos-range-slider__value">0</span></span>
-				</div>
-			</li>
-		</ul>
+		<input id="<?php echo esc_attr( $this->id ); ?>" class="betterdocs-alpha-color-control" <?php echo $this->attributes; ?> <?php esc_attr( $this->link() ); ?>  />
 		
 		<?php
 		echo '</div>';
@@ -426,7 +277,7 @@ class BetterDocs_Separator_Custom_Control extends WP_Customize_Control{
 
 class BetterDocs_Title_Custom_Control extends WP_Customize_Control{
 	public $type = 'betterdocs-title';
-	public function render_content(){
+	public function render_content() {
 		?>
 		<div <?php echo $this->input_attrs(); ?>>
 		<span class="customize-control-title betterdocs-customize-control-title"><?php echo esc_html( $this->label ); ?></span>

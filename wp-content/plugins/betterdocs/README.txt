@@ -5,7 +5,7 @@ Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, know
 Requires at least: 4.0
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,17 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.4 - 12/01/2022 = 
+- Fixed: Built-in Docs order not working
+- Fixed: Option to change "Search" button placeholder
+- Fixed: Docs order not working properly inside Elementor widgets
+- Fixed: Conflict with WP Extended Search plugin
+- Fixed: PHP Error notice when editing the Doc Status in classic UI
+- Fixed: Search option not working properly in different languages
+- Fixed: Table of Contents not working properly with Divi Page Builder
+- Few minor bug fixes & improvements
+
 
 = 2.0.3 - 23/12/2021 = 
 - Fixed: Few minor bug fix & improvements
