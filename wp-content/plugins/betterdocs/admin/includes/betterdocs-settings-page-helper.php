@@ -152,6 +152,13 @@ function betterdocs_settings_args(){
                                     'default'     => 'Search..',
                                     'priority'    => 10,
                                 ),
+                                'search_button_text' => apply_filters('betterdocs_search_button_text',array(
+                                    'type'     => 'text',
+                                    'label'    => __('Search Button Text', 'betterdocs-pro'),
+                                    'priority' => 10,
+                                    'default'  => esc_html__('Search','betterdocs-pro'),
+                                    'disable'  => true
+                                )),
                                 'search_not_found_text' => array(
                                     'type'        => 'text',
                                     'label'       => __('Search Not Found Text' , 'betterdocs'),

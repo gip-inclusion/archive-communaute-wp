@@ -209,4 +209,55 @@ class PAFE_Helper{
 		curl_close($curl);
 		return $response;
 	}
+	public function pafe_constant_contact_create_contact($token, $data){
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => 'https://api.cc.email/v3/contacts',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_POSTFIELDS => $data,
+		CURLOPT_HTTPHEADER => array(
+			'accept: application/json',
+			'authorization: Bearer '.$token,
+			'cache-control: no-cache',
+			'content-type: application/json'
+		),
+		));
+
+		$response = curl_exec($curl);
+
+		curl_close($curl);
+		return $response;
+
+	}
+	public function pafe_constant_contact_refresh_token($key, $secret, $refresh_token){
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => 'https://idfed.constantcontact.com/as/token.oauth2?refresh_token='.$refresh_token.'&grant_type=refresh_token',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_HTTPHEADER => array(
+			'Authorization: Basic '. base64_encode($key.':'.$secret),
+		),
+		));
+		$response = curl_exec($curl);
+		curl_close($curl);
+		$response = json_decode($response);
+		if(!empty($response)){
+			update_option('piotnet-constant-contact-access-token', $response->access_token);
+			update_option('piotnet-constant-contact-refresh-token', $response->refresh_token);
+			update_option('piotnet-constant-contact-time-get-token', time());
+		}
+		return $response->access_token;
+	}
 }

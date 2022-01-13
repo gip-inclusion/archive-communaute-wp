@@ -419,7 +419,7 @@ class BetterDocs_Public {
 
 				$title_link_ctc = BetterDocs_DB::get_settings('title_link_ctc');
 				if ($title_link_ctc == 1) {
-					$hash_link = '<a href="#'.$id.'" class="anchor" data-clipboard-text="'. get_permalink() .'#'. $id .'" data-title="'.esc_html__('Copy URL','betterdocs').'">#</a>';
+					$hash_link = '<a href="#'.$id.'" class="batterdocs-anchor" data-clipboard-text="'. get_permalink() .'#'. $id .'" data-title="'.esc_html__('Copy URL','betterdocs').'">#</a>';
 				} else {
 					$hash_link = '';
 				}
@@ -460,14 +460,16 @@ class BetterDocs_Public {
         $output = betterdocs_generate_output();
         $live_search = BetterDocs_DB::get_settings('live_search');
         $search_placeholder = BetterDocs_DB::get_settings('search_placeholder');
-        $search_heading_switch = $output['betterdocs_live_search_heading_switch'];
-        $search_heading = $output['betterdocs_live_search_heading'];
-        $search_subheading = $output['betterdocs_live_search_subheading'];
+        $search_heading = $search_subheading = '';
+        if ( $output['betterdocs_live_search_heading_switch'] == true ) {
+            $search_heading_switch = $output['betterdocs_live_search_heading_switch'];
+            $search_heading = $output['betterdocs_live_search_heading'];
+            $search_subheading = $output['betterdocs_live_search_subheading'];
+        }
 
         if ( $live_search == 1 ) {
             $html = '<div class="betterdocs-search-form-wrap">'. do_shortcode( '[betterdocs_search_form 
-                placeholder="'.$search_placeholder.'" 
-                enable_heading="'.$search_heading_switch.'"
+                placeholder="'.$search_placeholder.'"
                 heading="'.$search_heading.'" 
                 subheading="'.$search_subheading.'"]').'</div>';
 

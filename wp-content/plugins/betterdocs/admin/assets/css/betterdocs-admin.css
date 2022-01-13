@@ -1485,9 +1485,7 @@ h4.betterdocs-admin-title {
     flex-wrap: wrap;
     margin: 0 -15px;
 }
-.betterdocs-listing-table-content .iedit .row-actions {
-    left: 0;
-}
+
 body.toplevel_page_betterdocs-admin {
     background-color: #F5F6FB;
 }
@@ -2042,9 +2040,6 @@ input[type="checkbox"].betterdocs-mode-toggle {
 .betterdocs-listing-table-content .wp-list-table td:last-child,
 .betterdocs-listing-table-content .wp-list-table th:last-child {
     border-bottom-right-radius: 5px;
-}
-.betterdocs-listing-table-content .column-title.has-row-actions .row-actions {
-    display: none !important;
 }
 
 .betterdocs-listing-table-content .inline-edit-row .inline-edit-col-left .inline-edit-col label {

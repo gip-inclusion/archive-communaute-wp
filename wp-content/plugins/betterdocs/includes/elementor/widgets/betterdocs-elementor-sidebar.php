@@ -46,6 +46,48 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
 
     protected function _register_controls()
     {
+        $this->start_controls_section(
+            'eael_section_post__filters',
+            [
+                'label' => __('Query', 'betterdocs'),
+            ]
+        );
+
+        $this->add_control(
+            'orderby',
+            [
+                'label' => __('Order By', 'betterdocs'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'none' => __('No order', 'betterdocs'),
+                    'name' => __('Name', 'betterdocs'),
+                    'slug' => __('Slug', 'betterdocs'),
+                    'term_group' => __('Term Group', 'betterdocs'),
+                    'term_id' => __('Term ID', 'betterdocs'),
+                    'id' => __('ID', 'betterdocs'),
+                    'description' => __('Description', 'betterdocs'),
+                    'parent' => __('Parent', 'betterdocs'),
+                    'betterdocs_order' => __('BetterDocs Order', 'betterdocs'),
+                ],
+                'default' => 'betterdocs_order',
+            ]
+        );
+
+        $this->add_control(
+            'order',
+            [
+                'label' => __('Order', 'betterdocs'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'ASC' => 'Ascending',
+                    'DESC' => 'Descending',
+                ],
+                'default' => 'ASC',
+            ]
+        );
+
+        $this->end_controls_section();
+
         do_action('betterdocs_elementor_sidebar_layout_select', $this);
 
         $this->sidebar_layout_select();
@@ -1528,7 +1570,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $sticky_toc = ($settings['enable_sticky_toc'] == '1') ? $this->get_toc() : '';
-        $shortcode = do_shortcode('[betterdocs_category_grid disable_customizer_style="true" sidebar_list="true" posts_per_grid="-1" title_tag="'.$settings['category_title_tag'].'"]');
+        $shortcode = do_shortcode('[betterdocs_category_grid disable_customizer_style="true" sidebar_list="true" posts_per_grid="-1" orderby="'.$settings['orderby'].'" order="'.$settings['order'].'" title_tag="'.$settings['category_title_tag'].'"]');
         $sidebar = '<aside id="betterdocs-sidebar" class="betterdocs-el-single-sidebar"><div class="betterdocs-sidebar-content">' . $shortcode . '</div>' . $sticky_toc . '</aside>';
         echo apply_filters('betterdocs_elementor_sidebar', $sidebar, $settings);
     }

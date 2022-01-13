@@ -115,6 +115,8 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
             ]
         );
 
+        do_action('betterdocs/elementor/widgets/advanced-search/switcher', $this);
+
         $this->end_controls_section();
         /**
          * ----------------------------------------------------------
@@ -610,6 +612,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
 
         $this->end_controls_section(); # end of 'Search Result Item'
 
+        do_action('betterdocs/elementor/widgets/advanced-search/controllers', $this);
 
     }
 
@@ -617,7 +620,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $shortcode = sprintf('[betterdocs_search_form enable_heading="true" heading="'.$settings['section_search_field_heading'].'" subheading="'.$settings['section_search_field_sub_heading'].'" placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
+        $shortcode = sprintf('[betterdocs_search_form enable_heading="true" popular_search_title="'.$settings['advance_search_popular_search_title_placeholder'].'" category_search="'.$settings['betterdocs_category_search_toogle'].'" search_button="'.$settings['betterdocs_search_button_toogle'].'" popular_search="'.$settings['betterdocs_popular_search_toogle'].'" heading="'.$settings['section_search_field_heading'].'" subheading="'.$settings['section_search_field_sub_heading'].'" placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
         echo do_shortcode(shortcode_unautop($shortcode));
     }
 

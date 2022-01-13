@@ -124,6 +124,18 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'enter_submit_form',
+			[
+				'label' => __( 'Press enter to submit form', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'default' => '',
+				'label_on' => 'Yes',
+				'label_off' => 'No',
+				'return_value' => 'yes',
+			]
+		);
+
 		$repeater = new \Elementor\Repeater();
 
 		$repeater->add_control(
@@ -432,6 +444,10 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
             [
                 'name'  => 'sendfox',
                 'label' => 'SendFox',
+            ],
+			[
+                'name'  => 'constantcontact',
+                'label' => 'Constant Contact',
             ],
             [
                 'name' => 'webhook_slack',
@@ -4594,7 +4610,114 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 			]
 		);
 		$this->end_controls_section();
+		$this->start_controls_section(
+			'section_constant',
+			[
+				'label' => __( 'Constant Contact', 'pafe' ),
+				'condition' => [
+					'submit_actions' => 'constantcontact',
+				],
+			]
+		);
+		$constant_contact_token = get_option('piotnet-constant-contact-access-token');
+		if(empty($constant_contact_token)){
+			$this->add_control(
+				'constant_contact_token_note',
+				[
+					'type' => \Elementor\Controls_Manager::RAW_HTML,
+					'raw' => __( 'Please get the Zoho CRM token in admin page.', 'pafe' ),
+				]
+			);
+		}else{
+			$this->add_control(
+				'constant_contact_list_id',
+				[
+					'label' => __( 'List IDs', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'placeholder' => __( 'Enter your list id here', 'pafe' ),
+				]
+			);
+			$this->add_control(
+				'constant_contact_kind',
+				[
+					'label' => __( 'The type of address', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => 'home',
+					'description' => 'The type of address. Available types are: home, work, mobile, fax, other',
+					'placeholder' => __( 'Enter your kind here', 'pafe' ),
+				]
+			);
+			$this->add_control(
+				'constant_contact_get_list',
+				[
+					'type' => \Elementor\Controls_Manager::RAW_HTML,
+					'raw' => __( '<button data-pafe-constant-contact-get-list class="pafe-admin-button-ajax elementor-button elementor-button-default" type="button">Get List&ensp;<i class="fas fa-spinner fa-spin"></i></button><div id="pafe-constant-contact-list"></div>', 'pafe' ),
+				]
+			);
+			$this->add_control(
+				'constant_contact_get_custom_fields',
+				[
+					'type' => \Elementor\Controls_Manager::RAW_HTML,
+					'raw' => __( '<button data-pafe-constant-contact-get-tag-name class="pafe-admin-button-ajax elementor-button elementor-button-default" type="button">Get Custom Fields&ensp;<i class="fas fa-spinner fa-spin"></i></button><div id="pafe-constant-contact-tag-name"></div>', 'pafe' ),
+				]
+			);
+			$this->add_control(
+				'constant_contact_acceptance_field',
+				[
+					'label' => __( 'Acceptance Field?', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::SWITCHER,
+					'label_on' => __( 'Yes', 'pafe' ),
+					'label_off' => __( 'No', 'pafe' ),
+					'return_value' => 'yes',
+					'default' => '',
+				]
+			);
+			$this->add_control(
+				'constant_contact_acceptance_field_shortcode',
+				[
+					'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( '', 'pafe' ),
+					'placeholder' => __( 'Enter your shortcode here', 'pafe' ),
+					'condition' => [
+						'constant_contact_acceptance_field' => 'yes'
+					]
+				]
+			);
+			$repeater = new \Elementor\Repeater();
 
+				$repeater->add_control(
+					'constant_contact_tagname', [
+						'label' => __( 'Tag Name', 'pafe' ),
+						'type' => \Elementor\Controls_Manager::TEXT,
+						'label_block' => true,
+					]
+				);
+
+				$repeater->add_control(
+					'constant_contact_shortcode', [
+						'label' => __( 'Field Shortcode', 'pafe' ),
+						'type' => \Elementor\Controls_Manager::TEXT,
+						'label_block' => true,
+					]
+				);
+
+				$this->add_control(
+					'constant_contact_fields_map',
+					[
+						'label' => __( 'Fields Mapping', 'pafe' ),
+						'type' => \Elementor\Controls_Manager::REPEATER,
+						'fields' => $repeater->get_controls(),
+						'default' => [
+							[
+								'constant_contact_tagname' => __( 'email_address', 'pafe' ),
+							],
+						],
+						'title_field' => '{{{ constant_contact_tagname }}} --- {{{ constant_contact_shortcode }}}',
+					]
+				);
+			}
+		$this->end_controls_section();
 		// Add Sendy Integration
 		$this->start_controls_section(
 			'section_sendy',
@@ -6495,8 +6618,10 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				}
 
 				if ( ! empty( $settings['form_id'] ) ) {
+					$submit_keyboard = !empty($settings['enter_submit_form']) ? 'true' : 'false';
 					$this->add_render_attribute( 'button', 'data-pafe-form-builder-nav-form-id', $settings['form_id'] );
 					$this->add_render_attribute( 'button-submit', 'data-pafe-form-builder-submit-form-id', $settings['form_id'] );
+					$this->add_render_attribute( 'button-submit', 'data-pafe-submit-keyboard', $submit_keyboard );
 				}
 
 				if ( !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-site-key')) && !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-secret-key')) && !empty($settings['pafe_recaptcha_enable']) ) {

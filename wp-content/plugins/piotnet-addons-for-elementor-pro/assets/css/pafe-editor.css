@@ -148,3 +148,11 @@ button.elementor-button.elementor-button-default.piotnet-button-mailpoet-get-fie
   font-weight: 600;
   margin-bottom: 10px;
 }
+.piotnet-constant-contact-item, .piotnet-constant-contact-list-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.piotnet-constant-contact-list-item:first-child{
+  margin-top: 10px;
+}
