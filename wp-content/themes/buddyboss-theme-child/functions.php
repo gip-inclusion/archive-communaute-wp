@@ -51,10 +51,3 @@ function custom_register_nav_menu(){
   ) );
 }
 add_action( 'after_setup_theme', 'custom_register_nav_menu', 0 );
-
-
-// Change date format to dd/mm/yyyy in elementor 
-add_filter( 'elementor/datepicker/format', function() { return 'd/m/Y'; } );
-
-// Use 24h format on time input
-add_filter( 'elementor/datepicker/24h', '__return_true' );
