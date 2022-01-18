@@ -1,16 +1,23 @@
 # Journal des modifications
 
+## [06] - 2022-01-17
+### Ajouté / Corrigé
+
+### Modifié
+
+
+
 ## [05] - 2022-01-03
 ### Ajouté / Corrigé
 - Correction d'une zone de texte mal encodée (/) dans le formulaire d'ajout d'événement
 - Correction de traduction dans les templates d'email de BuddyBoss
-- Correction du nom d'expediteur des emails 
+- Correction du nom d'expediteur des emails
+- Amélioration de l'affichage du mail envoyé au support (via config dans Pionet)
 
 ### Modifié
 - Synchronisation des bases de données (prod -> le staging / local)
 - Mise à jour du core WP
 - Mise a jour de nombreux plugins WP (buddyboss, elementor, events calendar, betterdocs, migrate db, etc)
-
 
 
 ## [04] - 2021-12-06
