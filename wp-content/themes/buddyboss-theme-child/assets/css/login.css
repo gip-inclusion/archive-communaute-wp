@@ -6,3 +6,7 @@ div#login form#loginform p.forgetmenot label {
 	padding-left: 30px;
 }
 
+b,
+strong {
+  font-weight: bold;
+}
