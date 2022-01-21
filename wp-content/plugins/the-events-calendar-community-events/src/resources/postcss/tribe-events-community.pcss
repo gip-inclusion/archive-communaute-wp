@@ -1251,6 +1251,19 @@ a.tribe-change-timezone {
 	}
 }
 
+/*
+	Select2 bug fix
+	Fixes an issue where the wp-admin bar was adding padding to the HTML tag. This code offsets that so select2 containers display properly.
+	Based off of https://gist.github.com/tripflex/7f4a10fb27c7e8c95c86010f93ac250b
+*/
+.admin-bar.tribe_community_edit > span.select2-container {
+	padding-top: 32px !important;
+
+	@media screen and (max-width: 782px) {
+		padding-top: 46px !important;
+	}
+}
+
 /* -------------------------------------------------------------------------
 * Theme Overrides - Twenty twenty
 * ------------------------------------------------------------------------- */

@@ -714,7 +714,7 @@ function tribe_community_events_list_columns() {
 	$venue_label_singular     = tribe_get_venue_label_singular();
 
 	$columns = [
-		'status'     => esc_html__( 'Status', 'tribe-events-community' ),
+		'status'     => esc_html__( 'Publish status', 'tribe-events-community' ),
 		'title'      => esc_html__( 'Title', 'tribe-events-community' ),
 		'organizer'  => $organizer_label_singular,
 		'venue'      => $venue_label_singular,

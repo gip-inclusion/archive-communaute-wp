@@ -4,8 +4,8 @@ Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, ag
 Tags: widget, events, simple, tooltips, grid, month, list, calendar, event, venue, community, registration, api, dates, date, plugin, posts, sidebar, template, theme, time, google maps, google, maps, conference, workshop, concert, meeting, seminar, summit, forum, shortcode, The Events Calendar, The Events Calendar PRO
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Tested up to: 5.8.1
-Stable tag: 4.8.10
+Tested up to: 5.8.3
+Stable tag: 4.8.11
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -162,6 +162,16 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [4.8.11] 2022-01-19 =
+
+* Enhancement - Added support for the Event Status field. [CE-136]
+* Enhancement - Added new filter 'tribe_community_events_event_status_enabled'. [CE-136]
+* Enhancement - Added new action 'tribe_events_community_section_before_event_status' and 'tribe_events_community_section_after_event_status'. [CE-136]
+* Enhancement - Changed `status`  on the upcoming and past events page to display as `Publish Status`. [CE-136]
+* Tweak - Updated the settings description link to use a new user primer. [CE-46]
+* Fix - Select2 alignment when logged into WordPress via the add community event page. [CE-136]
+* Language - 1 new strings added, 73 updated, 0 fuzzied, and 1 obsolete
 
 = [4.8.10] 2021-12-15 =
 

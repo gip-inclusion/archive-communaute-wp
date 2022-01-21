@@ -1163,6 +1163,14 @@ a.tribe-change-timezone:after {
 .tribe-theme-twentyseventeen .tribe-community-events label, .tribe-theme-child-twentyseventeen .tribe-community-events label {
 			font-weight: var(--tec-font-weight-regular);
 		}
+/*
+	Select2 bug fix
+	Fixes an issue where the wp-admin bar was adding padding to the HTML tag. This code offsets that so select2 containers display properly.
+	Based off of https://gist.github.com/tripflex/7f4a10fb27c7e8c95c86010f93ac250b
+*/
+.admin-bar.tribe_community_edit > span.select2-container {
+	padding-top: 32px !important;
+}
 /* -------------------------------------------------------------------------
 * Theme Overrides - Twenty twenty
 * ------------------------------------------------------------------------- */
@@ -1312,6 +1320,9 @@ a.tribe-change-timezone:after {
 .tribe-community-events .tribe-section.tribe-section-cost .cost-input-field {
 					width: 100%
 			}
+.admin-bar.tribe_community_edit > span.select2-container {
+		padding-top: 46px !important
+}
 				}
 @media only screen and (max-width: 568px) {
 	#tribe-event-datepickers td ~ td,
