@@ -66,9 +66,12 @@ Version: 0.1.0
   background-color: #18a47d !important;
 }
 
+
+b,
+strong,
 .activity-content b, 
 .activity-content strong {
-  font-weight: var(--tec-font-weight-bold);
+  font-weight: var(--tec-font-weight-bold) !important;
 }
 
 .el-betterdocs-category-box-post .el-betterdocs-cb-cat-icon {
