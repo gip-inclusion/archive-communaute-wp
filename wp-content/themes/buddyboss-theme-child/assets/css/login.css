@@ -6,8 +6,3 @@ div#login form#loginform p.forgetmenot label {
 	padding-left: 30px;
 }
 
-.login form#loginform label[for="user_login"]::before, 
-.login form#loginform label[for="user_pass"]::before {
-  top: 32px !important;
-	z-index: 1;
-}
