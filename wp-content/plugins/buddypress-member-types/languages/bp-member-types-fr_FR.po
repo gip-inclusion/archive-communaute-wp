@@ -1,0 +1,426 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BuddyPress Member Types\n"
+"Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
+"POT-Creation-Date: 2018-09-11 12:54:28+00:00\n"
+"PO-Revision-Date: 2016-05-01 17:42-0400\n"
+"Last-Translator: jean-pierre michaud <nexialys@yahoo.com>\n"
+"Language-Team: jean-pierre michaud <nexialys@yahoo.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: buddyboss-bmt.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: buddyboss-bmt.php:76
+msgid "Couldn't load main class at:<br/>%s"
+msgstr "Impossible de charger les composantes sur:<br/>%s"
+
+#: buddyboss-bmt.php:80 buddyboss-bmt.php:112
+msgid "<h1>Fatal error:</h1><hr/><pre>%s</pre>"
+msgstr "<h1>Erreur fatale:</h1><hr/><pre>%s</pre>"
+
+#: buddyboss-bmt.php:106
+msgid "Couldn't load BMT_Plugin_Check class at:<br/>%s"
+msgstr "N'a pas pu charger la classe BPCP_Plugin_Check à:<br>%s"
+
+#: includes/admin.php:175 includes/bmt-index-helper.php:58
+msgid "Registration Form"
+msgstr "Formulaire d’inscription"
+
+#: includes/admin.php:176
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+#: includes/admin.php:179
+msgid "Hide from Registration"
+msgstr "Cacher lors de l'enregistrement"
+
+#: includes/admin.php:180
+msgid "Default Member Type"
+msgstr "Type de membre par défaut"
+
+#: includes/admin.php:181
+msgid "Require on Registration"
+msgstr "Exiger lors de l'Inscription"
+
+#: includes/admin.php:183
+msgid "Display Members Loop"
+msgstr "Boucle d'Affichage des Membres"
+
+#: includes/admin.php:195 includes/admin.php:242
+msgid "Options"
+msgstr "Options"
+
+#: includes/admin.php:247
+msgid "Settings updated."
+msgstr "Réglages mis à jour."
+
+#: includes/admin.php:255
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: includes/admin.php:341
+msgid "Remove member type selection from Registration Form."
+msgstr "Supprimer la sélection du type de membre du formulaire d'inscription."
+
+#: includes/admin.php:363
+msgid "Require member type selection in Registration Form."
+msgstr ""
+"Nécessitent la sélection du type de membre dans le formulaire d'inscription."
+
+#: includes/admin.php:394
+msgid "Set default member type in Registration Form."
+msgstr "Type de membre par défaut dans le formulaire d'inscription."
+
+#: includes/admin.php:403
+msgid ""
+"To display all members of the same type on a dedicated page, add the "
+"following shortcode to any WordPress page:"
+msgstr ""
+"Pour afficher tous les membres du même type sur une page dédiée, ajouter le "
+"shortcode suivant à n'importe quelle page de WordPress :"
+
+#: includes/admin.php:404
+#, fuzzy
+msgid "<pre>[members type=\"name\"]</pre>"
+msgstr "<pre>[members type=nom]</pre>"
+
+#: includes/admin.php:405
+msgid ""
+"You will need to change \"name\" to the name of your member type. Some "
+"examples:"
+msgstr ""
+"Vous aurez besoin de « rebaptiser » le nom de votre type de membre. Quelques "
+"exemples :"
+
+#: includes/admin.php:406
+#, fuzzy
+msgid "<pre>[members type=\"teacher\"]</pre>"
+msgstr "<pre>[members type=professeur]</pre>"
+
+#: includes/admin.php:407
+#, fuzzy
+msgid "<pre>[members type=\"student\"]</pre>"
+msgstr "<pre>[members type=etudiant]</pre>"
+
+#: includes/bmt-actions.php:88 includes/bmt-actions.php:90
+#: includes/buddyboss-plugin-updater.php:10
+msgid "BuddyPress Member Types"
+msgstr "Types de Membres BuddyPress"
+
+#: includes/bmt-actions.php:91 includes/bmt-class.php:183
+#: includes/bmt-user-page.php:65
+msgid "Member Type"
+msgstr "Type de Membre"
+
+#: includes/bmt-actions.php:92
+msgid "Member Types"
+msgstr "Types de Membres"
+
+#: includes/bmt-actions.php:93
+msgid "All Member Types"
+msgstr "Tous les Types de membres"
+
+#: includes/bmt-actions.php:94 includes/bmt-actions.php:95
+msgid "New Member Type"
+msgstr "Nouveau Type de Membre"
+
+#: includes/bmt-actions.php:96
+msgid "Edit Member Type"
+msgstr "Editer un Type de Membre"
+
+#: includes/bmt-actions.php:97
+msgid "Search Member Types"
+msgstr "Chercher un Type de Membre"
+
+#: includes/bmt-actions.php:98
+msgid "No Member Types found in trash"
+msgstr "Aucun Type de Membre trouvé dans la poubelle"
+
+#: includes/bmt-actions.php:99
+msgid "No Member Types found"
+msgstr "Aucun type de membres trouvés"
+
+#: includes/bmt-actions.php:116 includes/help-support.php:5
+msgid "Support"
+msgstr "Support"
+
+#: includes/bmt-actions.php:123
+msgid "Import"
+msgstr "Importer"
+
+#: includes/bmt-actions.php:192
+msgid "Please make sure you have selected member type"
+msgstr "Veuillez vous assurer que vous avez sélectionné le Type de membre"
+
+#: includes/bmt-actions.php:292
+msgid "Manage"
+msgstr "Gérer"
+
+#: includes/bmt-actions.php:311
+msgid ""
+"You have {total_users} members with this member type, are you sure you would "
+"like to trash it?"
+msgstr ""
+
+#: includes/bmt-actions.php:312
+msgid ""
+"You have {total_users} members with this member type, are you sure you would "
+"like to delete it?"
+msgstr ""
+
+#: includes/bmt-actions.php:313
+msgid ""
+"You have members with these member types, are you sure you would like to "
+"trash it?"
+msgstr ""
+
+#: includes/bmt-actions.php:314
+msgid ""
+"You have members with these member types, are you sure you would like to "
+"delete it?"
+msgstr ""
+
+#: includes/bmt-actions.php:315
+msgid "Copied"
+msgstr ""
+
+#: includes/bmt-actions.php:316 includes/bmt-add-new.php:150
+msgid "Copy to clipboard"
+msgstr ""
+
+#: includes/bmt-add-new.php:49
+#, fuzzy
+msgid "Member Type Key"
+msgstr "Type de Membre"
+
+#: includes/bmt-add-new.php:50
+msgid "Labels"
+msgstr "Etiquettes"
+
+#: includes/bmt-add-new.php:51
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: includes/bmt-add-new.php:52
+#, fuzzy
+msgid "Shortcode"
+msgstr "Shortcodes"
+
+#: includes/bmt-add-new.php:53
+msgid "WordPress Roles"
+msgstr "Rôles de WordPress"
+
+#: includes/bmt-add-new.php:68
+msgid ""
+"Member Type Keys are used as internal identifiers. Lowercase alphanumeric "
+"characters, dashes and underscores are allowed"
+msgstr ""
+
+#: includes/bmt-add-new.php:86
+msgid "Plural Label"
+msgstr "Etiquette au pluriel"
+
+#: includes/bmt-add-new.php:88
+msgid "e.g. Students"
+msgstr "ex: Etudiants"
+
+#: includes/bmt-add-new.php:92
+msgid "Singular Label"
+msgstr "Etiquette au singulier"
+
+#: includes/bmt-add-new.php:94
+msgid "e.g. Student"
+msgstr "ex: Etudiant"
+
+#: includes/bmt-add-new.php:122
+msgid "Display tab in Members Directory"
+msgstr "Afficher l'onglet dans le répertoire des membres"
+
+#: includes/bmt-add-new.php:129
+msgid "Hide completely from Members Directory"
+msgstr "Masquer complètement du répertoire des membres"
+
+#: includes/bmt-add-new.php:153
+#, fuzzy
+msgid ""
+"To display all members of the %s type on a dedicated page, add the above "
+"shortcode to any WordPress page"
+msgstr ""
+"Pour afficher tous les membres du même type sur une page dédiée, ajouter le "
+"shortcode suivant à n'importe quelle page de WordPress :"
+
+#: includes/bmt-add-new.php:180
+msgid ""
+"Choose WP roles to be auto-assigned to this member type (includes existing "
+"users)."
+msgstr ""
+"Choisissez les rôles WP à être assignés automatiquement à ce Type de membre "
+"(inclus les utilisateurs existants)."
+
+#: includes/bmt-add-new.php:189
+msgid "None"
+msgstr ""
+
+#: includes/bmt-add-new.php:302 includes/bmt-add-new.php:304
+msgid "Member type updated."
+msgstr "Type de membre mis à jour."
+
+#: includes/bmt-add-new.php:306
+msgid "Member type published. "
+msgstr "Type de Membre publié."
+
+#: includes/bmt-add-new.php:308
+msgid "Member type  saved."
+msgstr "Type de Membre sauvegardé."
+
+#: includes/bmt-class.php:27
+msgid "BMT"
+msgstr "BMT"
+
+#: includes/bmt-import.php:5
+msgid "Import Member Types"
+msgstr "Importer les Types de membres"
+
+#: includes/bmt-import.php:6
+msgid ""
+"Import your existing member types, that were created <strong>Manually with "
+"Code</strong> or from another <strong>Plugin</strong> ( needs to be active )"
+msgstr ""
+"Importer vos types de membres existants, qui ont été créés "
+"<strong>manuellement avec le Code</strong> ou d'un autre <strong>Plugin</"
+"strong> (doit être actif)"
+
+#: includes/bmt-import.php:33
+msgid "Nothing to import"
+msgstr "Rien à importer"
+
+#: includes/bmt-import.php:57
+msgid "Successfully Imported"
+msgstr "importé avec succès"
+
+#: includes/bmt-index-helper.php:55
+msgid "Label"
+msgstr "Etiquette"
+
+#: includes/bmt-index-helper.php:56
+msgid "Type"
+msgstr "Type"
+
+#: includes/bmt-index-helper.php:57
+msgid "Members Directory"
+msgstr "Répertoire de Membres"
+
+#: includes/bmt-index-helper.php:59
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: includes/bmt-index-helper.php:88 includes/bmt-index-helper.php:97
+msgid "Display"
+msgstr "Affichage"
+
+#: includes/bmt-index-helper.php:90 includes/bmt-index-helper.php:99
+msgid "Hide"
+msgstr "Masquer"
+
+#: includes/bmt-user-page.php:110 includes/bmt-user-page.php:112
+msgid "Change member type to&hellip;"
+msgstr "Changer le type de membre pour&hellip;"
+
+#: includes/bmt-user-page.php:120
+msgid "Change"
+msgstr "Changer"
+
+#: includes/bmt-user-page.php:179
+msgid "Changed member type for %d user(s) to %s. "
+msgstr "A changé de type de membre pour %d utilisateur(s) pour %s."
+
+#: includes/buddyboss-plugin-updater.php:49
+msgid ""
+"To receive updates for BuddyBoss products, please install and activate the "
+"plugin %s"
+msgstr ""
+
+#: includes/help-support.php:7
+msgid "Here is a video tutorial to get you started:"
+msgstr "Voici un tutoriel vidéo pour vous aider à démarrer:"
+
+#: includes/help-support.php:15
+msgid "To assign a member type to a user"
+msgstr "Pour assigner un type de membre à un usager"
+
+#: includes/help-support.php:18
+msgid "Assign desired member type in their Extended Profile tab"
+msgstr "Assigner le type de membre désiré dans leur onglet de Profil Etendu"
+
+#: includes/help-support.php:26
+msgid "Frequently Asked Questions"
+msgstr "Foire aux questions"
+
+#: includes/help-support.php:27
+msgid "How to Update"
+msgstr "Comment mettre à jour"
+
+#: includes/main-class.php:208 includes/main-class.php:217
+msgid "Cheatin&#8217; huh?"
+msgstr "On triche, hum?"
+
+#: includes/requirements-class.php:22 includes/requirements-class.php:42
+msgid "Please activate BuddyPress first"
+msgstr "Veuillez d'abord activer BuddyPress"
+
+#~ msgid ""
+#~ "An Unexpected HTTP Error occurred during the API request.</p> <p><a href="
+#~ "\"?\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+#~ msgstr ""
+#~ "Une erreur HTTP inattendue s’est produite lors d’une requête à "
+#~ "l’interface de programmation.</p> <p><a href=\"?\" onclick=\"document."
+#~ "location.reload(); return false;\">Réessayez</a>"
+
+#~ msgid "An unknown error occurred"
+#~ msgstr "Une erreur est survenue"
+
+#~ msgid "Support Forums"
+#~ msgstr "Forums d'aide"
+
+#~ msgid "Display in <a href=\"%s\">Registration Form</a>"
+#~ msgstr "Affichage dans le <a href=\"%s\">formulaire d'inscription</a>"
+
+#~ msgid " <span>%s</span>"
+#~ msgstr " <span>%s</span>"
+
+#~ msgid "bmt-member-type"
+#~ msgstr "bmt-member-type"
+
+#~ msgid ""
+#~ "Navigate to the <a href=\"%s/users.php\" >Users Screen</a> and click the "
+#~ "member"
+#~ msgstr ""
+#~ "Aller à la <a href=\"%s/users.php\" >Page des Usagers</a> et sélectionnez "
+#~ "un membre"
+
+#~ msgid "http://www.buddyboss.com"
+#~ msgstr "http://www.buddyboss.com"
+
+#~ msgid ""
+#~ "Easily create and manage member types without having to write a single "
+#~ "line of code."
+#~ msgstr ""
+#~ "Facilement créer et gérer des types de membres sans avoir à écrire une "
+#~ "seule ligne de code."
+
+#~ msgid "BuddyBoss"
+#~ msgstr "BuddyBoss"
+
+#~ msgid "http://buddyboss.com"
+#~ msgstr "http://buddyboss.com"
