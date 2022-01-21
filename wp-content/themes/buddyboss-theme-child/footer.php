@@ -29,9 +29,15 @@
 
 <?php wp_footer(); ?>
 
-<div class="social-sharer">
-  <?php // echo do_shortcode('[Sassy_Social_Share]') ?>
-</div>
+
+<?php 
+if( function_exists('heateor_sss_run') ) {
+  echo '<div class="social-sharer">';
+  echo do_shortcode('[Sassy_Social_Share]');
+  echo '</div>';
+}
+?>
+
 
 <!-- Matomo -->
 <script>
