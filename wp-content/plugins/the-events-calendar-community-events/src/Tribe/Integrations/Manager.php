@@ -41,6 +41,7 @@ class Tribe__Events__Community__Integrations__Manager {
 		$this->load_wp_edit_integration();
 		$this->load_divi_integration();
 		$this->load_virtual_events_integration();
+		$this->load_event_status();
 	}
 
 	/**
@@ -80,7 +81,7 @@ class Tribe__Events__Community__Integrations__Manager {
 	/**
 	 * Loads our Virtual Events compatibility layer when required.
 	 *
-	 * @since4.8.0
+	 * @since 4.8.0
 	 *
 	 * @return bool
 	 */
@@ -110,6 +111,36 @@ class Tribe__Events__Community__Integrations__Manager {
 		}
 
 		tribe( 'community.integrations.virtual-events' );
+
+		return true;
+	}
+	/**
+	 * Loads our Event Status compatibility layer when required.
+	 *
+	 * @since 4.8.11
+	 *
+	 * @return bool
+	 */
+	protected function load_event_status() {
+		// Check if Event Status is activated.
+		if ( ! class_exists( 'Tribe\Events\Event_Status\Classic_Editor' ) ) {
+			return false;
+		}
+
+		/**
+		 * Allow filtering whether to enable the Event Status integration.
+		 *
+		 * @since 4.8.11
+		 *
+		 * @param boolean $integration_enabled Whether to enable the Event Status integration, default is true.
+		 */
+		$integration_enabled = apply_filters( 'tribe_community_events_event_status_enabled', true );
+
+		// Only load the integration if enabled.
+		if ( false === $integration_enabled ) {
+			return false;
+		}
+		tribe( Tribe\Events\Community\Integrations\Event_Status::class );
 
 		return true;
 	}

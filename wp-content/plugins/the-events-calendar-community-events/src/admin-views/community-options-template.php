@@ -105,8 +105,7 @@ $info_fields = [
 		'html' =>
 			sprintf(
 				__( '<p>Community Events enables users to submit events through a form on your site. Whether soliciting contributions from anonymous users or registered members, you have complete editorial control over what makes it onto the calendar.</p><p>Check out our <a href="%s">Community Events New User Primer</a> for information on configuring and using the plugin.', 'tribe-events-community' ),
-				( ! empty( Tribe__Events__Main::$tecUrl ) ? Tribe__Events__Main::$tecUrl : Tribe__Events__Main::$tribeUrl ) . 'knowledgebase/new-user-primer-community-events/?utm_campaign=in-app&utm_medium=plugin-community&utm_source=communitytab'
-			),
+				  'https://evnt.is/cestart/?utm_campaign=in-app&utm_medium=plugin-community&utm_source=communitytab')
 	],
 	'info-end'             => [
 		'html' => '</div>',
