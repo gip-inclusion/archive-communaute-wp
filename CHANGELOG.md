@@ -1,10 +1,22 @@
 # Journal des modifications
 
-## [06] - 2022-01-17
+## [07] - 2022-01-31
 ### Ajouté / Corrigé
 
 ### Modifié
 
+
+## [06] - 2022-01-17
+### Ajouté / Corrigé
+- Mise à jour du core WP
+- Mise à jour de nombreux plugins WP (buddyboss, elementor, elementKit, events calendar, etc)
+- Ajout des plugins members et buddypress-member-types
+- Mise à jour des traductions elementor & wp-statistics
+
+### Modifié
+- Ajout d'une condition d'affichage pour le sassy social plugin
+- Ajout de la localisation de la date dans Elementor
+- Fix css bold dans le contenu des articles
 
 
 ## [05] - 2022-01-03
