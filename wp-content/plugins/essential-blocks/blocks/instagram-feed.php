@@ -19,38 +19,13 @@ function instagram_feed_block_init()
   if (!function_exists('register_block_type')) {
     return;
   }
-  $dir = dirname(__FILE__);
-
-  $index_js = 'instagram-feed/index.js';
-  wp_register_script(
-    'instagram-feed-block-editor',
-    plugins_url($index_js, __FILE__),
-    array(
-      // 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-    ),
-    filemtime($dir . "/" . $index_js)
-  );
-
-
-  /* Common Styles */
-  wp_register_style(
-    'instagram-feed-block-style',
-    ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/instagram-feed/style.css',
-    array(),
-    filemtime(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/instagram-feed/style.css')
-  );
 
   // isotope
   wp_register_script(
     'essential-blocks-isotope',
     ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/js/isotope.pkgd.min.js',
     array(),
-    filemtime(ESSENTIAL_BLOCKS_DIR_PATH . 'assets/js/isotope.pkgd.min.js'),
+    ESSENTIAL_BLOCKS_VERSION,
     true
   );
 
@@ -59,26 +34,28 @@ function instagram_feed_block_init()
     'essential-blocks-image-loaded',
     ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/js/images-loaded.min.js',
     array(),
-    filemtime(ESSENTIAL_BLOCKS_DIR_PATH . 'assets/js/images-loaded.min.js'),
+    ESSENTIAL_BLOCKS_VERSION,
     true
   );
-  // eb-instagram js
-  $eb_instagram_js = "instagram-feed/assets/js/eb-instagram.js";
+
+  // frontend js
+  $frontend_js = 'instagram-feed/frontend/index.js';
   wp_register_script(
     'essential-blocks-instagram-feed-block-script',
-    plugins_url($eb_instagram_js, __FILE__),
+    plugins_url($frontend_js, __FILE__),
     array(
       'essential-blocks-isotope',
       'essential-blocks-image-loaded',
     ),
-    filemtime($dir . "/" . $eb_instagram_js)
+    EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/instagram-feed/frontend/index.js'),
+    true
   );
 
   register_block_type(
-    $dir . "/instagram-feed",
+    EssentialBlocks::get_block_register_path("instagram-feed"),
     array(
-      'editor_script' => 'instagram-feed-block-editor',
-      'editor_style'  => 'instagram-feed-block-style',
+      'editor_script' => 'essential-blocks-editor-script',
+      'editor_style'  => 'essential-blocks-frontend-style',
       'render_callback' => 'essential_blocks_instagram_render_callback',
       'attributes' => array(
         'blockId' => array(

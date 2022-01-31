@@ -13,50 +13,30 @@
  *
  * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
-function flipbox_block_init() {
+function flipbox_block_init()
+{
 	// Skip block registration if Gutenberg is not enabled/merged.
-	if ( ! function_exists( 'register_block_type' ) ) {
+	if (!function_exists('register_block_type')) {
 		return;
 	}
-	$dir = dirname( __FILE__ );
 
-	$index_js = 'flipbox/index.js';
-	wp_register_script(
-		'flipbox-block-editor',
-		plugins_url( $index_js, __FILE__ ),
+	register_block_type(
+		EssentialBlocks::get_block_register_path("flipbox"),
 		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime( $dir . "/" . $index_js)
-	);
-
-	/* Common Styles */
-	wp_register_style(
-		'flipbox-block-style',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/flipbox/style.css',
-		array(),
-		ESSENTIAL_BLOCKS_VERSION
-	);
-
-	register_block_type( $dir . "/flipbox", array(
-		'editor_script' => 'flipbox-block-editor',
-		'editor_style'  => 'flipbox-block-style',
-		'render_callback' => function( $attributes, $content ) {
-			if( !is_admin() ) {
-				wp_enqueue_style('flipbox-block-style');
-				wp_enqueue_style(
-					'eb-fontawesome-frontend',
-					plugins_url('assets/css/font-awesome5.css', dirname(__FILE__)),
-					array()
-				);
+			'editor_script' => 'essential-blocks-editor-script',
+			'editor_style'  => 'essential-blocks-frontend-style',
+			'render_callback' => function ($attributes, $content) {
+				if (!is_admin()) {
+					wp_enqueue_style('essential-blocks-frontend-style');
+					wp_enqueue_style(
+						'eb-fontawesome-frontend',
+						plugins_url('assets/css/font-awesome5.css', dirname(__FILE__)),
+						array()
+					);
+				}
+				return $content;
 			}
-		  	return $content;
-	  	}
-	) );
+		)
+	);
 }
-add_action( 'init', 'flipbox_block_init' );
+add_action('init', 'flipbox_block_init');

@@ -2162,6 +2162,7 @@ body.toplevel_page_betterdocs-admin.betterdocs-dark-mode .betterdocs-single-list
 }
 body.toplevel_page_betterdocs-admin.betterdocs-dark-mode .betterdocs-single-listing li .betterdocs-single-list-content {
     background-color: #36405a;
+    color: #c6c8d0;
     box-shadow: 0 1px 3px rgba(16, 22, 37, .5);
 }
 body.toplevel_page_betterdocs-admin.betterdocs-dark-mode .betterdocs-single-listing li a {

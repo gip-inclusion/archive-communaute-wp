@@ -6897,9 +6897,12 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		<?php endif; ?>
 
 		<?php if( !empty($settings['paypal_enable']) && isset($settings['form_id'])) : ?>
+			<?php
+				$paypal_button_class = is_admin() ? ' pafe-paypal-admin' : '';
+			?>
 			<div class="pafe-form-builder-paypal">
 				<!-- Set up a container element for the button -->
-			    <div id="pafe-paypal-button-container-<?php echo $settings['form_id']; ?>"></div>
+			    <div class="pafe-paypal-button<?php echo $paypal_button_class; ?>" id="pafe-paypal-button-container-<?php echo $settings['form_id']; ?>"></div>
 		    </div>
 
             <?php

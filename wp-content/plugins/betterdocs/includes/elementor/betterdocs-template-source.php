@@ -16,8 +16,8 @@ if ( !defined( 'ABSPATH' ) ) {
 class BetterDocs_Template_Source extends Elementor\TemplateLibrary\Source_Base {
 
     protected $template_prefix = 'betterdocs_';
-    protected $cloud_url = 'https://betterdocs.co/wp-json/bd_cloud/v1/';
-    // protected $cloud_url = 'http://betterdocs.test/wp-json/bd_cloud/v1/';
+    //protected $cloud_url = 'https://betterdocs.co/wp-json/bd_cloud/v1/';
+    protected $cloud_url = 'http://betterdocs.test/wp-json/bd_cloud/v1/';
 
     public function get_prefix() {
         return $this->template_prefix;

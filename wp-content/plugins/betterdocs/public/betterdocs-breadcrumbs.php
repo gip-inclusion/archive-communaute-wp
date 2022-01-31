@@ -60,17 +60,16 @@ function betterdocs_breadcrumbs()
     $builtin_doc_page = BetterDocs_DB::get_settings('builtin_doc_page');
     $docs_page = BetterDocs_DB::get_settings('docs_page');
     $taxanomy = BetterDocs_Helper::get_tax();
-
     // Settings
     $delimiter = '<span class="icon-container"><svg class="breadcrumb-delimiter-icon svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></span>';
 
     // Get Docs page
     $post_type = get_post_type();
-
+   
     if ($post_type != 'post' && $builtin_doc_page == 1) {
         $post_type_object = get_post_type_object($post_type);
         $post_type_archive = get_post_type_archive_link($post_type);
-        $docs_page = '<li class="betterdocs-breadcrumb-item item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
+        $docs_page = '<li class="betterdocs-breadcrumb-item item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . stripslashes($post_type_object->labels->name) . '</a></li>';
     } elseif ($docs_page) {
         $docs_page_url = get_page_link($docs_page);
         $docs_page_title = get_the_title($docs_page);
@@ -85,9 +84,9 @@ function betterdocs_breadcrumbs()
         echo '<nav id="betterdocs-breadcrumb" class="betterdocs-breadcrumb">';
         // Build the breadcrums
         echo '<ul class="betterdocs-breadcrumb-list">';
-
+        
         // Home page
-        echo '<li class="betterdocs-breadcrumb-item item-home"><a class="bread-link bread-home" href="' . esc_url($home_url) . '" title="' . $home_text . '">' . $home_text . '</a></li>';
+        echo '<li class="betterdocs-breadcrumb-item item-home"><a class="bread-link bread-home" href="' . esc_url($home_url) . '" title="' . stripslashes($home_text) . '">' . stripslashes($home_text) . '</a></li>';
 
         if ($taxanomy == 'doc_category' || is_tax('doc_tag')) {
             // docs page  
@@ -102,7 +101,6 @@ function betterdocs_breadcrumbs()
                 $query_obj = get_queried_object();
                 $term_id   = $query_obj->term_id;
                 $archive_html = betterdocs_get_term_parents_list($term_id, 'doc_category', $delimiter);
-
                 echo apply_filters('betterdocs_breadcrumb_archive_html', $archive_html, $delimiter);
             }
         } else if (is_single()) {

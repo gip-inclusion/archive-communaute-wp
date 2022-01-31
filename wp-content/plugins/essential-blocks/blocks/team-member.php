@@ -19,37 +19,27 @@ function team_member_block_init()
 	if (!function_exists('register_block_type')) {
 		return;
 	}
-	$dir = dirname(__FILE__);
 
-	$index_js = 'team-member/index.js';
-	wp_register_script(
-		'team-member-block-editor',
-		plugins_url($index_js, __FILE__),
+	register_block_type(
+		EssentialBlocks::get_block_register_path("team-member"),
 		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime($dir . "/" . $index_js)
-	);
-
-	register_block_type($dir . "/team-member", array(
-		'editor_script' => 'team-member-block-editor',
+		'editor_script' => 'essential-blocks-editor-script',
 		'render_callback' => function ($attributes, $content) {
 			if (!is_admin()) {
 				wp_enqueue_style(
 					'eb-fontawesome-frontend',
 					plugins_url('assets/css/font-awesome5.css', dirname(__FILE__)),
-					array()
+					array(),
+					ESSENTIAL_BLOCKS_VERSION,
+					'all'
 				);
 
 				wp_enqueue_style(
 					'essential-blocks-hover-css',
 					plugins_url('assets/css/hover-min.css', dirname(__FILE__)),
-					array()
+					array(),
+					ESSENTIAL_BLOCKS_VERSION,
+					'all'
 				);
 			}
 			return $content;

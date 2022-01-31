@@ -349,5 +349,9 @@ body:not(.elementor-editor-active) .elementor-field-type-select_autocomplete .el
     display: block;
     width: 100%;
 }
+.pafe-paypal-button.pafe-paypal-admin{
+  padding: 20px;
+  background-color: #dedede;
+}
 
 

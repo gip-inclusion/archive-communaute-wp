@@ -10,6 +10,8 @@
  * @subpackage BetterDocs/public
  */
 
+use WPML\FP\Str;
+
 /**
  * Get terms post count including child terms
  */
@@ -88,7 +90,7 @@ function betterdocs_category_grid($atts, $content = null)
 	$nested_subcategory_check = ( $get_args['nested_subcategory'] == 'true' || $get_args['nested_subcategory'] == '' ) ? true : false;
     $nested_subcategory       = ( $nested_subcategory == 1 && $nested_subcategory_check  != false ) || ($nested_subcategory_check  == true && $nested_subcategory  == 1);
     $masonry = ($masonry_layout == 1 && $masonry_check   == '') || ($masonry_check == true && $masonry_check != "false");
-	$taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['kb_slug'], $nested_subcategory);
+	$taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['orderby'], $get_args['kb_slug'], $nested_subcategory);
     if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) {
 		$class = ['betterdocs-categories-wrap category-grid white-bg'];
 		if (!is_singular('docs') && !is_tax('doc_category') && !is_tax('doc_tag')) {
@@ -161,9 +163,9 @@ function betterdocs_category_grid($atts, $content = null)
 
 					if ($cat_icon_id) {
 						$cat_icon_url = wp_get_attachment_image_url($cat_icon_id, 'thumbnail');
-						$cat_icon = '<img class="docs-cat-icon" src="' . $cat_icon_url . '" alt="">';
+						$cat_icon = '<img class="docs-cat-icon" src="' . $cat_icon_url . '" alt="'.$term->name.'">';
 					} else {
-						$cat_icon = '<img class="docs-cat-icon" src="' . BETTERDOCS_ADMIN_URL . 'assets/img/betterdocs-cat-icon.svg" alt="">';
+						$cat_icon = '<img class="docs-cat-icon" src="' . BETTERDOCS_ADMIN_URL . 'assets/img/betterdocs-cat-icon.svg" alt="'.$term->name.'">';
 					}
 
 					if ($post_icon_check == false) {
@@ -231,7 +233,7 @@ function betterdocs_category_grid($atts, $content = null)
 							if ($get_args['posts_per_grid'] == '-1' || $posts_number == '-1') {
 								echo '';
 							} else if ($exploremore_btn == 1 && !is_singular('docs') && BetterDocs_Helper::get_tax() != 'doc_category' && !is_tax('doc_tag')) {
-								echo '<a class="docs-cat-link-btn" href="' . $term_permalink . '">' . esc_html($exploremore_btn_txt) . '</a>';
+								echo '<a class="docs-cat-link-btn" href="' . $term_permalink . '">' . esc_html(stripslashes($exploremore_btn_txt)) . '</a>';
 							}
 						echo '</div>
 					</div>';
@@ -374,7 +376,7 @@ function betterdocs_category_grid($atts, $content = null)
 		);
 
         $nested_subcategory = ($nested_subcategory == 1 && $get_args['nested_subcategory'] == '') || ($get_args['nested_subcategory'] == true && $get_args['nested_subcategory'] != "false");
-		$taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['kb_slug'], $nested_subcategory);
+		$taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['orderby'], $get_args['kb_slug'], $nested_subcategory);
 
 		if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) : ?>
 		<div class="betterdocs-categories-wrap category-list">
@@ -506,7 +508,7 @@ function betterdocs_category_grid($atts, $content = null)
 		);
 
         $nested_subcategory = ($nested_subcategory == 1 && $get_args['nested_subcategory'] == '') || ($get_args['nested_subcategory'] == true && $get_args['nested_subcategory'] != "false");
-        $taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['kb_slug'], $nested_subcategory);
+        $taxonomy_objects = BetterDocs_Helper::taxonomy_object($get_args['multiple_knowledge_base'], $get_args['terms'], $get_args['orderby'], $get_args['kb_slug'], $nested_subcategory);
 
 		if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) :
 			$class = ['betterdocs-categories-wrap betterdocs-category-box layout-2 ash-bg'];
@@ -707,7 +709,7 @@ function betterdocs_get_search_result() {
 			$output .= '<li>' . $icon . '<a href="' . get_permalink() . '"><span class="betterdocs-search-title">' . get_the_title() . '</span><br><span class="betterdocs-search-category">' . $all_terms . '</span></a></li>';
 		endwhile;
 	else :
-		$output .= '<li>' . BetterDocs_DB::get_settings('search_not_found_text') . '</li>';
+		$output .= '<li>' . stripslashes(BetterDocs_DB::get_settings('search_not_found_text')) . '</li>';
 	endif;
 	$output .= '</ul></div>';
     $response[ 'post_lists' ] = $output;
@@ -815,9 +817,9 @@ function betterdocs_feedback_form_submit()
 	check_ajax_referer( 'betterdocs_submit_data', 'security' );
 	$postID = isset($_POST['postID']) ? $_POST['postID'] : '';
 	$article = get_the_title($postID);
-	$name = isset($_POST['message_name']) ? sanitize_text_field($_POST['message_name']) : '';
-	$email = isset($_POST['message_email']) ? sanitize_email($_POST['message_email']) : '';
-	$message_text = isset($_POST['message_text']) ? sanitize_textarea_field($_POST['message_text']) : '';
+	$name = isset($_POST['message_name']) ? sanitize_text_field(stripslashes($_POST['message_name'])) : '';
+	$email = isset($_POST['message_email']) ? sanitize_email(stripslashes($_POST['message_email'])) : '';
+	$message_text = isset($_POST['message_text']) ? sanitize_textarea_field(stripslashes($_POST['message_text'])) : '';
 	$message = <<<EOD
 	Name : {$name} <br>
 	Docs : {$article}
