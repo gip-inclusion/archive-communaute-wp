@@ -2710,14 +2710,15 @@ div.bbp-submit-wrapper .button.submit {
 
 .medium-editor-element blockquote:not(.wp-embedded-content),
 .bs-forum-content blockquote:not(.wp-embedded-content) {
-  background: #e3e6ea;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 12px;
   font-size: 22px;
   letter-spacing: -0.24px;
   line-height: 30px;
   position: relative;
   margin: 0 0 15px 0;
+  background: #fafafa;
+  border: 1px solid #E7E9EC;
 }
 .medium-editor-element blockquote:not(.wp-embedded-content):before,
 .bs-forum-content blockquote:not(.wp-embedded-content):before {
@@ -2728,12 +2729,13 @@ div.bbp-submit-wrapper .button.submit {
   display: block;
   text-align: center;
   font-variant: normal;
-  color: #fff;
-  width: 28px;
-  height: 28px;
-  font-size: 20px;
-  line-height: 28px;
-  background: #7F868F;
+  color: #92949d;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  line-height: 30px;
+  background: #e2e1e0;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 100%;
   margin-bottom: 10px;
 }

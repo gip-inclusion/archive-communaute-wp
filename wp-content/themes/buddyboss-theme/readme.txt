@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.3
-Version: 1.8.3
+Version: 1.8.4.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,9 +19,20 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 
 == Changelog ==
 
+= 1.8.4.1 =
+* Login - Fixed login and forgot password critical font family issue
+
+= 1.8.4 =
+* Activity - Significantly enhanced activity form interface with modal layout
+* Activity - Improved activity form post visibility, post in group, and formatting options
+* Theme Options - Moved Profile and Group Default Cover Image option to 'BuddyBoss Platform'
+* Login - Fixed bug to load custom font on the login page
+* WooCommerce - Fixed missing save card information checkbox issue on the checkout page
+* Compatibility - Updated Redux framework to 4.3.1 to fix customizer issues
+
 = 1.8.3 =
 * Login - Fixed translation issue on the Login page for certain language setup
-* LearnDash - Fixed forum discussion scrubber text based on pagination status
+* Forums - Fixed forum discussion scrubber text based on pagination status
 * LearnDash - Fixed lesson video progression layout issue
 
 = 1.8.2 =
