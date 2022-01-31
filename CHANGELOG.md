@@ -2,9 +2,14 @@
 
 ## [07] - 2022-01-31
 ### Ajouté / Corrigé
+- Ajout des traductions Française manquantes à la dernière version de BuddyBoss
 
 ### Modifié
-
+- Synchronisation des bases de données (prod -> le staging / local)
+- Mise à jour du core WP
+- Mise à jour de nombreux plugins WP (akismet, betterdocs, buddyboss, pionet, essential blocks)
+- Mise à jour du theme Buddyboss
+- Mise à jour des traductions
 
 ## [06] - 2022-01-17
 ### Ajouté / Corrigé
