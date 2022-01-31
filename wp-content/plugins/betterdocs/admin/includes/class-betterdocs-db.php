@@ -18,6 +18,7 @@ class BetterDocs_DB {
             'doc_page' => '',
             'category_slug' => 'docs-category',
             'tag_slug' => 'docs-tag',
+            'disable_root_slug_mkb' => '',
             'live_search' => 1,
             'advance_search' => '',
             'popular_keyword_limit' => 5,
@@ -56,6 +57,7 @@ class BetterDocs_DB {
             'enable_tags' => 1,
             'email_feedback' => 1,
             'feedback_link_text' => esc_html__('Still stuck? How can we help?', 'betterdocs'),
+            'feedback_link' => '',
             'feedback_form_title' => esc_html__('How can we help?', 'betterdocs'),
             'email_address' => get_option('admin_email'),
             'enable_navigation' => 1,
@@ -100,7 +102,7 @@ class BetterDocs_DB {
         if( ! empty( $name ) && ! isset( $settings[ $name ] )  && ! isset( $default[ $name ] ) ) {
             return '';
         }
-
+       
         return is_array( $settings ) ? $settings : [];
     }
     /**

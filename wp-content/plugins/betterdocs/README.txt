@@ -3,9 +3,9 @@ Contributors: wpdevteam, re_enter_rupok, asif2bd, emsohel, priyomukul, manzuraha
 Donate link: https://wpdeveloper.com
 Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, knowledge, table of content, TOC, knowledgebase, faqs, doc page, best documentation plugin, support ticket, customer support, instant answer bot, bot, help articles, better docs
 Requires at least: 4.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -143,7 +143,7 @@ If you like this docs plugin, then consider checking out our other projects:
 [NotificationX](https://wordpress.org/plugins/notificationx/) – Best Social Proof & FOMO Marketing Solution
 [SchedulePress](https://wordpress.org/plugins/wp-scheduled-posts/) – Complete solution for WordPress Post Scheduling to manage schedules through an editorial calendar.
 [EmbedPress](https://wordpress.org/plugins/embedpress/)- Embed videos, images, posts, audio, maps and upload PDF, DOC, PPT & all other types of content into your WordPress site with one-click and showcase it beautifully for the visitors.
-[Templately](https://wordpress.org/plugins/templately/) Ultimate Template clouds with 1600+ ready templates for Elementor & Gutenberg along with FREE cloud collaboration with your team.
+[Templately](https://wordpress.org/plugins/templately/) Ultimate Template clouds with 1800+ ready templates for Elementor & Gutenberg along with FREE cloud collaboration with your team.
 
 
 Visit [WPDeveloper](https://wpdeveloper.com) to learn more about how to do better in WordPress with [Help Tutorial, Tips & Tricks](https://wpdeveloper.com/blog)!
@@ -174,6 +174,11 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.5 - 25/01/2022 = 
+- Fixed: Child pages throwing 404 error when BetterDocs is enabled
+- Fixed: "Share this Article" text not being translatable in different layouts
+- Few minor bug fixes & improvements
 
 = 2.0.4 - 12/01/2022 = 
 - Fixed: Built-in Docs order not working

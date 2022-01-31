@@ -2,8 +2,8 @@
 Contributors: wpdevteam, re_enter_rupok, asif2bd, rahat89, priyomukul, hztyfoon, fencermonir, jamilbd07
 Tags: gutenberg, blocks, editor, gutenberg blocks, visual editor, page builder
 Requires at least: 5.6
-Tested up to: 5.8
-Stable tag: 3.1.1
+Tested up to: 5.9
+Stable tag: 3.2.1
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -69,6 +69,10 @@ We have designed 25+ of the most useful blocks to improve how you use Gutenberg 
 - Counter -  Put spotlight in important statistics to attract visitors.
 - Row - Create complex Row layouts with plenty of styling controls & responsive options.
 - Post grid - Create a stunning and interactive visualization for your blogs in a grid layout with Post Grid block.
+- Table of Content - Insert Table of Contents on your posts/pages and enhance user experience on your WordPress website
+- Featured List - Make your website interactive with feature list
+- Advanced Tab - Display nested tabs to display key information on an instance in an interactive manner
+- Fluent Forms - Design your Forms container, fields and choose preferred form layout to style Fluent Forms
 
 More blocks and demos coming soon (weekly update)
 
@@ -83,6 +87,24 @@ Or rate us on [WordPress](https://wordpress.org/support/plugin/essential-blocks/
 
 
 == Changelog ==
+
+= 3.2.1 - 27/01/2022 =
+- Fixed: Row/Column block error
+- Fixed: Issue from [WordPress.org](https://wordpress.org/support/topic/issue-with-wordpress-5-9-update/)
+
+= 3.2.0 - 26/01/2022 =
+- Added: New Block - Advanced Tab
+- Added: New 3rd party block integration - Fluent Forms
+- Added: Blocks support in Full Site Editing and WordPress@5.9
+- Added: ClassName support
+- Added: Button Alignment option in Infobox Block
+- Added: Pagination option in Post Grid Block
+- Added: Same height column option in Row/Column Block
+- Fixed: Title color issue, read more button background, padding issue, post link issue
+- Fixed: Title spacing issue in Progress bar
+- Fixed: Pricing Table Mobile and Tab css not working issue
+- Fixed: Columns background, border issue in Row/Column block
+- Fixed: Background color conflict issue Countdown Block
 
 = 3.1.1 - 15/12/2021 =
 - Added: ApiVersion 2 enabled for all blocks

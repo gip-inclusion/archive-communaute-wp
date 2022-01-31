@@ -96,9 +96,17 @@ function betterdocs_settings_args(){
                             'default'   => 'docs-tag',
                             'priority'	=> 10
                         ),
+                        'disable_root_slug_mkb' => apply_filters( 'betterdocs_disable_root_slug_mkb_settings', array(
+                            'type'        => 'checkbox',
+                            'label'       => __('Disable Root slug for KB Archives' , 'betterdocs'),
+                            'default'     => '',
+                            'help'        => __('<strong>Note:</strong> if you disable root slug for KB Archives, your individual knowledge base URL will be like this: <b><i>https://example.com/knowledgebase-1</i></b>', 'betterdocs'),
+                            'priority'    => 10,
+                            'disable' => true,
+                        )),
                         'permalink_structure' => array(
                             'type'     => 'text',
-                            'label'    => __( 'Doc Permalink', 'betterdocs' ),
+                            'label'    => __( 'Single Docs Permalink', 'betterdocs' ),
                             'default'  => apply_filters("betterdocs_doc_permalink_default", BetterDocs_Docs_Post_Type::$docs_slug),
                             'priority' => 10,
                             'help'     => betterdocs_permalink_structure_tags(),
@@ -446,6 +454,12 @@ function betterdocs_settings_args(){
                                     'type'      => 'text',
                                     'label'     => __('Feedback Link Text' , 'betterdocs'),
                                     'default'   => esc_html__('Still stuck? How can we help?','betterdocs'),
+                                    'priority'	=> 10
+                                ),
+                                'feedback_url' => array(
+                                    'type'      => 'text',
+                                    'label'     => __('Feedback URL' , 'betterdocs'),
+                                    'default'   => '',
                                     'priority'	=> 10
                                 ),
                                 'feedback_form_title' => array(

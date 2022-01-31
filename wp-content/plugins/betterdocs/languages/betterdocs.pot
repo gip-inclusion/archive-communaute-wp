@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BetterDocs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 06:52+0000\n"
+"POT-Creation-Date: 2022-01-25 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,11 +15,6 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.1; wp-5.3"
 
-#: admin/customizer/controls.php:335 admin/customizer/controls.php:345
-#: admin/customizer/controls.php:355 admin/customizer/controls.php:365
-msgid "%"
-msgstr ""
-
 #: admin/partials/betterdocs-settings-sidebar.php:10
 #, php-format
 msgid "<a rel=\"nofollow\" href=\"%s\" target=\"_blank\">Manage License</a>"
@@ -30,7 +25,7 @@ msgstr ""
 msgid "<a rel=\"nofollow\" href=\"%s\" target=\"_blank\">Upgrade to Pro</a>"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:712
+#: admin/includes/betterdocs-settings-page-helper.php:733
 msgid "<b>Available tags:</b>"
 msgstr ""
 
@@ -40,13 +35,20 @@ msgid ""
 "use shortcode or page builder widgets to design your documentation page."
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:569
+#: admin/includes/betterdocs-settings-page-helper.php:103
+msgid ""
+"<strong>Note:</strong> if you disable root slug for KB Archives, your "
+"individual knowledge base URL will be like this: <b><i>https://example."
+"com/knowledgebase-1</i></b>"
+msgstr ""
+
+#: admin/includes/betterdocs-settings-page-helper.php:590
 msgid ""
 "<strong>You can use:</strong> [betterdocs_category_box column=\"3\" "
 "terms=\"term_ID, term_ID\"]"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:560
+#: admin/includes/betterdocs-settings-page-helper.php:581
 msgid ""
 "<strong>You can use:</strong> [betterdocs_category_grid "
 "post_counter=\"true\" icon=\"true\" masonry=\"true\" column=\"3\" "
@@ -54,7 +56,7 @@ msgid ""
 "kb_slug=\"\"]"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:578
+#: admin/includes/betterdocs-settings-page-helper.php:599
 msgid ""
 "<strong>You can use:</strong> [betterdocs_category_list terms=\"term_ID, "
 "term_ID\"]"
@@ -88,12 +90,12 @@ msgstr ""
 msgid "Active Title Color"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:443
-#: includes/class-betterdocs-docs-post-type.php:522
+#: includes/class-betterdocs-docs-post-type.php:444
+#: includes/class-betterdocs-docs-post-type.php:523
 msgid "Add Image"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:166
+#: includes/class-betterdocs-docs-post-type.php:167
 #: admin/class-betterdocs-admin-screen.php:65
 #: admin/class-betterdocs-admin-screen.php:66
 msgid "Add New"
@@ -103,23 +105,23 @@ msgstr ""
 msgid "Add New Doc"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:182
+#: includes/class-betterdocs-docs-post-type.php:183
 msgid "Add new doc from here"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:167
+#: includes/class-betterdocs-docs-post-type.php:168
 msgid "Add New Docs"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:138
+#: includes/class-betterdocs-docs-post-type.php:139
 msgid "Add New Docs Category"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:223
+#: includes/class-betterdocs-docs-post-type.php:224
 msgid "Add New Tag"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:226
+#: includes/class-betterdocs-docs-post-type.php:227
 msgid "Add or remove tags"
 msgstr ""
 
@@ -131,7 +133,7 @@ msgstr ""
 msgid "Advanced Design"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:585
+#: admin/includes/betterdocs-settings-page-helper.php:606
 msgid "Advanced Settings"
 msgstr ""
 
@@ -170,7 +172,7 @@ msgstr ""
 msgid "All Dates"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:171
+#: includes/class-betterdocs-docs-post-type.php:172
 #: admin/class-betterdocs-admin-screen.php:61
 msgid "All Docs"
 msgstr ""
@@ -183,12 +185,8 @@ msgstr ""
 msgid "All Knowledge Base"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:218
+#: includes/class-betterdocs-docs-post-type.php:219
 msgid "All Tags"
-msgstr ""
-
-#: admin/customizer/controls.php:383
-msgid "Angle"
 msgstr ""
 
 #: admin/customizer/customizer.php:5904
@@ -200,8 +198,8 @@ msgid "Archive Description Margin"
 msgstr ""
 
 #: admin/customizer/customizer.php:5489
-#: admin/includes/betterdocs-settings-page-helper.php:484
-#: admin/includes/betterdocs-settings-page-helper.php:489
+#: admin/includes/betterdocs-settings-page-helper.php:505
+#: admin/includes/betterdocs-settings-page-helper.php:510
 msgid "Archive Page"
 msgstr ""
 
@@ -218,7 +216,7 @@ msgstr ""
 msgid "Area Size"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1452
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1451
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1259
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1408
 msgid "Area Spacing"
@@ -228,35 +226,35 @@ msgstr ""
 msgid "Arrow Color"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:569
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:568
 msgid "Arrow Height"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:679
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:753
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:678
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:752
 msgid "Arrow Margin"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:667
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:741
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:666
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:740
 msgid "Arrow Padding"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:552
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:551
 msgid "Arrow Width"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:556
-#: admin/includes/class-betterdocs-db.php:34
-#: admin/includes/betterdocs-settings-page-helper.php:247
+#: public/betterdocs-shortcodes.php:558
+#: admin/includes/class-betterdocs-db.php:35
+#: admin/includes/betterdocs-settings-page-helper.php:262
 #: includes/gutenberg/blocks/categorybox.php:81
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:226
 msgid "article"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:558
-#: admin/includes/class-betterdocs-db.php:35
-#: admin/includes/betterdocs-settings-page-helper.php:241
+#: public/betterdocs-shortcodes.php:560
+#: admin/includes/class-betterdocs-db.php:36
+#: admin/includes/betterdocs-settings-page-helper.php:256
 #: includes/gutenberg/blocks/categorybox.php:80
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:212
 msgid "articles"
@@ -325,14 +323,14 @@ msgid ""
 msgstr ""
 
 #. Name of the plugin
-#: includes/class-betterdocs-docs-post-type.php:164
+#: includes/class-betterdocs-docs-post-type.php:165
 #: admin/class-betterdocs-admin-screen.php:137
 #: includes/elementor/class-betterdocs-elementor.php:212
 #: includes/elementor/betterdocs-single-docs.php:115
 #: admin/customizer/customizer.php:8070
-#: public/partials/template-single/layout-5.php:208
-#: public/partials/template-single/layout-4.php:208
-#: public/partials/template-single/layout-1.php:219
+#: public/partials/template-single/layout-5.php:167
+#: public/partials/template-single/layout-4.php:167
+#: public/partials/template-single/layout-1.php:174
 msgid "BetterDocs"
 msgstr ""
 
@@ -377,23 +375,23 @@ msgstr ""
 msgid "Blend Mode"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:372
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:467
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:371
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:466
 msgid "Body"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:140
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:391
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:486
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:618
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:720
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:962
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1049
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1420
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1496
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:415
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:474
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:584
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:390
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:485
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:617
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:719
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:961
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1048
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1419
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1495
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:417
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:476
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:586
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:300
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:426
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:609
@@ -447,7 +445,7 @@ msgstr ""
 msgid "Border Bottom Size Hover"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:334
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:336
 msgid "Border Color"
 msgstr ""
 
@@ -456,15 +454,15 @@ msgid "Border Color Hover"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:148
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:399
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:494
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:626
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:728
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:970
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1058
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1428
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1504
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:265
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:398
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:493
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:625
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:727
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:969
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1057
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1427
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1503
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:267
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:308
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:434
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:617
@@ -512,7 +510,7 @@ msgstr ""
 msgid "Bottom Right"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:280
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:279
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:143
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:244
 msgid "Box"
@@ -542,7 +540,7 @@ msgid "Box Margin"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:127
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:300
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:299
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:189
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:270
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:1362
@@ -569,7 +567,7 @@ msgid "Box Shadow Hover"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:115
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:288
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:287
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:177
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:258
 msgid "Box Spacing"
@@ -587,21 +585,21 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:381
+#: admin/includes/betterdocs-settings-page-helper.php:396
 msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:388
+#: admin/includes/betterdocs-settings-page-helper.php:403
 msgid "Breadcrumb Home URL"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1369
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1368
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:309
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1280
 msgid "Button"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1545
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1544
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1524
 msgid "Button Alignment"
 msgstr ""
@@ -646,7 +644,7 @@ msgstr ""
 msgid "Button Padding"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:268
+#: admin/includes/betterdocs-settings-page-helper.php:283
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:71
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:261
 msgid "Button Text"
@@ -656,13 +654,13 @@ msgstr ""
 msgid "Button Text Color"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:140
+#: includes/class-betterdocs-docs-post-type.php:141
 #: admin/class-betterdocs-admin-screen.php:71
 #: admin/class-betterdocs-admin-screen.php:71
 msgid "Categories"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:494
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:496
 msgid "Category"
 msgstr ""
 
@@ -687,7 +685,7 @@ msgstr ""
 msgid "Category Box Hover"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:564
+#: admin/includes/betterdocs-settings-page-helper.php:585
 msgid "Category Box- Layout 2"
 msgstr ""
 
@@ -711,16 +709,16 @@ msgstr ""
 msgid "Category Grid"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:555
+#: admin/includes/betterdocs-settings-page-helper.php:576
 msgid "Category Grid- Layout 1"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:435
+#: includes/class-betterdocs-docs-post-type.php:436
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:1637
 msgid "Category Icon"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:492
+#: includes/class-betterdocs-docs-post-type.php:493
 msgid "Category Id"
 msgstr ""
 
@@ -728,8 +726,8 @@ msgstr ""
 msgid "Category Item Counter"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:573
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1116
+#: admin/includes/betterdocs-settings-page-helper.php:594
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1115
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:130
 msgid "Category List"
 msgstr ""
@@ -762,13 +760,13 @@ msgstr ""
 
 #: admin/customizer/customizer.php:438 admin/customizer/customizer.php:4725
 #: admin/customizer/customizer.php:5926
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:185
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:184
 msgid "Category Title Tag"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-date.php:78
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1528
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1553
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1527
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1552
 #: includes/elementor/widgets/betterdocs-elementor-title.php:110
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:221
 #: includes/elementor/widgets/betterdocs-elementor-content.php:73
@@ -796,7 +794,7 @@ msgstr ""
 msgid "center top"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:227
+#: includes/class-betterdocs-docs-post-type.php:228
 msgid "Choose from the most used tags"
 msgstr ""
 
@@ -804,7 +802,7 @@ msgstr ""
 msgid "Click To Copy!"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:314
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:316
 msgid "Close Icon"
 msgstr ""
 
@@ -824,7 +822,7 @@ msgstr ""
 msgid "Collapsible on small devices"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:333
+#: admin/includes/betterdocs-settings-page-helper.php:348
 msgid "Collapsible TOC on small devices"
 msgstr ""
 
@@ -832,16 +830,16 @@ msgstr ""
 #: admin/customizer/customizer.php:5195
 #: includes/elementor/widgets/betterdocs-elementor-doc-date.php:51
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:178
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:819
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:870
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:941
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1027
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1133
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1191
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1261
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1336
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1396
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1472
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:818
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:869
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:940
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1026
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1132
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1190
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1260
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1335
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1395
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1471
 #: includes/elementor/widgets/betterdocs-elementor-navigation.php:50
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:166
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:209
@@ -853,9 +851,9 @@ msgstr ""
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:215
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:272
 #: includes/elementor/widgets/betterdocs-elementor-breadcrumbs.php:124
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:286
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:323
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:511
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:288
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:325
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:513
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:836
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:869
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:977
@@ -875,22 +873,6 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: admin/customizer/controls.php:331
-msgid "Color 1"
-msgstr ""
-
-#: admin/customizer/controls.php:341
-msgid "Color 2"
-msgstr ""
-
-#: admin/customizer/controls.php:351
-msgid "Color 3"
-msgstr ""
-
-#: admin/customizer/controls.php:361
-msgid "Color 4"
-msgstr ""
-
 #: admin/customizer/customizer.php:517 admin/customizer/customizer.php:538
 msgid "Column Background Color"
 msgstr ""
@@ -907,7 +889,7 @@ msgstr ""
 msgid "Column Padding"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:193
+#: admin/includes/betterdocs-settings-page-helper.php:208
 msgid "Comment Count"
 msgstr ""
 
@@ -947,11 +929,11 @@ msgstr ""
 msgid "Content Area Width"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:326
+#: admin/includes/betterdocs-settings-page-helper.php:341
 msgid "Content Offset"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:329
+#: admin/includes/betterdocs-settings-page-helper.php:344
 msgid "content offset from top on scroll."
 msgstr ""
 
@@ -977,22 +959,22 @@ msgstr ""
 msgid "Copied!"
 msgstr ""
 
-#: public/class-betterdocs-public.php:422
+#: public/class-betterdocs-public.php:423
 msgid "Copy URL"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:917
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:592
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:916
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:594
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:915
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:756
 msgid "Count"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:240
+#: admin/includes/betterdocs-settings-page-helper.php:255
 msgid "Count Text"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:246
+#: admin/includes/betterdocs-settings-page-helper.php:261
 msgid "Count Text Singular"
 msgstr ""
 
@@ -1054,7 +1036,7 @@ msgstr ""
 msgid "Customize"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:521
+#: admin/includes/betterdocs-settings-page-helper.php:542
 msgid "Customize BetterDocs"
 msgstr ""
 
@@ -1066,7 +1048,7 @@ msgstr ""
 msgid "Customize Everything"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:189
+#: admin/includes/betterdocs-settings-page-helper.php:204
 msgid "Date"
 msgstr ""
 
@@ -1093,7 +1075,7 @@ msgstr ""
 msgid "Description Font Size"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:512
+#: admin/includes/betterdocs-settings-page-helper.php:533
 msgid "Design"
 msgstr ""
 
@@ -1101,11 +1083,11 @@ msgstr ""
 msgid "Design your templates and pages with live customizer."
 msgstr ""
 
-#: admin/customizer/controls.php:371
-msgid "Direction"
+#: admin/includes/betterdocs-settings-page-helper.php:101
+msgid "Disable Root slug for KB Archives"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:669
+#: admin/includes/betterdocs-settings-page-helper.php:690
 msgid ""
 "Display a list of articles or categories in a chat-like widget to give your "
 "visitors a chance of self-learning about your website."
@@ -1148,10 +1130,6 @@ msgstr ""
 msgid "Doc Navigation"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:101
-msgid "Doc Permalink"
-msgstr ""
-
 #: includes/elementor/class-betterdocs-elementor.php:249
 msgid "Doc Reactions"
 msgstr ""
@@ -1181,16 +1159,16 @@ msgstr ""
 msgid "Doc Title"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:708
+#: admin/includes/betterdocs-settings-page-helper.php:729
 msgid "doc_category (already used in permalink structure)"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:707
+#: admin/includes/betterdocs-settings-page-helper.php:728
 msgid "doc_category added to permalink structure"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:165
-#: admin/includes/class-betterdocs-db.php:49
+#: includes/class-betterdocs-docs-post-type.php:166
+#: admin/includes/class-betterdocs-db.php:50
 msgid "Docs"
 msgstr ""
 
@@ -1200,13 +1178,13 @@ msgstr ""
 msgid "Docs Archive"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:131
-#: includes/class-betterdocs-docs-post-type.php:133
-#: admin/includes/betterdocs-settings-page-helper.php:706
+#: includes/class-betterdocs-docs-post-type.php:132
+#: includes/class-betterdocs-docs-post-type.php:134
+#: admin/includes/betterdocs-settings-page-helper.php:727
 msgid "Docs Categories"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:132
+#: includes/class-betterdocs-docs-post-type.php:133
 msgid "Docs Category"
 msgstr ""
 
@@ -1246,11 +1224,11 @@ msgstr ""
 msgid "Docs List Padding"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:200
+#: admin/includes/betterdocs-settings-page-helper.php:215
 msgid "Docs Order"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:182
+#: admin/includes/betterdocs-settings-page-helper.php:197
 msgid "Docs Order By"
 msgstr ""
 
@@ -1271,7 +1249,7 @@ msgstr ""
 msgid "Docs Subcategory Hover Color"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:214
+#: includes/class-betterdocs-docs-post-type.php:215
 msgid "Docs Tags"
 msgstr ""
 
@@ -1280,9 +1258,9 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:121
-#: admin/includes/betterdocs-settings-page-helper.php:126
-#: admin/includes/betterdocs-settings-page-helper.php:516
+#: admin/includes/betterdocs-settings-page-helper.php:129
+#: admin/includes/betterdocs-settings-page-helper.php:134
+#: admin/includes/betterdocs-settings-page-helper.php:537
 msgid "Documentation Page"
 msgstr ""
 
@@ -1304,31 +1282,31 @@ msgstr ""
 msgid "Easy To Customize"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:136
+#: includes/class-betterdocs-docs-post-type.php:137
 msgid "Edit Category"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:169
+#: includes/class-betterdocs-docs-post-type.php:170
 msgid "Edit Docs"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:221
+#: includes/class-betterdocs-docs-post-type.php:222
 msgid "Edit Tag"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:452
+#: admin/includes/betterdocs-settings-page-helper.php:473
 msgid "Email Address"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:785
+#: public/betterdocs-shortcodes.php:787
 msgid "Email:"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:137
+#: admin/includes/betterdocs-settings-page-helper.php:145
 msgid "Enable Advanced Search"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:365
+#: admin/includes/betterdocs-settings-page-helper.php:380
 msgid "Enable Breadcrumb"
 msgstr ""
 
@@ -1337,27 +1315,27 @@ msgstr ""
 msgid "Enable Built-in Documentation Page"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:394
+#: admin/includes/betterdocs-settings-page-helper.php:409
 msgid "Enable Category on Breadcrumb"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:471
+#: admin/includes/betterdocs-settings-page-helper.php:492
 msgid "Enable Comment"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:477
+#: admin/includes/betterdocs-settings-page-helper.php:498
 msgid "Enable Credit"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:424
+#: admin/includes/betterdocs-settings-page-helper.php:439
 msgid "Enable Email Feedback"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:252
+#: admin/includes/betterdocs-settings-page-helper.php:267
 msgid "Enable Explore More Button"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:680
+#: admin/includes/betterdocs-settings-page-helper.php:701
 msgid "Enable IA Live Preview"
 msgstr ""
 
@@ -1365,11 +1343,11 @@ msgstr ""
 msgid "Enable Instant Answer"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:131
+#: admin/includes/betterdocs-settings-page-helper.php:139
 msgid "Enable Live Search"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:176
+#: admin/includes/betterdocs-settings-page-helper.php:191
 msgid "Enable Masonry"
 msgstr ""
 
@@ -1377,7 +1355,7 @@ msgstr ""
 msgid "Enable Multiple Knowledge Base"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:465
+#: admin/includes/betterdocs-settings-page-helper.php:486
 msgid "Enable Navigation"
 msgstr ""
 
@@ -1385,20 +1363,20 @@ msgstr ""
 msgid "Enable Nested Subcategory"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:234
+#: admin/includes/betterdocs-settings-page-helper.php:249
 msgid "Enable Post Count"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:353
+#: admin/includes/betterdocs-settings-page-helper.php:368
 msgid "Enable Post Title"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:412
+#: admin/includes/betterdocs-settings-page-helper.php:427
 msgid "Enable Print Icon"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:406
-#: admin/includes/betterdocs-settings-page-helper.php:494
+#: admin/includes/betterdocs-settings-page-helper.php:421
+#: admin/includes/betterdocs-settings-page-helper.php:515
 msgid "Enable Sidebar Category List"
 msgstr ""
 
@@ -1406,30 +1384,30 @@ msgstr ""
 msgid "Enable Social Sharing?"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:320
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:221
+#: admin/includes/betterdocs-settings-page-helper.php:335
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:220
 msgid "Enable Sticky TOC"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:285
+#: admin/includes/betterdocs-settings-page-helper.php:300
 msgid "Enable Table of Contents (TOC)"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:418
+#: admin/includes/betterdocs-settings-page-helper.php:433
 msgid "Enable Tags"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:400
+#: admin/includes/betterdocs-settings-page-helper.php:415
 msgid "Enable Title on Breadcrumb"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:640
-#: admin/includes/betterdocs-settings-page-helper.php:674
+#: admin/includes/betterdocs-settings-page-helper.php:661
+#: admin/includes/betterdocs-settings-page-helper.php:695
 msgid "Enable/Disable"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:658
-#: admin/includes/betterdocs-settings-page-helper.php:663
+#: admin/includes/betterdocs-settings-page-helper.php:679
+#: admin/includes/betterdocs-settings-page-helper.php:684
 msgid "Enable/Disable Instant Answer"
 msgstr ""
 
@@ -1441,7 +1419,7 @@ msgid ""
 "Upgrade to PRO</a> "
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:829
+#: public/betterdocs-shortcodes.php:831
 msgid "Enter a valid email address."
 msgstr ""
 
@@ -1469,8 +1447,8 @@ msgstr ""
 msgid "Exclude"
 msgstr ""
 
-#: admin/includes/class-betterdocs-db.php:37
-#: admin/includes/betterdocs-settings-page-helper.php:269
+#: admin/includes/class-betterdocs-db.php:38
+#: admin/includes/betterdocs-settings-page-helper.php:284
 #: includes/gutenberg/blocks/categorygrid.php:97
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:266
 msgid "Explore More"
@@ -1496,11 +1474,11 @@ msgstr ""
 msgid "FeedBack Form"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:547
+#: admin/includes/betterdocs-settings-page-helper.php:568
 msgid "Feedback Form"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:446
+#: admin/includes/betterdocs-settings-page-helper.php:467
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:62
 msgid "Feedback Form Title"
 msgstr ""
@@ -1537,20 +1515,24 @@ msgstr ""
 msgid "Feedback Link Hover Color"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:440
+#: admin/includes/betterdocs-settings-page-helper.php:455
 msgid "Feedback Link Text"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:840
+#: public/betterdocs-shortcodes.php:842
 #, php-format
 msgid "Feedback message from %s"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:195
+#: admin/includes/betterdocs-settings-page-helper.php:461
+msgid "Feedback URL"
+msgstr ""
+
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:197
 msgid "Field Background Color"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:225
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:227
 msgid "Field Padding"
 msgstr ""
 
@@ -1617,11 +1599,11 @@ msgstr ""
 msgid "Getting Started"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:100
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:99
 msgid "Go Premium for More Features"
 msgstr ""
 
-#: admin/customizer/controls.php:620
+#: admin/customizer/controls.php:471
 msgid "Go Pro"
 msgstr ""
 
@@ -1666,50 +1648,50 @@ msgstr ""
 msgid "Grid Spacing"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:189
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:188
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:83
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:150
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:201
 msgid "H1"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:190
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:189
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:84
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:151
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:202
 msgid "H2"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:191
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:190
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:85
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:152
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:203
 msgid "H3"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:192
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:191
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:86
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:153
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:204
 msgid "H4"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:193
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:192
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:87
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:154
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:205
 msgid "H5"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:194
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:193
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:88
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:155
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:206
 msgid "H6"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:354
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:449
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:353
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:448
 msgid "Header"
 msgstr ""
 
@@ -1740,7 +1722,7 @@ msgstr ""
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:236
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:248
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:260
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:224
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:223
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:100
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:112
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:124
@@ -1762,17 +1744,17 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: admin/includes/class-betterdocs-db.php:50
-#: admin/includes/betterdocs-settings-page-helper.php:382
+#: admin/includes/class-betterdocs-db.php:51
+#: admin/includes/betterdocs-settings-page-helper.php:397
 msgid "Home"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:421
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:693
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:864
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1021
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1466
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:524
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:420
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:692
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:863
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1020
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1465
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:526
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:388
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:668
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:863
@@ -1790,8 +1772,8 @@ msgid "Hover"
 msgstr ""
 
 #: admin/customizer/customizer.php:3201
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1144
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1272
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1143
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1271
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:177
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:281
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:388
@@ -1799,9 +1781,9 @@ msgstr ""
 msgid "Hover Color"
 msgstr ""
 
-#: includes/class-betterdocs-helpers.php:508
-#: admin/includes/class-betterdocs-db.php:59
-#: admin/includes/betterdocs-settings-page-helper.php:447
+#: includes/class-betterdocs-helpers.php:515
+#: admin/includes/class-betterdocs-db.php:61
+#: admin/includes/betterdocs-settings-page-helper.php:468
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:64
 msgid "How can we help?"
 msgstr ""
@@ -1839,9 +1821,9 @@ msgid "I no longer need the plugin"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:273
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:527
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1181
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1309
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:526
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1180
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1308
 #: includes/elementor/widgets/betterdocs-elementor-breadcrumbs.php:115
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:521
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:561
@@ -1900,7 +1882,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:508
+#: includes/class-betterdocs-docs-post-type.php:509
 #: admin/customizer/customizer.php:1381
 msgid "Image"
 msgstr ""
@@ -1949,12 +1931,12 @@ msgstr ""
 msgid "Inner Circle Border Width"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:653
+#: admin/includes/betterdocs-settings-page-helper.php:674
 msgid "Instant Answer"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:628
-#: admin/includes/betterdocs-settings-page-helper.php:633
+#: admin/includes/betterdocs-settings-page-helper.php:649
+#: admin/includes/betterdocs-settings-page-helper.php:654
 msgid "Internal Knowledge Base"
 msgstr ""
 
@@ -1962,8 +1944,8 @@ msgstr ""
 msgid "It's a temporary deactivation"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:446
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:552
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:448
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:554
 msgid "Item"
 msgstr ""
 
@@ -1971,9 +1953,9 @@ msgstr ""
 msgid "Item Background Hover Color"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:462
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:572
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:601
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:464
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:574
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:603
 msgid "Item Color"
 msgstr ""
 
@@ -2016,7 +1998,7 @@ msgstr ""
 msgid "Lable"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:190
+#: admin/includes/betterdocs-settings-page-helper.php:205
 msgid "Last Modified Date"
 msgstr ""
 
@@ -2028,24 +2010,24 @@ msgstr ""
 msgid "Last Updated Time Font Size"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:112
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:148
+#: admin/includes/betterdocs-settings-page-helper.php:120
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:147
 msgid "Layout"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:160
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:159
 msgid "Layout 1"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:161
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:160
 msgid "Layout 2"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:162
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:161
 msgid "Layout 3"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:163
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:162
 msgid "Layout 4"
 msgstr ""
 
@@ -2082,8 +2064,8 @@ msgstr ""
 #: admin/customizer/customizer.php:7280 admin/customizer/customizer.php:7380
 #: admin/customizer/customizer.php:7585 admin/customizer/customizer.php:7996
 #: includes/elementor/widgets/betterdocs-elementor-doc-date.php:74
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1524
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1549
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1523
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1548
 #: includes/elementor/widgets/betterdocs-elementor-title.php:106
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:217
 #: includes/elementor/widgets/betterdocs-elementor-content.php:69
@@ -2150,8 +2132,8 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1168
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1296
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1167
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1295
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1042
 msgid "List Area Padding"
 msgstr ""
@@ -2216,8 +2198,8 @@ msgstr ""
 msgid "List Item Padding"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1155
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1283
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1154
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1282
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:536
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:188
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:399
@@ -2247,7 +2229,7 @@ msgid "local"
 msgstr ""
 
 #: admin/customizer/customizer.php:7201
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:162
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:164
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:552
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:735
 msgid "Margin"
@@ -2257,7 +2239,7 @@ msgstr ""
 msgid "Masonry"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:383
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:385
 msgid "Max Width"
 msgstr ""
 
@@ -2265,15 +2247,15 @@ msgstr ""
 msgid "Maybe Later"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:194
+#: admin/includes/betterdocs-settings-page-helper.php:209
 msgid "Menu Order"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:831
+#: public/betterdocs-shortcodes.php:833
 msgid "Message was not sent. Try Again."
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:790
+#: public/betterdocs-shortcodes.php:792
 msgid "Message:"
 msgstr ""
 
@@ -2281,7 +2263,7 @@ msgstr ""
 msgid "Migration"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:144
+#: admin/includes/betterdocs-settings-page-helper.php:152
 msgid "Minimum amount of Keywords Search"
 msgstr ""
 
@@ -2297,7 +2279,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:780
+#: public/betterdocs-shortcodes.php:782
 msgid "Name:"
 msgstr ""
 
@@ -2339,8 +2321,8 @@ msgstr ""
 
 #: includes/elementor/class-betterdocs-elementor.php:651
 #: includes/elementor/class-betterdocs-elementor.php:717
-#: admin/includes/betterdocs-settings-page-helper.php:216
-#: admin/includes/betterdocs-settings-page-helper.php:500
+#: admin/includes/betterdocs-settings-page-helper.php:231
+#: admin/includes/betterdocs-settings-page-helper.php:521
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:100
 msgid "Nested Subcategory"
 msgstr ""
@@ -2349,15 +2331,15 @@ msgstr ""
 msgid "Never show again"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:168
+#: includes/class-betterdocs-docs-post-type.php:169
 msgid "New Docs"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:139
+#: includes/class-betterdocs-docs-post-type.php:140
 msgid "New Docs Name"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:224
+#: includes/class-betterdocs-docs-post-type.php:225
 msgid "New Tag Name"
 msgstr ""
 
@@ -2372,17 +2354,17 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:174
+#: includes/class-betterdocs-docs-post-type.php:175
 msgid "No docs found"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:175
+#: includes/class-betterdocs-docs-post-type.php:176
 msgid "No docs found in trash"
 msgstr ""
 
 #: includes/elementor/class-betterdocs-elementor.php:552
 #: includes/elementor/class-betterdocs-elementor.php:760
-#: admin/includes/betterdocs-settings-page-helper.php:185
+#: admin/includes/betterdocs-settings-page-helper.php:200
 #: includes/elementor/widgets/betterdocs-elementor-sidebar.php:62
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:69
 msgid "No order"
@@ -2406,14 +2388,14 @@ msgstr ""
 msgid "no-repeat"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:348
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:588
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:813
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:935
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1382
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:347
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:587
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:812
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:934
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1381
 #: includes/elementor/widgets/betterdocs-elementor-title.php:186
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:291
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:440
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:442
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:284
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:590
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:830
@@ -2442,11 +2424,11 @@ msgid ""
 "page will be used as docs permalink."
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:222
+#: admin/includes/betterdocs-settings-page-helper.php:237
 msgid "Number of Columns"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:228
+#: admin/includes/betterdocs-settings-page-helper.php:243
 msgid "Number of Posts"
 msgstr ""
 
@@ -2462,8 +2444,8 @@ msgstr ""
 msgid "Open Icon"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:430
-#: includes/class-betterdocs-docs-post-type.php:500
+#: includes/class-betterdocs-docs-post-type.php:431
+#: includes/class-betterdocs-docs-post-type.php:501
 #: includes/elementor/class-betterdocs-elementor.php:569
 #: includes/elementor/class-betterdocs-elementor.php:612
 #: includes/elementor/class-betterdocs-elementor.php:703
@@ -2480,7 +2462,7 @@ msgstr ""
 msgid "Order By"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:210
+#: admin/includes/betterdocs-settings-page-helper.php:225
 msgid "Order Terms Alphabetically"
 msgstr ""
 
@@ -2495,12 +2477,12 @@ msgstr ""
 
 #: admin/customizer/customizer.php:7301
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:293
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:638
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:850
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1440
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:637
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:849
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1439
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:370
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:144
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:482
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:146
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:484
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:632
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:540
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:721
@@ -2524,15 +2506,15 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:134
+#: includes/class-betterdocs-docs-post-type.php:135
 msgid "Parent Docs Category"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:135
+#: includes/class-betterdocs-docs-post-type.php:136
 msgid "Parent Docs Category:"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:191
+#: admin/includes/betterdocs-settings-page-helper.php:206
 msgid "Parent Id"
 msgstr ""
 
@@ -2552,7 +2534,7 @@ msgstr ""
 msgid "Placeholder"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:828
+#: public/betterdocs-shortcodes.php:830
 msgid "Please enter your name."
 msgstr ""
 
@@ -2564,7 +2546,7 @@ msgstr ""
 msgid "Please share which plugin"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:830
+#: public/betterdocs-shortcodes.php:832
 msgid "Please write your message."
 msgstr ""
 
@@ -2572,7 +2554,7 @@ msgstr ""
 msgid "Popular Docs"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:217
+#: includes/class-betterdocs-docs-post-type.php:218
 msgid "Popular Tags"
 msgstr ""
 
@@ -2581,7 +2563,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:187
+#: admin/includes/betterdocs-settings-page-helper.php:202
 msgid "Post Author"
 msgstr ""
 
@@ -2589,7 +2571,7 @@ msgstr ""
 msgid "Post Content Padding"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:186
+#: admin/includes/betterdocs-settings-page-helper.php:201
 msgid "Post ID"
 msgstr ""
 
@@ -2617,9 +2599,9 @@ msgstr ""
 msgid "Posts Per Tab"
 msgstr ""
 
-#: public/partials/template-single/layout-5.php:208
-#: public/partials/template-single/layout-4.php:208
-#: public/partials/template-single/layout-1.php:219
+#: public/partials/template-single/layout-5.php:167
+#: public/partials/template-single/layout-4.php:167
+#: public/partials/template-single/layout-1.php:174
 msgid "Powered by "
 msgstr ""
 
@@ -2664,12 +2646,12 @@ msgstr ""
 msgid "Quick Setup"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:192
+#: admin/includes/betterdocs-settings-page-helper.php:207
 msgid "Random"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:446
-#: includes/class-betterdocs-docs-post-type.php:523
+#: includes/class-betterdocs-docs-post-type.php:447
+#: includes/class-betterdocs-docs-post-type.php:524
 msgid "Remove Image"
 msgstr ""
 
@@ -2693,8 +2675,8 @@ msgstr ""
 msgid "repeat-y"
 msgstr ""
 
-#: admin/customizer/controls.php:46 admin/customizer/controls.php:433
-#: admin/customizer/controls.php:524 admin/customizer/controls.php:562
+#: admin/customizer/controls.php:46 admin/customizer/controls.php:284
+#: admin/customizer/controls.php:375 admin/customizer/controls.php:413
 msgid "Reset"
 msgstr ""
 
@@ -2714,8 +2696,8 @@ msgstr ""
 #: admin/customizer/customizer.php:7241 admin/customizer/customizer.php:7341
 #: admin/customizer/customizer.php:7545 admin/customizer/customizer.php:7956
 #: includes/elementor/widgets/betterdocs-elementor-doc-date.php:82
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1532
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1557
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1531
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1556
 #: includes/elementor/widgets/betterdocs-elementor-title.php:114
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:225
 #: includes/elementor/widgets/betterdocs-elementor-content.php:77
@@ -2743,8 +2725,8 @@ msgstr ""
 msgid "right top"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:590
-#: admin/includes/betterdocs-settings-page-helper.php:595
+#: admin/includes/betterdocs-settings-page-helper.php:611
+#: admin/includes/betterdocs-settings-page-helper.php:616
 msgid "Role Management"
 msgstr ""
 
@@ -2760,11 +2742,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:127
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:129
 msgid "Search Box"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:237
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:239
 msgid "Search Box Margin"
 msgstr ""
 
@@ -2772,11 +2754,11 @@ msgstr ""
 msgid "Search Content"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:172
+#: includes/class-betterdocs-docs-post-type.php:173
 msgid "Search Docs"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:187
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:189
 msgid "Search Field"
 msgstr ""
 
@@ -2800,7 +2782,7 @@ msgstr ""
 msgid "Search Field Settings"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:539
+#: admin/includes/betterdocs-settings-page-helper.php:560
 msgid "Search Form"
 msgstr ""
 
@@ -2809,7 +2791,7 @@ msgstr ""
 msgid "Search Heading"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:277
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:279
 msgid "Search Icon"
 msgstr ""
 
@@ -2825,11 +2807,11 @@ msgstr ""
 msgid "Search Icon Size"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:157
+#: admin/includes/betterdocs-settings-page-helper.php:172
 msgid "Search Not Found Text"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:151
+#: admin/includes/betterdocs-settings-page-helper.php:159
 msgid "Search Placeholder"
 msgstr ""
 
@@ -2837,11 +2819,11 @@ msgstr ""
 msgid "Search Placeholder Color"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:169
+#: admin/includes/betterdocs-settings-page-helper.php:184
 msgid "Search Result based on KB"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:353
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:355
 msgid "Search Result Box"
 msgstr ""
 
@@ -2861,7 +2843,7 @@ msgstr ""
 msgid "Search Result Box Width"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:163
+#: admin/includes/betterdocs-settings-page-helper.php:178
 msgid "Search Result Image"
 msgstr ""
 
@@ -2889,7 +2871,7 @@ msgstr ""
 msgid "Search Result Item Padding"
 msgstr ""
 
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:430
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:432
 msgid "Search Result List"
 msgstr ""
 
@@ -2901,7 +2883,7 @@ msgstr ""
 msgid "Search Subheading"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:216
+#: includes/class-betterdocs-docs-post-type.php:217
 msgid "Search Tags"
 msgstr ""
 
@@ -2909,7 +2891,7 @@ msgstr ""
 msgid "Search Text Color"
 msgstr ""
 
-#: admin/includes/class-betterdocs-db.php:24
+#: admin/includes/class-betterdocs-db.php:25
 msgid "Search.."
 msgstr ""
 
@@ -2923,7 +2905,7 @@ msgstr ""
 msgid "Select Layout"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:155
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:154
 msgid "Select layout"
 msgstr ""
 
@@ -2932,15 +2914,15 @@ msgstr ""
 msgid "Select Tag"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:761
+#: public/betterdocs-shortcodes.php:763
 msgid "Send"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:225
+#: includes/class-betterdocs-docs-post-type.php:226
 msgid "Separate tags with commas"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:335
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:334
 msgid "Separator Color"
 msgstr ""
 
@@ -2949,7 +2931,7 @@ msgid "Seperator Color"
 msgstr ""
 
 #: admin/class-betterdocs-admin-screen.php:45
-#: public/class-betterdocs-public.php:454
+#: public/class-betterdocs-public.php:455
 msgid "Settings"
 msgstr ""
 
@@ -2961,14 +2943,16 @@ msgstr ""
 msgid "Share non-sensitive diagnostic data and plugin usage information."
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:889 admin/customizer/defaults.php:174
+#: public/betterdocs-shortcodes.php:891 admin/customizer/defaults.php:174
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:213
+#: public/partials/template-single/layout-5.php:131
+#: public/partials/template-single/layout-4.php:131
 #: public/partials/template-single/layout-1.php:138
 msgid "Share This Article :"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:530
-#: admin/includes/betterdocs-settings-page-helper.php:534
+#: admin/includes/betterdocs-settings-page-helper.php:551
+#: admin/includes/betterdocs-settings-page-helper.php:555
 msgid "Shortcodes"
 msgstr ""
 
@@ -2976,7 +2960,7 @@ msgstr ""
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:235
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:247
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:259
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:223
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:222
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:99
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:111
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:123
@@ -3021,7 +3005,7 @@ msgstr ""
 msgid "Show Icon"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:459
+#: admin/includes/betterdocs-settings-page-helper.php:480
 msgid "Show Last Update Time"
 msgstr ""
 
@@ -3064,25 +3048,29 @@ msgstr ""
 
 #: includes/elementor/betterdocs-single-docs.php:43
 #: admin/customizer/customizer.php:2573
-#: admin/includes/betterdocs-settings-page-helper.php:275
-#: admin/includes/betterdocs-settings-page-helper.php:280
+#: admin/includes/betterdocs-settings-page-helper.php:290
+#: admin/includes/betterdocs-settings-page-helper.php:295
 msgid "Single Doc"
+msgstr ""
+
+#: admin/includes/betterdocs-settings-page-helper.php:109
+msgid "Single Docs Permalink"
 msgstr ""
 
 #: admin/customizer/customizer.php:156 admin/customizer/customizer.php:5564
 #: admin/customizer/customizer.php:7025
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:305
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:535
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:990
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1202
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1318
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:534
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:989
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1201
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1317
 #: includes/elementor/widgets/betterdocs-elementor-navigation.php:69
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:220
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:431
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:136
 #: includes/elementor/widgets/betterdocs-elementor-breadcrumbs.php:136
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:249
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:297
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:251
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:299
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:543
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:570
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:937
@@ -3123,7 +3111,7 @@ msgid "Sorry to see you go"
 msgstr ""
 
 #: public/betterdocs-tag-template.php:60
-#: admin/includes/class-betterdocs-db.php:25
+#: admin/includes/class-betterdocs-db.php:26
 msgid "Sorry, no docs were found."
 msgstr ""
 
@@ -3132,11 +3120,11 @@ msgid "Space"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:281
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:650
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:838
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1007
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1220
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1347
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:649
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:837
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1006
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1219
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1346
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:238
 #: includes/elementor/widgets/betterdocs-elementor-category-archive-list.php:449
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:647
@@ -3156,7 +3144,7 @@ msgstr ""
 msgid "Span"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:213
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:212
 msgid "Sticky TOC"
 msgstr ""
 
@@ -3172,12 +3160,10 @@ msgstr ""
 msgid "Sticky Toc z-index"
 msgstr ""
 
-#: admin/includes/class-betterdocs-db.php:58
-#: admin/includes/betterdocs-settings-page-helper.php:441
+#: admin/includes/class-betterdocs-db.php:59
+#: admin/includes/betterdocs-settings-page-helper.php:456
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:56
-#: public/partials/template-single/layout-5.php:166
-#: public/partials/template-single/layout-4.php:166
-#: public/partials/template-single/layout-1.php:175
+#: public/partials/template-single/feedback-form.php:29
 msgid "Still stuck? How can we help?"
 msgstr ""
 
@@ -3212,7 +3198,7 @@ msgstr ""
 msgid "Sub Heading Margin"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1244
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1243
 msgid "Sub-Category List"
 msgstr ""
 
@@ -3277,8 +3263,8 @@ msgid "Tab List Posts"
 msgstr ""
 
 #: public/class-betterdocs-public.php:383 admin/customizer/customizer.php:3259
-#: admin/includes/class-betterdocs-db.php:40
-#: admin/includes/betterdocs-settings-page-helper.php:302
+#: admin/includes/class-betterdocs-db.php:41
+#: admin/includes/betterdocs-settings-page-helper.php:317
 msgid "Table of Contents"
 msgstr ""
 
@@ -3286,11 +3272,11 @@ msgstr ""
 msgid "Table of contents"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:215
+#: includes/class-betterdocs-docs-post-type.php:216
 msgid "Tag"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:228
+#: includes/class-betterdocs-docs-post-type.php:229
 #: admin/class-betterdocs-admin-screen.php:75
 #: admin/class-betterdocs-admin-screen.php:75
 msgid "Tags"
@@ -3326,7 +3312,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1520
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1519
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:799
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-grid.php:1499
 msgid "Text Alignment"
@@ -3336,19 +3322,19 @@ msgstr ""
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:256
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:328
 #: includes/elementor/widgets/betterdocs-elementor-breadcrumbs.php:58
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:206
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:208
 msgid "Text Color"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:832
+#: public/betterdocs-shortcodes.php:834
 msgid "Thanks! Your message has been sent."
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:455
+#: admin/includes/betterdocs-settings-page-helper.php:476
 msgid "The email address where the Feedback from will be sent"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:173
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:172
 msgid "This layout is available in pro version only!"
 msgstr ""
 
@@ -3358,10 +3344,10 @@ msgid "Ticker Background"
 msgstr ""
 
 #: admin/customizer/customizer.php:1401
-#: admin/includes/betterdocs-settings-page-helper.php:188
+#: admin/includes/betterdocs-settings-page-helper.php:203
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:170
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:211
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:803
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:802
 #: includes/elementor/widgets/betterdocs-elementor-title.php:47
 #: includes/elementor/widgets/betterdocs-elementor-title.php:54
 #: includes/elementor/widgets/betterdocs-elementor-title.php:143
@@ -3390,7 +3376,7 @@ msgstr ""
 msgid "Title Hover Color"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:359
+#: admin/includes/betterdocs-settings-page-helper.php:374
 msgid "Title Link Copy To Clipboard"
 msgstr ""
 
@@ -3422,7 +3408,7 @@ msgstr ""
 msgid "Title Text Color"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:308
+#: admin/includes/betterdocs-settings-page-helper.php:323
 msgid "TOC Hierarchy"
 msgstr ""
 
@@ -3434,7 +3420,7 @@ msgstr ""
 msgid "TOC List Margin"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:314
+#: admin/includes/betterdocs-settings-page-helper.php:329
 msgid "TOC List Number"
 msgstr ""
 
@@ -3442,16 +3428,16 @@ msgstr ""
 msgid "TOC Margin Bottom"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:338
+#: admin/includes/betterdocs-settings-page-helper.php:353
 msgid "TOC Supported Heading Tag"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:301
+#: admin/includes/betterdocs-settings-page-helper.php:316
 #: includes/elementor/widgets/betterdocs-elementor-toc.php:70
 msgid "TOC Title"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:233
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:232
 msgid "TOC Width"
 msgstr ""
 
@@ -3483,11 +3469,11 @@ msgstr ""
 msgid "Top Right"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:427
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:766
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:881
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1079
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:530
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:426
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:765
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:880
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:1078
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:532
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:394
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:709
 #: includes/elementor/widgets/basic/betterdocs-elementor-category-box.php:881
@@ -3509,26 +3495,24 @@ msgstr ""
 msgid "Type share title here"
 msgstr ""
 
-#: public/betterdocs-shortcodes.php:248
+#: public/betterdocs-shortcodes.php:250
 msgid "Uncategorised"
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:107
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:106
 msgid "Unlock more possibilities"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:137
+#: includes/class-betterdocs-docs-post-type.php:138
 msgid "Update Category"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:222
+#: includes/class-betterdocs-docs-post-type.php:223
 msgid "Update Tag"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-date.php:107
-#: public/partials/template-single/layout-5.php:184
-#: public/partials/template-single/layout-4.php:184
-#: public/partials/template-single/layout-1.php:195
+#: public/partials/template-single/feedback-form.php:49
 #, php-format
 msgid "Updated on %s"
 msgstr ""
@@ -3537,7 +3521,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: includes/class-betterdocs-docs-post-type.php:170
+#: includes/class-betterdocs-docs-post-type.php:171
 msgid "View Docs"
 msgstr ""
 
@@ -3611,22 +3595,22 @@ msgstr ""
 msgid "What We Collect?"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:618
+#: admin/includes/betterdocs-settings-page-helper.php:639
 msgid "Who Can Check Analytics?"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:609
+#: admin/includes/betterdocs-settings-page-helper.php:630
 msgid "Who Can Edit Settings?"
 msgstr ""
 
-#: admin/includes/betterdocs-settings-page-helper.php:600
+#: admin/includes/betterdocs-settings-page-helper.php:621
 msgid "Who Can Write Docs?"
 msgstr ""
 
 #: includes/elementor/widgets/betterdocs-elementor-doc-share.php:55
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:171
 #: includes/elementor/widgets/betterdocs-elementor-feedback.php:347
-#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:361
+#: includes/elementor/widgets/basic/betterdocs-elementor-search-form.php:363
 msgid "Width"
 msgstr ""
 
@@ -3660,6 +3644,6 @@ msgid ""
 "them to proper categories and you are good to go."
 msgstr ""
 
-#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:255
+#: includes/elementor/widgets/betterdocs-elementor-sidebar.php:254
 msgid "Z index"
 msgstr ""

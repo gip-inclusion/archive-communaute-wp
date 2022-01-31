@@ -363,7 +363,7 @@ class BetterDocs_Helper
         return $count;
     }
 
-    public static function taxonomy_object($multiple_kb, $terms, $kb_slug='', $nested_subcategory=false)
+    public static function taxonomy_object($multiple_kb, $terms, $orderby = "name", $kb_slug='', $nested_subcategory=false)
     {
         global $wp_query;
         $terms_object = array(
@@ -371,13 +371,14 @@ class BetterDocs_Helper
             'taxonomy' => 'doc_category'
         );
 
-        $alphabetically_order_term = BetterDocs_DB::get_settings('alphabetically_order_term');
-        if ( $alphabetically_order_term != 1 ) {
+        if ( $orderby == 'betterdocs_order' ) {
             $terms_object['meta_key'] = 'doc_category_order';
             $terms_object['orderby'] = 'meta_value_num';
             $terms_object['order'] = 'ASC';
-        } else {
+        } else if ($orderby == 1) {
             $terms_object['orderby'] = 'name';
+        } else {
+            $terms_object['orderby'] = $orderby;
         }
 
         if ($nested_subcategory == true) {
@@ -410,7 +411,13 @@ class BetterDocs_Helper
             'parent' => $term_id
         );
 
-        if ($orderby) {
+        if ( $orderby == 'betterdocs_order' ) {
+            $terms_object['meta_key'] = 'doc_category_order';
+            $terms_object['orderby'] = 'meta_value_num';
+            $terms_object['order'] = 'ASC';
+        } else if ( $orderby == 1 ) {
+            $terms_object['orderby'] = 'name';
+        } else {
             $terms_object['orderby'] = $orderby;
         }
 

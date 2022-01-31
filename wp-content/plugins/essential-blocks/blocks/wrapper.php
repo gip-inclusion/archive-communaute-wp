@@ -19,25 +19,12 @@ function wrapper_block_init()
 	if (!function_exists('register_block_type')) {
 		return;
 	}
-	$dir = dirname(__FILE__);
-
-	$index_js = 'wrapper/index.js';
-	wp_register_script(
-		'wrapper-block-editor',
-		plugins_url($index_js, __FILE__),
+	
+	register_block_type(
+		EssentialBlocks::get_block_register_path("wrapper"),
 		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime($dir . "/" . $index_js)
+			'editor_script' => 'essential-blocks-editor-script',
+		)
 	);
-
-	register_block_type($dir . "/wrapper", array(
-		'editor_script' => 'wrapper-block-editor',
-	));
 }
 add_action('init', 'wrapper_block_init');

@@ -19,51 +19,30 @@ function accordion_block_init()
 	if (!function_exists('register_block_type')) {
 		return;
 	}
+
 	$dir = dirname(__FILE__);
 
-	//  Common Styles
-	$styleCss = 'accordion/style.css';
-	wp_register_style(
-		'accordion-block-style',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/accordion/style.css',
-		array(),
-		filemtime($dir . "/" . $styleCss)
-	);
+	$frontend_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/accordion/frontend/index.asset.php';
 
 	//  Frontend Script
 	$frontEnd_js = 'accordion/frontend/index.js';
 	wp_register_script(
 		'essential-blocks-accordion-frontend',
 		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/accordion/frontend/index.js',
-		array(),
-		filemtime($dir . "/" . $frontEnd_js),
+		$frontend_dependencies['dependencies'],
+		EssentialAdmin::get_version($dir . "/" . $frontEnd_js),
 		true
 	);
 
-	$index_js = 'accordion/index.js';
-	wp_register_script(
-		'accordion-block-editor',
-		plugins_url($index_js, __FILE__),
-		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime($dir . "/" . $index_js)
-	);
-
 	register_block_type(
-		$dir . "/accordion",
+		EssentialBlocks::get_block_register_path("accordion"),
 		array(
-			'editor_script' 	=> 'accordion-block-editor',
-			'editor_style'    	=> 'accordion-block-style',
+			'editor_script' 	=> 'essential-blocks-editor-script',
+			'editor_style'    	=> 'essential-blocks-frontend-style',
 			'render_callback' => function ($attributes, $content) {
 				if (!is_admin()) {
 					wp_enqueue_script('essential-blocks-accordion-frontend');
-					wp_enqueue_style('accordion-block-style');
+					wp_enqueue_style('essential-blocks-frontend-style');
 					wp_enqueue_style(
 						'eb-fontawesome-frontend',
 						plugins_url('assets/css/font-awesome5.css', dirname(__FILE__)),

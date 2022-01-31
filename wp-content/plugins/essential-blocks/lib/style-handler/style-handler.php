@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-if(!class_exists('EbStyleHandler')){
+if (!class_exists('EbStyleHandler')) {
 	final class EbStyleHandler
 	{
 		private static $instance;
@@ -44,20 +44,33 @@ if(!class_exists('EbStyleHandler')){
 		 */
 		public function essential_blocks_edit_post($hook)
 		{
-			global $post;
-			$dir = dirname( __FILE__ );
+			$dir = dirname(__FILE__);
+			$frontend_js = "dist/index.js";
+			$styleHandler_dependencies = include_once $dir . '/dist/index.asset.php';
 			if ($hook == 'post-new.php' || $hook == 'post.php') {
-				$frontend_js = "style-handler.js";
 				wp_enqueue_script(
-					'essential-blocks-edit-post', 
-					plugins_url($frontend_js, __FILE__), 
-					array("jquery", "wp-editor"), 
-					filemtime( $dir . "/" . $frontend_js),
+					'essential-blocks-edit-post',
+					plugins_url($frontend_js, __FILE__),
+					$styleHandler_dependencies['dependencies'],
+                	$styleHandler_dependencies['version'],
 					true
 				);
-				wp_localize_script('essential-blocks-edit-post','eb_style_handler',[
-				   'sth_nonce' => wp_create_nonce('eb_style_handler_nonce')
-                ]);
+				wp_localize_script('essential-blocks-edit-post', 'eb_style_handler', [
+					'sth_nonce' => wp_create_nonce('eb_style_handler_nonce'),
+					'editor_type' => 'edit-post'
+				]);
+			} elseif ($hook == 'site-editor.php') {
+				wp_enqueue_script(
+					'essential-blocks-edit-post',
+					plugins_url($frontend_js, __FILE__),
+					$styleHandler_dependencies['dependencies'],
+                	$styleHandler_dependencies['version'],
+					true
+				);
+				wp_localize_script('essential-blocks-edit-post', 'eb_style_handler', [
+					'sth_nonce' => wp_create_nonce('eb_style_handler_nonce'),
+					'editor_type' => 'edit-site'
+				]);
 			}
 		}
 
@@ -68,16 +81,68 @@ if(!class_exists('EbStyleHandler')){
 		 */
 		public function write_block_css()
 		{
-		    if(!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'eb_style_handler_nonce') || !current_user_can('manage_options')){
-		        echo 'Invalid request';
-		        wp_die();
-            }
-			if (!empty($css = $this->build_css($_POST['data']))) {
+			if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'eb_style_handler_nonce') || !current_user_can('manage_options')) {
+				echo 'Invalid request';
+				wp_die();
+			}
+
+			$block_styles = (array)json_decode(stripslashes($_POST['data']));
+
+			if (isset($_POST['editorType']) && $_POST['editorType'] === "edit-site") {
 				$upload_dir = wp_upload_dir()['basedir'] . '/eb-style/';
-				if (!file_exists($upload_dir)) {
-					mkdir($upload_dir);
+				$editSiteCssPath = $upload_dir . 'eb-style-' . $_POST['editorType'] . '.min.css';
+				if (file_exists($editSiteCssPath)) {
+					$existingCss = file_get_contents($editSiteCssPath);
+					$pattern = "~\/\*(.*?)\*\/~";
+					preg_match_all($pattern, $existingCss, $result, PREG_PATTERN_ORDER);
+					$allComments = $result[0];
+					$seperatedIds = array();
+					foreach ($allComments as $comment) {
+						$id = preg_replace('/[^A-Za-z0-9\-]|Ends|Starts/', '', $comment);
+
+						if (strpos($comment, "Starts")) {
+							$seperatedIds[$id]['start'] = $comment;
+						} else if (strpos($comment, "Ends")) {
+							$seperatedIds[$id]['end'] = $comment;
+						}
+					}
+
+					$seperateStyles = array();
+					foreach ($seperatedIds as $key => $ids) {
+						$data = $this->get_between_data($existingCss, $ids['start'], $ids['end']);
+						$seperateStyles[$key] = $data;
+					}
+
+					$finalCSSArray = array_merge($seperateStyles, $block_styles);
+
+					if (!empty($css = $this->build_css($finalCSSArray))) {
+						$upload_dir = wp_upload_dir()['basedir'] . '/eb-style/';
+						if (!file_exists($upload_dir)) {
+							mkdir($upload_dir);
+						}
+
+						file_put_contents($editSiteCssPath, $css);
+					}
+
+				} 
+				else {
+					if (!empty($css = $this->build_css($block_styles))) {
+						$upload_dir = wp_upload_dir()['basedir'] . '/eb-style/';
+						if (!file_exists($upload_dir)) {
+							mkdir($upload_dir);
+						}
+
+						file_put_contents($editSiteCssPath, $css);
+					}
 				}
-				file_put_contents($upload_dir . 'eb-style-' . abs($_POST['id']) . '.min.css', $css);
+			} else {
+				if (!empty($css = $this->build_css($block_styles))) {
+					$upload_dir = wp_upload_dir()['basedir'] . '/eb-style/';
+					if (!file_exists($upload_dir)) {
+						mkdir($upload_dir);
+					}
+					file_put_contents($upload_dir . 'eb-style-' . abs($_POST['id']) . '.min.css', $css);
+				}
 			}
 
 			wp_die();
@@ -91,11 +156,16 @@ if(!class_exists('EbStyleHandler')){
 		public function enqueue_frontend_css()
 		{
 			global $post;
-			if(!empty($post) && !empty($post->ID)){
-					$upload_dir = wp_upload_dir();
-					if (file_exists($upload_dir['basedir'] . '/eb-style/eb-style-' . $post->ID . '.min.css')) {
-							wp_enqueue_style('eb-block-style-' . $post->ID, $upload_dir['baseurl'] . '/eb-style/eb-style-' . $post->ID . '.min.css', [], substr(md5(microtime(true)), 0, 10));
-					}
+
+			if (!empty($post) && !empty($post->ID)) {
+				$upload_dir = wp_upload_dir();
+
+				if (file_exists($upload_dir['basedir'] . '/eb-style/eb-style-' . $post->ID . '.min.css')) {
+					wp_enqueue_style('eb-block-style-' . $post->ID, $upload_dir['baseurl'] . '/eb-style/eb-style-' . $post->ID . '.min.css', [], substr(md5(microtime(true)), 0, 10));
+				}
+				if ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() && file_exists($upload_dir['basedir'] . '/eb-style/eb-style-edit-site.min.css') ) {
+					wp_enqueue_style('eb-fullsite-style', $upload_dir['baseurl'] . '/eb-style/eb-style-edit-site.min.css', [], substr(md5(microtime(true)), 0, 10));
+				}
 			}
 		}
 
@@ -107,14 +177,19 @@ if(!class_exists('EbStyleHandler')){
 		 */
 		private function build_css($style_object)
 		{
-			$block_styles = (array)json_decode(stripslashes($style_object));
+			// $block_styles = (array)json_decode(stripslashes($style_object));
+			$block_styles = $style_object;
 
 			$css = '';
-			foreach ($block_styles as $block_style) {
+			foreach ($block_styles as $block_style_key => $block_style) {
 				if (!empty($block_css = (array) $block_style)) {
+					$css .= sprintf(
+						'/* %1$s Starts */',
+						$block_style_key
+					);
 					foreach ($block_css as $media => $style) {
-						switch ($media){
-							case $this->media_desktop['name'] :
+						switch ($media) {
+							case $this->media_desktop['name']:
 								$css .= preg_replace('/\s+/', ' ', $style);
 								break;
 							case $this->media_tab['name']:
@@ -129,11 +204,33 @@ if(!class_exists('EbStyleHandler')){
 								break;
 						}
 					}
+					$css .= sprintf(
+						'/* =%1$s= Ends */',
+						$block_style_key
+					);
 				}
 			}
 			return trim($css);
 		}
+
+		/**
+		 * Helper function to get string between 2 string
+		 * @since 3.3.0
+		 */
+		private function get_between_data($string, $start, $end)
+		{
+			$pos_string = stripos($string, $start);
+			$substr_data = substr($string, $pos_string);
+			$string_two = substr($substr_data, strlen($start));
+			$second_pos = stripos($string_two, $end);
+			$string_three = substr($string_two, 0, $second_pos);
+
+			// remove whitespaces from result
+			$result_unit = trim($string_three);
+
+			// return result_unit
+			return $result_unit;
+		}
 	}
 	EbStyleHandler::init();
 }
-

@@ -4,6 +4,7 @@
   "category": "essential-blocks",
   "apiVersion": 2,
   "textdomain": "essential-blocks",
+  "parent": ["essential-blocks/row"],
   "supports": {
     "inserter": false,
     "reusable": false,

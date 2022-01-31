@@ -1,14 +1,14 @@
-# Copyright (C) 2021 BuddyBoss
+# Copyright (C) 2022 BuddyBoss
 # This file is distributed under the GPLv2 or later (license.txt).
 msgid ""
 msgstr ""
-"Project-Id-Version: BuddyBoss Platform Pro 1.1.9\n"
+"Project-Id-Version: BuddyBoss Platform Pro 1.1.9.1\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
-"POT-Creation-Date: 2021-12-23 08:19:47+00:00\n"
+"POT-Creation-Date: 2022-01-27 07:08:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: BuddyBoss <support@buddyboss.com>\n"
 "Language: en\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "You don't have access to send request membership."
 msgstr ""
 
-#: includes/access-control/bb-access-control-filters.php:702
+#: includes/access-control/bb-access-control-filters.php:706
 #: includes/access-control/bb-access-control-rest-filters.php:448
 #: includes/access-control/bb-access-control-rest-filters.php:524
 msgid ""
@@ -53,8 +53,8 @@ msgid ""
 "sending messages to this member."
 msgstr ""
 
-#: includes/access-control/bb-access-control-filters.php:704
-#: includes/access-control/bb-access-control-filters.php:706
+#: includes/access-control/bb-access-control-filters.php:708
+#: includes/access-control/bb-access-control-filters.php:710
 #: includes/access-control/bb-access-control-rest-filters.php:450
 #: includes/access-control/bb-access-control-rest-filters.php:452
 #: includes/access-control/bb-access-control-rest-filters.php:526
@@ -64,7 +64,7 @@ msgid ""
 "sending messages to these members: "
 msgstr ""
 
-#: includes/access-control/bb-access-control-filters.php:706
+#: includes/access-control/bb-access-control-filters.php:710
 #: includes/access-control/bb-access-control-rest-filters.php:452
 #: includes/access-control/bb-access-control-rest-filters.php:528
 msgid "..."
@@ -213,7 +213,7 @@ msgstr ""
 #: includes/access-control/includes/class-bb-access-control.php:657
 #: includes/access-control/includes/class-bb-access-control.php:690
 #: includes/access-control/includes/class-bb-access-control.php:831
-#: includes/access-control/includes/class-bb-access-control.php:1030
+#: includes/access-control/includes/class-bb-access-control.php:1028
 #: includes/integrations/zoom/templates/admin/integration-tab-intro.php:17
 #. translators: %1$s - Platform Pro string, %2$s - License URL
 msgid "You need to activate a license key for %1$s to unlock this feature. %2$s"
@@ -229,7 +229,7 @@ msgstr ""
 #: includes/access-control/includes/class-bb-access-control.php:672
 #: includes/access-control/includes/class-bb-access-control.php:705
 #: includes/access-control/includes/class-bb-access-control.php:846
-#: includes/access-control/includes/class-bb-access-control.php:1045
+#: includes/access-control/includes/class-bb-access-control.php:1043
 #: includes/integrations/zoom/templates/admin/integration-tab-intro.php:32
 msgid "Add License key"
 msgstr ""
@@ -363,7 +363,7 @@ msgstr ""
 msgid "Join Groups"
 msgstr ""
 
-#: includes/access-control/includes/class-bb-access-control.php:1062
+#: includes/access-control/includes/class-bb-access-control.php:1060
 msgid ""
 "Select which members should have access to join public groups or request "
 "access to private groups, based on:"

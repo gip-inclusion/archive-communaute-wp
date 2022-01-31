@@ -381,6 +381,7 @@ class BetterDocs_Public {
 			$toc_class = array( 'betterdocs-toc' );
             if (empty($toc_title)) {
                 $toc_title = BetterDocs_DB::get_settings('toc_title') ? BetterDocs_DB::get_settings('toc_title') : esc_html__( 'Table of Contents', 'betterdocs' );
+				$toc_title = stripslashes($toc_title);
             }
 
             if ($collapsible == '1') {

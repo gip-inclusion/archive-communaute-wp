@@ -47,6 +47,7 @@ class BetterDocs_Docs_Post_Type
         self::$docs_slug = self::get_docs_slug();
         self::$cat_slug = self::docs_category_slug();
         add_action('init', array(__CLASS__, 'register_post'));
+        add_action('parse_request', array(__CLASS__, 'docs_rewrite_parse_request'));
         add_action('generate_rewrite_rules', array(__CLASS__, 'generate_rewrite_rules'));
         add_filter('betterdocs_docs_rewrite', array(__CLASS__, 'docs_rewrite'), 9);
         add_filter('post_type_link', array(__CLASS__, 'docs_show_permalinks'), 1, 3);
@@ -620,6 +621,33 @@ class BetterDocs_Docs_Post_Type
         }
     }
 
+	public static function docs_rewrite_parse_request($wp)
+    {
+		if(isset($wp->query_vars['post_type'], $wp->query_vars['doc_category'], $wp->query_vars['name']) && $wp->query_vars['post_type'] == 'docs'){
+            $loop_posts = new WP_Query( array(
+                'post_type'      => 'docs',
+                'post_status'    => 'any',
+                'name'           => $wp->query_vars['name'],
+                'posts_per_page' => 1,
+                'fields'         => 'all',
+                'tax_query'      => array(
+                    array(
+                        'taxonomy' => 'doc_category',
+                        'field'    => 'slug',
+                        'terms'    => $wp->query_vars['doc_category'],
+                    ),
+                ),
+            ) );
+		    if(!$loop_posts->have_posts()){
+                $wp->query_vars['pagename'] = $wp->query_vars['doc_category'] . "/" . $wp->query_vars['name'];
+                unset( $wp->query_vars['doc_category'] );
+                unset( $wp->query_vars['post_type'] );
+                unset( $wp->query_vars['name'] );
+                unset( $wp->query_vars['docs'] );
+		    }
+		}
+	}
+
     /**
      * Filtering post type rewrite rule.
      *
@@ -696,9 +724,9 @@ class BetterDocs_Docs_Post_Type
     }
 
     /**
-     * 
+     *
      * add doc_category meta field callback function
-     * 
+     *
      * @param [string|array] $object
      * @return string $url
      */

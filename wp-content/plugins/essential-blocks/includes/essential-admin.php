@@ -55,7 +55,7 @@ class EssentialAdmin
         include ESSENTIAL_BLOCKS_DIR_PATH . 'includes/menu-page-display.php';
     }
 
-    public function enqueue_styles()
+    public function enqueue_styles($hook)
     {
         wp_enqueue_style(
             $this->plugin_name,
@@ -72,20 +72,30 @@ class EssentialAdmin
             'all'
         );
 
+        if (file_exists(plugin_dir_path( __FILE__ ) . 'vendor-bundle/style.css')) {
+            wp_enqueue_style(
+                $this->plugin_name . '-admin-vendor-style',
+                ESSENTIAL_BLOCKS_ADMIN_URL . 'vendor-bundle/style.css',
+                array(),
+                ESSENTIAL_BLOCKS_VERSION,
+                'all'
+            );
+        }
+
         /**
          * Only for Admin Add/Edit Pages
          */
-        if ($this->eb_is_edit_page()) {
+        if ( $hook == 'post-new.php' || $hook == 'post.php' || $hook == 'site-editor.php' ) {
 
             $dir = dirname(__FILE__);
 
-            $editor_css = '../admin/editor-css/style.css';
+            $editor_css = ESSENTIAL_BLOCKS_DIR_PATH . 'controls/dist/index.css';
             wp_enqueue_style(
                 $this->plugin_name . '-editor-css',
-                ESSENTIAL_BLOCKS_ADMIN_URL . 'admin/editor-css/style.css',
+                ESSENTIAL_BLOCKS_ADMIN_URL . 'controls/dist/index.css',
                 array(),
                 // ESSENTIAL_BLOCKS_VERSION, // I've commented it cause the change on backend css don't get affected because it caches the file :)
-                filemtime("$dir/$editor_css"),
+                filemtime("$editor_css"),
                 'all'
             );
 
@@ -177,8 +187,9 @@ class EssentialAdmin
             wp_enqueue_script(
                 $this->plugin_name . '-admin-blocks',
                 ESSENTIAL_BLOCKS_ADMIN_URL . 'admin/index.js',
-                array('wp-i18n', 'wp-element', 'wp-hooks', 'wp-util', 'wp-components'),
-                ESSENTIAL_BLOCKS_VERSION,
+                array('wp-i18n', 'wp-element', 'wp-hooks', 'wp-util', 'wp-components', 'essential-blocks-vendor-bundle'),
+                // ESSENTIAL_BLOCKS_VERSION,
+                EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'admin/index.js'),
                 true
             );
 
@@ -200,7 +211,7 @@ class EssentialAdmin
         /**
          * Only for Admin Add/Edit Pages
          */
-        if ($this->eb_is_edit_page()) {
+        if ( $hook == 'post-new.php' || $hook == 'post.php' || $hook == 'site-editor.php' ) {
             wp_enqueue_script(
                 'essential-blocks-twenty-move',
                 ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/js/jquery.event.move.js',
@@ -265,21 +276,23 @@ class EssentialAdmin
                 true
             );
 
+            $controls_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'controls/dist/index.asset.php';
+            $controls_dependencies['dependencies'][] = $this->plugin_name . '-blocks-localize';
             wp_register_script(
                 "essential-blocks-controls-util",
-                ESSENTIAL_BLOCKS_ADMIN_URL . 'admin/block-controls/index.js',
-                array(
-                    'wp-i18n',
-                    'wp-element',
-                    'wp-hooks',
-                    'wp-util',
-                    'wp-components',
-                    'wp-blocks',
-                    'wp-editor',
-                    'wp-block-editor',
-                    $this->plugin_name . '-blocks-localize',
-                ),
-                ESSENTIAL_BLOCKS_VERSION,
+                ESSENTIAL_BLOCKS_ADMIN_URL . 'controls/dist/index.js',
+				array_merge($controls_dependencies['dependencies'], array("essential-blocks-edit-post")),
+                $controls_dependencies['version'],
+                true
+            );
+
+            $enabledisable_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'lib/enable-disable-blocks/index.asset.php';
+            $enabledisable_dependencies['dependencies'][] = $this->plugin_name . '-blocks-localize';
+            wp_enqueue_script(
+                "essential-blocks-enable-disable",
+                ESSENTIAL_BLOCKS_ADMIN_URL . 'lib/enable-disable-blocks/index.js',
+                $enabledisable_dependencies['dependencies'],
+                $enabledisable_dependencies['version'],
                 true
             );
         }
@@ -448,6 +461,16 @@ class EssentialAdmin
                 'value' => 'table_of_contents',
                 'visibility' => 'true',
             ],
+            'fluent_forms' => [
+                'label' => __('Fluent Forms', 'essential-blocks'),
+                'value' => 'fluent_forms',
+                'visibility' => 'true',
+            ],
+            'advanced_tabs' => [
+                'label' => __('Advanced Tabs', 'essential-blocks'),
+                'value' => 'advanced_tabs',
+                'visibility' => 'true',
+            ],
         ];
 
         $pro_blocks = apply_filters('essential_pro_blocks', []);
@@ -504,12 +527,23 @@ class EssentialAdmin
         //make sure we are on the backend
         if (!is_admin()) return false;
 
-
         if ($new_edit == "edit")
             return in_array($pagenow, array('post.php',));
         elseif ($new_edit == "new") //check for new post page
             return in_array($pagenow, array('post-new.php'));
         else //check for either new or edit
             return in_array($pagenow, array('post.php', 'post-new.php'));
+    }
+
+    /**
+     * Get the version number
+     */
+    public static function get_version($path)
+    {
+        if (defined('EB_DEV') && EB_DEV === true) {
+            return filemtime($path);
+        } else {
+            return ESSENTIAL_BLOCKS_VERSION;
+        }
     }
 }

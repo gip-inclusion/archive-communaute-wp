@@ -19,56 +19,31 @@ function image_comparison_block_init()
 	if (!function_exists('register_block_type')) {
 		return;
 	}
-	$dir = dirname(__FILE__);
 
-	$index_js = 'image-comparison/index.js';
-	wp_register_script(
-		'image-comparison-block-editor',
-		plugins_url($index_js, __FILE__),
-		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime($dir . "/" . $index_js)
-	);
-
-	/*$editor_css = 'image-comparison/editor.css';
-	wp_register_style(
-		'image-comparison-block-editor',
-		plugins_url($editor_css, __FILE__),
-		array(),
-		filemtime($dir . "/" . $editor_css)
-	);*/
-
-	/*$style_css = 'image-comparison/style.css';
-	wp_register_style(
-		'image-comparison-block',
-		plugins_url($style_css, __FILE__),
-		array(),
-		filemtime($dir . "/" .$style_css)
-	);*/
+	$frontend_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/image-comparison/frontend/index.asset.php';
+	$frontend_dependencies['dependencies'][] = 'essential-blocks-vendor-bundle';
 
 	$frontend_js = 'image-comparison/frontend/index.js';
 	wp_register_script(
 		'essential-blocks-image-comparison-frontend',
 		plugins_url($frontend_js, __FILE__),
-		array("wp-element"),
+		$frontend_dependencies['dependencies'],
+		EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/image-comparison/frontend/index.js'),
 		true
 	);
 
-	register_block_type($dir . "/image-comparison", array(
-		'editor_script' => 'image-comparison-block-editor',
-		'render_callback' => function ($attributes, $content) {
-			if (!is_admin()) {
-				wp_enqueue_script('essential-blocks-image-comparison-frontend');
+	register_block_type(
+		EssentialBlocks::get_block_register_path("image-comparison"),
+		array(
+			'editor_script' => 'essential-blocks-editor-script',
+			'render_callback' => function ($attributes, $content) {
+				if (!is_admin()) {
+					wp_enqueue_script('essential-blocks-image-comparison-frontend');
+				}
+				return $content;
 			}
-			return $content;
-		}
 
-	));
+		)
+	);
 }
 add_action('init', 'image_comparison_block_init');

@@ -19,43 +19,18 @@ function row_block_init()
 	if (!function_exists('register_block_type')) {
 		return;
 	}
-	$dir = dirname(__FILE__);
 
-	$index_js = 'row/index.js';
-	wp_register_script(
-		'row-block-editor',
-		plugins_url($index_js, __FILE__),
+	register_block_type(
+		EssentialBlocks::get_block_register_path("row"),
 		array(
-			// 'wp-blocks',
-			// 'wp-i18n',
-			// 'wp-element',
-			// 'wp-editor',
-			// 'wp-block-editor',
-			'essential-blocks-controls-util'
-		),
-		filemtime($dir . "/" . $index_js)
-	);
-
-
-	// 
-	$style_css = 'row/style.css';
-	wp_register_style(
-		'row-block-style',
-		plugins_url($style_css, __FILE__),
-		array(),
-		filemtime($dir . "/" . $style_css)
-	);
-
-
-	// 
-	register_block_type($dir . "/row", array(
-		'editor_script' => 'row-block-editor',
-		'render_callback' => function ($attributes, $content) {
-			if (!is_admin()) {
-				wp_enqueue_style('row-block-style');
+			'editor_script' => 'essential-blocks-editor-script',
+			'render_callback' => function ($attributes, $content) {
+				if (!is_admin()) {
+					wp_enqueue_style('essential-blocks-frontend-style');
+				}
+				return $content;
 			}
-			return $content;
-		}
-	));
+		)
+	);
 }
 add_action('init', 'row_block_init');

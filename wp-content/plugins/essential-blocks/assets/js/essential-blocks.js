@@ -17,7 +17,6 @@
 	});
 
 
-
 	// admin save
 	$(document).on("click", "#eb-save-admin-options > button", function(e) {
 		e.preventDefault();

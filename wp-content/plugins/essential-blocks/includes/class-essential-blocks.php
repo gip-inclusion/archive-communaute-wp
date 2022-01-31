@@ -64,6 +64,12 @@ class EssentialBlocks
         if ($this->is_block_enabled('advanced_heading')) {
             require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/advanced-heading.php';
         }
+        if ($this->is_block_enabled('advanced_tabs')) {
+            require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/advanced-tabs.php';
+        }
+        if ($this->is_block_enabled('advanced_tabs')) {
+            require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/tab.php';
+        }
         if ($this->is_block_enabled('image_comparison')) {
             require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/image-comparison.php';
         }
@@ -128,11 +134,15 @@ class EssentialBlocks
         if ($this->is_block_enabled('feature_list')) {
             require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/feature-list.php';
         }
+        if ($this->is_block_enabled('fluent_forms')) {
+            require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/fluent-forms.php';
+        }
 
         require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/category.php';
         require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/font-loader.php';
         require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/post-meta.php';
         require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/essential-admin.php';
+        require_once ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/blocks.php';
     }
 
     private function is_block_enabled($key = null)
@@ -142,5 +152,14 @@ class EssentialBlocks
         }
         return (!isset($this->enabled_blocks[$key]) ||
             (isset($this->enabled_blocks[$key]) && $this->enabled_blocks[$key]['visibility'] === "true"));
+    }
+
+    public static function get_block_register_path($folder_name)
+    {
+        if (ESSENTIAL_BLOCKS_WP_VERSION <= 5.6) {
+            return 'essential-blocks/' . $folder_name;
+        } else {
+            return ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/' . $folder_name;
+        }
     }
 }

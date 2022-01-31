@@ -1,6 +1,6 @@
 <?php
 
-function block_categories_all($categories, $post)
+function eb_block_categories($categories, $post)
 {
     $eb_category = array(
         'slug' => 'essential-blocks',
@@ -10,4 +10,10 @@ function block_categories_all($categories, $post)
     $modifiedCategory = array_merge($modifiedCategory, $categories);
     return $modifiedCategory;
 }
-add_filter('block_categories_all', 'block_categories_all', 10, 2);
+
+// Block Categories
+if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
+    add_filter('block_categories_all', 'eb_block_categories', 10, 2);
+} else {
+    add_filter('block_categories', 'eb_block_categories', 10, 2);
+}
