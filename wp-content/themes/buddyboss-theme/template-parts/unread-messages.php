@@ -87,7 +87,7 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 				$groups_table             = $prefix . 'bp_groups';
 				$group_name               = $wpdb->get_var( "SELECT `name` FROM `{$groups_table}` WHERE `id` = '{$group_id}';" ); // db call ok; no-cache ok;
 				$group_link               = 'javascript:void(0);';
-				$group_avatar             = buddypress()->plugin_url . 'bp-core/images/mystery-group.png';
+				$group_avatar             = function_exists( 'bb_attachments_get_default_profile_group_avatar_image' ) ? bb_attachments_get_default_profile_group_avatar_image( array( 'object' => 'group' ) ) : buddypress()->plugin_url . 'bp-core/images/group-avatar-buddyboss.png';
 				$legacy_group_avatar_name = '-groupavatar-full';
 				$legacy_user_avatar_name  = '-avatar2';
 
@@ -158,11 +158,11 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 		if ( (int) $group_id > 0 ) {
 
 			$first_message           = BP_Messages_Thread::get_first_message( bp_get_message_thread_id() );
-			$group_message_thread_id = bp_messages_get_meta( $first_message->id, 'group_message_thread_id', true ); // group
+			$group_message_thread_id = bp_messages_get_meta( $first_message->id, 'group_message_thread_id', true ); // group.
 			$group_id                = (int) bp_messages_get_meta( $first_message->id, 'group_id', true );
-			$message_users           = bp_messages_get_meta( $first_message->id, 'group_message_users', true ); // all - individual
-			$message_type            = bp_messages_get_meta( $first_message->id, 'group_message_type', true ); // open - private
-			$message_from            = bp_messages_get_meta( $first_message->id, 'message_from', true ); // group
+			$message_users           = bp_messages_get_meta( $first_message->id, 'group_message_users', true ); // all - individual.
+			$message_type            = bp_messages_get_meta( $first_message->id, 'group_message_type', true ); // open - private.
+			$message_from            = bp_messages_get_meta( $first_message->id, 'message_from', true ); // group.
 
 			if ( 'group' === $message_from && bp_get_message_thread_id() === (int) $group_message_thread_id && 'all' === $message_users && 'open' === $message_type ) {
 				$is_group_thread = 1;
@@ -221,8 +221,8 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 			if ( function_exists( 'bp_messages_get_avatars' ) && ! empty( bp_messages_get_avatars( bp_get_message_thread_id(), get_current_user_id() ) ) ) {
 				$avatars = bp_messages_get_avatars( bp_get_message_thread_id(), get_current_user_id() );
 				?>
-                <div class="notification-avatar">
-                    <a href="<?php bp_message_thread_view_link( bp_get_message_thread_id() ); ?>">
+				<div class="notification-avatar">
+					<a href="<?php bp_message_thread_view_link( bp_get_message_thread_id() ); ?>">
 						<?php
 						if ( count( $avatars ) > 1 ) {
 							echo '<div class="thread-multiple-avatar">';
@@ -234,8 +234,8 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 							echo '</div>';
 						}
 						?>
-                    </a>
-                </div>
+					</a>
+				</div>
 				<?php
 			} elseif ( $is_group_thread ) {
 				?>
@@ -250,7 +250,7 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 					<?php
 					if ( count( $other_recipients ) > 1 ) {
 						?>
-						<a href="<?php echo bp_core_get_user_domain( $messages_template->thread->last_sender_id ); ?>">
+						<a href="<?php echo esc_url( bp_core_get_user_domain( $messages_template->thread->last_sender_id ) ); ?>">
 							<?php bp_message_thread_avatar(); ?>
 						</a>
 						<?php
@@ -278,7 +278,7 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 				if ( $is_group_thread ) {
 					?>
 					<span class="notification-users">
-						<a href="<?php bp_message_thread_view_link( bp_get_message_thread_id() ); ?>">
+						<a href="<?php esc_url( bp_message_thread_view_link( bp_get_message_thread_id() ) ); ?>">
 							<?php
 							echo ucwords( $group_name );
 							?>
@@ -416,7 +416,7 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 else :
 	?>
 	<li class="bs-item-wrap">
-		<div class="notification-content"><?php _e( 'No new messages!', 'buddyboss-theme' ); ?></div>
+		<div class="notification-content"><?php esc_html_e( 'No new messages!', 'buddyboss-theme' ); ?></div>
 	</li>
 	<?php
 endif;

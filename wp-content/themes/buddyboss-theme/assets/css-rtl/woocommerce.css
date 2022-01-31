@@ -3053,6 +3053,59 @@ body .select2-container .select2-dropdown .select2-results__option {
   box-shadow: none;
 }
 
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data [for=wc-stripe-new-payment-method] {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data .form-row {
+  margin-bottom: 0 !important;
+  width: 100%;
+}
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data #wc-stripe-new-payment-method + label:before {
+  content: "";
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #C9CBCA;
+  box-shadow: none;
+  -ms-flex-preferred-size: 40px;
+      flex-basis: 40px;
+  max-width: 20px;
+  min-width: 20px;
+}
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data #wc-stripe-new-payment-method:checked + label:before {
+  background-color: #007CFF;
+  border-color: #007CFF;
+  content: "\e876";
+  font-family: "bb-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+  color: #fff;
+  line-height: 18px;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-shadow: none;
+}
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data .stripe-source-errors .wc-stripe-error li {
+  line-height: 1.4;
+}
+.woocommerce-checkout .payment_method_stripe #stripe-payment-data .stripe-source-errors .wc-stripe-error:before {
+  color: #fff;
+}
+
 input[type=checkbox]#wp-comment-cookies-consent {
   position: absolute;
   opacity: 0;
