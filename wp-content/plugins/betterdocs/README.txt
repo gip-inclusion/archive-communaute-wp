@@ -5,7 +5,7 @@ Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, know
 Requires at least: 4.0
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,14 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.6 - 02/02/2022 = 
+- Fixed: Category Order not working for docs page
+- Fixed: Undefined index orderby on betterdocs_category_box shortcode
+- Fixed: Docs not updating in WordPress 5.9 when reusable blocks are used
+- Fixed: Explore more Hover controllers not working in Customizer
+- Fixed: Customizer not loading in Twenty Twenty & Twenty Seventeen Theme
+- Few minor bug fixes & improvements
 
 = 2.0.5 - 25/01/2022 = 
 - Fixed: Child pages throwing 404 error when BetterDocs is enabled

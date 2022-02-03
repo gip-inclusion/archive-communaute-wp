@@ -10,3 +10,8 @@ b,
 strong {
   font-weight: bold;
 }
+
+
+.language-switcher {
+	display: none !important;
+}

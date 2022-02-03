@@ -36,13 +36,20 @@ class API {
 	 * @return \stdClass|\WP_Error
 	 */
 	private static function remote_post( $body_args = [] ) {
+		/**
+		 * Allow third party plugins to set the url to get_site_url() instead of home_url().
+		 *
+		 * @param boolean Whether to use home_url() or get_site_url().
+		 */
+		$use_home_url = apply_filters( 'elementor_pro/license/api/use_home_url', true );
+
 		$body_args = wp_parse_args(
 			$body_args,
 			[
 				'api_version' => ELEMENTOR_PRO_VERSION,
 				'item_name' => self::PRODUCT_NAME,
 				'site_lang' => get_bloginfo( 'language' ),
-				'url' => home_url(),
+				'url' => $use_home_url ? home_url() : get_site_url(),
 			]
 		);
 

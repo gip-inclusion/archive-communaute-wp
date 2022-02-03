@@ -56,6 +56,7 @@ class BetterDocs_Docs_Post_Type
         add_filter('rest_doc_category_collection_params', array(__CLASS__, 'add_rest_orderby_params_on_doc_category'), 10, 1);
         add_filter('rest_doc_category_query', array(__CLASS__, 'modify_doc_category_rest_query'), 10, 2);
         add_action('admin_head', array(__CLASS__, 'admin_order_terms'));
+        add_action('parse_term_query', array(__CLASS__, 'parse_term_query'));
         // doc category taxonomy media upload hooks
         add_action('doc_category_add_form_fields', array(__CLASS__, 'add_doc_category_meta'), 10, 2);
         add_action('doc_category_edit_form_fields', array(__CLASS__, 'update_doc_category_meta'), 10, 2);
@@ -65,6 +66,25 @@ class BetterDocs_Docs_Post_Type
         add_action('admin_footer', array(__CLASS__, 'add_script'));
         // add doc category image on rest api
         add_action('rest_api_init', array(__CLASS__, 'add_doc_category_meta_rest_api'), 10, 2);
+    }
+
+    public static function parse_term_query( $term_query ){
+        $screen = function_exists('get_current_screen') ? get_current_screen() : '';
+        if(
+            empty( $term_query->query_vars['taxonomy'] )
+            || ! in_array( 'doc_category', $term_query->query_vars['taxonomy'], true )
+            || empty( $screen )
+            || ( empty( $screen ) && $screen->taxonomy !== 'doc_category' )
+        ) {
+            return;
+        }
+        $term_query->query_vars['meta_query'] = [
+			[
+				'key' => 'doc_category_order',
+				'type' => 'NUMERIC'
+			]
+		];
+		$term_query->query_vars['orderby'] = 'meta_value_num';
     }
 
     public static function get_docs_slug()

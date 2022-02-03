@@ -23,13 +23,22 @@ $object = get_queried_object();
 	?>
 
 	<div class="betterdocs-content-area">
-        <aside id="betterdocs-sidebar">
-            <div class="betterdocs-sidebar-content betterdocs-category-sidebar">
-                <?php
-                echo do_shortcode( '[betterdocs_category_grid]' );
-                ?>
-			</div>
-        </aside><!-- #sidebar -->
+        <?php
+        $enable_archive_sidebar = BetterDocs_DB::get_settings('enable_archive_sidebar');
+        if ($enable_archive_sidebar == 1) {
+            echo '<aside id="betterdocs-sidebar">
+				<div class="betterdocs-sidebar-content betterdocs-category-sidebar">';
+            $output = betterdocs_generate_output();
+            $terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
+            if (BetterDocs_DB::get_settings('alphabetically_order_term') == 1) {
+                $terms_orderby = BetterDocs_DB::get_settings('alphabetically_order_term');
+            }
+            $shortcode = do_shortcode('[betterdocs_category_grid terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]');
+            echo apply_filters('betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby);
+            echo '</div>
+			</aside>';
+        }
+        ?>
 		<div id="main" class="docs-listing-main">
 			<div class="docs-category-listing" >
 				<div class="docs-cat-title">

@@ -138,111 +138,83 @@ class BetterDocs_Customizer_Toggle_Control extends WP_Customize_Control {
 
 /**
  * Alpha Color Picker Customizer Control
- * 
+ *
  * Class BetterDocs_Customizer_Alpha_Color_Control
  *
  * @since 1.0.0
  */
 
 class BetterDocs_Customizer_Alpha_Color_Control extends WP_Customize_Control {
-	/**
-	 * Official control name.
-	 *
-	 * @var string
-	 */
-	public $type = 'betterdocs-alpha-color';
-	/**
-	 * Add support for palettes to be passed in.
-	 *
-	 * Supported palette values are true, false, or an array of RGBa and Hex colors.
-	 *
-	 * @var bool
-	 */
-	public $palette;
-	/**
-	 * Add support for showing the opacity value on the slider handle.
-	 *
-	 * @var array
-	 */
-	public $show_opacity;
-
     /**
-     * ColorPicker Attributes
+     * Official control name.
+     *
+     * @var string
      */
-    public $attributes = '';
-
+    public $type = 'betterdocs-alpha-color';
     /**
-     * Color palette defaults
+     * Add support for palettes to be passed in.
+     *
+     * Supported palette values are true, false, or an array of RGBa and Hex colors.
+     *
+     * @var bool
      */
-    public $defaultPalette = array(
-        '#000000',
-        '#ffffff',
-        '#dd3333',
-        '#dd9933',
-        '#eeee22',
-        '#81d742',
-        '#1e73be',
-        '#8224e3',
-    );
-
+    public $palette;
     /**
-     * Constructor
+     * Add support for showing the opacity value on the slider handle.
+     *
+     * @var array
      */
-    public function __construct( $manager, $id, $args = array(), $options = array() ) {
-        parent::__construct( $manager, $id, $args );
-        $this->attributes .= 'data-default-color="' . esc_attr( $this->value() ) . '"';
-        $this->attributes .= 'data-alpha="true"';
-        $this->attributes .= 'data-reset-alpha="' . ( isset( $this->input_attrs['resetalpha'] ) ? $this->input_attrs['resetalpha'] : 'true' ) . '"';
-        $this->attributes .= 'data-custom-width="0"';
-    }
-
-	/**
-	 * Enqueue scripts/styles.
-	 * 
-	 * @since 1.0.0
-	 *
-	 */
-	public function enqueue() {
-        wp_enqueue_style( 'wp-color-picker' );
-        wp_register_script(
-            'wp-color-picker-alpha',
-            BETTERDOCS_ADMIN_URL . 'assets/js/wp-color-picker-alpha.min.js',
+    public $show_opacity;
+    /**
+     * Enqueue scripts/styles.
+     *
+     * @since 1.0.0
+     *
+     */
+    public function enqueue() {
+        wp_enqueue_script(
+            'betterdocs-customizer-alpha-color-picker',
+            BETTERDOCS_ADMIN_URL . 'assets/js/alpha-color-picker.js',
+            array( 'jquery', 'wp-color-picker' ),
+            rand(),
+            true
+        );
+        wp_enqueue_style(
+            'betterdocs-customizer-alpha-color-picker',
+            BETTERDOCS_ADMIN_URL . 'assets/css/alpha-color-picker.css',
             array( 'wp-color-picker' ),
-            rand(), true
+            rand()
         );
-        wp_add_inline_script(
-            'wp-color-picker-alpha',
-            'jQuery( function() { jQuery( ".betterdocs-alpha-color-control" ).wpColorPicker(); } );'
-        );
-        wp_enqueue_script( 'wp-color-picker-alpha' );
-	}
-
-    /**
-     * Pass our Palette colours to JavaScript
-     */
-    public function to_json() {
-        parent::to_json();
-        $this->json['colorpickerpalette'] = isset( $this->input_attrs['palette'] ) ? $this->input_attrs['palette'] : $this->defaultPalette;
     }
+    /**
+     * Render the control.
+     */
+    public function render_content() {
+        echo '<div class="betterdocs-alpha-color-picker">';
+        // Output the label and description if they were passed in.
+        if ( isset( $this->label ) && '' !== $this->label ) {
+            echo '<span class="customize-control-title betterdocs-customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+        }
+        if ( isset( $this->description ) && '' !== $this->description ) {
+            echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
+        }
 
-	/**
-	 * Render the control.
-	 */
-	public function render_content() {
-		echo '<div class="betterdocs-alpha-color-picker">';
-		// Output the label and description if they were passed in.
-		if ( isset( $this->label ) && '' !== $this->label ) {
-			echo '<span class="customize-control-title betterdocs-customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
-		}
-		if ( isset( $this->description ) && '' !== $this->description ) {
-			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
-		}
-		?>
-		<input id="<?php echo esc_attr( $this->id ); ?>" class="betterdocs-alpha-color-control" <?php echo $this->attributes; ?> <?php esc_attr( $this->link() ); ?>  />
-		
-		<?php
-		echo '</div>';
-	}
+        // Process the palette
+        if ( is_array( $this->palette ) ) {
+            $palette = implode( '|', $this->palette );
+        } else {
+            // Default to true.
+            $palette = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
+        }
+        // Support passing show_opacity as string or boolean. Default to true.
+        $show_opacity = ( false === $this->show_opacity || 'false' === $this->show_opacity ) ? 'false' : 'true';
+        // Begin the output.
+        ?>
+        <input class="betterdocs-alpha-color-control" type="text" data-show-opacity="<?php echo esc_attr( $show_opacity ); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php esc_attr( $this->link() ); ?>  />
+
+        <?php
+        echo '</div>';
+    }
 }
 
 /**

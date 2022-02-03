@@ -1570,7 +1570,7 @@ class BetterDocs_Elementor_Sidebar extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $sticky_toc = ($settings['enable_sticky_toc'] == '1') ? $this->get_toc() : '';
-        $shortcode = do_shortcode('[betterdocs_category_grid disable_customizer_style="true" sidebar_list="true" posts_per_grid="-1" orderby="'.$settings['orderby'].'" order="'.$settings['order'].'" title_tag="'.$settings['category_title_tag'].'"]');
+        $shortcode = do_shortcode('[betterdocs_category_grid disable_customizer_style="true" sidebar_list="true" posts_per_grid="-1" terms_orderby="'.$settings['orderby'].'" terms_order="'.$settings['order'].'" title_tag="'.$settings['category_title_tag'].'"]');
         $sidebar = '<aside id="betterdocs-sidebar" class="betterdocs-el-single-sidebar"><div class="betterdocs-sidebar-content">' . $shortcode . '</div>' . $sticky_toc . '</aside>';
         echo apply_filters('betterdocs_elementor_sidebar', $sidebar, $settings);
     }

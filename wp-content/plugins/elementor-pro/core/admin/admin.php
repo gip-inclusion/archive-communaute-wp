@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Admin extends App {
+	const USAGE_PARAM_INSTALL_TIME = 'install_time_pro';
 
 	/**
 	 * Get module name.
@@ -221,6 +222,14 @@ class Admin extends App {
 
 	public function change_tracker_params( $params ) {
 		unset( $params['is_first_time'] );
+
+		if ( ! isset( $params['events'] ) ) {
+			$params['events'] = [];
+		}
+
+		$params['events'] = array_merge( $params['events'], [
+			self::USAGE_PARAM_INSTALL_TIME => gmdate( 'Y-m-d H:i:s', Plugin::instance()->license_admin->get_installed_time() ),
+		] );
 
 		return $params;
 	}

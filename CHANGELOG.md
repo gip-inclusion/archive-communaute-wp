@@ -3,6 +3,7 @@
 ## [07] - 2022-01-31
 ### Ajouté / Corrigé
 - Ajout des traductions Française manquantes à la dernière version de BuddyBoss
+- Masquage d'un sélecteur de langue sur la page connexion
 
 ### Modifié
 - Synchronisation des bases de données (prod -> le staging / local)
