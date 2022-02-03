@@ -26,8 +26,12 @@ $output = betterdocs_generate_output();
             <div class="betterdocs-sidebar-content betterdocs-category-sidebar">
 				<?php
                 $output = betterdocs_generate_output();
-				$shortcode = do_shortcode( '[betterdocs_category_grid title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]' );
-				echo apply_filters( 'betterdocs_sidebar_category_shortcode', $shortcode );
+                $terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
+                if (BetterDocs_DB::get_settings('alphabetically_order_term') == 1) {
+                    $terms_orderby = BetterDocs_DB::get_settings('alphabetically_order_term');
+                }
+				$shortcode = do_shortcode( '[betterdocs_category_grid terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]' );
+				echo apply_filters( 'betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby);
                 ?>
 			</div>
 			<?php

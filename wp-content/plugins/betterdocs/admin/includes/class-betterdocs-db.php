@@ -27,6 +27,7 @@ class BetterDocs_DB {
             'search_result_image' => 1,
             'masonry_layout' => 1,
             'alphabetically_order_post' => '',
+            'terms_orderby' => 'betterdocs_order',
             'alphabetically_order_term' => '',
             'nested_subcategory' => '',
             'column_number' => 3,

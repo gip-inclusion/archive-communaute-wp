@@ -31,6 +31,7 @@ function betterdocs_searchbox_block_init()
             'wp-element',
             'wp-editor',
             'wp-block-editor',
+            'betterdocs-blocks-edit-post'
         ),
         filemtime("$dir/$index_js")
     );
@@ -59,7 +60,7 @@ function betterdocs_searchbox_server_side_render($attributes)
 {
 
     if (!is_admin()) {
-        wp_enqueue_script('betterdocs-searchbox-block-editor');
+        wp_enqueue_style('betterdocs-searchbox-block-editor');
     }
 
     $attributes = wp_parse_args(
@@ -76,7 +77,7 @@ function betterdocs_searchbox_server_side_render($attributes)
 
     $html = '';
     $html .= '<div class="' . $blockId . ' betterdocs-searchbox-wrapper">';
-    $shortcode = sprintf('[betterdocs_search_form placeholder="' . $placeholderText . '"]', apply_filters('eael_betterdocs_search_form_params', []));
+    $shortcode = sprintf('[betterdocs_search_form placeholder="' . $placeholderText . '"]', apply_filters('betterdocs_search_form_atts', []));
     $html .= do_shortcode(shortcode_unautop($shortcode));
     $html .= '</div>';
 

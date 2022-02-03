@@ -31,7 +31,8 @@ function betterdocs_categorygrid_block_init()
             'wp-element',
             'wp-editor',
             'wp-block-editor',
-            'masonry'
+            'masonry',
+            'betterdocs-blocks-edit-post'
         ),
         filemtime("$dir/$index_js")
     );

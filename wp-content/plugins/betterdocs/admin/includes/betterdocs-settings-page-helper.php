@@ -192,6 +192,29 @@ function betterdocs_settings_args(){
                                     'default'     => 1,
                                     'priority'    => 10,
                                 ),
+                                'terms_orderby' => array(
+                                    'type'        => 'select',
+                                    'label'       => __('Terms Order By' , 'betterdocs'),
+                                    'default'     =>  'betterdocs_order',
+                                    'options'     =>  apply_filters('betterdocs_terms_orderby_options', array(
+                                        'none' => __('No order', 'betterdocs'),
+                                        'name' => __('Name', 'betterdocs'),
+                                        'slug' => __('Slug', 'betterdocs'),
+                                        'term_group' => __('Term Group', 'betterdocs'),
+                                        'term_id' => __('Term ID', 'betterdocs'),
+                                        'id' => __('ID', 'betterdocs'),
+                                        'description' => __('Description', 'betterdocs'),
+                                        'parent' => __('Parent', 'betterdocs'),
+                                        'betterdocs_order' => __('BetterDocs Order', 'betterdocs'),
+                                    )),
+                                    'priority'    => 10,
+                                ),
+                                'alphabetically_order_term' => array(
+                                    'type'        => 'checkbox',
+                                    'label'       => __('Order Terms Alphabetically' , 'betterdocs'),
+                                    'default'     => '',
+                                    'priority'    => 10,
+                                ),
                                 'alphabetically_order_post' => array(
                                     'type'        => 'select',
                                     'label'       => __('Docs Order By' , 'betterdocs'),
@@ -218,12 +241,6 @@ function betterdocs_settings_args(){
                                         'ASC' => 'Ascending',
                                         'DESC' => 'Descending',
                                     ],
-                                    'priority'    => 10,
-                                ),
-                                'alphabetically_order_term' => array(
-                                    'type'        => 'checkbox',
-                                    'label'       => __('Order Terms Alphabetically' , 'betterdocs'),
-                                    'default'     => '',
                                     'priority'    => 10,
                                 ),
                                 'nested_subcategory' => array(

@@ -32,8 +32,12 @@ $term = get_term_by('slug', $wp_query->query['doc_category'], 'doc_category');
 			echo '<aside id="betterdocs-sidebar">
 				<div class="betterdocs-sidebar-content betterdocs-category-sidebar">';
                     $output = betterdocs_generate_output();
-                    $shortcode = do_shortcode('[betterdocs_category_grid title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]');
-                    echo apply_filters('betterdocs_sidebar_category_shortcode', $shortcode);
+                    $terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
+                    if (BetterDocs_DB::get_settings('alphabetically_order_term') == 1) {
+                        $terms_orderby = BetterDocs_DB::get_settings('alphabetically_order_term');
+                    }
+                    $shortcode = do_shortcode('[betterdocs_category_grid terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]');
+                    echo apply_filters('betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby);
 				echo '</div>
 			</aside>';
 		}
@@ -73,8 +77,8 @@ $term = get_term_by('slug', $wp_query->query['doc_category'], 'doc_category');
 							$multikb,
 							'',
 							'docs',
-                            $orderby,
-                            $order,
+                            $terms_orderby,
+                            '',
                             ''
 						);
 					}

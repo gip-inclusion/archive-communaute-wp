@@ -345,7 +345,7 @@ function betterdocs_customize_css() {
 		.betterdocs-categories-wrap.single-kb .docs-sub-cat-title a:hover {
 			color: <?php echo $output['betterdocs_doc_page_article_subcategory_hover_color'] ?>;
 		}
-		.docs-cat-link-btn, .docs-cat-link-btn:visited {
+		.docs-item-container .docs-cat-link-btn, .docs-item-container .docs-cat-link-btn:visited {
 			background-color: <?php echo $output['betterdocs_doc_page_explore_btn_bg_color'] ?>;
 			font-size: <?php echo $output['betterdocs_doc_page_explore_btn_font_size'] ?>px;
 			color: <?php echo $output['betterdocs_doc_page_explore_btn_color'] ?>;
@@ -361,10 +361,10 @@ function betterdocs_customize_css() {
 			border-width: <?php echo $output['betterdocs_doc_page_explore_btn_border_width'] ?>px;
 		}
 
-		.docs-cat-link-btn, .docs-cat-link-btn{
+		.docs-item-container .docs-cat-link-btn{
 			border-width: <?php echo $output['betterdocs_doc_page_explore_btn_border_width'] ?>px;
 		}
-		.docs-cat-link-btn:hover {
+		.docs-item-container .docs-cat-link-btn:hover {
 			background-color: <?php echo $output['betterdocs_doc_page_explore_btn_hover_bg_color'] ?>;
 			color: <?php echo $output['betterdocs_doc_page_explore_btn_hover_color'] ?>;
 			border-color: <?php echo $output['betterdocs_doc_page_explore_btn_hover_border_color'] ?>;

@@ -19,6 +19,7 @@ final class Modules_Manager {
 			'query-control',
 			'custom-attributes',
 			'custom-css',
+			'page-transitions',
 			// role-manager Must be before Global Widget
 			'role-manager',
 			'global-widget',

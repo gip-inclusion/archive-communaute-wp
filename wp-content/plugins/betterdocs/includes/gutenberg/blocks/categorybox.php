@@ -30,7 +30,8 @@ function betterdocs_categorybox_block_init()
             'wp-i18n',
             'wp-element',
             'wp-editor',
-            'wp-block-editor'
+            'wp-block-editor',
+            'betterdocs-blocks-edit-post'
         ),
         filemtime("$dir/$index_js")
     );

@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'TEC\\Events\\Legacy\\Views\\V1\\Provider' => $baseDir . '/src/Events/Legacy/Views/V1/Provider.php',
     'Tribe\\Events\\Admin\\Notice\\Full_Site_Editor' => $baseDir . '/src/Tribe/Admin/Notice/Full_Site_Editor.php',
     'Tribe\\Events\\Admin\\Notice\\Legacy_Views_Deprecation' => $baseDir . '/src/Tribe/Admin/Notice/Legacy_Views_Deprecation.php',
     'Tribe\\Events\\Aggregator\\Processes\\Batch_Imports' => $baseDir . '/src/Tribe/Aggregator/Processes/Batch_Imports.php',

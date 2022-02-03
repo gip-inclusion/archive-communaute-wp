@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.5.2 - 28-11-2021 */
+/*! elementor-pro - v3.6.0 - 31-01-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -747,6 +747,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -835,7 +836,7 @@ var CustomIcons = /*#__PURE__*/function (_CustomAssetsBase) {
           footer: jQuery('#elementor-custom-icons-template-footer').html(),
           duplicatePrefix: jQuery('#elementor-custom-icons-template-duplicate-prefix').html()
         },
-        notice: ElementorProConfig.i18n.fontsUploadEmptyNotice
+        notice: __('Upload an icon set to publish.', 'elementor-pro')
       };
     }
   }, {
@@ -1064,6 +1065,7 @@ exports.default = _default;
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
@@ -1137,7 +1139,7 @@ var CustomFontsManager = /*#__PURE__*/function (_CustomAssetsBase) {
           publishButton: '#publish',
           publishButtonSpinner: '#publishing-action > .spinner'
         },
-        notice: ElementorProConfig.i18n.fontsUploadEmptyNotice,
+        notice: __('Choose a font to publish.', 'elementor-pro'),
         fontLabelTemplate: '<ul class="row-font-label">' + '<li class="row-font-weight">{{weight}}</li>' + '<li class="row-font-style">{{style}}</li>' + '<li class="row-font-preview">{{preview}}</li>' + '{{toolbar}}' + '</ul>'
       };
     }
@@ -2252,7 +2254,7 @@ module.exports = function () {
         return;
       }
 
-      var editUrl = ElementorProConfig.i18n.home_url + '?p=' + templateID + '&elementor';
+      var editUrl = elementorAdmin.config.home_url + '?p=' + templateID + '&elementor';
       $editButton.prop('href', editUrl).show();
     });
   };
@@ -6481,6 +6483,17 @@ if (__webpack_require__(/*! ./_fails */ "../node_modules/core-js/modules/_fails.
   });
 }
 
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!**************************!*\
+  !*** external "wp.i18n" ***!
+  \**************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = wp.i18n;
 
 /***/ })
 
