@@ -939,6 +939,9 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 
 					if (response.indexOf(',') !== -1) {
 						var responseArray = JSON.parse(response);
+						if(responseArray.custom_message){
+							$parent.find('[data-pafe-form-builder-message]').html(responseArray.custom_message);
+						}
 						$parent.find('.elementor-message').each(function(){
 							if (responseArray.post_url != '') {
 				        		var html = $(this).html().replace('[post_url]','<a href="' + responseArray.post_url + '">' + responseArray.post_url + '</a>');
@@ -1576,6 +1579,10 @@ jQuery(document).ready(function( $ ) {
 								processData: false,
 								contentType: false,
 								success: function (response) {
+									var responseArray = JSON.parse(response);
+									if(responseArray.custom_message){
+										$parent.find('[data-pafe-form-builder-message]').html(responseArray.custom_message);
+									}
 									$parent.css({'opacity' : 1});
 									$parent.removeClass('elementor-form-waiting');
 									$(document).find('[data-pafe-form-builder-form-id="' + formID + '"]').closest('.elementor-element').css({'opacity' : 1});
@@ -1588,7 +1595,6 @@ jQuery(document).ready(function( $ ) {
 					        		}
 
 					        		if (response.indexOf(',') !== -1) {
-										var responseArray = JSON.parse(response);
 
 										$parent.find('.elementor-message').each(function(){
 											if (responseArray.post_url != '') {
@@ -1705,7 +1711,9 @@ jQuery(document).ready(function( $ ) {
 			        		if (response.indexOf(',') !== -1) {
 								
 								var responseArray = JSON.parse(response);
-								
+								if(responseArray.custom_message){
+									$parent.find('[data-pafe-form-builder-message]').html(responseArray.custom_message);
+								}
 								$parent.find('.elementor-message').each(function(){
 									if (responseArray.post_url != '') {
 						        		var html = $(this).html().replace('[post_url]','<a href="' + responseArray.post_url + '">' + responseArray.post_url + '</a>');
@@ -1859,6 +1867,9 @@ jQuery(document).ready(function( $ ) {
 					if (response.indexOf(',') !== -1) {
 						
 						var responseArray = JSON.parse(response);
+						if(responseArray.custom_message){
+							$parent.find('[data-pafe-form-builder-message]').html(responseArray.custom_message);
+						}
 						responseArray.payment_status = mollie_payment_status;
 						
 						$parent.find('.elementor-message').each(function(){
