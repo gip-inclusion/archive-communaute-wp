@@ -636,6 +636,22 @@ class Slides extends Base_Widget {
 					'fadeInLeft' => esc_html__( 'Left', 'elementor-pro' ),
 					'zoomIn' => esc_html__( 'Zoom', 'elementor-pro' ),
 				],
+				'assets' => [
+					'styles' => [
+						[
+							'name' => 'e-animations',
+							'conditions' => [
+								'terms' => [
+									[
+										'name' => 'content_animation',
+										'operator' => '!==',
+										'value' => '',
+									],
+								],
+							],
+						],
+					],
+				],
 			]
 		);
 

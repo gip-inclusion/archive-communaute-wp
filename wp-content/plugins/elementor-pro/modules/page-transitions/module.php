@@ -6,6 +6,7 @@ use Elementor\Controls_Stack;
 use Elementor\Core\Experiments\Manager as Experiments_Manager;
 use Elementor\Core\Kits\Documents\Tabs\Settings_Page_Transitions;
 use Elementor\Group_Control_Background;
+use Elementor\Icons_Manager;
 use Elementor\Utils;
 use ElementorPro\Base\Module_Base;
 use ElementorPro\Plugin;
@@ -775,8 +776,9 @@ class Module extends Module_Base {
 
 		$has_entrance_animation = ! ! $this->get_setting( 'entrance_animation' );
 		$has_preloader = ! ! $this->get_setting( 'preloader_type' );
+		$is_page = ( is_singular() || is_archive() ) && ! is_paged();
 
-		return $has_entrance_animation || $has_preloader;
+		return $is_page && ( $has_entrance_animation || $has_preloader );
 	}
 
 	/**
@@ -796,8 +798,20 @@ class Module extends Module_Base {
 	 * @return void
 	 */
 	private function render() {
+		$is_inline_font_icon_active = Plugin::elementor()->experiments->is_feature_active( 'e_font_icon_svg' );
+
 		?>
-		<e-page-transition <?php $this->print_render_attribute_string(); ?>></e-page-transition>
+		<e-page-transition <?php $this->print_render_attribute_string(); ?>>
+			<?php
+			$icon = $this->get_setting( 'preloader_icon' );
+
+			// Render inline SVG icon when the experiment is active, since the component itself
+			// shouldn't know about the Editor or the experiments.
+			if ( $is_inline_font_icon_active && ! empty( $icon ) ) {
+				Icons_Manager::render_icon( $icon, [ 'class' => 'e-page-transition--preloader' ] );
+			}
+			?>
+		</e-page-transition>
 		<?php
 	}
 
