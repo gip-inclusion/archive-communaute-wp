@@ -1,5 +1,20 @@
 # Journal des modifications
 
+## [08] - 2022-02-14
+### Ajouté / Corrigé
+
+### Modifié
+- Synchronisation des bases de données (prod -> le staging / local)
+- Mise à jour du core WP
+- Mise à jour du plugin Accordion Toggle
+- Mise à jour du plugin Elementor, Elementor Pro
+- Mise à jour du plugin Pionet for Elementor
+- Mise à jour du plugin BuddyBoss
+- Mise à jour du theme Buddyboss
+- Mise à jour des traductions WP & BuddyBoss
+### Supprimé
+
+
 ## [07] - 2022-01-31
 ### Ajouté / Corrigé
 - Ajout des traductions Française manquantes à la dernière version de BuddyBoss
