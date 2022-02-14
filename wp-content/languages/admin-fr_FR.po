@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.9.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-28 09:47:16+0000\n"
+"PO-Revision-Date: 2022-02-03 21:05:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -6494,7 +6494,7 @@ msgstr "%1$s par %2$s (attention : <strong>supprimera également les données l
 #. translators: %s: New admin email.
 #: wp-admin/options-general.php:124
 msgid "There is a pending change of the admin email to %s."
-msgstr "Il y a un changement en attente de l’e-mail de l’administrateur ou de l’administratrice vers %s."
+msgstr "Il y a une modification en attente de l’adresse e-mail d’administration vers %s."
 
 #: wp-admin/install.php:419
 msgid "WordPress has been installed. Thank you, and enjoy!"

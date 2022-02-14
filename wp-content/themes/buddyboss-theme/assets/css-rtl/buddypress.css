@@ -12610,7 +12610,6 @@ body #buddypress .bp-list .action .generic-button .group-button {
 .single-item.groups #buddypress .highlight,
 .single-item.groups #buddypress .highlight strong {
   display: block;
-  margin-bottom: 12px;
   font-size: 15px;
   background: none;
 }
@@ -20387,7 +20386,7 @@ body.bp-search .bp-search-ac-header .bbls-undefined-type {
 
 #buddypress .media-list.item-list {
   margin-bottom: 0;
-  padding-top: 0;
+  padding-top: 1em;
   margin-right: -10px;
   margin-left: -10px;
 }
@@ -20409,6 +20408,12 @@ body.bp-search .bp-search-ac-header .bbls-undefined-type {
   -webkit-transform: translate(0, -2px);
       -ms-transform: translate(0, -2px);
           transform: translate(0, -2px);
+}
+#buddypress .video-list.item-list > li {
+  margin-top: 0;
+}
+#buddypress #media-stream.document-parent {
+  margin-top: 35px;
 }
 
 .single.media.albums .bb-media-container #subnav {

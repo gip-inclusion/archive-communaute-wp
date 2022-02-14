@@ -1742,6 +1742,7 @@ if ( ! function_exists( 'boss_generate_option_bp_css' ) ) {
 			.bp-step-nav-main .bp-step-nav ul,
 			.bp-step-nav-main .bp-step-nav li.selected > a,
 			.bp-messages-content-wrapper.has_error .bp-messages-feedback,
+			.video-type-navs.main-navs,
 			.bp-nouveau-activity-form-placeholder- #whats-new-form-placeholder #whats-new-toolbar,
 			.activity-update-form #whats-new-form #whats-new-toolbar,
 			.bp-nouveau-activity-form-placeholder- .whats-new-form-footer,

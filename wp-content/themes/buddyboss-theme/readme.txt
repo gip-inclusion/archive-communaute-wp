@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 5.8.3
-Version: 1.8.4.1
+Version: 1.8.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,14 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 1.8.5 =
+* Groups - Fixed default avatar issue in messages and notifications screen when group avatar is disabled
+* Forums - Small fix to show scrubber only when the number of posts is more than 10
+* Forums - Fixed add reply random margin issue
+* Media - Fixed videos directory screen small UI issues
+* Media - Fixed documents directory screen small UI issues
+* Theme Options - Small shortcode refactoring in footer copyright text
 
 = 1.8.4.1 =
 * Login - Fixed login and forgot password critical font family issue
