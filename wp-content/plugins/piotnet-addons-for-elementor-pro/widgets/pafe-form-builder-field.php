@@ -5337,9 +5337,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
                                             if ( $meta_type == 'image' ) {
 
                                                 $images = rwmb_get_value( $sp_custom_field['submit_post_custom_field'], array( 'limit' => 1, 'size' => 'large' ), $post_id );
-                                                $image = reset( $images );
                                                 if ( is_array( $value ) ) {
-                                                    $value = $image['url'];
+                                                    $value = $images['url'];
                                                 }
                                             }
 
@@ -5620,7 +5619,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 						echo '<input size="1" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 						if ( ! empty( $item['google_maps'] ) ) {
-							echo '<div class="pafe-form-builder-address-autocomplete-map" style="width: 100%;" data-pafe-form-builder-address-autocomplete-map></div><div class="infowindow-content"><img src="" width="16" height="16" id="place-icon"><span id="place-name"  class="title"></span><br><span id="place-address"></span></div>';
+							echo '<div class="pafe-form-builder-address-autocomplete-map" style="width: 100%;" data-pafe-form-builder-address-autocomplete-map></div><div class="infowindow-content"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="16" height="16" id="place-icon"><span id="place-name"  class="title"></span><br><span id="place-address"></span></div>';
 						}
 						if (empty(esc_attr( get_option('piotnet-addons-for-elementor-pro-google-maps-api-key') ))) {
 							echo __('Please go to Dashboard > Piotnet Addons > Google Maps Integration > Enter Google Maps API Key > Save Settings', 'pafe');

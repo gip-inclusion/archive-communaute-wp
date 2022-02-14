@@ -234,11 +234,11 @@
 			if ($payment_status == 'succeeded') {
 				$message = str_replace( '[payment_status]', $succeeded, $message );
 			}
-	
+
 			if ($payment_status == 'pending') {
 				$message = str_replace( '[payment_status]', $pending, $message );
 			}
-	
+
 			if ($payment_status == 'failed') {
 				$message = str_replace( '[payment_status]', $failed, $message );
 			}
@@ -453,6 +453,23 @@
 				}
 			}
 		}
+	}
+
+	function metabox_group_get_field_object( $field_name, $meta_objects ) {
+		foreach ( $meta_objects as $meta_object ) {
+			$meta_fields = $meta_object['fields'];
+			foreach ( $meta_fields as $meta_field ) {
+				if ( ($meta_field['type'] == 'group') && ($meta_field['clone']) ) {
+					$meta_repeater_fields = $meta_field['fields'];
+					foreach ( $meta_repeater_fields as $meta_repeater_field ) {
+						if ( $meta_repeater_field['id'] == $field_name ) {
+							return $meta_repeater_field;
+						}
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -1490,6 +1507,104 @@
 											}
 										}
 									}
+
+									// Metabox Group
+									if ($meta_type == 'meta_box_group') {
+										foreach ($fields_array as $field_key => $value) {
+											if ($field_key == get_field_name_shortcode($sp_custom_field['submit_post_custom_field_id'])) {
+												$custom_field_value = $value;
+											}
+										}
+										$custom_field_group_id = $sp_custom_field['submit_post_custom_field_group_id'];
+										$agrs = array(
+											'name' => $custom_field_group_id,
+											'post_type' => 'meta-box',
+										);
+
+										$custom_field_post_id = get_posts($agrs)[0]->ID;
+										$custom_field_objects = get_post_meta($custom_field_post_id, 'meta_box');
+
+										if (!empty($custom_field_value)) {
+											array_walk($custom_field_value, function (& $item, $custom_field_value_key, $custom_field_object_value) {
+												foreach ($item as $key => $value) {
+													$field_object = metabox_group_get_field_object( $key, $custom_field_object_value );
+													if (!empty($field_object)) {
+														$field_type = $field_object['type'];
+														$item_value = $value;
+
+														if ( ($field_type == 'group') && ($field_object['clone']) ) {
+															foreach ($item_value as $item_value_key => $item_value_element ) {
+																foreach ($field_object['fields'] as $fields_items) {
+																	foreach ($item_value_element as $item_value_element_key => $item_value_element_value) {
+																		if ( $fields_items['id'] == $item_value_element_key ) {
+																			if ($fields_items['type'] == 'single_image') {
+																				$image_array = explode(',', $item_value_element_value);
+																				$image_id = attachment_url_to_postid($image_array[0]);
+																				if (!empty($image_id)) {
+																					$item_value[$item_value_key][$item_value_element_key] = $image_id;
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+
+														if ($field_type == 'single_image') {
+															$image_array = explode(',', $item_value);
+															$image_id = attachment_url_to_postid( $image_array[0] );
+															if (!empty($image_id)) {
+																$item_value = $image_id;
+															}
+														}
+
+														if ($field_type == 'image') {
+															$images_array = explode(',', $item_value);
+															$images_id = '';
+															foreach ($images_array as $images_item) {
+																if (!empty($images_item)) {
+																	$image_id = attachment_url_to_postid( $images_item );
+																	if (!empty($image_id)) {
+																		$images_id .= $image_id . ',';
+																	}
+																}
+															}
+															if (!empty($images_id)) {
+																$item_value = explode(',', $images_id);
+															}
+														}
+
+														if ($field_type == 'date') {
+															$time = strtotime( $item_value );
+															if (empty($item_value)) {
+																$item_value = '';
+															} else {
+																$item_value = date('Y-m-d',$time);
+															}
+														}
+
+														if ($field_type == 'time') {
+															$time = strtotime( $item_value );
+															$item_value = date('H:i',$time);
+														}
+
+														if ($field_type == 'select') {
+															if (strpos($item_value, ',') !== false) {
+																$item_value = explode(',', $item_value);
+															}
+														}
+
+														if ($field_type == 'checkbox') {
+															$item_value = explode(',', $item_value);
+														}
+
+														$item[$key] = $item_value;
+													}
+												}
+											}, $custom_field_objects);
+										}
+									}
+
 									//if (!empty($custom_field_value)) {
 										if (function_exists('update_field') && $form['settings']['submit_post_custom_field_source'] == 'acf_field') {
 
@@ -1747,6 +1862,10 @@
 												$custom_field_value = explode(',', $custom_field_value);
 											}
 
+											if ($meta_type == 'metabox_google_map') {
+												$custom_field_value = $custom_field_value_array['value'];
+											}
+
 											rwmb_set_meta( $submit_post_id, $sp_custom_field['submit_post_custom_field'], $custom_field_value, $custom_field_value );
 
 										} else {
@@ -1822,7 +1941,7 @@
 						$args = [
 							'body' => $body,
 						];
-						$response = wp_remote_post( replace_email($form['settings']['webhooks'], $fields), $args );
+						$webhook_response = wp_remote_post( replace_email($form['settings']['webhooks'], $fields), $args );
 					}
 
 					// Google Sheets
@@ -3140,7 +3259,7 @@
 						if(!empty($wp_args['headers']['Content-Type']) && $wp_args['headers']['Content-Type'] == 'application/json'){
 							$wp_args['body'] = json_encode($wp_args['body']);
 						}
-						$res = wp_remote_request(replace_email($form['settings']['remote_request_url'], $fields), $wp_args);
+						$remote_request_response = wp_remote_retrieve_body(wp_remote_request(replace_email($form['settings']['remote_request_url'], $fields), $wp_args));
 
 					}
 
@@ -3305,7 +3424,7 @@
 								$constant_contact_res = $helper->pafe_constant_contact_create_contact($constant_contact_token, json_encode($data_constant_contact));
 							}
 						}
-						
+
 					}
 					// Twilio Whatsapp
 					if (in_array("twilio_whatsapp", $form['settings']['submit_actions'])) {
@@ -3958,8 +4077,11 @@
 						do_action('pafe/form_builder/payment_status_succeeded',$form_submission);
 					}
 
-					// Email
+					do_action('pafe/form_builder/remote_request_response', $form_submission, $remote_request_response, $webhook_response);
+					$custom_message = apply_filters('pafe/form_builder/custom_message', false, $form_submission, $remote_request_response, $webhook_response);
+					$failed = apply_filters('pafe/form_builder/not_send_email', false, $form_submission, $remote_request_response, $webhook_response);
 
+					// Email
 					if (in_array("email", $form['settings']['submit_actions']) && $failed == false) {
 
 						$to = replace_email($form['settings']['email_to'], $fields, '', '', '', '', '', $form_database_post_id );
@@ -4140,7 +4262,8 @@
 						'post_url' => $post_url,
 						'redirect' => $redirect,
 						'register_message' => str_replace(',', '###', $register_message),//$register_message,
-						'failed_status' => $failed_status
+						'failed_status' => $failed_status,
+						'custom_message' => $custom_message
 					);
 					echo json_encode($pafe_response);
 

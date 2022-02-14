@@ -91,6 +91,23 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
         }
     }
 
+    public function metabox_group_get_field_object( $field_name, $meta_objects ) {
+        foreach ( $meta_objects as $meta_object ) {
+            $meta_fields = $meta_object['fields'];
+            foreach ( $meta_fields as $meta_field ) {
+                if ( ($meta_field['type'] == 'group') && ($meta_field['clone']) ) {
+                    $meta_repeater_fields = $meta_field['fields'];
+                    foreach ( $meta_repeater_fields as $meta_repeater_field ) {
+                        if ( $meta_repeater_field['id'] == $field_name ) {
+                            return $meta_repeater_field;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'pafe_multi_step_form_section_content',
@@ -464,6 +481,10 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
             [
                 'name'  => 'twilio_sendgrid',
                 'label' => 'Twilio SendGrid',
+            ],
+			[
+                'name'  => 'convertkit',
+                'label' => 'Convertkit',
             ],
 		];
 
@@ -1229,6 +1250,8 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 					'google_map' => __( 'ACF Google Map', 'pafe' ),
                     'acf_relationship' => __( 'ACF Relationship', 'pafe' ),
                     'jet_engine_repeater' => __( 'JetEngine Repeater', 'pafe' ),
+                    'meta_box_group' => __( 'MetaBox Group', 'pafe' ),
+                    'metabox_google_map' => __( 'MetaBox Google Map', 'pafe' ),
 				],
 				'default' => 'text',
 			]
@@ -6844,6 +6867,111 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
                                                             $custom_field_value[$item_key] = $custom_field_item;
                                                         }
 
+                                                        ?>
+                                                        <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $settings['form_id']; ?>" style="display: none;">
+                                                            <?php echo json_encode($custom_field_value); ?>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                }
+
+                                                if ($meta_type == 'meta_box_group' && function_exists('rwmb_get_value') && $form['settings']['submit_post_custom_field_source'] == 'metabox_field') {
+                                                    $custom_field_value = rwmb_get_value($sp_custom_field['submit_post_custom_field'], array(), $submit_post_id );
+
+                                                    $custom_field_group_id = $sp_custom_field['submit_post_custom_field_group_id'];
+                                                    $agrs = array(
+                                                        'name' => $custom_field_group_id,
+                                                        'post_type' => 'meta-box',
+                                                    );
+
+                                                    $custom_field_post_id = get_posts($agrs)[0]->ID;
+                                                    $custom_field_objects = get_post_meta($custom_field_post_id, 'meta_box');
+
+                                                    if (!empty($custom_field_value)) {
+                                                        array_walk($custom_field_value, function (& $item, $custom_field_value_key, $custom_field_object_value) {
+                                                            foreach ($item as $key => $value) {
+                                                                $field_object = $this->metabox_group_get_field_object( $key, $custom_field_object_value );
+                                                                if (!empty($field_object)) {
+                                                                    $field_type = $field_object['type'];
+                                                                    $item_value = $value;
+
+                                                                    if ( ($field_type == 'group') && ($field_object['clone']) ) {
+                                                                        foreach ($item_value as $item_value_key => $item_value_element ) {
+                                                                            foreach ($field_object['fields'] as $fields_items) {
+                                                                                foreach ($item_value_element as $item_value_element_key => $item_value_element_value) {
+                                                                                    if ( $fields_items['id'] == $item_value_element_key ) {
+                                                                                        if ($fields_items['type'] == 'single_image') {
+                                                                                            $image = wp_get_attachment_url($item_value_element_value);
+                                                                                            if ( !empty( $image ) ) {
+                                                                                                $item_value[$item_value_key][$item_value_element_key] = $image;
+                                                                                            }
+                                                                                        }
+
+                                                                                        if ( $fields_items['type'] == 'image' ) {
+                                                                                            if ( is_array( $item_value_element_value ) ) {
+                                                                                                $images = '';
+                                                                                                foreach ( $item_value_element_value as $image_item ) {
+                                                                                                    $image = wp_get_attachment_url($image_item);
+                                                                                                    if ( !empty( $image ) ) {
+                                                                                                        $images .= $image . ',';
+                                                                                                    }
+                                                                                                }
+                                                                                                $item_value[$item_value_key][$item_value_element_key] = rtrim( $images, ',' );
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+
+                                                                    if ( $field_type == 'single_image' ) {
+                                                                        $image = wp_get_attachment_url($value);
+                                                                        if ( !empty( $image ) ) {
+                                                                            $item_value = $image;
+                                                                        }
+                                                                    }
+
+                                                                    if ( $field_type == 'image' ) {
+                                                                        if ( is_array( $item_value ) ) {
+                                                                            $images = '';
+                                                                            foreach ( $item_value as $image_item ) {
+                                                                                $image = wp_get_attachment_url($image_item);
+                                                                                if ( !empty( $image ) ) {
+                                                                                    $images .= $image . ',';
+                                                                                }
+                                                                            }
+                                                                            $item_value = rtrim( $images, ',' );
+                                                                        }
+                                                                    }
+
+                                                                    if ($field_type == 'select' || $field_type == 'checkbox') {
+                                                                        if (is_array($item_value)) {
+                                                                            $value_string = '';
+                                                                            foreach ($item_value as $itemx) {
+                                                                                $value_string .= $itemx . ',';
+                                                                            }
+                                                                            $item_value = rtrim($value_string, ',');
+                                                                        }
+                                                                    }
+
+                                                                    if ($field_type == 'date') {
+                                                                        $time = strtotime( $item_value );
+                                                                        if (empty($item_value)) {
+                                                                            $item_value = '';
+                                                                        } else {
+                                                                            $item_value = date(get_option( 'date_format' ),$time);
+                                                                        }
+                                                                    }
+
+                                                                    if ($field_type == 'time') {
+                                                                        $time = strtotime( $item_value );
+                                                                        $item_value = date('H:i',$time);
+                                                                    }
+                                                                    $item[$key] = $item_value;
+                                                                }
+                                                            }
+                                                        }, $custom_field_objects);
                                                         ?>
                                                         <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $settings['form_id']; ?>" style="display: none;">
                                                             <?php echo json_encode($custom_field_value); ?>
