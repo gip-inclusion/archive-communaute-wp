@@ -1473,8 +1473,8 @@ if ( ! class_exists( 'buddyboss_theme_Redux_Framework_config' ) ) {
 						'id'       => 'copyright_text',
 						'type'     => 'editor',
 						'title'    => __( 'Copyright Text', 'buddyboss-theme' ),
-						'subtitle' => __( 'Enter your custom copyright text.', 'buddyboss-theme' ),
-						'default'  => '&copy; [boss_current_year]' . ' - ' . get_bloginfo( 'name' ),
+						'subtitle' => __( 'Enter your custom copyright text. Use the shortcode [buddyboss_current_year] to display the current year.', 'buddyboss-theme' ),
+						'default'  => '&copy; [buddyboss_current_year]' . ' - ' . get_bloginfo( 'name' ),
 						'args'     => array(
 							'teeny'         => true,
 							'media_buttons' => false,

@@ -30,7 +30,7 @@
 					to: parseInt( $( scrubber ).data( 'to' ), 10 ),
 				};
 
-				if ( self.scrubbers[ scrubber_key ].total_item < 3 ) {
+				if ( self.scrubbers[ scrubber_key ].total < 10 ) {
 					$( scrubber ).addClass( 'light' );
 				}
 

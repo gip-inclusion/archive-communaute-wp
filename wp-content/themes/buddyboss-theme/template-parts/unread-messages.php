@@ -70,33 +70,36 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 				} else {
 					$group_link = bp_get_group_permalink( groups_get_group( $group_id ) );
 				}
-				$group_avatar = bp_core_fetch_avatar(
-					array(
-						'item_id'    => $group_id,
-						'object'     => 'group',
-						'type'       => 'full',
-						'avatar_dir' => 'group-avatars',
-						'alt'        => sprintf( __( 'Group logo of %s', 'buddyboss-theme' ), $group_name ),
-						'title'      => $group_name,
-						'html'       => false,
-					)
-				);
+
+				if ( function_exists( 'bp_disable_group_avatar_uploads' ) && bp_disable_group_avatar_uploads() && function_exists( 'bb_get_buddyboss_group_avatar' ) ) {
+					$group_avatar = bb_get_buddyboss_group_avatar();
+				} else {
+					$group_avatar = bp_core_fetch_avatar(
+						array(
+							'item_id'    => $group_id,
+							'object'     => 'group',
+							'type'       => 'full',
+							'avatar_dir' => 'group-avatars',
+							'alt'        => sprintf( __( 'Group logo of %s', 'buddyboss-theme' ), $group_name ),
+							'title'      => $group_name,
+							'html'       => false,
+						)
+					);
+				}
 			} else {
 
-				$prefix                   = apply_filters( 'bp_core_get_table_prefix', $wpdb->base_prefix );
-				$groups_table             = $prefix . 'bp_groups';
-				$group_name               = $wpdb->get_var( "SELECT `name` FROM `{$groups_table}` WHERE `id` = '{$group_id}';" ); // db call ok; no-cache ok;
-				$group_link               = 'javascript:void(0);';
-				$group_avatar             = function_exists( 'bb_attachments_get_default_profile_group_avatar_image' ) ? bb_attachments_get_default_profile_group_avatar_image( array( 'object' => 'group' ) ) : buddypress()->plugin_url . 'bp-core/images/group-avatar-buddyboss.png';
-				$legacy_group_avatar_name = '-groupavatar-full';
-				$legacy_user_avatar_name  = '-avatar2';
+				$prefix       = apply_filters( 'bp_core_get_table_prefix', $wpdb->base_prefix );
+				$groups_table = $prefix . 'bp_groups';
+				$group_name   = $wpdb->get_var( "SELECT `name` FROM `{$groups_table}` WHERE `id` = '{$group_id}';" ); // db call ok; no-cache ok;
+				$group_link   = 'javascript:void(0);';
 
-				if ( ! empty( $group_name ) ) {
-					$group_link        = 'javascript:void(0);';
-					$directory         = 'group-avatars';
-					$avatar_size       = '-bpfull';
-					$avatar_folder_dir = bp_core_avatar_upload_path() . '/' . $directory . '/' . $group_id;
-					$avatar_folder_url = bp_core_avatar_url() . '/' . $directory . '/' . $group_id;
+				if ( ! empty( $group_name ) && ( ! function_exists( 'bp_disable_group_avatar_uploads' ) || function_exists( 'bp_disable_group_avatar_uploads' ) && ! bp_disable_group_avatar_uploads() ) ) {
+					$directory                = 'group-avatars';
+					$avatar_size              = '-bpfull';
+					$legacy_group_avatar_name = '-groupavatar-full';
+					$legacy_user_avatar_name  = '-avatar2';
+					$avatar_folder_dir        = bp_core_avatar_upload_path() . '/' . $directory . '/' . $group_id;
+					$avatar_folder_url        = bp_core_avatar_url() . '/' . $directory . '/' . $group_id;
 
 					if ( file_exists( $avatar_folder_dir ) ) {
 
@@ -146,6 +149,11 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 						// Close the avatar directory.
 						closedir( $av_dir );
 					}
+
+				} elseif ( function_exists( 'bb_attachments_get_default_profile_group_avatar_image' ) && ( function_exists( 'bp_disable_group_avatar_uploads' ) && ! bp_disable_group_avatar_uploads() ) ) {
+					$group_avatar = bb_attachments_get_default_profile_group_avatar_image( array( 'object' => 'group' ) );
+				} elseif ( function_exists( 'bb_get_buddyboss_group_avatar' ) && ( function_exists( 'bp_disable_group_avatar_uploads' ) && bp_disable_group_avatar_uploads() ) ) {
+					$group_avatar = bb_get_buddyboss_group_avatar();
 				}
 			}
 
