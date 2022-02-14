@@ -45,14 +45,15 @@ class Module extends BaseModule {
 		/** @var Activate $activate */
 		$activate = $common->get_component( 'connect' )->get_app( 'activate' );
 
-		$app->set_settings( 'onboarding', array_merge( $onboarding_settings, [
-			'connectUrl' => $activate->get_admin_url( 'authorize', [
-				'utm_source' => 'editor-app',
-				'utm_campaign' => 'connect-account',
-				'utm_medium' => 'wp-dash',
-				'utm_term' => Core_Onboarding_Module::VERSION,
-			] ),
-		] ) );
+		$onboarding_settings['urls']['connect'] = $activate->get_admin_url( 'authorize', [
+			'utm_source' => 'editor-app',
+			'utm_campaign' => 'connect-account',
+			'utm_medium' => 'wp-dash',
+			'utm_term' => Core_Onboarding_Module::VERSION,
+			'source' => 'generic',
+		] );
+
+		$app->set_settings( 'onboarding', $onboarding_settings );
 	}
 
 	public function __construct() {

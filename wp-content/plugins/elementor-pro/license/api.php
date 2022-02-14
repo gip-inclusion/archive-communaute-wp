@@ -374,7 +374,8 @@ class API {
 	public static function is_licence_has_feature( $feature_name ) {
 		$license_data = self::get_license_data();
 
-		return in_array( $feature_name, $license_data['features'], true );
+		return ! empty( $license_data['features'] )
+			&& in_array( $feature_name, $license_data['features'], true );
 	}
 
 	public static function is_license_about_to_expire() {

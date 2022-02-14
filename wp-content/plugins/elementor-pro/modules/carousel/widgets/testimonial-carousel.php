@@ -91,7 +91,7 @@ class Testimonial_Carousel extends Base {
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'prefix_class' => 'elementor-testimonial--align-',
+				'prefix_class' => 'elementor-testimonial-%s-align-',
 			]
 		);
 
