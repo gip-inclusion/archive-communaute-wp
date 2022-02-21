@@ -3,9 +3,11 @@
 ## [09] - 2022-02-28
 ### Ajouté / Corrigé
 - Stack de dev locale passée sur Docker, comprenant : Apache, MySQL 8, PHP 8.0 (similaire à la prod), PHPMyAdmin et Mailhog
+- Correction des formats de date dans les formulaires support (Date de démarrage du contrat)
 
 ### Modifié
 - Correction traductions sur les listes d'événement
+- Structure des assets du thème enfant modifiée
 
 ### Supprimé
 
