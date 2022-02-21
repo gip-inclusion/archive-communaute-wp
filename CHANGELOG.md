@@ -1,5 +1,21 @@
 # Journal des modifications
 
+## [09] - 2022-02-28
+### Ajouté / Corrigé
+- Stack de dev locale passée sur Docker, comprenant : Apache, MySQL 8, PHP 8.0 (similaire à la prod), PHPMyAdmin et Mailhog
+-  
+
+### Modifié
+- Synchronisation des bases de données (prod -> le staging / local)
+- Mise à jour du core WP
+- Mise à jour du plugin Accordion Toggle
+- Mise à jour du plugin Elementor, Elementor Pro
+- Mise à jour du plugin Pionet for Elementor
+- Mise à jour du plugin BuddyBoss
+- Mise à jour du theme Buddyboss
+- Mise à jour des traductions WP & BuddyBoss
+### Supprimé
+
 ## [08] - 2022-02-14
 ### Ajouté / Corrigé
 
