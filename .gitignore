@@ -26,5 +26,5 @@ wp-content/uploads/
 .clever.json
 
 .htaccess
-docker/db-data/
-docker/wp-uploads/
+db-data/
+wp-uploads/
