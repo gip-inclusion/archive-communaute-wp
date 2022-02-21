@@ -19,28 +19,31 @@
  *
  * @package WordPress
  */
-
+if (!function_exists('getenv_docker')) {
+	// https://github.com/docker-library/wordpress/issues/588 (WP-CLI will load this file 2x)
+	function getenv_docker($env, $default) {
+		if ($fileEnv = getenv($env . '_FILE')) {
+			return rtrim(file_get_contents($fileEnv), "\r\n");
+		}
+		else if (($val = getenv($env)) !== false) {
+			return $val;
+		}
+		else {
+			return $default;
+		}
+	}
+}
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 
 /** Nom de la base de données de WordPress. */
-if (strstr($_SERVER['SERVER_NAME'], '.local')) {
-    define('DB_NAME', 'communaute');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', '');
-    define('DB_HOST', 'localhost');
-    define('DB_CHARSET', 'utf8');
-    define('WP_DEBUG', false);
-    define('WP_DEBUG_LOG', false);
-    define('WP_DEBUG_DISPLAY', false);
-} else if ($_SERVER['SERVER_NAME'] === 'communaute-inclusion-staging.cleverapps.io') {
-    define('DB_NAME', getenv('MYSQL_ADDON_DB'));
-    define('DB_USER', getenv('MYSQL_ADDON_USER'));
-    define('DB_PASSWORD', getenv('MYSQL_ADDON_PASSWORD'));
-    define('DB_HOST', getenv('MYSQL_ADDON_HOST').":".getenv('MYSQL_ADDON_PORT'));
-    define('DB_CHARSET', 'utf8');
-    define('WP_DEBUG', false);
-    define('WP_DEBUG_LOG', false);
-    define('WP_DEBUG_DISPLAY', false);
+if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
+    define( 'DB_NAME', getenv_docker('WORDPRESS_DB_NAME', 'wordpress') );
+    define( 'DB_USER', getenv_docker('WORDPRESS_DB_USER', 'example username') );
+    define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'example password') );
+    define( 'DB_HOST', getenv_docker('WORDPRESS_DB_HOST', 'mysql') );
+    define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8') );
+    define('FORCE_SSL_ADMIN', false);
+
 } else {
     define('DB_NAME', getenv('MYSQL_ADDON_DB'));
     define('DB_USER', getenv('MYSQL_ADDON_USER'));
@@ -49,7 +52,8 @@ if (strstr($_SERVER['SERVER_NAME'], '.local')) {
     define('DB_CHARSET', 'utf8');
     define('WP_DEBUG', false);
     define('WP_DEBUG_LOG', false);
-    define('WP_DEBUG_DISPLAY', false);    
+    define('WP_DEBUG_DISPLAY', false);   
+    define('FORCE_SSL_ADMIN', true); 
 }
 /**
  * Type de collation de la base de données.
@@ -108,7 +112,6 @@ define('EMPTY_TRASH_DAYS', 7);
 define('AUTOSAVE_INTERVAL', 86400);
 define('WP_POST_REVISIONS', true);
 define('ALLOW_UNFILTERED_UPLOADS', false);
-define('FORCE_SSL_ADMIN', true);
 define('WP_MEMORY_LIMIT', '256');
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 

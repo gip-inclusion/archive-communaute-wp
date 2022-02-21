@@ -24,3 +24,7 @@ wp-content/uploads/
 
 # Clever-cloud related things
 .clever.json
+
+.htaccess
+docker/db-data/
+docker/wp-uploads/
