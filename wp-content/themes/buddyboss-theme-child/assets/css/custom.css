@@ -1,0 +1,10 @@
+
+/* Responsive */
+body #tribe-events-content {
+  overflow: visible;
+}
+@media screen and (max-width: 544px) {
+  body .tribe-events-event-meta .tribe-events-meta-group {
+    padding-left: 30px;
+  }
+}

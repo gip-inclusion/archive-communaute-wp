@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: The Events Calendar: Community Events 4.8.9\n"
 "Report-Msgid-Bugs-To: http://m.tri.be/191x\n"
 "POT-Creation-Date: 2021-09-23 06:38:53+00:00\n"
+"PO-Revision-Date: 2022-02-21 16:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-11-08 14:34+0100\n"
-"Language-Team: \n"
-"X-Generator: Poedit 3.0\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: src/Tribe/Captcha/Abstract_Captcha.php:152
 msgid "Invalid value for the Anti-Spam Check"
@@ -1066,7 +1066,7 @@ msgstr "Vous n'avez pas d'% passés"
 
 #: src/views/community/event-list.php:163
 msgid "You have no upcoming %s"
-msgstr "Vou n'avez pas d'%s à venir"
+msgstr "Vous n'avez pas d'%s à venir"
 
 #: src/views/community/modules/captcha.php:32
 msgid "Anti-Spam Check"
