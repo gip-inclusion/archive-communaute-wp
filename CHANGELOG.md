@@ -4,10 +4,17 @@
 ### Ajouté / Corrigé
 - Stack de dev locale passée sur Docker, comprenant : Apache, MySQL 8, PHP 8.0 (similaire à la prod), PHPMyAdmin et Mailhog
 - Correction des formats de date dans les formulaires support (Date de démarrage du contrat)
+- Changement du nom de groupe de champ de profil Default Data en Informations
+- Ajout du plugin Loco Translate
+- Corrections de traductions
+- Ajustement de l'interface mobile sur les pages d'événements
+
 
 ### Modifié
 - Correction traductions sur les listes d'événement
 - Structure des assets du thème enfant modifiée
+- Ajout d'une branche staging en local
+-  
 
 ### Supprimé
 
