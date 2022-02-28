@@ -14,7 +14,6 @@
 - Correction traductions sur les listes d'événement
 - Structure des assets du thème enfant modifiée
 - Ajout d'une branche staging en local
--  
 
 ### Supprimé
 
