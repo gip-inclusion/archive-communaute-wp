@@ -2,6 +2,9 @@
 
 ## [09] - 2022-03-14
 ### Ajouté / Corrigé
+- Les membres qui s'inscrivent se voit automatiquement attribué le rôle "Contributeur" dans WP
+- La mise en forme sur les descriptions de groupe a été rétablie
+
 ### Modifié
 ### Supprimé
 
