@@ -12,7 +12,7 @@ function itou_on_user_registration($user_id) {
   $area = xprofile_get_field_data('Région', $user_id);
   $group_area = $area !== '' ? itou_get_group_from_area($area):[];
   logger('Trying to register new user with ==> '.$type. ' '.$area.' '.$group_area[0]->name.' '.$group_area[0]->id);  
-  if($type === 'membre' && !itou_is_user_role($user_id, ['administrator', 'bbp_participant', 'bbp_keymaster'])) {    
+  if($type === 'membre' && !itou_is_user_role($user_id, ['administrator'])) {    
     $user = new WP_User($user_id);
     $user->add_role(get_option('default_role'));
   }

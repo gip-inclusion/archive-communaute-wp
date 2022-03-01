@@ -7,7 +7,7 @@
  * @return void
  */
 function itou_on_group_screen_view() {
-  bp_core_redirect( bp_get_group_permalink( groups_get_current_group() ) . 'subgroups/' );
+  //bp_core_redirect( bp_get_group_permalink( groups_get_current_group() ) . 'subgroups/' );
 }
 
 /**
