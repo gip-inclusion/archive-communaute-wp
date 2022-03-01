@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * itou_on_user_registration
  * action to programmatically set new members as WP default role
@@ -8,9 +9,15 @@
  */
 function itou_on_user_registration($user_id) {
   $type = bp_get_member_type($user_id, true);
+  $area = xprofile_get_field_data('Région', $user_id);
+  $group_area = $area !== '' ? itou_get_group_from_area($area):[];
+  logger('Trying to register new user with ==> '.$type. ' '.$area.' '.$group_area[0]->name.' '.$group_area[0]->id);  
   if($type === 'membre' && !itou_is_user_role($user_id, ['administrator', 'bbp_participant', 'bbp_keymaster'])) {    
     $user = new WP_User($user_id);
     $user->add_role(get_option('default_role'));
+  }
+  if(!empty($group_area)){
+    groups_join_group($group_area[0]->id, $user_id);
   }
 }
 
