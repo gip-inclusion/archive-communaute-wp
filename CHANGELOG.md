@@ -2,8 +2,10 @@
 
 ## [09] - 2022-03-14
 ### Ajouté / Corrigé
-- Les membres qui s'inscrivent se voit automatiquement attribué le rôle "Contributeur" dans WP
+- Les "Membres" qui s'inscrivent se voit automatiquement attribué le rôle "Contributeur" dans WP
+- Les "Membres" qui s'inscrivent se voit automatiquement rattaché au groupe de leur région
 - La mise en forme sur les descriptions de groupe a été rétablie
+- La page d'accueil d'un groupe affiche les sous-groupes (au lieu de la liste des membres)
 
 ### Modifié
 ### Supprimé
