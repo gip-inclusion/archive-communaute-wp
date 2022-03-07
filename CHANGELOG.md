@@ -6,9 +6,12 @@
 - Les "Membres" qui s'inscrivent se voit automatiquement rattaché au groupe de leur région
 - La mise en forme sur les descriptions de groupe a été rétablie
 - La page d'accueil d'un groupe affiche les sous-groupes (au lieu de la liste des membres)
+- Ajout du plugin WP Crontrol, pour gérer le déclenchement d'événement (récurrents ou non)
+- Attribution du rôle par défaut (Contributeur) aux utilisateurs existants
 
 ### Modifié
 ### Supprimé
+- Plugin Members
 
 ## [09] - 2022-02-28
 ### Ajouté / Corrigé
