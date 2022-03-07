@@ -42,6 +42,9 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'example password') );
     define( 'DB_HOST', getenv_docker('WORDPRESS_DB_HOST', 'mysql') );
     define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8') );
+    define('WP_DEBUG', true);
+    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_DISPLAY', false); 
     define('FORCE_SSL_ADMIN', false);
 
 } else {
