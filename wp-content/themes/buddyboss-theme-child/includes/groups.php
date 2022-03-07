@@ -6,8 +6,15 @@
  * add action to override redirection to subgroups when a group "home" is reached
  * @return void
  */
-function itou_on_group_screen_view() {
-  //bp_core_redirect( bp_get_group_permalink( groups_get_current_group() ) . 'subgroups/' );
+function itou_on_group_screen_view($location) {  
+  if(bp_current_action() === 'members') { // BP tries to redirect to the members tab
+    $current_group = groups_get_current_group();
+    $descendant_groups = bp_get_descendent_groups($current_group->id);
+    if (count( $descendant_groups)) {
+      $location = bp_get_group_permalink( groups_get_current_group() ) . 'subgroups';
+    }    
+  }
+  return $location;
 }
 
 /**
@@ -25,4 +32,4 @@ function itou_get_group_from_area($area_name) {
 /**
  * Hooks to handle groups
  */
-add_action( 'groups_screen_group_members', 'itou_on_group_screen_view', 20);
+add_filter( 'wp_redirect', 'itou_on_group_screen_view', 20);
