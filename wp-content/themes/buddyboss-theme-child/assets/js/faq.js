@@ -14,6 +14,5 @@ function onSubCatTitleClickHandler() {
 
 // init
 jQuery(document).ready(function() {
-  console.log('init');
   onSubCatTitleClickHandler();
 })
