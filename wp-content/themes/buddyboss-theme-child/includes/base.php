@@ -6,7 +6,8 @@ function custom_wp_enqueue_scripts() {
   wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
   //wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
   wp_enqueue_style('child-base', get_stylesheet_directory_uri() . '/assets/css/base.css');  
-  wp_enqueue_style('child-custom', get_stylesheet_directory_uri() . '/assets/css/custom.css');  
+  wp_enqueue_style('child-custom', get_stylesheet_directory_uri() . '/assets/css/custom.css');
+  wp_enqueue_script('itou-communaute-faq', get_stylesheet_directory_uri() . '/assets/js/faq.js', 'jquery', '1.0');
 }
 add_action('wp_enqueue_scripts', 'custom_wp_enqueue_scripts');
 
