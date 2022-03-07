@@ -63,4 +63,5 @@ add_action( 'user_register', 'itou_on_user_registration', 20, 1 );
 add_action( 'bp_core_activated_user', 'itou_on_user_registration', 20, 1 );
 add_action( 'save_post', 'itou_on_user_registration', 20, 1 );
 add_action( 'bp_core_signup_user', 'itou_on_user_registration', 20, 1 );
+add_action('itou_set_users_default_role', 'itou_set_users_default_role');
 
