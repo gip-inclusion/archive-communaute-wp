@@ -1,6 +1,5 @@
 function onSubCatTitleClickHandler() {
   jQuery(".docs-sub-cat-title, .el-betterdocs-grid-sub-cat-title").on('click', function() {
-    console.log('click');
     setTimeout(function(){
       var masonryGrids = document.querySelectorAll(
         '.betterdocs-category-grid.masonry'
