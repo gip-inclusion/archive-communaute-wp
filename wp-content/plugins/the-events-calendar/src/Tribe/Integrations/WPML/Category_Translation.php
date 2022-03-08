@@ -109,6 +109,7 @@ class Tribe__Events__Integrations__WPML__Category_Translation {
 
 		$translations = array_map( 'urldecode', $translations );
 		$translations = array_map( 'remove_accents', $translations );
+		var_dump($translations);
 		return array_unique( $translations );
 	}
 }
