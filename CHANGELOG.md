@@ -15,6 +15,8 @@
 - Correction de traductions (Betterdocs, The Events Calendar)
 
 ### Modifié
+- Version de PHP modifiée en local, staging et prod (=> 7.4)
+
 ### Supprimé
 - Suppression du plugin Members
 
