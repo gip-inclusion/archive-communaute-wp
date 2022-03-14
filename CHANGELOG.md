@@ -4,14 +4,19 @@
 ### Ajouté / Corrigé
 - Les "Membres" qui s'inscrivent se voit automatiquement attribué le rôle "Contributeur" dans WP
 - Les "Membres" qui s'inscrivent se voit automatiquement rattaché au groupe de leur région
-- La mise en forme sur les descriptions de groupe a été rétablie
+- La mise en forme sur les descriptions de groupe (communautés) a été rétablie
 - La page d'accueil d'un groupe affiche les sous-groupes (au lieu de la liste des membres)
 - Ajout du plugin WP Crontrol, pour gérer le déclenchement d'événement (récurrents ou non)
-- Attribution du rôle par défaut (Contributeur) aux utilisateurs existants
+- Attribution du rôle par défaut (Contributeur) aux utilisateurs existants et région renseignée pour les utilisateurs ne l'ayant pas déjà rejoint
+- Correction du bug d'affichage lorsqu'on dépliait un groupe de question dans la FAQ
+- Correction du bug empêchant de mettre à jour tous les événements récurrents d'un coup
+- Activation des invitations par mail de Budyboss
+- Affichage par défaut des pages de listing de sous-groupes pour les groupes ayant des sous-groupes, sinon, affichage par défaut de la page "Membres"
+- Correction de traductions (Betterdocs, The Events Calendar)
 
 ### Modifié
 ### Supprimé
-- Plugin Members
+- Suppression du plugin Members
 
 ## [09] - 2022-02-28
 ### Ajouté / Corrigé
