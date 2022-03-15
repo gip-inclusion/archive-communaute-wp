@@ -3,15 +3,17 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-
+		<?php 
+			$current_url = itou_get_current_url();
+		?>
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://communaute.inclusion.beta.gouv.fr">
+		<meta property="og:url" content="<?= $current_url ?>">
 		<meta property="og:title" content="<?= get_bloginfo('name'); ?>">
 		<meta property="og:description" content="<?= get_bloginfo('description'); ?>">
 		<meta property="og:image" content="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>logo-communaute-inclusion-meta.png">
 
 		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://communaute.inclusion.beta.gouv.fr/">
+		<meta property="twitter:url" content="<?= $current_url ?>">
 		<meta property="twitter:title" content="<?= get_bloginfo('name'); ?>">
 		<meta property="twitter:description" content="<?= get_bloginfo('description'); ?>">
 		<meta property="twitter:image" content="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>logo-communaute-inclusion-meta.png">
