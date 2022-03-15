@@ -47,12 +47,12 @@ class BetterDocs_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) 
+	public function __construct( $plugin_name, $version )
 	{
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		add_action( 'init', array( $this, 'public_hooks' ) );
-	}					
+	}
 
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
@@ -139,7 +139,7 @@ class BetterDocs_Public {
             add_action('betterdocs_before_shortcode_load', array( $this, 'enqueue_scripts'));
         }
     }
-	
+
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
@@ -163,7 +163,7 @@ class BetterDocs_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function get_docs_archive_template($template) 
+	public function get_docs_archive_template($template)
 	{
 		$docs_layout = get_theme_mod('betterdocs_docs_layout_select', 'layout-1');
 		$tax = BetterDocs_Helper::get_tax();
@@ -191,10 +191,10 @@ class BetterDocs_Public {
 	 * Get Single Page Template for docs base directory.
 	 *
 	 * @param int $single_template Overirde single templates.
-	 * 
+	 *
 	 * @since    1.0.0
 	 */
-	public function get_docs_single_template($single_template) 
+	public function get_docs_single_template($single_template)
 	{
 		if (is_singular('docs')) {
 			$layout_select = get_theme_mod('betterdocs_single_layout_select', 'layout-1');
@@ -223,7 +223,7 @@ class BetterDocs_Public {
 		return $tags;
 	}
 
-	public static function list_hierarchy($post_content, $toc_hierarchy, $htag_support) 
+	public static function list_hierarchy($post_content, $toc_hierarchy, $htag_support)
 	{
 		// Whether or not the TOC should be built flat or hierarchical.
 
@@ -292,7 +292,7 @@ class BetterDocs_Public {
 					$id = $has_id ? $matched_ids[2] : $i . '-toc-title';
 
 					$html .= '<a href="#' . $id . '">' . $title . '</a>';
-					
+
 					// end lists
 					if ($i != count($matches) - 1) {
 						$next_match = (int) $matches[ $i + 1 ][2];
@@ -369,10 +369,10 @@ class BetterDocs_Public {
 	}
 
 	public static function betterdocs_toc(
-		$content, 
-		$htags, 
-		$toc_hierarchy, 
-		$list_number, 
+		$content,
+		$htags,
+		$toc_hierarchy,
+		$list_number,
 		$collapsible,
         $toc_title=''
 	) {
@@ -402,10 +402,10 @@ class BetterDocs_Public {
 		}
 		return $html;
 	}
-	
+
 	/**
 	 * Return table of content list before single post the_content
-	 * 
+	 *
 	 * @since    1.0.0
 	 */
 	public static function betterdocs_the_content ($content, $htgs, $enable_toc) {
@@ -447,10 +447,10 @@ class BetterDocs_Public {
 
 	/**
 	 * Insert quick action link to plugin page
-	 * 
+	 *
 	 * @since    1.1.5
 	 */
-	public function insert_plugin_links($links) 
+	public function insert_plugin_links($links)
 	{
         $links[] = sprintf('<a href="admin.php?page=betterdocs-settings">' . esc_html__('Settings','betterdocs') . '</a>');
         return $links;
@@ -469,9 +469,9 @@ class BetterDocs_Public {
         }
 
         if ( $live_search == 1 ) {
-            $html = '<div class="betterdocs-search-form-wrap">'. do_shortcode( '[betterdocs_search_form 
+            $html = '<div class="betterdocs-search-form-wrap">'. do_shortcode( '[betterdocs_search_form
                 placeholder="'.$search_placeholder.'"
-                heading="'.$search_heading.'" 
+                heading="'.$search_heading.'"
                 subheading="'.$search_subheading.'"]').'</div>';
 
             return apply_filters('betterdocs_search_section', $html);

@@ -270,6 +270,10 @@ class BetterDocs_Elementor
             add_filter('option_' . Elementor\Api::LIBRARY_OPTION_KEY, array(__CLASS__, 'prepend_categories'));
         }
         add_action('elementor/ajax/register_actions', array(__CLASS__, 'modified_ajax_action'), 20);
+
+	    if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
+		    add_filter( 'option_' . Elementor\Api::LIBRARY_OPTION_KEY, array( __CLASS__, 'added_bd_template' ) );
+	    }
     }
 
     public static function register_bd_template_instance()
@@ -338,6 +342,75 @@ class BetterDocs_Elementor
 
         return $source->get_data($args);
     }
+
+	/**
+	 * Added BetterDocs template with Elementor core templates list
+	 *
+	 * added_template
+	 *
+	 * @param $templates_list array elementor template list
+	 *
+	 * @return array
+	 * @since  2.0.7
+	 *
+	 */
+	public static function added_bd_template( array $templates_list ) {
+		$templates = self::get_bd_templates();
+
+		if ( ! empty( $templates ) ) {
+			$templates_list['templates'] = array_merge( $templates_list['templates'], $templates );
+		}
+
+		return $templates_list;
+	}
+
+	/**
+	 * get_bd_templates
+	 *
+	 * Get Better docs template list and cache this list
+	 *
+	 * @return array|mixed
+	 * @since 2.0.0
+	 */
+	public static function get_bd_templates() {
+
+		$bd_template_cache_key = 'bd_templates';
+		$templates             = get_transient( $bd_template_cache_key );
+
+		if ( ! $templates ) {
+			$source    = Elementor\Plugin::instance()->templates_manager->get_source( 'betterdocs-templates' );
+
+			if( !$source ){
+				return $templates;
+			}
+
+			$templates = $source->get_items();
+
+			if ( ! empty( $templates ) ) {
+
+				$templates = array_map( function ( $template ) {
+
+					$template['id']                = $template['template_id'];
+					$template['tmpl_created']      = $template['date'];
+					$template['tags']              = json_encode( $template['tags'] );
+					$template['is_pro']            = $template['isPro'];
+					$template['access_level']      = $template['accessLevel'];
+					$template['popularity_index']  = $template['popularityIndex'];
+					$template['trend_index']       = $template['trendIndex'];
+					$template['has_page_settings'] = $template['hasPageSettings'];
+
+					return $template;
+				}, $templates );
+
+				set_transient( $bd_template_cache_key, $templates, WEEK_IN_SECONDS );
+
+			} else {
+				$templates = array();
+			}
+		}
+
+		return $templates;
+	}
 
     /**
      * Include a file with variables

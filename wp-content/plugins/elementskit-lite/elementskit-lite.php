@@ -1,4 +1,7 @@
 <?php
+
+use ElementsKit_Lite\Plugin;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -6,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
  * Description: The most advanced addons for Elementor with tons of widgets, Header builder, Footer builder, Mega menu builder, layout pack and powerful custom controls.
  * Plugin URI: https://products.wpmet.com/elementskit
  * Author: Wpmet
- * Version: 2.5.3
+ * Version: 2.5.4
  * Author URI: https://wpmet.com/
  *
  * Text Domain: elementskit-lite
@@ -28,7 +31,7 @@ final class ElementsKit_Lite{
 	 * @var string The plugin version.
 	 */
 	static function version(){
-		return '2.5.3';
+		return '2.5.4';
 	}
 
 	/**
@@ -300,6 +303,10 @@ final class ElementsKit_Lite{
 	 * @access public
 	 */
 	public function init() {
+        // Load the Plugin class, it's the core class of ElementsKit_Lite.
+        require_once self::plugin_dir() . 'plugin.php';
+
+        \ElementsKit_Lite\Plugin::registrar_autoloader();
 
 		// init notice class
 		\Oxaim\Libs\Notice::init();
@@ -318,10 +325,12 @@ final class ElementsKit_Lite{
 			add_action( 'admin_head', array( $this, 'failed_php_version' ) );
 			return;
 		}
-		// Once we get here, We have passed all validation checks so we can safely include our plugin.
 
 		// Register ElementsKit_Lite widget category
 		add_action('elementor/elements/categories_registered', [$this, 'elementor_widget_category']);
+
+        // initiate elementor custom controls
+        new \ElementsKit_Lite\Modules\Controls\Init();
 
 		add_action( 'elementor/init', function(){
 			if(class_exists('ElementsKit') && !class_exists('ElementsKit_Comp')){
@@ -329,13 +338,13 @@ final class ElementsKit_Lite{
 			}
 
 			// adding backward classes and methods for older 14 number themes.
-			require_once self::plugin_dir() . 'compatibility/backward/plugin-class-backward-compatibility.php';
-			require_once self::plugin_dir() . 'compatibility/backward/utils-backward-compablity.php';
+		 	require_once self::plugin_dir() . 'compatibility/backward/plugin-class-backward-compatibility.php';
+		 	require_once self::plugin_dir() . 'compatibility/backward/utils-backward-compablity.php';
 
-			// Load the Plugin class, it's the core class of ElementsKit_Lite.
-			require_once self::plugin_dir() . 'plugin.php';
+            // Run the instance.
+            Plugin::instance();
 
-			// adding backward classes and methods for older 14 number themes.
+            // adding backward classes and methods for older 14 number themes.
 			require_once self::plugin_dir() . 'compatibility/backward/module-list.php';
 			require_once self::plugin_dir() . 'compatibility/backward/widget-list.php';
 		});

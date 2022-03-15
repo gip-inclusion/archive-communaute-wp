@@ -66,6 +66,8 @@ class BetterDocs_Docs_Post_Type
         add_action('admin_footer', array(__CLASS__, 'add_script'));
         // add doc category image on rest api
         add_action('rest_api_init', array(__CLASS__, 'add_doc_category_meta_rest_api'), 10, 2);
+        // fires after a new doc_category is created
+        add_action('created_doc_category', array(__CLASS__, 'action_created_doc_category'), 10, 2);
     }
 
     public static function parse_term_query( $term_query ){
@@ -309,6 +311,17 @@ class BetterDocs_Docs_Post_Type
     public static function load_media()
     {
         wp_enqueue_media();
+    }
+
+    /**
+     * Default the taxonomy's terms' order if it's not set.
+     *
+     * @param string $tax_slug The taxonomy's slug.
+     */
+    public static function action_created_doc_category( $term_id, $tt_id )
+    {
+        $order = self::get_max_taxonomy_order('doc_category');
+        update_term_meta($term_id, 'doc_category_order', $order++);
     }
 
     /**
@@ -676,7 +689,8 @@ class BetterDocs_Docs_Post_Type
      */
     public static function docs_rewrite($rewrite)
     {
-        $permalink =  BetterDocs_DB::get_settings('permalink_structure');
+        $permalink_structure =  BetterDocs_DB::get_settings('permalink_structure');
+        $permalink = BetterDocs_Helper::permalink_stracture(self::$docs_slug, $permalink_structure);
         if (!empty($permalink)) {
             if (class_exists('BetterDocs_Multiple_Kb') && BetterDocs_Multiple_Kb::get_multiple_kb() != 1) {
                 $permalink = preg_replace('/%knowledge_base%\/?/', '', $permalink);

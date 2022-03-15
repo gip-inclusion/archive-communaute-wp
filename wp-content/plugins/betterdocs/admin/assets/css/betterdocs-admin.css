@@ -831,7 +831,9 @@ input.betterdocs-settings-field {
 select.betterdocs-settings-field.select2-hidden-accessible + span {
     min-width: 150px;
 }
-
+select.betterdocs-settings-field + span.select2-container {
+    z-index: 1
+}
 input.betterdocs-settings-field[type="number"]{
     height: auto;
 }

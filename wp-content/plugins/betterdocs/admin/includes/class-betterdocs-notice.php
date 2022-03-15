@@ -958,7 +958,7 @@ if( ! class_exists( 'Betterdocs_Pro' ) ) {
     $notice->thumbnail( 'review', plugins_url( 'admin/assets/img/betterdocs-icon.svg', BETTERDOCS_BASENAME ) );
 
     $notice->classes( 'update_10kuser', 'notice is-dismissible' );
-    $notice->message( 'update_10kuser', '<p>'. __( 'Enjoy Holiday & get exclusive <strong>20% OFF</strong> with coupon code <em><strong>‘Holiday’</strong></em> while upgrading to PRO. <a class="button button-small" href="https://betterdocs.co/upgrade" target="_blank">Upgrade to PRO</a> ', 'betterdocs' ) .'</p>' );
+    $notice->message( 'update_10kuser', '<p>'. __( 'Enjoy Holiday & get exclusive <strong>20% OFF</strong> with coupon code <em><strong>‘March20’</strong></em> while upgrading to PRO. <a class="button button-small" href="https://betterdocs.co/upgrade" target="_blank">Upgrade to PRO</a> ', 'betterdocs' ) .'</p>' );
 
     /**
      * Current Notice End Time.

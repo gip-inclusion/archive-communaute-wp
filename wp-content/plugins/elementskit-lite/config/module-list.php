@@ -18,10 +18,10 @@ class Module_List extends \ElementsKit_Lite\Core\Config_List{
                 'slug' => 'layout-manager',
                 'package' => 'free',
             ],
-            'controls' => [
-                'slug' => 'controls',
-                'package' => 'free',
-            ],
+//            'controls' => [
+//                'slug' => 'controls',
+//                'package' => 'free',
+//            ],
         ];
     }
 

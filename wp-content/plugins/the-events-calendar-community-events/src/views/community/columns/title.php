@@ -16,9 +16,11 @@ defined( 'WPINC' ) or die;
  * @version 4.8.2
  */
 
-$canView   = ( get_post_status( $event->ID ) == 'publish' || current_user_can( 'edit_post', $event->ID ) );
-$canEdit   = current_user_can( 'edit_post', $event->ID );
-$canDelete = current_user_can( 'delete_post', $event->ID );
+$community = tribe( 'community.main' );
+
+$canEdit   = $community->user_can_edit_their_submissions($event->ID);
+$canView   = ( get_post_status( $event->ID ) == 'publish' || $canEdit );
+$canDelete = $community->user_can_delete_their_submissions($event->ID);
 if ( $canEdit ) {
 	?>
 	<span class="title">

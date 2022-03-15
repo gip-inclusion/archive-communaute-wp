@@ -288,7 +288,7 @@ class Plugin{
      * @since 1.0.0
      * @access private
      */
-    private static function registrar_autoloader() {
+    public static function registrar_autoloader() {
         require_once \ElementsKit_Lite::plugin_dir() . '/autoloader.php';
         Autoloader::run();
     }
@@ -306,8 +306,6 @@ class Plugin{
      */
     public static function instance() {
         if ( is_null( self::$instance ) ) {
-            // Call the method for ElementsKit lite autoloader.
-            self::registrar_autoloader();
 
             do_action( 'elementskit_lite/before_loaded' );
 
@@ -321,6 +319,3 @@ class Plugin{
         return self::$instance;
     }
 }
-
-// Run the instance.
-Plugin::instance();

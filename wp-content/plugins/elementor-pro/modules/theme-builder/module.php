@@ -317,7 +317,7 @@ class Module extends Module_Base {
 	private function register_admin_menu( MainMenu $menu ) {
 		$menu->add_submenu( [
 			'menu_title' => esc_html__( 'Theme Builder', 'elementor-pro' ),
-			'menu_slug' => $this->get_admin_templates_url( true ),
+			'menu_slug' => Plugin::elementor()->app->get_settings( 'menu_url' ),
 			'index' => 30,
 		] );
 	}

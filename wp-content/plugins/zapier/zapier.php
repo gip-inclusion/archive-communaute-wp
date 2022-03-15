@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Zapier for WordPress
  * Description:       Zapier enables you to automatically share your posts to social media, create WordPress posts from Mailchimp newsletters, and much more. Visit https://zapier.com/apps/wordpress/integrations for more details.
- * Version:           1.0.2
+ * Version:           1.0.4
  * Author:            Zapier
  * Author URI:        https://zapier.com
  * License:           Expat (MIT License)
@@ -87,9 +87,10 @@ class Zapier_Auth
 
     public function add_api_routes()
     {
-        register_rest_route($this->namespace, 'token', array(
-            'methods' => 'POST',
+        register_rest_route($this->namespace, '/token', array(
+            'methods' => "POST",
             'callback' => array($this, 'generate_token'),
+            'permission_callback' => '__return_true'
         ));
     }
 

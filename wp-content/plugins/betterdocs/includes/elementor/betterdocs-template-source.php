@@ -16,8 +16,7 @@ if ( !defined( 'ABSPATH' ) ) {
 class BetterDocs_Template_Source extends Elementor\TemplateLibrary\Source_Base {
 
     protected $template_prefix = 'betterdocs_';
-    //protected $cloud_url = 'https://betterdocs.co/wp-json/bd_cloud/v1/';
-    protected $cloud_url = 'http://betterdocs.test/wp-json/bd_cloud/v1/';
+    protected $cloud_url = 'https://betterdocs.co/wp-json/bd_cloud/v1/';
 
     public function get_prefix() {
         return $this->template_prefix;
@@ -45,19 +44,19 @@ class BetterDocs_Template_Source extends Elementor\TemplateLibrary\Source_Base {
 
         if ( !empty( $templates_data ) ) {
             foreach ( $templates_data as $template_data ) {
-                $templates[] = $this->get_item( $template_data );
+                $templates[] = $this->prepare_template( $template_data );
             }
         }
 
-        if ( !empty( $args ) ) {
-            $templates = wp_list_filter( $templates, $args );
-        }
+	    if ( ! empty( $args ) ) {
+		    $templates = wp_list_filter( $templates, $args );
+	    }
 
         return $templates;
     }
 
 
-    public function get_item( $template_data ) {
+    public function prepare_template( $template_data ) {
         return [
             'accessLevel'     => 0,
             'template_id'     => $template_data['template_id'],
@@ -77,6 +76,24 @@ class BetterDocs_Template_Source extends Elementor\TemplateLibrary\Source_Base {
             'favorite'        => ( 1 == $template_data['favorite'] ),
         ];
     }
+
+	/**
+	 * Get remote template.
+	 *
+	 * Retrieve a single remote template from betterdocs.co
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @param int $template_id The template ID.
+	 *
+	 * @return array Remote template.
+	 */
+	public function get_item( $template_id ) {
+		$templates = $this->get_items();
+
+		return $templates[ $template_id ];
+	}
 
     public function save_item( $template_data ) {
         return false;

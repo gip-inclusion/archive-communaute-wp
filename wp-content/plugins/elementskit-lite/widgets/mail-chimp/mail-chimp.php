@@ -780,7 +780,7 @@ class ElementsKit_Widget_Mail_Chimp extends Widget_Base {
 			[
 				'label'		=> esc_html__( 'Margin Bottom', 'elementskit-lite' ),
 				'type'		=> Controls_Manager::SLIDER,
-				'devices'	=> ['mobile'],
+				'devices'	=> ['desktop', 'mobile'],
 				'selectors' => [
 					'{{WRAPPER}} .has-extra-fields > .elementskit_input_wraper:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
