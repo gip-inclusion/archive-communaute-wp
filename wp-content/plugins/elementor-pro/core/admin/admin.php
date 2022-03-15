@@ -58,7 +58,7 @@ class Admin extends App {
 			'elementor-pro-admin',
 			ELEMENTOR_PRO_URL . 'assets/js/admin' . $suffix . '.js',
 			[
-				'elementor-common',
+				'elementor-admin',
 			],
 			ELEMENTOR_PRO_VERSION,
 			true

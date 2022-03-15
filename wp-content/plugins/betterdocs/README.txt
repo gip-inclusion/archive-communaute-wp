@@ -5,7 +5,7 @@ Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, know
 Requires at least: 4.0
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 2.0.6
+Stable tag: 2.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,17 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.8 - 06/03/2022 = 
+- Fixed: Custom Post Type throwing 404 Page while Multiple KB is activated
+- Fixed: Fatal error related to Elementor Template Loader
+- Few minor bug fixes & improvements
+
+= 2.0.7 - 15/02/2022 = 
+- Fixed: Category Creation not working from Gutenberg editor in WordPress 5.9
+- Fixed: Ready-made templates not loading inside Elementor Theme Builder
+- Fixed: Conflict with Phlox PRO theme
+- Few minor bug fixes & improvements
 
 = 2.0.6 - 02/02/2022 = 
 - Fixed: Category Order not working for docs page

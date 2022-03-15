@@ -135,7 +135,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__( 'Mobile Menu Logo', 'elementskit-lite' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
+                    'url' => '', //Utils::get_placeholder_image_src() -- removed for conflict with jetpack
                     'id'    => -1
                 ],
             ]
@@ -256,7 +256,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             [
                 'label'     => esc_html__( 'Mobile Wrapper Background', 'elementskit-lite' ),
                 'type'      => Controls_Manager::COLOR,
-                'devices'   => [ 'tablet', 'mobile' ],
+                'devices'   => ['desktop', 'tablet', 'mobile'],
                 'selectors' => [
                     '{{WRAPPER}} .elementskit-menu-container'   => 'background-color: {{VALUE}};',
                 ],
@@ -276,7 +276,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                     'left' => '0',
                     'unit' => 'px',
                 ],
-                'devices' => ['tablet'],
+                'devices' => ['desktop', 'tablet'],
                 'selectors' => [
                     '{{WRAPPER}} .elementskit-nav-identity-panel' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -289,7 +289,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__( 'Width', 'elementskit-lite' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
-                'devices' => ['tablet', 'mobile'],
+                'devices' => ['desktop', 'tablet', 'mobile'],
                 'range' => [
                     'px' => [
                         'min' => 350,
@@ -589,7 +589,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             [
                 'label' => esc_html__( 'Spacing', 'elementskit-lite' ),
                 'type' => Controls_Manager::DIMENSIONS,
-                'devices' => [ 'desktop', 'tablet' ],
+                'devices' => [ 'desktop', 'desktop', 'tablet'],
                 'desktop_default' => [
                     'top' => 15,
                     'right' => 15,
@@ -916,7 +916,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__( 'Padding', 'elementskit-lite' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'top' => '8',
                     'right' => '8',
@@ -943,7 +943,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                         'step' => 1,
                     ],
                 ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'unit' => 'px',
                     'size' => 45,
@@ -971,7 +971,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                         'max' => 100,
                     ],
                 ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'unit' => 'px',
                     'size' => 3,
@@ -1119,7 +1119,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__( 'Padding', 'elementskit-lite' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'top' => '8',
                     'right' => '8',
@@ -1139,7 +1139,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__( 'Margin', 'elementskit-lite' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'top' => '12',
                     'right' => '12',
@@ -1166,7 +1166,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                         'step' => 1,
                     ],
                 ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'unit' => 'px',
                     'size' => 45,
@@ -1194,7 +1194,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
                         'max' => 100,
                     ],
                 ],
-                'devices' => [ 'tablet' ],
+                'devices' => ['desktop', 'tablet'],
                 'tablet_default' => [
                     'unit' => 'px',
                     'size' => 3,
@@ -1404,6 +1404,12 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
 
     protected function render( ) {
         $settings = $this->get_settings_for_display();
+
+        // Return if menu not selected
+        if(empty($settings['elementskit_nav_menu'])) {
+            return;
+        }
+
         $hamburger_icon_value = '';
         $hamburger_icon_type = '';
         if ($settings['elementskit_hamburger_icon'] != '' && $settings['elementskit_hamburger_icon']) {

@@ -2,7 +2,7 @@
 Contributors: zapier
 Tags: zapier, automation, integration, workflow, dataflow
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.9
 Requires PHP: 7.0
 Stable tag: 1.0.3
 License: Expat (MIT License)

@@ -747,7 +747,7 @@ function betterdocs_permalink_structure_tags(){
             ],
         ]);
 
-    $return = __( "<b>Available tags:</b>", 'betterdocs' );
+    $return = __( "<b>Note:</b> Make sure to keep <b>Docs Root Slug</b> in the <b>Single Docs Permalink</b>. You are not able to keep it blank. You can use the available tags from below.", 'betterdocs' );
     $return .= "
         <div class='form-table permalink-structure'>
             <div class='available-structure-tags hide-if-no-js'>

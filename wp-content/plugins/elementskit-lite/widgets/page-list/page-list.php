@@ -606,7 +606,7 @@ class ElementsKit_Widget_Page_List extends Widget_Base {
 					'icon_position!' => 'column'
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon' => 'align-self: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-icon' => 'display: flex; align-items: {{VALUE}}; justify-content: center',
 				],
 			]
 		);

@@ -1,9 +1,9 @@
-=== Contact - Registration - Post Form Builder & FrontEnd Editor BuddyForms - Making WordPress Forms A Breeze ===
+=== Post, Registration and Profile Form Builder - FrontEnd Editor BuddyForms - Easy WordPress Forms ===
 Contributors: svenl77, konrads, themekraft, buddyforms, shabushabu, christianwach, projectkarol, phuck22, gfirem, jnfdev, freemius
 Tags:  content, content generation, user submitted, user-generated, user-submit, generated content, create content, frontend create content, form builder, contact forms, post forms, user-generated content, user submitted posts, contact form, form, forms, frontend post, frontend publisher, frontend post, submit, submissions, custom form, custom forms, form, form administration, form creation, form creator, form manager, forms, forms builder, forms creation, forms creator, forms manager, community, crowdsourced content, frontend generated content, images, Post, posts, public, publish, Share, submission, submissions, submit, submitted, upload
 Requires at least: 4.0
-Tested up to: 5.8
-Stable tag: 2.5.32
+Tested up to: 5.9
+Stable tag: 2.6.2
 Requires PHP: 5.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Are you tired of those boring forms, your customers hardly fill to the end? With Buddyform, you can make contact forms, postforms, and registration forms that everyone wants to fill like a professional even if you cannot write a single line of code.
 
 You get better responses, more quality leads, collect feedback and much more with an easy to use form wizard all under a few minutes.
+
+[youtube https://www.youtube.com/watch?v=DoPLWBBlRvA]
 
 #WHY CHOOSE BUDDYFORMS?</h4>
 ##Can’t Code? No problem: Build a Quality and Highly Optimized form Without a Single Line Of Code.
@@ -381,6 +383,19 @@ If you still get stuck somewhere, our support gets you back on the right track. 
 
 
 == Changelog ==
+= 2.6.2 - 11 Mar 2022 =
+* Fixed issue with JS variable conflict.
+* Fixed issue with forms permalinks. 
+
+= 2.6.1 - 24 Feb 2022 =
+* Changed the position of the descriptive video in the readme.txt
+
+= 2.6.0 - 23 Feb 2022 =
+* Disabled affiliate program notices.
+* Fixed issue with taxonomies field type.
+* Added new welcome screen.
+* Tested up to WordPress 5.9
+
 = 2.5.32 - 2 Dec 2021 =
 * Added new hook for improve forms render in frontend.
 * Updated readme.txt

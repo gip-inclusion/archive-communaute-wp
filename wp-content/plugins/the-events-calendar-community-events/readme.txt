@@ -4,8 +4,8 @@ Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, ag
 Tags: widget, events, simple, tooltips, grid, month, list, calendar, event, venue, community, registration, api, dates, date, plugin, posts, sidebar, template, theme, time, google maps, google, maps, conference, workshop, concert, meeting, seminar, summit, forum, shortcode, The Events Calendar, The Events Calendar PRO
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Tested up to: 5.8.3
-Stable tag: 4.8.11
+Tested up to: 5.9.1
+Stable tag: 4.8.11.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -162,6 +162,10 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [4.8.11.1] 2022-03-02 =
+
+* Enhancement - Improved The Events Calendar REST API compatibility for Events, Organizers and Venues. [CE-143]
 
 = [4.8.11] 2022-01-19 =
 

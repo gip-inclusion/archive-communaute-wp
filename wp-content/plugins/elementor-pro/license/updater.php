@@ -80,7 +80,6 @@ class Updater {
 		unset( $plugin_info->sections );
 
 		$plugin_info->plugin = $this->plugin_name;
-		$plugin_info->autoupdate = true;
 
 		if ( version_compare( $this->plugin_version, $version_info['new_version'], '<' ) ) {
 			$_transient_data->response[ $this->plugin_name ] = $plugin_info;

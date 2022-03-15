@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit756cf485cb99e7c6091f486485ae6802
+class ComposerStaticInitdff9451c2595ebedbbf2241e57cf7252
 {
     public static $prefixLengthsPsr4 = array (
         'T' => 
@@ -190,6 +190,9 @@ class ComposerStaticInit756cf485cb99e7c6091f486485ae6802
         'Tribe\\Customizer\\Controls\\Toggle' => __DIR__ . '/../..' . '/src/Tribe/Customizer/Controls/Toggle.php',
         'Tribe\\DB_Lock' => __DIR__ . '/../..' . '/src/Tribe/DB_Lock.php',
         'Tribe\\Dialog\\View' => __DIR__ . '/../..' . '/src/Tribe/Dialog/View.php',
+        'Tribe\\Editor\\Compatibility' => __DIR__ . '/../..' . '/src/Tribe/Editor/Compatibility.php',
+        'Tribe\\Editor\\Compatibility\\Classic_Editor' => __DIR__ . '/../..' . '/src/Tribe/Editor/Compatibility/Classic_Editor.php',
+        'Tribe\\Editor\\Compatibility\\Divi' => __DIR__ . '/../..' . '/src/Tribe/Editor/Compatibility/Divi.php',
         'Tribe\\Log\\Action_Logger' => __DIR__ . '/../..' . '/src/Tribe/Log/Action_Logger.php',
         'Tribe\\Log\\Canonical_Formatter' => __DIR__ . '/../..' . '/src/Tribe/Log/Canonical_Formatter.php',
         'Tribe\\Log\\Monolog_Logger' => __DIR__ . '/../..' . '/src/Tribe/Log/Monolog_Logger.php',
@@ -258,10 +261,10 @@ class ComposerStaticInit756cf485cb99e7c6091f486485ae6802
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit756cf485cb99e7c6091f486485ae6802::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit756cf485cb99e7c6091f486485ae6802::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit756cf485cb99e7c6091f486485ae6802::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit756cf485cb99e7c6091f486485ae6802::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdff9451c2595ebedbbf2241e57cf7252::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdff9451c2595ebedbbf2241e57cf7252::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitdff9451c2595ebedbbf2241e57cf7252::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitdff9451c2595ebedbbf2241e57cf7252::$classMap;
 
         }, null, ClassLoader::class);
     }

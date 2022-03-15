@@ -555,4 +555,17 @@ class BetterDocs_Helper
         endif;
         return $html;
     }
+
+    public static function permalink_stracture($docs_slug, $permalink)
+    {
+        $permalink_arr = explode('%', $permalink);
+        if ($permalink_arr[0] == '/') {
+            $permalink = $docs_slug . $permalink;
+            flush_rewrite_rules(); // this rewrite rules is temporary for some specific existing user data
+        } else if ($permalink_arr[0] == '') {
+            $permalink = $docs_slug . '/' . $permalink;
+            flush_rewrite_rules(); // this rewrite rules is temporary for some specific existing user data
+        }
+        return $permalink;
+    }
 }

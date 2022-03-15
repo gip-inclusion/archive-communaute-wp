@@ -115,10 +115,9 @@ class Init{
 		include $this->dir . 'views/builder.php';
 	}
 
-
 	public function on_empty_trash_delete_files() {
 
-		if(isset($_GET['action']) && $_GET['action'] == 'delete') {
+		if(isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['post']) && $_GET['post']) {
 
 			$post_id = intval($_GET['post']);
 			$post_type = get_post_type( $post_id );
@@ -132,9 +131,6 @@ class Init{
 			isset($_GET['post_type']) && $_GET['post_type'] == 'elementskit_widget' &&
 			isset($_GET['action']) && $_GET['action'] == -1 &&
 			isset($_GET['post_status']) && $_GET['post_status'] == 'trash') {
-
-
-
 		}
 	}
 }

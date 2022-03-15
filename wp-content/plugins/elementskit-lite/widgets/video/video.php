@@ -849,8 +849,20 @@ class ElementsKit_Widget_Video extends Widget_Base {
 
 		$is_autoplay = (int) $ekit_video_popup_auto_play;
 		$is_muted = (int) $ekit_video_popup_video_mute;
+
+
+		if($ekit_video_popup_video_type == "vimeo"){
+			$url = explode('#', $ekit_video_popup_url, 2);
+			$ekit_video_popup_url = $url[0];
+			$ekit_video_popup_url = $ekit_video_popup_url."?playlist={$video_id}&muted={$is_muted}&autoplay={$is_autoplay}&loop={$ekit_video_popup_video_loop}&controls={$player_control}&start={$ekit_video_popup_start_time}&end={$ekit_video_popup_end_time}";
+		}
+		else{
+			$ekit_video_popup_url = $ekit_video_popup_url."?playlist={$video_id}&mute={$is_muted}&autoplay={$is_autoplay}&loop={$ekit_video_popup_video_loop}&controls={$player_control}&start={$ekit_video_popup_start_time}&end={$ekit_video_popup_end_time}";
+		};
+
+
 		
-		$ekit_video_popup_url = $ekit_video_popup_url."?autoplay={$is_autoplay}&playlist={$video_id}&loop={$ekit_video_popup_video_loop}&controls={$player_control}&mute={$is_muted}&start={$ekit_video_popup_start_time}&end={$ekit_video_popup_end_time}&version=3";
+		
 		?>
 			<div class="video-content">
                 <a href="<?php echo esc_url($ekit_video_popup_url); ?>" class="ekit-video-popup ekit-video-popup-btn <?php echo esc_attr($ekit_video_popup_button_style == 'icon' ? 'ekit_icon_button': '') ?> <?php echo esc_attr($ekit_video_popup_video_glow=="yes"?"glow-btn":''); ?>">

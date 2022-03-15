@@ -173,8 +173,8 @@ class BetterDocs_Settings {
 		$settings_args = self::settings_args();
         $fields = self::get_settings_fields( $settings_args );
         $data = [];
+        $new_posted_fields = [];
         if( ! empty( $posted_fields ) ) {
-            $new_posted_fields = [];
             foreach( $posted_fields as $posted_field ) {
                 preg_match("/(.*)\[(.*)\]/", $posted_field['name'], $matches);
                 if( ! empty( $matches ) ) {
@@ -192,8 +192,20 @@ class BetterDocs_Settings {
         }
         $fields_keys = array_fill_keys( array_keys( $fields ), 'off' );
 
-		foreach( $new_posted_fields as $key => $new_posted_field ) {
-			if( array_key_exists( $key, $fields ) ) {
+        $builtin_doc_page = $new_posted_fields['builtin_doc_page'] ?? $fields_keys['builtin_doc_page'];
+        $docs_slug = $new_posted_fields['docs_slug'];
+        $docs_page = $new_posted_fields['docs_page'];
+        if ($builtin_doc_page == 1 && $docs_slug) {
+            $docs_slug = $docs_slug;
+        } elseif ($builtin_doc_page != 1 && $docs_page) {
+            $post_info = get_post($docs_page);
+            $docs_slug = $post_info->post_name;
+        } else {
+            $docs_slug = 'docs';
+        }
+
+		foreach ( $new_posted_fields as $key => $new_posted_field ) {
+			if ( array_key_exists( $key, $fields ) ) {
                 unset( $fields_keys[ $key ] );
                 if( empty( $new_posted_field ) ) {
 					$posted_value = isset( $fields[ $key ]['default'] ) ? $fields[ $key ]['default'] : '';
@@ -201,7 +213,18 @@ class BetterDocs_Settings {
                 if( isset( $fields[ $key ]['disable'] ) && $fields[ $key ]['disable'] === true ) {
                     $posted_value = isset( $fields[ $key ]['default'] ) ? $fields[ $key ]['default'] : '';
                 }
+
                 $posted_value = BetterDocs_Helper::sanitize_field( $fields[ $key ], $new_posted_field );
+
+                if( $key == 'permalink_structure' ) {
+                    $permalink_stracture = explode('%', $posted_value);
+                    if ($permalink_stracture[0] == '/') {
+                        $posted_value = $docs_slug . $posted_value;
+                    } else if ($permalink_stracture[0] == '') {
+                        $posted_value = $docs_slug . '/' . $posted_value;
+                    }
+                }
+
                 if( isset( $data[ $key ] ) ) {
                     if( is_array( $data[ $key ] ) ) {
                         $data[ $key ][] = $posted_value;
