@@ -28,3 +28,4 @@ wp-content/uploads/
 .htaccess
 db-data/
 wp-uploads/
+wp-content/cache
