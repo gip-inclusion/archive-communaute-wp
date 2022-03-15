@@ -1,0 +1,312 @@
+.idea-history-item {
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0px rgba(0,0,0,.2);
+    margin-top: 15px;
+    display: inline-table;
+    margin-bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.normal-item {
+    background-color: #f3f3f4;
+    border: 2px solid #f3f3f4;
+}
+
+.note-item {
+    background-color: #ffffff;
+    border: 2px solid #f3f3f4;
+}
+
+.idea-history-item-type {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0px rgba(0,0,0,.15);
+    margin-right: 15px;
+    text-align: center;
+}
+
+.idea-history-icon {
+    font-size: 35px !important;
+    width: 100%;
+    text-align: center;
+    margin-top: 23px;
+}
+
+
+@media only screen and (min-width: 601px) {
+    .icon-column {
+        width: min-content;
+    }
+    .title-column {
+        width: 25%;
+    }
+    .content-column {
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .icon-column, .title-column, .content-column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.idea-history-item-title-section {
+    margin-right: 15px;
+}
+
+.action-date {
+    color: #a7a9ac;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.idea-history-item-title-section h3 {
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+
+.idea-author-profile-image {
+    width: 26px;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,.3);
+    vertical-align: middle !important;
+}
+
+.author-name {
+    vertical-align: middle;
+}
+
+.idea-history-item-table td {
+    vertical-align: top;
+}
+
+.idea-history-item-table {
+    width: 100%;
+}
+
+.internal-note-text-area, .email-content {
+    width: 100%;
+    border: 2px solid #e3e1e1;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.email-subject {
+    width: 100%;
+    border: 2px solid #e3e1e1;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 0px;   
+    
+}
+
+.read-more-link {
+    text-decoration: none;  
+    outline: none !important;
+    border-style: none;
+}
+
+.read-more {
+    outline: none !important;
+    border-style: none;
+    text-decoration: none; 
+}
+
+.email-audience {
+    border: 2px solid #e3e1e1;
+    margin-top: 15px;
+}
+
+.single-idea-submit-button {
+    display: inline-block !important;
+    text-decoration: none !important;
+    letter-spacing: 3px !important;
+    border: 2px solid #78c148 !important;
+    color: white !important;
+    padding: 10px 20px !important; 
+    background: #78c148 !important;
+    font-weight: 600 !important;
+    height: auto !important;
+    border-radius: 5px !important;
+    text-shadow: none !important;
+    line-height: normal !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+    outline: 0px !important;
+    cursor: pointer;
+        margin-bottom: 15px;
+}
+
+.delete-history-item {
+    opacity: .15;
+    font-size: 16px !important;
+    position: absolute;
+    right: 20px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+
+.ui-dialog-titlebar {
+    font-weight: 300 !important;
+    font-size: 24px !important; 
+    padding-left: 0px !important;
+    line-height: 1.4 !important;
+}
+
+.ui-dialog-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ui-dialog {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 18px 2px rgba(0,0,0,.5);
+    
+}
+
+.close-button {
+    margin-left: 10px;
+    background-color: white !important;
+    color: #78c148 !important;
+    
+}
+
+.ui-button {
+    display: inline-block !important;
+    text-decoration: none !important;
+    letter-spacing: 3px !important;
+    border: 2px solid #78c148 !important;
+    color: #fff;
+    padding: 10px 20px !important;
+    background: #78c148;
+    font-weight: 600 !important;
+    height: auto !important;
+    border-radius: 5px !important;
+    text-shadow: none !important;
+    line-height: normal !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+    outline: 0px !important; 
+    cursor: pointer !important; 
+}
+
+.ui-dialog-titlebar-close {
+    display: none !important;
+}
+
+.shortcode-item {
+    background: #dfdfdf;
+    padding: 4px 5px;
+    border-radius: 4px;
+    display: inline-block;
+    color: #24292d !important;
+    font-weight: 900;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: -1px !important;
+    font-size: 12px;
+    
+}
+
+#idea-history-email-div ul {
+    margin-bottom: 0px;
+}
+
+.admin-star-outer {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -4px;
+    /* text-align: center; */
+    margin-left: -16px;
+    opacity: .6;
+    background: #78c148;
+}
+
+.admin-star-icon {
+    color: #fff !important;
+    font-size: 7px !important;
+    top: -5px;
+    position: relative;
+    left: 3px;
+}
+    
+
+.custom-field-table {
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.custom-field-table td {
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #eee;
+}
+
+.custom-field-table td:last-child {
+    border-right: 0 !important;
+}
+
+.custom-field-table tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+.custom-field-table td, .custom-field-table th{
+    padding: 6px 6px;
+}
+
+.custom-field-table th{
+    background-color: #f3f3f4;
+}
+
+.custom-field-table-container {
+    padding: 17px 12px;
+}
+
+.custom-field-update-button {
+    display: inline-block !important;
+    text-decoration: none !important;
+    border: 2px solid #78c148 !important;
+    color: #fff !important;
+    padding: 4px 6px !important;
+    background: #78c148 !important;
+    font-weight: 500 !important;
+    height: auto !important;
+    border-radius: 5px !important;
+    text-shadow: none !important;
+    line-height: normal !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+    outline: 0px !important;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.custom-field-table td {
+    vertical-align: unset;
+}
+
+.custom-field-update-field {
+    width: 100%;
+}
+
+.add-custom-meta {
+    margin-bottom: 20px;
+}
