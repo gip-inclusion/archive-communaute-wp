@@ -11,7 +11,19 @@ function editPastButtonHref() {
   });
 }
 
+function eventsFilterOnChange() {
+  var $element = $('#events-categories-filter');
+  if($element.length) {
+    $element.on('change', function() {
+      var $this = $(this);
+      var href = $this.find('option:selected').attr('value');
+      window.location.href = href;
+    })
+  }
+}
+
 // init
 jQuery(document).ready(function() {
   editPastButtonHref();
+  eventsFilterOnChange();
 })
