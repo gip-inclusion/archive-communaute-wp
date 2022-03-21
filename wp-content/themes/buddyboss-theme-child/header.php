@@ -6,17 +6,7 @@
 		<?php 
 			$current_url = itou_get_current_url();
 		?>
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="<?= $current_url ?>">
-		<meta property="og:title" content="<?= get_bloginfo('name'); ?>">
-		<meta property="og:description" content="<?= get_bloginfo('description'); ?>">
-		<meta property="og:image" content="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>logo-communaute-inclusion-meta.png">
-
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="<?= $current_url ?>">
-		<meta property="twitter:title" content="<?= get_bloginfo('name'); ?>">
-		<meta property="twitter:description" content="<?= get_bloginfo('description'); ?>">
-		<meta property="twitter:image" content="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>logo-communaute-inclusion-meta.png">
+		
 
 		<link rel="shortcut icon" href="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>favico.ico" type="image/ico">
 		<?php wp_head(); ?>
