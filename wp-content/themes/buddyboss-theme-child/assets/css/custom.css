@@ -23,6 +23,11 @@ body .tribe-events-calendar-list__event-category-link {
 body #tribe-events-content {
   overflow: visible;
 }
+body #tribe-events-pg-template {
+  margin: 0 auto;
+  max-width: 1048px;
+  padding: var(--tec-spacer-8) var(--tec-spacer-4) var(--tec-spacer-4);
+}
 @media screen and (max-width: 544px) {
   body .tribe-events-event-meta .tribe-events-meta-group {
     padding-left: 30px;
