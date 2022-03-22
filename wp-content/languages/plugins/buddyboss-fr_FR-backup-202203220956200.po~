@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-01-27 07:07:12+00:00\n"
-"PO-Revision-Date: 2022-03-22 09:56+0000\n"
+"PO-Revision-Date: 2022-03-15 09:55+0000\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -7565,7 +7565,7 @@ msgstr ""
 
 #: bp-friends/bp-friends-template.php:419
 msgid "Connect Requested"
-msgstr "Connexion demandée"
+msgstr "Amitiée demandée"
 
 #: bp-friends/bp-friends-template.php:439
 #: bp-friends/bp-friends-template.php:445
@@ -7684,7 +7684,7 @@ msgstr "Amis %s"
 
 #: bp-friends/bp-friends-activity.php:108
 msgid "Connections accepted"
-msgstr "Connexions acceptées"
+msgstr "Amitiés acceptées"
 
 #: bp-core/admin/templates/about-buddyboss.php:43
 msgid "Consider the BuddyBoss Theme"
@@ -7951,7 +7951,7 @@ msgstr "Copier dans le presse-papiers"
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:490
 msgid "Could not accept friendship."
-msgstr "Impossible d’accepter la connexion."
+msgstr "Impossible d’accepter l’amitié."
 
 #: bp-groups/classes/class-bp-rest-group-invites-endpoint.php:692
 msgid "Could not accept group invitation."
@@ -7971,7 +7971,7 @@ msgstr "Impossible de créer l&#8217;usager"
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:704
 msgid "Could not delete friendship."
-msgstr "Impossible de supprimer la connexion."
+msgstr "Impossible de supprimer l’amitié."
 
 #: bp-groups/classes/class-bp-rest-group-invites-endpoint.php:822
 msgid "Could not delete group invitation."
@@ -11807,7 +11807,7 @@ msgstr ""
 
 #: bp-core/gdpr/class-bp-friendship-export.php:28
 msgid "Friendship"
-msgstr "Connexion"
+msgstr "Amitié"
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:405
 msgid "Friendship does not exist."
@@ -11816,7 +11816,7 @@ msgstr "La mise en contact n’existe pas."
 #: bp-members/classes/class-bp-rest-members-actions-endpoint.php:275
 #: bp-members/classes/class-bp-rest-members-endpoint.php:1161
 msgid "Friendship relation with, current, logged in user."
-msgstr "Connexion avec, en cours, connecté à l’utilisateur."
+msgstr "Relation d’amitié avec, en cours, connecté à l’utilisateur."
 
 #: bp-templates/bp-nouveau/buddypress/common/search/profile-search.php:66
 msgid "From"
@@ -13221,7 +13221,7 @@ msgstr "ID:"
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:69
 msgid "Identifier for the friendship."
-msgstr "Identifiant pour la connexion."
+msgstr "Identifiant pour l’amitié."
 
 #: bp-members/classes/class-bp-rest-signup-endpoint.php:103
 msgid ""
@@ -13854,7 +13854,7 @@ msgstr "ID du forum invalide."
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:479
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:675
 msgid "Invalid friendship ID."
-msgstr "Id de connexion invalide."
+msgstr "Id d’amitié invalide."
 
 #: bp-xprofile/classes/class-bp-rest-xprofile-repeater-endpoint.php:229
 #: bp-xprofile/classes/class-bp-rest-xprofile-repeater-endpoint.php:489
@@ -16648,7 +16648,7 @@ msgstr "Nouvelle connexion créée"
 
 #: bp-friends/bp-friends-activity.php:117
 msgid "New connections"
-msgstr "Nouvelles connexions"
+msgstr "Nouvelles amitiés"
 
 #: bp-forums/topics/template.php:53 bp-forums/topics/template.php:57
 msgid "New Discussion"
@@ -26330,7 +26330,7 @@ msgstr ""
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:390
 msgid "There was an error trying to create the friendship."
-msgstr "Il y a eu une erreur pour essayer de créer la connexion."
+msgstr "Il y a eu une erreur pour essayer de créer l’amitié."
 
 #: bp-messages/classes/class-bp-rest-messages-endpoint.php:550
 msgid "There was an error trying to create the message."
