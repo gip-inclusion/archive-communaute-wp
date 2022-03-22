@@ -27,7 +27,7 @@
 	<?php $this->template( 'list/top-bar/datepicker' ); ?>
 
   <select id="events-categories-filter">
-    <option value=""><?= __( 'Filter by category' ) ?></option>
+    <option value="<?= get_post_type_archive_link('tribe_events') ?>/liste"><?= __( 'Filter by category' ) ?></option>
     <?php 
       foreach($categories as $category) { ?>
         <option value="<?= get_term_link($category) ?>liste" <?= $category->term_id === get_queried_object_id() ? 'selected':'' ?>><?= $category->name ?></option>
