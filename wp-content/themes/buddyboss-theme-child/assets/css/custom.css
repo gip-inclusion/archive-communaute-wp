@@ -19,6 +19,12 @@ body .tribe-events-calendar-list__event-category-link {
 #events-categories-filter {
   margin-left: 1rem;
 }
+
+.page-template-page-fullscreen.sticky-header .site-content {
+  padding-top: 0;
+}
+
+
 /* Responsive */
 body #tribe-events-content {
   overflow: visible;
@@ -28,6 +34,8 @@ body #tribe-events-pg-template {
   max-width: 1048px;
   padding: var(--tec-spacer-8) var(--tec-spacer-4) var(--tec-spacer-4);
 }
+
+
 @media screen and (max-width: 544px) {
   body .tribe-events-event-meta .tribe-events-meta-group {
     padding-left: 30px;
