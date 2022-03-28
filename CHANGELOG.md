@@ -1,5 +1,23 @@
 # Journal des modifications
 
+## [10] - 2022-03-28
+### Ajouté / Corrigé
+- Sécurité : il est désormais impossible d'exécuter du PHP dans le dossier d'uploads
+- Performances : les assets CSS / JS sont maintenant aggrégés / minifiés
+- Performances : le serveur précise des règles d'expiration / compression des ressources
+- Événements : la recherche texte est possible dans les listes d'événements passés
+- Événements : harmonisation des templates (standard => récurrents)
+- Événements : possibilité de filtrer les listes d'événements selon leur catégorie
+- Partage réseaux sociaux : les bonnes valeurs (titre, url, description) remontent bien pour chaque page sur le site
+- Correction de traductions
+- Ajout du plugin IdeaPush
+
+### Modifié
+- Les URLs type /catégorie/ ont été modifié en /categorie
+- MAJ WP et plugins
+
+### Supprimé
+
 ## [09] - 2022-03-14
 ### Ajouté / Corrigé
 - Les "Membres" qui s'inscrivent se voit automatiquement attribué le rôle "Contributeur" dans WP
