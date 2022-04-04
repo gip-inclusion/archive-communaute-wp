@@ -22,8 +22,29 @@ function eventsFilterOnChange() {
   }
 }
 
+function changePrevNextEventsLabels() {
+  var $items = $('#tribe-events-footer .tribe-events-sub-nav a');
+  if($items.length) {
+    $('#tribe-events-footer .tribe-events-sub-nav a').each(function(_, element) {
+      console.log(element);
+      var $this = $(element);
+      var parent = $this.parent();
+      var label = $this.html();
+      if(parent.hasClass('tribe-events-nav-previous')) {
+        label = 'Évènement précédent';
+      }
+      if(parent.hasClass('tribe-events-nav-next')) {
+        label = 'Évèvenement suivant';
+      }
+      $this.html(label);
+    });
+  }
+  
+}
+
 // init
 jQuery(document).ready(function() {
   editPastButtonHref();
   eventsFilterOnChange();
+  changePrevNextEventsLabels();
 })
