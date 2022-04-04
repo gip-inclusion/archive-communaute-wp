@@ -34,7 +34,7 @@ function changePrevNextEventsLabels() {
         label = 'Évènement précédent';
       }
       if(parent.hasClass('tribe-events-nav-next')) {
-        label = 'Évèvenement suivant';
+        label = 'Évènement suivant';
       }
       $this.html(label);
     });
