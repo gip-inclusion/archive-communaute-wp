@@ -31,7 +31,7 @@
 					<?php /***** Basic Account Details ******/ ?>
 
 					<?php bp_nouveau_signup_form(); ?>
-					salut
+
 				</div><!-- #basic-details-section -->
 
 				<?php bp_nouveau_signup_hook( 'after', 'account_details' ); ?>

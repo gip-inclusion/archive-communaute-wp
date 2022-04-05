@@ -24,6 +24,9 @@ body .tribe-events-calendar-list__event-category-link {
   padding-top: 0;
 }
 
+#basic-details-section .description {
+  font-style: italic;
+}
 
 /* Responsive */
 body #tribe-events-content {
