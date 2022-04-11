@@ -1,5 +1,17 @@
 # Journal des modifications
 
+## [11] - 2022-04-11
+### Ajouté / Corrigé
+- Ajout d'instructions pour la créatio d'un mot de passe lors de l'inscription
+- Recalage graphique d'éléments graphique sur le formulaire de login
+- Correction des valeurs retournées dans le template de mail {initiator.name}
+- Correction Embed Matomo sur la page Stats
+- Mise à jour des environnements (local, staging)
+
+### Modifié
+
+### Supprimé
+
 ## [10] - 2022-03-28
 ### Ajouté / Corrigé
 - Sécurité : il est désormais impossible d'exécuter du PHP dans le dossier d'uploads
