@@ -27,7 +27,17 @@ body .tribe-events-calendar-list__event-category-link {
 #basic-details-section .description {
   font-style: italic;
 }
-
+.ideapush-container .ideapush-container-form input {
+  margin-bottom: 0;
+  margin-right: .5rem;
+}
+.ideapush-container-idea-header {
+  display: flex;
+  margin-top: .5rem;
+}
+.ideapush-idea-filter select {
+  min-width: 100px;
+}
 /* Responsive */
 body #tribe-events-content {
   overflow: visible;
