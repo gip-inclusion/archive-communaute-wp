@@ -3,10 +3,9 @@ version: '3.9'
 services:
   # Database
   db:
-    image: mysql:latest
-    platform: linux/amd64
-    volumes:
-      - ./docker/db-data:/var/lib/mysql
+    image: mariadb:latest
+    # volumes:
+    #   - ./docker/db-data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${WORDPRESS_DB_PASSWORD}
