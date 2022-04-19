@@ -9,13 +9,16 @@ function changeDateLabel() {
 }
 
 function onIdeasThumbnailClick() {
-  var $selector = $('.image_picker_selector .thumbnail');
   var check = $('.ideapush-container').length > -1;
+  var y = 0;
   if(check) {
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
-    $selector.on('click', function(event) {
+    $(document).on('click', '.image_picker_selector > li', function(event) {      
       event.preventDefault();
-      window.scrollTo(0,0);
+      y = y ? 0:1;
+      setTimeout(function() {
+        window.scrollTo(0,y);
+      }, 500);
     });
   }
 }
