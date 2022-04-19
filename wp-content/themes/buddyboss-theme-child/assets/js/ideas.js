@@ -23,4 +23,5 @@ function onIdeasThumbnailClick() {
 // init
 jQuery(document).ready(function() {
   changeDateLabel();
+  onIdeasThumbnailClick();
 })
