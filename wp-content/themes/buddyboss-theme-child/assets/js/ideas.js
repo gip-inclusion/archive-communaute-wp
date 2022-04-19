@@ -9,7 +9,6 @@ function changeDateLabel() {
 }
 
 function onIdeasThumbnailClick() {
-  var $selector = $('.image_picker_selector > li');
   var check = $('.ideapush-container').length > -1;
   var y = 0;
   console.log('onIdeasThumbnailClick');
@@ -17,7 +16,7 @@ function onIdeasThumbnailClick() {
   if(check) {
     console.log('check');
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
-    document.on('click', '.image_picker_selector > li', function(event) {      
+    $(document).on('click', '.image_picker_selector > li', function(event) {      
       event.preventDefault();
       y = y ? 0:1;
       console.log('click');
