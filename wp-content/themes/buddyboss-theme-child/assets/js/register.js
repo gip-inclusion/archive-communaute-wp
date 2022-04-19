@@ -22,5 +22,5 @@ function editRegisterForm() {
 
 // init
 jQuery(document).ready(function() {
-  editRegisterForm();
+  //editRegisterForm();
 })
