@@ -1,5 +1,17 @@
 # Journal des modifications
 
+## [12] - 2022-04-25
+### Ajouté / Corrigé
+- Mise à jour et corrections de traductions Buddyboss et IdeaPush
+- Ajout du plugin Crisp (staging)
+- Ajout du plugin Yoast SEO (pour la génération des metas OG / Twitter card)
+- Optimisation des images (WebP, lazyload) via Smush Pro
+
+### Modifié
+- Passage de la base de données en MariaDB sur les environnements locaux (Docker)
+
+### Supprimé
+
 ## [11] - 2022-04-11
 ### Ajouté / Corrigé
 - Ajout d'instructions pour la créatio d'un mot de passe lors de l'inscription
