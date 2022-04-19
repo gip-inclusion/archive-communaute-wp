@@ -31,9 +31,7 @@ services:
     depends_on:
       - db
       - mailhog
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
+    image: wordpress:5.9.3-php7.4-apache
     ports:
       - '8000:80'
     restart: always
