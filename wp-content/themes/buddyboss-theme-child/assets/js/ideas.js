@@ -13,13 +13,14 @@ function onIdeasThumbnailClick() {
   var check = $('.ideapush-container').length > -1;
   var y = 0;
   console.log('onIdeasThumbnailClick');
-  console.log($('.ideapush-container'), $('.ideapush-container').length > -1);
+  console.log($('.ideapush-container'), check);
   if(check) {
+    console.log('check');
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
-    $selector.on('click', function(event) {
+    $selector.on('click', function(event) {      
+      event.preventDefault();
       y = y ? 0:1;
       console.log('click');
-      event.preventDefault();
       setTimeout(function() {
         console.log('scrolling to ', y);
         window.scrollTo(0,y);
