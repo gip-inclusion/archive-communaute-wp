@@ -11,11 +11,16 @@ function changeDateLabel() {
 function onIdeasThumbnailClick() {
   var $selector = $('.image_picker_selector .thumbnail');
   var check = $('.ideapush-container').length > -1;
+  var y = 0;
   if(check) {
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
     $selector.on('click', function(event) {
+      y = y ? 0:1;
+      console.log('clicked');
       event.preventDefault();
-      window.scrollTo(0,0);
+      setTimeout(function() {
+        window.scrollTo(0,y);
+      }, 500);
     });
   }
 }
