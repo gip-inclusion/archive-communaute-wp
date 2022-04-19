@@ -10,6 +10,7 @@ function custom_wp_enqueue_scripts() {
   wp_enqueue_script('itou-communaute-faq', get_stylesheet_directory_uri() . '/assets/js/faq.js', 'jquery', '1.0');
   wp_enqueue_script('itou-communaute-events', get_stylesheet_directory_uri() . '/assets/js/events.js', 'jquery', '1.0');
   wp_enqueue_script('itou-communaute-idea', get_stylesheet_directory_uri() . '/assets/js/ideas.js', 'jquery', '1.0');
+  wp_enqueue_script('itou-communaute-register', get_stylesheet_directory_uri() . '/assets/js/register.js', 'jquery', '1.0');
 
 }
 add_action('wp_enqueue_scripts', 'custom_wp_enqueue_scripts');
