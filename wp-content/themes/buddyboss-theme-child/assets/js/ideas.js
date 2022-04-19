@@ -12,13 +12,15 @@ function onIdeasThumbnailClick() {
   var $selector = $('.image_picker_selector .thumbnail');
   var check = $('.ideapush-container').length > -1;
   var y = 0;
+  console.log('onIdeasThumbnailClick');
   if(check) {
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
     $selector.on('click', function(event) {
       y = y ? 0:1;
-      console.log('clicked');
+      console.log('click');
       event.preventDefault();
       setTimeout(function() {
+        console.log('scrolling to ', y);
         window.scrollTo(0,y);
       }, 500);
     });
