@@ -17,7 +17,7 @@ function onIdeasThumbnailClick() {
   if(check) {
     console.log('check');
     // Hack: when user clicks on a service, scroll the window so PAFE triggers update
-    $selector.on('click', function(event) {      
+    document.on('click', '.image_picker_selector > li', function(event) {      
       event.preventDefault();
       y = y ? 0:1;
       console.log('click');
