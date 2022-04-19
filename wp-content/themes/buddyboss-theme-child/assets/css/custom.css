@@ -41,9 +41,9 @@ body .tribe-events-calendar-list__event-category-link {
 
 /* Form inscription */
 
-#field_104, #field_104-3 {
+/* #field_104, #field_104-3 {
   display: none !important;
-}
+} */
 
 /* Responsive */
 body #tribe-events-content {
