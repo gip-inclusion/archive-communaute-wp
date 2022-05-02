@@ -11,7 +11,6 @@
  * @var string  $anchor
 */
 function itou_filter_prev_next_links($link, $post, $mode, $anchor) {
-  var_dump($link);
   $link = str_replace('Previous Event', __('Évèvenement précédent'), $link);
   $link = str_replace('Next Event', __('Évèvenement suivant'), $link);
   return $link;

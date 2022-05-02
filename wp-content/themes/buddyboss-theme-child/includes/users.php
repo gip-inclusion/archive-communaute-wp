@@ -17,7 +17,12 @@ function itou_on_user_registration($user_id) {
     $user->add_role(get_option('default_role'));
   }
   if(!empty($group_area)){
-    groups_join_group($group_area[0]->id, $user_id);
+    foreach($group_area as $group) {
+      if($group->status === 'public') {
+        groups_join_group($group->id, $user_id);
+      }
+    }
+    
   }
 }
 
