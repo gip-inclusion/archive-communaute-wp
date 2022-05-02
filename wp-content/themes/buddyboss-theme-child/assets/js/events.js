@@ -1,7 +1,7 @@
 function editPastButtonHref() {
   var urlParams = new URLSearchParams(window.location.search);
   var eventSearchParam = urlParams.get('event-search');
-  jQuery(".tribe-past, .tribe-upcoming").each(function(index, item) {
+  jQuery(document).each(function(index, item) {
     if(eventSearchParam) {
       var $item = $(item);
       var href = new URL($item.attr('href'));
@@ -12,9 +12,10 @@ function editPastButtonHref() {
 }
 
 function eventsFilterOnChange() {
-  var $element = $('#events-categories-filter');
-  if($element.length) {
-    $element.on('change', function() {
+  var $container = $('.tribe-events-view');
+  console.log($container);
+  if($container.length) {
+    $(document).on('change', '#events-categories-filter', function() {
       var $this = $(this);
       var href = $this.find('option:selected').attr('value');
       window.location.href = href;
