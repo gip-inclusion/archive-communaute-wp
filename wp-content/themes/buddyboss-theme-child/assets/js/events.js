@@ -41,9 +41,19 @@ function changePrevNextEventsLabels() {
   
 }
 
+function updateSelectedCategoryOption() {
+  var $breadcrumbLast = $('.breadcrumb_last');
+  var $filter = $('#events-categories-filter');
+  if($breadcrumbLast.length && $filter.length) {
+    var pageName = $breadcrumbLast.text();
+    $filter.find('option:contains('+pageName+')').prop('selected', true);
+  }
+}
+
 // init
 jQuery(document).ready(function() {
   editPastButtonHref();
   eventsFilterOnChange();
   changePrevNextEventsLabels();
+  updateSelectedCategoryOption();
 })
