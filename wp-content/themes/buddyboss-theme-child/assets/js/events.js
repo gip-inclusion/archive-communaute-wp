@@ -13,7 +13,6 @@ function editPastButtonHref() {
 
 function eventsFilterOnChange() {
   var $container = $('.tribe-events-view');
-  console.log($container);
   if($container.length) {
     $(document).on('change', '#events-categories-filter', function() {
       var $this = $(this);
@@ -27,7 +26,6 @@ function changePrevNextEventsLabels() {
   var $items = $('#tribe-events-footer .tribe-events-sub-nav a');
   if($items.length) {
     $('#tribe-events-footer .tribe-events-sub-nav a').each(function(_, element) {
-      console.log(element);
       var $this = $(element);
       var parent = $this.parent();
       var label = $this.html();
