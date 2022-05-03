@@ -42,10 +42,10 @@ function changePrevNextEventsLabels() {
 }
 
 function updateSelectedCategoryOption() {
-  var $breadcrumbLast = $('.breadcrumb_last');
+  var $breadcrumbLast = $('.tribe-events-c-breadcrumbs__list-item').last();
   var $filter = $('#events-categories-filter');
   if($breadcrumbLast.length && $filter.length) {
-    var pageName = $breadcrumbLast.text();
+    var pageName = $breadcrumbLast.find('.tribe-events-c-breadcrumbs__list-item-text').text().trim();
     $filter.find('option:contains('+pageName+')').prop('selected', true);
   }
 }
