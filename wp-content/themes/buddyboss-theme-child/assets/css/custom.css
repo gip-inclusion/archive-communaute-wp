@@ -38,7 +38,9 @@ body .tribe-events-calendar-list__event-category-link {
 .ideapush-idea-filter select {
   min-width: 100px;
 }
-
+.bb-groups-invites-left.loading .group-invites-members-listing {
+  opacity: .5;
+}
 /* Form inscription */
 
 /* #field_104, #field_104-3 {
