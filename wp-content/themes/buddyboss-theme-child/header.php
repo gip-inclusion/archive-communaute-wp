@@ -6,9 +6,6 @@
 		<?php 
 			$current_url = itou_get_current_url();
 		?>
-		
-
-		<link rel="shortcut icon" href="<?=get_stylesheet_directory_uri() . '/assets/images/'; ?>favico.ico" type="image/ico">
 		<?php wp_head(); ?>
 
 	</head>
