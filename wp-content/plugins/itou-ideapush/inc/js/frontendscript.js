@@ -365,9 +365,9 @@ jQuery(document).ready(function ($) {
     
     //when any of the sorting selects change re-render the ideas
     
-    $('body').on('change', '.ideapush-sort, .ideapush-status-filter, .ideapush-tags-filter, .ideapush-custom-field-filter',function(){
+    $('body').on('change', '.ideapush-sort, .ideapush-status-filter, .ideapush-tags-filter, .ideapush-custom-field-filter',function(event){
         
-        commonReOrderAndReRenderingOfIdeas('');
+        commonReOrderAndReRenderingOfIdeas('', event);
         resizeAllHeaderSelect();
     
     });
@@ -377,28 +377,30 @@ jQuery(document).ready(function ($) {
     
     
     
-    function commonReOrderAndReRenderingOfIdeas(showing){
-        
+    function commonReOrderAndReRenderingOfIdeas(showing, event){
+        console.log(event);
+        var $this = $(event.currentTarget); //'ideapush-status-filter'
         //lets get the values of all select options
-        
+        var $parent = $this.parents('.ideapush-container');
+        var $sort = $parent;
         //console.log(showing);
         
         //sort values
         if(showing == null || showing.length < 1){
-            var sortFilter = $('.ideapush-sort').val();
+            var sortFilter = $sort.val();
         } else {
             var sortFilter = showing;    
         }
         
                 
         //status values
-        var statusFilter = $('.ideapush-status-filter').val();
+        var statusFilter = $this.val();
         
         //tag values
         //because the tags might now be displayed on the page we need to run this check and set the default to all
-        if($('.ideapush-tags-filter option:selected').length){
-            var tagFilter = $('.ideapush-tags-filter option:selected').val();
-            var tagFilterName = $('.ideapush-tags-filter option:selected').text();      
+        if($parent.find('.ideapush-tags-filter option:selected').length){
+            var tagFilter = $parent.find('.ideapush-tags-filter option:selected').val();
+            var tagFilterName = $parent.find('.ideapush-tags-filter option:selected').text();      
         } else {
             var tagFilter = 'all';
             var tagFilterName = 'All';     
@@ -409,9 +411,9 @@ jQuery(document).ready(function ($) {
         //create initial variable which will hold all custom field data
         var customFieldFilter = [];
 
-        if($('.ideapush-custom-field-filter').length){
+        if($parent.find('.ideapush-custom-field-filter').length){
             //loop through custom fields
-            $( '.ideapush-custom-field-filter' ).each(function( index ) {
+            $parent.find( '.ideapush-custom-field-filter' ).each(function( index ) {
                 var selectedOption = $(this).val();
                 var filterName = $(this).attr('data');
                 //add item to array
@@ -430,7 +432,7 @@ jQuery(document).ready(function ($) {
         window.history.pushState({path:newurl},'',newurl);
         
 
-        var boardNumber = $('.ideapush-container').attr('data');
+        var boardNumber = $parent.attr('data');
         
 //        console.log(sortFilter);
 //        console.log(statusFilter);
@@ -458,7 +460,7 @@ jQuery(document).ready(function ($) {
             
             
             if($('.idea-pagination').length){
-                var activePageNumber = parseInt($('.idea-page-number.active').text());
+                var activePageNumber = parseInt($parent.find('.idea-page-number.active').text());
             } else {
                 //we need to do this else condition in case the previous filter brought no results and hence no pagination was created
                 var activePageNumber = 1;    
@@ -470,22 +472,22 @@ jQuery(document).ready(function ($) {
             
             //we need to do these long lookups just in case they have multiple shortcodes on the one page!
             //in success response lets clear all list items in the ul
-            $('.dynamic-idea-listing').empty();
+            $parent.find('.dynamic-idea-listing').empty();
             
             //clear search input
-            $('.ideapush-search-input').val('');
+            $parent.find('.ideapush-search-input').val('');
     
             //reload scrollreveal
-            $('.dynamic-idea-listing').append(data);
+            $parent.find('.dynamic-idea-listing').append(data);
             
             //show page one items
-            if($('.idea-pagination').length){
+            if($parent.find('.idea-pagination').length){
                 
 //                console.log(activePageNumber);
                 
                 showPageItems(activePageNumber);
-                $('.idea-page-number').removeClass('active');
-                $('.idea-page-'+activePageNumber).addClass('active');
+                $parent.find('.idea-page-number').removeClass('active');
+                $parent.find('.idea-page-'+activePageNumber).addClass('active');
                 
                 
             } 
@@ -503,7 +505,7 @@ jQuery(document).ready(function ($) {
             /* ... */
             
             
-        if(!$('.idea-pagination').length){
+        if(!$parent.find('.idea-pagination').length){
             // sr.sync();    
         }
             

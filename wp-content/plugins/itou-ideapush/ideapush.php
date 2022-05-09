@@ -1,12 +1,11 @@
 <?php
 /*
-*		Plugin Name: IdeaPush - Feature Request Manager
+*		Plugin Name: ITOU / IdeaPush - Feature Request Manager
 *		Plugin URI: https://www.northernbeacheswebsites.com.au
 *		Description: IdeaPush is a feature request management system for WordPress 
 *		Version: 8.26
-*		Author: Martin Gibson
-*		Text Domain: ideapush   
-*		Support: https://www.northernbeacheswebsites.com.au/contact
+*		Author: Itou team based on Martin Gibson's work
+*		Text Domain: itou-ideapush   
 *		Licence: GPL2
 */
 
