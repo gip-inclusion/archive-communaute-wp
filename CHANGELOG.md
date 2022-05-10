@@ -1,5 +1,18 @@
 # Journal des modifications
 
+## [14] - 2022-05-23
+### Ajouté / Corrigé
+- Correction de l'assignation d'un groupe de région lors de l'inscription
+- Correction du filtre de catégorie d'événement, qui ne fonctionnait pas suite à un chargement AJAX
+- Ajout d'un indicateur de chargement sur la recherche de membre, lors de l'invitation d'un membre à un groupe
+- Correction de l'assignation du type de profil lors de l'inscription d'un nouvel utilisateur (Membre / Ambassadeur)
+
+### Modifié
+- Mise à jour favicon
+- Fork du plugin IdeaPush => ITOU / IdeaPush en vue de modifications fonctionnelles
+
+### Supprimé
+
 ## [12] - 2022-04-25
 ### Ajouté / Corrigé
 - Mise à jour et corrections de traductions Buddyboss et IdeaPush
