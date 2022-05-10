@@ -10,11 +10,21 @@
 function itou_on_user_registration($user_id) {
   $type = bp_get_member_type($user_id, true);
   $area = xprofile_get_field_data('Région', $user_id);
+  $profile_field_type_id = '104';
+  $args = array(
+    'field'   => $profile_field_type_id, // Exact field name or field ID.
+    'user_id' => $user_id // ID of logged in user
+  );
+  $profile_type = bp_get_profile_field_data( $args ); 
   $group_area = $area !== '' ? itou_get_group_from_area($area):[];
-  logger('Trying to register new user with ==> '.$type. ' '.$area.' '.$group_area[0]->name.' '.$group_area[0]->id);  
+  logger('Trying to register new user with ==> '.$type. ' '.$area.' '.$group_area[0]->name.' '.$group_area[0]->id.' '.print_r($profile_type, true));  
   if($type === 'membre' && !itou_is_user_role($user_id, ['administrator'])) {    
     $user = new WP_User($user_id);
     $user->add_role(get_option('default_role'));
+  }
+  if(isset($profile_type) && !empty($profile_type)) {
+    $member_type_slug = get_post_field( 'post_name', $profile_type );    
+    $return = bp_set_member_type($user_id, $member_type_slug);
   }
   if(!empty($group_area)){
     foreach($group_area as $group) {
