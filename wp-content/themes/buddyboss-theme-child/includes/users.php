@@ -23,7 +23,16 @@ function itou_on_user_registration($user_id) {
     $user->add_role(get_option('default_role'));
   }
   if(isset($profile_type) && !empty($profile_type)) {
-    $member_type_slug = get_post_field( 'post_name', $profile_type );    
+    $member_type_slug = get_post_field( 'post_name', $profile_type );
+    if($member_type_slug === "bande-a-itou") {
+      $bande_a_itou_group = groups_get_groups([
+        'slug' => 'la-bande-a-itou'
+      ]);
+      logger('Trying to join group ==> '.print_r($bande_a_itou_group, true));  
+      if(!empty($bande_a_itou_group)) {
+        groups_join_group($bande_a_itou_group['groups'][0]->id, $user_id);
+      }
+    }  
     $return = bp_set_member_type($user_id, $member_type_slug);
   }
   if(!empty($group_area)){

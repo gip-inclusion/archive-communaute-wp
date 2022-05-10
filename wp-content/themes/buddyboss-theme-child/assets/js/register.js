@@ -1,5 +1,5 @@
 function editRegisterForm() {
-  var $selector = $('.field_type_membertypes');
+  var $selector = $('div.field_type_membertypes');
   var $originalInput = $('#field_104');
   $originalInput.find('option').removeAttr('selected');
   $originalInput.find('option[value="481"]').attr('selected', 'selected');
