@@ -149,5 +149,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
     check_proto_set_ssl($_SERVER['X_FORWARDED_PROTO']);
 }
 
+define('DISABLE_WP_CRON', true);
+
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once( ABSPATH . 'wp-settings.php' );
