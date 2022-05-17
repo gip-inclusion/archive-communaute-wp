@@ -17,7 +17,7 @@ function itou_on_user_registration($user_id) {
   );
   $profile_type = bp_get_profile_field_data( $args ); 
   $group_area = $area !== '' ? itou_get_group_from_area($area):[];
-  logger('Trying to register new user with ==> '.$type. ' '.$area.' '.$group_area[0]->name.' '.$group_area[0]->id.' '.print_r($profile_type, true));  
+  logger('Trying to register new user with ==> '.$type.' - '.print_r($profile_type, true));  
   if($type === 'membre' && !itou_is_user_role($user_id, ['administrator'])) {    
     $user = new WP_User($user_id);
     $user->add_role(get_option('default_role'));
@@ -28,12 +28,15 @@ function itou_on_user_registration($user_id) {
       $bande_a_itou_group = groups_get_groups([
         'slug' => 'la-bande-a-itou'
       ]);
+      logger('Trying to set member type ==> '.$user_id.' '.$member_type_slug);  
+      $return = bp_set_member_type($user_id, $member_type_slug);
+      logger('Set member type ==> '.print_r($return, true));  
       logger('Trying to join group ==> '.print_r($bande_a_itou_group, true));  
-      if(!empty($bande_a_itou_group)) {
+      if(!empty($bande_a_itou_group) && $return) {
+        logger('Joining group ==> '.print_r($bande_a_itou_group, true));  
         groups_join_group($bande_a_itou_group['groups'][0]->id, $user_id);
       }
     }  
-    $return = bp_set_member_type($user_id, $member_type_slug);
   }
   if(!empty($group_area)){
     foreach($group_area as $group) {
