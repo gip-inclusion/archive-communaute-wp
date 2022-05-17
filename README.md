@@ -50,3 +50,21 @@ En local, avec Docker, `WP_Debug` est activé :
 - en cas de MAJ du projet, et notamment du thème Buddyboss et des plugins Elementor : 
   - la MAJ de DB proposée par Elementor suite à une mise à jour n'est généralement pas compatible avec la version précédente du plugin (et des contenus qu'il a créé) : si la MAJ de la DB demandée par Elementor est faite, il ne sera pas possible de revenir à la version précédente du plugin sans remettre la DB dans son état initial
   - en cas de MAJ, les pages à tester en priorités sont les pages de formulaire de contact support : `/aide/emplois`, `/aide/communaute`, `/aide/marche`, `/aide/pilotage`
+
+
+## Comment remonter le C3 ?
+En cas de souci, pour remonter tout le projet de zéro :
+1. récupérer un dump le plus à jour possible : 
+  - Scaleway (tous les jours), avec fichiers uploadés toutes les semaines
+  - CC (les bases MySQL ont une sauvegarde auto tous les soirs sur les 15 derniers jours)
+  - si le BO est toujours accessible, il est possible de faire un export de la DB
+2. si besoin, modifier le dump pour faire correspondre avec la nouvelle URL souhaitée : WordPress inscrit toutes les URLs en absolu dans la DB, s'il y a un changement de domaine, il faut repasser sur toute la db
+2. récupérer les fichiers (`wp-content/uploads`) :
+  - soit sur le bucket CC directement, en FTP
+  - soit dans l'archive de sauvegarde contenant les fichiers (toutes les semaines, le dimanche soir)
+3. récupérer le reste du code depuis `master`
+4. la liaison du code à la DB se fait dans `wp-config.php`, par défaut, il récupère les variables d'env Docker en local, et celles de CC en staging / prod
+5. replacer les fichiers uploads dans `wp-content/uploads`
+6. 🤞 croiser les doigts
+### Astuces
+- parfois, la page d'accueil est accessible, mais le reste non (erreur 500 ou 404) : il faut rafraichir les réécritures d'URL de WP (Réglages > Permaliens et cliquer sur Enregistrer)
