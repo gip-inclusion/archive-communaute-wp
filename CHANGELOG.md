@@ -6,6 +6,7 @@
 - Ajout du plugin Crisp (staging)
 - Ajout du plugin Yoast SEO (pour la génération des metas OG / Twitter card)
 - Optimisation des images (WebP, lazyload) via Smush Pro
+- Mise en place backup daily / weekly (WPCron / BackWPUp => Scaleway)
 
 ### Modifié
 - Passage de la base de données en MariaDB sur les environnements locaux (Docker)
