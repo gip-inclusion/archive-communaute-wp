@@ -16,12 +16,11 @@ function editRegisterForm() {
 }
 
 function updateOriginalSelect($this, $originalInput) {
+  $originalInput.find('option').removeAttr('selected');
+  $originalInput.find('option[value="481"]').attr('selected', 'selected');
   if($this.is(':checked')) {
     $originalInput.find('option').removeAttr('selected');
     $originalInput.find('option[value="4736"]').attr('selected', 'selected');
-  } else {
-    $originalInput.find('option').removeAttr('selected');
-    $originalInput.find('option[value="481"]').attr('selected', 'selected');
   }
   console.log($originalInput.find('option:selected').text(), $originalInput.find('option:selected').val());
 }
