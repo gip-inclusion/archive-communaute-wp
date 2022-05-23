@@ -1,9 +1,9 @@
 === BuddyBoss Platform Pro ===
 Contributors: buddyboss
 Requires at least: 4.9.1
-Tested up to: 5.8.3
+Tested up to: 5.9.3
 Requires PHP: 5.6.20
-Stable tag: 1.1.9.1
+Stable tag: 2.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,29 @@ To run BuddyBoss Platform Pro, we recommend your host supports:
 5. Activate 'BuddyBoss Platform Pro' from your Plugins page.
 
 == Changelog ==
+
+= 2.0.1 =
+* Zoom - Handled Recurring meeting deleted occurrence issue on edit
+
+= 2.0.0 =
+* BuddyBoss Theme - Provided Theme 2.0 style new options support
+* BuddyBoss Theme - Provided Theme 2.0 overall styling support
+* BuddyBoss Theme - Provided Theme 2.0 with new color support
+* BuddyBoss Theme - Provided Theme 2.0 new icons pack support
+* Licenses - Handled update license key critical issue
+
+= 1.2.1 =
+* Notifications - Refactored notifications types for Lab feature enabled in 'BuddyBoss Platform'
+* Notifications - Refactored emails for Lab feature enabled in 'BuddyBoss Platform'
+* Zoom - Updated Zoom Client WebSDK to 2.3.0
+
+= 1.2.0 =
+* Profiles - Provided options to customize Profile header with the option to change alignment and select specific elements to show
+* Profiles - Provided options to customize Members directory with the option to select specific elements to show, enable specific profile actions, and set primary action
+* Profiles - Moved options to change profile cover image sizes from BuddyBoss Theme
+* Groups - Provided options to customize single Group header with the option to change alignment and select specific elements to show
+* Groups - Provided options to customize Groups directory with the option to change alignment and select specific elements to show
+* Groups - Moved options to change group cover image sizes from BuddyBoss Theme
 
 = 1.1.9.1 =
 * Member Access Controls - Fixed member profile header showing string 'array' issue
