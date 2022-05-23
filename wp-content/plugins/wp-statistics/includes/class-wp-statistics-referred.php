@@ -23,7 +23,7 @@ class Referred
      *
      * @var string
      */
-    public static $referrer_spam_link = 'https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt';
+    public static $referrer_spam_link = 'https://cdn.jsdelivr.net/gh/matomo-org/referrer-spam-list@4.0.0/spammers.txt';
 
     /**
      * Referred constructor.
@@ -41,7 +41,7 @@ class Referred
      */
     public static function getRefererURL()
     {
-        return (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
+        return (isset($_SERVER['HTTP_REFERER']) ? sanitize_url(wp_unslash($_SERVER['HTTP_REFERER'])) : '');
     }
 
     /**
@@ -107,6 +107,8 @@ class Referred
             $html_referrer = '//' . $html_referrer;
         }
 
+        $html_referrer = esc_url($html_referrer);
+
         // Parse Url
         $base_url = @parse_url($html_referrer);
 
@@ -140,7 +142,7 @@ class Referred
             $referrer = substr($referrer, 0, $length);
         }
 
-        return htmlentities($referrer, ENT_QUOTES);
+        return $referrer;
     }
 
     /**

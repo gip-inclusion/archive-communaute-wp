@@ -29,12 +29,9 @@
             </th>
 
             <td>
-                <input type="text" class="small-text code" id="check_online" name="wps_check_online" value="<?php echo htmlentities(WP_STATISTICS\Option::get('check_online'),
-                    ENT_QUOTES); ?>"/>
+                <input type="text" class="small-text code" id="check_online" name="wps_check_online" value="<?php echo esc_attr(WP_STATISTICS\Option::get('check_online')); ?>"/>
                 <?php _e('Seconds', 'wp-statistics'); ?>
-                <p class="description"><?php echo sprintf(__('Time for checking out accurate online users on the site. Now: %s Seconds',
-                        'wp-statistics'),
-                        WP_STATISTICS\Option::get('check_online')); ?></p>
+                <p class="description"><?php echo sprintf(__('Time for checking out accurate online users on the site. Now: %s Seconds', 'wp-statistics'), WP_STATISTICS\Option::get('check_online')); ?></p>
             </td>
         </tr>
 
@@ -46,8 +43,7 @@
             <td>
                 <input id="allonline" type="checkbox" value="1" name="wps_all_online" <?php echo WP_STATISTICS\Option::get('all_online') == true ? "checked='checked'" : ''; ?>>
                 <label for="allonline"><?php _e('Enable', 'wp-statistics'); ?></label>
-                <p class="description"><?php _e('Enable this option to ignore the exclusion settings and record all online users (including self referrals and robots). Should only be used for troubleshooting.',
-                        'wp-statistics'); ?></p>
+                <p class="description"><?php _e('Enable this option to ignore the exclusion settings and record all online users (including self referrals and robots). Should only be used for troubleshooting.', 'wp-statistics'); ?></p>
             </td>
         </tr>
         </tbody>
@@ -119,7 +115,7 @@
                 <label for="coefficient"><?php _e('Coefficient per Visitor:', 'wp-statistics'); ?></label>
             </th>
             <td>
-                <input type="text" class="small-text code" id="coefficient" name="wps_coefficient" value="<?php echo htmlentities(WP_STATISTICS\Option::get('coefficient'), ENT_QUOTES); ?>"/>
+                <input type="text" class="small-text code" id="coefficient" name="wps_coefficient" value="<?php echo esc_attr(WP_STATISTICS\Option::get('coefficient')); ?>"/>
                 <p class="description"><?php echo sprintf(__('This feature multiplies the number of each visitor. Currently %s.', 'wp-statistics'), WP_STATISTICS\Option::get('coefficient')); ?></p>
             </td>
         </tr>
@@ -152,7 +148,7 @@
                 <input id="all_pages" type="checkbox" value="1" name="wps_track_all_pages" <?php echo WP_STATISTICS\Option::get('track_all_pages') == true ? "checked='checked'" : ''; ?>>
                 <label for="all_pages"><?php _e('Enable', 'wp-statistics'); ?></label>
                 <p class="description"><?php _e('Enable or disable this feature', 'wp-statistics'); ?></p>
-                <p class="description"><?php echo sprintf(__('Track all WordPress pages, contains Category, Post Tags, Author, Custom Taxonomy, etc.', 'wp-statistics'), admin_url('options-permalink.php')); ?></p>
+                <p class="description"><?php echo sprintf(__('Track all WordPress pages, contains Category, Post Tags, Author, Custom Taxonomy, etc.', 'wp-statistics'), esc_url(admin_url('options-permalink.php'))); ?></p>
             </td>
         </tr>
 
@@ -176,13 +172,13 @@
 
         <tr valign="top">
             <th scope="row">
-                <label for="disable-editor"><?php _e('Hits Chart', 'wp-statistics'); ?></label>
+                <label for="disable-editor"><?php _e('Hits Chart Metabox', 'wp-statistics'); ?></label>
             </th>
 
             <td>
                 <input id="disable-editor" type="checkbox" value="1" name="wps_disable_editor" <?php echo WP_STATISTICS\Option::get('disable_editor') == true ? "checked='checked'" : ''; ?>>
                 <label for="disable-editor"><?php _e('Disable', 'wp-statistics'); ?></label>
-                <p class="description"><?php _e('Show Hits Chart in the WordPress page/post editor.', 'wp-statistics'); ?></p>
+                <p class="description"><?php _e('Disable showing the hits chart metabox in the edit pages.', 'wp-statistics'); ?></p>
             </td>
         </tr>
 
@@ -193,31 +189,31 @@
             <td>
                 <input id="disable_column" type="checkbox" value="1" name="wps_disable_column" <?php echo WP_STATISTICS\Option::get('disable_column') == true ? "checked='checked'" : ''; ?>>
                 <label for="disable_column"><?php _e('Disable', 'wp-statistics'); ?></label>
-                <p class="description"><?php _e('Show the Hits Column in posts/pages list', 'wp-statistics'); ?></p>
+                <p class="description"><?php _e('Disable showing the hits column in list pages.', 'wp-statistics'); ?></p>
             </td>
         </tr>
 
         <tr valign="top">
             <th scope="row">
-                <label for="hit_post_metabox"><?php _e('Hits Metabox Chart:', 'wp-statistics'); ?></label>
+                <label for="hit_post_metabox"><?php _e('Hits in Publish Metabox', 'wp-statistics'); ?></label>
             </th>
 
             <td>
                 <input id="hit_post_metabox" type="checkbox" value="1" name="wps_hit_post_metabox" <?php echo WP_STATISTICS\Option::get('hit_post_metabox') == true ? "checked='checked'" : ''; ?>>
                 <label for="hit_post_metabox"><?php _e('Enable', 'wp-statistics'); ?></label>
-                <p class="description"><?php _e('Enable this option to show hits metabox chart on the edit page of all post types', 'wp-statistics'); ?></p>
+                <p class="description"><?php _e('Enable this option to show hits on the edit page » Publish meta box of all post types', 'wp-statistics'); ?></p>
             </td>
         </tr>
 
         <tr valign="top">
             <th scope="row">
-                <label for="show_hits"><?php _e('Hits in Single Page:', 'wp-statistics'); ?></label>
+                <label for="show_hits"><?php _e('Hits in Single Pages', 'wp-statistics'); ?></label>
             </th>
 
             <td>
                 <input id="show_hits" type="checkbox" value="1" name="wps_show_hits" <?php echo WP_STATISTICS\Option::get('show_hits') == true ? "checked='checked'" : ''; ?> onClick='ToggleShowHitsOptions();'>
                 <label for="show_hits"><?php _e('Enable', 'wp-statistics'); ?></label>
-                <p class="description"><?php _e('Enable it to show hits in content', 'wp-statistics'); ?></p>
+                <p class="description"><?php _e('Enable this option to show the hits in post content', 'wp-statistics'); ?></p>
             </td>
         </tr>
 
@@ -279,8 +275,8 @@
 
             <td>
                 <select name="wps_menu_bar" id="menu-bar">
-                    <option value="0" <?php selected(WP_STATISTICS\Option::get('menu_bar'), '0'); ?>><?php _e('No', 'wp-statistics'); ?></option>
                     <option value="1" <?php selected(WP_STATISTICS\Option::get('menu_bar'), '1'); ?>><?php _e('Yes', 'wp-statistics'); ?></option>
+                    <option value="0" <?php selected(WP_STATISTICS\Option::get('menu_bar'), '0'); ?>><?php _e('No', 'wp-statistics'); ?></option>
                 </select>
                 <p class="description"><?php _e('Select Yes to show stats in the admin menu bar', 'wp-statistics'); ?></p>
             </td>
@@ -335,12 +331,11 @@
 
             <tr valign="top">
                 <th scope="row">
-                    <label for="<?php echo $option_name; ?>"><?php _e($se['name'], 'wp-statistics'); ?>:</label>
+                    <label for="<?php echo esc_attr($option_name); ?>"><?php echo esc_attr($se['name']); ?>:</label>
                 </th>
                 <td>
-                    <input id="<?php echo $option_name; ?>" type="checkbox" value="1" name="<?php echo $option_name; ?>" <?php echo WP_STATISTICS\Option::get($store_name) == true ? "checked='checked'" : ''; ?>><label for="<?php echo $option_name; ?>"><?php _e('Disable',
-                            'wp-statistics'); ?></label>
-                    <p class="description"><?php echo sprintf(__('Disable %s from data collection and reporting.', 'wp-statistics'), $se['name']); ?></p>
+                    <input id="<?php echo esc_attr($option_name); ?>" type="checkbox" value="1" name="<?php echo esc_attr($option_name); ?>" <?php echo WP_STATISTICS\Option::get($store_name) == true ? "checked='checked'" : ''; ?>><label for="<?php echo esc_attr($option_name); ?>"><?php _e('Disable', 'wp-statistics'); ?></label>
+                    <p class="description"><?php echo sprintf(__('Disable %s from data collection and reporting.', 'wp-statistics'), esc_attr($se['name'])); ?></p>
                 </td>
             </tr>
         <?php } ?>

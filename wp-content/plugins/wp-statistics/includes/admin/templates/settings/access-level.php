@@ -31,15 +31,16 @@ global $wp_roles;
             } else {
                 $selected = "";
             }
-            $option_list .= "<option value='{$key}'{$selected}>{$key}</option>";
+
+            $option_list .= sprintf("<option value='%s' %s>%s</option>", esc_attr($key), $selected, esc_attr($key));
         }
         ?>
         <tr valign="top">
             <th scope="row">
-                <label for="wps_read_capability"><?php _e('Required User Level to View WP Statistics:', 'wp-statistics') ?></label>
+                <label for="wps_read_capability"><?php _e('Required User Level to View WP-Statistics:', 'wp-statistics') ?></label>
             </th>
             <td>
-                <select dir="ltr" id="wps_read_capability" name="wps_read_capability"><?php echo $option_list; ?></select>
+                <select dir="ltr" id="wps_read_capability" name="wps_read_capability"><?php echo $option_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></select>
             </td>
         </tr>
 
@@ -51,15 +52,16 @@ global $wp_roles;
             } else {
                 $selected = "";
             }
-            $option_list .= "<option value='{$key}'{$selected}>{$key}</option>";
+
+            $option_list .= sprintf("<option value='%s' %s>%s</option>", esc_attr($key), esc_attr($selected), esc_attr($key));
         }
         ?>
         <tr valign="top">
             <th scope="row">
-                <label for="wps_manage_capability"><?php _e('Required User Level to Manage WP Statistics:', 'wp-statistics') ?></label>
+                <label for="wps_manage_capability"><?php _e('Required User Level to Manage WP-Statistics:', 'wp-statistics') ?></label>
             </th>
             <td>
-                <select dir="ltr" id="wps_manage_capability" name="wps_manage_capability"><?php echo $option_list; ?></select>
+                <select dir="ltr" id="wps_manage_capability" name="wps_manage_capability"><?php echo $option_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></select>
             </td>
         </tr>
 

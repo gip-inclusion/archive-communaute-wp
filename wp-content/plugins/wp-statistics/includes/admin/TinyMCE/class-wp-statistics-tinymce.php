@@ -31,7 +31,7 @@ class TinyMCE
         }
 
         $strings = array(
-            'insert'         => __('WP Statistics Shortcodes', 'wp-statistics'),
+            'insert'         => __('WP-Statistics Shortcodes', 'wp-statistics'),
             'stat'           => __('Stat', 'wp-statistics'),
             'usersonline'    => __('Online Users', 'wp-statistics'),
             'visits'         => __('Visits', 'wp-statistics'),
@@ -139,7 +139,7 @@ class TinyMCE
         });
         ';
         $lang = TinyMCE::lang();
-        echo $lang['translate'];
+        echo $lang['translate']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '
         tinyMCEPreInit.load_ext("' . rtrim(WP_STATISTICS_URL, "/") . '", "' . $lang['locale'] . '");
         </script>
