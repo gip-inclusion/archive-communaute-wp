@@ -14,15 +14,15 @@ if ( is_single() && !is_related_posts() && is_singular('post') ) : ?>
                 if ( is_user_logged_in() ) { ?>
         				<?php
         				if ( function_exists( 'bb_bookmarks' ) ) {
-        					echo bb_bookmarks()->action_button( array(
-        						'object_id'		 => get_the_ID(),
-        						'object_type'	 => 'post_' . get_post_type( get_the_ID() ),
-        						'action_type'	 => 'like',
-        						'wrapper_class'	 => 'bb-like-wrap',
-        						'icon_class'	 => 'bb-icon-like',
-        						'title_add'		 => __( 'Like this entry', 'buddyboss-theme' ),
-        						'title_remove'	 => __( 'Remove like', 'buddyboss-theme' ),
-        					) );
+					        echo bb_bookmarks()->action_button( array(
+						        'object_id'     => get_the_ID(),
+						        'object_type'   => 'post_' . get_post_type( get_the_ID() ),
+						        'action_type'   => 'like',
+						        'wrapper_class' => 'bb-like-wrap',
+						        'icon_class'    => 'bb-icon-l bb-icon-thumbs-up',
+						        'title_add'     => esc_html__( 'Like this entry', 'buddyboss-theme' ),
+						        'title_remove'  => esc_html__( 'Remove like', 'buddyboss-theme' ),
+					        ) );
         				}
         				?>
                 <?php } ?>
@@ -30,31 +30,32 @@ if ( is_single() && !is_related_posts() && is_singular('post') ) : ?>
 
                 <?php 
                 if ( comments_open() || get_comments_number() ) { ?>
-                    <a data-balloon-pos="up" data-balloon="<?php _e('Comments', 'buddyboss-theme'); ?>" href="#comments" class="push-right"><i class="bb-icon-comment"></i></a>
+                    <a data-balloon-pos="up" data-balloon="<?php esc_attr_e('Comments', 'buddyboss-theme'); ?>" href="#comments" class="push-right"><i class="bb-icon-l bb-icon-comment-square"></i></a>
                 <?php } ?>
-                
-               <?php if (is_singular('post') ) : ?>
-				   <div class="author-box-share-wrap">
-					   <a href="#" class="bb-share"><i class="bb-icon-share-small"></i></a>
-					   <div class="bb-share-container bb-share-author-box">
-						  <div class="bb-shareIcons"></div>
-					   </div>
-				    </div>
+
+				<?php if ( is_singular( 'post' ) ) : ?>
+					<div class="author-box-share-wrap">
+						<a href="#" class="bb-share"><i class="bb-icon-l bb-icon-share-dots"></i></a>
+						<div class="bb-share-container bb-share-author-box">
+							<div class="bb-shareIcons"></div>
+						</div>
+					</div>
 				<?php endif; ?>
 
-                
 				<?php
 				if ( function_exists( 'bb_bookmarks' ) && is_user_logged_in() ) {
-					echo bb_bookmarks()->action_button( array(
-						'object_id'		 => get_the_ID(),
-						'object_type'	 => 'post_' . get_post_type( get_the_ID() ),
-						'action_type'	 => 'bookmark',
-						'wrapper_class'	 => 'bookmark-link-container',
-						'icon_class'	 => 'bb-bookmark bb-icon-bookmark-small',
-						'text_template'	 => '',
-						'title_add'		 => __( 'Bookmark this story to read later', 'buddyboss-theme' ),
-						'title_remove'	 => __( 'Remove bookmark', 'buddyboss-theme' ),
-					) );
+					echo bb_bookmarks()->action_button(
+						array(
+							'object_id'     => get_the_ID(),
+							'object_type'   => 'post_' . get_post_type( get_the_ID() ),
+							'action_type'   => 'bookmark',
+							'wrapper_class' => 'bookmark-link-container',
+							'icon_class'    => 'bb-bookmark bb-icon-l bb-icon-bookmark',
+							'text_template' => '',
+							'title_add'     => esc_html__( 'Bookmark this story to read later', 'buddyboss-theme' ),
+							'title_remove'  => esc_html__( 'Remove bookmark', 'buddyboss-theme' ),
+						)
+					);
 				}
 				?>
 			</div>
