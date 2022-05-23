@@ -42,18 +42,18 @@ if ( $cert->can_user_manage() ) {
 
             <button class="llms-button-secondary button" onClick="window.print()" type="button">
                 <?php echo _e( 'Print', 'buddyboss-theme' ); ?>
-                <i class="bb-icon-print" aria-hidden="true"></i>
+                <i class="bb-icon-l bb-icon-printer" aria-hidden="true"></i>
             </button>
 
             <form action="" method="POST">
                 <button class="llms-button-secondary button" type="submit" name="llms_generate_cert">
                     <?php echo _e( 'Save', 'buddyboss-theme' ); ?>
-                    <i class="bb-icon-download" aria-hidden="true"></i>
+                    <i class="bb-icon-l bb-icon-download" aria-hidden="true"></i>
                 </button>
                 <?php if ( get_post_type( $cert->get( 'id' ) ) === $cert->get( 'db_post_type' ) ) : ?>
                     <button class="llms-button-secondary button" type="submit" name="llms_enable_cert_sharing" value="<?php echo ! $is_sharing_enabled; ?>">
                     <?php echo ( $is_sharing_enabled ? _e( 'Disable sharing', 'buddyboss-theme' ) : _e( 'Enable sharing', 'buddyboss-theme' ) ); ?>
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        <i class="bb-icon-l bb-icon-share-dots" aria-hidden="true"></i>
                     </button>
                 <?php endif; ?>
 
@@ -63,7 +63,7 @@ if ( $cert->can_user_manage() ) {
         </div>
 
         <div class="back_to_home_page">
-            <i class="bb-icons bb-icon-chevron-left"></i>
+            <i class="bb-icon-l bb-icon-angle-left"></i>
             <a href="<?php echo esc_url( home_url() . '/dashboard/my-certificates/' ); ?>">
                 <?php
                 esc_html_e( 'Back to My Certificates', 'buddyboss-theme' );

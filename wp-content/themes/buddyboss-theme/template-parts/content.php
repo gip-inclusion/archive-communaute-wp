@@ -24,7 +24,7 @@ global $post;
 	} 
 	?>
 
-	<div class="entry-content-wrap">
+	<div class="entry-content-wrap primary-entry-content">
 		<?php 
 		$featured_img_style = buddyboss_theme_get_option( 'blog_featured_img' );
 
@@ -40,11 +40,11 @@ global $post;
 
 			<?php
 			if ( has_post_format( 'link' ) && ( !is_singular() || is_related_posts() ) ) {
-				echo '<span class="post-format-icon"><i class="bb-icon-link-1"></i></span>';
+				echo '<span class="post-format-icon"><i class="bb-icon-l bb-icon-link"></i></span>';
 			}
 
 			if ( has_post_format( 'quote' ) && ( !is_singular() || is_related_posts() ) ) {
-				echo '<span class="post-format-icon white"><i class="bb-icon-quote"></i></span>';
+				echo '<span class="post-format-icon white"><i class="bb-icon-l bb-icon-quote-left"></i></span>';
 			}
 			?>
 
@@ -88,11 +88,11 @@ global $post;
 
 			<?php
 			if ( has_post_format( 'link' ) && ( !is_singular() || is_related_posts() ) ) {
-				echo '<span class="post-format-icon"><i class="bb-icon-link-1"></i></span>';
+				echo '<span class="post-format-icon"><i class="bb-icon-l bb-icon-link"></i></span>';
 			}
 
 			if ( has_post_format( 'quote' ) && ( !is_singular() || is_related_posts() ) ) {
-				echo '<span class="post-format-icon white"><i class="bb-icon-quote"></i></span>';
+				echo '<span class="post-format-icon white"><i class="bb-icon-l bb-icon-quote-left"></i></span>';
 			}
 			?>
 
@@ -172,7 +172,7 @@ global $post;
 	<div class="post-meta-wrapper">
 		<?php if  ( has_category() ) : ?>
 			<div class="cat-links">
-				<i class="bb-icon-folder"></i>
+				<i class="bb-icon-l bb-icon-folder"></i>
 				<?php _e( 'Categories: ', 'buddyboss-theme' ); ?>
 				<span><?php the_category( __( ', ', 'buddyboss-theme' ) ); ?></span>
 			</div>
@@ -180,7 +180,7 @@ global $post;
 
 		<?php if  ( has_tag() ) : ?>
 			<div class="tag-links">
-				<i class="bb-icon-tag"></i>
+				<i class="bb-icon-l bb-icon-tag"></i>
 				<?php _e( 'Tagged: ', 'buddyboss-theme' ); ?>
 				<?php the_tags( '<span>', __( ', ', 'buddyboss-theme' ),'</span>' ); ?>
 			</div>

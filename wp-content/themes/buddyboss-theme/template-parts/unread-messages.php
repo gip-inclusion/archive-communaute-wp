@@ -424,7 +424,7 @@ if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) . '&user_id=' . g
 else :
 	?>
 	<li class="bs-item-wrap">
-		<div class="notification-content"><?php esc_html_e( 'No new messages!', 'buddyboss-theme' ); ?></div>
+		<div class="notification-content"><?php esc_html_e( 'You have no messages right now.', 'buddyboss-theme' ); ?></div>
 	</li>
 	<?php
 endif;

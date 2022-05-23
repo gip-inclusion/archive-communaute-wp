@@ -1,8 +1,8 @@
 === BuddyBoss Theme ===
 Contributors: BuddyBoss
 Requires at least: 4.9.1
-Tested up to: 5.8.3
-Version: 1.8.5
+Tested up to: 5.9.3
+Version: 2.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,68 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 2.0.1 =
+* Theme Options - Handled header styles not showing issue when BuddyPanel not configured
+* Menus - Handled page critical issue for icon picker updates
+* Coding Standards - Small code refactoring for icons pack CSS file
+* LifterLMS - Handled public lesson layout issue on the private network
+
+= 2.0.0 =
+* Theme Options - Provided new template pack 2.0 with the fresh theme style
+* Theme Options - Provided brand new 500+ icons pack with multiple icon styles
+* Theme Options - Refactored and organized color options significantly
+* Theme Options - Provided new multiple header styles
+* Theme Options - Improved theme options screen layout
+* Styling - Extended color options to more areas of the theme
+* Styling - Improved style for 404 and Maintenance page
+* Styling - Improved style for Login and Registration page
+* Styling - Improved style for notices and pagination elements
+* Menus - Provided option to add a section for BuddyPanel menu
+* Menus - Provided option to set side panel menu for a mobile device specifically
+* Menus - Updated icon picker modal to select icons from the new icon pack
+* Gutenberg - Provided new BuddyPanel Gutenberg block
+* Profiles - Updated Profile completion widget layout and markup
+* Forums - Improved style for Forums, Discussions, and Replies significantly
+* Network Search - Improved style for the search results screen
+* Widgets - Improved style for Widgets
+* LearnDash - Improved style for Courses
+* Coding Standards - Handled significant style improvements and refactoring
+* Compatibility - Handled MemberPress registration form TOS validation issue
+
+= 1.8.9.1 =
+* Updater - Improvements to updater code
+
+= 1.8.9 =
+* Notifications - Provided UI support for Notification updates in 'BuddyBoss Platform'
+* Forums - Handled text highlight issue after forum reply added
+* Activity - Handled attached GIF issue in Activity Form
+* Messages - Handled long message thread layout issue
+* Theme Options - Handled typography tab not showing issue for specific server
+* Blog - Handled single blog post layout issue with featured image
+* LearnDash - Handled single lesson sidebar layout issue in responsive layout
+* LearnDash - Handled 'Course Reviews' compatibility issue
+* GamiPress - Handled center aligned Profile layout gamipress  icons compatibility issues
+
+= 1.8.8 =
+* Theme Options - Removed Redux framework unwanted files
+
+= 1.8.7 =
+* Profiles - Provided UI support to customize Profile header and directory layouts for settings provided in BuddyBoss Platform Pro
+* Profiles - Moved options to change profile cover image sizes to BuddyBoss Platform Pro
+* Groups - Provided UI support to customize Group header and directory layouts for settings provided in BuddyBoss Platform Pro
+* Groups - Moved options to change group cover image sizes to BuddyBoss Platform Pro
+* Text Editor - Handled emoji popup search issue with uppercase string
+* Login - Handled set password and forgot password screen small UI issue
+* Updater - Added confirm popup before updating to next version
+* LearnDash - Handled quiz question type essay UI issue
+* Compatibility - Fixed language switcher UI issue with WordPress 5.9
+
+= 1.8.6 =
+* Forums - Improved discussion labels logic to show group name when forum associated with the group
+* Forums - Removed discussion labels on a single forum and discussion screen
+* Forums - Show proper notification and button text on a forum and discussion screen for logged out users
+* Activity - Improved activity form upload media UI
 
 = 1.8.5 =
 * Groups - Fixed default avatar issue in messages and notifications screen when group avatar is disabled
@@ -126,7 +188,7 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 * LifterLMS - Fixed Courses page performance issue
 * LearnDash - Fixed sidebar template global variable issue
 * LearnDash - Fixed 'Start Course' issue in group redirecting to wrong course URL
-* LearnDash - Fixed post and pages hash link conflict with LearnDash
+* LearnDash - Fixed post and pages hash link conflict with LearnDash 
 
 = 1.7.3 =
 * Profiles - Fixed profile action button minor UI issue
@@ -828,7 +890,7 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 
 = 1.0.1 =
 * Forums - Nicer Tagging interface when replying
-* LearnDash - Fixed issue with messaging the course
+* LearnDash - Fixed issue with messaging the course 
 * LearnDash - Dark Mode improvements
 * Events Calendar Pro - Styling improvements
 * WP Job Manager - Styling improvements
