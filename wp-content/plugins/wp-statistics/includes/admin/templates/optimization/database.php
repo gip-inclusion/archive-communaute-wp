@@ -12,7 +12,7 @@
                 </th>
                 <td>
                     <input id="install-submit" class="button button-primary" type="button" value="<?php _e('Install Now!', 'wp-statistics'); ?>" name="install-submit" onclick="location.href=document.URL+'&install=1&tab=database'">
-                    <p class="description"><?php _e('If for some reason your installation of WP Statistics is missing the database tables or other core items, this will re-execute the install process.',
+                    <p class="description"><?php _e('If for some reason your installation of WP-Statistics is missing the database tables or other core items, this will re-execute the install process.',
                             'wp-statistics'); ?></p>
                 </td>
             </tr>
@@ -49,7 +49,7 @@
                         <option value="0"><?php _e('Please select', 'wp-statistics'); ?></option>
                         <?php
                         foreach (WP_STATISTICS\DB::table('all') as $tbl_key => $tbl_name) {
-                            echo '<option value="' . $tbl_key . '">' . $tbl_name . '</option>';
+                            echo '<option value="' . esc_attr($tbl_key) . '">' . esc_attr($tbl_name) . '</option>';
                         }
                         ?>
                         <option value="all"><?php echo __('All', 'wp-statistics'); ?></option>

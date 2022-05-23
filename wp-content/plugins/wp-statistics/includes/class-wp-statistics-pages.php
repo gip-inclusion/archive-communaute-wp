@@ -132,7 +132,7 @@ class Pages
         $home_uri_len = strlen($home_uri);
 
         // Get the current page URI.
-        $page_uri = $_SERVER["REQUEST_URI"];
+        $page_uri = sanitize_url(wp_unslash($_SERVER["REQUEST_URI"]));
 
         /*
          * We need to check which URI is longer in case one contains the other.
@@ -413,7 +413,7 @@ class Pages
             $list[] = array(
                 'title'     => $page_info['title'],
                 'link'      => $page_info['link'],
-                'str_url'   => htmlentities(urldecode($item->uri), ENT_QUOTES),
+                'str_url'   => urldecode($item->uri),
                 'hits_page' => Menus::admin_url('pages', array('ID' => $item->id, 'type' => $item->type)),
                 'number'    => number_format_i18n($item->count_sum)
             );

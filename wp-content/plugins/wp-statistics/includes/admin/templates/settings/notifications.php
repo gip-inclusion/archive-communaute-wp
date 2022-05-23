@@ -19,7 +19,7 @@
                 <input dir="ltr" type="text" id="email_list" name="wps_email_list" size="30" value="<?php if (WP_STATISTICS\Option::get('email_list') == '') {
                     $wp_statistics_options['email_list'] = get_bloginfo('admin_email');
                 }
-                echo htmlentities(WP_STATISTICS\Option::get('email_list'), ENT_QUOTES); ?>"/>
+                echo esc_textarea(WP_STATISTICS\Option::get('email_list')); ?>"/>
                 <p class="description"><?php _e('Add email addresses you want to receive reports and separate them with a comma.', 'wp-statistics'); ?></p>
             </td>
         </tr>
@@ -107,7 +107,7 @@
 
                     foreach ($schedules as $key => $value) {
                         if (!in_array($value, $schedules_item)) {
-                            echo '<option value="' . $key . '" ' . selected(WP_STATISTICS\Option::get('time_report'), $key) . '>' . $value['display'] . '</option>';
+                            echo '<option value="' . esc_attr($key) . '" ' . selected(WP_STATISTICS\Option::get('time_report'), $key) . '>' . esc_attr($value['display']) . '</option>';
                             $schedules_item[] = $value;
                         }
                     }
@@ -145,12 +145,12 @@
             </td>
 
             <td>
-                <?php wp_editor(WP_STATISTICS\Option::get('content_report'), 'content-report', array('media_buttons' => false, 'textarea_name' => 'wps_content_report', 'textarea_rows' => 5,)); ?>
+                <?php wp_editor(WP_STATISTICS\Option::get('content_report'), 'content-report', array('media_buttons' => false, 'textarea_name' => 'wps_content_report', 'textarea_rows' => 5)); ?>
                 <p class="description"><?php _e('Enter the contents of the report.', 'wp-statistics'); ?></p>
 
                 <p class="description data">
-                    <?php _e('Any shortcode supported by your installation of WordPress, include all shortcodes for WP Statistics (see the documentation for a list of codes available) are supported in the body of the message. Here are some examples:', 'wp-statistics'); ?>
-                    <br><br>&nbsp;
+                    <?php _e('Any shortcode supported by your installation of WordPress, include all shortcodes for WP-Statistics (see the documentation for a list of codes available) are supported in the body of the message. Here are some examples:', 'wp-statistics'); ?>
+                    <br><br>
                     <?php _e('Online User', 'wp-statistics'); ?>:
                     <code>[wpstatistics stat=usersonline]</code><br>
                     <?php _e('Today\'s Visitors', 'wp-statistics'); ?>:
@@ -167,7 +167,7 @@
                     <code>[wpstatistics stat=visits time=total]</code><br>
                 </p>
 
-                <h4>Looking for chart reporting? check out <a target="_blank" href="https://wp-statistics.com/product/wp-statistics-advanced-reporting/">Advanced Reporting</a>. </h4>
+                <h4>Looking for chart reporting? check out <a target="_blank" href="https://wp-statistics.com/product/wp-statistics-advanced-reporting?utm_source=wp_statistics&utm_medium=display&utm_campaign=wordpress">Advanced Reporting!</a></h4>
             </td>
         </tr>
         </tbody>
