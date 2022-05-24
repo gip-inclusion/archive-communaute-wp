@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-05-24 15:24+0200\n"
+"PO-Revision-Date: 2022-05-24 15:39+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -6877,10 +6877,8 @@ msgid "sometime"
 msgstr "parfois"
 
 #: bp-core/bp-core-functions.php:1191
-#, fuzzy
-#| msgid "second"
 msgid "a second"
-msgstr "seconde"
+msgstr "une seconde"
 
 #. translators: The time since the older date.
 #: bp-core/bp-core-functions.php:1201 bp-forums/common/functions.php:115
@@ -6888,10 +6886,8 @@ msgid "%s ago"
 msgstr "Il y a %s"
 
 #: bp-core/bp-core-functions.php:1267
-#, fuzzy
-#| msgid "year"
 msgid "a year"
-msgstr "année"
+msgstr "un an"
 
 #. translators: The display years count from the older date.
 #: bp-core/bp-core-functions.php:1269
@@ -6915,17 +6911,12 @@ msgstr[0] "%s semaine"
 msgstr[1] "%s semaines"
 
 #: bp-core/bp-core-functions.php:1294
-#, fuzzy
-#| msgid "week"
 msgid "a week"
-msgstr "semaine"
+msgstr "une semaine"
 
 #: bp-core/bp-core-functions.php:1301
-#, fuzzy
-#| msgid "%s day"
-#| msgid_plural "%s days"
 msgid "a day"
-msgstr "%s jour"
+msgstr "Un jour"
 
 #. translators: The display days count from the older date.
 #: bp-core/bp-core-functions.php:1303
@@ -6935,10 +6926,8 @@ msgstr[0] "%s jour"
 msgstr[1] "%s jours"
 
 #: bp-core/bp-core-functions.php:1308
-#, fuzzy
-#| msgid "hour"
 msgid "an hour"
-msgstr "heure"
+msgstr "une heure"
 
 #. translators: The display hours count from the older date..
 #: bp-core/bp-core-functions.php:1310
@@ -6948,10 +6937,8 @@ msgstr[0] "%s heure"
 msgstr[1] "%s heures"
 
 #: bp-core/bp-core-functions.php:1315
-#, fuzzy
-#| msgid "minute"
 msgid "a minute"
-msgstr "minute"
+msgstr "une minute"
 
 #. translators: The display minutes count from the older date.
 #: bp-core/bp-core-functions.php:1317
