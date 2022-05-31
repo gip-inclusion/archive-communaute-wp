@@ -47,6 +47,10 @@ body .tribe-events-calendar-list__event-category-link {
   display: none !important;
 }
 
+.single-item.groups #bp-nouveau-activity-form {
+	display: none;
+}
+
 /* BB V2 */
 body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
   font-weight: normal;
