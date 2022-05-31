@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-05-24 15:39+0200\n"
+"PO-Revision-Date: 2022-05-31 16:52+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -19346,10 +19346,8 @@ msgid "not yet active"
 msgstr "inactif"
 
 #: bp-groups/bp-groups-template.php:1458 bp-groups/bp-groups-template.php:1460
-#, fuzzy
-#| msgid "View Course"
 msgid "View more"
-msgstr "Voir le cours"
+msgstr "Voir plus"
 
 #: bp-groups/bp-groups-template.php:1791
 msgid "Group organizer profile photo of %s"
@@ -20158,17 +20156,13 @@ msgstr ""
 
 #. translators: 1. group name. 2. total times.
 #: bp-groups/classes/class-bp-groups-notification.php:420
-#, fuzzy
-#| msgid "A group's details were updated."
 msgid "The group details for \"%1$s\" were updated %2$d times."
-msgstr "Les options d'un groupe ont été mises à jour."
+msgstr "Les options d'un groupe ont été mises à jour"
 
 #. translators: group name
 #: bp-groups/classes/class-bp-groups-notification.php:428
-#, fuzzy
-#| msgid "A group's details were updated."
 msgid "The group details for \"%s\" were updated"
-msgstr "Les options d'un groupe ont été mises à jour."
+msgstr "Les options d'un groupe ont été mises à jour"
 
 #. translators: group name
 #: bp-groups/classes/class-bp-groups-notification.php:468
