@@ -131,6 +131,60 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 			], 9999, 2 );
 		}
 
+		/**
+		 * Get parent course based on lesson object as compatible with lifterlms version.
+		 *
+		 * @since 2.0.1
+		 *
+		 * @param object $lesson Object of the lesson.
+		 *
+		 * @return integer $course_id
+		 */
+		public function bb_lifterlms_get_parent_course( $lesson ) {
+			if ( defined( 'LLMS_VERSION' ) && version_compare( LLMS_VERSION, '5.7.0', '<' ) ) {
+				$course_id = $lesson->get_parent_course(); // Its deprecated since version 5.7.0.
+			} else {
+				$course_id = $lesson->get( 'parent_course' );
+			}
+			return $course_id;
+		}
+
+		/**
+		 * Get lesson order based on lesson object as compatible with lifterlms version.
+		 *
+		 * @since 2.0.1
+		 *
+		 * @param object $lesson Object of the lesson.
+		 *
+		 * @return integer $lesson_order
+		 */
+		public function bb_lifterlms_get_lesson_order( $lesson ) {
+			if ( defined( 'LLMS_VERSION' ) && version_compare( LLMS_VERSION, '5.7.0', '<' ) ) {
+				$lesson_order = $lesson->get_order(); // Its deprecated since version 5.7.0.
+			} else {
+				$lesson_order = $lesson->get( 'order' );
+			}
+			return $lesson_order;
+		}
+
+		/**
+		 * Get results of attempt quiz as compatible with lifterlms version.
+		 *
+		 * @since 2.0.1
+		 *
+		 * @param object $query Object of the quiz attempt.
+		 *
+		 * @return array $results
+		 */
+		public function bb_lifterlms_get_quiz_result( $query ) {
+			if ( defined( 'LLMS_VERSION' ) && version_compare( LLMS_VERSION, '6.0.0', '<' ) ) {
+				$results = $query->results; // Its deprecated since version 6.0.0.
+			} else {
+				$results = $query->get_results();
+			}
+			return $results;
+		}
+
 		public function buddyboss_llms_add_space_before_schedule_details( $period, $data ) {
 
 			$period = '&nbsp;' . $period;
@@ -1515,7 +1569,6 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 
 			if ( 'lesson' === $post_type ) {
 				$lesson    = new LLMS_Lesson( $post );
-				$course_id = $lesson->get_parent_course();
 			}
 
 			if ( 'quiz' === $post_type ) {
@@ -1523,7 +1576,10 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 				$quiz_lesson_id = $quiz->get( 'lesson_id' );
 				$post_object    = get_post( $quiz_lesson_id );
 				$lesson         = new LLMS_Lesson( $post_object );
-				$course_id      = $lesson->get_parent_course();
+			}
+
+			if ( ! empty( $lesson ) ) {
+				$course_id = $this->bb_lifterlms_get_parent_course( $lesson );
 			}
 
 			if ( is_user_logged_in() ) {
@@ -1549,7 +1605,7 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 				if ( ! empty( $lessons ) ) {
 					$all_lesson_count = count( $lessons );
 					foreach ( $lessons as $lesson ) {
-						$is_lesson_complete = $student->is_complete( $lesson, 'lesson' );
+						$is_lesson_complete = ! empty( $student ) ? $student->is_complete( $lesson, 'lesson' ) : false;
 						if ( $is_lesson_complete ) {
 							$completed_lesson_count ++;
 						}

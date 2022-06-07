@@ -25,7 +25,7 @@
 
 	<?php $this->template( 'components/top-bar/today' ); ?>
 
-	<?php $this->template( 'list/top-bar/datepicker' ); ?>
+	<?php $this->template( 'month/top-bar/datepicker' ); ?>
 
   <select id="events-categories-filter">
     <option value="<?= get_post_type_archive_link('tribe_events') ?>/mois"><?= __( 'Filter by category' ) ?></option>
