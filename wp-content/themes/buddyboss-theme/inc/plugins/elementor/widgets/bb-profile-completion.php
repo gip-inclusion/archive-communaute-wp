@@ -734,7 +734,7 @@ class BBP_Profile_Completion extends Widget_Base {
                                     <div class="progress_bit_linear">
                                         <div class="progress_bit__heading">
                                             <h3><?php echo $settings['heading_text']; ?></h3>
-                                            <i class="bb-icon-angle-right"></i></div>
+                                            <i class="bb-icon-l bb-icon-angle-right"></i></div>
                                         <div class="progress_bit__line <?php echo ( $user_progress['completion_percentage'] == 100 ) ? 'bb-completed' : 'bb-not-completed'; ?>">
                                             <div class="progress_bit__scale" style="width: <?php echo esc_attr( $user_progress['completion_percentage'] ); ?>%"></div>
                                         </div>
@@ -747,7 +747,7 @@ class BBP_Profile_Completion extends Widget_Base {
 								<?php if ( $settings['switch_profile_btn'] &&  'linear' == $settings['skin_style'] ) { ?>
 									<div class="profile_bit_action">
 										<a class="profile_bit_action__link" href="<?php echo bp_loggedin_user_domain() . 'profile/edit/'; ?>"><?php echo ( $user_progress['completion_percentage'] == 100 ) ? $settings['edit_button_text'] : $settings['completion_button_text']; ?>
-											<i class="bb-icon-angle-right"></i></a>
+											<i class="bb-icon-l bb-icon-angle-right"></i></a>
 									</div>
 								<?php } ?>
                             </div>
@@ -794,7 +794,7 @@ class BBP_Profile_Completion extends Widget_Base {
 						<?php if ( $settings['switch_profile_btn'] &&  'circle' == $settings['skin_style']) { ?>
                             <div class="profile_bit_action">
                                 <a class="profile_bit_action__link" href="<?php echo bp_loggedin_user_domain() . 'profile/edit/'; ?>"><?php echo ( $user_progress['completion_percentage'] == 100 ) ? $settings['edit_button_text'] : $settings['completion_button_text']; ?>
-                                    <i class="bb-icon-angle-right"></i></a>
+                                    <i class="bb-icon-l bb-icon-angle-right"></i></a>
                             </div>
 						<?php } ?>
                     </div>
