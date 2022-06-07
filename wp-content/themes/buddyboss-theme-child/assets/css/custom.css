@@ -51,6 +51,16 @@ body .tribe-events-calendar-list__event-category-link {
 	display: none;
 }
 
+
+
+/* BB V2 */
+/* body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
+  font-weight: normal;
+}
+body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
+  padding: 1rem 1.5rem;
+} */
+
 /* Responsive */
 body #tribe-events-content {
   overflow: visible;
@@ -60,6 +70,8 @@ body #tribe-events-pg-template {
   max-width: 1048px;
   padding: var(--tec-spacer-8) var(--tec-spacer-4) var(--tec-spacer-4);
 }
+
+
 
 
 @media screen and (max-width: 544px) {
