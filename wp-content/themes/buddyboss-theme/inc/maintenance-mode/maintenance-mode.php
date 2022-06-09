@@ -28,4 +28,6 @@ if ( !function_exists( 'bb_maintenance_mode' ) ) {
 	}
 
 	add_action( 'wp_loaded', 'bb_maintenance_mode' );
+
+	add_action( 'bb_maintenance_head', 'boss_generate_option_css', 99 );
 }

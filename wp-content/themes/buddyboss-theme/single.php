@@ -8,10 +8,12 @@
  */
 
 get_header();
+
+$featured_img_style = buddyboss_theme_get_option( 'blog_featured_img' );
 ?>
 	<?php 
 	$share_box = buddyboss_theme_get_option( 'blog_share_box' );
-	if ( !empty( $share_box ) && is_singular('post') ) :
+	if ( !empty( $share_box ) && is_singular('post') && 'default-fi' != $featured_img_style ) :
 		get_template_part( 'template-parts/share' ); 
 	endif;
 	?>

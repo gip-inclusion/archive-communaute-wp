@@ -44,12 +44,15 @@ if (!class_exists('EbStyleHandler')) {
 		 */
 		public function essential_blocks_edit_post($hook)
 		{
+			$allowed_hooks = ['post-new.php', 'post.php', 'site-editor.php'];
+			if (!in_array($hook, $allowed_hooks)) {
+				return;
+			}
 			$dir = dirname(__FILE__);
 			$frontend_js = "dist/index.js";
 			$styleHandler_dependencies = include_once $dir . '/dist/index.asset.php';
 
-			// 
-			$all_dependencies = array_merge($styleHandler_dependencies['dependencies'], array(
+			$all_dependencies = array(
 				'lodash',
 				'wp-i18n',
 				'wp-element',
@@ -59,37 +62,33 @@ if (!class_exists('EbStyleHandler')) {
 				'wp-blocks',
 				'wp-editor',
 				'wp-block-editor'
-			));
+			);
+
+			if (is_array($styleHandler_dependencies) && array_key_exists('dependencies', $styleHandler_dependencies)) {
+				$all_dependencies = array_merge($all_dependencies, $styleHandler_dependencies['dependencies']);
+			}
+			$editor_type = 'edit-post';
 
 			if ($hook == 'post-new.php' || $hook == 'post.php') {
 				$all_dependencies[] = "wp-edit-post";
-				wp_enqueue_script(
-					'essential-blocks-edit-post',
-					plugins_url($frontend_js, __FILE__),
-					// $styleHandler_dependencies['dependencies'],
-					$all_dependencies,
-					$styleHandler_dependencies['version'],
-					true
-				);
-				wp_localize_script('essential-blocks-edit-post', 'eb_style_handler', [
-					'sth_nonce' => wp_create_nonce('eb_style_handler_nonce'),
-					'editor_type' => 'edit-post'
-				]);
-			} elseif ($hook == 'site-editor.php') {
-				$all_dependencies[] = "wp-edit-site";
-				wp_enqueue_script(
-					'essential-blocks-edit-post',
-					plugins_url($frontend_js, __FILE__),
-					// $styleHandler_dependencies['dependencies'],
-					$all_dependencies,
-					$styleHandler_dependencies['version'],
-					true
-				);
-				wp_localize_script('essential-blocks-edit-post', 'eb_style_handler', [
-					'sth_nonce' => wp_create_nonce('eb_style_handler_nonce'),
-					'editor_type' => 'edit-site'
-				]);
 			}
+
+			if ($hook == 'site-editor.php') {
+				$all_dependencies[] = "wp-edit-site";
+				$editor_type = 'edit-site';
+			}
+
+			wp_enqueue_script(
+				'essential-blocks-edit-post',
+				plugins_url($frontend_js, __FILE__),
+				$all_dependencies,
+				$styleHandler_dependencies['version'],
+				true
+			);
+			wp_localize_script('essential-blocks-edit-post', 'eb_style_handler', [
+				'sth_nonce' => wp_create_nonce('eb_style_handler_nonce'),
+				'editor_type' => $editor_type
+			]);
 		}
 
 		/**
@@ -217,6 +216,9 @@ if (!class_exists('EbStyleHandler')) {
 								$css .= ' @media(max-width: 767px){';
 								$css .= preg_replace('/\s+/', ' ', $style);
 								$css .= '}';
+								break;
+							case "custom_css":
+								$css .= preg_replace('/\s+/', ' ', $style);
 								break;
 						}
 					}
