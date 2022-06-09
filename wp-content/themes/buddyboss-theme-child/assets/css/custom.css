@@ -59,6 +59,10 @@ body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
   padding: 1rem 1.5rem;
 }
 
+.single-item.groups #bp-nouveau-activity-form {
+	display: none;
+}
+
 /* Responsive */
 body #tribe-events-content {
   overflow: visible;
