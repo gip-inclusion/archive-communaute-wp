@@ -164,7 +164,7 @@ $general_fields = [
 					'To enable spam prevention for anonymous submissions, enter your reCAPTCHA API keys under <a href="%1$s">%2$s</a>',
 					'tribe-events-community'
 				),
-				Tribe__Settings::instance()->get_url( [ 'tab' => 'addons' ] ),
+				tribe( 'tec.main' )->settings()->get_url( [ 'tab' => 'addons' ] ),
 				_x(
 					'Events &rarr; Settings &rarr; APIs',
 					'Click path in The Events Calendar settings to get to the API settings section separated by right arrows (HTML "&rarr;")',

@@ -640,6 +640,19 @@
 			Image Uploader
 		\* ------------------------------------ */
 		&.tribe-section-image-uploader {
+
+			.tribe-section-header label {
+				color: var(--tec-color-text-primary);
+				font-size: var(--tec-font-size-3);
+				font-weight: var(--tec-font-weight-bold);
+				text-transform: uppercase;
+
+				&.error {
+					border-bottom: 1px solid var(--tec-color-icon-error);
+					padding-bottom: 2px;
+				}
+			}
+
 			.tribe-image-upload-area {
 				background: var(--tec-color-background) url('../images/image-icon.png') no-repeat center 5px;
 				text-align: center;
@@ -695,7 +708,7 @@
 					width: 100%;
 				}
 
-				.EventImage {
+				.event_image {
 					height: 48px;
 					left: 0;
 					margin: var(-tec-spacer-5) 0 0 0;
@@ -704,7 +717,7 @@
 					width: 100%;
 				}
 
-				input#EventImage {
+				input#event_image {
 					cursor: pointer;
 					filter: alpha(opacity=0);
 					opacity: 0;
@@ -722,7 +735,7 @@
 
 					.note p,
 					.form-controls .choose-file,
-					.form-controls .EventImage {
+					.form-controls .event_image {
 						display: none;
 					}
 

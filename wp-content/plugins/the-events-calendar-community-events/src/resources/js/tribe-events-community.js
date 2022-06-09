@@ -40,7 +40,7 @@ var tribe_community_events = tribe_community_events || {};
 	obj.els = {
 		uploadArea      : document.querySelector( '.tribe-image-upload-area' ),
 		uploadFile      : document.getElementById( 'uploadFile' ),
-		eventImage      : document.getElementById( 'EventImage' ),
+		eventImage      : document.getElementById( 'event_image' ),
 		detachThumbnail : document.getElementById( 'tribe-events-community-detach-thumbnail' )
 	};
 
@@ -254,9 +254,7 @@ var tribe_community_events = tribe_community_events || {};
 		obj.els.uploadArea.classList.remove( 'has-image' );
 
 		obj.els.uploadFile.setAttribute( 'value', '' );
-		obj.els.uploadFile.value = '';
 		obj.els.eventImage.setAttribute( 'value', '' );
-		obj.els.eventImage.value = '';
 	};
 
 	/**

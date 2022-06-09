@@ -20,12 +20,13 @@ defined( 'WPINC' ) or die;
 
 $upload_error = tribe( 'community.main' )->max_file_size_exceeded();
 $size_format  = size_format( tribe( 'community.main' )->max_file_size_allowed() );
-$image_label  = sprintf( __( '%s Image', 'tribe-events-community' ), tribe_get_event_label_singular() );
+$image_upload_label = sprintf( __( '%s Image', 'tribe-events-community' ), tribe_get_event_label_singular() );
 ?>
 
 <div class="tribe-section tribe-section-image-uploader">
 	<div class="tribe-section-header">
-		<h3><?php echo esc_html( $image_label ); ?></h3>
+		<?php
+		tribe_community_events_field_label( 'event_image', $image_upload_label ); ?>
 	</div>
 
 	<?php
@@ -72,7 +73,7 @@ $image_label  = sprintf( __( '%s Image', 'tribe-events-community' ), tribe_get_e
 
 				<input id="uploadFile" class="uploadFile" placeholder="" disabled="disabled"/>
 
-				<label for="EventImage" class="screen-reader-text <?php echo esc_attr( $upload_error ? 'error' : '' ); ?>">
+				<label for="event_image" class="screen-reader-text <?php echo esc_attr( $upload_error ? 'error' : '' ); ?>">
 					<?php esc_html_e( 'Event Image', 'tribe-events-community' ); ?>
 				</label>
 
@@ -83,11 +84,10 @@ $image_label  = sprintf( __( '%s Image', 'tribe-events-community' ), tribe_get_e
 				</label>
 
 				<input
-					id="EventImage"
-					class="EventImage"
+					id="event_image"
 					type="file"
 					name="event_image"
-					class="<?php tribe_community_events_field_classes( 'EventImage', [] ); ?>"
+					class="event_image <?php tribe_community_events_field_classes( 'event_image', [] ); ?>"
 				>
 
 			</div>

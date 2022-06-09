@@ -4,8 +4,8 @@ Contributors: theeventscalendar, brianjessee, camwynsp, paulkim, sc0ttkclark, ag
 Tags: widget, events, simple, tooltips, grid, month, list, calendar, event, venue, community, registration, api, dates, date, plugin, posts, sidebar, template, theme, time, google maps, google, maps, conference, workshop, concert, meeting, seminar, summit, forum, shortcode, The Events Calendar, The Events Calendar PRO
 Donate link: https://evnt.is/29
 Requires at least: 5.6
-Tested up to: 5.9.1
-Stable tag: 4.8.11.1
+Tested up to: 6.0
+Stable tag: 4.9.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -162,6 +162,38 @@ Our Premium Plugins:
 * <a href="https://evnt.is/fa" target="_blank">The Events Calendar: Filter Bar</a>
 
 == Changelog ==
+
+= [4.9.1] 2022-06-08 =
+
+* Fix - Making dropdown additional fields required will now trigger validation when `None` is selected. [CE-121]
+* Fix - Fixed an issue where the 'My Events' page would return a 404 error when using the pagination. [CE-152]
+
+= [4.9.0] 2022-05-19 =
+
+* Version - Community Events 4.9.0 is only compatible with The Events Calendar 5.15.0 and higher
+* Feature - Add compatibility to the new TEC admin menu system. [ET-1335]
+* Language - 0 new strings added, 60 updated, 0 fuzzied, and 0 obsoleted
+
+= [4.8.14] 2022-05-11 =
+
+* Enhancement - Updated the publish status icons (draft, future, pending, publish) to use new SVG images. [CE-149]
+* Enhancement - Added new filter `tribe_community_events_event_status_icon_extension` to overwrite image extension to allow for customization. [CE-149]
+* Fix - Fix an issue where ampersands were being escaped. [CE-126]
+* Tweak - Added filters: `tribe_community_events_event_status_icon_extension`.
+* Language - 0 new strings added, 8 updated, 0 fuzzied, and 0 obsoleted.
+
+= [4.8.13] 2022-04-05 =
+
+* Fix - Fix an issue on the Add Events page where category would become blank if the page was refreshed. [CE-140]
+* Tweak - Changed views: `community/modules/taxonomy`
+* Language - 0 new strings added, 4 updated, 0 fuzzied, and 0 obsoleted
+
+= [4.8.12] 2022-03-15 =
+
+* Fix - Corrected an issue when making the image upload required, didn't make it required. [CE-6]
+* Fix - Fixed the image upload when an image was uploaded, removed, and uploaded again. [CE-142]
+* Tweak - Changed views: `community/modules/image`
+* Language - 0 new strings added, 67 updated, 0 fuzzied, and 0 obsoleted
 
 = [4.8.11.1] 2022-03-02 =
 

@@ -14,8 +14,9 @@ defined( 'WPINC' ) or die;
  * @since  4.6.3
  * @since  4.7.1 Now using new tribe_community_events_field_classes function to set up classes for the input.
  * @since 4.8.2 Updated template link.
+ * @since 4.9.1 Updated value for required fields.
  *
- * @version 4.8.2
+ * @version 4.9.1
  *
  * @var array        $fields        List of form fields.
  * @var int          $post_id       Current Post ID.
@@ -37,11 +38,23 @@ defined( 'WPINC' ) or die;
 	class="<?php tribe_community_events_field_classes( $field_name, [] ); ?>"
 >
 	<?php foreach ( $options as $option ) : ?>
+		<?php
+
+		$option_value   = $option;
+		$option_display = $option;
+			/* None is added to the list of potential dropdown options.
+			 * We equate None to '' so that the validation work properly.
+			 */
+			if ( 'None' === $option ) {
+				$option_value = '';
+				$option_display = __( 'None' , 'tribe-events-community' );
+			}
+		?>
 		<option
-			value="<?php echo esc_attr( $option ); ?>"
-			<?php selected( in_array( $option, (array) $value, true ) ); ?>
+			value="<?php echo esc_attr( $option_value ); ?>"
+			<?php selected( in_array( $option_value, (array) $value, true ) ); ?>
 		>
-			<?php echo esc_html( $option ); ?>
+			<?php echo esc_html( $option_display ); ?>
 		</option>
 	<?php endforeach; ?>
 </select>

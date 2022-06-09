@@ -85,7 +85,7 @@ class Tribe__Events__Community__Submission_Handler {
 
 		$is_array = is_array( $data );
 
-		$data = array_map( 'htmlentities', array_map( 'wp_kses_post', array_map( 'html_entity_decode', (array) $data ) ) );
+		$data = array_map( 'wp_specialchars_decode', array_map( 'wp_kses_post', array_map( 'html_entity_decode', (array) $data ) ) );
 
 		if ( ! $is_array ) {
 			$data = reset( $data );
