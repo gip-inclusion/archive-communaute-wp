@@ -27,11 +27,12 @@ $output = betterdocs_generate_output();
 				<?php
                 $output = betterdocs_generate_output();
                 $terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
+				$terms_order   = BetterDocs_DB::get_settings('terms_order');
                 if (BetterDocs_DB::get_settings('alphabetically_order_term') == 1) {
-                    $terms_orderby = BetterDocs_DB::get_settings('alphabetically_order_term');
+					$terms_orderby = 'name';
                 }
-				$shortcode = do_shortcode( '[betterdocs_category_grid terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]' );
-				echo apply_filters( 'betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby);
+				$shortcode = do_shortcode( '[betterdocs_category_grid terms_order="'.$terms_order.'" terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]' );
+				echo apply_filters( 'betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby, $terms_order);
                 ?>
 			</div>
 			<?php

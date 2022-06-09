@@ -363,7 +363,7 @@ class BetterDocs_Helper
         return $count;
     }
 
-    public static function taxonomy_object($multiple_kb, $terms, $orderby = "name", $kb_slug='', $nested_subcategory=false)
+    public static function taxonomy_object($multiple_kb, $terms, $order, $orderby = "name", $kb_slug='', $nested_subcategory=false)
     {
         global $wp_query;
         $terms_object = array(
@@ -377,8 +377,10 @@ class BetterDocs_Helper
             $terms_object['order'] = 'ASC';
         } else if ($orderby == 1) {
             $terms_object['orderby'] = 'name';
+            $terms_object['order']   = $order;
         } else {
             $terms_object['orderby'] = $orderby;
+            $terms_object['order']   = $order;
         }
 
         if ($nested_subcategory == true) {
@@ -401,7 +403,7 @@ class BetterDocs_Helper
             $terms_object['orderby'] = 'include';
         }
      
-        return get_terms($terms_object);
+        return get_terms(apply_filters('betterdocs_category_terms_object', $terms_object));
     }
 
     public static function child_taxonomy_terms($term_id, $multiple_kb, $orderby = "name", $order = "", $kb_slug = '')
@@ -417,12 +419,10 @@ class BetterDocs_Helper
             $terms_object['order'] = 'ASC';
         } else if ( $orderby == 1 ) {
             $terms_object['orderby'] = 'name';
+            $terms_object['order']   = $order;
         } else {
             $terms_object['orderby'] = $orderby;
-        }
-
-        if ($order) {
-            $terms_object['order'] = $order;
+            $terms_object['order']   = $order;
         }
 
         if ($wp_query->query === NULL || (isset($wp_query->query['post_type']) && $wp_query->query['post_type'] != 'docs')) {
@@ -431,7 +431,7 @@ class BetterDocs_Helper
 
         $meta_query = '';
         $terms_object['meta_query'] = apply_filters('betterdocs_child_taxonomy_meta_query', $meta_query, $multiple_kb, $kb_slug);
-        return get_terms('doc_category', $terms_object);
+        return get_terms('doc_category', apply_filters('betterdocs_category_terms_object', $terms_object));
     }
 
     public static function term_permalink($texanomy, $term_slug) {
@@ -546,7 +546,8 @@ class BetterDocs_Helper
             'hide_empty' => false
         );
 
-        $taxonomy_objects = get_terms($terms_object);
+        $taxonomy_objects = get_terms(apply_filters('betterdocs_category_terms_object', $terms_object));
+
         if ($taxonomy_objects && !is_wp_error($taxonomy_objects)) :
             foreach ($taxonomy_objects as $term) :
                 $sel = ($term->slug === $selected) ? ' selected' : '';

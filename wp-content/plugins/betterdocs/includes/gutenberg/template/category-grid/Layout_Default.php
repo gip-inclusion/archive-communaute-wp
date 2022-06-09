@@ -48,8 +48,12 @@ if ($showList) {
         ),
     );
 
-    $args['orderby'] = $postsOrderBy;
-    $args['order'] = $postsOrder;
+    if ($postsOrderBy != 'betterdocs_order') {
+        $args['orderby'] = $postsOrderBy;
+        $args['order'] = $postsOrder;
+    }
+
+    $args = apply_filters('betterdocs_articles_args', $args, $term->term_id);
 
     $query = new \WP_Query($args);
 

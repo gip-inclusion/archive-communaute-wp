@@ -35,7 +35,7 @@ class BetterDocs_Elementor_Doc_Date extends Widget_Base {
         return 'https://betterdocs.co/docs/single-doc-in-elementor';
     }
 
-    protected function _register_controls () {
+    protected function register_controls () {
 
         $this->start_controls_section(
             'section_column_settings',

@@ -78,7 +78,7 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
     }
 
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(
@@ -619,8 +619,12 @@ class BetterDocs_Elementor_Search_Form extends Widget_Base
     protected function render()
     {
 
-        $settings = $this->get_settings_for_display();
-        $shortcode = sprintf('[betterdocs_search_form enable_heading="true" popular_search_title="'.$settings['advance_search_popular_search_title_placeholder'].'" category_search="'.$settings['betterdocs_category_search_toogle'].'" search_button="'.$settings['betterdocs_search_button_toogle'].'" popular_search="'.$settings['betterdocs_popular_search_toogle'].'" heading="'.$settings['section_search_field_heading'].'" subheading="'.$settings['section_search_field_sub_heading'].'" placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
+        $settings               = $this->get_settings_for_display();
+        $popular_search_title   = isset( $settings['advance_search_popular_search_title_placeholder'] ) ? $settings['advance_search_popular_search_title_placeholder'] : '';
+        $category_search_toggle = isset( $settings['betterdocs_category_search_toogle'] ) ? $settings['betterdocs_category_search_toogle'] : '';
+        $search_button_toggle   = isset( $settings['betterdocs_search_button_toogle'] ) ? $settings['betterdocs_search_button_toogle'] : '';
+        $popular_search_toggle  = isset( $settings['betterdocs_popular_search_toogle'] ) ? $settings['betterdocs_popular_search_toogle'] : '';
+        $shortcode              = sprintf('[betterdocs_search_form enable_heading="true" popular_search_title="'.$popular_search_title.'" category_search="'.$category_search_toggle.'" search_button="'.$search_button_toggle.'" popular_search="'.$popular_search_toggle.'" heading="'.$settings['section_search_field_heading'].'" subheading="'.$settings['section_search_field_sub_heading'].'" placeholder="'.$settings['section_search_field_placeholder'].'"]', apply_filters('eael_betterdocs_search_form_params', []));
         echo do_shortcode(shortcode_unautop($shortcode));
     }
 

@@ -41,7 +41,7 @@ class BetterDocs_Elementor_Breadcrumbs extends Widget_Base
         return ['betterdocs-elements', 'betterdocs-elements-single', 'docs-archive'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(

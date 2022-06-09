@@ -153,8 +153,6 @@ function betterdocs_categorygrid_server_side_render(array $attributes)
     $gridColomnTabClass = $TABcolRange ? " betterdocs-grid-tablet-$TABcolRange" : "betterdocs-grid-tablet-2";
     $gridColomnMobileClass = $MOBcolRange ? " betterdocs-grid-mobile-$MOBcolRange" : "betterdocs-grid-mobile-1";
 
-
-
     $terms_object = array(
         'taxonomy' => 'doc_category',
         'order' => $order,

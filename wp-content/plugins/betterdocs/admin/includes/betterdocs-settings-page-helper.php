@@ -33,6 +33,112 @@ function betterdocs_settings_args(){
         $query['url'] = site_url( '/'.$post_info->post_name );
     }
     $customizer_link = add_query_arg( $query, admin_url( 'customize.php' ) );
+    $advanced_settings = apply_filters( 'betterdocs_advanced_settings_sections', array(
+        'role_management_section' => array(
+            'title' => __('Role Management', 'betterdocs'),
+            'priority'    => 0,
+            'fields' => array(
+                'rms_title' => array(
+                    'type'        => 'title',
+                    'label'       => __('Role Management', 'betterdocs'),
+                    'priority'    => 0,
+                ),
+                'article_roles' => array(
+                    'type'        => 'select',
+                    'label'       => __('Who Can Write Docs?', 'betterdocs'),
+                    'priority'    => 1,
+                    'multiple' => true,
+                    'disable' => true,
+                    'default' => 'administrator',
+                    'options' => BetterDocs_Settings::get_roles()
+                ),
+                'settings_roles' => array(
+                    'type'        => 'select',
+                    'label'       => __('Who Can Edit Settings?', 'betterdocs'),
+                    'priority'    => 1,
+                    'multiple' => true,
+                    'disable' => true,
+                    'default' => 'administrator',
+                    'options' => BetterDocs_Settings::get_roles()
+                ),
+                'analytics_roles' => array(
+                    'type'        => 'select',
+                    'label'       => __('Who Can Check Analytics?', 'betterdocs'),
+                    'priority'    => 1,
+                    'multiple'    => true,
+                    'disable'     => true,
+                    'default'     => 'administrator',
+                    'options'     => BetterDocs_Settings::get_roles()
+                ),
+            )
+        ),
+        'internal_kb_section' =>  array(
+            'title' => __('Internal Knowledge Base', 'betterdocs-pro'),
+            'priority'    => 1,
+            'fields' => apply_filters( 'betterdocs_internal_kb_fields', array(
+                'content_restriction_title' => array(
+                    'type'        => 'title',
+                    'label'       => __('Internal Knowledge Base', 'betterdocs-pro'),
+                    'disable'     => true,
+                    'priority'    => 0,
+                ),
+                'enable_content_restriction' => array(
+                    'type'      => 'checkbox',
+                    'disable'    => true,
+                    'priority'  => 1,
+                    'label'     => __( 'Enable/Disable', 'betterdocs-pro' ),
+                    'default'   => '',
+                    'dependency' => array(
+                        1 => array(
+                            'fields' => array( 'content_visibility', 'restrict_template', 'restrict_kb', 'restrict_category', 'restricted_redirect_url' ),
+                        )
+                    )
+                ),
+                'content_visibility' => array(
+                    'type'        => 'select',
+                    'label'       => __('Restrict Access to', 'betterdocs-pro'),
+                    'help'        => __('<strong>Note:</strong> Only selected User Roles will be able to view your Knowledge Base' , 'betterdocs-pro'),
+                    'disable'     => true,
+                    'priority'    => 2,
+                    'multiple'    => true,
+                    'default'     => 'all',
+                    'options'     => BetterDocs_Settings::get_all_user_roles()
+                ),
+                'restrict_template' => array(
+                    'type'        => 'select',
+                    'label'       => __('Restriction on Docs', 'betterdocs-pro'),
+                    'help'        => __('<strong>Note:</strong> Selected Docs pages will be restricted' , 'betterdocs-pro'),
+                    'disable'     => true,
+                    'priority'    => 3,
+                    'multiple'    => true,
+                    'default'     => 'all',
+                    'options'     => BetterDocs_Settings::get_texanomy()
+                ),
+                'restrict_category' => array(
+                    'type'        => 'select',
+                    'label'       => __('Restriction on Docs Categories', 'betterdocs-pro'),
+                    'help'        => __('<strong>Note:</strong> Selected Docs categories will be restricted ' , 'betterdocs-pro'),
+                    'disable'     => true,
+                    'priority'    => 5,
+                    'multiple'    => true,
+                    'default'     => 'all',
+                    'options'     => BetterDocs_Settings::get_terms_list('doc_category')
+                ),
+                'restricted_redirect_url' => array(
+                    'type'        => 'text',
+                    'label'       => __('Redirect URL' , 'betterdocs-pro'),
+                    'help'        => __('<strong>Note:</strong> Set a custom URL to redirect users without permissions when they try to access internal knowledge base. By default, restricted content will redirect to the "404 not found" page' , 'betterdocs-pro'),
+                    'default'     => '',
+                    'placeholder' => 'https://',
+                    'disable'     => true,
+                    'priority'	  => 6,
+                ),
+            ))
+        )
+    ));
+    if( ! current_user_can('activate_plugins') ) {
+        unset($advanced_settings['role_management_section']);
+    }
     return apply_filters('betterdocs_settings_tab', array(
         'general' => array(
             'title' => __( 'General', 'betterdocs' ),
@@ -113,7 +219,7 @@ function betterdocs_settings_args(){
                         ),
                     ),
                 )),
-                
+
             )),
         ),
         'layout' => array(
@@ -121,7 +227,7 @@ function betterdocs_settings_args(){
             'priority' => 10,
             'button_text' => __( 'Save Settings' ),
             'sections' => apply_filters('betterdocs_layout_settings_sections', array(
-                
+
                 'layout_inner_tab' => array(
                     'title' => __( 'Layout Tab' ),
                     'tabs' => array(
@@ -213,6 +319,16 @@ function betterdocs_settings_args(){
                                     'type'        => 'checkbox',
                                     'label'       => __('Order Terms Alphabetically' , 'betterdocs'),
                                     'default'     => '',
+                                    'priority'    => 10,
+                                ),
+                                'terms_order' => array(
+                                    'type'        => 'select',
+                                    'label'       => __('Terms Order' , 'betterdocs'),
+                                    'default'     => 'ASC',
+                                    'options' => [
+                                        'ASC' => 'Ascending',
+                                        'DESC' => 'Descending',
+                                    ],
                                     'priority'    => 10,
                                 ),
                                 'alphabetically_order_post' => array(
@@ -413,7 +529,7 @@ function betterdocs_settings_args(){
                                     'label'     => __('Breadcrumb Home Text' , 'betterdocs'),
                                     'default'   => __('Home' , 'betterdocs'),
                                     'priority'	=> 10,
-                                    
+
                                 ),
                                 'breadcrumb_home_url' => array(
                                     'type'      => 'text',
@@ -543,7 +659,7 @@ function betterdocs_settings_args(){
                         )),
                     )
                 )
-                
+
             )),
         ),
         'design' => array(
@@ -561,7 +677,7 @@ function betterdocs_settings_args(){
                             'priority'	=> 10
                         ),
                     ),
-                )), 
+                )),
             )),
         ),
         'shortcodes' => array(
@@ -578,7 +694,8 @@ function betterdocs_settings_args(){
                             'default'   => '[betterdocs_search_form]',
                             'readonly'	=> true,
                             'clipboard' => true,
-                            'priority'	=> 10
+                            'priority'	=> 10,
+                            'help'      => __('<strong>You can use:</strong> [betterdocs_search_form placeholder="Search..." heading="Heading" subheading="Subheading" category_search="true" search_button="true" popular_search="true"]' , 'betterdocs'),
                         ),
                         'feedback_form' => array(
                             'type'      => 'text',
@@ -586,7 +703,8 @@ function betterdocs_settings_args(){
                             'default'   => '[betterdocs_feedback_form]',
                             'readonly'	=> true,
                             'clipboard' => true,
-                            'priority'	=> 10
+                            'priority'	=> 10,
+                            'help'      => __('<strong>You can use:</strong> [betterdocs_feedback_form button_text="Send"]' , 'betterdocs'),
                         ),
                         'category_grid' => array(
                             'type'      => 'text',
@@ -595,7 +713,7 @@ function betterdocs_settings_args(){
                             'readonly'	=> true,
                             'clipboard' => true,
                             'priority'	=> 10,
-                            'help'        => __('<strong>You can use:</strong> [betterdocs_category_grid post_counter="true" icon="true" masonry="true" column="3" posts_per_grid="5" nested_subcategory="true" terms="term_ID, term_ID" kb_slug=""]' , 'betterdocs'),
+                            'help'        => __('<strong>You can use:</strong> [betterdocs_category_grid post_counter="true" icon="true" masonry="true" column="3" posts_per_grid="5" nested_subcategory="true" terms="term_ID, term_ID" terms_orderby="" terms_order="" multiple_knowledge_base="" disable_customizer_style="" kb_slug="" title_tag="h2" orderby="" order="" ]' , 'betterdocs'),
                         ),
                         'category_box' => array(
                             'type'      => 'text',
@@ -604,7 +722,7 @@ function betterdocs_settings_args(){
                             'readonly'	=> true,
                             'clipboard' => true,
                             'priority'	=> 10,
-                            'help'      => __('<strong>You can use:</strong> [betterdocs_category_box column="3" terms="term_ID, term_ID"]' , 'betterdocs'),
+                            'help'      => __('<strong>You can use:</strong> [betterdocs_category_box post_type="docs" category="doc_category" orderby="" column="" nested_subcategory="" terms="" terms_orderby="" icon="" kb_slug="" title_tag="h2" multiple_knowledge_base="false" disable_customizer_style="false" border_bottom="false"]' , 'betterdocs'),
                         ),
                         'category_list' => array(
                             'type'      => 'text',
@@ -613,79 +731,17 @@ function betterdocs_settings_args(){
                             'readonly'	=> true,
                             'clipboard' => true,
                             'priority'	=> 10,
-                            'help'      => __('<strong>You can use:</strong> [betterdocs_category_list terms="term_ID, term_ID"]' , 'betterdocs'),
+                            'help'      => __('<strong>You can use:</strong> [betterdocs_category_list post_type="docs" category="doc_category" orderby="" order="" masonry="" column="" posts_per_page="" nested_subcategory="" terms="" terms_orderby="" terms_order="" kb_slug="" multiple_knowledge_base="false" title_tag="h2"]' , 'betterdocs'),
                         ),
                     )),
-                )), 
+                )),
             )),
         ),
         'betterdocs_advanced_settings' => array(
             'title'       => __( 'Advanced Settings', 'betterdocs' ),
             'priority'    => 20,
             'button_text' => __( 'Save Settings' ),
-            'sections' => apply_filters( 'betterdocs_advanced_settings_sections', array(
-                'role_management_section' => array(
-                    'title' => __('Role Management', 'betterdocs'),
-                    'priority'    => 0,
-                    'fields' => array(
-                        'rms_title' => array(
-                            'type'        => 'title',
-                            'label'       => __('Role Management', 'betterdocs'),
-                            'priority'    => 0,
-                        ),
-                        'article_roles' => array(
-                            'type'        => 'select',
-                            'label'       => __('Who Can Write Docs?', 'betterdocs'),
-                            'priority'    => 1,
-                            'multiple' => true,
-                            'disable' => true,
-                            'default' => 'administrator',
-                            'options' => BetterDocs_Settings::get_roles()
-                        ),
-                        'settings_roles' => array(
-                            'type'        => 'select',
-                            'label'       => __('Who Can Edit Settings?', 'betterdocs'),
-                            'priority'    => 1,
-                            'multiple' => true,
-                            'disable' => true,
-                            'default' => 'administrator',
-                            'options' => BetterDocs_Settings::get_roles()
-                        ),
-                        'analytics_roles' => array(
-                            'type'        => 'select',
-                            'label'       => __('Who Can Check Analytics?', 'betterdocs'),
-                            'priority'    => 1,
-                            'multiple'    => true,
-                            'disable'     => true,
-                            'default'     => 'administrator',
-                            'options'     => BetterDocs_Settings::get_roles()
-                        ),
-                    )
-                ),
-                'internal_kb_section' => array(
-                    'title' => __('Internal Knowledge Base', 'betterdocs'),
-                    'priority'    => 0,
-                    'fields' => array(
-                        'content_restriction_title' => array(
-                            'type'        => 'title',
-                            'label'       => __('Internal Knowledge Base', 'betterdocs'),
-                            'priority'    => 0,
-                        ),
-                        'enable_content_restriction_free' => array(
-                            'type'      => 'checkbox',
-                            'priority'  => 1,
-                            'disable' => true,
-                            'label'     => __( 'Enable/Disable', 'betterdocs' ),
-                            'default'   => '',
-                            'dependency' => array(
-                                1 => array(
-                                    'fields' => array( 'content_visibility', 'restrict_template', 'restrict_kb', 'restrict_category', 'restricted_redirect_url' ),
-                                )
-                            )
-                        ),
-                    )
-                )
-            ))
+            'sections' => $advanced_settings
         ),
         'betterdocs_instant_answer' => array(
             'title'       => __( 'Instant Answer', 'betterdocs' ),
