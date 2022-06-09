@@ -155,7 +155,13 @@
 					if ( item.length > 0 ) {
 						item.find( '.field-url' ).css( 'display', 'none' );
 						item.find( '.field-icon' ).css( 'display', 'none' );
-						item.find( '.field-stick_to_bottom' ).css( 'display', 'none' );
+						// Hide for Mobile menu loggedin or logged out.
+						if (
+							false === $( '#locations-mobile-menu-logged-in' ).length && $( '#locations-mobile-menu-logged-in' ).prop( 'checked' ) &&
+							false === $( '#locations-mobile-menu-logged-out' ).length && $( '#locations-mobile-menu-logged-out' ).prop( 'checked' )
+						) {
+							item.find( '.field-stick_to_bottom' ).css( 'display', 'none' );
+						}
 						item.find( '.field-description' ).css( 'display', 'none' );
 						item.find( '.field-description textarea' ).attr('readonly','readonly');
 					}

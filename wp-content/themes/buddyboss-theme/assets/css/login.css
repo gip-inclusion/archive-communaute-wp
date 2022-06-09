@@ -1250,6 +1250,15 @@ table.unstyled td, table.unstyled th {
   background-color: var(--bb-content-alternate-background-color);
 }
 
+.wp-block-table figcaption {
+  text-align: center;
+  color: var(--bb-alternate-text-color);
+}
+
+.wp-block-table.is-style-stripes {
+  border-bottom: 0;
+}
+
 fieldset {
   font-family: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1334,6 +1343,8 @@ textarea:focus,
 select:focus {
   outline: none;
   background-color: var(--bb-content-background-color);
+  box-shadow: var(--bb-input-focus-shadow);
+  border-color: var(--bb-input-focus-border-color);
 }
 input.error,
 textarea.error,
@@ -1575,15 +1586,19 @@ form,
   line-height: 1;
 }
 .bs-styled-checkbox + label:before {
-  content: '';
+  content: "";
   margin-right: 10px;
   display: inline-block;
   vertical-align: text-top;
   width: 20px;
   height: 20px;
   background: var(--bb-content-background-color);
-  border-radius: 3px;
+  border-radius: var(--bb-checkbox-radius);
   border: 1px solid var(--bb-content-border-color);
+}
+.bs-styled-checkbox:focus + label:before {
+  border-color: var(--bb-input-focus-border-color);
+  box-shadow: var(--bb-input-focus-shadow);
 }
 .bs-styled-checkbox:checked + label:before {
   background: var(--bb-primary-color);
@@ -1598,11 +1613,11 @@ form,
   background: #ddd;
 }
 .bs-styled-checkbox:checked + label:after {
-  content: '\e876';
+  content: "\e876";
   position: absolute;
   left: 3px;
   top: 3px;
-  font-family: 'bb-icons';
+  font-family: "bb-icons";
   color: #fff;
   font-size: 14px;
   line-height: 1;
@@ -1620,7 +1635,7 @@ form,
   padding: 0;
 }
 .bs-styled-radio + label:before, .bs-styled-radio + .bb-radio-label:before {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -1643,7 +1658,7 @@ form,
   background: #ddd;
 }
 .bs-styled-radio:checked + label:after, .bs-styled-radio:checked + .bb-radio-label:after {
-  content: '';
+  content: "";
   background-color: var(--bb-primary-color);
   margin: auto;
   width: 14px;
@@ -1691,9 +1706,9 @@ input[type=submit],
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save {
   font-family: inherit;
   font-size: 15px;
-  color: var(--bb-primary-button-text-regular);
   background-color: var(--bb-primary-button-background-regular);
-  border-color: var(--bb-primary-button-border-regular);
+  color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
   padding: 10px 20px;
   font-weight: 500;
@@ -1712,6 +1727,24 @@ input[type=submit],
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
+}
+button:focus,
+.button:focus,
+input[type=button]:focus,
+input[type=submit]:focus,
+.buddypress .buddypress-wrap .comment-reply-link:focus,
+.buddypress .buddypress-wrap .generic-button a:focus,
+.buddypress .buddypress-wrap a.bp-title-button:focus,
+.buddypress .buddypress-wrap a.button:focus,
+.buddypress .buddypress-wrap button:focus,
+.buddypress .buddypress-wrap input[type=button]:focus,
+.buddypress .buddypress-wrap input[type=reset]:focus,
+.buddypress .buddypress-wrap input[type=submit]:focus,
+.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 button i,
 .button i,
@@ -1733,42 +1766,46 @@ input[type=submit] i,
   /*top: 1px;*/
   /*margin: 0 2px;*/
 }
-button:hover, button:focus,
+button:hover,
 .button:hover,
-.button:focus,
 input[type=button]:hover,
-input[type=button]:focus,
 input[type=submit]:hover,
-input[type=submit]:focus,
 .buddypress .buddypress-wrap .comment-reply-link:hover,
-.buddypress .buddypress-wrap .comment-reply-link:focus,
 .buddypress .buddypress-wrap .generic-button a:hover,
-.buddypress .buddypress-wrap .generic-button a:focus,
 .buddypress .buddypress-wrap a.bp-title-button:hover,
-.buddypress .buddypress-wrap a.bp-title-button:focus,
 .buddypress .buddypress-wrap a.button:hover,
-.buddypress .buddypress-wrap a.button:focus,
 .buddypress .buddypress-wrap button:hover,
-.buddypress .buddypress-wrap button:focus,
 .buddypress .buddypress-wrap input[type=button]:hover,
-.buddypress .buddypress-wrap input[type=button]:focus,
 .buddypress .buddypress-wrap input[type=reset]:hover,
-.buddypress .buddypress-wrap input[type=reset]:focus,
 .buddypress .buddypress-wrap input[type=submit]:hover,
-.buddypress .buddypress-wrap input[type=submit]:focus,
 .buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a:hover,
-.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel:hover,
-.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment:hover,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save:hover {
+  outline: none;
+  text-decoration: none;
+  background-color: var(--bb-primary-button-background-hover);
+  color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
+}
+button:focus,
+.button:focus,
+input[type=button]:focus,
+input[type=submit]:focus,
+.buddypress .buddypress-wrap .comment-reply-link:focus,
+.buddypress .buddypress-wrap .generic-button a:focus,
+.buddypress .buddypress-wrap a.bp-title-button:focus,
+.buddypress .buddypress-wrap a.button:focus,
+.buddypress .buddypress-wrap button:focus,
+.buddypress .buddypress-wrap input[type=button]:focus,
+.buddypress .buddypress-wrap input[type=reset]:focus,
+.buddypress .buddypress-wrap input[type=submit]:focus,
+.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment:focus,
-.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save:hover,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save:focus {
   outline: none;
   text-decoration: none;
-  color: var(--bb-primary-button-text-hover);
-  background-color: var(--bb-primary-button-background-hover);
-  border-color: var(--bb-primary-button-border-hover);
 }
 button:active,
 .button:active,
@@ -1788,8 +1825,8 @@ input[type=submit]:active,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save:active {
   outline: none;
   text-decoration: none;
-  color: var(--bb-primary-button-text-hover);
   background-color: var(--bb-primary-button-background-hover);
+  color: var(--bb-primary-button-text-hover);
   border-color: var(--bb-primary-button-border-hover);
 }
 button.disabled,
@@ -1917,9 +1954,9 @@ input[type=submit].secondary,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.secondary {
   color: #1E2132;
   background-color: #fff;
-  color: var(--bb-secondary-button-text-regular);
   background-color: var(--bb-secondary-button-background-regular);
-  border-color: var(--bb-secondary-button-border-regular);
+  color: var(--bb-secondary-button-text-regular);
+  border: 1px solid var(--bb-secondary-button-border-regular);
 }
 button.secondary:hover,
 .button.secondary:hover,
@@ -2087,6 +2124,24 @@ input[type=submit].secondary.outline.disabled,
   border-color: #DEDFE2;
   opacity: 1;
 }
+button.secondary:focus,
+.button.secondary:focus,
+input[type=button].secondary:focus,
+input[type=submit].secondary:focus,
+.buddypress .buddypress-wrap .comment-reply-link.secondary:focus,
+.buddypress .buddypress-wrap .generic-button a.secondary:focus,
+.buddypress .buddypress-wrap a.bp-title-button.secondary:focus,
+.buddypress .buddypress-wrap a.button.secondary:focus,
+.buddypress .buddypress-wrap button.secondary:focus,
+.buddypress .buddypress-wrap input[type=button].secondary:focus,
+.buddypress .buddypress-wrap input[type=reset].secondary:focus,
+.buddypress .buddypress-wrap input[type=submit].secondary:focus,
+.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.secondary:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.secondary:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.secondary:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.secondary:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
+}
 button.secondary:hover,
 .button.secondary:hover,
 input[type=button].secondary:hover,
@@ -2103,9 +2158,9 @@ input[type=submit].secondary:hover,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.secondary:hover,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.secondary:hover,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.secondary:hover {
-  color: var(--bb-secondary-button-text-hover);
   background-color: var(--bb-secondary-button-background-hover);
-  border-color: var(--bb-secondary-button-border-hover);
+  color: var(--bb-secondary-button-text-hover);
+  border: 1px solid var(--bb-secondary-button-border-hover);
 }
 button.success,
 .button.success,
@@ -2734,60 +2789,63 @@ input[type=submit].outline,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.outline {
   background: none;
   border-width: 1px;
-  border-color: var(--bb-secondary-button-border-regular);
-  color: var(--bb-secondary-button-text-regular);
   background-color: var(--bb-secondary-button-background-regular);
+  color: var(--bb-secondary-button-text-regular);
+  border: 1px solid var(--bb-secondary-button-border-regular);
   box-shadow: none;
 }
-button.outline:hover, button.outline:focus, button.outline:active,
-.button.outline:hover,
+button.outline:focus,
 .button.outline:focus,
+input[type=button].outline:focus,
+input[type=submit].outline:focus,
+.buddypress .buddypress-wrap .comment-reply-link.outline:focus,
+.buddypress .buddypress-wrap .generic-button a.outline:focus,
+.buddypress .buddypress-wrap a.bp-title-button.outline:focus,
+.buddypress .buddypress-wrap a.button.outline:focus,
+.buddypress .buddypress-wrap button.outline:focus,
+.buddypress .buddypress-wrap input[type=button].outline:focus,
+.buddypress .buddypress-wrap input[type=reset].outline:focus,
+.buddypress .buddypress-wrap input[type=submit].outline:focus,
+.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.outline:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.outline:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.outline:focus,
+.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.outline:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
+}
+button.outline:hover, button.outline:active,
+.button.outline:hover,
 .button.outline:active,
 input[type=button].outline:hover,
-input[type=button].outline:focus,
 input[type=button].outline:active,
 input[type=submit].outline:hover,
-input[type=submit].outline:focus,
 input[type=submit].outline:active,
 .buddypress .buddypress-wrap .comment-reply-link.outline:hover,
-.buddypress .buddypress-wrap .comment-reply-link.outline:focus,
 .buddypress .buddypress-wrap .comment-reply-link.outline:active,
 .buddypress .buddypress-wrap .generic-button a.outline:hover,
-.buddypress .buddypress-wrap .generic-button a.outline:focus,
 .buddypress .buddypress-wrap .generic-button a.outline:active,
 .buddypress .buddypress-wrap a.bp-title-button.outline:hover,
-.buddypress .buddypress-wrap a.bp-title-button.outline:focus,
 .buddypress .buddypress-wrap a.bp-title-button.outline:active,
 .buddypress .buddypress-wrap a.button.outline:hover,
-.buddypress .buddypress-wrap a.button.outline:focus,
 .buddypress .buddypress-wrap a.button.outline:active,
 .buddypress .buddypress-wrap button.outline:hover,
-.buddypress .buddypress-wrap button.outline:focus,
 .buddypress .buddypress-wrap button.outline:active,
 .buddypress .buddypress-wrap input[type=button].outline:hover,
-.buddypress .buddypress-wrap input[type=button].outline:focus,
 .buddypress .buddypress-wrap input[type=button].outline:active,
 .buddypress .buddypress-wrap input[type=reset].outline:hover,
-.buddypress .buddypress-wrap input[type=reset].outline:focus,
 .buddypress .buddypress-wrap input[type=reset].outline:active,
 .buddypress .buddypress-wrap input[type=submit].outline:hover,
-.buddypress .buddypress-wrap input[type=submit].outline:focus,
 .buddypress .buddypress-wrap input[type=submit].outline:active,
 .buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.outline:hover,
-.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.outline:focus,
 .buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.outline:active,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.outline:hover,
-.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.outline:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_cancel.outline:active,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.outline:hover,
-.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.outline:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.outline:active,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.outline:hover,
-.activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.outline:focus,
 .activity-list .activity-item .comment-item .activity-meta.action .buddyboss_edit_activity_comment.action-save.outline:active {
-  border-color: var(--bb-secondary-button-border-hover);
-  color: var(--bb-secondary-button-text-hover);
   background-color: var(--bb-secondary-button-background-hover);
+  color: var(--bb-secondary-button-text-hover);
+  border: 1px solid var(--bb-secondary-button-border-hover);
 }
 button.outline:disabled, button.outline.disabled,
 .button.outline:disabled,
@@ -2899,17 +2957,20 @@ input[type=submit].upper.large,
 
 .wp-block-file .wp-block-file__button,
 .wp-block-file a.wp-block-file__button {
-  color: var(--bb-primary-button-text-regular);
   background-color: var(--bb-primary-button-background-regular);
+  color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
 }
-.wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
+.wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:active,
 .wp-block-file a.wp-block-file__button:hover,
-.wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:active {
-  color: var(--bb-primary-button-text-hover);
   background-color: var(--bb-primary-button-background-hover);
-  border: 1px solid var(--bb-primary-button-border-hover);
+  color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 
 input[type="submit"] {
@@ -4521,9 +4582,11 @@ body.login {
 }
 body.login form {
   background-color: transparent;
-  padding: 0;
   border: none;
   box-shadow: none;
+  padding: 2px;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 body.login input, body.login textarea, body.login select {
   vertical-align: baseline;
@@ -4768,8 +4831,8 @@ body.login:not(.login-split-page) .language-switcher {
 }
 
 .bb-template-v2.login input[type=text]:focus, .bb-template-v2.login input[type=email]:focus, .bb-template-v2.login input[type=password]:focus {
-  border-color: var(--bb-primary-color);
-  box-shadow: 0px 0px 0px 2px rgba(56, 93, 255, 0.05);
+  border-color: var(--bb-input-focus-border-color);
+  box-shadow: var(--bb-input-focus-shadow);
 }
 
 .login form#loginform input[type=text] {
@@ -4898,9 +4961,9 @@ body.login:not(.login-split-page) .language-switcher {
 .login.bb-login .button-primary,
 .login.wp-core-ui .button-primary,
 .login.bb-login .wp-generate-pw {
-  background-color: var(--bb-login-register-button-background-color-regular);
-  border-color: var(--bb-login-register-button-border-color-regular);
-  color: var(--bb-login-register-button-text-color-regular);
+  background-color: var(--bb-primary-button-background-regular);
+  color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
   box-shadow: none;
   text-shadow: none;
@@ -4913,14 +4976,17 @@ body.login:not(.login-split-page) .language-switcher {
   margin: 20px 0 0;
   font-size: 14px;
 }
-.login.bb-login .button-primary:hover, .login.bb-login .button-primary:focus,
-.login.wp-core-ui .button-primary:hover,
+.login.bb-login .button-primary:focus,
 .login.wp-core-ui .button-primary:focus,
-.login.bb-login .wp-generate-pw:hover,
 .login.bb-login .wp-generate-pw:focus {
-  background-color: var(--bb-login-register-button-background-color-hover);
-  border-color: var(--bb-login-register-button-border-color-hover);
-  color: var(--bb-login-register-button-text-color-hover);
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
+.login.bb-login .button-primary:hover,
+.login.wp-core-ui .button-primary:hover,
+.login.bb-login .wp-generate-pw:hover {
+  background-color: var(--bb-primary-button-background-hover);
+  color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .login.bb-login .button-primary:active,
 .login.wp-core-ui .button-primary:active,
@@ -4933,15 +4999,19 @@ body.login:not(.login-split-page) .language-switcher {
 .language-switcher .button,
 .bb-login.wp-core-ui .language-switcher .button {
   background-color: var(--bb-secondary-button-background-regular);
-  border-color: var(--bb-secondary-button-border-regular);
   color: var(--bb-secondary-button-text-regular);
+  border: 1px solid var(--bb-secondary-button-border-regular);
   border-radius: var(--bb-button-radius);
+}
+.language-switcher .button:focus,
+.bb-login.wp-core-ui .language-switcher .button:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
 }
 .language-switcher .button:hover,
 .bb-login.wp-core-ui .language-switcher .button:hover {
   background-color: var(--bb-secondary-button-background-hover);
-  border-color: var(--bb-secondary-button-border-hover);
   color: var(--bb-secondary-button-text-hover);
+  border: 1px solid var(--bb-secondary-button-border-hover);
 }
 .language-switcher select,
 .bb-login.wp-core-ui .language-switcher select {
@@ -4983,8 +5053,8 @@ body.login:not(.login-split-page) .language-switcher {
 }
 .bb-template-v2 .language-switcher select:focus, .bb-template-v2.bb-login.wp-core-ui .language-switcher select:focus {
   color: var(--bb-body-text-color);
-  border-color: var(--bb-primary-color);
-  box-shadow: 0px 0px 0px 2px rgba(56, 93, 255, 0.05);
+  border-color: var(--bb-input-focus-border-color);
+  box-shadow: var(--bb-input-focus-shadow);
 }
 
 .login-action-confirm_admin_email #login {
@@ -5114,7 +5184,8 @@ body.login .login-heading a:hover, body.login .login-heading a:focus {
   top: 4px;
 }
 .login.bb-login form .forgetmenot input[type=checkbox]:focus + .checkbox {
-  border-color: var(--bb-login-register-link-color-hover);
+  border-color: var(--bb-input-focus-border-color);
+  box-shadow: var(--bb-input-focus-shadow);
 }
 
 .login.bb-login form .pw-weak {
@@ -5134,7 +5205,8 @@ body.login .login-heading a:hover, body.login .login-heading a:focus {
   top: 4px;
 }
 .login.bb-login form .pw-weak input[type=checkbox]:focus + .checkbox {
-  border-color: #007CFF;
+  border-color: var(--bb-input-focus-border-color);
+  box-shadow: var(--bb-input-focus-shadow);
 }
 
 .admin-email__actions-primary {
@@ -5178,17 +5250,17 @@ span.checkbox {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border-radius: 2px;
-  background: #fff;
+  border-radius: var(--bb-checkbox-radius);
+  background: var(--bb-content-background-color);
   border: 1px solid var(--bb-content-border-color);
-  margin-right: 6px;
+  margin-right: 10px;
   float: left;
 }
 
 span.checkbox.on {
   background-color: var(--bb-primary-color);
   border-color: var(--bb-primary-color);
-  border-radius: 2px;
+  border-radius: var(--bb-checkbox-radius);
 }
 span.checkbox.on:before {
   color: #fff;
@@ -5197,10 +5269,10 @@ span.checkbox.on:before {
   width: 20px;
   height: 20px;
   line-height: 20px;
-  font-size: 19px;
+  font-size: 14px;
   position: relative;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: 2px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

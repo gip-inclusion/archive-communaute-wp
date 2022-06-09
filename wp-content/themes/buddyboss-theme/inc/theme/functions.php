@@ -1330,7 +1330,7 @@ if ( ! function_exists( 'buddyboss_search_input_placeholder_text' ) ) {
 if ( ! function_exists( 'buddyboss_theme_add_stick_to_bottom_field' ) ) {
 
 	function buddyboss_theme_add_stick_to_bottom_field( $menu_item ) {
-		if ( ! isset( $menu_item->post_content ) || 'bb-theme-section' === $menu_item->post_content ) {
+		if ( ! isset( $menu_item->post_content ) ) {
 			return $menu_item;
 		}
 
@@ -1361,7 +1361,7 @@ if ( ! function_exists( 'buddyboss_theme_update_stick_to_bottom_field' ) ) {
 if ( ! function_exists( 'buddyboss_theme_stick_to_bottom_field_walker' ) ) {
 
 	function buddyboss_theme_stick_to_bottom_field_walker( $id, $item, $depth, $args ) {
-		if ( ! isset( $item->attr_title ) || 'bb-theme-section' === $item->attr_title ) {
+		if ( ! isset( $item->attr_title ) ) {
 			return;
 		}
 		?>

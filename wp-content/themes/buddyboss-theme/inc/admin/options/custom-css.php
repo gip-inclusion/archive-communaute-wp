@@ -45,10 +45,21 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 		$header_alternate_background                    = buddyboss_theme_get_option( 'header_alternate_background' );
 		$header_links                                   = buddyboss_theme_get_option( 'header_links' );
 		$header_links_hover                             = buddyboss_theme_get_option( 'header_links_hover' );
+
 		$sidenav_background                             = buddyboss_theme_get_option( 'sidenav_background' );
-		$sidenav_alt_background                         = buddyboss_theme_get_option( 'sidenav_alt_background' );
-		$sidenav_links                                  = buddyboss_theme_get_option( 'sidenav_links' );
-		$sidenav_links_hover                            = buddyboss_theme_get_option( 'sidenav_links_hover' );
+		$sidenav_text_color_regular                     = buddyboss_theme_get_option( 'sidenav_text_color' )['regular'];
+		$sidenav_text_color_hover                       = buddyboss_theme_get_option( 'sidenav_text_color' )['hover'];
+		$sidenav_text_color_active                      = buddyboss_theme_get_option( 'sidenav_text_color' )['active'];
+		$sidenav_menu_background_color_regular          = buddyboss_theme_get_option( 'sidenav_menu_background_color' )['regular'];
+		$sidenav_menu_background_color_hover            = buddyboss_theme_get_option( 'sidenav_menu_background_color' )['hover'];
+		$sidenav_menu_background_color_active           = buddyboss_theme_get_option( 'sidenav_menu_background_color' )['active'];
+		$sidenav_count_text_color_regular               = buddyboss_theme_get_option( 'sidenav_count_text_color' )['regular'];
+		$sidenav_count_text_color_hover                 = buddyboss_theme_get_option( 'sidenav_count_text_color' )['hover'];
+		$sidenav_count_text_color_active                = buddyboss_theme_get_option( 'sidenav_count_text_color' )['active'];
+		$sidenav_count_background_color_regular         = buddyboss_theme_get_option( 'sidenav_count_background_color' )['regular'];
+		$sidenav_count_background_color_hover           = buddyboss_theme_get_option( 'sidenav_count_background_color' )['hover'];
+		$sidenav_count_background_color_active          = buddyboss_theme_get_option( 'sidenav_count_background_color' )['active'];
+
 		$footer_background                              = buddyboss_theme_get_option( 'footer_background' );
 		$footer_widget_background                       = buddyboss_theme_get_option( 'footer_widget_background' );
 		$footer_text_color                              = buddyboss_theme_get_option( 'footer_text_color' );
@@ -109,6 +120,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				--bb-primary-button-background-hover: <?php echo $primary_button_background_hover; ?>;
 				--bb-primary-button-border-regular: <?php echo $primary_button_border_regular; ?>;
 				--bb-primary-button-border-hover: <?php echo $primary_button_border_hover; ?>;
+				--bb-primary-button-border-hover-rgb: <?php echo join( ', ', hex_2_RGB( $primary_button_border_hover ) ); ?>;
 				--bb-primary-button-text-regular: <?php echo $primary_button_text_color_regular; ?>;
 				--bb-primary-button-text-regular-rgb: <?php echo join( ', ', hex_2_RGB( $primary_button_text_color_regular ) ); ?>;
 				--bb-primary-button-text-hover: <?php echo $primary_button_text_color_hover; ?>;
@@ -117,6 +129,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				--bb-secondary-button-background-hover: <?php echo $secondary_button_background_hover; ?>;
 				--bb-secondary-button-border-regular: <?php echo $secondary_button_border_regular; ?>;
 				--bb-secondary-button-border-hover: <?php echo $secondary_button_border_hover; ?>;
+				--bb-secondary-button-border-hover-rgb:  <?php echo join( ', ', hex_2_RGB( $secondary_button_border_hover ) ); ?>;
 				--bb-secondary-button-text-regular: <?php echo $secondary_button_text_color_regular; ?>;
 				--bb-secondary-button-text-hover: <?php echo $secondary_button_text_color_hover; ?>;
 
@@ -129,9 +142,18 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				--bb-header-height: <?php echo $header_height; ?>px;
 
 				--bb-sidenav-background: <?php echo $sidenav_background; ?>;
-				--bb-sidenav-alt-background: <?php echo $sidenav_alt_background; ?>;
-				--bb-sidenav-links: <?php echo $sidenav_links; ?>;
-				--bb-sidenav-links-hover: <?php echo $sidenav_links_hover; ?>;
+				--bb-sidenav-text-regular: <?php echo $sidenav_text_color_regular; ?>;
+				--bb-sidenav-text-hover: <?php echo $sidenav_text_color_hover; ?>;
+				--bb-sidenav-text-active: <?php echo $sidenav_text_color_active; ?>;
+				--bb-sidenav-menu-background-color-regular: <?php echo $sidenav_menu_background_color_regular; ?>;
+				--bb-sidenav-menu-background-color-hover: <?php echo $sidenav_menu_background_color_hover; ?>;
+				--bb-sidenav-menu-background-color-active: <?php echo $sidenav_menu_background_color_active; ?>;
+				--bb-sidenav-count-text-color-regular: <?php echo $sidenav_count_text_color_regular; ?>;
+				--bb-sidenav-count-text-color-hover: <?php echo $sidenav_count_text_color_hover; ?>;
+				--bb-sidenav-count-text-color-active: <?php echo $sidenav_count_text_color_active; ?>;
+				--bb-sidenav-count-background-color-regular: <?php echo $sidenav_count_background_color_regular; ?>;
+				--bb-sidenav-count-background-color-hover: <?php echo $sidenav_count_background_color_hover; ?>;
+				--bb-sidenav-count-background-color-active: <?php echo $sidenav_count_background_color_active; ?>;
 
 				--bb-footer-background: <?php echo $footer_background; ?>;
 				--bb-footer-widget-background: <?php echo $footer_widget_background; ?>;
@@ -181,10 +203,24 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 					--bb-block-radius: 4px;
 					--bb-block-radius-inner: 4px;
 					--bb-input-radius: 4px;
+					--bb-checkbox-radius: 2.7px;
+					--bb-primary-button-focus-shadow: none;
+					--bb-secondary-button-focus-shadow: none;
+					--bb-outline-button-focus-shadow: none;
+					--bb-input-focus-shadow: none;
+					--bb-input-focus-border-color: var(--bb-content-border-color);
+					--bb-label-type-radius: 100px;
 				<?php } else { ?>
 					--bb-block-radius: 10px;
 					--bb-block-radius-inner: 6px;
 					--bb-input-radius: 6px;
+					--bb-checkbox-radius: 5.4px;
+					--bb-primary-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-primary-button-border-hover-rgb), 0.1);
+					--bb-secondary-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-secondary-button-border-hover-rgb), 0.1);
+					--bb-outline-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-content-border-color-rgb), 0.1);
+					--bb-input-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-primary-color-rgb), 0.1);
+					--bb-input-focus-border-color: var(--bb-primary-color);
+					--bb-label-type-radius: 6px;
 				<?php } ?>
 
 			}
@@ -436,10 +472,6 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				color: <?php echo $primary_color; ?>;
 			}
 
-			.dropzone .dz-preview .dz-progress-ring-wrap .dz-progress-ring circle {
-				stroke: <?php echo $primary_color; ?>;
-			}
-
 			.bb-shared-screen svg g {
 				stroke: <?php echo $primary_color; ?>;
 			}
@@ -497,8 +529,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 
 			/* Header colors */
 			.bb-header-buttons a.button.outline,
-			.site-header .hideshow .more-button > i,
-			.user-wrap.menu-item-has-children #header-my-account-menu a {
+			.site-header .hideshow .more-button > i {
 				color: <?php echo buddyboss_theme_get_option( 'header_links' ); ?>;
 			}
 
@@ -506,9 +537,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				color: <?php echo buddyboss_theme_get_option( 'header_links_hover' ); ?>;
 			}
 
-			.bp-messages-content .actions .message_actions .message_action__list li a:hover,
-			.user-wrap.menu-item-has-children #header-my-account-menu a:hover,
-			.user-wrap.menu-item-has-children #header-my-account-menu a:hover > i {
+			.bp-messages-content .actions .message_actions .message_action__list li a:hover {
 				color: <?php echo buddyboss_theme_get_option( 'header_links_hover' ); ?>;
 			}
 
@@ -619,21 +648,9 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				color: <?php echo color2rgba( buddyboss_theme_get_option( 'heading_text_color' ), 1 ); ?>;
 			}
 
-			.dropzone.document-dropzone .dz-preview .dz-remove,
-			.dropzone.video-dropzone .dz-preview.dz-complete.dz-file-preview .dz-remove:after {
-				color: <?php echo color2rgba( buddyboss_theme_get_option( 'alternate_text_color' ), 0.8 ); ?>;
-			}
-
-			.dropzone.document-dropzone .dz-preview .dz-remove:hover,
-			.dropzone.video-dropzone .dz-preview.dz-complete.dz-file-preview .dz-remove:hover:after {
-				color: <?php echo color2rgba( buddyboss_theme_get_option( 'alternate_text_color' ), 1 ); ?>;
-			}
-
 			/* Heading Text color */
 			.show-support h6,
 			h4 .bp-reported-type,
-			.dropzone .dz-default .dz-button > strong,
-			.dropzone .dz-default .dz-button:hover > strong,
 			.activity-link-preview-title {
 				color: <?php echo buddyboss_theme_get_option( 'heading_text_color' ); ?>;
 			}
@@ -690,44 +707,7 @@ if ( ! function_exists( 'boss_generate_option_css' ) ) {
 				background-color: <?php echo $body_bgr_color; ?>;
 			}
 
-			/* Notices - Success */
-
-			#item-header.groups-header .bp-feedback.bp-feedback.success .bp-icon {
-				color: <?php echo $success_color; ?>;
-			}
-
 			/* Buttons */
-			.bbp-topic-reply-link,
-			.subscription-toggle,
-			#buddypress .action .button,
-			.buddypress .buddypress-wrap .comment-reply-link,
-			.buddypress .buddypress-wrap .generic-button a,
-			.buddypress .buddypress-wrap a.bp-title-button,
-			.buddypress .buddypress-wrap a.button,
-			.buddypress .buddypress-wrap input[type=button],
-			.buddypress .buddypress-wrap input[type=reset],
-			.buddypress .buddypress-wrap input[type=submit],
-			.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a,
-			button.small,
-			.button.small,
-			input[type=button].small,
-			input[type=submit].small,
-			.buddypress .buddypress-wrap .comment-reply-link.small,
-			.buddypress .buddypress-wrap .generic-button a.small,
-			.buddypress .buddypress-wrap a.bp-title-button.small,
-			.buddypress .buddypress-wrap a.button.small,
-			.buddypress .buddypress-wrap button.small,
-			.buddypress .buddypress-wrap input[type=button].small,
-			.buddypress .buddypress-wrap input[type=reset].small,
-			.buddypress .buddypress-wrap input[type=submit].small,
-			.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a.small,
-			#buddypress .comment-reply-link,
-			#buddypress .standard-form button,
-			#buddypress input[type=button],
-			#buddypress input[type=reset],
-			#buddypress input[type=submit],
-			#buddypress ul.button-nav li a,
-			a.bp-title-button,
 			.ld-course-list-items .ld_course_grid .bb-cover-list-item p.ld_course_grid_button a {
 				border-radius: <?php echo $button_radius; ?>px;
 			}
@@ -804,7 +784,6 @@ if ( ! function_exists( 'boss_generate_option_bp_css' ) ) {
 		<?php ob_start(); ?>
 
 			/* Primary color */
-			#send-private-message.generic-button a:before,
 			#buddypress #members-list .members-meta.action > .generic-button:last-child a,
 			#buddypress #members-list .members-meta.action > .generic-button:last-child button,
 			body #buddypress .bp-list .action .generic-button a,
@@ -824,7 +803,6 @@ if ( ! function_exists( 'boss_generate_option_bp_css' ) ) {
 			.activity-list .activity-item .bp-generic-meta.action .buddyboss_edit_activity_cancel:before,
 			#media-folder-document-data-table .media-folder_items .media-folder_actions .media-folder_action__list ul li a:hover,
 			#bp-media-single-folder .bp-media-header-wrap .media-folder_items .media-folder_action__list ul li a:hover,
-			#media-stream.media .bb-photo-thumb .media-action-wrap .media-action_list ul li a:hover,
 			.bb-activity-media-wrap .bb-activity-media-elem.media-activity .media-action-wrap .media-action_list ul li a:hover,
 			#buddypress .standard-form button.outline,
 			#buddypress .standard-form button.outline:hover,
@@ -877,8 +855,7 @@ if ( ! function_exists( 'boss_generate_option_bp_css' ) ) {
 				border-color: <?php echo $primary_color; ?>;
 			}
 
-			.video-js .vjs-play-progress,
-			.dropzone .dz-preview .dz-progress .dz-upload {
+			.video-js .vjs-play-progress {
 				background: <?php echo $primary_color; ?>;
 			}
 
@@ -1023,7 +1000,6 @@ if ( ! function_exists( 'boss_generate_option_bp_css' ) ) {
 				background: <?php echo buddyboss_theme_get_option( 'body_blocks' ); ?>;
 			}
 
-			#buddypress .groups-manage-members-list .item-list > li,
 			#item-body #group-invites-container .bp-invites-content .item-list > li,
 			.bp-messages-content #bp-message-thread-list li,
 			.groups.group-create .buddypress-wrap .bp-invites-content #members-list li,
@@ -1455,11 +1431,8 @@ if ( ! function_exists( 'boss_generate_option_learndash_css' ) ) {
 			}
 
 			/* Buttons */
-			.bb-single-course-sidebar a.btn-advance,
 			.learndash-wrapper .bb-single-course-sidebar .ld-status,
-			.learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button,
-			.bb-single-course-sidebar .btn-join, .bb-single-course-sidebar #btn-join,
-			.lms-topic-sidebar-course-navigation a.course-entry-link {
+			.bb-single-course-sidebar .btn-join, .bb-single-course-sidebar #btn-join {
 				border-radius: <?php echo $button_radius; ?>px;
 			}
 

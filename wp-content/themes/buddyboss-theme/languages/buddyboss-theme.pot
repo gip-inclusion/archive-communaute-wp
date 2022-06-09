@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-11 12:37:20+00:00\n"
+"POT-Creation-Date: 2022-06-08 10:01:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +49,7 @@ msgid "404"
 msgstr ""
 
 #: archive-sfwd-courses.php:30 archive-sfwd-courses.php:31 bbpress.php:40
-#: inc/admin/options-init.php:1189 inc/admin/options-init.php:1238
+#: inc/admin/options-init.php:1230 inc/admin/options-init.php:1279
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:97
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1963
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2003
@@ -113,8 +113,8 @@ msgstr ""
 #: inc/plugins/elementor/templates/types/page.php:35
 #: inc/plugins/elementor/widgets/courses/templates/learndash-courses-template.php:174
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-courses-template.php:176
-#: inc/plugins/learndash-helper.php:778 inc/plugins/lifterlms-helper.php:753
-#: inc/plugins/lifterlms-helper.php:854 lifterlms/course/course-index.php:289
+#: inc/plugins/learndash-helper.php:778 inc/plugins/lifterlms-helper.php:758
+#: inc/plugins/lifterlms-helper.php:859 lifterlms/course/course-index.php:289
 #: lifterlms/course/course-index.php:337
 #: lifterlms/membership/membership-index.php:71
 msgid "Page"
@@ -123,7 +123,7 @@ msgstr ""
 #: archive-sfwd-courses.php:147
 #: inc/plugins/elementor/widgets/courses/templates/learndash-courses-template.php:193
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-courses-template.php:195
-#: inc/plugins/learndash-helper.php:791 inc/plugins/lifterlms-helper.php:780
+#: inc/plugins/learndash-helper.php:791 inc/plugins/lifterlms-helper.php:785
 #: lifterlms/course/course-index.php:308 lifterlms/course/course-index.php:355
 #: lifterlms/membership/membership-index.php:83
 msgid "Sorry, no courses were found."
@@ -166,7 +166,7 @@ msgid "Close"
 msgstr ""
 
 #: bbpress/content-single-topic-lead.php:94 bbpress/loop-replies.php:40
-#: inc/admin/options-init.php:1398
+#: inc/admin/options-init.php:1439
 msgid "Open"
 msgstr ""
 
@@ -243,11 +243,11 @@ msgstr ""
 msgid "Log In to Reply"
 msgstr ""
 
-#: bbpress/content-single-topic.php:148
+#: bbpress/content-single-topic.php:147
 msgid "Start of Discussion"
 msgstr ""
 
-#: bbpress/content-single-topic.php:152 learndash/ld30/lesson.php:118
+#: bbpress/content-single-topic.php:151 learndash/ld30/lesson.php:118
 #: learndash/ld30/quiz.php:99
 #: lifterlms/assignment/template-single-assignment-content.php:61
 #: lifterlms/lesson/template-single-lesson-content.php:63
@@ -255,15 +255,15 @@ msgstr ""
 msgid "of"
 msgstr ""
 
-#: bbpress/content-single-topic.php:152 bbpress/user-details.php:34
+#: bbpress/content-single-topic.php:151 bbpress/user-details.php:34
 msgid "replies"
 msgstr ""
 
-#: bbpress/content-single-topic.php:153
+#: bbpress/content-single-topic.php:152
 msgid "June 2018"
 msgstr ""
 
-#: bbpress/content-single-topic.php:160
+#: bbpress/content-single-topic.php:159
 msgid "Now"
 msgstr ""
 
@@ -436,12 +436,12 @@ msgid "You must be logged in to create new discussions."
 msgstr ""
 
 #: bbpress/loop-blocked-single-reply.php:46
-#: template-parts/unread-messages.php:394
+#: template-parts/unread-messages.php:401
 msgid "This content has been hidden as the member is suspended."
 msgstr ""
 
 #: bbpress/loop-blocked-single-reply.php:48
-#: template-parts/unread-messages.php:396
+#: template-parts/unread-messages.php:403
 msgid "This content has been hidden as you have blocked this member."
 msgstr ""
 
@@ -463,7 +463,7 @@ msgid "created %s"
 msgstr ""
 
 #: bbpress/loop-search-topic.php:8 bbpress/loop-topic-list.php:9
-#: inc/admin/options-init.php:1399
+#: inc/admin/options-init.php:1440
 msgid "Closed"
 msgstr ""
 
@@ -725,7 +725,7 @@ msgid "Sort by date"
 msgstr ""
 
 #: buddypress/members/single/notifications.php:11
-#: inc/admin/options-init.php:1191 inc/admin/options-init.php:1240
+#: inc/admin/options-init.php:1232 inc/admin/options-init.php:1281
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:116
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:323
 #: template-parts/content-buddypress.php:31
@@ -744,7 +744,7 @@ msgid "This member has not yet added details to their profile."
 msgstr ""
 
 #: buddypress/members/single/profile.php:14
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:229
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:271
 #: paid-memberships-pro/pages/account.php:111
 msgid "Edit Profile"
 msgstr ""
@@ -772,8 +772,8 @@ msgid "No results for '%s'"
 msgstr ""
 
 #: buddypress.php:24 inc/lib/buddyboss-updater/includes/views/package.php:37
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:717
-#: inc/plugins/lifterlms-helper.php:1766 inc/plugins/lifterlms-helper.php:1845
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:958
+#: inc/plugins/lifterlms-helper.php:1775 inc/plugins/lifterlms-helper.php:1854
 #: inc/theme/login.php:442 inc/theme/template-functions.php:858
 #: learndash/ld30/learndash-sidebar.php:182
 #: learndash/ld30/learndash-sidebar.php:206
@@ -1323,7 +1323,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: inc/admin/options/custom-css.php:2156
+#: inc/admin/options/custom-css.php:2129
 msgid "Quiz Progress"
 msgstr ""
 
@@ -1370,26 +1370,26 @@ msgstr ""
 
 #: inc/admin/options-init.php:128 inc/admin/options-init.php:171
 #: inc/admin/options-init.php:221 inc/admin/options-init.php:266
-#: inc/admin/options-init.php:934 inc/admin/options-init.php:1272
-#: inc/admin/options-init.php:1293 inc/admin/options-init.php:1322
-#: inc/admin/options-init.php:1339 inc/admin/options-init.php:1383
-#: inc/admin/options-init.php:1692 inc/admin/options-init.php:1727
-#: inc/admin/options-init.php:1869 inc/admin/options-init.php:1901
-#: inc/admin/options-init.php:2036 inc/admin/options-init.php:2053
-#: inc/admin/options-init.php:2061 inc/admin/options-init.php:2069
-#: inc/admin/options-init.php:2082 inc/admin/options-init.php:2133
-#: inc/admin/options-init.php:2209 inc/admin/options-init.php:2238
-#: inc/admin/options-init.php:2259 inc/admin/options-init.php:2273
-#: inc/admin/options-init.php:2282 inc/admin/options-init.php:2292
-#: inc/admin/options-init.php:2301 inc/admin/options-init.php:2329
-#: inc/admin/options-init.php:2352 inc/admin/options-init.php:2369
-#: inc/admin/options-init.php:2378 inc/admin/options-init.php:2387
-#: inc/admin/options-init.php:2399 inc/admin/options-init.php:2481
-#: inc/admin/options-init.php:2517 inc/admin/options-init.php:2559
-#: inc/admin/options-init.php:2606 inc/admin/options-init.php:2630
-#: inc/admin/options-init.php:2672 inc/admin/options-init.php:2700
-#: inc/admin/options-init.php:2716 inc/admin/options-init.php:2734
-#: inc/admin/options-init.php:2763 inc/admin/options-init.php:2772
+#: inc/admin/options-init.php:975 inc/admin/options-init.php:1313
+#: inc/admin/options-init.php:1334 inc/admin/options-init.php:1363
+#: inc/admin/options-init.php:1380 inc/admin/options-init.php:1424
+#: inc/admin/options-init.php:1733 inc/admin/options-init.php:1768
+#: inc/admin/options-init.php:1910 inc/admin/options-init.php:1942
+#: inc/admin/options-init.php:2090 inc/admin/options-init.php:2113
+#: inc/admin/options-init.php:2128 inc/admin/options-init.php:2143
+#: inc/admin/options-init.php:2157 inc/admin/options-init.php:2207
+#: inc/admin/options-init.php:2283 inc/admin/options-init.php:2312
+#: inc/admin/options-init.php:2333 inc/admin/options-init.php:2347
+#: inc/admin/options-init.php:2356 inc/admin/options-init.php:2366
+#: inc/admin/options-init.php:2375 inc/admin/options-init.php:2403
+#: inc/admin/options-init.php:2426 inc/admin/options-init.php:2443
+#: inc/admin/options-init.php:2452 inc/admin/options-init.php:2461
+#: inc/admin/options-init.php:2473 inc/admin/options-init.php:2555
+#: inc/admin/options-init.php:2591 inc/admin/options-init.php:2633
+#: inc/admin/options-init.php:2680 inc/admin/options-init.php:2704
+#: inc/admin/options-init.php:2746 inc/admin/options-init.php:2774
+#: inc/admin/options-init.php:2790 inc/admin/options-init.php:2808
+#: inc/admin/options-init.php:2837 inc/admin/options-init.php:2846
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:252
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:267
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:283
@@ -1403,27 +1403,27 @@ msgstr ""
 
 #: inc/admin/options-init.php:129 inc/admin/options-init.php:172
 #: inc/admin/options-init.php:222 inc/admin/options-init.php:267
-#: inc/admin/options-init.php:935 inc/admin/options-init.php:1222
-#: inc/admin/options-init.php:1273 inc/admin/options-init.php:1294
-#: inc/admin/options-init.php:1323 inc/admin/options-init.php:1340
-#: inc/admin/options-init.php:1384 inc/admin/options-init.php:1693
-#: inc/admin/options-init.php:1728 inc/admin/options-init.php:1870
-#: inc/admin/options-init.php:1902 inc/admin/options-init.php:2037
-#: inc/admin/options-init.php:2054 inc/admin/options-init.php:2062
-#: inc/admin/options-init.php:2070 inc/admin/options-init.php:2083
-#: inc/admin/options-init.php:2134 inc/admin/options-init.php:2210
-#: inc/admin/options-init.php:2239 inc/admin/options-init.php:2260
-#: inc/admin/options-init.php:2274 inc/admin/options-init.php:2283
-#: inc/admin/options-init.php:2293 inc/admin/options-init.php:2302
-#: inc/admin/options-init.php:2330 inc/admin/options-init.php:2353
-#: inc/admin/options-init.php:2370 inc/admin/options-init.php:2379
-#: inc/admin/options-init.php:2388 inc/admin/options-init.php:2400
-#: inc/admin/options-init.php:2482 inc/admin/options-init.php:2518
-#: inc/admin/options-init.php:2560 inc/admin/options-init.php:2607
-#: inc/admin/options-init.php:2631 inc/admin/options-init.php:2673
-#: inc/admin/options-init.php:2701 inc/admin/options-init.php:2717
-#: inc/admin/options-init.php:2735 inc/admin/options-init.php:2764
-#: inc/admin/options-init.php:2773
+#: inc/admin/options-init.php:976 inc/admin/options-init.php:1263
+#: inc/admin/options-init.php:1314 inc/admin/options-init.php:1335
+#: inc/admin/options-init.php:1364 inc/admin/options-init.php:1381
+#: inc/admin/options-init.php:1425 inc/admin/options-init.php:1734
+#: inc/admin/options-init.php:1769 inc/admin/options-init.php:1911
+#: inc/admin/options-init.php:1943 inc/admin/options-init.php:2091
+#: inc/admin/options-init.php:2114 inc/admin/options-init.php:2129
+#: inc/admin/options-init.php:2144 inc/admin/options-init.php:2158
+#: inc/admin/options-init.php:2208 inc/admin/options-init.php:2284
+#: inc/admin/options-init.php:2313 inc/admin/options-init.php:2334
+#: inc/admin/options-init.php:2348 inc/admin/options-init.php:2357
+#: inc/admin/options-init.php:2367 inc/admin/options-init.php:2376
+#: inc/admin/options-init.php:2404 inc/admin/options-init.php:2427
+#: inc/admin/options-init.php:2444 inc/admin/options-init.php:2453
+#: inc/admin/options-init.php:2462 inc/admin/options-init.php:2474
+#: inc/admin/options-init.php:2556 inc/admin/options-init.php:2592
+#: inc/admin/options-init.php:2634 inc/admin/options-init.php:2681
+#: inc/admin/options-init.php:2705 inc/admin/options-init.php:2747
+#: inc/admin/options-init.php:2775 inc/admin/options-init.php:2791
+#: inc/admin/options-init.php:2809 inc/admin/options-init.php:2838
+#: inc/admin/options-init.php:2847
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:991
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:253
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:268
@@ -1485,7 +1485,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/admin/options-init.php:218 inc/admin/options-init.php:1334
+#: inc/admin/options-init.php:218 inc/admin/options-init.php:1375
 msgid "Desktop Logo"
 msgstr ""
 
@@ -1509,7 +1509,7 @@ msgstr ""
 msgid "Mobile Logo Size"
 msgstr ""
 
-#: inc/admin/options-init.php:308 inc/admin/options-init.php:1335
+#: inc/admin/options-init.php:308 inc/admin/options-init.php:1376
 msgid "Site Icon"
 msgstr ""
 
@@ -1554,9 +1554,9 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:572
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:722
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:764
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:267
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:571
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:601
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:322
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:784
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:826
 #: inc/plugins/elementor/widgets/bb-review.php:706
 #: inc/plugins/elementor/widgets/bb-tabs.php:620
 #: inc/plugins/elementor/widgets/bb-tabs.php:651
@@ -1650,7 +1650,7 @@ msgstr ""
 msgid "Secondary Button Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:493 inc/admin/options-init.php:1129
+#: inc/admin/options-init.php:493 inc/admin/options-init.php:1170
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1709
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:298
 msgid "Header"
@@ -1684,8 +1684,8 @@ msgstr ""
 msgid "Menu and Icons Hover Links Color"
 msgstr ""
 
-#: inc/admin/options-init.php:531 inc/admin/options-init.php:1152
-#: inc/admin/options-init.php:1301 inc/admin/options-init.php:1310
+#: inc/admin/options-init.php:531 inc/admin/options-init.php:1193
+#: inc/admin/options-init.php:1342 inc/admin/options-init.php:1351
 #. translators: 1. Link URL. 2. Link text.
 msgid "BuddyPanel"
 msgstr ""
@@ -1695,103 +1695,103 @@ msgid "BuddyPanel Background Color"
 msgstr ""
 
 #: inc/admin/options-init.php:544
-msgid "BuddyPanel Alternate Background Color"
+msgid "BuddyPanel Menu Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:545
-msgid "Used for hover effects."
+#: inc/admin/options-init.php:556
+msgid "BuddyPanel Menu Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:552
-msgid "BuddyPanel Link Color"
+#: inc/admin/options-init.php:568
+msgid "BuddyPanel Count Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:560
-msgid "BuddyPanel Hover/Active Link Color"
+#: inc/admin/options-init.php:580
+msgid "BuddyPanel Count Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:569 inc/admin/options-init.php:1676
+#: inc/admin/options-init.php:593 inc/admin/options-init.php:1717
 #: inc/plugins/elementor/widgets/bb-review.php:855
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:284
 msgid "Footer"
 msgstr ""
 
-#: inc/admin/options-init.php:574
+#: inc/admin/options-init.php:598
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:582
+#: inc/admin/options-init.php:606
 msgid "Footer Widgets Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:590
+#: inc/admin/options-init.php:614
 msgid "Footer Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:598
+#: inc/admin/options-init.php:622
 msgid "Footer Menu Link Color"
 msgstr ""
 
-#: inc/admin/options-init.php:611
+#: inc/admin/options-init.php:635
 msgid "Login / Register Screens"
 msgstr ""
 
-#: inc/admin/options-init.php:616
+#: inc/admin/options-init.php:640
 msgid "Login / Register Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:624
+#: inc/admin/options-init.php:648
 msgid "Login / Register Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:632
+#: inc/admin/options-init.php:656
 msgid "Login / Register Link Color"
 msgstr ""
 
-#: inc/admin/options-init.php:644
+#: inc/admin/options-init.php:668
 msgid "Login / Register Button Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:656
+#: inc/admin/options-init.php:680
 msgid "Login / Register Button Border Color"
 msgstr ""
 
-#: inc/admin/options-init.php:668
+#: inc/admin/options-init.php:692
 msgid "Login / Register Button Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:681
+#: inc/admin/options-init.php:705
 msgid "Labels"
 msgstr ""
 
-#: inc/admin/options-init.php:686
+#: inc/admin/options-init.php:710
 msgid "Label Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:694
+#: inc/admin/options-init.php:718
 msgid "Label Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:703
+#: inc/admin/options-init.php:727
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:534
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:641
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:773
 msgid "Tooltips"
 msgstr ""
 
-#: inc/admin/options-init.php:708
+#: inc/admin/options-init.php:732
 msgid "Tooltips Background Color"
 msgstr ""
 
-#: inc/admin/options-init.php:716
+#: inc/admin/options-init.php:740
 msgid "Tooltips Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:725
+#: inc/admin/options-init.php:749
 msgid "Notices / Alerts"
 msgstr ""
 
-#: inc/admin/options-init.php:730
+#: inc/admin/options-init.php:754
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1463
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1373
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:764
@@ -1803,115 +1803,115 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: inc/admin/options-init.php:738
+#: inc/admin/options-init.php:762
 msgid "Success"
 msgstr ""
 
-#: inc/admin/options-init.php:746
+#: inc/admin/options-init.php:770
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:1219
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3514
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:818
 msgid "Warning"
 msgstr ""
 
-#: inc/admin/options-init.php:754
+#: inc/admin/options-init.php:778
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:476
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:481
 msgid "Error"
 msgstr ""
 
-#: inc/admin/options-init.php:900
+#: inc/admin/options-init.php:941
 msgid "Default Color Scheme"
 msgstr ""
 
-#: inc/admin/options-init.php:901
+#: inc/admin/options-init.php:942
 msgid "Reset all colors back to the default color scheme"
 msgstr ""
 
-#: inc/admin/options-init.php:912
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:428
+#: inc/admin/options-init.php:953
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:536
 msgid "Colors"
 msgstr ""
 
-#: inc/admin/options-init.php:923
+#: inc/admin/options-init.php:964
 msgid "Custom Typography"
 msgstr ""
 
-#: inc/admin/options-init.php:926
+#: inc/admin/options-init.php:967
 #. translators: 1. Custom font URL with text.
 msgid "Enable custom typography. Add custom fonts in the %s section."
 msgstr ""
 
-#: inc/admin/options-init.php:931
+#: inc/admin/options-init.php:972
 #. translators: 1. Link URL. 2. Link text.
 msgid "Fonts"
 msgstr ""
 
-#: inc/admin/options-init.php:941
+#: inc/admin/options-init.php:982
 msgid "Site Title"
 msgstr ""
 
-#: inc/admin/options-init.php:942
+#: inc/admin/options-init.php:983
 msgid "Specify the site title properties."
 msgstr ""
 
-#: inc/admin/options-init.php:960
+#: inc/admin/options-init.php:1001
 msgid "Body Font"
 msgstr ""
 
-#: inc/admin/options-init.php:961
+#: inc/admin/options-init.php:1002
 msgid "Specify the body font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:979
+#: inc/admin/options-init.php:1020
 msgid "H1 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:980
+#: inc/admin/options-init.php:1021
 msgid "Specify the H1 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:999
+#: inc/admin/options-init.php:1040
 msgid "H2 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:1000
+#: inc/admin/options-init.php:1041
 msgid "Specify the H2 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:1019
+#: inc/admin/options-init.php:1060
 msgid "H3 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:1020
+#: inc/admin/options-init.php:1061
 msgid "Specify the H3 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:1039
+#: inc/admin/options-init.php:1080
 msgid "H4 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:1040
+#: inc/admin/options-init.php:1081
 msgid "Specify the H4 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:1059
+#: inc/admin/options-init.php:1100
 msgid "H5 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:1060
+#: inc/admin/options-init.php:1101
 msgid "Specify the H5 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:1079
+#: inc/admin/options-init.php:1120
 msgid "H6 Font"
 msgstr ""
 
-#: inc/admin/options-init.php:1080
+#: inc/admin/options-init.php:1121
 msgid "Specify the H6 tag font properties."
 msgstr ""
 
-#: inc/admin/options-init.php:1100
+#: inc/admin/options-init.php:1141
 #: inc/custom-fonts/classes/class-buddyboss-custom-fonts-cpt.php:204
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:316
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:366
@@ -1919,7 +1919,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:466
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:599
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:791
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:622
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:853
 #: inc/plugins/elementor/widgets/bb-tabs.php:430
 #: inc/plugins/elementor/widgets/bb-tabs.php:532
 #: inc/plugins/elementor/widgets/bb-tabs.php:561
@@ -1953,73 +1953,73 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: inc/admin/options-init.php:1138
+#: inc/admin/options-init.php:1179
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:883
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:1014
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1064
 msgid "Desktop"
 msgstr ""
 
-#: inc/admin/options-init.php:1142
+#: inc/admin/options-init.php:1183
 msgid "Header Style"
 msgstr ""
 
-#: inc/admin/options-init.php:1143
+#: inc/admin/options-init.php:1184
 msgid "Select the layout of your desktop header."
 msgstr ""
 
-#: inc/admin/options-init.php:1146
+#: inc/admin/options-init.php:1187
 #. translators: 1. Text, 2. Link
 msgid ""
 "If you have enabled %1$s in the %2$s settings, it will be hidden in your "
 "desktop header."
 msgstr ""
 
-#: inc/admin/options-init.php:1147
+#: inc/admin/options-init.php:1188
 msgid "BuddyPanel Logo"
 msgstr ""
 
-#: inc/admin/options-init.php:1163
+#: inc/admin/options-init.php:1204
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:917
 #. translators: 1. Link, 2. Text
 msgid "Menu Style"
 msgstr ""
 
-#: inc/admin/options-init.php:1164
+#: inc/admin/options-init.php:1205
 msgid "Select the style of your desktop header menu."
 msgstr ""
 
-#: inc/admin/options-init.php:1167
+#: inc/admin/options-init.php:1208
 #. translators: Link with description.
 msgid ""
 "The Tab Bar style requires icons, which you can assign to menu items in the "
 "%s settings."
 msgstr ""
 
-#: inc/admin/options-init.php:1172 inc/admin/options-init.php:1319
+#: inc/admin/options-init.php:1213 inc/admin/options-init.php:1360
 #. translators: 1. Link URL. 2. Link text.
 msgid "Menus"
 msgstr ""
 
-#: inc/admin/options-init.php:1177
+#: inc/admin/options-init.php:1218 inc/admin/options-init.php:2064
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:254
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:703
 msgid "Standard"
 msgstr ""
 
-#: inc/admin/options-init.php:1178
+#: inc/admin/options-init.php:1219
 msgid "Tab Bar"
 msgstr ""
 
-#: inc/admin/options-init.php:1184 inc/admin/options-init.php:1233
+#: inc/admin/options-init.php:1225 inc/admin/options-init.php:1274
 msgid "Components"
 msgstr ""
 
-#: inc/admin/options-init.php:1185
+#: inc/admin/options-init.php:1226
 msgid "Select which components show in your desktop header."
 msgstr ""
 
-#: inc/admin/options-init.php:1190 inc/admin/options-init.php:1239
+#: inc/admin/options-init.php:1231 inc/admin/options-init.php:1280
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:106
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:302
 #: template-parts/header-profile-menu.php:236
@@ -2029,11 +2029,11 @@ msgstr ""
 msgid "Messages"
 msgstr ""
 
-#: inc/admin/options-init.php:1192 inc/admin/options-init.php:1241
+#: inc/admin/options-init.php:1233 inc/admin/options-init.php:1282
 msgid "Shopping Cart - requires WooCommerce"
 msgstr ""
 
-#: inc/admin/options-init.php:1206
+#: inc/admin/options-init.php:1247
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:79
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:443
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:250
@@ -2041,18 +2041,18 @@ msgstr ""
 msgid "Profile Dropdown"
 msgstr ""
 
-#: inc/admin/options-init.php:1207
+#: inc/admin/options-init.php:1248
 msgid ""
 "Select your style of profile dropdown. Sign In / Sign Up buttons will be "
 "used for logged out users."
 msgstr ""
 
-#: inc/admin/options-init.php:1210
+#: inc/admin/options-init.php:1251
 #. translators: Link with description.
 msgid "You can create a menu assign it to the Profile Dropdown in the %s settings."
 msgstr ""
 
-#: inc/admin/options-init.php:1215
+#: inc/admin/options-init.php:1256
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1588
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:209
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:473
@@ -2061,41 +2061,41 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/admin/options-init.php:1220
+#: inc/admin/options-init.php:1261
 msgid "Name & Avatar"
 msgstr ""
 
-#: inc/admin/options-init.php:1221
+#: inc/admin/options-init.php:1262
 msgid "Avatar Only"
 msgstr ""
 
-#: inc/admin/options-init.php:1228
+#: inc/admin/options-init.php:1269
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1648
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2184
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:921
 msgid "Mobile"
 msgstr ""
 
-#: inc/admin/options-init.php:1234
+#: inc/admin/options-init.php:1275
 msgid "Select which components show in your mobile header."
 msgstr ""
 
-#: inc/admin/options-init.php:1255
+#: inc/admin/options-init.php:1296
 msgid "Advanced"
 msgstr ""
 
-#: inc/admin/options-init.php:1260
+#: inc/admin/options-init.php:1301
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/admin/options-init.php:1263
+#: inc/admin/options-init.php:1304
 #. translators: 1. LearnDash URL with text.
 msgid ""
 "Stick your headers to the top of the screen while scrolling. Header is "
 "always sticky in %1$s lessons and topics."
 msgstr ""
 
-#: inc/admin/options-init.php:1268 inc/admin/options-init.php:2221
+#: inc/admin/options-init.php:1309 inc/admin/options-init.php:2295
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1508
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:19
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:27
@@ -2103,72 +2103,73 @@ msgstr ""
 msgid "LearnDash"
 msgstr ""
 
-#: inc/admin/options-init.php:1278
+#: inc/admin/options-init.php:1319
 msgid "Header Height"
 msgstr ""
 
-#: inc/admin/options-init.php:1279
+#: inc/admin/options-init.php:1320
 msgid "Set a height for your headers."
 msgstr ""
 
-#: inc/admin/options-init.php:1280
+#: inc/admin/options-init.php:1321
 msgid "Select a value between 60px and 200px."
 msgstr ""
 
-#: inc/admin/options-init.php:1290
+#: inc/admin/options-init.php:1331
 msgid "Header Shadow"
 msgstr ""
 
-#: inc/admin/options-init.php:1291
+#: inc/admin/options-init.php:1332
 msgid "Select whether to show a shadow under your headers."
 msgstr ""
 
-#: inc/admin/options-init.php:1311
+#: inc/admin/options-init.php:1352
 msgid ""
 "Select whether to display the BuddyPanel menu in a side navigation panel on "
 "your site."
 msgstr ""
 
-#: inc/admin/options-init.php:1314
+#: inc/admin/options-init.php:1355
 #. translators: 1. Link with description.
 msgid "Go to the %s page to create a menu and assign it to the BuddyPanel location."
 msgstr ""
 
-#: inc/admin/options-init.php:1329
+#: inc/admin/options-init.php:1370
 msgid "Show Logo in BuddyPanel"
 msgstr ""
 
-#: inc/admin/options-init.php:1330
+#: inc/admin/options-init.php:1371
 msgid "Select whether to show a logo in the BuddyPanel."
 msgstr ""
 
-#: inc/admin/options-init.php:1333
+#: inc/admin/options-init.php:1374
 #. translators: 1. Description with Text, 2. Description with Text
 msgid ""
 "When enabled, the %1$s will be hidden your from header and shown in the "
 "BuddyPanel's open state. In the closed state, your %2$s will be used."
 msgstr ""
 
-#: inc/admin/options-init.php:1349 inc/admin/options-init.php:1364
+#: inc/admin/options-init.php:1390 inc/admin/options-init.php:1405
 msgid "BuddyPanel Position"
 msgstr ""
 
-#: inc/admin/options-init.php:1350 inc/admin/options-init.php:1365
+#: inc/admin/options-init.php:1391 inc/admin/options-init.php:1406
 msgid "Select which side of the screen the BuddyPanel should be aligned to."
 msgstr ""
 
-#: inc/admin/options-init.php:1357 inc/admin/options-init.php:1372
-#: inc/admin/options-init.php:1412 inc/admin/options-init.php:1423
-#: inc/admin/options-init.php:1434 inc/admin/options-init.php:1454
-#: inc/admin/options-init.php:1467 inc/admin/options-init.php:1479
-#: inc/admin/options-init.php:1495 inc/admin/options-init.php:1514
-#: inc/admin/options-init.php:1528 inc/admin/options-init.php:1540
-#: inc/admin/options-init.php:1554 inc/admin/options-init.php:1567
+#: inc/admin/options-init.php:1398 inc/admin/options-init.php:1413
+#: inc/admin/options-init.php:1453 inc/admin/options-init.php:1464
+#: inc/admin/options-init.php:1475 inc/admin/options-init.php:1495
+#: inc/admin/options-init.php:1508 inc/admin/options-init.php:1520
+#: inc/admin/options-init.php:1536 inc/admin/options-init.php:1555
+#: inc/admin/options-init.php:1569 inc/admin/options-init.php:1581
+#: inc/admin/options-init.php:1595 inc/admin/options-init.php:1608
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:242
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:101
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:612
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:680
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:103
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:118
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:717
 #: inc/plugins/elementor/widgets/bb-review.php:868
 #: inc/plugins/elementor/widgets/bb-tabs.php:289
 #: inc/plugins/elementor/widgets/bb-tabs.php:409
@@ -2188,18 +2189,19 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: inc/admin/options-init.php:1358 inc/admin/options-init.php:1373
-#: inc/admin/options-init.php:1413 inc/admin/options-init.php:1424
-#: inc/admin/options-init.php:1435 inc/admin/options-init.php:1455
-#: inc/admin/options-init.php:1468 inc/admin/options-init.php:1480
-#: inc/admin/options-init.php:1496 inc/admin/options-init.php:1515
-#: inc/admin/options-init.php:1529 inc/admin/options-init.php:1541
-#: inc/admin/options-init.php:1555 inc/admin/options-init.php:1568
+#: inc/admin/options-init.php:1399 inc/admin/options-init.php:1414
+#: inc/admin/options-init.php:1454 inc/admin/options-init.php:1465
+#: inc/admin/options-init.php:1476 inc/admin/options-init.php:1496
+#: inc/admin/options-init.php:1509 inc/admin/options-init.php:1521
+#: inc/admin/options-init.php:1537 inc/admin/options-init.php:1556
+#: inc/admin/options-init.php:1570 inc/admin/options-init.php:1582
+#: inc/admin/options-init.php:1596 inc/admin/options-init.php:1609
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:250
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:109
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:620
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:688
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:111
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:126
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:725
 #: inc/plugins/elementor/widgets/bb-review.php:872
 #: inc/plugins/elementor/widgets/bb-tabs.php:293
 #: inc/plugins/elementor/widgets/bb-tabs.php:417
@@ -2219,679 +2221,727 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: inc/admin/options-init.php:1379
+#: inc/admin/options-init.php:1420
 msgid "Toggle BuddyPanel"
 msgstr ""
 
-#: inc/admin/options-init.php:1380
+#: inc/admin/options-init.php:1421
 msgid "When enabled, the BuddyPanel can be toggled between open and closed."
 msgstr ""
 
-#: inc/admin/options-init.php:1393
+#: inc/admin/options-init.php:1434
 msgid "BuddyPanel Default State"
 msgstr ""
 
-#: inc/admin/options-init.php:1394
+#: inc/admin/options-init.php:1435
 msgid "Select the BuddyPanel's default state for new sessions."
 msgstr ""
 
-#: inc/admin/options-init.php:1408 inc/theme/sidebars.php:13
+#: inc/admin/options-init.php:1449 inc/theme/sidebars.php:13
 msgid "Blog Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1409
+#: inc/admin/options-init.php:1450
 msgid "Select the blog post sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1419 inc/theme/sidebars.php:24
+#: inc/admin/options-init.php:1460 inc/theme/sidebars.php:24
 msgid "Page Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1420
+#: inc/admin/options-init.php:1461
 msgid "Select the pages sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1430
+#: inc/admin/options-init.php:1471
 msgid "Members Directory Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1431
+#: inc/admin/options-init.php:1472
 msgid "Select the members directory sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1450
+#: inc/admin/options-init.php:1491
 msgid "Member Profile Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1451
+#: inc/admin/options-init.php:1492
 msgid "Select the member profile sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1463
+#: inc/admin/options-init.php:1504
 msgid "Groups Directory Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1464
+#: inc/admin/options-init.php:1505
 msgid "Select the groups directory sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1475
+#: inc/admin/options-init.php:1516
 msgid "Group Single Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1476
+#: inc/admin/options-init.php:1517
 msgid "Select the group single sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1491
+#: inc/admin/options-init.php:1532
 msgid "Forums Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1492
+#: inc/admin/options-init.php:1533
 msgid "Select the forums sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1507
+#: inc/admin/options-init.php:1548
 #. translators: 1. Text, 2. Text
 msgid "%1$s &rarr; %2$s"
 msgstr ""
 
-#: inc/admin/options-init.php:1508
+#: inc/admin/options-init.php:1549
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2543
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:34
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/admin/options-init.php:1509
+#: inc/admin/options-init.php:1550
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1511
+#: inc/admin/options-init.php:1552
 msgid "Select the woocommerce sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1524
+#: inc/admin/options-init.php:1565
 msgid "LearnDash Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1525
+#: inc/admin/options-init.php:1566
 msgid "Select the learndash sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1536
+#: inc/admin/options-init.php:1577
 msgid "LearnDash Single Pages Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1537
+#: inc/admin/options-init.php:1578
 msgid "Select the learndash single pages sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1550
+#: inc/admin/options-init.php:1591
 msgid "LifterLMS Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1551
+#: inc/admin/options-init.php:1592
 msgid "Select the LifterLMS sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1563
+#: inc/admin/options-init.php:1604
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: inc/admin/options-init.php:1564
+#: inc/admin/options-init.php:1605
 msgid "Select the search results page sidebar alignment."
 msgstr ""
 
-#: inc/admin/options-init.php:1576
+#: inc/admin/options-init.php:1617
 msgid "Add widgets into your sidebars at Appearance &gt; Widgets"
 msgstr ""
 
-#: inc/admin/options-init.php:1622
+#: inc/admin/options-init.php:1663
 msgid "Sidebars"
 msgstr ""
 
-#: inc/admin/options-init.php:1684 inc/admin/options-init.php:1689
+#: inc/admin/options-init.php:1725 inc/admin/options-init.php:1730
 msgid "Footer Widget Columns"
 msgstr ""
 
-#: inc/admin/options-init.php:1690
+#: inc/admin/options-init.php:1731
 msgid "Add a section of widget columns into the footer."
 msgstr ""
 
-#: inc/admin/options-init.php:1698
+#: inc/admin/options-init.php:1739
 msgid "Number of Columns"
 msgstr ""
 
-#: inc/admin/options-init.php:1701
+#: inc/admin/options-init.php:1742
 #. translators: 1. HTML tag start. 2. HTML tag close.
 msgid ""
 "Select the number of widget columns to be generated at %1$sAppearance &gt; "
 "Widgets%2$s."
 msgstr ""
 
-#: inc/admin/options-init.php:1719 inc/admin/options-init.php:1724
+#: inc/admin/options-init.php:1760 inc/admin/options-init.php:1765
 msgid "Footer Info Section"
 msgstr ""
 
-#: inc/admin/options-init.php:1725
+#: inc/admin/options-init.php:1766
 msgid ""
 "Add a section for displaying information in the footer, including your "
 "logo, menus, copyright, etc."
 msgstr ""
 
-#: inc/admin/options-init.php:1732
+#: inc/admin/options-init.php:1773
 msgid "Footer Style"
 msgstr ""
 
-#: inc/admin/options-init.php:1733
+#: inc/admin/options-init.php:1774
 msgid "Select the layout of your footer info section."
 msgstr ""
 
-#: inc/admin/options-init.php:1743 inc/admin/options-init.php:1782
+#: inc/admin/options-init.php:1784 inc/admin/options-init.php:1823
 msgid "Left Side Content"
 msgstr ""
 
-#: inc/admin/options-init.php:1748
+#: inc/admin/options-init.php:1789
 msgid "Footer Logo"
 msgstr ""
 
-#: inc/admin/options-init.php:1749
+#: inc/admin/options-init.php:1790
 msgid "Upload your custom site logo for footer layout."
 msgstr ""
 
-#: inc/admin/options-init.php:1758
+#: inc/admin/options-init.php:1799
 msgid "Footer Logo Size"
 msgstr ""
 
-#: inc/admin/options-init.php:1759
+#: inc/admin/options-init.php:1800
 msgid "Adjust the size of your footer logo"
 msgstr ""
 
-#: inc/admin/options-init.php:1762
+#: inc/admin/options-init.php:1803
 #. translators: 1. Break the current line.
 msgid ""
 "Maximum logo width 350px.%sIf the logo size is taller than the footer "
 "height, it will be made smaller to fit within the footer."
 msgstr ""
 
-#: inc/admin/options-init.php:1774
+#: inc/admin/options-init.php:1815
 msgid "Logo Tagline"
 msgstr ""
 
-#: inc/admin/options-init.php:1775
+#: inc/admin/options-init.php:1816
 msgid "Add a tagline next to your logo."
 msgstr ""
 
-#: inc/admin/options-init.php:1788
+#: inc/admin/options-init.php:1829
 msgid "Footer Primary Menu"
 msgstr ""
 
-#: inc/admin/options-init.php:1789 inc/admin/options-init.php:1815
+#: inc/admin/options-init.php:1830 inc/admin/options-init.php:1856
 msgid "Select a navigation menu from the dropdown."
 msgstr ""
 
-#: inc/admin/options-init.php:1797
+#: inc/admin/options-init.php:1838
 msgid "Copyright Notice"
 msgstr ""
 
-#: inc/admin/options-init.php:1798
+#: inc/admin/options-init.php:1839
 msgid ""
 "Use the shortcode [buddyboss_current_year] to always display the current "
 "year before your copyright notice."
 msgstr ""
 
-#: inc/admin/options-init.php:1814
+#: inc/admin/options-init.php:1855
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/admin/options-init.php:1823
+#: inc/admin/options-init.php:1864
 msgid "Right Side Content"
 msgstr ""
 
-#: inc/admin/options-init.php:1829
+#: inc/admin/options-init.php:1870
 msgid "Footer Description"
 msgstr ""
 
-#: inc/admin/options-init.php:1830
+#: inc/admin/options-init.php:1871
 msgid "Enter text or shortcode to display in your footer."
 msgstr ""
 
-#: inc/admin/options-init.php:1846 inc/admin/options-init.php:2663
-#: inc/admin/options-init.php:2679
+#: inc/admin/options-init.php:1887 inc/admin/options-init.php:2737
+#: inc/admin/options-init.php:2753
 msgid "Social Links"
 msgstr ""
 
-#: inc/admin/options-init.php:1847
+#: inc/admin/options-init.php:1888
 msgid "Enter URLs to social links to display as icons in the footer."
 msgstr ""
 
-#: inc/admin/options-init.php:1857
+#: inc/admin/options-init.php:1898
 msgid "Login &amp; Registration"
 msgstr ""
 
-#: inc/admin/options-init.php:1866
+#: inc/admin/options-init.php:1907
 msgid "Custom Login/Register Screen"
 msgstr ""
 
-#: inc/admin/options-init.php:1867
+#: inc/admin/options-init.php:1908
 msgid "Toggle the custom login/register screen design options on or off."
 msgstr ""
 
-#: inc/admin/options-init.php:1875
+#: inc/admin/options-init.php:1916
 msgid "Custom Logo"
 msgstr ""
 
-#: inc/admin/options-init.php:1876
+#: inc/admin/options-init.php:1917
 msgid "We display a custom logo in place of the default WordPress logo."
 msgstr ""
 
-#: inc/admin/options-init.php:1884
+#: inc/admin/options-init.php:1925
 msgid "Logo Width"
 msgstr ""
 
-#: inc/admin/options-init.php:1885
+#: inc/admin/options-init.php:1926
 msgid "Set logo width size"
 msgstr ""
 
-#: inc/admin/options-init.php:1886
+#: inc/admin/options-init.php:1927
 msgid "Value between 50 and 320px"
 msgstr ""
 
-#: inc/admin/options-init.php:1898
+#: inc/admin/options-init.php:1939
 msgid "Toggle Custom Background"
 msgstr ""
 
-#: inc/admin/options-init.php:1899
+#: inc/admin/options-init.php:1940
 msgid "Set custom background design on or off."
 msgstr ""
 
-#: inc/admin/options-init.php:1908
+#: inc/admin/options-init.php:1949
 msgid "Background Image"
 msgstr ""
 
-#: inc/admin/options-init.php:1909
+#: inc/admin/options-init.php:1950
 msgid "We display a custom background image in half width of the screen."
 msgstr ""
 
-#: inc/admin/options-init.php:1916
+#: inc/admin/options-init.php:1957
 msgid "Custom Heading"
 msgstr ""
 
-#: inc/admin/options-init.php:1917
+#: inc/admin/options-init.php:1958
 msgid "We display a custom title above the background image."
 msgstr ""
 
-#: inc/admin/options-init.php:1918 inc/admin/options-init.php:2419
+#: inc/admin/options-init.php:1959 inc/admin/options-init.php:2493
 msgid "Custom login heading"
 msgstr ""
 
-#: inc/admin/options-init.php:1925
+#: inc/admin/options-init.php:1966
 msgid "Custom Text"
 msgstr ""
 
-#: inc/admin/options-init.php:1926
+#: inc/admin/options-init.php:1967
 msgid "We display custom text above the background image."
 msgstr ""
 
-#: inc/admin/options-init.php:1943
+#: inc/admin/options-init.php:1984
 msgid "Overlay Opacity"
 msgstr ""
 
-#: inc/admin/options-init.php:1944
+#: inc/admin/options-init.php:1985
 msgid "Set overlay opacity"
 msgstr ""
 
-#: inc/admin/options-init.php:1945 inc/admin/options-init.php:2159
+#: inc/admin/options-init.php:1986 inc/admin/options-init.php:2233
 msgid "Value between 0 and 100%"
 msgstr ""
 
-#: inc/admin/options-init.php:1956
+#: inc/admin/options-init.php:1997
 msgid "Custom Heading Color"
 msgstr ""
 
-#: inc/admin/options-init.php:1957
+#: inc/admin/options-init.php:1998
 msgid "Select your text color for custom heading section."
 msgstr ""
 
-#: inc/admin/options-init.php:1967
+#: inc/admin/options-init.php:2008
 msgid "Blog"
 msgstr ""
 
-#: inc/admin/options-init.php:1976
-msgid "Blog Layout"
+#: inc/admin/options-init.php:2017
+msgid "Blog Directories"
 msgstr ""
 
-#: inc/admin/options-init.php:1980
-msgid "Blog Archive Layout"
+#: inc/admin/options-init.php:2021
+msgid "Directory Layout"
 msgstr ""
 
-#: inc/admin/options-init.php:1981
-msgid "Set layout (List, Masonry or Grid) for blog page."
+#: inc/admin/options-init.php:2022
+msgid "Select the layout of posts in your blog directories and archives."
 msgstr ""
 
-#: inc/admin/options-init.php:2003
-msgid "Single blog post"
+#: inc/admin/options-init.php:2023
+msgid "In the Grid layout, the first post will be enlarged."
 msgstr ""
 
-#: inc/admin/options-init.php:2007
-msgid "Featured Image Style"
+#: inc/admin/options-init.php:2030
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1548
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:886
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:891
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1974
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1979
+#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:836
+msgid "List"
 msgstr ""
 
-#: inc/admin/options-init.php:2008
-msgid ""
-"Select layout for single blog post featured image (Above Content, Fullwidth "
-"Below Title, Fullwidth Above Content"
+#: inc/admin/options-init.php:2035
+msgid "Masonry"
 msgstr ""
 
-#: inc/admin/options-init.php:2012
-msgid "In fullwidth the sidebar will not be visible."
+#: inc/admin/options-init.php:2040
+#: inc/plugins/elementor/widgets/bb-dashboard-grid.php:91
+msgid "Grid"
 msgstr ""
 
-#: inc/admin/options-init.php:2034
-msgid "Enable Related Posts"
+#: inc/admin/options-init.php:2048
+msgid "Single Post"
 msgstr ""
 
-#: inc/admin/options-init.php:2042
-msgid "Related posts limit"
+#: inc/admin/options-init.php:2052 inc/admin/options-init.php:2516
+#: inc/admin/options-init.php:2630
+msgid "Featured Image"
 msgstr ""
 
-#: inc/admin/options-init.php:2043
-msgid "Limit the number of related posts on single blog page"
+#: inc/admin/options-init.php:2053
+msgid "Select the style of featured images in your blog posts."
 msgstr ""
 
-#: inc/admin/options-init.php:2051
-msgid "Enable Post Author Box"
+#: inc/admin/options-init.php:2057
+msgid "In the Full Width layouts, the sidebar will not be visible."
 msgstr ""
 
-#: inc/admin/options-init.php:2059
-msgid "Enable Floating Social Share"
+#: inc/admin/options-init.php:2069
+msgid "Full Width (Below Title)"
 msgstr ""
 
-#: inc/admin/options-init.php:2067
-msgid "Enable BuddyPress Profile Link"
+#: inc/admin/options-init.php:2074
+msgid "Full Width (Above Title)"
 msgstr ""
 
-#: inc/admin/options-init.php:2075
-msgid "Newsletter Sign Up"
-msgstr ""
-
-#: inc/admin/options-init.php:2080
-msgid "Toggle Newsletter Sign Up Form"
+#: inc/admin/options-init.php:2087
+msgid "Related Posts"
 msgstr ""
 
 #: inc/admin/options-init.php:2088
-msgid "Add Shortcode"
+msgid "Show related posts under single blog posts."
 msgstr ""
 
-#: inc/admin/options-init.php:2089
-msgid "Add shortcode to show Newsletter Sign Up Form"
+#: inc/admin/options-init.php:2096
+msgid "Enter the maximum number of related posts to show."
 msgstr ""
 
 #: inc/admin/options-init.php:2110
+msgid "Post Author Box"
+msgstr ""
+
+#: inc/admin/options-init.php:2111
+msgid "Show information about the post’s author below the post."
+msgstr ""
+
+#: inc/admin/options-init.php:2124
+msgid "Floating Social Share"
+msgstr ""
+
+#: inc/admin/options-init.php:2125
+msgid "Show floating icons for sharing the post on Facebook and Twitter."
+msgstr ""
+
+#: inc/admin/options-init.php:2126
+msgid ""
+"Social share icons will be visible underneath the post, even when the "
+"floating icons are disabled."
+msgstr ""
+
+#: inc/admin/options-init.php:2139
+msgid "BuddyBoss Profile Link"
+msgstr ""
+
+#: inc/admin/options-init.php:2140
+msgid "Link the post author’s name to their BuddyBoss profile."
+msgstr ""
+
+#: inc/admin/options-init.php:2141
+msgid ""
+"When disabled, the post author’s name will link to an archive displaying "
+"all their posts."
+msgstr ""
+
+#: inc/admin/options-init.php:2154
+msgid "Call to Action / Sign Up Form"
+msgstr ""
+
+#: inc/admin/options-init.php:2155
+msgid ""
+"Show a call to action, such as a sign up form or advertisement, under the "
+"blog post."
+msgstr ""
+
+#: inc/admin/options-init.php:2163
+msgid "Enter the content for the call to action. You can add shortcodes here."
+msgstr ""
+
+#: inc/admin/options-init.php:2184
 #: inc/plugins/elementor/widgets/bb-forums.php:40
 #: inc/plugins/elementor/widgets/bb-forums.php:197
 #: template-parts/header-profile-menu.php:373
 msgid "Forums"
 msgstr ""
 
-#: inc/admin/options-init.php:2119
+#: inc/admin/options-init.php:2193
 msgid "Forum Grids"
 msgstr ""
 
-#: inc/admin/options-init.php:2120
+#: inc/admin/options-init.php:2194
 msgid "Set forum grid layouts to Card or Cover style."
 msgstr ""
 
-#: inc/admin/options-init.php:2130
+#: inc/admin/options-init.php:2204
 msgid "Show Forum Banner"
 msgstr ""
 
-#: inc/admin/options-init.php:2131
+#: inc/admin/options-init.php:2205
 msgid "If enabled it will show a banner on the Forum index."
 msgstr ""
 
-#: inc/admin/options-init.php:2139
+#: inc/admin/options-init.php:2213
 msgid "Custom Banner Image"
 msgstr ""
 
-#: inc/admin/options-init.php:2140
+#: inc/admin/options-init.php:2214
 msgid "We display a custom banner on forum index page."
 msgstr ""
 
-#: inc/admin/options-init.php:2147
+#: inc/admin/options-init.php:2221
 msgid "Background Overlay Color"
 msgstr ""
 
-#: inc/admin/options-init.php:2148
+#: inc/admin/options-init.php:2222
 msgid "Select background overlay color for banner image."
 msgstr ""
 
-#: inc/admin/options-init.php:2157
+#: inc/admin/options-init.php:2231
 msgid "Background Overlay Opacity"
 msgstr ""
 
-#: inc/admin/options-init.php:2158
+#: inc/admin/options-init.php:2232
 msgid "Set background overlay opacity"
 msgstr ""
 
-#: inc/admin/options-init.php:2170
+#: inc/admin/options-init.php:2244
 msgid "Banner Text Color"
 msgstr ""
 
-#: inc/admin/options-init.php:2171
+#: inc/admin/options-init.php:2245
 msgid "Select text color for banner area."
 msgstr ""
 
-#: inc/admin/options-init.php:2179
+#: inc/admin/options-init.php:2253
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:295
 msgid "Forum Title"
 msgstr ""
 
-#: inc/admin/options-init.php:2180
+#: inc/admin/options-init.php:2254
 msgid "Title that will be shown on forum index banner area."
 msgstr ""
 
-#: inc/admin/options-init.php:2188
+#: inc/admin/options-init.php:2262
 msgid "Forum Description"
 msgstr ""
 
-#: inc/admin/options-init.php:2189
+#: inc/admin/options-init.php:2263
 msgid "Description that will be shown on forum index banner area."
 msgstr ""
 
-#: inc/admin/options-init.php:2191
+#: inc/admin/options-init.php:2265
 msgid ""
 "Find answers, ask questions, and connect with our <br>community around the "
 "world."
 msgstr ""
 
-#: inc/admin/options-init.php:2206
+#: inc/admin/options-init.php:2280
 msgid "Enable Search"
 msgstr ""
 
-#: inc/admin/options-init.php:2207
+#: inc/admin/options-init.php:2281
 msgid "If enabled search will show on banner."
 msgstr ""
 
-#: inc/admin/options-init.php:2230 inc/admin/options-init.php:2321
+#: inc/admin/options-init.php:2304 inc/admin/options-init.php:2395
 msgid "Courses Index"
 msgstr ""
 
-#: inc/admin/options-init.php:2235 inc/admin/options-init.php:2326
+#: inc/admin/options-init.php:2309 inc/admin/options-init.php:2400
 msgid "Show Categories Filter"
 msgstr ""
 
-#: inc/admin/options-init.php:2236 inc/admin/options-init.php:2327
+#: inc/admin/options-init.php:2310 inc/admin/options-init.php:2401
 msgid "Enable filtering the courses index by categories."
 msgstr ""
 
-#: inc/admin/options-init.php:2244 inc/admin/options-init.php:2335
+#: inc/admin/options-init.php:2318 inc/admin/options-init.php:2409
 msgid "Taxonomy"
 msgstr ""
 
-#: inc/admin/options-init.php:2245 inc/admin/options-init.php:2336
+#: inc/admin/options-init.php:2319 inc/admin/options-init.php:2410
 msgid "Select the taxonomy to filter by."
 msgstr ""
 
-#: inc/admin/options-init.php:2247 inc/admin/options-init.php:2338
+#: inc/admin/options-init.php:2321 inc/admin/options-init.php:2412
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:154
 msgid "Course Categories"
 msgstr ""
 
-#: inc/admin/options-init.php:2248 inc/admin/options-init.php:2339
+#: inc/admin/options-init.php:2322 inc/admin/options-init.php:2413
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:163
 msgid "Course Tags"
 msgstr ""
 
-#: inc/admin/options-init.php:2256 inc/admin/options-init.php:2349
+#: inc/admin/options-init.php:2330 inc/admin/options-init.php:2423
 msgid "Show Instructors Filter"
 msgstr ""
 
-#: inc/admin/options-init.php:2257 inc/admin/options-init.php:2350
+#: inc/admin/options-init.php:2331 inc/admin/options-init.php:2424
 msgid "Enable filtering the courses index by instructors."
 msgstr ""
 
-#: inc/admin/options-init.php:2265 inc/admin/options-init.php:2358
+#: inc/admin/options-init.php:2339 inc/admin/options-init.php:2432
 msgid "Course Content"
 msgstr ""
 
-#: inc/admin/options-init.php:2270 inc/admin/options-init.php:2363
+#: inc/admin/options-init.php:2344 inc/admin/options-init.php:2437
 msgid "Course Author"
 msgstr ""
 
-#: inc/admin/options-init.php:2271 inc/admin/options-init.php:2364
+#: inc/admin/options-init.php:2345 inc/admin/options-init.php:2438
 msgid "Display the course author on courses, lessons and topics."
 msgstr ""
 
-#: inc/admin/options-init.php:2279
+#: inc/admin/options-init.php:2353
 msgid "Course Author Bio"
 msgstr ""
 
-#: inc/admin/options-init.php:2280
+#: inc/admin/options-init.php:2354
 msgid ""
 "Display the course author bio on single courses. This data comes from the "
 "\"Biographical Info\" section when editing a user in the backend."
 msgstr ""
 
-#: inc/admin/options-init.php:2289 inc/admin/options-init.php:2375
+#: inc/admin/options-init.php:2363 inc/admin/options-init.php:2449
 msgid "Course Date"
 msgstr ""
 
-#: inc/admin/options-init.php:2290 inc/admin/options-init.php:2376
+#: inc/admin/options-init.php:2364 inc/admin/options-init.php:2450
 msgid "Display the course date on courses, lessons and topics."
 msgstr ""
 
-#: inc/admin/options-init.php:2298 inc/admin/options-init.php:2393
+#: inc/admin/options-init.php:2372 inc/admin/options-init.php:2467
 msgid "Course Participants"
 msgstr ""
 
-#: inc/admin/options-init.php:2299
+#: inc/admin/options-init.php:2373
 msgid ""
 "Display the list of enrolled course participants on courses, lessons and "
 "topics."
 msgstr ""
 
-#: inc/admin/options-init.php:2312
+#: inc/admin/options-init.php:2386
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1528
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:23
 #: inc/plugins/elementor/templates/scripts/template-modal-item.php:30
 msgid "LifterLMS"
 msgstr ""
 
-#: inc/admin/options-init.php:2340
+#: inc/admin/options-init.php:2414
 msgid "Course Tracks"
 msgstr ""
 
-#: inc/admin/options-init.php:2341
+#: inc/admin/options-init.php:2415
 msgid "Course Difficulty"
 msgstr ""
 
-#: inc/admin/options-init.php:2384
+#: inc/admin/options-init.php:2458
 msgid "Lessons List"
 msgstr ""
 
-#: inc/admin/options-init.php:2385
+#: inc/admin/options-init.php:2459
 msgid "Display the lessons list on lessons, quizzes and topics."
 msgstr ""
 
-#: inc/admin/options-init.php:2394
+#: inc/admin/options-init.php:2468
 msgid ""
 "Display the list of enrolled course participants on courses, lessons and "
 "quizzes."
 msgstr ""
 
-#: inc/admin/options-init.php:2408
+#: inc/admin/options-init.php:2482
 msgid "404 Page"
 msgstr ""
 
-#: inc/admin/options-init.php:2417 inc/admin/options-init.php:2529
+#: inc/admin/options-init.php:2491 inc/admin/options-init.php:2603
 msgid "Page Title"
 msgstr ""
 
-#: inc/admin/options-init.php:2418
+#: inc/admin/options-init.php:2492
 msgid "Enter a title for your 404 page."
 msgstr ""
 
-#: inc/admin/options-init.php:2420
+#: inc/admin/options-init.php:2494
 msgid "Looks like you got lost!"
 msgstr ""
 
-#: inc/admin/options-init.php:2425 inc/admin/options-init.php:2538
+#: inc/admin/options-init.php:2499 inc/admin/options-init.php:2612
 msgid "Page Description"
 msgstr ""
 
-#: inc/admin/options-init.php:2426
+#: inc/admin/options-init.php:2500
 msgid "Enter a description for your 404 page."
 msgstr ""
 
-#: inc/admin/options-init.php:2428
+#: inc/admin/options-init.php:2502
 msgid "We couldn't find the page you were looking for."
 msgstr ""
 
-#: inc/admin/options-init.php:2442 inc/admin/options-init.php:2556
-msgid "Featured Image"
-msgstr ""
-
-#: inc/admin/options-init.php:2443
+#: inc/admin/options-init.php:2517
 msgid "Select which type of image to use on your 404 page."
 msgstr ""
 
-#: inc/admin/options-init.php:2446
+#: inc/admin/options-init.php:2520
 msgid "2.0"
 msgstr ""
 
-#: inc/admin/options-init.php:2447
+#: inc/admin/options-init.php:2521
 msgid "1.0"
 msgstr ""
 
-#: inc/admin/options-init.php:2448
+#: inc/admin/options-init.php:2522
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:121
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:730
 msgid "Custom"
 msgstr ""
 
-#: inc/admin/options-init.php:2449
+#: inc/admin/options-init.php:2523
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:352
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:634
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:285
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:345
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1093
 #: inc/plugins/elementor/widgets/members/bb-members.php:381
 msgid "None"
 msgstr ""
 
-#: inc/admin/options-init.php:2457
+#: inc/admin/options-init.php:2531
 msgid "The image will be tinted with your <b>Primary Color</b>."
 msgstr ""
 
-#: inc/admin/options-init.php:2478
+#: inc/admin/options-init.php:2552
 msgid "Page Button"
 msgstr ""
 
-#: inc/admin/options-init.php:2479
+#: inc/admin/options-init.php:2553
 msgid "Show a button at the bottom of your 404 page."
 msgstr ""
 
-#: inc/admin/options-init.php:2487
+#: inc/admin/options-init.php:2561
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:144
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:171
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:225
@@ -2899,220 +2949,220 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: inc/admin/options-init.php:2488
+#: inc/admin/options-init.php:2562
 msgid "Enter the text for your button."
 msgstr ""
 
-#: inc/admin/options-init.php:2489
+#: inc/admin/options-init.php:2563
 msgid "Return Home"
 msgstr ""
 
-#: inc/admin/options-init.php:2495
+#: inc/admin/options-init.php:2569
 msgid "Button Link"
 msgstr ""
 
-#: inc/admin/options-init.php:2496
+#: inc/admin/options-init.php:2570
 msgid "Enter the URL for your button."
 msgstr ""
 
-#: inc/admin/options-init.php:2505 inc/admin/options-init.php:2532
+#: inc/admin/options-init.php:2579 inc/admin/options-init.php:2606
 msgid "Maintenance Mode"
 msgstr ""
 
-#: inc/admin/options-init.php:2514
+#: inc/admin/options-init.php:2588
 msgid "Enable Maintenance Mode"
 msgstr ""
 
-#: inc/admin/options-init.php:2515
+#: inc/admin/options-init.php:2589
 msgid ""
 "If enabled, only site administrators will be able to login to your site. "
 "Logged-out members will see the maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2523
+#: inc/admin/options-init.php:2597
 msgid "Page Content"
 msgstr ""
 
-#: inc/admin/options-init.php:2530
+#: inc/admin/options-init.php:2604
 msgid "Enter a title for your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2531
+#: inc/admin/options-init.php:2605
 msgid "Custom Maintenance Title"
 msgstr ""
 
-#: inc/admin/options-init.php:2539
+#: inc/admin/options-init.php:2613
 msgid "Enter a description for your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2541
+#: inc/admin/options-init.php:2615
 msgid "Undergoing scheduled maintenance. <br>Sorry for the inconvenience."
 msgstr ""
 
-#: inc/admin/options-init.php:2557
+#: inc/admin/options-init.php:2631
 msgid "Show a featured image on your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2572
+#: inc/admin/options-init.php:2646
 msgid "Bottom Text"
 msgstr ""
 
-#: inc/admin/options-init.php:2573
+#: inc/admin/options-init.php:2647
 msgid "Enter text for the bottom of your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2576
+#: inc/admin/options-init.php:2650
 #. translators: 1. email url
 msgid "Contact us at  %1$s"
 msgstr ""
 
-#: inc/admin/options-init.php:2598
+#: inc/admin/options-init.php:2672
 #. translators: 1. Link URL. 2. Link text.
 msgid "Countdown Timer"
 msgstr ""
 
-#: inc/admin/options-init.php:2604
+#: inc/admin/options-init.php:2678
 msgid "Enable Countdown"
 msgstr ""
 
-#: inc/admin/options-init.php:2615
+#: inc/admin/options-init.php:2689
 msgid ""
 "Enter the date the timer should count down to, using the following date "
 "format: MM/DD/YYYY"
 msgstr ""
 
-#: inc/admin/options-init.php:2621
+#: inc/admin/options-init.php:2695
 msgid "Featured Content"
 msgstr ""
 
-#: inc/admin/options-init.php:2627
+#: inc/admin/options-init.php:2701
 msgid "Enable Featured Content"
 msgstr ""
 
-#: inc/admin/options-init.php:2628
+#: inc/admin/options-init.php:2702
 msgid "Enable a featured content section on your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2637
+#: inc/admin/options-init.php:2711
 msgid "Section Title"
 msgstr ""
 
-#: inc/admin/options-init.php:2638
+#: inc/admin/options-init.php:2712
 msgid "Enter a title for your featured content section."
 msgstr ""
 
-#: inc/admin/options-init.php:2639
+#: inc/admin/options-init.php:2713
 msgid "Subscribe Title"
 msgstr ""
 
-#: inc/admin/options-init.php:2645
+#: inc/admin/options-init.php:2719
 msgid "Section Content"
 msgstr ""
 
-#: inc/admin/options-init.php:2646
+#: inc/admin/options-init.php:2720
 msgid "You can use shortcodes in this content."
 msgstr ""
 
-#: inc/admin/options-init.php:2669
+#: inc/admin/options-init.php:2743
 msgid "Enable Social Links"
 msgstr ""
 
-#: inc/admin/options-init.php:2670
+#: inc/admin/options-init.php:2744
 msgid "Show links to your social networks on your maintenance mode page."
 msgstr ""
 
-#: inc/admin/options-init.php:2689
+#: inc/admin/options-init.php:2763
 msgid "Custom Codes"
 msgstr ""
 
-#: inc/admin/options-init.php:2697
+#: inc/admin/options-init.php:2771
 msgid "Tracking Code"
 msgstr ""
 
-#: inc/admin/options-init.php:2698
+#: inc/admin/options-init.php:2772
 msgid ""
 "Paste your Google Analytics (or other) tracking code here. This will be "
 "added before the closing of body tag."
 msgstr ""
 
-#: inc/admin/options-init.php:2713
+#: inc/admin/options-init.php:2787
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:261
 msgid "CSS"
 msgstr ""
 
-#: inc/admin/options-init.php:2714
+#: inc/admin/options-init.php:2788
 msgid ""
 "Quickly add some CSS here to make design adjustments. It is a much better "
 "solution then manually editing the theme. You may also consider using a "
 "child theme."
 msgstr ""
 
-#: inc/admin/options-init.php:2731
+#: inc/admin/options-init.php:2805
 msgid "JavaScript"
 msgstr ""
 
-#: inc/admin/options-init.php:2732
+#: inc/admin/options-init.php:2806
 msgid ""
 "Quickly add some JavaScript code here. It is a much better solution then "
 "manually editing the theme. You may also consider using a child theme."
 msgstr ""
 
-#: inc/admin/options-init.php:2751
+#: inc/admin/options-init.php:2825
 msgid "Minify Assets"
 msgstr ""
 
-#: inc/admin/options-init.php:2760
+#: inc/admin/options-init.php:2834
 msgid "Minify CSS"
 msgstr ""
 
-#: inc/admin/options-init.php:2761
+#: inc/admin/options-init.php:2835
 msgid ""
 "By default the theme loads stylesheets that are not minified. You can "
 "enable this setting to instead load minified and combined stylesheets."
 msgstr ""
 
-#: inc/admin/options-init.php:2769
+#: inc/admin/options-init.php:2843
 msgid "Minify JavaScript"
 msgstr ""
 
-#: inc/admin/options-init.php:2770
+#: inc/admin/options-init.php:2844
 msgid ""
 "By default the theme loads scripts that are not minified. You can enable "
 "this setting to instead load minified and combined JS files."
 msgstr ""
 
-#: inc/admin/options-init.php:2780
+#: inc/admin/options-init.php:2854
 msgid "Import / Export"
 msgstr ""
 
-#: inc/admin/options-init.php:2812
+#: inc/admin/options-init.php:2886
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin/options-init.php:2813
+#: inc/admin/options-init.php:2887
 #: inc/lib/buddyboss-updater/includes/functions.php:124
 msgid "BuddyBoss Theme"
 msgstr ""
 
-#: inc/admin/options-init.php:2864
+#: inc/admin/options-init.php:2939
 msgid "Follow BuddyBoss on YouTube"
 msgstr ""
 
-#: inc/admin/options-init.php:2869
+#: inc/admin/options-init.php:2944
 msgid "Follow BuddyBoss on Twitter"
 msgstr ""
 
-#: inc/admin/options-init.php:2874
+#: inc/admin/options-init.php:2949
 msgid "Like BuddyBoss on Facebook"
 msgstr ""
 
-#: inc/admin/options-init.php:2884
+#: inc/admin/options-init.php:2959
 msgid ""
 "<p>To access any of your saved options from within your code you can use "
 "your global variable: <strong>$%1$s</strong></p>"
 msgstr ""
 
-#: inc/admin/options-init.php:2886
+#: inc/admin/options-init.php:2961
 msgid ""
 "<p>This text is displayed above the options panel. It isn't required, but "
 "more info is always better! The intro_text field accepts all HTML.</p>"
@@ -3147,7 +3197,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:512
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:704
 #: inc/plugins/elementor/widgets/bb-forums.php:416
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:559
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:766
 #: inc/plugins/elementor/widgets/bb-tabs.php:602
 #: inc/plugins/elementor/widgets/bb-tabs.php:1211
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:619
@@ -3706,8 +3756,8 @@ msgstr ""
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:119
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:129
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:663
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:148
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:160
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:169
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:184
 #: inc/plugins/elementor/widgets/bb-review.php:317
 #: inc/plugins/elementor/widgets/bb-review.php:369
 #: inc/plugins/elementor/widgets/bb-review.php:383
@@ -3731,8 +3781,8 @@ msgstr ""
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:120
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:130
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:398
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:149
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:161
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:170
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:185
 #: inc/plugins/elementor/widgets/bb-review.php:316
 #: inc/plugins/elementor/widgets/bb-review.php:368
 #: inc/plugins/elementor/widgets/bb-review.php:382
@@ -3873,7 +3923,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:349
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:88
 #: inc/plugins/elementor/widgets/bb-forums.php:88
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:84
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:92
 #: inc/plugins/elementor/widgets/bb-review.php:104
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:110
 #: inc/plugins/elementor/widgets/members/bb-members.php:106
@@ -3881,7 +3931,8 @@ msgid "Layout"
 msgstr ""
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:186
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:98
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:113
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:712
 #: inc/plugins/elementor/widgets/bb-tabs.php:404
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:993
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1036
@@ -3949,7 +4000,7 @@ msgid "Avatar Border Style"
 msgstr ""
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:353
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:281
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:341
 #: inc/plugins/elementor/widgets/bb-review.php:478
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1089
 #: inc/plugins/elementor/widgets/members/bb-members.php:377
@@ -3957,21 +4008,21 @@ msgid "Solid"
 msgstr ""
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:354
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:283
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:343
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1091
 #: inc/plugins/elementor/widgets/members/bb-members.php:379
 msgid "Dotted"
 msgstr ""
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:355
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:282
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:342
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1090
 #: inc/plugins/elementor/widgets/members/bb-members.php:378
 msgid "Dashed"
 msgstr ""
 
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:356
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:284
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:344
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1092
 #: inc/plugins/elementor/widgets/members/bb-members.php:380
 msgid "Double"
@@ -4409,7 +4460,7 @@ msgid "Icon Picker"
 msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/loader.php:240
-#: inc/plugins/learndash-helper.php:1027 inc/plugins/lifterlms-helper.php:1221
+#: inc/plugins/learndash-helper.php:1027 inc/plugins/lifterlms-helper.php:1226
 msgid "All Categories"
 msgstr ""
 
@@ -4811,7 +4862,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:282
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:219
 #: inc/plugins/elementor/widgets/bb-forums.php:225
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:241
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:286
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:350
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:453
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:440
@@ -4998,7 +5049,7 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:839
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:844
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:849
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:92
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:103
 msgid "Circle"
 msgstr ""
 
@@ -5169,7 +5220,6 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:944
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:949
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:421
-#: template-parts/author-box.php:33
 msgid "Comments"
 msgstr ""
 
@@ -6013,15 +6063,6 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1548
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:886
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:891
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1974
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1979
-#: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:836
-msgid "List"
-msgstr ""
-
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1553
 msgid "List Number"
 msgstr ""
@@ -6456,7 +6497,7 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1988
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2639
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1151
-#: inc/theme/login.php:177 lifterlms/content-certificate.php:50
+#: inc/theme/login.php:177 lifterlms/certificates/actions.php:33
 msgid "Save"
 msgstr ""
 
@@ -8320,7 +8361,7 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2474
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1076
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:588
-#: lifterlms/content-certificate.php:44
+#: lifterlms/certificates/actions.php:26
 msgid "Print"
 msgstr ""
 
@@ -8793,6 +8834,7 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:184
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:416
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1039
+#: inc/plugins/lifterlms-helper.php:2109
 msgid "Dashboard"
 msgstr ""
 
@@ -11758,7 +11800,7 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-activity.php:265
 #: inc/plugins/elementor/widgets/bb-forums.php:192
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:180
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:213
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:205
 #: inc/plugins/elementor/widgets/members/bb-members.php:263
 msgid "Heading Text"
@@ -11766,7 +11808,7 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-activity.php:271
 #: inc/plugins/elementor/widgets/bb-forums.php:198
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:186
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:219
 #: inc/plugins/elementor/widgets/groups/bb-groups.php:211
 #: inc/plugins/elementor/widgets/members/bb-members.php:269
 msgid "Enter heading text"
@@ -11815,7 +11857,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:239
 #: inc/plugins/elementor/widgets/bb-forums.php:245
 #: inc/plugins/elementor/widgets/bb-forums.php:341
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:319
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:393
 #: inc/plugins/elementor/widgets/bb-review.php:675
 #: inc/plugins/elementor/widgets/bb-review.php:780
 #: inc/plugins/elementor/widgets/bb-tabs.php:460
@@ -11889,8 +11931,8 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:474
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:829
 #: inc/plugins/elementor/widgets/bb-forums.php:374
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:337
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:651
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:420
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:891
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:481
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:531
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:581
@@ -11923,10 +11965,6 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:43
 msgid "Dashboard Grid"
-msgstr ""
-
-#: inc/plugins/elementor/widgets/bb-dashboard-grid.php:91
-msgid "Grid"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:101
@@ -12057,7 +12095,7 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:554
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:746
 #: inc/plugins/elementor/widgets/bb-forums.php:438
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:589
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:808
 #: inc/plugins/elementor/widgets/bb-tabs.php:633
 #: inc/plugins/elementor/widgets/bb-tabs.php:1253
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:661
@@ -12092,8 +12130,8 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:561
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:711
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:753
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:563
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:593
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:773
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:815
 #: inc/plugins/elementor/widgets/bb-tabs.php:438
 #: inc/plugins/elementor/widgets/bb-tabs.php:540
 #: inc/plugins/elementor/widgets/bb-tabs.php:569
@@ -12166,9 +12204,9 @@ msgstr ""
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:583
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:733
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:775
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:310
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:579
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:609
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:379
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:795
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:837
 #: inc/plugins/elementor/widgets/bb-tabs.php:1229
 #: inc/plugins/elementor/widgets/bb-tabs.php:1271
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:648
@@ -12282,8 +12320,8 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:150
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:177
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:214
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:230
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:253
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:272
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:231
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:258
 msgid "Enter button text"
@@ -12342,7 +12380,7 @@ msgid "Excerpt"
 msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:497
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:549
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:701
 #: inc/plugins/elementor/widgets/bb-tabs.php:580
 #: inc/plugins/elementor/widgets/bb-tabs.php:1189
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:604
@@ -12358,7 +12396,8 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:616
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:684
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:107
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:122
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:721
 #: inc/plugins/elementor/widgets/bb-tabs.php:413
 #: inc/plugins/elementor/widgets/bb-tabs.php:879
 #: inc/plugins/elementor/widgets/bb-tabs.php:962
@@ -12376,7 +12415,7 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:632
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:799
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:627
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:861
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:739
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1254
 msgid "Button Padding"
@@ -12384,7 +12423,7 @@ msgstr ""
 
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:651
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:818
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:643
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:880
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:758
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1273
 msgid "Button Border"
@@ -12450,52 +12489,56 @@ msgstr ""
 msgid "Start a Discussion"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:38
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:40
 msgid "Profile Completion"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:88
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:99
 #: inc/plugins/elementor/widgets/courses/bb-lms-courses.php:142
 msgid "Skin"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:93
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:104
 msgid "Linear"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:136
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:105
+msgid "Semicircle"
+msgstr ""
+
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:155
 #: template-parts/header-profile-menu.php:33
 msgid "Profile Photo"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:139
-#: inc/plugins/learndash-helper.php:532 inc/plugins/lifterlms-helper.php:1517
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:158
+#: inc/plugins/learndash-helper.php:532 inc/plugins/lifterlms-helper.php:1526
 #: template-parts/header-profile-menu.php:38
 msgid "Cover Photo"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:167
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:194
 msgid "Hide Widget"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:168
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:195
 msgid "Hide widget once progress hits 100%"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:174
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:204
 msgid "Profile Complete Button"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:185
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:218
 msgid "Complete your profile"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:195
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:231
 msgid "Completion Text"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:200
-#: inc/plugins/lifterlms-helper.php:1564 inc/plugins/lifterlms-helper.php:1636
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:236
+#: inc/plugins/lifterlms-helper.php:1573 inc/plugins/lifterlms-helper.php:1645
 #: lifterlms/assignment/template-single-assignment-content.php:72
 #: lifterlms/course/course-index-loop.php:58
 #: lifterlms/lesson/template-single-lesson-content.php:121
@@ -12503,122 +12546,123 @@ msgstr ""
 msgid "Complete"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:201
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:237
 msgid "Enter completion text"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:207
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:246
 msgid "Complete Profile Button Text"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:208
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:247
 msgid "Button text if progress is less than 100%"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:213
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:252
 msgid "Complete Profile"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:223
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:265
 msgid "Edit Profile Button Text"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:224
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:266
 msgid "Button text once progress hits 100%"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:249
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:297
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:740
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1062
 msgid "Width"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:277
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:337
 #: inc/plugins/elementor/widgets/members/bb-members.php:373
 msgid "Border Type"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:290
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:353
 #: inc/plugins/elementor/widgets/header-bar/bb-header-bar.php:1101
 msgid "Border Width"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:332
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:412
 msgid "Progress Graph"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:353
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:442
 msgid "Progress Graph Border Width"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:378
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:471
 msgid "Typography Heading"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:387
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:542
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:483
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:691
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:1109
 msgid "Typography Progress Value"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:396
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:495
 msgid "Typography Progress Info"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:405
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:507
 msgid "Typography Progress Data"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:413
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:433
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:518
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:544
 msgid "Details Completion Background Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:445
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:559
 msgid "Heading Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:457
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:574
 msgid "Completion Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:469
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:590
 msgid "Incomplete Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:479
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:603
 msgid "Progress Border Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:490
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:618
 msgid "Progress Number Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:498
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:629
 msgid "Progress Text Color"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:509
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:643
 msgid "Details Dropdown"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:514
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:651
 msgid "Show Header"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:523
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:663
 msgid "Show Completion Icon"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:529
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:672
 msgid "Show Completion Status"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:536
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:682
 msgid "Details Container Shadow"
 msgstr ""
 
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:743
-#: inc/plugins/elementor/widgets/bb-profile-completion.php:757
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:1005
+#: inc/plugins/elementor/widgets/bb-profile-completion.php:1020
 #: inc/plugins/elementor/widgets/courses/templates/learndash-activity-template.php:122
 #: inc/plugins/elementor/widgets/courses/templates/lifterlms-activity-template.php:109
 msgid "%"
@@ -13742,19 +13786,19 @@ msgid ""
 "course price box."
 msgstr ""
 
-#: inc/plugins/learndash-helper.php:1164 inc/plugins/lifterlms-helper.php:548
+#: inc/plugins/learndash-helper.php:1164 inc/plugins/lifterlms-helper.php:553
 msgid "All Instructors"
 msgstr ""
 
-#: inc/plugins/learndash-helper.php:1260 inc/plugins/lifterlms-helper.php:522
+#: inc/plugins/learndash-helper.php:1260 inc/plugins/lifterlms-helper.php:527
 msgid "Alphabetical"
 msgstr ""
 
-#: inc/plugins/learndash-helper.php:1261 inc/plugins/lifterlms-helper.php:523
+#: inc/plugins/learndash-helper.php:1261 inc/plugins/lifterlms-helper.php:528
 msgid "Newly Created"
 msgstr ""
 
-#: inc/plugins/learndash-helper.php:1265 inc/plugins/lifterlms-helper.php:527
+#: inc/plugins/learndash-helper.php:1265 inc/plugins/lifterlms-helper.php:532
 msgid "My Progress"
 msgstr ""
 
@@ -13762,16 +13806,16 @@ msgstr ""
 msgid "RESUME"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:869
+#: inc/plugins/lifterlms-helper.php:874
 msgid "Sorry, no memberships were found."
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1549
+#: inc/plugins/lifterlms-helper.php:1558
 #: learndash/ld30/template-single-course-sidebar.php:149
 msgid "Continue"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1564
+#: inc/plugins/lifterlms-helper.php:1573
 #: learndash/ld30/learndash-sidebar.php:219
 #: learndash/ld30/learndash-sidebar.php:279
 #: learndash/ld30/learndash-sidebar.php:310
@@ -13784,15 +13828,15 @@ msgstr ""
 msgid "Completed"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1614
+#: inc/plugins/lifterlms-helper.php:1623
 msgid "Steps"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1616
+#: inc/plugins/lifterlms-helper.php:1625
 msgid "Last activity on"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1639
+#: inc/plugins/lifterlms-helper.php:1648
 #: lifterlms/assignment/template-single-assignment-content.php:75
 #: lifterlms/course/course-index-loop.php:65
 #: lifterlms/lesson/template-single-lesson-content.php:123
@@ -13800,36 +13844,40 @@ msgstr ""
 msgid "In Progress"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1738
+#: inc/plugins/lifterlms-helper.php:1747
 msgid "What Others Have Said"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1824 inc/plugins/lifterlms-helper.php:1879
+#: inc/plugins/lifterlms-helper.php:1833 inc/plugins/lifterlms-helper.php:1888
 msgid "Thank you for your review!"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1833
+#: inc/plugins/lifterlms-helper.php:1842
 msgid "Write a Review"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1856
+#: inc/plugins/lifterlms-helper.php:1865
 msgid "Review Title"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1858
+#: inc/plugins/lifterlms-helper.php:1867
 msgid "Review Title is required."
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1860
+#: inc/plugins/lifterlms-helper.php:1869
 msgid "Review Text"
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1863
+#: inc/plugins/lifterlms-helper.php:1872
 msgid "Review Text is required."
 msgstr ""
 
-#: inc/plugins/lifterlms-helper.php:1869
+#: inc/plugins/lifterlms-helper.php:1878
 msgid "Leave Review"
+msgstr ""
+
+#: inc/plugins/lifterlms-helper.php:2109
+msgid "All certificates"
 msgstr ""
 
 #: inc/plugins/woocommerce-helper.php:150
@@ -14021,7 +14069,7 @@ msgstr ""
 msgid "Add new password"
 msgstr ""
 
-#: inc/theme/login.php:171 inc/theme/login.php:693
+#: inc/theme/login.php:171 inc/theme/login.php:714
 msgid "Retype new password"
 msgstr ""
 
@@ -14057,11 +14105,11 @@ msgstr ""
 msgid "Sign in"
 msgstr ""
 
-#: inc/theme/login.php:674
+#: inc/theme/login.php:695
 msgid "Forgot Password?"
 msgstr ""
 
-#: inc/theme/login.php:702
+#: inc/theme/login.php:723
 msgid "The passwords do not match."
 msgstr ""
 
@@ -14928,6 +14976,18 @@ msgstr ""
 msgid "How's it going?"
 msgstr ""
 
+#: lifterlms/certificates/actions.php:39
+msgid "Disable sharing"
+msgstr ""
+
+#: lifterlms/certificates/actions.php:39
+msgid "Enable sharing"
+msgstr ""
+
+#: lifterlms/certificates/content-legacy.php:20
+msgid "Certificate Background"
+msgstr ""
+
 #: lifterlms/certificates/loop.php:33
 msgid "You do not have any certificates yet."
 msgstr ""
@@ -14938,18 +14998,6 @@ msgstr ""
 
 #: lifterlms/certificates/preview.php:30
 msgid "Earned on"
-msgstr ""
-
-#: lifterlms/content-certificate.php:55
-msgid "Disable sharing"
-msgstr ""
-
-#: lifterlms/content-certificate.php:55
-msgid "Enable sharing"
-msgstr ""
-
-#: lifterlms/content-certificate.php:69
-msgid "Back to My Certificates"
 msgstr ""
 
 #: lifterlms/course/author.php:23
@@ -15092,7 +15140,7 @@ msgstr ""
 
 #: lifterlms/myaccount/view-order.php:49
 #: woocommerce/checkout/review-order.php:23
-#: woocommerce/order/order-details-item.php:34
+#: woocommerce/order/order-details-item.php:35
 #: woocommerce/order/order-details.php:53
 msgid "Product"
 msgstr ""
@@ -15124,7 +15172,7 @@ msgstr ""
 #: woocommerce/checkout/review-order.php:132
 #: woocommerce/myaccount/dashboard.php:80
 #: woocommerce/myaccount/my-orders.php:17
-#: woocommerce/order/order-details-item.php:63
+#: woocommerce/order/order-details-item.php:64
 #: woocommerce/order/order-details.php:55
 msgid "Total"
 msgstr ""
@@ -15260,7 +15308,7 @@ msgstr ""
 #: paid-memberships-pro/pages/account.php:155
 #: woocommerce/order/order-details-customer.php:35
 #: woocommerce/order/order-details-customer.php:57
-#: woocommerce/order/order-details-item.php:56
+#: woocommerce/order/order-details-item.php:57
 #: woocommerce/single-product/meta.php:39
 msgid "N/A"
 msgstr ""
@@ -15290,26 +15338,12 @@ msgstr ""
 msgid "<span>Built by </span><a href=\"%s\">BuddyBoss</a><span>.</span>"
 msgstr ""
 
-#: template-parts/author-box.php:8
-msgid "Show your support"
-msgstr ""
-
-#: template-parts/author-box.php:23 template-parts/entry-meta.php:43
-#: template-parts/entry-meta.php:72 template-parts/share.php:15
-msgid "Like this entry"
-msgstr ""
-
-#: template-parts/author-box.php:24 template-parts/entry-meta.php:44
-#: template-parts/entry-meta.php:73 template-parts/share.php:16
-msgid "Remove like"
-msgstr ""
-
-#: template-parts/author-box.php:55 template-parts/bookmarks-shortcode.php:62
+#: template-parts/bookmarks-shortcode.php:62 template-parts/content.php:248
 #: template-parts/entry-meta.php:99 template-parts/share.php:39
 msgid "Bookmark this story to read later"
 msgstr ""
 
-#: template-parts/author-box.php:56 template-parts/bookmarks-shortcode.php:63
+#: template-parts/bookmarks-shortcode.php:63 template-parts/content.php:249
 #: template-parts/entry-meta.php:100 template-parts/share.php:40
 msgid "Remove bookmark"
 msgstr ""
@@ -15399,16 +15433,38 @@ msgstr ""
 msgid "No Results"
 msgstr ""
 
-#: template-parts/content.php:176
+#: template-parts/content.php:179
 msgid "Categories: "
 msgstr ""
 
-#: template-parts/content.php:177 template-parts/content.php:185
+#: template-parts/content.php:180 template-parts/content.php:188
 msgid ", "
 msgstr ""
 
-#: template-parts/content.php:184
-msgid "Tagged: "
+#: template-parts/content.php:187
+msgid "Tags: "
+msgstr ""
+
+#: template-parts/content.php:196
+msgid "Show your support"
+msgstr ""
+
+#: template-parts/content.php:201
+msgid "Liking shows how much you appreciated %1$s’s story."
+msgstr ""
+
+#: template-parts/content.php:218 template-parts/entry-meta.php:43
+#: template-parts/entry-meta.php:72 template-parts/share.php:15
+msgid "Like this entry"
+msgstr ""
+
+#: template-parts/content.php:219 template-parts/entry-meta.php:44
+#: template-parts/entry-meta.php:73 template-parts/share.php:16
+msgid "Remove like"
+msgstr ""
+
+#: template-parts/content.php:227
+msgid "View Comments"
 msgstr ""
 
 #: template-parts/header-aside.php:145
@@ -15595,7 +15651,7 @@ msgstr ""
 msgid "Related Jobs"
 msgstr ""
 
-#: template-parts/related-posts.php:9
+#: template-parts/related-posts.php:10
 msgid "Related Articles"
 msgstr ""
 
@@ -15607,53 +15663,53 @@ msgstr ""
 msgid "Deleted Group"
 msgstr ""
 
-#: template-parts/unread-messages.php:309
+#: template-parts/unread-messages.php:316
 msgid "Deleted User"
 msgstr ""
 
-#: template-parts/unread-messages.php:314
-#: template-parts/unread-messages.php:408
+#: template-parts/unread-messages.php:321
+#: template-parts/unread-messages.php:415
 msgid "Suspended Member"
 msgstr ""
 
-#: template-parts/unread-messages.php:316
-#: template-parts/unread-messages.php:410
+#: template-parts/unread-messages.php:323
+#: template-parts/unread-messages.php:417
 msgid "Blocked Member"
 msgstr ""
 
-#: template-parts/unread-messages.php:348
+#: template-parts/unread-messages.php:355
 msgid "sent a photo"
 msgstr ""
 
-#: template-parts/unread-messages.php:350
+#: template-parts/unread-messages.php:357
 msgid "sent some photos"
 msgstr ""
 
-#: template-parts/unread-messages.php:362
+#: template-parts/unread-messages.php:369
 msgid "sent a video"
 msgstr ""
 
-#: template-parts/unread-messages.php:364
+#: template-parts/unread-messages.php:371
 msgid "sent some videos"
 msgstr ""
 
-#: template-parts/unread-messages.php:376
+#: template-parts/unread-messages.php:383
 msgid "sent a document"
 msgstr ""
 
-#: template-parts/unread-messages.php:378
+#: template-parts/unread-messages.php:385
 msgid "sent some documents"
 msgstr ""
 
-#: template-parts/unread-messages.php:387
+#: template-parts/unread-messages.php:394
 msgid "sent a gif"
 msgstr ""
 
-#: template-parts/unread-messages.php:401
+#: template-parts/unread-messages.php:408
 msgid "You"
 msgstr ""
 
-#: template-parts/unread-messages.php:427
+#: template-parts/unread-messages.php:434
 msgid "You have no messages right now."
 msgstr ""
 
@@ -16022,17 +16078,17 @@ msgstr ""
 msgid "l jS \\o\\f F Y, h:ia"
 msgstr ""
 
-#: woocommerce/order/order-details-item.php:56
+#: woocommerce/order/order-details-item.php:57
 #: woocommerce/single-product/meta.php:39
 msgid "SKU:"
 msgstr ""
 
-#: woocommerce/order/order-details-item.php:59
+#: woocommerce/order/order-details-item.php:60
 #: woocommerce/order/order-details.php:54
 msgid "Qty"
 msgstr ""
 
-#: woocommerce/order/order-details-item.php:73
+#: woocommerce/order/order-details-item.php:74
 msgid "Notes"
 msgstr ""
 

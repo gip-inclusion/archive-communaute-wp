@@ -118,6 +118,7 @@ function bb_theme_kses_allowed_tags() {
 			'span'   => array(
 				'class' => array(),
 				'id'    => array(),
+				'style' => array(),
 			),
 
 			// Formatting.
