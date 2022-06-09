@@ -51,7 +51,7 @@ class Betterdocs_Pro_Admin
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		if (BetterDocs_Multiple_Kb::$enable == 1) {
-			add_action('betterdocs_admin_menu', array($this, 'add_multiple_kb_menu'));
+			add_filter('betterdocs_admin_menu', array($this, 'add_multiple_kb_menu'), 10, 1);
 		}
 		add_action('wp_ajax_update_doc_cat_order', array($this, 'update_doc_cat_order'));
 		add_action('wp_ajax_update_doc_order_by_category', array($this, 'update_doc_order_by_category'));
@@ -60,12 +60,9 @@ class Betterdocs_Pro_Admin
 		add_action('betterdocs_single_post_nav', array($this, 'single_post_nav'));
         add_filter('betterdocs_highlight_admin_menu', array($this, 'highlight_admin_menu'), 1);
         add_filter('betterdocs_highlight_admin_submenu', array($this, 'highlight_admin_submenu'), 1);
-
-		$alphabetically_order_post = BetterDocs_DB::get_settings('alphabetically_order_post');
-		if ($alphabetically_order_post != 1) {
-			add_filter('betterdocs_articles_args', array($this, 'docs_args'), 11, 2);
-		}
+		add_filter('betterdocs_articles_args', array($this, 'docs_args'), 11, 2);
 		add_action('new_to_auto-draft', array($this, 'auto_add_category'));
+		add_filter('betterdocs_advanced_settings_sections', array( $this, 'enable_internal_kb_fields' ), 10, 1 );
 	}
 
     public function body_classes($classes)
@@ -180,14 +177,16 @@ class Betterdocs_Pro_Admin
 	 * @return void
 	 */
 
-	public function add_multiple_kb_menu($pages)
-	{
-
-		$pages['edit-tags.php?taxonomy=knowledge_base&post_type=docs'] = array(
-			'title'      => __('Multiple KB', 'betterdocs-pro'),
-			'callback'   => ''
+	public function add_multiple_kb_menu($pages) {
+		$pages['mkb'] = array(
+			'parent_slug' => 'betterdocs-admin',
+			'page_title'  => 'Multiple KB',
+			'menu_title'  => 'Multiple KB',
+			'text_domain' => 'betterdocs-pro',
+			'capability'  => 'manage_knowledge_base_terms',
+			'menu_slug'   => 'edit-tags.php?taxonomy=knowledge_base&post_type=docs',
+			'callback'    => ''
 		);
-
 		return $pages;
 	}
 
@@ -249,9 +248,9 @@ class Betterdocs_Pro_Admin
 
 
 	/**
-	 * 
+	 *
 	 * AJAX Handler to update terms' tax position.
-	 * 
+	 *
 	 */
 	public function update_doc_cat_order()
 	{
@@ -331,6 +330,15 @@ class Betterdocs_Pro_Admin
 		wp_send_json_error();
 	}
 
+	public function enable_internal_kb_fields( $settings ) {
+		unset( $settings['internal_kb_section']['fields']['enable_content_restriction']['disable'] );
+		unset( $settings['internal_kb_section']['fields']['content_visibility']['disable'] );
+		unset( $settings['internal_kb_section']['fields']['restrict_template']['disable'] );
+		unset( $settings['internal_kb_section']['fields']['restrict_category']['disable'] );
+		unset( $settings['internal_kb_section']['fields']['restricted_redirect_url']['disable'] );
+		return $settings;
+	}
+
 	/**
 	 * Update docs_term meta when new post created
 	 */
@@ -358,10 +366,10 @@ class Betterdocs_Pro_Admin
 		}
 	}
 
-	/** 
-	 * 
+	/**
+	 *
 	 * Update docs query arguments
-	 * 
+	 *
 	 */
 
 	public function docs_args($args, $term_id = null)
