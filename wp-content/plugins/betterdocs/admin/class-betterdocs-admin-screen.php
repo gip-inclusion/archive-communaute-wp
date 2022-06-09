@@ -21,6 +21,71 @@ class Betterdocs_Admin_Screen
         return $columns;
     }
 
+    public function betterdocs_menu_list() {
+        $betterdocs_admin_pages = array(
+            'betterdocs' => array(
+                'page_title' => 'BetterDocs',
+                'menu_title' => 'BetterDocs',
+                'capability' => 'edit_docs',
+                'menu_slug'  => $this->menu_slug,
+                'callback'   => $this->betterdocs_admin_output(),
+                'icon_url'   =>  BETTERDOCS_ADMIN_URL.'/assets/img/betterdocs-icon-white.svg',
+                'position'   => 5
+            ),
+            'all_docs' => array(
+                'parent_slug' =>  $this->menu_slug,
+                'page_title'  => 'All Docs',
+                'menu_title'  => 'All Docs',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'edit_docs',
+                'menu_slug'   => $this->menu_slug
+            ),
+            'add_new' => array(
+                'parent_slug' =>  $this->menu_slug,
+                'page_title'  => 'Add New',
+                'menu_title'  => 'Add New',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'edit_docs',
+                'menu_slug'   => 'post-new.php?post_type=docs'
+            ),
+            'categories' => array(
+                'parent_slug' => $this->menu_slug,
+                'page_title'  => 'Categories',
+                'menu_title'  => 'Categories',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'manage_doc_terms',
+                'menu_slug'   => 'edit-tags.php?taxonomy=doc_category&post_type=docs'
+            ),
+            'tags' => array(
+                'parent_slug' => $this->menu_slug,
+                'page_title'  => 'Tags',
+                'menu_title'  => 'Tags',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'manage_doc_terms',
+                'menu_slug'   => 'edit-tags.php?taxonomy=doc_tag&post_type=docs'
+            ),
+            'quick_setup' => array(
+                'parent_slug' => $this->menu_slug,
+                'page_title'  => 'Quick Setup',
+                'menu_title'  => 'Quick Setup',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'delete_users',
+                'menu_slug'   => 'betterdocs-setup',
+                'callback'    => array( new BetterDocsSetupWizard(), 'plugin_setting_page' )
+            ),
+            'settings' => array(
+                'parent_slug' => $this->menu_slug,
+                'page_title'  => 'Settings',
+                'menu_title'  => 'Settings',
+                'text_domain' => 'betterdocs',
+                'capability'  => 'edit_docs_settings',
+                'menu_slug'   => 'betterdocs-settings',
+                'callback'    => array( new betterdocs_settings(), 'settings_page' )
+            ),
+        );
+        return apply_filters( 'betterdocs_admin_menu' ,$betterdocs_admin_pages );
+    }
+
     /**
      * Admin Menu Page
      *
@@ -28,57 +93,27 @@ class Betterdocs_Admin_Screen
      */
     public function menu_page()
     {
-        $settings_class = new betterdocs_settings();
-        $singular_name = BetterDocs_DB::get_settings('breadcrumb_doc_title');
-
-        $betterdocs_articles_caps = apply_filters( 'betterdocs_articles_caps', 'edit_posts', 'article_roles' );
-        $betterdocs_terms_caps = apply_filters( 'betterdocs_terms_caps', 'delete_others_posts', 'article_roles' );
-        $betterdocs_settings_caps = apply_filters( 'betterdocs_settings_caps', 'administrator', 'settings_roles' );
-
-        $settings = apply_filters( 'betterdocs_admin_menu', array(
-            'betterdocs-setup'   => array(
-                'title'      => __('Quick Setup', 'betterdocs'),
-                'capability' => 'delete_users',
-                'callback'   => 'BetterDocsSetupWizard::plugin_setting_page'
-            ),
-            'betterdocs-settings'   => array(
-                'title'      => __('Settings', 'betterdocs'),
-                'capability' => $betterdocs_settings_caps,
-                'callback'   => array( $settings_class, 'settings_page' )
-            ),
-        ) );
-
-        //$betterdocs_admin_output = apply_filters( 'betterdocs_admin_output', array() );
-        $betterdocs_admin_output = $this->betterdocs_admin_output();
-
-        add_menu_page(
-            'BetterDocs', 'BetterDocs',
-            $betterdocs_articles_caps, $this->menu_slug, $betterdocs_admin_output,
-            BETTERDOCS_ADMIN_URL.'/assets/img/betterdocs-icon-white.svg', 5
-        );
-        add_submenu_page(
-            $this->menu_slug, '',
-            __( 'All Docs', 'betterdocs' ),
-            $betterdocs_articles_caps, $this->menu_slug
-        );
-        add_submenu_page(
-            $this->menu_slug, __('Add New', 'betterdocs'),
-            __('Add New', 'betterdocs'),
-            $betterdocs_articles_caps,
-            'post-new.php?post_type=docs'
-        );
-        add_submenu_page(
-            $this->menu_slug, __('Categories', 'betterdocs'), __('Categories', 'betterdocs'),
-            $betterdocs_terms_caps, 'edit-tags.php?taxonomy=doc_category&post_type=docs'
-        );
-        add_submenu_page(
-            $this->menu_slug, __('Tags', 'betterdocs'), __('Tags', 'betterdocs'),
-            $betterdocs_terms_caps, 'edit-tags.php?taxonomy=doc_tag&post_type=docs'
-        );
-
-        foreach( $settings as $slug => $setting ) {
-            $cap  = isset( $setting['capability'] ) ? $setting['capability'] : 'delete_users';
-            add_submenu_page( $this->menu_slug, $setting['title'], $setting['title'], $cap, $slug, $setting['callback'] );
+        foreach( $this->betterdocs_menu_list() as $key => $value ) {
+            if( $key === 'betterdocs' ) {
+                add_menu_page(
+                    $value['page_title'], $value['menu_title'],
+                    $value['capability'], $value['menu_slug'], $value['callback'],
+                    $value['icon_url'], $value['position']
+                );
+            } else {
+                $parent_slug = isset( $value['parent_slug'] ) ? $value['parent_slug'] : '';
+                $page_title  = isset( $value['page_title'] ) ? $value['page_title'] : '';
+                $text_domain = isset( $value['text_domain'] ) ? $value['text_domain'] : '';
+                $menu_title  = isset( $value['menu_title'] ) ? $value['menu_title'] : '';
+                $capability  = isset( $value['capability'] ) ? $value['capability'] : '';
+                $menu_slug   = isset( $value['menu_slug'] ) ? $value['menu_slug'] : '';
+                $callback    = isset( $value['callback'] ) ? $value['callback'] : '';
+                add_submenu_page(
+                    $parent_slug, __( $page_title, $text_domain ),
+                    __( $menu_title, $text_domain ), $capability,
+                    $menu_slug, $callback
+                );
+            }
         }
     }
 

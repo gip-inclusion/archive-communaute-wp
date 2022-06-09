@@ -116,14 +116,6 @@ class BetterDocs_Elementor
                 BETTERDOCS_VERSION
             );
 
-            wp_enqueue_script(
-                'betterdocs-el-promotion',
-                BETTERDOCS_ADMIN_URL . 'assets/js/promotion.js',
-                ['jquery'],
-                BETTERDOCS_VERSION,
-                true
-            );
-
             if (!self::$pro_active) {
                 wp_enqueue_script(
                     'betterdocs-el-editor',
@@ -890,8 +882,12 @@ class BetterDocs_Elementor
 
                 $sub_args['posts_per_page'] = $settings['post_per_subcat'];
 
+                if( $settings['post_orderby'] != 'betterdocs_order' ) {
+                    $sub_args['orderby'] = $settings['post_orderby'];
+                    $sub_args['order']   = $settings['post_order'];
+                }
                 $sub_args['tax_query'] = apply_filters('betterdocs_list_tax_query_arg', $tax_query, $multiple_kb, $sub_category->slug, '');
-                $sub_args = apply_filters('betterdocs_sub_cat_articles_args', $sub_args, $sub_category->term_id);
+                $sub_args = apply_filters('betterdocs_articles_args', $sub_args, $sub_category->term_id);
                 $sub_post_query = new \WP_Query($sub_args);
                 if ($sub_post_query->have_posts()):
                     while ($sub_post_query->have_posts()): $sub_post_query->the_post();

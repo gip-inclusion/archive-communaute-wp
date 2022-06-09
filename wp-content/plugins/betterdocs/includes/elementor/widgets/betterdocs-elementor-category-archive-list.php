@@ -44,7 +44,7 @@ class BetterDocs_Category_Archive_List extends Widget_Base
         return 'https://betterdocs.co/docs/docs-archive-in-elementor/';
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
         $this->section_content();
         $this->list_settings();
@@ -493,6 +493,8 @@ class BetterDocs_Category_Archive_List extends Widget_Base
                 'docs',
                 $settings['alphabetic_order'],
                 $settings['order'],
+                '',
+                '',
                 '',
                 ''
             );

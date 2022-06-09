@@ -65,7 +65,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base
         return 'https://betterdocs.co/docs/betterdocs-category-grid';
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
         /**
          * Query  Controls!
@@ -1624,7 +1624,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base
                 ),
             );
 
-            $taxonomy_objects = get_terms($terms_object);
+            $taxonomy_objects = get_terms( apply_filters( 'betterdocs_category_terms_object', $terms_object ) );
 
             $html = '<div ' . $this->get_render_attribute_string('bd_category_grid_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_grid_inner') . ' data-column="' . $settings['grid_column'] . '" data-column-space="' . $settings['grid_space'] . '">';
@@ -1658,7 +1658,7 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base
 
             echo $html;
         } else {
-            $taxonomy_objects = get_terms($terms_object);
+            $taxonomy_objects = get_terms( apply_filters( 'betterdocs_category_terms_object', $terms_object ) );
 
             $html = '<div ' . $this->get_render_attribute_string('bd_category_grid_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_grid_inner') . ' data-column="' . $settings['grid_column'] . '" data-column-space="' . $settings['grid_space'] . '">';
@@ -1696,27 +1696,27 @@ class BetterDocs_Elementor_Category_Grid extends Widget_Base
 
     protected function render_editor_script()
     {
-?>
-        <script>
-            jQuery(document).ready(function($) {
-                $('.betterdocs-category-grid').each(function() {
-                    let $grid = $(this),
-                        $layout_mode = $grid.data('layout-mode'),
-                        $column = $grid.data('column'),
-                        $column_space = $grid.data('column-space');
-                    if ($layout_mode === 'masonry') {
-                        let masonryItem = $(".el-betterdocs-category-grid-post", $grid);
-                        let total_margin = $column * $column_space;
-                        masonryItem.css("width", "calc((100% - " + total_margin + "px) / " + parseInt($column) + ")");
-                        $grid.masonry({
-                            itemSelector: ".el-betterdocs-category-grid-post",
-                            percentPosition: true,
-                            gutter: $column_space
-                        });
-                    }
+        ?>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('.betterdocs-category-grid').each(function() {
+                        let $grid = $(this),
+                            $layout_mode = $grid.data('layout-mode'),
+                            $column = $grid.data('column'),
+                            $column_space = $grid.data('column-space');
+                        if ($layout_mode === 'masonry') {
+                            let masonryItem = $(".el-betterdocs-category-grid-post", $grid);
+                            let total_margin = $column * $column_space;
+                            masonryItem.css("width", "calc((100% - " + total_margin + "px) / " + parseInt($column) + ")");
+                            $grid.masonry({
+                                itemSelector: ".el-betterdocs-category-grid-post",
+                                percentPosition: true,
+                                gutter: $column_space
+                            });
+                        }
+                    });
                 });
-            });
-        </script>
-<?php
+            </script>
+        <?php
     }
 }

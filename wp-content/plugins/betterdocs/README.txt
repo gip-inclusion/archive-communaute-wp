@@ -3,9 +3,9 @@ Contributors: wpdevteam, re_enter_rupok, asif2bd, emsohel, priyomukul, manzuraha
 Donate link: https://wpdeveloper.com
 Tags:  knowledge base, docs, documentation, documents, wiki, faq page, doc, knowledge, table of content, TOC, knowledgebase, faqs, doc page, best documentation plugin, support ticket, customer support, instant answer bot, bot, help articles, better docs
 Requires at least: 4.0
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 2.0.8
+Stable tag: 2.0.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,34 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 2.0.14 - 25/05/2022 = 
+- Added: WordPress 6.0 Compatibility
+- Added: Background Image set option for Single Docs 
+- Few minor bug fixes & improvements
+
+= 2.0.13 - 19/04/2022 = 
+- Added: BetterDocs default order option for the Gutenberg blocks
+- Few minor bug fixes & improvements
+
+= 2.0.12 - 07/04/2022 = 
+- Fixed: Fatal error if a default WordPress user role doesn't exist
+
+= 2.0.11 - 07/04/2022 = 
+- Fixed: Default WordPress Role Management capabilities not working
+- Fixed: Fatal Error while processing Role Management migration
+- Few minor bug fixes & improvements
+
+= 2.0.10 - 29/03/2022 = 
+- Fixed: Role management not migrating properly
+- Few minor bug fixes & improvements
+
+= 2.0.9 - 27/03/2022 = 
+- Fixed: Ordering not working properly for Sub-categories
+- Fixed: Adding %knowledge_base% in the category page URL when WPML Language Switcher option is hit
+- Fixed: Docs tags disappearing in the List View
+- Fixed: Deprecated errors related to Elementor 3.6
+- Few minor bug fixes & improvements
 
 = 2.0.8 - 06/03/2022 = 
 - Fixed: Custom Post Type throwing 404 Page while Multiple KB is activated

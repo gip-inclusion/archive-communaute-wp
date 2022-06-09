@@ -81,6 +81,9 @@ class BetterDocs
 		$this->start_plugin_tracking();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+        if (is_admin()) {
+            new Betterdocs_Role_Management_Lite();
+        }
 		add_action('admin_init', array($this, 'redirect'));
 		add_action('wp_ajax_optin_wizard_action_betterdocs', array($this, 'wizard_action'));
 	}
@@ -128,6 +131,7 @@ class BetterDocs
 		require_once BETTERDOCS_ADMIN_DIR_PATH . 'includes/class-betterdocs-db.php';
 		require_once BETTERDOCS_ADMIN_DIR_PATH . 'includes/class-betterdocs-metabox.php';
 		require_once BETTERDOCS_ADMIN_DIR_PATH . 'includes/class-betterdocs-settings.php';
+		require_once BETTERDOCS_ADMIN_DIR_PATH . 'includes/class-betterdocs-role-management-lite.php';
 
 		/**
 		 * Notice Messages

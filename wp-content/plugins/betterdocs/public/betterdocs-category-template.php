@@ -12,8 +12,11 @@
 
 get_header();
 
-$orderby = BetterDocs_DB::get_settings('alphabetically_order_post');
-$order = BetterDocs_DB::get_settings('docs_order');
+$docs_orderby = BetterDocs_DB::get_settings('alphabetically_order_post');
+$docs_order = BetterDocs_DB::get_settings('docs_order');
+$terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
+$terms_order   = BetterDocs_DB::get_settings('terms_order');
+
 $nested_subcategory = BetterDocs_DB::get_settings('archive_nested_subcategory');
 
 global $wp_query;
@@ -32,12 +35,11 @@ $term = get_term_by('slug', $wp_query->query['doc_category'], 'doc_category');
 			echo '<aside id="betterdocs-sidebar">
 				<div class="betterdocs-sidebar-content betterdocs-category-sidebar">';
                     $output = betterdocs_generate_output();
-                    $terms_orderby = BetterDocs_DB::get_settings('terms_orderby');
                     if (BetterDocs_DB::get_settings('alphabetically_order_term') == 1) {
-                        $terms_orderby = BetterDocs_DB::get_settings('alphabetically_order_term');
+                        $terms_orderby = 'name';
                     }
-                    $shortcode = do_shortcode('[betterdocs_category_grid terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]');
-                    echo apply_filters('betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby);
+                    $shortcode = do_shortcode('[betterdocs_category_grid terms_order="'.$terms_order.'" terms_orderby="'.esc_html($terms_orderby).'" title_tag="'.BetterDocs_Helper::html_tag($output['betterdocs_sidebar_title_tag']).'" sidebar_list="true" posts_per_grid="-1"]');
+                    echo apply_filters('betterdocs_sidebar_category_shortcode', $shortcode, $terms_orderby, $terms_order);
 				echo '</div>
 			</aside>';
 		}
@@ -57,7 +59,7 @@ $term = get_term_by('slug', $wp_query->query['doc_category'], 'doc_category');
 				echo '</div>
 				<div class="docs-list">';
 					$multikb = apply_filters('betterdocs_cat_template_multikb', false);
-					$args = BetterDocs_Helper::list_query_arg('docs', $multikb, $term->slug, -1, $orderby, $order);
+					$args = BetterDocs_Helper::list_query_arg('docs', $multikb, $term->slug, -1, $docs_orderby, $docs_order);
 					$args = apply_filters('betterdocs_articles_args', $args, $term->term_id);
 					$post_query = new WP_Query($args);
 
@@ -77,7 +79,10 @@ $term = get_term_by('slug', $wp_query->query['doc_category'], 'doc_category');
 							$multikb,
 							'',
 							'docs',
+                            $docs_orderby,
+                            $docs_order,
                             $terms_orderby,
+                            $terms_order,
                             '',
                             ''
 						);

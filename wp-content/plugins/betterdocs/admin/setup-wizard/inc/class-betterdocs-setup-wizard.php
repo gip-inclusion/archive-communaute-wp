@@ -246,7 +246,7 @@ if( ! class_exists( 'BetterDocsSetupWizard' ) ){
             wp_die();
         }
         
-        public static function plugin_setting_page() {
+        public function plugin_setting_page() {
             ?> 
                 <div id="wpwrap">
                     <div class="betterdocs-settings-wrap">

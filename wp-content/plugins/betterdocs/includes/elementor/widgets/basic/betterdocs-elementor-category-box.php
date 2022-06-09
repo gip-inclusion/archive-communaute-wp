@@ -62,7 +62,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base
         return 'https://betterdocs.co/docs/betterdocs-category-box';
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
         /**
          * Query  Controls!
@@ -1240,7 +1240,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base
                 ),
             );
 
-            $taxonomy_objects = get_terms($terms_object);
+            $taxonomy_objects = get_terms( apply_filters( 'betterdocs_category_terms_object', $terms_object ) );
 
             $html  = '<div ' . $this->get_render_attribute_string('bd_category_box_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_box_inner') . '>';
@@ -1276,7 +1276,7 @@ class BetterDocs_Elementor_Category_Box extends Widget_Base
             $html .= '</div>';
             echo $html;
         } else {
-            $taxonomy_objects = get_terms($terms_object);
+            $taxonomy_objects = get_terms( apply_filters( 'betterdocs_category_terms_object', $terms_object ) );
 
             $html = '<div ' . $this->get_render_attribute_string('bd_category_box_wrapper') . '>';
             $html .= '<div ' . $this->get_render_attribute_string('bd_category_box_inner') . '>';
