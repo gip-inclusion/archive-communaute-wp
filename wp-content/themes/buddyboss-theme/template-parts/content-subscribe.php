@@ -19,11 +19,10 @@ if ( is_single() && ! is_related_posts() ) {
 				<div class="bb-subscribe-data">
 				<?php
 				if ( ! empty( $blog_shortcode ) ) {
-					echo do_shortcode( $blog_shortcode );
+					echo do_shortcode( wp_kses( $blog_shortcode, bb_theme_kses_allowed_tags() ) );
 				}
 				?>
 				</div>
-				<span class="bb-subscribe-figure"><i class="bb-icon-l bb-icon-envelope-open"></i></span>
 			</div>
 		</div>
 		<?php

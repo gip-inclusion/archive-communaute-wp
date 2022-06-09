@@ -463,6 +463,10 @@ ul.llms-notice {
   font-weight: 400;
   font-size: 15px;
 }
+.llms-button-primary:focus,
+.llms-field-button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .llms-button-primary:hover, .llms-button-primary:focus, .llms-button-primary:active,
 .llms-field-button:hover,
 .llms-field-button:focus,
@@ -481,6 +485,9 @@ ul.llms-notice {
   color: var(--bb-secondary-button-text-regular);
   border: 1px solid var(--bb-secondary-button-border-regular);
   border-radius: var(--bb-button-radius);
+}
+.llms-button-secondary:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
 }
 .llms-button-secondary:hover, .llms-button-secondary:active, .llms-button-secondary:focus {
   box-shadow: none;
@@ -1057,6 +1064,9 @@ section.llms-instructor-info .llms-author .name {
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
 }
+.llms-quiz-ui .llms-quiz-nav .button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .llms-quiz-ui .llms-quiz-nav .button:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -1066,6 +1076,9 @@ section.llms-instructor-info .llms-author .name {
   background-color: var(--bb-secondary-button-background-regular);
   color: var(--bb-secondary-button-text-regular);
   border: 1px solid var(--bb-secondary-button-border-regular);
+}
+.llms-quiz-ui .llms-quiz-nav .button.llms-button-secondary:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
 }
 .llms-quiz-ui .llms-quiz-nav .button.llms-button-secondary:hover {
   background-color: var(--bb-secondary-button-background-hover);
@@ -1749,6 +1762,9 @@ body:not(.logged-in).llms-pointer.is_dashboard .llms-student-dashboard.dashboard
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
 }
+.llms-sd-grades .llms-table-sort form .llms-button-secondary:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .llms-sd-grades .llms-table-sort form .llms-button-secondary:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -2171,6 +2187,9 @@ body:not(.logged-in) .lifterlms .llms-student-dashboard .llms-lost-password-form
   padding: 6px 20px;
   min-width: auto;
 }
+.orders-table .llms-button-primary:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
+}
 .orders-table .llms-button-primary:hover {
   background-color: var(--bb-secondary-button-background-hover);
   color: var(--bb-secondary-button-text-hover);
@@ -2215,6 +2234,9 @@ body:not(.logged-in) .lifterlms .llms-student-dashboard .llms-lost-password-form
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
+}
+.llms-student-dashboard.redeem-voucher button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 .llms-student-dashboard.redeem-voucher button:hover {
   background-color: var(--bb-primary-button-background-hover);
@@ -4441,6 +4463,9 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   padding: 0 20px;
   line-height: 40px;
 }
+.llms-pointer.llms-inner #lifterlms-page-content .lifterlms_content_wrap .llms-button-action:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .llms-pointer.llms-inner #lifterlms-page-content .lifterlms_content_wrap .llms-button-action:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -4450,6 +4475,9 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
+}
+.llms-pointer.llms-inner #lifterlms-page-content .lifterlms_content_wrap #llms_mark_incomplete:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 .llms-pointer.llms-inner #lifterlms-page-content .lifterlms_content_wrap #llms_mark_incomplete:hover {
   background-color: var(--bb-primary-button-background-hover);
@@ -5304,6 +5332,11 @@ body.llms-pointer.llms-inner.buddypanel-open:not(.buddypanel-header) .site-heade
   margin-bottom: 0;
   position: relative;
 }
+.lifterlms-course-list .bs-search-form:focus-within {
+  border-color: var(--bb-input-focus-border-color);
+  border-width: 1px;
+  box-shadow: var(--bb-input-focus-shadow);
+}
 .lifterlms-course-list .bs-search-form:before {
   content: '\ef10';
   font-family: 'bb-icons';
@@ -5996,6 +6029,9 @@ body:not(.bb-page-loaded) .bb-course-items .bb-course-cover--videoTile {
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
 }
+.single-llms_assignment .llms-assignment-footer #llms-assignment-submit:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .single-llms_assignment .llms-assignment-footer #llms-assignment-submit:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -6013,6 +6049,9 @@ body:not(.bb-page-loaded) .bb-course-items .bb-course-cover--videoTile {
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
 }
+.single-llms_assignment .llms-assignment-footer .llms-button-primary:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .single-llms_assignment .llms-assignment-footer .llms-button-primary:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -6025,6 +6064,9 @@ body:not(.bb-page-loaded) .bb-course-items .bb-course-cover--videoTile {
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
+}
+.llms-start-assignment-button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 .llms-start-assignment-button:hover {
   background-color: var(--bb-primary-button-background-hover);

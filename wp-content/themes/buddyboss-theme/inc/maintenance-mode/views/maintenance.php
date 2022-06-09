@@ -35,11 +35,13 @@
 
 		<title><?php esc_html_e( 'Down for Maintenance', 'buddyboss-theme' ); ?> | <?php echo esc_html( get_bloginfo( 'name' ) ); ?></title>
 
+		<?php wp_head(); ?>
 		<?php do_action( 'bb_maintenance_head' ); ?>
 	</head>
 
 	<body class="<?php echo esc_attr( 'bb-template-v' . $theme_template ); ?>">
 		<?php get_template_part( 'template-parts/content', 'maintenance' ); ?>
 		<?php do_action( 'bb_maintenance_footer' ); ?>
+		<?php wp_footer(); ?>
 	</body>
 </html>

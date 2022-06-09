@@ -2221,3 +2221,41 @@ function bb_theme_remove_cookie_buddypanel_toggle_off() {
 	}
 }
 add_action( 'init', 'bb_theme_remove_cookie_buddypanel_toggle_off' );
+
+/**
+ * Remove cancel comment reply link URL.
+ *
+ * @since BuddyBoss 2.0.2
+ *
+ * @param string $link Cancel comment reply link URL.
+ *
+ * @return null
+ */
+function buddyboss_theme_remove_blog_comment_reply_link( $link ) {
+	return '';
+}
+add_filter( 'cancel_comment_reply_link', 'buddyboss_theme_remove_blog_comment_reply_link', 10 );
+
+/**
+ * Add cancel comment reply link URL before submit button.
+ *
+ * @since BuddyBoss 2.0.2
+ *
+ * @param string $submit_field HTML markup for the submit field.
+ * @param array  $args         Arguments passed to comment_form().
+ *
+ * @return string Return HTML markup for cancel reply link and submit button.
+ */
+function buddyboss_theme_add_blog_comment_reply_link( $submit_field, $args ) {
+	$cancel_reply_link = '';
+
+	if ( get_option( 'thread_comments' ) ) {
+		$cancel_reply_link .= $args['cancel_reply_before'];
+		remove_filter( 'cancel_comment_reply_link', 'buddyboss_theme_remove_blog_comment_reply_link', 10 );
+		$cancel_reply_link .= get_cancel_comment_reply_link( $args['cancel_reply_link'] );
+		$cancel_reply_link .= $args['cancel_reply_after'];
+	}
+
+	return $submit_field . $cancel_reply_link;
+}
+add_action( 'comment_form_submit_field', 'buddyboss_theme_add_blog_comment_reply_link', 99, 2 );

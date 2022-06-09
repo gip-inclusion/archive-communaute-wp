@@ -55,7 +55,7 @@
 					<?php
 				}
 
-				if ( function_exists( 'bbp_forum_report_link' ) && function_exists( 'bp_is_active' ) && bp_is_active( 'moderation' ) && bbp_get_forum_report_link( array( 'id' => $post->ID ) ) ) {
+				if ( function_exists( 'bbp_forum_report_link' ) && function_exists( 'bp_is_active' ) && bp_is_active( 'moderation' ) && ! empty( $post->ID ) && bbp_get_forum_report_link( array( 'id' => $post->ID ) ) ) {
 					?>
 
 					<div class="bb_more_options action">

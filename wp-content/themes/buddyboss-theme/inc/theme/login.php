@@ -505,25 +505,32 @@ if ( ! function_exists( 'login_custom_head' ) ) {
 		?>
 		:root{
 			--bb-primary-color: <?php echo $primary_color; ?>;
+			--bb-primary-color-rgb: <?php echo join( ', ', hex_2_RGB( $primary_color ) ); ?>;
 			--bb-body-background-color: <?php echo $body_background; ?>;
 			--bb-content-background-color: <?php echo $body_blocks; ?>;
 			--bb-content-alternate-background-color: <?php echo $light_background_blocks; ?>;
 			--bb-content-border-color: <?php echo $body_blocks_border; ?>;
+			--bb-content-border-color-rgb: <?php echo join( ', ', hex_2_RGB( $body_blocks_border ) ); ?>;
 			--bb-cover-image-background-color: <?php echo $buddyboss_theme_group_cover_bg; ?>;
 			--bb-headings-color: <?php echo $heading_text_color; ?>;
 			--bb-body-text-color: <?php echo $body_text_color; ?>;
 			--bb-alternate-text-color: <?php echo $alternate_text_color; ?>;
+			--bb-alternate-text-color-rgb: <?php echo join( ', ', hex_2_RGB( $alternate_text_color ) ); ?>;
 
 			--bb-primary-button-background-regular: <?php echo $primary_button_background_regular; ?>;
 			--bb-primary-button-background-hover: <?php echo $primary_button_background_hover; ?>;
 			--bb-primary-button-border-regular: <?php echo $primary_button_border_regular; ?>;
 			--bb-primary-button-border-hover: <?php echo $primary_button_border_hover; ?>;
+			--bb-primary-button-border-hover-rgb: <?php echo join( ', ', hex_2_RGB( $primary_button_border_hover ) ); ?>;
 			--bb-primary-button-text-regular: <?php echo $primary_button_text_color_regular; ?>;
+			--bb-primary-button-text-regular-rgb: <?php echo join( ', ', hex_2_RGB( $primary_button_text_color_regular ) ); ?>;
 			--bb-primary-button-text-hover: <?php echo $primary_button_text_color_hover; ?>;
+			--bb-primary-button-text-hover-rgb: <?php echo join( ', ', hex_2_RGB( $primary_button_text_color_hover ) ); ?>;
 			--bb-secondary-button-background-regular: <?php echo $secondary_button_background_regular; ?>;
 			--bb-secondary-button-background-hover: <?php echo $secondary_button_background_hover; ?>;
 			--bb-secondary-button-border-regular: <?php echo $secondary_button_border_regular; ?>;
 			--bb-secondary-button-border-hover: <?php echo $secondary_button_border_hover; ?>;
+			--bb-secondary-button-border-hover-rgb:  <?php echo join( ', ', hex_2_RGB( $secondary_button_border_hover ) ); ?>;
 			--bb-secondary-button-text-regular: <?php echo $secondary_button_text_color_regular; ?>;
 			--bb-secondary-button-text-hover: <?php echo $secondary_button_text_color_hover; ?>;
 
@@ -559,10 +566,24 @@ if ( ! function_exists( 'login_custom_head' ) ) {
 
 			<?php if ( '1' === $theme_style ) { ?>
 				--bb-block-radius: 4px;
+				--bb-block-radius-inner: 4px;
 				--bb-input-radius: 4px;
+				--bb-checkbox-radius: 2.7px;
+				--bb-primary-button-focus-shadow: none;
+				--bb-secondary-button-focus-shadow: none;
+				--bb-outline-button-focus-shadow: none;
+				--bb-input-focus-shadow: none;
+				--bb-input-focus-border-color: var(--bb-content-border-color);
 			<?php } else { ?>
 				--bb-block-radius: 10px;
+				--bb-block-radius-inner: 6px;
 				--bb-input-radius: 6px;
+				--bb-checkbox-radius: 5.4px;
+				--bb-primary-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-primary-button-border-hover-rgb), 0.1);
+				--bb-secondary-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-secondary-button-border-hover-rgb), 0.1);
+				--bb-outline-button-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-content-border-color-rgb), 0.1);
+				--bb-input-focus-shadow: 0px 0px 0px 2px rgba(var(--bb-primary-color-rgb), 0.1);
+				--bb-input-focus-border-color: var(--bb-primary-color);
 			<?php } ?>
 		}
 		<?php

@@ -292,9 +292,9 @@
 .woocommerce .woocommerce-error .button,
 .woocommerce .woocommerce-info .button,
 .woocommerce .woocommerce-message .button {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   font-size: 14px;
   font-weight: normal;
   padding-left: 1em;
@@ -302,12 +302,17 @@
   min-height: auto;
   margin-left: 30px;
 }
+.woocommerce .woocommerce-error .button:focus,
+.woocommerce .woocommerce-info .button:focus,
+.woocommerce .woocommerce-message .button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce .woocommerce-error .button:hover,
 .woocommerce .woocommerce-info .button:hover,
 .woocommerce .woocommerce-message .button:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce .woocommerce-error {
   background: var(--bb-danger-color);
@@ -366,9 +371,9 @@
 .woocommerce a.button {
   font-size: 15px;
   font-style: normal;
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   /*min-height: $button-height;*/
   /*This makes an issue with various plugins button height*/
   padding: 10px 20px;
@@ -390,10 +395,13 @@
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
 }
+.woocommerce a.button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce a.button:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce a.remove {
   font-weight: 100;
@@ -420,9 +428,9 @@
   margin-bottom: 10px;
 }
 .woocommerce form button.button {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
   font-size: 14px;
   font-weight: normal;
@@ -431,16 +439,19 @@
   padding-right: 2em;
   height: 40px;
 }
+.woocommerce form button.button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce form button.button:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce form button.button:hover, .woocommerce form button.button:disabled:hover, .woocommerce form button.button:disabled[disabled]:hover {
   box-shadow: none;
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce form button.button:disabled, .woocommerce form button.button:disabled[disabled] {
   color: #fff;
@@ -712,7 +723,7 @@ body.woocommerce-cart p.cart-empty + p.return-to-shop .button.wc-backward {
   padding: 0 12px;
   background-color: var(--bb-content-background-color);
   border: 1px solid var(--bb-content-border-color);
-  border-radius: 4px;
+  border-radius: var(--bb-input-radius);
   box-shadow: none;
   padding: 0 12px;
   color: var(--bb-body-text-color);
@@ -893,6 +904,9 @@ body.woocommerce-cart p.cart-empty + p.return-to-shop .button.wc-backward {
   line-height: 1.4;
   font-weight: 500;
 }
+.woocommerce-cart .wc-proceed-to-checkout a.button.checkout-button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce-cart .wc-proceed-to-checkout a.button.checkout-button:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -908,6 +922,13 @@ body.woocommerce-cart p.cart-empty + p.return-to-shop .button.wc-backward {
   color: var(--bb-primary-button-text-regular);
   border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
+}
+.woocommerce #respond input#submit.alt:focus,
+.woocommerce #respond input#submit:focus,
+.woocommerce a.button.alt:focus,
+.woocommerce button.button.alt:focus,
+.woocommerce input.button.alt:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 
 .woocommerce-cart.woocommerce-page .bb_cart_totals_ctrls a.button.outline {
@@ -1567,8 +1588,6 @@ body:not(.bb-page-loaded) .bs_widget_price_filter #max_price {
 }
 .header-mini-cart p.woocommerce-mini-cart__buttons a.button {
   padding: 5px 15px;
-  box-shadow: none;
-  color: #fff;
   font-size: 14px;
   float: right;
   min-height: auto;
@@ -2222,19 +2241,22 @@ body .select2-container .select2-dropdown .select2-results__option {
   font-size: 16px;
 }
 .woocommerce #content div.product form.cart .button {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   font-size: 14px;
   font-weight: normal;
   padding-left: 3em;
   padding-right: 3em;
   height: 40px;
 }
+.woocommerce #content div.product form.cart .button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce #content div.product form.cart .button:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce #content div.product .woocommerce-tabs ul.tabs {
   padding: 0;
@@ -2331,19 +2353,22 @@ body .select2-container .select2-dropdown .select2-results__option {
   color: #d3ced2;
 }
 .woocommerce #content div.product #reviews p.form-submit input#submit {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   font-size: 14px;
   font-weight: normal;
   display: inline-block;
   padding-left: 2em;
   padding-right: 2em;
 }
+.woocommerce #content div.product #reviews p.form-submit input#submit:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce #content div.product #reviews p.form-submit input#submit:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce #content div.product #reviews .comment-form label {
   font-size: 16px;
@@ -2775,17 +2800,17 @@ div.product .woocommerce-product-gallery__image {
   background-color: transparent;
 }
 .woocommerce-checkout #payment ul.payment_methods {
-  background-color: #F4F5F7;
-  border-radius: 4px;
+  background-color: var(--bb-content-alternate-background-color);
+  border-radius: var(--bb-block-radius-inner);
   border-bottom: 0;
 }
 .woocommerce-checkout #payment div.payment_box {
   font-size: 13px;
 }
 .woocommerce-checkout #payment #place_order {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   font-size: 14px;
   font-weight: normal;
   display: inline-block;
@@ -2793,10 +2818,13 @@ div.product .woocommerce-product-gallery__image {
   padding-right: 2em;
   height: 40px;
 }
+.woocommerce-checkout #payment #place_order:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .woocommerce-checkout #payment #place_order:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 .woocommerce-checkout #payment li.wc_payment_method input.input-radio {
   -webkit-appearance: none;
