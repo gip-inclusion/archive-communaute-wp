@@ -643,7 +643,7 @@ add_action( 'bb_suspend_unhide_before', 'bp_core_clear_cache' );
 /**
  * Add moderation repair list.
  *
- * @param array $repair_list
+ * @param array $repair_list Repair list.
  *
  * @since BuddyBoss 1.7.5
  *
@@ -652,7 +652,7 @@ add_action( 'bb_suspend_unhide_before', 'bp_core_clear_cache' );
 function bb_moderation_migrate_old_data( $repair_list ) {
 	$repair_list[] = array(
 		'bp-repair-moderation-data',
-		__( 'Repair moderation data.', 'buddyboss' ),
+		esc_html__( 'Repair moderation data', 'buddyboss' ),
 		'bb_moderation_admin_repair_old_moderation_data',
 	);
 
@@ -688,7 +688,7 @@ function bb_moderation_admin_repair_old_moderation_data() {
 	} else {
 		return array(
 			'status'  => 1,
-			'message' => __( 'Moderation update complete!', 'buddyboss' ),
+			'message' => __( 'Repairing moderation data &hellip; Complete!', 'buddyboss' ),
 		);
 	}
 }
@@ -701,7 +701,7 @@ function bb_moderation_admin_repair_old_moderation_data() {
  * @return array|mixed
  */
 function bp_moderation_get_js_dependencies( $js_handles = array() ) {
-	if ( bp_is_active( 'forums' ) && bbp_is_single_topic() ) { // Topic detail page.
+	if ( bp_is_active( 'forums' ) && ( bbp_is_single_topic() || bbp_is_single_forum() ) ) { // Topic or forum detail page.
 		$js_handles[] = 'bp-nouveau-magnific-popup';
 	}
 

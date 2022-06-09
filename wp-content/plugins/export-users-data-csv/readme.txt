@@ -1,11 +1,11 @@
-=== Export Users Data CSV ===
+=== Export Users Data ===
 Contributors: kaushik1111
 Donate link: https://kaushikkalathiya.github.io/kaushik/
-Tags: Export Users, User Export, CSV, Users, CSV Export, Users to CSV
+Tags: Export Users, User Export, CSV, Excel, XML, CSV Export, Excel Export, XMl Export
 Requires at least: 4.1
-Tested up to: 5.8
+Tested up to: 6.0
 Requires PHP: 5.6.20
-Stable tag: 1.1
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,13 +28,13 @@ Kindly let us know your feedback or comments to add more features in this plugin
 == Installation ==
 
 1. Log in to your WordPress admin panel and go to Plugins -> Add New
-2. Type **Export Users Data CSV** in the search box and click on search button.
-3. Find Order Delivery Date & Time Management for Woo Commerce plugin.
+2. Type **Export Users Data** in the search box and click on search button.
+3. Find Export Users Data plugin.
 4. Then click on Install Now after that activate the plugin.
 
 OR
 
-1. Download and save the **Export Users Data CSV** plugin to your hard disk.
+1. Download and save the **Export Users Data** plugin to your hard disk.
 2. Login to your WordPress and go to the Add Plugins page.
 3. Click Upload Plugin button to upload the zip.
 4. Click Install Now to install and activate the plugin.
@@ -43,14 +43,23 @@ OR
 
 = How to Export users? =
 
-1. Click on Users menu from left side navigation menu
-2. Click on **Export All as CSV** button for downloaded all users into CSV file.
+1. Click on Users menu from left side navigation menu.
+2. Select option on from dropdown list.
+3. Click on **Export** button for download all users information.
 
 == Screenshots ==
-1. Into Admin side user list page click on **Export All as CSV** button for export users.
+1. WordPress admin back-end at user list page dropdown option.
 2. Successfully downloaded all users into CSV file.
 
 == Changelog ==
+
+= 2.1 =
+* Remove 3 buttons from user manage page.
+* Add Dropdown option for easy users export.
+
+= 2.0 =
+* Add Excel file formate option
+* Add XML file formate option
 
 = 1.1 =
 * Add Button on User list page
@@ -60,5 +69,6 @@ OR
 
 == Upgrade Notice ==
 
-= 1.1 =
-* Add Button on User list page
+= 2.1 =
+* Remove 3 buttons from user manage page.
+* Add Dropdown option for easy users export.
