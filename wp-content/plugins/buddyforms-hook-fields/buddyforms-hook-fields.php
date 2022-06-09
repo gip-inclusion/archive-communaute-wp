@@ -7,7 +7,7 @@ if ( !defined( 'ABSPATH' ) ) {
  * Plugin Name: BuddyForms Hook Fields
  * Plugin URI: https://themekraft.com/products/buddyforms-hook-fields/
  * Description: BuddyForms Hook Fields
- * Version: 1.3.5
+ * Version: 1.3.9
  * Author: ThemeKraft
  * Author URI: https://themekraft.com/buddyforms/
  * Licence: GPLv3
@@ -41,6 +41,7 @@ add_action(
     require dirname( __FILE__ ) . '/includes/list-all-post-fields.php';
     require dirname( __FILE__ ) . '/includes/form-options.php';
     require dirname( __FILE__ ) . '/includes/templates-handler.php';
+    require dirname( __FILE__ ) . '/includes/gutenberg/shortcodes-to-blocks.php';
     // Only Check for requirements in the admin
     if ( !is_admin() ) {
         return;
@@ -85,11 +86,9 @@ function bhf_fs()
         if ( file_exists( dirname( dirname( __FILE__ ) ) . '/buddyforms/includes/resources/freemius/start.php' ) ) {
             // Try to load SDK from parent plugin folder.
             require_once dirname( dirname( __FILE__ ) ) . '/buddyforms/includes/resources/freemius/start.php';
-        } else {
-            if ( file_exists( dirname( dirname( __FILE__ ) ) . '/buddyforms-premium/includes/resources/freemius/start.php' ) ) {
-                // Try to load SDK from premium parent plugin folder.
-                require_once dirname( dirname( __FILE__ ) ) . '/buddyforms-premium/includes/resources/freemius/start.php';
-            }
+        } elseif ( file_exists( dirname( dirname( __FILE__ ) ) . '/buddyforms-premium/includes/resources/freemius/start.php' ) ) {
+            // Try to load SDK from premium parent plugin folder.
+            require_once dirname( dirname( __FILE__ ) ) . '/buddyforms-premium/includes/resources/freemius/start.php';
         }
         
         try {
@@ -153,14 +152,10 @@ function bhf_fs_init()
 if ( bhf_fs_is_parent_active_and_loaded() ) {
     // If parent already included, init add-on.
     bhf_fs_init();
+} elseif ( bhf_fs_is_parent_active() ) {
+    // Init add-on only after the parent is loaded.
+    add_action( 'buddyforms_core_fs_loaded', 'bhf_fs_init' );
 } else {
-    
-    if ( bhf_fs_is_parent_active() ) {
-        // Init add-on only after the parent is loaded.
-        add_action( 'buddyforms_core_fs_loaded', 'bhf_fs_init' );
-    } else {
-        // Even though the parent is not activated, execute add-on for activation / uninstall hooks.
-        bhf_fs_init();
-    }
-
+    // Even though the parent is not activated, execute add-on for activation / uninstall hooks.
+    bhf_fs_init();
 }
