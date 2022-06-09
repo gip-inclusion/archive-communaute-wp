@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later (license.txt).
 msgid ""
 msgstr ""
-"Project-Id-Version: BuddyBoss Platform Pro 2.0.1\n"
+"Project-Id-Version: BuddyBoss Platform Pro 2.0.2\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
-"POT-Creation-Date: 2022-05-11 12:37:56+00:00\n"
+"POT-Creation-Date: 2022-05-26 15:47:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -453,30 +453,29 @@ msgid "Zoom Account Email"
 msgstr ""
 
 #: includes/integrations/zoom/bp-zoom-admin-tab.php:272
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:277
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:325
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:320
 msgid "&#160;"
 msgstr ""
 
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:284
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:279
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:67
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:68
 msgid "Social Groups"
 msgstr ""
 
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:292
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:287
 msgid "Private Meeting URLs"
 msgstr ""
 
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:300
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:295
 msgid "Private Webinar URLs"
 msgstr ""
 
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:308
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:303
 msgid "Recordings"
 msgstr ""
 
-#: includes/integrations/zoom/bp-zoom-admin-tab.php:315
+#: includes/integrations/zoom/bp-zoom-admin-tab.php:310
 msgid "Recording Links"
 msgstr ""
 
@@ -1798,7 +1797,7 @@ msgid ""
 "group."
 msgstr ""
 
-#: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:126
+#: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:127
 msgid "Group meetings and webinars"
 msgstr ""
 

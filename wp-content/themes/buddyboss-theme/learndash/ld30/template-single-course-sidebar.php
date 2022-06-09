@@ -196,7 +196,7 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
 							if ( false === $is_enrolled ) {
 								echo '<span class="ld-status ld-status-incomplete ld-third-background ld-text">' . __( 'This course is currently closed', 'buddyboss-theme' ) . '</span>';
 								if ( ! empty( $course_price ) ) {
-									echo '<span class="bb-course-type bb-course-type-paynow">' . wp_kses_post( $course_pricing['price'] ) . '</span>';
+									echo '<span class="bb-course-type bb-course-type-paynow"><span class="ld-currency">' . wp_kses_post( function_exists( 'learndash_get_currency_symbol' ) ? learndash_get_currency_symbol() : learndash_30_get_currency_symbol() ) . '</span> ' . wp_kses_post( $course_pricing['price'] ) . '</span>';
 								}
 							} else { ?>
                                 <div class="learndash_join_button <?php echo $btn_advance_class; ?>">
@@ -212,7 +212,7 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
                             </div>
 							<?php
 							if ( ! empty( $course_price ) ) {
-								echo '<span class="bb-course-type bb-course-type-paynow">' . wp_kses_post( $course_pricing['price'] ) . '</span>';
+								echo '<span class="bb-course-type bb-course-type-paynow"><span class="ld-currency">' . wp_kses_post( function_exists( 'learndash_get_currency_symbol' ) ? learndash_get_currency_symbol() : learndash_30_get_currency_symbol() ) . '</span> ' . wp_kses_post( $course_pricing['price'] ) . '</span>';
 							}
 						endif;
 					} elseif ( $course_price_type == 'paynow' || $course_price_type == 'subscribe' ) {

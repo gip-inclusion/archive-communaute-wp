@@ -272,7 +272,7 @@ if ( ! class_exists( '\BuddyBossTheme\BuddyPressHelper' ) ) {
 
 				// Total count.
 				$instance      = BP_Search::instance();
-				$total_results = $instance->search_helpers[ $search_subset ]->get_total_match_count( $_REQUEST['s'] );
+				$total_results = $instance->search_helpers[ $search_subset ]->get_total_match_count( $_REQUEST['s'], $search_subset );
 
 				// Label.
 				$search_items = bp_search_items();

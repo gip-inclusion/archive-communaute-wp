@@ -11,6 +11,7 @@ use WP_Query;
 use LLMS_Student;
 use LLMS_Lesson;
 use LLMS_Course;
+use LLMS_Student_Dashboard;
 
 if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 
@@ -129,6 +130,10 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 				$this,
 				'buddyboss_llms_add_space_before_schedule_details',
 			], 9999, 2 );
+
+			add_action( 'bb_llms_display_certificate', [ $this, 'bb_llms_certificate_content' ], 50 );
+			add_action( 'bb_llms_display_certificate', [ $this, 'bb_llms_certificate_actions' ], 60 );
+
 		}
 
 		/**
@@ -1368,6 +1373,8 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 				'my-courses' => 0,
 			];
 
+			add_action( 'pre_get_posts', [ $this, 'filter_query_ajax_get_courses' ], 999 );
+
 			$terms = wp_list_pluck(
 				get_terms(
 					[
@@ -1503,6 +1510,8 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 
 				$return['my-courses'] = $count;
 			}
+
+			remove_action( 'pre_get_posts', [ $this, 'filter_query_ajax_get_courses' ], 999 );
 
 			return $return;
 		}
@@ -2060,6 +2069,51 @@ if ( ! class_exists( '\BuddyBossTheme\LifterLMSHelper' ) ) {
 
 			return $lessons_ids;
 
+
+		}
+
+		/**
+		 * Loads the certificate content template.
+		 *
+		 * @since 2.0.3
+		 *
+		 * @param LLMS_User_Certificate $certificate Certificate object.
+		 * @return void
+		 */
+		public function bb_llms_certificate_content( $certificate ) {
+			$template = 1 === $certificate->get_template_version() ? 'content-legacy' : 'content';
+			llms_get_template(
+				"certificates/{$template}.php",
+				compact( 'certificate' )
+			);
+		}
+
+		/**
+		 * Loads the certificate actions template.
+		 *
+		 * @since 2.0.3
+		 *
+		 * @param LLMS_User_Certificate $certificate Certificate object.
+		 * @return void
+		 */
+		public function bb_llms_certificate_actions( $certificate ) {
+
+			if ( ! $certificate->can_user_manage() ) {
+				return;
+			}
+
+			$dashboard_url   = get_permalink( llms_get_page_id( 'myaccount' ) );
+			$cert_ep_enabled = LLMS_Student_Dashboard::is_endpoint_enabled( 'view-certificates' );
+
+			$back_link = $cert_ep_enabled ? llms_get_endpoint_url( 'view-certificates', '', $dashboard_url ) : $dashboard_url;
+			$back_text = $cert_ep_enabled ? __( 'All certificates', 'buddyboss-theme' ) : __( 'Dashboard', 'buddyboss-theme' );
+
+			$is_template        = 'llms_certificate' === $certificate->get( 'type' );
+			$is_sharing_enabled = $certificate->is_sharing_enabled();
+			llms_get_template(
+				'certificates/actions.php',
+				compact( 'certificate', 'back_link', 'back_text', 'is_sharing_enabled', 'is_template' )
+			);
 
 		}
 	}

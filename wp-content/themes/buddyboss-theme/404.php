@@ -43,7 +43,7 @@ $button_link         = buddyboss_theme_get_option( '404_button_link' );
 					} elseif ( ! empty( $featured_image_type ) && 'custom' === $featured_image_type && is_array( $img ) && isset( $img['url'] ) ) {
 						?>
 						<figure class="bb-img-404 bb-img-404--custom">
-							<?php echo '<img src="' . esc_url( $img['url'] ) . '" alt="' . isset( $img['alt'] ) ? esc_attr( $img['alt'] ) : '' . '" />'; ?>
+							<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo isset( $img['alt'] ) ? esc_attr( $img['alt'] ) : ''; ?>" />
 						</figure>
 						<?php
 

@@ -47,7 +47,7 @@ if ( ! class_exists( 'ReduxFramework_image' ) ) {
 		 *
 		 * @return      void
 		 */
-		function __construct( $field = array(), $value = '', $parent ) {
+		function __construct( $field = array(), $value = '', $parent = null ) {
 
 			$this->parent = $parent;
 			$this->field  = $field;

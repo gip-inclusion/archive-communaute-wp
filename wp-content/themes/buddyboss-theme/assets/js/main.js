@@ -65,8 +65,8 @@
 
 					var ori_btn_val = $( "#commentform" ).find( "[type='submit']" ).val();
 					$( "#comment" ).prop( "disabled", true );
+					$( "#commentform" ).find( "[type='submit']" ).addClass( 'waiting' );
 					$( "#commentform" ).find( "[type='submit']" ).prop( "disabled", true ).val( bs_data.translation.comment_btn_loading );
-
 					do_comment.success(
 						function ( data, status, request ) {
 
@@ -137,6 +137,7 @@
 					do_comment.always(
 						function () {
 							$( "#comment" ).prop( "disabled", false );
+							$( "#commentform" ).find( "[type='submit']" ).removeClass( 'waiting' );
 							$( "#commentform" ).find( "[type='submit']" ).prop( "disabled", false ).val( ori_btn_val );
 						}
 					);
@@ -822,6 +823,12 @@
 		},
 
 		bbFitVideo: function () {
+
+			// Thrive Architect background video fix
+			if ( $( '.thrv-page-section .tcb-video-background-el iframe' ).length > 0 ) {
+				$( '.thrv-page-section .tcb-video-background-el iframe' ).addClass( 'fitvidsignore' );
+			}
+
 			var doFitVids = function () {
 				setTimeout(
 					function () {
@@ -1113,7 +1120,7 @@
 					arrows: true,
 					prevArrow: '<a class="bb-slide-prev"><i class="bb-icon-l bb-icon-angle-right"></i></a>',
 					nextArrow: '<a class="bb-slide-next"><i class="bb-icon-l bb-icon-angle-right"></i></a>',
-					appendArrows: '.post-related-posts h4',
+					appendArrows: '.post-related-posts h3',
 					responsive: [
 						{
 							breakpoint: $break,
@@ -2387,7 +2394,7 @@ jQuery( '#members-group-list' ).on("DOMSubtreeModified", function() {
 // whenever we hover over a menu item that has a submenu
 setTimeout(
 	function() {
-		jQuery( '#site-navigation #navbar-collapse #navbar-extend .menu-item-has-children' ).on( 'mouseover', function () {					
+		jQuery( document ).on( 'mouseover', '#site-navigation #navbar-collapse #navbar-extend .menu-item-has-children', function () {					
 			var $menuItem = jQuery( this ),				
 				$submenuWrapper = jQuery(this).children( '.ab-submenu' );				
 
