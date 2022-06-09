@@ -1,6 +1,6 @@
 <?php
 
-// Don't load directly
+// Don't load directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
@@ -18,7 +18,7 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		/**
 		 * The current version of Community Events
 		 */
-		const VERSION = '4.8.11.1';
+		const VERSION = '4.9.1';
 
 		/**
 		 * Singleton instance variable
@@ -684,8 +684,12 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		 * @param string $screen the current admin screen.
 		 */
 		public function maybe_enqueue_admin_assets( $screen ) {
+			$admin_pages          = tribe( 'admin.pages' );
+			$current_page         = $admin_pages->get_current_page();
+			$tec_settings_page_id = tribe( 'tec.main' )->settings()::$settings_page_id;
+
 			if (
-				'tribe_events_page_tribe-common' === $screen
+				$tec_settings_page_id === $current_page
 				&& isset( $_GET['tab'] )
 				&& 'community' === $_GET['tab']
 			) {
@@ -928,14 +932,14 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 				[
 					'path'            => '^' . $this->getCommunityRewriteSlug() . '/' . $this->rewriteSlugs['list'] . '(/page/(\d+))?/?$',
 					'query_vars'      => [
-						'page' => 2,
+						'pagination' => 2,
 					],
 					'page_callback'   => [
 						get_class(),
 						'listCallback',
 					],
 					'page_arguments'  => [
-						'page',
+						'pagination',
 					],
 					'access_callback' => true,
 					'title'           => $list_title,
@@ -3068,9 +3072,9 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		/**
 		 * Display status icon.
 		 *
-		 * @since      1.0
-		 * @since      1.0
-		 * @deprecated 4.5
+		 * @since 4.8.14 - Refactored method to simplify it.
+		 *
+		 * @version 4.8.14
 		 *
 		 * @param string $status The post status.
 		 *
@@ -3078,16 +3082,63 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		 *
 		 */
 		public function getEventStatusIcon( $status ) {
-			$icon = str_replace( ' ', '-', $status ) . '.png';
 
-			if ( file_exists( get_stylesheet_directory() . 'events/community/' . $icon ) ) {
-				return '<img src="' . get_stylesheet_directory_uri() . 'events/community' . esc_attr( $icon ) . '" alt="' . esc_attr( $status ) . ' icon" class="icon ' . esc_attr( $status ) . '">';
-			} elseif ( file_exists( get_template_directory() . 'events/community/icons/' . esc_attr( $icon ) ) ) {
-				return '<img src="' . get_template_directory_uri() . 'events/community' . esc_attr( $icon ) . '" alt="' . esc_attr( $status ) . ' icon" class="icon ' . esc_attr( $status ) . '">';
-			} else {
-				return '<img src="' . $this->pluginUrl . 'src/resources/images/' . esc_attr( $icon ) . '" alt="' . esc_attr( $status ) . ' icon" class="icon ' . esc_attr( $status ) . '">';
+			$post_status_types = [ 'pending', 'draft', 'future', 'publish' ];
+
+			// Confirm the post status is valid, if not, default to pending.
+			if ( ! in_array( $status, $post_status_types ) ) {
+				$status = 'pending';
 			}
+
+			$src = $this->locatePublishStatusIcon( $status );
+
+			return '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( $status ) . ' icon" class="icon ' . esc_attr( $status ) . '">';
 		}
+
+		/**
+		 * Find the location of the icon that is being searched for.
+		 *
+		 * @since 4.8.14
+		 *
+		 * @version 4.8.14
+		 *
+		 * @param string $icon_name - File name of the icon ( pending, draft, future, publish ).
+		 *
+		 * @return string
+		 */
+		public function locatePublishStatusIcon ( $icon_name ) {
+			/**
+			 * File extension for the publish status icons.
+			 *
+			 * @since 4.8.14
+			 *
+			 * @version 4.8.14
+			 *
+			 * @param string $extension      File extension, including the period.
+			 *
+			 */
+
+			$file_extension = apply_filters( 'tribe_community_events_event_status_icon_extension', '.svg' );
+
+			$icon = str_replace( ' ', '-', $icon_name ) . $file_extension;
+
+			// Used to overwrite our default icons.
+			$fileLocationList = [
+					get_stylesheet_directory() . '/events/community/' . esc_attr( $icon ),
+					get_template_directory_uri() . '/events/community/' . esc_attr( $icon ),
+			];
+
+			foreach ( $fileLocationList as $file ) {
+				if ( file_exists ( $file ) ) {
+					return $file;
+				}
+			}
+
+			// No icons found, use our default icons.
+			return $this->pluginUrl . 'src/resources/images/' . esc_attr( $icon );
+
+		}
+
 
 		/**
 		 * Filter pagination
@@ -3446,10 +3497,24 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		 * @return void
 		 *
 		 */
-		public function doSettings() {
+		public function doSettings( $admin_page ) {
+			$tec_settings_page_id = tribe( 'tec.main' )->settings()::$settings_page_id;
+
+			if ( ! empty( $admin_page ) && $tec_settings_page_id !== $admin_page ) {
+				return;
+			}
+
 			require_once $this->pluginPath . 'src/admin-views/community-options-template.php';
 			new Tribe__Settings_Tab( 'community', __( 'Community', 'tribe-events-community' ), $communityTab );
 			add_filter( 'tribe_field_tooltip', [ $this, 'amend_template_tooltip' ], 10, 3 );
+
+			add_filter(
+				'tec_events_settings_tabs_ids',
+				function( $tabs ) {
+					$tabs[] = 'community';
+					return $tabs;
+				}
+			);
 		}
 
 		/**
@@ -3792,7 +3857,7 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 				$wp_admin_bar->add_menu( [
 					'id'     => 'tribe-community-events-settings-sub',
 					'title'  => __( 'Community Events', 'tribe-events-community' ),
-					'href'   => Tribe__Settings::instance()->get_url( [ 'tab' => 'community' ] ),
+					'href'   => tribe( 'tec.main' )->settings()->get_url( [ 'tab' => 'community' ] ),
 					'parent' => 'tribe-events-settings',
 				] );
 			}
@@ -3809,7 +3874,7 @@ if ( ! class_exists( 'Tribe__Events__Community__Main' ) ) {
 		 */
 		public function addLinksToPluginActions( $actions ) {
 			if ( class_exists( 'Tribe__Events__Main' ) ) {
-				$actions['settings'] = '<a href="' . Tribe__Settings::instance()->get_url( [ 'tab' => 'community' ] ) . '">' . __( 'Settings', 'tribe-events-community' ) . '</a>';
+				$actions['settings'] = '<a href="' . tribe( 'tec.main' )->settings()->get_url( [ 'tab' => 'community' ] ) . '">' . __( 'Settings', 'tribe-events-community' ) . '</a>';
 			}
 
 			return $actions;

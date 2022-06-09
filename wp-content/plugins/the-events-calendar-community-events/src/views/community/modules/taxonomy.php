@@ -13,8 +13,9 @@ defined( 'WPINC' ) or die;
  *
  * @since  3.1
  * @since 4.8.2 Updated template link.
+ * @since 4.8.13 Updated the $value variable logic to get the correct input.
  *
- * @version 4.8.2
+ * @version 4.8.13
  */
 
 $uses_select_woo = false;
@@ -50,7 +51,8 @@ $has_terms = count(
 ) > 0;
 
 // Setup selected tags
-$value = ! empty( $_POST['tax_input'][ $taxonomy ] ) ? explode( ',', esc_attr( trim( $_POST['tax_input'][ $taxonomy ] ) ) ) : [];
+$value = ! empty( $_POST['tax_input'][ $taxonomy ] ) ? array_map( 'esc_attr' , $_POST['tax_input'][ $taxonomy ] ) : [];
+
 
 // if no tags from $_POST then look for saved tags
 if ( empty( $value ) ) {

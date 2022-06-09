@@ -44,6 +44,8 @@ defined( 'WPINC' ) or die;
 		/**
 		 * Allows setting and/or modifying the field's value.
 		 *
+		 * @since 4.9.1 Removed `None` from the radio option.
+		 *
 		 * @param mixed  $value    The existing field value.
 		 * @param string $name     The field name.
 		 * @param int    $event_id The event's post ID.
@@ -72,9 +74,9 @@ defined( 'WPINC' ) or die;
 				if ( 'checkbox' === $field_type ) {
 					// Field supports multiple values.
 					$field_name .= '[]';
-				} else {
+				} elseif ( 'dropdown' === $field_type ) {
 					// Field supports empty value.
-					$options[''] = __( 'None', 'tribe-events-community' );
+					$options[''] = 'None';
 				}
 
 				break;
