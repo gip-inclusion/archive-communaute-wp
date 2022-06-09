@@ -2,14 +2,36 @@
 # This file is distributed under the same license as the Plugins - Loco Translate - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-08 14:25:16+0000\n"
+"PO-Revision-Date: 2022-05-24 11:16:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Loco Translate - Stable (latest release)\n"
+
+#. Translators: Shown when a PO file's Plural-Forms header has a different
+#. formula from the Unicode CLDR rules
+#: src/Locale.php:527
+msgid "Plural forms differ from Loco Translate's built in rules for this language"
+msgstr "Les formes plurielles diffèrent des règles par défaut de Loco Translate pur cette langue"
+
+#: src/js/Strings.php:179
+msgid "Mismatching placeholder type; check against source text formatting"
+msgstr "Type de texte indicatif erroné ; vérifiez le formatage du texte source"
+
+#: src/js/Strings.php:176
+msgid "Possible syntax error in string formatting"
+msgstr "Erreur de syntaxe probable dans le formatage des chaînes"
+
+#: src/js/Strings.php:173
+msgid "Missing placeholders; source text formatting suggests at least %s"
+msgstr "Textes indicatifs manquants ; le formatage du texte source suggère un minimum de %s"
+
+#: src/js/Strings.php:170
+msgid "Too many placeholders; source text formatting suggests a maximum of %s"
+msgstr "Trop de textes indicatifs ; le formatage du texte source suggère un maximum de %s"
 
 #: tpl/admin/file/head.php:10
 msgid "Edit file headers"
@@ -77,7 +99,7 @@ msgstr "WordPress %s"
 #. "5.6"
 #: tpl/admin/config/version.php:53 tpl/admin/config/version.php:71
 msgid "Your version of %1$s is out of date. We recommend you upgrade to at least v%2$s, but preferably to the latest stable version."
-msgstr "Votre version de %1$s est très ancienne. Nous vous recommandons de mettre à niveau vers v%2$s au minimum, mais de préférence à la dernière version stable."
+msgstr "Votre version de %1$s est obsolète. Nous vous recommandons de passer au moins à la v%2$s, mais préférez tout de même la dernière version stable."
 
 #. translators: Where %s is the full version number of PHP
 #: tpl/admin/config/version.php:49
@@ -157,7 +179,7 @@ msgid "Restrict locales"
 msgstr "Restreindre les locales"
 
 #. Translators: Button that opens window for auto-translating
-#: src/admin/file/EditController.php:203
+#: src/admin/file/EditController.php:205
 msgctxt "Editor"
 msgid "Auto"
 msgstr "Auto"
@@ -280,7 +302,7 @@ msgstr "Traduire automatiquement ce fichier"
 
 #. translators: Warning when POT file is opened in the file editor. It can be
 #. disabled in settings.
-#: src/admin/file/EditController.php:164
+#: src/admin/file/EditController.php:165
 msgid "This is NOT a translation file. Manual editing of source strings is not recommended."
 msgstr "Ce n’est pas un fichier de traduction. La modification manuelle des chaînes de source n’est pas recommandée."
 
@@ -352,7 +374,7 @@ msgid_plural "%s files could not be moved"
 msgstr[0] "%s fichier n’a pas pu être déplacé"
 msgstr[1] "%s fichiers n’ont pas pu être déplacés"
 
-#: src/admin/file/BaseController.php:107
+#: src/admin/file/BaseController.php:122
 msgid "Relocate"
 msgstr "Déménager"
 
@@ -537,7 +559,7 @@ msgid "Revisions are identical, you can delete %s"
 msgstr "Les révisions sont identiques, vous pouvez supprimer %s"
 
 #. translators: Where %s is the name of the invalid POT file
-#: src/admin/file/EditController.php:122 src/ajax/SyncController.php:72
+#: src/admin/file/EditController.php:123 src/ajax/SyncController.php:72
 msgid "Translation template is invalid (%s)"
 msgstr "Le modèle de traduction n’est pas valide (%s)"
 
@@ -549,7 +571,7 @@ msgstr "Restaurer %s"
 msgid "File restored"
 msgstr "Fichier restauré"
 
-#: src/admin/file/BaseController.php:106 tpl/admin/file/diff.php:31
+#: src/admin/file/BaseController.php:121 tpl/admin/file/diff.php:31
 msgid "Restore"
 msgstr "Restaurer"
 
@@ -558,10 +580,10 @@ msgid "See all core translations"
 msgstr "Voir toutes les traductions du cœur"
 
 #: src/admin/bundle/LocaleController.php:130
-#: src/admin/file/EditController.php:166 tpl/admin/common/inc-fsconn.php:16
-#: tpl/admin/common/inc-fsconn.php:41 tpl/admin/config/apis.php:128
-#: tpl/admin/config/prefs.php:45 tpl/admin/config/settings.php:234
-#: tpl/admin/errors/no-backups.php:22
+#: src/admin/file/EditController.php:118 src/admin/file/EditController.php:167
+#: tpl/admin/common/inc-fsconn.php:16 tpl/admin/common/inc-fsconn.php:41
+#: tpl/admin/config/apis.php:128 tpl/admin/config/prefs.php:45
+#: tpl/admin/config/settings.php:234 tpl/admin/errors/no-backups.php:22
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -594,7 +616,7 @@ msgid "Creating this file requires permission"
 msgstr "Créer ce fichier nécessite certains droits"
 
 #. Translators: Plural category for zero quantity
-#: src/Locale.php:405
+#: src/Locale.php:412
 msgctxt "Plural category"
 msgid "Zero"
 msgstr "Zéro"
@@ -629,40 +651,34 @@ msgid "Child theme declares the same Text Domain as the parent theme"
 msgstr "Le thème enfant déclare le même Text Domain que le thème parent"
 
 #. Translators: General plural category not covered by other forms
-#: src/Locale.php:415
+#: src/Locale.php:422
 msgctxt "Plural category"
 msgid "Other"
 msgstr "Autre"
 
 #. Translators: Plural category used in some multi-plural languages
-#: src/Locale.php:413
+#: src/Locale.php:420
 msgctxt "Plural category"
 msgid "Many"
 msgstr "Beaucoup"
 
 #. Translators: Plural category used in some multi-plural languages
-#: src/Locale.php:411
+#: src/Locale.php:418
 msgctxt "Plural category"
 msgid "Few"
 msgstr "Quelques"
 
 #. Translators: Plural category used in some multi-plural languages
-#: src/Locale.php:409
+#: src/Locale.php:416
 msgctxt "Plural category"
 msgid "Two"
 msgstr "Deux"
 
 #. Translators: Plural category for singular quantity
-#: src/Locale.php:407
+#: src/Locale.php:414
 msgctxt "Plural category"
 msgid "One"
 msgstr "Un"
-
-#. Translators: Plural category for languages that have no plurals
-#: src/Locale.php:397
-msgctxt "Plural category"
-msgid "All forms"
-msgstr "Toutes les formes"
 
 #: tpl/admin/config/version.php:28
 msgid "You're running a development snapshot of Loco Translate"
@@ -1483,12 +1499,12 @@ msgctxt "Editor"
 msgid "Source text not loaded"
 msgstr "Texte source non chargé"
 
-#: src/js/Strings.php:143
+#: src/js/Strings.php:143 src/Locale.php:404
 msgctxt "Editor"
 msgid "Plural"
 msgstr "Pluriel"
 
-#: src/js/Strings.php:140
+#: src/js/Strings.php:140 src/Locale.php:403
 msgctxt "Editor"
 msgid "Single"
 msgstr "Singulier"
@@ -1729,68 +1745,68 @@ msgstr "Initialisation de nouvelles traductions dans un jeu inconnu"
 msgid "Initializing new translations in \"%s\""
 msgstr "Initialisation de nouvelles traductions pour « %s »"
 
-#: src/admin/file/InfoController.php:177
+#: src/admin/file/InfoController.php:176
 msgid "Language header is \"%s\" but file name contains \"%s\""
 msgstr "L’en-tête de langue contient « %s » mais le nom du fichier contient « %s »"
 
-#: src/admin/file/InfoController.php:170
+#: src/admin/file/InfoController.php:169
 msgid "File does not have a valid header"
 msgstr "L’en-tête du fichier n’est pas valide"
 
-#: src/admin/file/InfoController.php:138 src/package/Header.php:86
+#: src/admin/file/InfoController.php:137 src/package/Header.php:86
 msgid "Unknown author"
 msgstr "Auteur inconnu"
 
 #. Translators: Button that toggles between "code" and regular text editing
 #. modes
-#: src/admin/file/EditController.php:211
+#: src/admin/file/EditController.php:213
 msgctxt "Editor"
 msgid "Toggle code view"
 msgstr "Afficher/Masquer la vue « code »"
 
 #. Translators: Button that toggles invisible characters
-#: src/admin/file/EditController.php:209
+#: src/admin/file/EditController.php:211
 msgctxt "Editor"
 msgid "Toggle invisibles"
 msgstr "Afficher/Masquer les caractères invisibles"
 
 #. Translators: Button for downloading a PO, MO or POT file
-#: src/admin/file/EditController.php:205
+#: src/admin/file/EditController.php:207
 msgctxt "Editor"
 msgid "Download"
 msgstr "Télécharger"
 
 #. Translators: Button that reloads current screen
-#: src/admin/file/EditController.php:201
+#: src/admin/file/EditController.php:203
 msgctxt "Editor"
 msgid "Revert"
 msgstr "Rétablir"
 
 #. Translators: Button that runs in-editor sync/operation
-#: src/admin/file/EditController.php:199
+#: src/admin/file/EditController.php:201
 msgctxt "Editor"
 msgid "Sync"
 msgstr "Synchroniser"
 
 #. Translators: Button that saves translations to disk
-#: src/admin/file/EditController.php:197
+#: src/admin/file/EditController.php:199
 msgctxt "Editor"
 msgid "Save"
 msgstr "Enregistrer"
 
 #. Translators: button for removing a string when manually editing a POT file
-#: src/admin/file/EditController.php:195 src/ajax/ApisController.php:26
+#: src/admin/file/EditController.php:197 src/ajax/ApisController.php:26
 msgid "Help"
 msgstr "Aide"
 
 #. Translators: button for removing a string when manually editing a POT file
-#: src/admin/file/EditController.php:194
+#: src/admin/file/EditController.php:196
 msgctxt "Editor"
 msgid "Remove"
 msgstr "Retirer"
 
 #. Translators: button for adding a new string when manually editing a POT file
-#: src/admin/file/EditController.php:192
+#: src/admin/file/EditController.php:194
 msgctxt "Editor"
 msgid "Add"
 msgstr "Ajouter"
@@ -1821,21 +1837,21 @@ msgid_plural "%u files deleted"
 msgstr[0] "Fichier supprimé"
 msgstr[1] "%u fichiers supprimés"
 
-#: src/admin/file/BaseController.php:108 tpl/admin/bundle/inc-po-table.php:63
+#: src/admin/file/BaseController.php:123 tpl/admin/bundle/inc-po-table.php:63
 #: tpl/admin/bundle/locale.php:75 tpl/admin/file/diff.php:32
 msgid "Delete"
 msgstr "Supprimer"
 
-#: src/admin/file/BaseController.php:105 tpl/admin/bundle/inc-po-table.php:22
+#: src/admin/file/BaseController.php:120 tpl/admin/bundle/inc-po-table.php:22
 #: tpl/admin/bundle/locale.php:43
 msgid "File info"
 msgstr "Info du fichier"
 
-#: src/admin/file/BaseController.php:104
+#: src/admin/file/BaseController.php:119
 msgid "Source"
 msgstr "Source"
 
-#: src/admin/file/BaseController.php:103
+#: src/admin/file/BaseController.php:118
 msgid "Editor"
 msgstr "Éditeur"
 
@@ -1878,7 +1894,7 @@ msgstr "Créer un modèle"
 msgid "Edit template"
 msgstr "Modifier le modèle"
 
-#: src/admin/bundle/ViewController.php:98 src/admin/file/BaseController.php:127
+#: src/admin/bundle/ViewController.php:98 src/admin/file/BaseController.php:142
 #: src/admin/init/InitPoController.php:16
 #: src/admin/init/InitPoController.php:115
 msgid "New language"
@@ -1970,7 +1986,7 @@ msgstr "Extensions"
 msgid "Themes"
 msgstr "Thèmes"
 
-#: src/Locale.php:324
+#: src/Locale.php:330
 msgid "Invalid locale"
 msgstr "Locale non valide"
 
@@ -1987,7 +2003,7 @@ msgid "https://wordpress.org/plugins/loco-translate/"
 msgstr "https://fr.wordpress.org/plugins/loco-translate/"
 
 #. Translators: Placeholder text for text filter above editor
-#: src/admin/file/EditController.php:207
+#: src/admin/file/EditController.php:209
 msgid "Filter translations"
 msgstr "Filtrer les traductions"
 
@@ -2065,7 +2081,7 @@ msgstr "Fichier %s enregistré"
 msgid "Unknown error"
 msgstr "Erreur inconnue"
 
-#: src/admin/file/EditController.php:165 src/mvc/AdminRouter.php:67
+#: src/admin/file/EditController.php:166 src/mvc/AdminRouter.php:67
 #: src/mvc/AdminRouter.php:72 tpl/admin/common/inc-fsconn.php:18
 #: tpl/admin/common/inc-fsconn.php:43 tpl/admin/errors/no-backups.php:24
 #: tpl/ajax/modal-apis-empty.php:15
