@@ -112,6 +112,10 @@ class Betterdocs_Pro
 		 * Extend post type Class
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-multiple-kb.php';
+        /**
+         * This trait is used to restrict content based on Internal KB settings
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'public/betterdocs-content-restrictions.php';
 		/**
 		 * Extend post type Class
 		 */
@@ -133,7 +137,7 @@ class Betterdocs_Pro
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-betterdocs-pro-admin-screen.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/includes/class-betterdocs-pro-settings.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/includes/class-betterdocs-analytics.php';
-		require_once plugin_dir_path(dirname( __FILE__)) . 'admin/partials/class-betterdocs-post-counter.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/partials/class-betterdocs-post-counter.php';
 		/**
 		 * The class responsible for defining all IA actions that occur in the settings area
 		 */
@@ -156,10 +160,15 @@ class Betterdocs_Pro
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/customizer/customizer.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/customizer/defaults.php';
 
-        /**
-         * The class responsible for registering widget in elementor and extend single page functionality
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/elementor/class-betterdocs-pro-elementor.php';
+		/**
+		 * The class responsible for registering widget in elementor and extend single page functionality
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/elementor/class-betterdocs-pro-elementor.php';
+
+		/**
+		 * The class responsible for defining all actions that occur in rest api.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-betterdocs-pro-rest-api.php';
 
 		$this->loader = new Betterdocs_Pro_Loader();
 	}
@@ -191,10 +200,10 @@ class Betterdocs_Pro
 	private function define_admin_hooks()
 	{
 		$plugin_admin = new Betterdocs_Pro_Admin($this->get_plugin_name(), $this->get_version());
-        $this->loader->add_filter('admin_body_class', $plugin_admin, 'body_classes');
+		$this->loader->add_filter('admin_body_class', $plugin_admin, 'body_classes');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
-        new BetterDocs_Pro_Admin_Screen();
+		new BetterDocs_Pro_Admin_Screen();
 	}
 
 	/**
