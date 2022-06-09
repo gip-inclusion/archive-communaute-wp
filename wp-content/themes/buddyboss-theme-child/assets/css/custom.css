@@ -63,6 +63,16 @@ body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
 	display: none;
 }
 
+
+
+/* BB V2 */
+/* body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
+  font-weight: normal;
+}
+body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
+  padding: 1rem 1.5rem;
+} */
+
 /* Responsive */
 body #tribe-events-content {
   overflow: visible;
