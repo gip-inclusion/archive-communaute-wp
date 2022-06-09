@@ -424,6 +424,9 @@ body.bb-sfwd-aside.buddypanel-header .buddypanel .panel-head .bb-toggle-panel {
   border-bottom: 1px solid var(--bb-primary-button-border-regular) !important;
   border-radius: var(--bb-button-radius);
 }
+.learndash-wrapper .ld-button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .learndash-wrapper .ld-button:hover {
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
@@ -1662,6 +1665,11 @@ a.bb-preview-course-link span {
 .bb-single-course-sidebar .bb-button-wrap .ld-status + .bb-course-type {
   margin-top: 10px;
 }
+.bb-single-course-sidebar .bb-button-wrap .bb-course-type.bb-course-type-paynow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
 .bb-single-course-sidebar .bb-course-member-wrap + .bb-button-wrap {
   padding-top: 0;
 }
@@ -1714,11 +1722,11 @@ a.bb-preview-course-link span {
   opacity: 1;
 }
 .bb-single-course-sidebar a.btn-advance {
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   border-bottom: 1px solid var(--bb-primary-button-border-regular) !important;
-  border-radius: 100px;
+  border-radius: var(--bb-button-radius);
   width: 100%;
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
@@ -1727,11 +1735,17 @@ a.bb-preview-course-link span {
   padding: 10px 19px;
   line-height: 1.471;
 }
+.bb-single-course-sidebar a.btn-advance:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .bb-single-course-sidebar a.btn-advance:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
   border-bottom: 1px solid var(--bb-primary-button-border-hover) !important;
+}
+.bb-single-course-sidebar a.btn-advance:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow) !important;
 }
 .bb-single-course-sidebar .btn-advance-disabled a.btn-advance {
   background-color: #F5F5F5;
@@ -2533,21 +2547,27 @@ div.bb-lms-header.quiz-fix .bb-position {
   display: none;
 }
 .learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button {
-  border-radius: 100px;
-  border: 1px solid var(--bb-primary-button-border-regular);
+  border-radius: var(--bb-button-radius);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
   font-size: 15px;
   font-weight: 500;
   padding: 10px 20px;
 }
+.learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button:hover {
   opacity: 1;
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
+}
+.learndash-wrapper .learndash_content_wrap .learndash_mark_complete_button:focus {
+  opacity: 1;
 }
 
 @media (min-width: 1024px) {
@@ -3016,7 +3036,7 @@ div.bb-lms-header.quiz-fix .bb-position {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.03);
   color: var(--bb-alternate-text-color);
-  border-radius: 20px;
+  border-radius: var(--bb-button-radius);
   padding: 1px 15px 1px 10px;
   font-size: 12px;
   margin: 0 0 15px;
@@ -5157,6 +5177,9 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   color: var(--bb-secondary-button-text-regular);
   border: 1px solid var(--bb-secondary-button-border-regular);
 }
+.learndash-wrapper #ld-profile .ld-item-list .ld-section-heading .ld-item-list-actions .ld-expand-button:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
+}
 .learndash-wrapper #ld-profile .ld-item-list .ld-section-heading .ld-item-list-actions .ld-expand-button .ld-icon {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -5182,6 +5205,9 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   background-color: var(--bb-secondary-button-background-regular);
   color: var(--bb-secondary-button-text-regular);
   border: 1px solid var(--bb-secondary-button-border-regular);
+}
+.learndash-wrapper #ld-profile .ld-item-list .ld-section-heading .ld-item-list-actions .ld-search-prompt:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
 }
 .learndash-wrapper #ld-profile .ld-item-list .ld-section-heading .ld-item-list-actions .ld-search-prompt .ld-icon {
   margin-left: 8px;
@@ -5222,6 +5248,10 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   line-height: 40px;
   background-color: var(--bb-content-background-color);
 }
+.learndash-wrapper #ld-profile .ld-item-search .ld-item-search-fields input.ld-course-nav-field:focus {
+  box-shadow: var(--bb-input-focus-shadow);
+  border-color: var(--bb-input-focus-border-color);
+}
 .learndash-wrapper #ld-profile .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button {
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
@@ -5230,6 +5260,9 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
   line-height: 1;
+}
+.learndash-wrapper #ld-profile .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
 }
 .learndash-wrapper #ld-profile .ld-item-search .ld-item-search-fields .ld-item-search-submit .ld-button:hover {
   background-color: var(--bb-primary-button-background-hover);
@@ -5527,6 +5560,9 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   background-color: var(--bb-secondary-button-background-regular);
   color: var(--bb-secondary-button-text-regular);
   border: 1px solid var(--bb-secondary-button-border-regular);
+}
+.learndash-wrapper #ld-profile .ld-profile-summary .ld-profile-edit-link:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
 }
 .learndash-wrapper #ld-profile .ld-profile-summary .ld-profile-edit-link:hover {
   background-color: var(--bb-secondary-button-background-hover);
@@ -7462,18 +7498,21 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   color: var(--bb-alternate-text-color);
 }
 .wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button {
-  border: 1px solid var(--bb-secondary-button-border-regular);
   background-color: var(--bb-secondary-button-background-regular);
   color: var(--bb-secondary-button-text-regular);
+  border: 1px solid var(--bb-secondary-button-border-regular);
   font-weight: 500;
   min-height: 34px;
   padding: 6px 2em;
   box-shadow: none;
 }
-.wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:hover, .wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:active, .wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:focus {
-  border: 1px solid var(--bb-secondary-button-border-hover);
+.wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:focus {
+  box-shadow: var(--bb-secondary-button-focus-shadow);
+}
+.wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:hover, .wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button:active {
   background-color: var(--bb-secondary-button-background-hover);
   color: var(--bb-secondary-button-text-hover);
+  border: 1px solid var(--bb-secondary-button-border-hover);
   box-shadow: none;
 }
 .wpProQuiz_content .wpProQuiz_results .ld-quiz-actions {
@@ -7721,11 +7760,11 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
 
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_addToplist {
   border-color: var(--bb-default-notice-color);
-  border-radius: 4px;
+  border-radius: var(--bb-block-radius-inner);
 }
 
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_toplistTable th {
-  background: #fff;
+  background: var(--bb-content-alternate-background-color);
 }
 
 .wpProQuiz_content .wpProQuiz_addBox {
@@ -7860,18 +7899,21 @@ p.wpProQuiz_quiz_time > span {
   background-repeat: no-repeat;
   background-position: 14px center;
   background-size: 18px 18px;
-  border: 1px solid var(--bb-primary-button-border-regular);
   background-color: var(--bb-primary-button-background-regular);
   color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   padding-left: 0;
   padding-right: 0;
   font-weight: normal;
   min-width: 160px;
 }
+.wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button[name="restartQuiz"]:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .wpProQuiz_content .wpProQuiz_results > div > .wpProQuiz_button[name="restartQuiz"]:hover {
-  border: 1px solid var(--bb-primary-button-border-hover);
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
+  border-color: var(--bb-primary-button-border-hover);
 }
 
 .wpProQuiz_content .wpProQuiz_results .quiz_continue_link {
@@ -8041,12 +8083,20 @@ p.wpProQuiz_quiz_time > span {
   -webkit-transition: all linear .2s;
           transition: all linear .2s;
 }
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button:focus,
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button2:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_button:hover,
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_button2:hover {
   opacity: 1;
   background-color: var(--bb-primary-button-background-hover);
   color: var(--bb-primary-button-text-hover);
   border-color: var(--bb-primary-button-border-hover);
+}
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button:focus,
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button2:focus {
+  opacity: 1;
 }
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_questionListItem label.is-selected,
 .learndash-wrapper .wpProQuiz_content .wpProQuiz_questionListItem label:focus-within {
@@ -11433,7 +11483,7 @@ form#registerform {
 
 .learndash-wrapper .ld-status {
   height: 100%;
-  border-radius: 100px;
+  border-radius: var(--bb-label-type-radius);
   text-transform: none;
   font-weight: 400;
   line-height: 30px;

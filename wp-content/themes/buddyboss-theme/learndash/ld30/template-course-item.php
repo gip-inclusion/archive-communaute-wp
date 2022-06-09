@@ -195,7 +195,7 @@ if ( ! empty( $course_price ) && ( 'paynow' === $course_price_type || 'subscribe
 			<?php } ?>
 
 			<div class="bb-course-excerpt">
-				<?php echo esc_html( get_the_excerpt( $course_id ) ); ?>
+				<?php echo wp_kses_post( get_the_excerpt( $course_id ) ); ?>
 			</div>
 
 			<?php
@@ -205,12 +205,8 @@ if ( ! empty( $course_price ) && ( 'paynow' === $course_price_type || 'subscribe
 				<div class="bb-course-footer bb-course-pay">
 				<span class="course-fee">
 						<?php
-						if ( 'closed' !== $course_pricing['type'] ) :
-							echo wp_kses_post( '<span class="ld-currency">' . function_exists( 'learndash_get_currency_symbol' ) ?
-								learndash_get_currency_symbol() : learndash_30_get_currency_symbol() . '</span> ' );
-						endif;
+						echo '<span class="ld-currency">' . wp_kses_post( function_exists( 'learndash_get_currency_symbol' ) ? learndash_get_currency_symbol() : learndash_30_get_currency_symbol() ) . '</span> ' . wp_kses_post( $course_pricing['price'] );
 						?>
-						<?php echo wp_kses_post( $course_pricing['price'] ); ?>
 					</span>
 				</div>
 				<?php

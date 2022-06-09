@@ -1,8 +1,8 @@
 === BuddyBoss Theme ===
 Contributors: BuddyBoss
 Requires at least: 4.9.1
-Tested up to: 5.9.3
-Version: 2.0.1
+Tested up to: 6.0
+Version: 2.0.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,49 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 2.0.3 =
+* Theme Options - Handled maintenance mode page description field shortcode support issue
+* Profiles - Handled UI issue when accepting connection request
+* Forums - Small improvement to hide scrubber when reply count less than 10
+* Coding Standards - Code refactoring to handle warnings and notices
+* LearnDash - Handled currency not showing issue for closed access mode courses
+* LifterLMS - Handled broken certificate template issue
+* Events Calendar Pro - Handled past events not showing issue in search results
+* Yoast SEO - Handled update profile action critical conflict in the admin dashboard
+* Compatibility - Code refactoring to fix a bunch of PHP 8 compatibility issues
+* Compatibility - Handled 'Thrive Architect' video compatibility issue
+
+= 2.0.2 =
+* Notifications - Added icon support for notification avatar based on the notification type
+* Blog - Enhanced style for blog posts screens
+* Theme Options - Provided new color options for BuddyPanel
+* Theme Options - Handled 404 page custom image not working issue
+* Styling - Handled a bunch of miscellaneous styling issues for 1.0 and 2.0
+* Styling - Handled blocks, input, and checkboxes border radius styling issues to keep consistent
+* Styling - Handled button and input field hover and focus shadow styling issue to keep consistent
+* Styling - Handled custom font not working issue for tooltips
+* Styling - Handled table block alignment issue
+* Styling - Handled vertical navigation layout issues for profile and group
+* Header - Handled sub-menu dropdown color issue
+* Header - Handled sub-menu dropdown multiple level layout issues
+* Footer - Handled email icon not visible issue
+* Profiles - Handled delete account warning style issue
+* Profiles - Improved multi-select field in edit profile
+* Profiles - Handled Custom Profile dropdown styling issue
+* Groups - Handled long group name and group type string UI issue on single group screen
+* Messages - Handled send message alignment issue
+* Messages - Handled message thread dropdown read/unread hover UI issue
+* BuddyPanel - Handled menu custom icon alignment issue
+* BuddyPanel - Handled stick to bottom layout issue for sections
+* Zoom - Handled group zoom screen layout issues
+* Coding Standards - Code cleanup and refactoring
+* Coding Standards - Handled icon library to load minified version
+* LearnDash - Handled wrong course count issue when filter applied
+* Elementor - Provided new skin for Profile Completion widget
+* Elementor - Handled elementor icon conflict issue
+* GamiPress - Handled members and connection widgets active members icon overlapping issue
+* WooCommerce - Handled order details not working issue when product deleted
 
 = 2.0.1 =
 * Theme Options - Handled header styles not showing issue when BuddyPanel not configured

@@ -1009,6 +1009,10 @@ body .bbp-lead-topic .bs-meta-item.bs-meta-item > a,
   border: 1px solid var(--bb-content-border-color);
   border-radius: var(--bb-button-radius);
 }
+body .bbp-lead-topic .bs-meta-item.bs-meta-item > a:focus,
+.bbp-lead-topic .bs-meta-item > a:focus {
+  box-shadow: var(--bb-outline-button-focus-shadow);
+}
 body .bbp-lead-topic .bs-meta-item.bs-meta-item > a:hover,
 .bbp-lead-topic .bs-meta-item > a:hover {
   background-color: var(--bb-secondary-button-background-hover);
@@ -2412,9 +2416,9 @@ body:not(.logged-in) .bbp-form-fields-bottom-wrap.bb-tags-field-container {
 .subscription-toggle,
 .bbp-topic-login-link {
   font-size: 15px;
-  color: var(--bb-primary-button-text-regular);
   background-color: var(--bb-primary-button-background-regular);
-  border-color: var(--bb-primary-button-border-regular);
+  color: var(--bb-primary-button-text-regular);
+  border: 1px solid var(--bb-primary-button-border-regular);
   border-radius: var(--bb-button-radius);
   padding: 10px 20px;
   font-weight: 500;
@@ -2435,14 +2439,20 @@ body:not(.logged-in) .bbp-form-fields-bottom-wrap.bb-tags-field-container {
   -webkit-transition: all linear 0.2s;
           transition: all linear 0.2s;
 }
+.bbp-topic-reply-link:focus,
+.favorite-toggle:focus,
+.subscription-toggle:focus,
+.bbp-topic-login-link:focus {
+  box-shadow: var(--bb-primary-button-focus-shadow);
+}
 .bbp-topic-reply-link:hover,
 .favorite-toggle:hover,
 .subscription-toggle:hover,
 .bbp-topic-login-link:hover {
   outline: none;
   text-decoration: none;
-  color: var(--bb-primary-button-text-hover);
   background-color: var(--bb-primary-button-background-hover);
+  color: var(--bb-primary-button-text-hover);
   border-color: var(--bb-primary-button-border-hover);
 }
 .bbp-topic-reply-link:active,
@@ -2451,8 +2461,8 @@ body:not(.logged-in) .bbp-form-fields-bottom-wrap.bb-tags-field-container {
 .bbp-topic-login-link:active {
   outline: none;
   text-decoration: none;
-  color: var(--bb-primary-button-text-hover);
   background-color: var(--bb-primary-button-background-hover);
+  color: var(--bb-primary-button-text-hover);
   border-color: var(--bb-primary-button-border-hover);
 }
 .bbp-topic-reply-link.disabled,
@@ -2471,6 +2481,10 @@ body:not(.logged-in) .bbp-form-fields-bottom-wrap.bb-tags-field-container {
   background-color: var(--bb-content-background-color);
   color: var(--bb-headings-color);
   border: 1px solid var(--bb-content-border-color);
+}
+.favorite-toggle:focus,
+.subscription-toggle:focus {
+  box-shadow: var(--bb-outline-button-focus-shadow);
 }
 .favorite-toggle:hover,
 .subscription-toggle:hover {
