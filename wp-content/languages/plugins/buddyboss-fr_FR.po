@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-06-13 15:30+0200\n"
+"PO-Revision-Date: 2022-06-13 16:29+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -29962,8 +29962,6 @@ msgid "moderated"
 msgstr "modéré"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/activity-ajax.php:37
-#, fuzzy
-#| msgid "%s ago"
 msgid " ago"
 msgstr "Il y a %s"
 
@@ -30021,17 +30019,13 @@ msgstr[1] "%d réponses"
 #: bp-templates/bp-nouveau/buddypress/search/loop/forum.php:70
 #: bp-templates/bp-nouveau/buddypress/search/loop/group-ajax.php:28
 #: bp-templates/bp-nouveau/buddypress/search/loop/group.php:31
-#, fuzzy
-#| msgid "Last Active"
 msgid "Last active "
-msgstr "Dernière activité"
+msgstr "Dernière activité "
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/member-ajax.php:24
 #: bp-templates/bp-nouveau/buddypress/search/loop/member.php:26
-#, fuzzy
-#| msgid "Last Active"
 msgid "Last active"
-msgstr "Dernière activité"
+msgstr "Dernière activité "
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/message-ajax.php:20
 msgid "From:"
@@ -30059,10 +30053,8 @@ msgstr "Par %s"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/reply-ajax.php:34
 #: bp-templates/bp-nouveau/buddypress/search/loop/reply.php:40
-#, fuzzy
-#| msgid "Member replies to a forum discussion"
 msgid "replied to a discussion"
-msgstr "Un membre répond à une discussion de forum"
+msgstr "a répondu à une discussion de forum"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/sfwd-courses-ajax.php:52
 #: bp-templates/bp-nouveau/buddypress/search/loop/sfwd-courses.php:62
@@ -30080,10 +30072,8 @@ msgstr[1] "% d quiz"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/topic-ajax.php:48
 #: bp-templates/bp-nouveau/buddypress/search/loop/topic.php:51
-#, fuzzy
-#| msgid "Started"
 msgid "Started "
-msgstr "Commencé"
+msgstr "Commencé "
 
 #: bp-templates/bp-nouveau/buddypress/search/no-results-groups.php:12
 msgid "No groups found!"
@@ -32088,10 +32078,8 @@ msgid "Mark Read"
 msgstr "Marquer comme lu"
 
 #: bp-templates/bp-nouveau/includes/search/functions.php:55
-#, fuzzy
-#| msgid "Loading Suggestions"
 msgid "Loading suggestions..."
-msgstr "Recherche de suggestions"
+msgstr "Recherche de suggestions…"
 
 #: bp-templates/bp-nouveau/includes/template-tags.php:2169
 msgid "Show:"
