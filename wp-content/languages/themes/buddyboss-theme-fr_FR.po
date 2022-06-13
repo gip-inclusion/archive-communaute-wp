@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-11 12:37:20+00:00\n"
-"PO-Revision-Date: 2022-06-13 15:19+0200\n"
+"PO-Revision-Date: 2022-06-13 16:32+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -15193,10 +15193,8 @@ msgid "Use this image"
 msgstr "Utiliser cette image"
 
 #: inc/theme/functions.php:1319
-#, fuzzy
-#| msgid "Search"
 msgid "Search..."
-msgstr "Rechercher"
+msgstr "Rechercher…"
 
 #: inc/theme/functions.php:1372
 msgid "Stick to Bottom"
