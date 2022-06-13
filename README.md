@@ -66,5 +66,13 @@ En cas de souci, pour remonter tout le projet de zéro :
 4. la liaison du code à la DB se fait dans `wp-config.php`, par défaut, il récupère les variables d'env Docker en local, et celles de CC en staging / prod
 5. replacer les fichiers uploads dans `wp-content/uploads`
 6. 🤞 croiser les doigts
+
+### Sauvegardes
+- le C3 dispose de 2 types de sauvegardes :
+  - les sauvegardes auto de la DB chez CC (quotidienne, autour 4h30 du matin, sur 7 jours max)
+  - les sauvegardes mises en place vers Scaleway (sur 14 jours max, gérées via BackWPUp) : 
+    - quotidienne : base de données, à 3h du matin, préfixées daily-*
+    - hebdomadaire : base de données + fichiers, tous les lundis à 1h du matin
+
 ### Astuces
 - parfois, la page d'accueil est accessible, mais le reste non (erreur 500 ou 404) : il faut rafraichir les réécritures d'URL de WP (Réglages > Permaliens et cliquer sur Enregistrer)
