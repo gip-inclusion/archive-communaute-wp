@@ -62,9 +62,10 @@ body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
 .single-item.groups #bp-nouveau-activity-form {
 	display: none;
 }
-.group-admin #buddypress .bp-list .action .generic-button a {
+.group-admin #buddypress .bp-list .action .generic-button a, .bbp-user-page  #buddypress .bp-list .action .generic-button a {
   color: #fff;
 }
+
 
 
 /* BB V2 */
