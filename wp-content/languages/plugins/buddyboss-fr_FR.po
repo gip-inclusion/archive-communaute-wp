@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-06-09 17:02+0200\n"
+"PO-Revision-Date: 2022-06-13 15:21+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -23870,26 +23870,18 @@ msgid "%s became a registered member"
 msgstr "%s membre est inscrit"
 
 #: bp-members/bp-members-admin.php:27 bp-members/bp-members-admin.php:93
-#, fuzzy
-#| msgid "Online"
 msgid "Online Status"
 msgstr "En ligne"
 
 #: bp-members/bp-members-admin.php:39
-#, fuzzy
-#| msgid "Member suspended."
 msgid "Member Handle"
-msgstr "Membre suspendu."
+msgstr "Membre suspendu"
 
 #: bp-members/bp-members-admin.php:44 bp-members/bp-members-admin.php:117
-#, fuzzy
-#| msgid "Joined %s"
 msgid "Joined Date"
 msgstr "Inscrit depuis le %s"
 
 #: bp-members/bp-members-admin.php:55 bp-members/bp-members-admin.php:106
-#, fuzzy
-#| msgid "My Followers"
 msgid "Followers"
 msgstr "Mes Abonnés"
 
@@ -23933,8 +23925,6 @@ msgid "Email Address"
 msgstr "Adresse e-mail"
 
 #: bp-members/bp-members-filters.php:669
-#, fuzzy
-#| msgid "Active"
 msgid "Active now"
 msgstr "Actif"
 
