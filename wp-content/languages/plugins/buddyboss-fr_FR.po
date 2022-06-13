@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-06-13 16:29+0200\n"
+"PO-Revision-Date: 2022-06-13 17:46+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -29884,10 +29884,8 @@ msgid "%s's Profile"
 msgstr "Profil de %s"
 
 #: bp-templates/bp-nouveau/buddypress/members/single/profile/widget.php:31
-#, fuzzy
-#| msgid "%s"
 msgid "%"
-msgstr "%s"
+msgstr "%"
 
 #: bp-templates/bp-nouveau/buddypress/members/single/settings/capabilities.php:14
 msgid "Member Capabilities"
@@ -29914,10 +29912,8 @@ msgid "Leave password fields blank for no change"
 msgstr "Laisser les champs mot de passe vides pour aucune modification"
 
 #: bp-templates/bp-nouveau/buddypress/members/single/settings/notifications.php:32
-#, fuzzy
-#| msgid " Read more"
 msgid "Learn more"
-msgstr " En savoir plus"
+msgstr "En savoir plus"
 
 #: bp-templates/bp-nouveau/buddypress/members/single/settings/notifications.php:41
 msgid "A notification sent to your inbox"
@@ -29944,8 +29940,6 @@ msgid "Manage Privacy"
 msgstr "Gérer la confidentialité"
 
 #: bp-templates/bp-nouveau/buddypress/moderation/blocked-members-loop.php:16
-#, fuzzy
-#| msgid "Sorry, you are not allowed to report this item."
 msgid "Sorry, you were not able to report this member."
 msgstr "Désolé, vous n’êtes pas autorisé à signaler cet article."
 
@@ -29967,10 +29961,8 @@ msgstr "Il y a %s"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/activity-comment-ajax.php:28
 #: bp-templates/bp-nouveau/buddypress/search/loop/activity-comment.php:24
-#, fuzzy
-#| msgid "No replies to import"
 msgid "replied to a post"
-msgstr "Aucune réponse à l'import"
+msgstr "a répondu à la discussion"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/activity-comment-ajax.php:37
 #: bp-templates/bp-nouveau/buddypress/search/loop/activity-comment.php:32
@@ -29990,10 +29982,8 @@ msgstr "il y a"
 #: bp-templates/bp-nouveau/buddypress/search/loop/topic.php:44
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos-ajax.php:50
 #: bp-templates/bp-nouveau/buddypress/search/loop/videos.php:55
-#, fuzzy
-#| msgid "By %s"
 msgid "By "
-msgstr "Par %s"
+msgstr "Par "
 
 #. translators: total topics
 #: bp-templates/bp-nouveau/buddypress/search/loop/forum-ajax.php:43
