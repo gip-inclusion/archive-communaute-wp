@@ -65,7 +65,11 @@ body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
 .group-admin #buddypress .bp-list .action .generic-button a, .bbp-user-page  #buddypress .bp-list .action .generic-button a {
   color: #fff;
 }
-
+body.bb-template-v2 .bp-navs ul li.selected a .bb-component-nav-item-point {
+  display: inline-block;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
 
 
 /* BB V2 */
