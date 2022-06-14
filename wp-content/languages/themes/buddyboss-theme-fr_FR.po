@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-11 12:37:20+00:00\n"
-"PO-Revision-Date: 2022-06-14 17:12+0200\n"
+"PO-Revision-Date: 2022-06-14 17:15+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -239,10 +239,8 @@ msgid "Post"
 msgstr "Publier"
 
 #: bbpress/content-single-topic.php:63 bbpress/content-single-topic.php:101
-#, fuzzy
-#| msgid "Log in  to reply."
 msgid "Log In to Reply"
-msgstr "Connectez-vous pour répondre."
+msgstr "Connectez-vous pour répondre"
 
 #: bbpress/content-single-topic.php:148
 msgid "Start of Discussion"
@@ -291,8 +289,6 @@ msgid "New discussion"
 msgstr "Nouvelle discussion"
 
 #: bbpress/feedback-no-topics.php:79
-#, fuzzy
-#| msgid "Sorry, no courses were found."
 msgid "Sorry, there were no discussions found."
 msgstr "Désolée, aucun cours n'a été trouvé."
 
