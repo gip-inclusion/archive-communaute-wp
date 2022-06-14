@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-06-13 17:46+0200\n"
+"PO-Revision-Date: 2022-06-14 17:10+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -16776,8 +16776,6 @@ msgid "No forums have been created here yet."
 msgstr "Aucun forum n'a encore été créé ici."
 
 #: bp-forums/templates/default/bbpress/feedback-no-replies.php:13
-#, fuzzy
-#| msgid "Sorry, there were no results found."
 msgid "Sorry, there were no replies found."
 msgstr "Désolé, aucun résultat n’a été trouvé."
 

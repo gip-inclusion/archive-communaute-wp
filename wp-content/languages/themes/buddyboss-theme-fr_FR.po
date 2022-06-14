@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-11 12:37:20+00:00\n"
-"PO-Revision-Date: 2022-06-13 16:32+0200\n"
+"PO-Revision-Date: 2022-06-14 17:12+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -174,16 +174,12 @@ msgid "More actions"
 msgstr "Plus d'actions"
 
 #: bbpress/content-single-topic-lead.php:177
-#, fuzzy
-#| msgid "Post Reply"
 msgid "Posted by"
-msgstr "Publier une réponse"
+msgstr "Publié par"
 
 #: bbpress/content-single-topic-lead.php:187
-#, fuzzy
-#| msgid "Won"
 msgid "on"
-msgstr "Won"
+msgstr "le"
 
 #: bbpress/content-single-topic-lead.php:210 bbpress/loop-search-reply.php:17
 #: bbpress/loop-search-topic.php:49 bbpress/loop-topic-list.php:50
