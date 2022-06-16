@@ -19,13 +19,13 @@
 
     <a class="crisp-button crisp-button-blue u-mb20" href="<?php echo esc_url("https://app.crisp.chat/website/" . $website_id) ?>/inbox/" target="_blank">💬 <?php _e("Open Crisp Inbox", "crisp"); ?></a>
 
-    <a class="crisp-button crisp-button-grey u-mb20" href="<?php echo esc_url("https://app.crisp.chat/settings/website/" . $website_id) ?>/" target="_blank">⚙️ <?php _e("Edit Settings", "crisp"); ?></a>      
+    <a class="crisp-button crisp-button-grey u-mb20" href="<?php echo esc_url("https://app.crisp.chat/settings/website/" . $website_id) ?>/" target="_blank">⚙️ <?php _e("Edit Settings", "crisp"); ?></a>
 
-    <a class="crisp-button crisp-button-grey u-mb20" href="<?php echo esc_url($add_to_crisp_link); ?>">🪄 <?php _e("Relink Crisp with my WordPress", "crisp"); ?></a>      
+    <a class="crisp-button crisp-button-grey u-mb20" href="<?php echo esc_url($add_to_crisp_link); ?>">🪄 <?php _e("Relink Crisp with my WordPress", "crisp"); ?></a>
 
     <p class="crisp-notice"><?php _e("Loving Crisp <b style='color:red'>♥</b> ? Rate us on the <a target='_blank' href='https://wordpress.org/support/plugin/crisp/reviews/?filter=5'>WordPress Plugin Directory</a>", "crisp"); ?></p>
   </div>
-  
+
   <div class="crisp-side">
     <div class="crisp-side-illustration"></div>
 
