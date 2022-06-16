@@ -3,9 +3,9 @@ Contributors: crisp.chat
 Donate link: https://crisp.chat
 Tags:  livechat, live chat, crisp, chatbot, free live chat, Chat bot, bot
 Requires at least: 3.0.1
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.3
-Stable tag: 0.34
+Stable tag: 0.35
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 A Free, one-click-to-install, Live Chat and chatbot plugin. No coding skills are required. Used by more than 30 000 customers on WordPress.

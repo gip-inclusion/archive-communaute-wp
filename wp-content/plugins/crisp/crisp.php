@@ -1,12 +1,12 @@
 <?php
 /**
  * @package Crisp
- * @version 0.34
+ * @version 0.35
  * Plugin Name: Crisp
  * Plugin URI: http://wordpress.org/plugins/crisp/
  * Description: Crisp is a Livechat plugin
  * Author: Crisp
- * Version: 0.34
+ * Version: 0.35
  * Author URI: https://crisp.chat
  * Text Domain: crisp
 */
