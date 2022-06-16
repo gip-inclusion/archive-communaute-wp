@@ -88,9 +88,9 @@ class Tribe__Events__Pro__Recurrence__Queries {
 		if ( $query->query_vars['fields'] === 'id=>parent' ) {
 			$groupby = 'ID';
 		} elseif ( ! empty( $query->tribe_is_multi_posttype ) ) {
-			$groupby = $wpdb->prepare( "IF( {$wpdb->posts}.post_parent = 0 OR post_type != %s, ID, {$wpdb->posts}.post_parent )", Tribe__Events__Main::POSTTYPE );
+			$groupby = $wpdb->prepare( 'IF( post_parent = 0 OR post_type != %s, ID, post_parent )', Tribe__Events__Main::POSTTYPE );
 		} else {
-			$groupby = "IF( {$wpdb->posts}.post_parent = 0, ID, {$wpdb->posts}.post_parent )";
+			$groupby = 'IF( post_parent = 0, ID, post_parent )';
 		}
 
 		$group_clause = 'GROUP BY ' . $groupby;
