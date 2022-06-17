@@ -1,6 +1,6 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.6 - 08-06-2022 */
 "use strict";
-(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["tabs"],{
+(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["toggle"],{
 
 /***/ "../assets/dev/js/frontend/handlers/base-tabs.js":
 /*!*******************************************************!*\
@@ -149,7 +149,7 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
       'aria-selected': 'true',
       'aria-expanded': 'true'
     });
-    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('resize'));
+    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('elementor-pro/motion-fx/recalc'));
     $requestedContent.removeAttr('hidden');
   }
 
@@ -225,10 +225,10 @@ exports["default"] = baseTabs;
 
 /***/ }),
 
-/***/ "../assets/dev/js/frontend/handlers/tabs.js":
-/*!**************************************************!*\
-  !*** ../assets/dev/js/frontend/handlers/tabs.js ***!
-  \**************************************************/
+/***/ "../assets/dev/js/frontend/handlers/toggle.js":
+/*!****************************************************!*\
+  !*** ../assets/dev/js/frontend/handlers/toggle.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -242,19 +242,22 @@ exports["default"] = void 0;
 
 var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
 
-class Tabs extends _baseTabs.default {
+class Toggle extends _baseTabs.default {
   getDefaultSettings() {
     const defaultSettings = super.getDefaultSettings();
     return { ...defaultSettings,
-      toggleSelf: false
+      showTabFn: 'slideDown',
+      hideTabFn: 'slideUp',
+      hidePrevious: false,
+      autoExpand: 'editor'
     };
   }
 
 }
 
-exports["default"] = Tabs;
+exports["default"] = Toggle;
 
 /***/ })
 
 }]);
-//# sourceMappingURL=tabs.dd06203f51f30e1494d2.bundle.js.map
+//# sourceMappingURL=toggle.66e1aea86557ee6b7fd9.bundle.js.map

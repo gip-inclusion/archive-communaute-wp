@@ -1,4 +1,4 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.6 - 08-06-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -611,100 +611,6 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
-/***/ "../assets/dev/js/admin/admin-menu.js":
-/*!********************************************!*\
-  !*** ../assets/dev/js/admin/admin-menu.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports["default"] = void 0;
-
-__webpack_require__(/*! core-js/modules/es6.string.includes.js */ "../node_modules/core-js/modules/es6.string.includes.js");
-
-__webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
-
-var _get2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/get */ "../node_modules/@babel/runtime-corejs2/helpers/get.js"));
-
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/getPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js"));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
-
-var AdminMenuHandler = /*#__PURE__*/function (_elementorModules$Vie) {
-  (0, _inherits2.default)(AdminMenuHandler, _elementorModules$Vie);
-
-  var _super = (0, _createSuper2.default)(AdminMenuHandler);
-
-  function AdminMenuHandler() {
-    (0, _classCallCheck2.default)(this, AdminMenuHandler);
-    return _super.apply(this, arguments);
-  }
-
-  (0, _createClass2.default)(AdminMenuHandler, [{
-    key: "getDefaultElements",
-    value: function getDefaultElements() {
-      var settings = this.getSettings();
-      return {
-        $adminPageMenuLink: jQuery("a[href=\"".concat(settings.path, "\"]"))
-      };
-    } // This method highlights the currently visited submenu item for the slug provided as an argument to this handler.
-    // This method also accepts a jQuery instance of a custom submenu item to highlight. If provided, the provided
-    // item will be the one highlighted.
-
-  }, {
-    key: "highlightSubMenuItem",
-    value: function highlightSubMenuItem() {
-      var $element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      var $submenuItem = $element || this.elements.$adminPageMenuLink;
-      $submenuItem.addClass('current'); // Need to add the 'current' class to the link element's parent `<li>` element as well.
-
-      $submenuItem.parent().addClass('current');
-    }
-  }, {
-    key: "highlightTopLevelMenuItem",
-    value: function highlightTopLevelMenuItem($elementToHighlight) {
-      var $elementToRemove = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var activeClasses = 'wp-has-current-submenu wp-menu-open current';
-      $elementToHighlight.parent().addClass(activeClasses).removeClass('wp-not-current-submenu');
-
-      if ($elementToRemove) {
-        $elementToRemove.removeClass(activeClasses);
-      }
-    }
-  }, {
-    key: "onInit",
-    value: function onInit() {
-      (0, _get2.default)((0, _getPrototypeOf2.default)(AdminMenuHandler.prototype), "onInit", this).call(this);
-      var settings = this.getSettings();
-
-      if (window.location.href.includes(settings.path)) {
-        this.highlightSubMenuItem();
-      }
-    }
-  }]);
-  return AdminMenuHandler;
-}(elementorModules.ViewModule);
-
-exports["default"] = AdminMenuHandler;
-
-/***/ }),
-
 /***/ "../assets/dev/js/admin/maintenance-mode.js":
 /*!**************************************************!*\
   !*** ../assets/dev/js/admin/maintenance-mode.js ***!
@@ -790,6 +696,210 @@ module.exports = elementorModules.ViewModule.extend({
     elementorCommon.elements.$window.on('elementor/admin/init', this.onAdminInit);
   }
 });
+
+/***/ }),
+
+/***/ "../assets/dev/js/admin/menu-handler.js":
+/*!**********************************************!*\
+  !*** ../assets/dev/js/admin/menu-handler.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = void 0;
+
+__webpack_require__(/*! core-js/modules/es6.string.includes.js */ "../node_modules/core-js/modules/es6.string.includes.js");
+
+__webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _get2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/get */ "../node_modules/@babel/runtime-corejs2/helpers/get.js"));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/getPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var MenuHandler = /*#__PURE__*/function (_elementorModules$Vie) {
+  (0, _inherits2.default)(MenuHandler, _elementorModules$Vie);
+
+  var _super = (0, _createSuper2.default)(MenuHandler);
+
+  function MenuHandler() {
+    (0, _classCallCheck2.default)(this, MenuHandler);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(MenuHandler, [{
+    key: "getDefaultSettings",
+    value: function getDefaultSettings() {
+      return {
+        selectors: {
+          currentSubmenuItems: '#adminmenu .current'
+        }
+      };
+    }
+  }, {
+    key: "getDefaultElements",
+    value: function getDefaultElements() {
+      var settings = this.getSettings();
+      return {
+        $currentSubmenuItems: jQuery(settings.selectors.currentSubmenuItems),
+        $adminPageMenuLink: jQuery("a[href=\"".concat(settings.path, "\"]"))
+      };
+    } // This method highlights the currently visited submenu item for the slug provided as an argument to this handler.
+    // This method also accepts a jQuery instance of a custom submenu item to highlight. If provided, the provided
+    // item will be the one highlighted.
+
+  }, {
+    key: "highlightSubMenuItem",
+    value: function highlightSubMenuItem() {
+      var $element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var $submenuItem = $element || this.elements.$adminPageMenuLink;
+
+      if (this.elements.$currentSubmenuItems.length) {
+        this.elements.$currentSubmenuItems.removeClass('current');
+      }
+
+      $submenuItem.addClass('current'); // Need to add the 'current' class to the link element's parent `<li>` element as well.
+
+      $submenuItem.parent().addClass('current');
+    }
+  }, {
+    key: "highlightTopLevelMenuItem",
+    value: function highlightTopLevelMenuItem($elementToHighlight) {
+      var $elementToRemove = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var activeClasses = 'wp-has-current-submenu wp-menu-open current';
+      $elementToHighlight.parent().addClass(activeClasses).removeClass('wp-not-current-submenu');
+
+      if ($elementToRemove) {
+        $elementToRemove.removeClass(activeClasses);
+      }
+    }
+  }, {
+    key: "onInit",
+    value: function onInit() {
+      (0, _get2.default)((0, _getPrototypeOf2.default)(MenuHandler.prototype), "onInit", this).call(this);
+      var settings = this.getSettings();
+
+      if (window.location.href.includes(settings.path)) {
+        this.highlightSubMenuItem();
+      }
+    }
+  }]);
+  return MenuHandler;
+}(elementorModules.ViewModule);
+
+exports["default"] = MenuHandler;
+
+/***/ }),
+
+/***/ "../assets/dev/js/editor/utils/files-upload-handler.js":
+/*!*************************************************************!*\
+  !*** ../assets/dev/js/editor/utils/files-upload-handler.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = void 0;
+
+__webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var FilesUploadHandler = /*#__PURE__*/function () {
+  function FilesUploadHandler() {
+    (0, _classCallCheck2.default)(this, FilesUploadHandler);
+  }
+
+  (0, _createClass2.default)(FilesUploadHandler, null, [{
+    key: "isUploadEnabled",
+    value: function isUploadEnabled(mediaType) {
+      var unfilteredFilesTypes = ['svg', 'application/json'];
+
+      if (!unfilteredFilesTypes.includes(mediaType)) {
+        return true;
+      }
+
+      return elementorCommon.config.filesUpload.unfilteredFiles;
+    }
+  }, {
+    key: "setUploadTypeCaller",
+    value: function setUploadTypeCaller(frame) {
+      frame.uploader.uploader.param('uploadTypeCaller', 'elementor-wp-media-upload');
+    }
+  }, {
+    key: "getUnfilteredFilesNotEnabledDialog",
+    value: function getUnfilteredFilesNotEnabledDialog(callback) {
+      var onConfirm = function onConfirm() {
+        elementorCommon.ajax.addRequest('enable_unfiltered_files_upload', {}, true);
+        elementorCommon.config.filesUpload.unfilteredFiles = true;
+        callback();
+      };
+
+      return elementor.helpers.getSimpleDialog('e-enable-unfiltered-files-dialog', __('Enable Unfiltered File Uploads', 'elementor'), __('Before you enable unfiltered files upload, note that such files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files.', 'elementor'), __('Enable', 'elementor'), onConfirm);
+    }
+  }, {
+    key: "getUnfilteredFilesNotEnabledImportTemplateDialog",
+    value: function getUnfilteredFilesNotEnabledImportTemplateDialog(callback) {
+      return elementorCommon.dialogsManager.createWidget('confirm', {
+        id: 'e-enable-unfiltered-files-dialog-import-template',
+        headerMessage: __('Enable Unfiltered File Uploads', 'elementor'),
+        message: __('Before you enable unfiltered files upload, note that such files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files.', 'elementor') + '<br /><br />' + __('If you do not enable uploading unfiltered files, any SVG or JSON (including lottie) files used in the uploaded template will not be imported.', 'elementor'),
+        position: {
+          my: 'center center',
+          at: 'center center'
+        },
+        strings: {
+          confirm: __('Enable and Import', 'elementor'),
+          cancel: __('Import Without Enabling', 'elementor')
+        },
+        onConfirm: function onConfirm() {
+          elementorCommon.ajax.addRequest('enable_unfiltered_files_upload', {
+            success: function success() {
+              // This utility is used in both the admin and the Editor.
+              elementorCommon.config.filesUpload.unfilteredFiles = true;
+              callback();
+            }
+          }, true);
+        },
+        onCancel: function onCancel() {
+          return callback();
+        }
+      });
+    }
+  }]);
+  return FilesUploadHandler;
+}();
+
+exports["default"] = FilesUploadHandler;
 
 /***/ }),
 
@@ -1091,7 +1201,7 @@ var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-c
 
 var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
 
-var _adminMenu = _interopRequireDefault(__webpack_require__(/*! elementor-admin/admin-menu */ "../assets/dev/js/admin/admin-menu.js"));
+var _menuHandler = _interopRequireDefault(__webpack_require__(/*! elementor-admin/menu-handler */ "../assets/dev/js/admin/menu-handler.js"));
 
 var LandingPagesHandler = /*#__PURE__*/function (_AdminMenuHandler) {
   (0, _inherits2.default)(LandingPagesHandler, _AdminMenuHandler);
@@ -1151,7 +1261,7 @@ var LandingPagesHandler = /*#__PURE__*/function (_AdminMenuHandler) {
     }
   }]);
   return LandingPagesHandler;
-}(_adminMenu.default);
+}(_menuHandler.default);
 
 exports["default"] = LandingPagesHandler;
 
@@ -4373,21 +4483,6 @@ module.exports = patchedExec;
 
 /***/ }),
 
-/***/ "../node_modules/core-js/modules/_same-value.js":
-/*!******************************************************!*\
-  !*** ../node_modules/core-js/modules/_same-value.js ***!
-  \******************************************************/
-/***/ ((module) => {
-
-// 7.2.9 SameValue(x, y)
-module.exports = Object.is || function is(x, y) {
-  // eslint-disable-next-line no-self-compare
-  return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
-};
-
-
-/***/ }),
-
 /***/ "../node_modules/core-js/modules/_shared.js":
 /*!**************************************************!*\
   !*** ../node_modules/core-js/modules/_shared.js ***!
@@ -4406,25 +4501,6 @@ var store = global[SHARED] || (global[SHARED] = {});
   mode: __webpack_require__(/*! ./_library */ "../node_modules/core-js/modules/_library.js") ? 'pure' : 'global',
   copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
 });
-
-
-/***/ }),
-
-/***/ "../node_modules/core-js/modules/_species-constructor.js":
-/*!***************************************************************!*\
-  !*** ../node_modules/core-js/modules/_species-constructor.js ***!
-  \***************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-var anObject = __webpack_require__(/*! ./_an-object */ "../node_modules/core-js/modules/_an-object.js");
-var aFunction = __webpack_require__(/*! ./_a-function */ "../node_modules/core-js/modules/_a-function.js");
-var SPECIES = __webpack_require__(/*! ./_wks */ "../node_modules/core-js/modules/_wks.js")('species');
-module.exports = function (O, D) {
-  var C = anObject(O).constructor;
-  var S;
-  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
-};
 
 
 /***/ }),
@@ -4902,193 +4978,6 @@ __webpack_require__(/*! ./_fix-re-wks */ "../node_modules/core-js/modules/_fix-r
 
 /***/ }),
 
-/***/ "../node_modules/core-js/modules/es6.regexp.search.js":
-/*!************************************************************!*\
-  !*** ../node_modules/core-js/modules/es6.regexp.search.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var anObject = __webpack_require__(/*! ./_an-object */ "../node_modules/core-js/modules/_an-object.js");
-var sameValue = __webpack_require__(/*! ./_same-value */ "../node_modules/core-js/modules/_same-value.js");
-var regExpExec = __webpack_require__(/*! ./_regexp-exec-abstract */ "../node_modules/core-js/modules/_regexp-exec-abstract.js");
-
-// @@search logic
-__webpack_require__(/*! ./_fix-re-wks */ "../node_modules/core-js/modules/_fix-re-wks.js")('search', 1, function (defined, SEARCH, $search, maybeCallNative) {
-  return [
-    // `String.prototype.search` method
-    // https://tc39.github.io/ecma262/#sec-string.prototype.search
-    function search(regexp) {
-      var O = defined(this);
-      var fn = regexp == undefined ? undefined : regexp[SEARCH];
-      return fn !== undefined ? fn.call(regexp, O) : new RegExp(regexp)[SEARCH](String(O));
-    },
-    // `RegExp.prototype[@@search]` method
-    // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@search
-    function (regexp) {
-      var res = maybeCallNative($search, regexp, this);
-      if (res.done) return res.value;
-      var rx = anObject(regexp);
-      var S = String(this);
-      var previousLastIndex = rx.lastIndex;
-      if (!sameValue(previousLastIndex, 0)) rx.lastIndex = 0;
-      var result = regExpExec(rx, S);
-      if (!sameValue(rx.lastIndex, previousLastIndex)) rx.lastIndex = previousLastIndex;
-      return result === null ? -1 : result.index;
-    }
-  ];
-});
-
-
-/***/ }),
-
-/***/ "../node_modules/core-js/modules/es6.regexp.split.js":
-/*!***********************************************************!*\
-  !*** ../node_modules/core-js/modules/es6.regexp.split.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isRegExp = __webpack_require__(/*! ./_is-regexp */ "../node_modules/core-js/modules/_is-regexp.js");
-var anObject = __webpack_require__(/*! ./_an-object */ "../node_modules/core-js/modules/_an-object.js");
-var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ "../node_modules/core-js/modules/_species-constructor.js");
-var advanceStringIndex = __webpack_require__(/*! ./_advance-string-index */ "../node_modules/core-js/modules/_advance-string-index.js");
-var toLength = __webpack_require__(/*! ./_to-length */ "../node_modules/core-js/modules/_to-length.js");
-var callRegExpExec = __webpack_require__(/*! ./_regexp-exec-abstract */ "../node_modules/core-js/modules/_regexp-exec-abstract.js");
-var regexpExec = __webpack_require__(/*! ./_regexp-exec */ "../node_modules/core-js/modules/_regexp-exec.js");
-var fails = __webpack_require__(/*! ./_fails */ "../node_modules/core-js/modules/_fails.js");
-var $min = Math.min;
-var $push = [].push;
-var $SPLIT = 'split';
-var LENGTH = 'length';
-var LAST_INDEX = 'lastIndex';
-var MAX_UINT32 = 0xffffffff;
-
-// babel-minify transpiles RegExp('x', 'y') -> /x/y and it causes SyntaxError
-var SUPPORTS_Y = !fails(function () { RegExp(MAX_UINT32, 'y'); });
-
-// @@split logic
-__webpack_require__(/*! ./_fix-re-wks */ "../node_modules/core-js/modules/_fix-re-wks.js")('split', 2, function (defined, SPLIT, $split, maybeCallNative) {
-  var internalSplit;
-  if (
-    'abbc'[$SPLIT](/(b)*/)[1] == 'c' ||
-    'test'[$SPLIT](/(?:)/, -1)[LENGTH] != 4 ||
-    'ab'[$SPLIT](/(?:ab)*/)[LENGTH] != 2 ||
-    '.'[$SPLIT](/(.?)(.?)/)[LENGTH] != 4 ||
-    '.'[$SPLIT](/()()/)[LENGTH] > 1 ||
-    ''[$SPLIT](/.?/)[LENGTH]
-  ) {
-    // based on es5-shim implementation, need to rework it
-    internalSplit = function (separator, limit) {
-      var string = String(this);
-      if (separator === undefined && limit === 0) return [];
-      // If `separator` is not a regex, use native split
-      if (!isRegExp(separator)) return $split.call(string, separator, limit);
-      var output = [];
-      var flags = (separator.ignoreCase ? 'i' : '') +
-                  (separator.multiline ? 'm' : '') +
-                  (separator.unicode ? 'u' : '') +
-                  (separator.sticky ? 'y' : '');
-      var lastLastIndex = 0;
-      var splitLimit = limit === undefined ? MAX_UINT32 : limit >>> 0;
-      // Make `global` and avoid `lastIndex` issues by working with a copy
-      var separatorCopy = new RegExp(separator.source, flags + 'g');
-      var match, lastIndex, lastLength;
-      while (match = regexpExec.call(separatorCopy, string)) {
-        lastIndex = separatorCopy[LAST_INDEX];
-        if (lastIndex > lastLastIndex) {
-          output.push(string.slice(lastLastIndex, match.index));
-          if (match[LENGTH] > 1 && match.index < string[LENGTH]) $push.apply(output, match.slice(1));
-          lastLength = match[0][LENGTH];
-          lastLastIndex = lastIndex;
-          if (output[LENGTH] >= splitLimit) break;
-        }
-        if (separatorCopy[LAST_INDEX] === match.index) separatorCopy[LAST_INDEX]++; // Avoid an infinite loop
-      }
-      if (lastLastIndex === string[LENGTH]) {
-        if (lastLength || !separatorCopy.test('')) output.push('');
-      } else output.push(string.slice(lastLastIndex));
-      return output[LENGTH] > splitLimit ? output.slice(0, splitLimit) : output;
-    };
-  // Chakra, V8
-  } else if ('0'[$SPLIT](undefined, 0)[LENGTH]) {
-    internalSplit = function (separator, limit) {
-      return separator === undefined && limit === 0 ? [] : $split.call(this, separator, limit);
-    };
-  } else {
-    internalSplit = $split;
-  }
-
-  return [
-    // `String.prototype.split` method
-    // https://tc39.github.io/ecma262/#sec-string.prototype.split
-    function split(separator, limit) {
-      var O = defined(this);
-      var splitter = separator == undefined ? undefined : separator[SPLIT];
-      return splitter !== undefined
-        ? splitter.call(separator, O, limit)
-        : internalSplit.call(String(O), separator, limit);
-    },
-    // `RegExp.prototype[@@split]` method
-    // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@split
-    //
-    // NOTE: This cannot be properly polyfilled in engines that don't support
-    // the 'y' flag.
-    function (regexp, limit) {
-      var res = maybeCallNative(internalSplit, regexp, this, limit, internalSplit !== $split);
-      if (res.done) return res.value;
-
-      var rx = anObject(regexp);
-      var S = String(this);
-      var C = speciesConstructor(rx, RegExp);
-
-      var unicodeMatching = rx.unicode;
-      var flags = (rx.ignoreCase ? 'i' : '') +
-                  (rx.multiline ? 'm' : '') +
-                  (rx.unicode ? 'u' : '') +
-                  (SUPPORTS_Y ? 'y' : 'g');
-
-      // ^(? + rx + ) is needed, in combination with some S slicing, to
-      // simulate the 'y' flag.
-      var splitter = new C(SUPPORTS_Y ? rx : '^(?:' + rx.source + ')', flags);
-      var lim = limit === undefined ? MAX_UINT32 : limit >>> 0;
-      if (lim === 0) return [];
-      if (S.length === 0) return callRegExpExec(splitter, S) === null ? [S] : [];
-      var p = 0;
-      var q = 0;
-      var A = [];
-      while (q < S.length) {
-        splitter.lastIndex = SUPPORTS_Y ? q : 0;
-        var z = callRegExpExec(splitter, SUPPORTS_Y ? S : S.slice(q));
-        var e;
-        if (
-          z === null ||
-          (e = $min(toLength(splitter.lastIndex + (SUPPORTS_Y ? 0 : q)), S.length)) === p
-        ) {
-          q = advanceStringIndex(S, q, unicodeMatching);
-        } else {
-          A.push(S.slice(p, q));
-          if (A.length === lim) return A;
-          for (var i = 1; i <= z.length - 1; i++) {
-            A.push(z[i]);
-            if (A.length === lim) return A;
-          }
-          q = p = e;
-        }
-      }
-      A.push(S.slice(p));
-      return A;
-    }
-  ];
-});
-
-
-/***/ }),
-
 /***/ "../node_modules/core-js/modules/es6.regexp.to-string.js":
 /*!***************************************************************!*\
   !*** ../node_modules/core-js/modules/es6.regexp.to-string.js ***!
@@ -5229,10 +5118,6 @@ __webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/co
 
 __webpack_require__(/*! core-js/modules/es6.array.filter.js */ "../node_modules/core-js/modules/es6.array.filter.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.split.js */ "../node_modules/core-js/modules/es6.regexp.split.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.search.js */ "../node_modules/core-js/modules/es6.regexp.search.js");
-
 __webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
 __webpack_require__(/*! core-js/modules/es6.array.slice.js */ "../node_modules/core-js/modules/es6.array.slice.js");
@@ -5244,6 +5129,8 @@ var _module2 = _interopRequireDefault(__webpack_require__(/*! elementor/core/exp
 var _environment = _interopRequireDefault(__webpack_require__(/*! ../../../../core/common/assets/js/utils/environment */ "../core/common/assets/js/utils/environment.js"));
 
 var _events = _interopRequireDefault(__webpack_require__(/*! elementor-utils/events */ "../assets/dev/js/utils/events.js"));
+
+var _filesUploadHandler = _interopRequireDefault(__webpack_require__(/*! ../editor/utils/files-upload-handler */ "../assets/dev/js/editor/utils/files-upload-handler.js"));
 
 (function ($) {
   var ElementorAdmin = elementorModules.ViewModule.extend({
@@ -5258,7 +5145,10 @@ var _events = _interopRequireDefault(__webpack_require__(/*! elementor-utils/eve
         $elementorLoader: $('.elementor-loader'),
         $builderEditor: $('#elementor-editor'),
         $importButton: $('#elementor-import-template-trigger'),
+        $importNowButton: $('#e-import-template-action'),
         $importArea: $('#elementor-import-template-area'),
+        $importForm: $('#elementor-import-template-form'),
+        $importFormFileInput: $('#elementor-import-template-form input[type="file"]'),
         $settingsForm: $('#elementor-settings-form'),
         $settingsTabsWrapper: $('#elementor-settings-tabs-wrapper'),
         $menuGetHelpLink: $('a[href="admin.php?page=go_knowledge_base_site"]'),
@@ -5410,13 +5300,23 @@ var _events = _interopRequireDefault(__webpack_require__(/*! elementor-utils/eve
           defaultOption: 'confirm',
           onConfirm: function onConfirm() {
             $updateButton.removeClass('error').addClass('loading');
-            $.post(ajaxurl, $updateButton.data()).done(function (response) {
-              $updateButton.removeClass('loading').addClass('success');
-              $('#elementor_upgrade_fa_button').parent().append(response.data.message);
-              var redirectTo = (location.search.split('redirect_to=')[1] || '').split('&')[0];
 
-              if (redirectTo) {
-                location.href = decodeURIComponent(redirectTo);
+            var _$updateButton$data = $updateButton.data(),
+                _nonce = _$updateButton$data._nonce,
+                action = _$updateButton$data.action,
+                redirectUrl = _$updateButton$data.redirectUrl;
+
+            $.post(ajaxurl, {
+              action: action,
+              _nonce: _nonce
+            }).done(function (response) {
+              $updateButton.removeClass('loading').addClass('success');
+              var messageElement = document.createElement('p');
+              messageElement.appendChild(document.createTextNode(response.data.message));
+              $('#elementor_upgrade_fa_button').parent().append(messageElement);
+
+              if (redirectUrl) {
+                location.href = decodeURIComponent(redirectUrl);
                 return;
               }
 
@@ -5531,12 +5431,24 @@ var _events = _interopRequireDefault(__webpack_require__(/*! elementor-utils/eve
 
       var self = this,
           $importButton = self.elements.$importButton,
-          $importArea = self.elements.$importArea;
+          $importArea = self.elements.$importArea,
+          $importNowButton = self.elements.$importNowButton;
       self.elements.$formAnchor = $('.wp-header-end');
       $('#wpbody-content').find('.page-title-action').last().after($importButton);
       self.elements.$formAnchor.after($importArea);
       $importButton.on('click', function () {
         $('#elementor-import-template-area').toggle();
+      });
+      $importNowButton.on('click', function (event) {
+        if (self.elements.$importFormFileInput[0].files.length && !elementorCommon.config.filesUpload.unfilteredFiles) {
+          event.preventDefault();
+
+          var enableUnfilteredFilesModal = _filesUploadHandler.default.getUnfilteredFilesNotEnabledImportTemplateDialog(function () {
+            self.elements.$importForm.trigger('submit');
+          });
+
+          enableUnfilteredFilesModal.show();
+        }
       });
     },
     initMaintenanceMode: function initMaintenanceMode() {
