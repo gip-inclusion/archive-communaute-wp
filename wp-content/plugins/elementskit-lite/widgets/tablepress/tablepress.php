@@ -10,6 +10,10 @@ class ElementsKit_Widget_TablePress extends Widget_Base {
 	use \ElementsKit_Lite\Widgets\Widget_Notice;
 
     public $base;
+    
+    public function __construct( $data = [], $args = null ) {
+		parent::__construct( $data, $args ); 
+    }
 
     public function get_name() {
         return Handler::get_name();
@@ -715,11 +719,11 @@ class ElementsKit_Widget_TablePress extends Widget_Base {
 		
 		 if( class_exists('TablePress') ) {
 			echo do_shortcode( $this->get_shortcode() );
+		 } else {
+			echo '<div class="elemenetskit-alert-info">'.esc_html__('Please install and activate TablePress plugin to work this widget.', 'elementskit-lite').'</div>';
 		 }
-        
-        
-		if ( \Elementor\Plugin::instance()->editor->is_edit_mode() ) { ?>
-			<script src="<?php echo plugins_url(); ?>/tablepress/js/jquery.datatables.min.js"></script>
+
+		if ( \Elementor\Plugin::instance()->editor->is_edit_mode() && class_exists('TablePress') ) { ?>
 			<script>
 				jQuery(document).ready(function($){
 					jQuery('#ekit_tablepress_<?php echo esc_attr($this->get_id()); ?>').find('.tablepress').dataTable();
@@ -727,8 +731,4 @@ class ElementsKit_Widget_TablePress extends Widget_Base {
 			</script>
         <?php }
 	}
-
-	public function render_plain_content() {
-        echo $this->get_shortcode();
-    }
 }
