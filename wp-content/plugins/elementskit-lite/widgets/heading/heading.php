@@ -54,6 +54,15 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 			]
 		);
 
+		$this->add_control( 'ekit_heading_link', [
+			'label'			 =>esc_html__( 'Link', 'elementskit-lite' ),
+			'type'			 => Controls_Manager::URL,
+			'label_block' => true,
+			'placeholder' => esc_html__( 'Paste URL or type', 'elementskit-lite' ),
+			'autocomplete' => false,
+			'options' => [ 'is_external', 'nofollow', 'custom_attributes' ],
+        ]);
+
 		$this->add_control(
 			'ekit_heading_title_tag',
 			[
@@ -1235,7 +1244,6 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 		/** End Heading shadow text style setion */
 
 		$this->insert_pro_message();
-
     }
 
     protected function render( ) {
@@ -1309,27 +1317,38 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 		$ekit_heading_align_tablet = isset($settings['ekit_heading_title_align_tablet']) ? $ekit_heading_title_align_tablet : '';
 		$ekit_heading_align_mobile = isset($settings['ekit_heading_title_align_mobile']) ? $ekit_heading_title_align_mobile : '';
 
-		echo '<div class="ekit-heading elementskit-section-title-wraper '.$ekit_heading_title_align.'   ekit_heading_tablet-'. $ekit_heading_align_tablet .'   ekit_heading_mobile-'. $ekit_heading_align_mobile .''.$title_in_left.'">';
+		echo '<div class="ekit-heading elementskit-section-title-wraper '.esc_attr($ekit_heading_title_align).'   ekit_heading_tablet-'. esc_attr($ekit_heading_align_tablet) .'   ekit_heading_mobile-'. esc_attr($ekit_heading_align_mobile) .''.esc_attr($title_in_left).'">';
 
 			if(!empty($shadow_text_content) && $show_shadow_text == 'yes' ): ?>
-				<span class='ekit-heading__shadow-text'><?php echo \ElementsKit_Lite\Utils::kspan($shadow_text_content); ?></span>
+				<span class='ekit-heading__shadow-text'>
+					<?php echo wp_kses(\ElementsKit_Lite\Utils::kspan($shadow_text_content), \ElementsKit_Lite\Utils::get_kses_array()); ?>
+				</span>
 			<?php endif;
 
 			if($title_float_left == 'yes'):?>
 				<div class='ekit-heading__title-wrapper'>
 			<?php endif;
 
-			echo ($ekit_heading_seperator_position == 'top') ? $seperator : '';
+			echo (($ekit_heading_seperator_position) == 'top') ? wp_kses($seperator, \ElementsKit_Lite\Utils::get_kses_array()): '';
 			if($ekit_heading_sub_title_position == 'before_title' && $title_float_left != 'yes'){
 				if((!empty($ekit_heading_sub_title) && ($settings['ekit_heading_sub_title_show'] == 'yes'))):
-					echo '<'.$sub_title_tag.' class="elementskit-section-subtitle '.$sub_title_text_fill.' '.$sub_title_border.''.$subheading_outline.'">'.esc_html( $ekit_heading_sub_title ).'</'.$sub_title_tag.'>';
+					echo '<'. esc_attr($sub_title_tag).' class="elementskit-section-subtitle '.esc_attr($sub_title_text_fill).' '.esc_attr($sub_title_border).''.esc_attr($subheading_outline).'">
+						'.esc_html( $ekit_heading_sub_title ).'
+					</'.esc_attr($sub_title_tag).'>';
 				endif;
 			}
-			echo ($ekit_heading_seperator_position == 'before') ? $seperator : '';
+
+			$ekit_link_target = $ekit_heading_link['is_external'] == 'on' ? 'target="_blank"' : '';
+			$ekit_link_rel =  $ekit_heading_link['nofollow'] == 'on' ?  'rel="nofollow"' : '';
+			$ekit_link_custom_attributes = $ekit_heading_link['custom_attributes'] ? $ekit_heading_link['custom_attributes'] : '';
+
+			$ekit_title = !empty($ekit_heading_link['url']) ? '<a href="'.esc_url($ekit_heading_link['url']).'" '.$ekit_link_target.' '.$ekit_link_rel.' '.$ekit_link_custom_attributes.'> '.\ElementsKit_Lite\Utils::kspan($ekit_heading_title).' </a>' : \ElementsKit_Lite\Utils::kspan($ekit_heading_title);
+
+			echo (($ekit_heading_seperator_position) == 'before') ? wp_kses($seperator, \ElementsKit_Lite\Utils::get_kses_array()) : '';
 			if(!empty($ekit_heading_title)):
-				echo '<'.$title_tag.' class="ekit-heading--title elementskit-section-title '.$title_text_fill.''.$title_border.'">
-					'.\ElementsKit_Lite\Utils::kspan($ekit_heading_title).'
-				</'.$title_tag.'>';
+				echo ('<'.esc_attr($title_tag).' class="ekit-heading--title elementskit-section-title '.esc_attr($title_text_fill.''.$title_border).'">
+					'.wp_kses($ekit_title, \ElementsKit_Lite\Utils::get_kses_array()).'
+				</'.esc_attr($title_tag).'>');
 			endif;
 
 			echo (
@@ -1337,7 +1356,7 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 					$ekit_heading_seperator_position == 'bottom' && 
 					$title_float_left == 'yes'
 				)
-			) ? $seperator : '';
+			) ? wp_kses($seperator, \ElementsKit_Lite\Utils::get_kses_array()) : '';
 
 			// End Title wrapper
 			if($title_float_left == 'yes'): ?>
@@ -1347,13 +1366,15 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 
 			if($ekit_heading_sub_title_position == 'after_title' || ($ekit_heading_sub_title_position == 'before_title' && $title_float_left == 'yes')){
 				if(!empty($ekit_heading_sub_title) && ($settings['ekit_heading_sub_title_show'] == 'yes')):
-					echo '<'.$sub_title_tag.' class="ekit-heading--subtitle elementskit-section-subtitle '.$sub_title_text_fill.' '.$sub_title_border.''.$subheading_outline.'">'.esc_html( $ekit_heading_sub_title ).'</'.$sub_title_tag.'>';
+					echo '<'.esc_html($sub_title_tag).' class="ekit-heading--subtitle elementskit-section-subtitle '.esc_attr($sub_title_text_fill).' '.esc_attr($sub_title_border).''.esc_attr($subheading_outline).'">
+						'.esc_html( $ekit_heading_sub_title ).'
+					</'.esc_html($sub_title_tag).'>';
 				endif;
 			}
 
 			if((!empty($ekit_heading_extra_title)) && ($settings['ekit_heading_section_extra_title_show'] == 'yes')): ?>
 				<div class='ekit-heading__description'>
-					<?php echo \ElementsKit_Lite\Utils::kses( wpautop($ekit_heading_extra_title) ); ?>
+					<?php echo wp_kses(wpautop($ekit_heading_extra_title), \ElementsKit_Lite\Utils::get_kses_array()); ?>
 				</div>
 			<?php endif;
 
@@ -1361,10 +1382,8 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 				</div>
 			<?php endif;
 
-			echo ($ekit_heading_seperator_position == 'bottom' && $title_float_left != 'yes') ? $seperator : '';
+			echo ($ekit_heading_seperator_position == 'bottom' && $title_float_left != 'yes') ? wp_kses($seperator, \ElementsKit_Lite\Utils::get_kses_array()) : '';
 
 		echo '</div>';
-
-
     }
 }
