@@ -70,7 +70,9 @@ body.bb-template-v2 .bp-navs ul li.selected a .bb-component-nav-item-point {
   padding-bottom: 0;
   margin-bottom: 5px;
 }
-
+.blog_filter_main [id^=load-more] {
+  display: none !important;
+}
 
 /* BB V2 */
 /* body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
