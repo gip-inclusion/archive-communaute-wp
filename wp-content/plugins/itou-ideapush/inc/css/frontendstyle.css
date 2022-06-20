@@ -13,7 +13,9 @@
     width: 100%;
     table-layout: fixed;
 }
-
+.ideapush-container-ideas.loading {
+    opacity: .5;
+}
 
 @media screen and (min-width: 1050px) {
     .ideapush-container-ideas {
