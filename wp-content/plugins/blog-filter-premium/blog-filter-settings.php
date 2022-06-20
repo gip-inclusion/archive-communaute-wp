@@ -1379,7 +1379,7 @@ function CopyShortcode() {
   
 }
 
-jQuery(window).load(function () {
+jQuery(document).ready(function () {
 	// isotope effect function
 	// Method 1 - Initialize Isotope, then trigger layout after each image loads.
 	var $grid = jQuery('#BlogFilter-SettingsPags').isotope({
