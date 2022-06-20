@@ -440,7 +440,7 @@ jQuery(document).ready(function ($) {
 //        console.log(boardNumber);
     //    console.log(customFieldFilter);
         
- 
+        $('.ideapush-container-ideas').addClass('loading');
         var data = {
             'action': 'get_new_ideas',
             'boardNumber': boardNumber,
@@ -458,7 +458,7 @@ jQuery(document).ready(function ($) {
         })
         .done(function(data, textStatus, jqXHR) {
             
-            
+            $('.ideapush-container-ideas').removeClass('loading');
             if($('.idea-pagination').length){
                 var activePageNumber = parseInt($parent.find('.idea-page-number.active').text());
             } else {
