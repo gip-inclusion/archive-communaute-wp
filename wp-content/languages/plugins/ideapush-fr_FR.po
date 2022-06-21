@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IdeaPush - Feature Request Manager\n"
 "POT-Creation-Date: 2021-10-27 12:38+1100\n"
-"PO-Revision-Date: 2022-06-21 15:23+0200\n"
+"PO-Revision-Date: 2022-06-21 15:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -312,7 +312,7 @@ msgstr ""
 #: inc/functions/single-idea.php:59 inc/shortcode/ideaboard-shortcode.php:324
 #: inc/templates/ip-tag.php:286
 msgid "Are you sure you want to delete this idea?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer cette suggestion ?"
 
 #: inc/functions/single-idea.php:62
 msgid "The idea has been added to the trash but not permanently deleted."
@@ -339,6 +339,13 @@ msgid ""
 "be notified of this status change if notifications are enabled in the plugin "
 "settings."
 msgstr ""
+"Veuillez rechercher et sélectionner la suggestion originale. Une fois que "
+"vous aurez cliqué sur « Envoyer », la suggestion dupliquée se verra "
+"attribuer le statut de « doublon » et aucun autre vote ne sera autorisé pour "
+"cette suggestion. Les votes donnés à cette suggestion seront transférés à la "
+"suggestion originale le cas échéant. L’auteur de cette suggestion dupliquée "
+"sera notifié de ce changement de statut si les notifications sont activées "
+"dans les paramètres."
 
 #: inc/functions/single-idea.php:77 inc/shortcode/ideaboard-shortcode.php:339
 #: inc/templates/ip-tag.php:295
@@ -348,21 +355,21 @@ msgstr ""
 #: inc/functions/single-idea.php:80 inc/pro-ip/idea-push-pro.php:1024
 #: inc/pro-ip/idea-push-pro.php:1034 inc/shortcode/ideaboard-shortcode.php:348
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: inc/functions/single-idea.php:80 inc/shortcode/ideaboard-shortcode.php:348
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: inc/functions/single-idea.php:80 inc/pro-ip/idea-push-pro.php:3252
 #: inc/pro-ip/idea-push-pro.php:3278 inc/shortcode/ideaboard-shortcode.php:348
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: inc/functions/single-idea.php:80 inc/pro-ip/idea-push-pro.php:3252
 #: inc/pro-ip/idea-push-pro.php:3278 inc/shortcode/ideaboard-shortcode.php:348
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: inc/functions/single-idea.php:114 inc/pro-ip/idea-push-pro.php:525
 msgid "Sorry you do not have permission to view this idea."
@@ -1797,7 +1804,7 @@ msgstr ""
 
 #: inc/pro-ip/idea-push-pro.php:441
 msgid "Related Ideas"
-msgstr ""
+msgstr "Autres suggestions"
 
 #: inc/pro-ip/idea-push-pro.php:480 inc/pro-ip/recent-ideas.php:79
 #: inc/shortcode/idea-list-items.php:716
@@ -2021,11 +2028,11 @@ msgstr ""
 
 #: inc/pro-ip/idea-push-pro.php:3659
 msgid "Delete Idea"
-msgstr ""
+msgstr "Supprimer"
 
 #: inc/pro-ip/idea-push-pro.php:3671
 msgid "Mark idea as duplicate"
-msgstr ""
+msgstr "Marquer comme doublon"
 
 #: inc/pro-ip/leader-board.php:12
 msgid "Leaderboard"
@@ -2251,7 +2258,7 @@ msgstr ""
 
 #: inc/shortcode/ideaboard-shortcode.php:345
 msgid "Enter original idea title here"
-msgstr ""
+msgstr "Entrer le titre initial de la suggestion"
 
 #: inc/shortcode/ideaboard-shortcode.php:356
 msgid "Sorry you do not have permission to view this board."
