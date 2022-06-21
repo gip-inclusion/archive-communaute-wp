@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IdeaPush - Feature Request Manager\n"
 "POT-Creation-Date: 2021-10-27 12:38+1100\n"
-"PO-Revision-Date: 2022-06-21 15:13+0200\n"
+"PO-Revision-Date: 2022-06-21 15:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -2110,7 +2110,7 @@ msgstr ""
 
 #: inc/shortcode/create-idea-form.php:351
 msgid "Hold on"
-msgstr ""
+msgstr "Chargement"
 
 #: inc/shortcode/create-idea-form.php:360
 msgid "Idea submitted successfully"
