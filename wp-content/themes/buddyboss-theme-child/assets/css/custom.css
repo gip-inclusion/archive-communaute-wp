@@ -74,6 +74,10 @@ body.bb-template-v2 .bp-navs ul li.selected a .bb-component-nav-item-point {
   display: none !important;
 }
 
+.ideapush-comments-widget-inner {
+  display: none;
+}
+
 /* BB V2 */
 /* body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
   font-weight: normal;
