@@ -301,10 +301,10 @@ function idea_push_form_render_output($boardNumber){
     
 
 
-        //do custom fields if pro
-        if($ideapush_is_pro == "YES"){
-            $html .= idea_push_create_custom_fields($customFields);
-        }
+        // //do custom fields if pro
+        // if($ideapush_is_pro == "YES"){
+        //     $html .= idea_push_create_custom_fields($customFields);
+        // }
 
     
     
