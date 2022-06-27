@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform Pro 1.1.8\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-11 12:37:56+00:00\n"
-"PO-Revision-Date: 2022-05-31 16:51+0200\n"
+"PO-Revision-Date: 2022-06-27 11:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: BuddyBoss <support@buddyboss.com>\n"
 "Language: fr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #. Plugin Name of the plugin/theme
@@ -31,29 +31,20 @@ msgid "requires the BuddyBoss Platform plugin to work. Please"
 msgstr ""
 
 #: buddyboss-platform-pro.php:48
-#, fuzzy
-#| msgid "BuddyBoss Platform Pro"
 msgid "install BuddyBoss Platform"
-msgstr "Plateforme BuddyBoss Pro"
+msgstr "installer BuddyBoss Platform"
 
 #: buddyboss-platform-pro.php:49
-#, fuzzy
-#| msgid "First"
 msgid "first."
-msgstr "Premier"
+msgstr "premier."
 
 #: buddyboss-platform-pro.php:62
-#, fuzzy
-#| msgid ""
-#| "<strong>BuddyBoss Platform Pro</strong></a> requires BuddyBoss Platform "
-#| "plugin version 1.3.5 or higher to work. Please update BuddyBoss Platform."
 msgid ""
 "requires BuddyBoss Platform plugin version 1.3.5 or higher to work. Please "
 "update BuddyBoss Platform."
 msgstr ""
-"<strong>BuddyBoss Platform Pro</strong> nécessite BuddyBoss Platform plugin "
-"version 1.3.5 ou plus pour travailler. Veuillez mettre à jour la plate-forme "
-"BuddyBoss."
+"nécessite buddyBoss Platform plugin version 1.3.5 ou supérieure pour "
+"fonctionner. Merci de mettre à jour la plateforme BuddyBoss."
 
 #: class-bb-platform-pro.php:64 class-bb-platform-pro.php:72
 msgid "Cheatin&#8217; huh?"
@@ -163,7 +154,7 @@ msgstr "MemberPress"
 
 #: includes/access-control/includes/class-bb-access-control-access-control.php:85
 msgid "Paid Memberships Pro"
-msgstr "Abonnements payants Pro "
+msgstr "Abonnements payants Pro"
 
 #: includes/access-control/includes/class-bb-access-control-access-control.php:90
 msgid "Restrict Content Pro"
@@ -463,10 +454,8 @@ msgstr "- Sélectionnez le type d’abonnement -"
 #: includes/integrations/zoom/bp-zoom-actions.php:211
 #: includes/integrations/zoom/bp-zoom-filters.php:198
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:98
-#, fuzzy
-#| msgid "A Zoom meeting has been scheduled in one of your groups"
 msgid "A Zoom meeting is scheduled in a group"
-msgstr "Une réunion Zoom a été programmée dans l'un de vos groupes"
+msgstr "Une réunion Zoom est planifiée dans un groupe"
 
 #: includes/integrations/zoom/bp-zoom-actions.php:215
 #: includes/integrations/zoom/bp-zoom-actions.php:231
@@ -481,10 +470,8 @@ msgstr "N'envoyer pas d'email"
 #: includes/integrations/zoom/bp-zoom-actions.php:227
 #: includes/integrations/zoom/bp-zoom-filters.php:210
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:113
-#, fuzzy
-#| msgid "A Zoom webinar has been scheduled in one of your groups"
 msgid "A Zoom webinar is scheduled in a group"
-msgstr "Un webinaire Zoom a été programmé dans l'un de vos groupes"
+msgstr "Un webinaire Zoom est programmé en groupe"
 
 #: includes/integrations/zoom/bp-zoom-admin-tab.php:182
 #: includes/integrations/zoom/bp-zoom-admin-tab.php:193
@@ -549,12 +536,12 @@ msgstr "Liens d'enregistrement"
 #: includes/integrations/zoom/bp-zoom-filters.php:202
 #: includes/integrations/zoom/bp-zoom-filters.php:214
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: includes/integrations/zoom/bp-zoom-filters.php:203
 #: includes/integrations/zoom/bp-zoom-filters.php:215
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: includes/integrations/zoom/bp-zoom-functions.php:84
 msgid "Are you sure you want to delete this meeting?"
@@ -733,8 +720,8 @@ msgstr "jusqu’au"
 #: includes/integrations/zoom/bp-zoom-functions.php:3101
 msgid "occurrence"
 msgid_plural "occurrences"
-msgstr[0] "Ereignis"
-msgstr[1] "Ereignisse"
+msgstr[0] "occurrence"
+msgstr[1] "occurrences"
 
 #: includes/integrations/zoom/bp-zoom-functions.php:2782
 #: includes/integrations/zoom/bp-zoom-functions.php:2996
@@ -774,7 +761,7 @@ msgstr " Jeu"
 #: includes/integrations/zoom/bp-zoom-functions.php:2814
 #: includes/integrations/zoom/bp-zoom-functions.php:3028
 msgid " Fri"
-msgstr "Ven"
+msgstr " Ven"
 
 #: includes/integrations/zoom/bp-zoom-functions.php:2817
 #: includes/integrations/zoom/bp-zoom-functions.php:3031
@@ -1269,7 +1256,7 @@ msgstr "Vous n’êtes pas autorisé à créer un webinaire dans ce groupe."
 
 #: includes/integrations/zoom/includes/class-bp-zoom-ajax.php:1145
 msgid "Webinars not allowed in this group."
-msgstr ""
+msgstr "Les webinaires ne sont pas autorisés dans ce groupe."
 
 #: includes/integrations/zoom/includes/class-bp-zoom-ajax.php:1160
 msgid "Please enter the webinar title."
@@ -1317,7 +1304,7 @@ msgstr ""
 
 #: includes/integrations/zoom/includes/class-bp-zoom-blocks.php:171
 msgid "Are you sure you want to delete this occurrence?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer cette occurrence?"
 
 #: includes/integrations/zoom/includes/class-bp-zoom-blocks.php:328
 #: includes/integrations/zoom/includes/class-bp-zoom-blocks.php:381
@@ -1765,10 +1752,8 @@ msgid "%1$s: Update meeting scheduled"
 msgstr ""
 
 #: includes/integrations/zoom/includes/class-bp-zoom-group.php:1616
-#, fuzzy
-#| msgid "Update Meeting"
 msgid "Update meeting scheduled"
-msgstr "Mettre à jour la réunion"
+msgstr "Réunion de mise à jour planifiée"
 
 #. translators: 1. Group name. 2. The meeting start date.
 #: includes/integrations/zoom/includes/class-bp-zoom-group.php:1638
@@ -1805,10 +1790,8 @@ msgid "%1$s: Update webinar scheduled"
 msgstr ""
 
 #: includes/integrations/zoom/includes/class-bp-zoom-group.php:1684
-#, fuzzy
-#| msgid "Update Webinar"
 msgid "Update webinar scheduled"
-msgstr "Mettre à jour le Webinar"
+msgstr "Webinaire de mise à jour programmé"
 
 #. translators: 1 Webinar title. 2 Group Title.
 #: includes/integrations/zoom/includes/class-bp-zoom-group.php:2043
@@ -1829,16 +1812,12 @@ msgid "Create Webinar"
 msgstr ""
 
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:84
-#, fuzzy
-#| msgid "A Zoom meeting has been scheduled in one of your groups"
 msgid "New meeting or webinar is scheduled in one of your groups"
-msgstr "Une réunion Zoom a été programmée dans l'un de vos groupes"
+msgstr "Une nouvelle rencontre est programmée dans l’un de vos groupes"
 
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:85
-#, fuzzy
-#| msgid "A Zoom meeting has been scheduled in one of your groups"
 msgid "A Zoom meeting or webinar is scheduled in a group"
-msgstr "Une réunion Zoom a été programmée dans l'un de vos groupes"
+msgstr "Une réunion ou un webinaire Zoom est planifié dans un groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:93
@@ -1875,16 +1854,12 @@ msgstr ""
 "{{{zoom_meeting}}}"
 
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:99
-#, fuzzy
-#| msgid ""
-#| "You will no longer receive emails when someone schedules meeting in the "
-#| "group."
 msgid ""
 "You will no longer receive emails when someone schedules a meeting in a "
 "group."
 msgstr ""
-"Vous ne recevrez plus d'e-mails lorsque quelqu'un programme une réunion dans "
-"le groupe."
+"Vous ne recevrez plus d’e-mails lorsque quelqu’un planifie une réunion dans "
+"un groupe."
 
 #. translators: do not remove {} brackets or translate its contents.
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:108
@@ -1921,20 +1896,16 @@ msgstr ""
 "{{{zoom_webinar}}}"
 
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:114
-#, fuzzy
-#| msgid ""
-#| "You will no longer receive emails when someone schedules webinar in the "
-#| "group."
 msgid ""
 "You will no longer receive emails when someone schedules a webinar in a "
 "group."
 msgstr ""
-"Vous ne recevrez plus d'e-mails lorsque quelqu'un programme un webinaire "
-"dans le groupe."
+"Vous ne recevrez plus d’e-mails lorsque quelqu’un planifie une réunion dans "
+"un groupe."
 
 #: includes/integrations/zoom/includes/class-bp-zoom-groups-notification.php:126
 msgid "Group meetings and webinars"
-msgstr ""
+msgstr "Rencontres de groupe et webinaires"
 
 #: includes/integrations/zoom/includes/class-bp-zoom-meeting-template.php:246
 #: includes/integrations/zoom/includes/class-bp-zoom-webinar-template.php:246
@@ -2148,7 +2119,7 @@ msgstr "Options de réunion"
 #: includes/integrations/zoom/templates/buddypress/zoom/edit-meeting.php:415
 #: includes/integrations/zoom/templates/buddypress/zoom/single-meeting-item.php:252
 msgid "Enable join before host"
-msgstr ""
+msgstr "Activer l'inscription avant l'hôte"
 
 #: includes/integrations/zoom/templates/buddypress/zoom/activity-meeting-entry.php:223
 #: includes/integrations/zoom/templates/buddypress/zoom/activity-webinar-entry.php:197
@@ -2596,7 +2567,7 @@ msgstr "Après"
 #: includes/integrations/zoom/templates/buddypress/zoom/edit-meeting.php:352
 #: includes/integrations/zoom/templates/buddypress/zoom/edit-webinar.php:356
 msgid "occurrences"
-msgstr "Ereignisse"
+msgstr "occurrences"
 
 #: includes/integrations/zoom/templates/buddypress/zoom/create-meeting.php:349
 #: includes/integrations/zoom/templates/buddypress/zoom/edit-meeting.php:379
