@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: The Events Calendar: Community Events 4.8.9\n"
 "Report-Msgid-Bugs-To: http://m.tri.be/191x\n"
 "POT-Creation-Date: 2021-09-23 06:38:53+00:00\n"
-"PO-Revision-Date: 2022-03-08 11:50+0100\n"
+"PO-Revision-Date: 2022-06-27 11:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 
 #: src/Tribe/Captcha/Abstract_Captcha.php:152
 msgid "Invalid value for the Anti-Spam Check"
@@ -21,7 +21,7 @@ msgstr "Valeur non valide pour le contrôle anti-spam"
 
 #: src/Tribe/Captcha/Recaptcha.php:19
 msgid "reCAPTCHA API Keys"
-msgstr "Clés API reCAPTCHA"
+msgstr "clés API de reCAPTCHA"
 
 #: src/Tribe/Captcha/Recaptcha.php:23
 msgid ""
@@ -61,7 +61,7 @@ msgstr "reCAPTCHA a échoué de manière inattendue"
 #: src/Tribe/Captcha/Recaptcha_V2.php:139
 msgctxt "failed recaptcha response validation"
 msgid "reCAPTCHA verification failed"
-msgstr "La vérification du reCAPTCHA a échoué"
+msgstr "vérification du reCAPTCHA a échoué"
 
 #: src/Tribe/Event_Form.php:32
 msgctxt "Tribe Community Events fallback post title"
@@ -820,7 +820,7 @@ msgstr "Modifier leurs soumissions"
 #: src/admin-views/community-options-template.php:460
 msgid "Users can edit their events, venues, and organizers"
 msgstr ""
-"Les utilisateurs peuvent éditer leurs évènement, sites et organisations."
+"Les utilisateurs peuvent modifier leurs événements, lieux et organisateurs"
 
 #: src/admin-views/community-options-template.php:466
 msgid "Remove their submissions"
@@ -1120,7 +1120,7 @@ msgstr "Champs additionnels"
 
 #: src/views/community/modules/datepickers.php:54
 msgid "%s Time &amp; Date"
-msgstr "Date et horaires de %s "
+msgstr "%s Heure &amp; Date"
 
 #: src/views/community/modules/datepickers.php:72
 msgid ""
@@ -1177,7 +1177,7 @@ msgstr "Fuseau horaire:"
 
 #: src/views/community/modules/datepickers.php:181
 msgid "All Day Event"
-msgstr "évènement sur toute la journée"
+msgstr "Événement sur toute la journée"
 
 #: src/views/community/modules/delete.php:28
 msgid "My %s"
