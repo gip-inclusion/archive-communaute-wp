@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-06-23 05:00:19+00:00\n"
-"PO-Revision-Date: 2022-06-27 12:08+0200\n"
+"PO-Revision-Date: 2022-06-27 14:51+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -595,9 +595,6 @@ msgstr "Répondre à l’activité"
 #: bp-templates/bp-nouveau/buddypress/assets/emails/single-bp-email.php:403
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:849
 #: bp-templates/bp-nouveau/includes/activity/template-tags.php:957
-#, fuzzy
-#| msgid "Reply"
-#| msgid_plural "Replies"
 msgid "Reply"
 msgstr "Répondre"
 
@@ -833,17 +830,13 @@ msgstr ""
 #: bp-activity/classes/class-bp-activity-notification.php:441
 #: bp-members/classes/class-bp-members-mentions-notification.php:187
 #: bp-members/classes/class-bp-members-mentions-notification.php:302
-#, fuzzy
-#| msgid "Comment"
 msgid "comment"
-msgstr "Commentaire"
+msgstr "commentaire"
 
 #: bp-activity/bp-activity-filters.php:3244
 #: bp-activity/bp-activity-functions.php:4154
-#, fuzzy
-#| msgid "Comment"
 msgid "View Comment"
-msgstr "Commentaire"
+msgstr "Voir le commentaire"
 
 #: bp-activity/bp-activity-functions.php:508
 msgid "New item published"
@@ -918,6 +911,9 @@ msgid ""
 "Due to the large size of your users table, you need to manually update user "
 "activity favorites data via BuddyBoss > "
 msgstr ""
+"En raison de la grande taille de votre table d'utilisateurs, vous devez "
+"mettre à jour manuellement les données de favoris d'activité des "
+"utilisateurs via BuddyBoss > "
 
 #: bp-activity/bp-activity-functions.php:1264
 #: bp-core/admin/bp-core-admin-functions.php:685
@@ -939,6 +935,8 @@ msgid ""
 " > Repair Community. Check the box \"Update activity favorites data\" and "
 "click on \"Repair Items\". "
 msgstr ""
+" > Réparer la Communauté Cochez la case \"Mettre à jour les données des "
+"favoris d'activité\" et cliquez sur \"Réparer les éléments\". "
 
 #: bp-activity/bp-activity-functions.php:1714
 #: bp-groups/bp-groups-activity.php:33
@@ -1024,25 +1022,21 @@ msgstr "Taille de la vignette"
 #: bp-members/classes/class-bp-members-mentions-notification.php:194
 #: bp-members/classes/class-bp-members-mentions-notification.php:309
 msgid "post"
-msgstr ""
+msgstr "article"
 
 #: bp-activity/bp-activity-functions.php:4157
 #: bp-activity/bp-activity-functions.php:4162
-#, fuzzy
-#| msgid "New Post"
 msgid "View Post"
-msgstr "Nouvel article"
+msgstr "Voir l'article"
 
 #: bp-activity/bp-activity-functions.php:5230
 msgid "URL is not valid."
-msgstr ""
+msgstr "L'URL n'est pas valide."
 
 #: bp-activity/bp-activity-functions.php:5238
 #: bp-activity/classes/class-bp-rest-activity-link-preview-endpoint.php:101
-#, fuzzy
-#| msgid "There was a problem deleting that notice."
 msgid "There was a problem generating a link preview."
-msgstr "Problème de suppression de cet avis."
+msgstr "Il y a eu un problème pour générer un aperçu du lien."
 
 #: bp-activity/bp-activity-notifications.php:40
 msgid "@%s Mentions"
@@ -1251,10 +1245,8 @@ msgid "Following"
 msgstr "Abonnements"
 
 #: bp-activity/bp-activity-template.php:4126
-#, fuzzy
-#| msgid "Following"
 msgid "Stop Following"
-msgstr "Abonnements"
+msgstr "Ne plus suivre"
 
 #: bp-activity/bp-activity-template.php:4130
 msgid "Unfollow"
@@ -1561,12 +1553,8 @@ msgid "A member replies to your post or comment"
 msgstr "Un membre a répondu à votre message ou commentaire"
 
 #: bp-activity/classes/class-bp-activity-notification.php:80
-#, fuzzy
-#| msgid "A member replies to an update or comment you've posted"
 msgid "A member receives a reply to their post or comment"
-msgstr ""
-"Quelqu'un a répondu à une publication ou à un commentaire que vous avez "
-"publié"
+msgstr "Un membre a reçu une réponse à son message ou à son commentaire"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-activity/classes/class-bp-activity-notification.php:88
@@ -1872,16 +1860,12 @@ msgid "Replied: a video"
 msgstr ""
 
 #: bp-activity/classes/class-bp-activity-notification.php:581
-#, fuzzy
-#| msgid "Replies: %s"
 msgid "Replied: a gif"
-msgstr "Réponses: %s"
+msgstr "Réponse : un gif"
 
 #: bp-activity/classes/class-bp-activity-notification.php:583
-#, fuzzy
-#| msgid "Replies"
 msgid "Replied"
-msgstr "Réponses"
+msgstr "Répondu"
 
 #: bp-activity/classes/class-bp-activity-oembed-extension.php:194
 msgid "Embedded Activity Item"
@@ -1983,10 +1967,8 @@ msgstr "%1$s - %2$s"
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:852
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:976
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:1039
-#, fuzzy
-#| msgid "Invalid activation key."
 msgid "Invalid activity ID."
-msgstr "Clé d’activation invalide."
+msgstr "ID d'activité invalide."
 
 #: bp-activity/classes/class-bp-rest-activity-comment-endpoint.php:134
 #: bp-activity/classes/class-bp-rest-activity-endpoint.php:320
@@ -2025,10 +2007,8 @@ msgstr "Clé d’activation invalide."
 #: bp-xprofile/classes/class-bp-rest-xprofile-fields-endpoint.php:233
 #: bp-xprofile/classes/class-bp-rest-xprofile-fields-endpoint.php:330
 #: bp-xprofile/classes/class-bp-rest-xprofile-types-endpoint.php:109
-#, fuzzy
-#| msgid "Restrict site access to only logged-in members"
 msgid "Sorry, Restrict access to only logged-in members."
-msgstr "Restreindre l'accès au site aux seuls membres connectés"
+msgstr "Désolé, accès limité aux membres connectés."
 
 #: bp-activity/classes/class-bp-rest-activity-comment-endpoint.php:144
 #: bp-activity/classes/class-bp-rest-activity-details-endpoint.php:101
@@ -2167,10 +2147,8 @@ msgstr "Mon profil"
 
 #: bp-activity/classes/class-bp-rest-activity-details-endpoint.php:260
 #: bp-members/classes/class-bp-rest-members-details-endpoint.php:737
-#, fuzzy
-#| msgid "My Favorites"
 msgid "My Friends"
-msgstr "Mes favoris"
+msgstr "Mes amis"
 
 #: bp-activity/classes/class-bp-rest-activity-details-endpoint.php:267
 #: bp-groups/classes/class-bp-groups-component.php:597
@@ -2541,10 +2519,9 @@ msgid "Sorry, URL is not valid."
 msgstr ""
 
 #: bp-activity/classes/class-bp-rest-activity-link-preview-endpoint.php:150
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to generate link preview in the activity."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr ""
+"Désolé, vous n’êtes pas autorisé à générer un aperçu de lien dans l’activité."
 
 #: bp-activity/classes/class-bp-rest-activity-link-preview-endpoint.php:160
 msgid "Sorry, Link Previews is disabled."
@@ -3744,33 +3721,27 @@ msgstr "Importation de forum"
 #: bp-settings/classes/class-bp-settings-component.php:189
 #: bp-settings/classes/class-bp-settings-component.php:296
 #: bp-templates/bp-nouveau/buddypress/moderation/blocked-members-loop.php:21
-#, fuzzy
-#| msgid "Banned Members"
 msgid "Blocked Members"
-msgstr "Membres bannis"
+msgstr "Membres bloqués"
 
 #. translators: accessibility text
 #: bp-core/admin/bp-core-admin-functions.php:3295
 #: bp-moderation/bp-moderation-admin.php:382
 #: bp-moderation/bp-moderation-admin.php:458
 #: bp-moderation/screens/single/admin/report-single.php:24
-#, fuzzy
-#| msgid "Reply Content"
 msgid "Reported Content"
-msgstr "Contenu de la réponse"
+msgstr "Contenu signalé"
 
 #: bp-core/admin/bp-core-admin-functions.php:3309
 #: bp-moderation/bp-moderation-admin.php:573
 #: bp-moderation/bp-moderation-settings.php:104
 #: bp-moderation/classes/class-bp-moderation-component.php:189
 msgid "Reporting Categories"
-msgstr ""
+msgstr "Catégories de signalement"
 
 #: bp-core/admin/bp-core-admin-functions.php:3340
-#, fuzzy
-#| msgid "Update"
 msgid "Update to"
-msgstr "Mettre à jour"
+msgstr "Mettre à jour vers"
 
 #: bp-core/admin/bp-core-admin-functions.php:3341
 #, fuzzy
@@ -3781,13 +3752,11 @@ msgstr "BuddyBoss Platform"
 #: bp-core/admin/bp-core-admin-functions.php:3342
 #: bp-core/admin/bp-core-admin-functions.php:3349
 msgid "to unlock"
-msgstr ""
+msgstr "à déverrouiller"
 
 #: bp-core/admin/bp-core-admin-functions.php:3347
-#, fuzzy
-#| msgid "Instagram"
 msgid "Install"
-msgstr "Instagram"
+msgstr "Installer"
 
 #: bp-core/admin/bp-core-admin-functions.php:3348
 #: bp-notifications/bp-notifications-settings.php:479
@@ -3809,10 +3778,8 @@ msgstr ""
 #: bp-core/admin/bp-core-admin-settings.php:1112
 #: bp-document/bp-document-functions.php:1980
 #: bp-groups/bp-groups-admin.php:2636 bp-video/bp-video-functions.php:2511
-#, fuzzy
-#| msgid "Default Data"
 msgid "Default"
-msgstr "Données par défaut"
+msgstr "Par défaut"
 
 #: bp-core/admin/bp-core-admin-functions.php:3438
 #: bp-core/admin/bp-core-admin-settings.php:501
@@ -3910,10 +3877,8 @@ msgid "Registration Pages"
 msgstr "Pages d'enregistrement"
 
 #: bp-core/admin/bp-core-admin-pages.php:193
-#, fuzzy
-#| msgid "Loading messages."
 msgid "Login Pages"
-msgstr "Chargement des messages."
+msgstr "Pages de connexion"
 
 #: bp-core/admin/bp-core-admin-pages.php:212
 msgid "New users fill out this form to register their accounts."
@@ -4209,9 +4174,6 @@ msgstr "WordPress"
 #: bp-forums/topics/template.php:51
 #: bp-moderation/classes/class-bp-moderation-activity.php:478
 #: bp-moderation/classes/class-bp-moderation-forum-topics.php:241
-#, fuzzy
-#| msgid "Discussion"
-#| msgid_plural "Discussions"
 msgid "Discussion"
 msgstr "Discussion"
 
@@ -4271,10 +4233,8 @@ msgstr "Télécharger"
 #: bp-core/admin/bp-core-admin-settings.php:628
 #: bp-core/admin/bp-core-admin-settings.php:921
 #: bp-core/admin/bp-core-admin-settings.php:1012
-#, fuzzy
-#| msgid "Loading..."
 msgid "Removing..."
-msgstr "Chargement..."
+msgstr "Suppression..."
 
 #: bp-core/admin/bp-core-admin-settings.php:536
 #: bp-core/admin/bp-core-admin-settings.php:628
@@ -4330,10 +4290,8 @@ msgstr ""
 #: bp-core/bp-core-functions.php:7165 bp-core/bp-core-functions.php:7247
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:664
 #: bp-templates/bp-nouveau/buddypress/members/single/settings/notifications.php:64
-#, fuzzy
-#| msgid "Apply"
 msgid "App"
-msgstr "Appliquer"
+msgstr "App"
 
 #: bp-core/admin/bp-core-admin-settings.php:740
 #: bp-core/admin/bp-core-admin-settings.php:1107
@@ -9103,6 +9061,9 @@ msgid ""
 "Changing the Cover Image Size will reposition all of your members cover "
 "images. Are you sure you wish to save these changes?"
 msgstr ""
+"La modification de la taille de l’image de couverture repositionnera toutes "
+"les images de couverture de vos membres. Êtes-vous sûr de vouloir "
+"enregistrer ces modifications ?"
 
 #: bp-core/classes/class-bp-admin-tab.php:263
 msgid ""
@@ -31475,11 +31436,9 @@ msgid "Manage Group Members"
 msgstr "Gérer les membres du projet"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/admin/manage-members.php:21
-#, fuzzy
-#| msgid "Manage group members; promote to %s, co-%s, or demote or ban."
 msgid "Manage group members; promote to %1$s, co-%2$s, or demote or ban."
 msgstr ""
-"Gérer les membres du groupe ; promouvoir à %s, co-%s, ou rétrograder ou "
+"Gérer les membres du groupe; promouvoir pour %1$s, %2$s, rétrograder ou "
 "interdire."
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/admin/manage-members.php:30
@@ -31549,22 +31508,16 @@ msgstr "(banni)"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:61
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:86
-#, fuzzy
-#| msgid "Edit Cover Photo"
 msgid "Reposition Cover Photo"
-msgstr "Editer la photo de couverture"
+msgstr "Reposition de la photo de couverture"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:67
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:92
-#, fuzzy
-#| msgid "Change Cover Photo"
 msgid "Drag to move cover photo"
-msgstr "Editer la photo de couverture"
+msgstr "Glisser pour déplacer la photo de couverture"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/cover-image-header.php:68
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:93
-#, fuzzy
-#| msgid "Cover Photo"
 msgid "Cover photo"
 msgstr "Image de couverture"
 
@@ -31601,10 +31554,8 @@ msgstr "Facultatif: Personnalisez le message de votre invitation."
 #: bp-templates/bp-nouveau/buddypress/members/members-loop.php:216
 #: bp-templates/bp-nouveau/buddypress/members/single/cover-image-header.php:271
 #: bp-templates/bp-nouveau/buddypress/members/single/member-header.php:213
-#, fuzzy
-#| msgid "Are you sure you want to remove your connection with this member?"
 msgid "Are you sure you want to remove %s from your connections?"
-msgstr "Êtes-vous sûr(e) de vouloir supprimer votre connexion avec ce membre ?"
+msgstr "Êtes-vous sûr(e) de vouloir supprimer votre connexion avec %s ?"
 
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/private-message.php:20
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/public-message.php:46
@@ -36529,10 +36480,8 @@ msgid "Note: This widget is only displayed if a member is logged in."
 msgstr "Note: Ce widget ne s'affiche que si un membre est connecté."
 
 #: bp-xprofile/classes/class-bp-xprofile-user-admin.php:136
-#, fuzzy
-#| msgid "Messages marked as unread."
 msgid "Member marked as suspended"
-msgstr "Messages non lus."
+msgstr "Membre marqué comme suspendu"
 
 #: bp-xprofile/classes/class-bp-xprofile-user-admin.php:162
 msgid "User marked as a spammer"
@@ -36547,16 +36496,12 @@ msgid "Who can see this field?"
 msgstr "Qui peut voir ce champ ?"
 
 #: bp-xprofile/classes/class-bp-xprofile-user-admin.php:501
-#, fuzzy
-#| msgid ""
-#| "%s has been marked as a spammer. All BuddyBoss data associated with the "
-#| "user has been removed."
 msgid ""
 "Member \"%s\" marked suspended. All BuddyBoss data associated with the "
 "member has been disabled."
 msgstr ""
-"%s a été marqué comme spammeur. Toutes les données de BuddyBoss associées à "
-"l'usager ont été supprimées."
+"Membre « %s » marqué suspendu. Toutes les données BuddyBoss associées au "
+"membre ont été désactivées."
 
 #: bp-xprofile/screens/edit.php:213
 msgid "Changes saved."
@@ -36653,25 +36598,19 @@ msgid "Profile Settings"
 msgstr "Paramètres du profil"
 
 #: bp-core/bp-core-functions.php:6858
-#, fuzzy
-#| msgid "Email"
 msgctxt "Notification preference label"
 msgid "Email"
-msgstr "Adresse courriel"
+msgstr "Email"
 
 #: bp-core/bp-core-functions.php:6875
-#, fuzzy
-#| msgid "Website"
 msgctxt "Notification preference label"
 msgid "Web"
-msgstr "Site web"
+msgstr "Web"
 
 #: bp-core/bp-core-functions.php:6893
-#, fuzzy
-#| msgid "Apply"
 msgctxt "Notification preference label"
 msgid "App"
-msgstr "Appliquer"
+msgstr "App"
 
 #: bp-core/classes/class-bp-attachment-avatar.php:57
 msgctxt "avatar types separator"
@@ -36817,14 +36756,9 @@ msgstr "type"
 
 #. translators: placeholder: URL for CPT Archive.
 #: bp-integrations/learndash/bp-learndash-filters.php:350
-#, fuzzy
-#| msgctxt ""
-#| "Tag prepended to active site-wide notice titles on WP Admin notices list "
-#| "table"
-#| msgid "Active: %s"
 msgctxt "placeholder: URL for CPT Archive"
 msgid "Archive URL: %s"
-msgstr "Actif: %s"
+msgstr "Archiv-URL: %s"
 
 #: bp-integrations/learndash/buddypress/generators/AssignmentsReportsGenerator.php:264
 #: bp-integrations/learndash/buddypress/generators/EssaysReportsGenerator.php:287
@@ -36834,19 +36768,15 @@ msgstr "%1$s / %2$s"
 
 #. translators: Last activity date in infobar.
 #: bp-integrations/learndash/classes/class-bp-rest-learndash-courses-endpoint.php:892
-#, fuzzy
-#| msgid "Last active: %1$s"
 msgctxt "Last activity date in infobar"
 msgid "Last activity on %s"
-msgstr "Récemment actif: %1$s"
+msgstr "Dernière activité le: %s"
 
 #. translators: placeholder: Start ribbon.
 #: bp-integrations/learndash/classes/class-bp-rest-learndash-courses-endpoint.php:932
-#, fuzzy
-#| msgid "Start"
 msgctxt "Start ribbon"
 msgid "Start %s "
-msgstr "Début"
+msgstr "Commencer %s "
 
 #: bp-integrations/learndash/templates/buddypress/groups/single/courses-content-display.php:258
 msgctxt "Course Content Label"
@@ -36914,11 +36844,9 @@ msgid "Reporting Categories"
 msgstr ""
 
 #: bp-moderation/classes/class-bp-moderation-component.php:177
-#, fuzzy
-#| msgid "Category"
 msgctxt "taxonomy singular name"
 msgid "Reporting Category"
-msgstr "Catégorie"
+msgstr "Catégorie de signalement"
 
 #. translators: This is a comma-separated list of very common words that should
 #. be excluded from a search, like a, an, and the. These are usually called
