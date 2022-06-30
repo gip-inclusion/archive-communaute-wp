@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IdeaPush - Feature Request Manager\n"
 "POT-Creation-Date: 2021-10-27 12:38+1100\n"
-"PO-Revision-Date: 2022-06-21 16:16+0200\n"
+"PO-Revision-Date: 2022-06-30 16:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -70,11 +70,11 @@ msgstr "Rechercher une suggestion"
 
 #: ideapush.php:56
 msgid "Not Found"
-msgstr ""
+msgstr "Non trouvé"
 
 #: ideapush.php:57
 msgid "Not found in Trash"
-msgstr ""
+msgstr "Non trouvé dans la corbeille"
 
 #: ideapush.php:62
 msgid "ideas"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ideapush.php:234
 msgid "Popular Boards"
-msgstr ""
+msgstr "Tableaux populaires"
 
 #: ideapush.php:235
 msgid "All Boards"
@@ -260,15 +260,15 @@ msgstr ""
 
 #: ideapush.php:990
 msgid "Votes"
-msgstr ""
+msgstr "Votes"
 
 #: ideapush.php:992
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #: ideapush.php:1300
 msgid "Donate"
-msgstr ""
+msgstr "Faire un don"
 
 #: ideapush.php:1301
 msgid "Support Forum"
@@ -282,19 +282,19 @@ msgstr ""
 #: inc/shortcode/create-idea-form.php:217
 #: inc/shortcode/ideaboard-shortcode.php:342
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #: inc/functions/single-idea.php:53 inc/shortcode/create-idea-form.php:168
 #: inc/shortcode/create-idea-form.php:220
 #: inc/shortcode/ideaboard-shortcode.php:342
 msgid "Last name"
-msgstr ""
+msgstr "Nom"
 
 #: inc/functions/single-idea.php:53 inc/shortcode/create-idea-form.php:171
 #: inc/shortcode/create-idea-form.php:223
 #: inc/shortcode/ideaboard-shortcode.php:342
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: inc/functions/single-idea.php:53 inc/shortcode/ideaboard-shortcode.php:342
 msgid "Confirm email"
@@ -373,7 +373,7 @@ msgstr "Non"
 
 #: inc/functions/single-idea.php:114 inc/pro-ip/idea-push-pro.php:525
 msgid "Sorry you do not have permission to view this idea."
-msgstr ""
+msgstr "Désolé que vous n'ayez pas la permission de voir cette idée."
 
 #: inc/functions/single-idea.php:278
 msgid "Admin Functions"
@@ -1703,19 +1703,19 @@ msgstr ""
 #, php-format
 msgctxt "ideapush"
 msgid "%1$s ago"
-msgstr ""
+msgstr "%1$s depuis"
 
 #: inc/pro-ip/comments.php:88
 msgid "Login to comment"
-msgstr ""
+msgstr "Connectez-vous pour commenter"
 
 #: inc/pro-ip/comments.php:91
 msgid "Add new comment"
-msgstr ""
+msgstr "Ajouter un nouveau commentaire"
 
 #: inc/pro-ip/comments.php:95
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 #: inc/pro-ip/custom-widgets.php:28
 msgid "IdeaPush Recent Ideas"
@@ -1809,7 +1809,7 @@ msgstr "Autres suggestions"
 #: inc/pro-ip/idea-push-pro.php:480 inc/pro-ip/recent-ideas.php:79
 #: inc/shortcode/idea-list-items.php:716
 msgid "ago"
-msgstr ""
+msgstr "il y a"
 
 #: inc/pro-ip/idea-push-pro.php:499 inc/pro-ip/recent-ideas.php:85
 #: inc/pro-ip/recent-ideas.php:93 inc/shortcode/idea-list-items.php:442
