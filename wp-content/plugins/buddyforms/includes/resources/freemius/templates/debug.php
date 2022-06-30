@@ -23,6 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
                     $.post( ajaxurl, {
                         action: 'fs_toggle_debug_mode',
+                        // As such we don't need to use `wp_json_encode` method but using it to follow wp.org guideline.
+                        _wpnonce   : <?php echo wp_json_encode( wp_create_nonce( 'fs_toggle_debug_mode' ) ); ?>,
                         is_on : ($(this).hasClass( 'fs-on' ) ? 1 : 0)
                     }, function ( response ) {
                         if ( 1 == response ) {
@@ -97,7 +99,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
             if (optionName) {
                 $.post(ajaxurl, {
                     action     : 'fs_get_db_option',
-                    _wpnonce   : '<?php echo wp_create_nonce( 'fs_get_db_option' ) ?>',
+                    // As such we don't need to use `wp_json_encode` method but using it to follow wp.org guideline.
+                    _wpnonce   : <?php echo wp_json_encode( wp_create_nonce( 'fs_get_db_option' ) ); ?>,
                     option_name: optionName
                 }, function (response) {
                     if (response.data.value)
@@ -117,7 +120,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
                 if (optionValue) {
                     $.post(ajaxurl, {
                         action      : 'fs_set_db_option',
-                        _wpnonce   : '<?php echo wp_create_nonce( 'fs_set_db_option' ) ?>',
+                        // As such we don't need to use `wp_json_encode` method but using it to follow wp.org guideline.
+                        _wpnonce    : <?php echo wp_json_encode( wp_create_nonce( 'fs_set_db_option' ) ); ?>,
                         option_name : optionName,
                         option_value: optionValue
                     }, function () {
@@ -561,6 +565,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
                 $.post(ajaxurl, {
                     action : 'fs_get_debug_log',
+                    // As such we don't need to use `wp_json_encode` method but using it to follow wp.org guideline.
+                    _wpnonce : <?php echo wp_json_encode( wp_create_nonce( 'fs_get_debug_log' ) ); ?>,
                     filters: filters,
                     offset : offset,
                     limit  : limit
