@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IdeaPush - Feature Request Manager\n"
 "POT-Creation-Date: 2021-10-27 12:38+1100\n"
-"PO-Revision-Date: 2022-06-30 16:22+0200\n"
+"PO-Revision-Date: 2022-06-30 16:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -1809,7 +1809,7 @@ msgstr "Autres suggestions"
 #: inc/pro-ip/idea-push-pro.php:480 inc/pro-ip/recent-ideas.php:79
 #: inc/shortcode/idea-list-items.php:716
 msgid "ago"
-msgstr "il y a"
+msgstr " "
 
 #: inc/pro-ip/idea-push-pro.php:499 inc/pro-ip/recent-ideas.php:85
 #: inc/pro-ip/recent-ideas.php:93 inc/shortcode/idea-list-items.php:442
