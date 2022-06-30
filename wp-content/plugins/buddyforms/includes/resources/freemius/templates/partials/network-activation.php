@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
- $fs = freemius( $VARS['id'] ); $slug = $fs->get_slug(); $sites = $VARS['sites']; $require_license_key = $VARS['require_license_key']; $show_delegation_option = $fs->apply_filters( 'show_delegation_option', true ); $enable_per_site_activation = $fs->apply_filters( 'enable_per_site_activation', true ); ?>
+ if ( ! defined( 'ABSPATH' ) ) { exit; } $fs = freemius( $VARS['id'] ); $slug = $fs->get_slug(); $sites = $VARS['sites']; $require_license_key = $VARS['require_license_key']; $show_delegation_option = $fs->apply_filters( 'show_delegation_option', true ); $enable_per_site_activation = $fs->apply_filters( 'enable_per_site_activation', true ); ?>
 <?php $separator = '<td>|</td>' ?>
 <div class="fs-multisite-options-container fs-apply-on-all-sites"<?php if ( ! $enable_per_site_activation ) echo ' style="display: none;"' ?>>
     <table class="fs-all-sites-options">
