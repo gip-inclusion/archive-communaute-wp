@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-22 13:43:09+00:00\n"
+"POT-Creation-Date: 2022-06-29 06:14:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -232,8 +232,8 @@ msgid "Posts"
 msgstr ""
 
 #: bbpress/content-single-topic-lead.php:228
-#: bbpress/content-single-topic-lead.php:281 bbpress/form-reply.php:180
-#: bbpress/form-topic.php:229 inc/plugins/bbpress-helper.php:218
+#: bbpress/content-single-topic-lead.php:281 bbpress/form-reply.php:182
+#: bbpress/form-topic.php:231 inc/plugins/bbpress-helper.php:218
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:104
 #: lifterlms/card-new-share.php:28
 msgid "Post"
@@ -365,15 +365,15 @@ msgstr ""
 msgid "Post Reply"
 msgstr ""
 
-#: bbpress/form-reply-activity.php:172 bbpress/form-reply.php:208
+#: bbpress/form-reply-activity.php:172 bbpress/form-reply.php:210
 msgid "The discussion &#8216;%s&#8217; is closed to new replies."
 msgstr ""
 
-#: bbpress/form-reply-activity.php:181 bbpress/form-reply.php:217
+#: bbpress/form-reply-activity.php:181 bbpress/form-reply.php:219
 msgid "The forum &#8216;%s&#8217; is closed to new discussions and replies."
 msgstr ""
 
-#: bbpress/form-reply-activity.php:190 bbpress/form-reply.php:227
+#: bbpress/form-reply-activity.php:190 bbpress/form-reply.php:229
 msgid "You cannot reply to this discussion."
 msgstr ""
 
@@ -405,6 +405,10 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: bbpress/form-reply.php:179 bbpress/form-topic.php:229
+msgid "Discard Draft"
+msgstr ""
+
 #: bbpress/form-topic.php:34
 msgid ""
 "This forum is marked as closed to new discussions, however your posting "
@@ -423,15 +427,15 @@ msgstr ""
 msgid "Type:"
 msgstr ""
 
-#: bbpress/form-topic.php:256
+#: bbpress/form-topic.php:258
 msgid "The forum \"%s\" is closed to new discussions and replies."
 msgstr ""
 
-#: bbpress/form-topic.php:265
+#: bbpress/form-topic.php:267
 msgid "You cannot create new discussions."
 msgstr ""
 
-#: bbpress/form-topic.php:265
+#: bbpress/form-topic.php:267
 msgid "You must be logged in to create new discussions."
 msgstr ""
 

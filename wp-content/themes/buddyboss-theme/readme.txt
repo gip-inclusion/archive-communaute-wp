@@ -2,7 +2,7 @@
 Contributors: BuddyBoss
 Requires at least: 4.9.1
 Tested up to: 6.0
-Version: 2.0.4
+Version: 2.0.4.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,9 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 2.0.4.1 =
+* Forums - Small style update for the Draft option available for forum Discussion and replies
 
 = 2.0.4 =
 * Notifications - Provided styling support for Web Push Notification from BuddyBoss Platform Pro

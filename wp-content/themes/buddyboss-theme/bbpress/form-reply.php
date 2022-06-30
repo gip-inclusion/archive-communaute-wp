@@ -176,6 +176,8 @@
 
 							<?php bbp_cancel_reply_to_link(); ?>
 
+							<button type="button" tabindex="<?php bbp_tab_index(); ?>" id="bb_reply_discard_draft" name="bb_reply_discard_draft" class="button outline discard small bb_discard_topic_reply_draft"><?php esc_html_e( 'Discard Draft', 'buddyboss-theme' ); ?></button>
+
 							<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_reply_submit" name="bbp_reply_submit" class="button submit small">
 								<?php esc_html_e( 'Post', 'buddyboss-theme' ); ?>
 								<i class="bb-icon-l bb-icon-spinner animate-spin"></i>
