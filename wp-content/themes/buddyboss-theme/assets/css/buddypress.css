@@ -9656,6 +9656,11 @@ ul#activity-sub-nav {
   color: var(--bb-headings-color);
 }
 
+.bb_discard_topic_reply_draft,
+#discard-draft-activity {
+  color: var(--bb-body-text-color) !important;
+}
+
 .bb-media-comment-text {
   border: 0;
   height: 36px;
