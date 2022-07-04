@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-06-23 05:00:19+00:00\n"
-"PO-Revision-Date: 2022-06-27 14:51+0200\n"
+"PO-Revision-Date: 2022-07-04 16:43+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -17197,7 +17197,7 @@ msgstr " (+ %d caché)"
 #: bp-forums/templates/default/bbpress/form-topic.php:212
 #: bp-templates/bp-nouveau/includes/activity/functions.php:236
 msgid "Discard Draft"
-msgstr ""
+msgstr "Rejeter le brouillon"
 
 #: bp-forums/groups.php:310 bp-forums/groups.php:313
 #: bp-groups/classes/class-bp-rest-group-settings-endpoint.php:1192

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-06-14 17:10+0200\n"
+"PO-Revision-Date: 2022-07-04 16:39+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -5873,16 +5873,12 @@ msgid "Enable advanced profile search on the members directory"
 msgstr "Activer la recherche de profil avancée dans le répertoire des membres"
 
 #: bp-core/admin/settings/bp-admin-setting-xprofile.php:653
-#, fuzzy
-#| msgid ""
-#| "Display profile/member directories in Grid View, List View, or allow "
-#| "toggling between both views."
 msgid ""
 "Display member directories in grid view, list view, or allow toggling "
 "between both views."
 msgstr ""
-"Afficher les répertoires de profils/membres en Grille, en Liste ou permettre "
-"de basculer entre les deux vues."
+"Affichez les répertoires des membres en mode grille, en mode Liste ou "
+"autorisez le basculement entre les deux vues."
 
 #: bp-core/admin/templates/about-buddyboss-app.php:20
 #: bp-core/admin/templates/about-buddyboss.php:20
@@ -6137,10 +6133,8 @@ msgid "Marketing and Strategy"
 msgstr "Marketing et stratégie"
 
 #: bp-core/admin/templates/credit-screen.php:34
-#, fuzzy
-#| msgid "80 People and Growing!"
 msgid "Over 100 and Growing!"
-msgstr "80 personnes et en augmentation !"
+msgstr "Plus de 100 et en croissance!"
 
 #: bp-core/admin/templates/credit-screen.php:40
 msgid "Special thanks to the BuddyPress contributors"
@@ -7683,22 +7677,16 @@ msgstr ""
 "Voir les signalements: {{reportlink}}"
 
 #: bp-core/bp-core-functions.php:3925
-#, fuzzy
-#| msgid "Activate Account"
 msgid "Activate a new account"
-msgstr "Activez votre compte"
+msgstr "Activer un nouveau compte"
 
 #: bp-core/bp-core-functions.php:3930
-#, fuzzy
-#| msgid "Activate Pending Accounts"
 msgid "Activate a new account and site"
-msgstr "Activer les comptes en attente"
+msgstr "Activer un nouveau compte et un nouveau site"
 
 #: bp-core/bp-core-functions.php:3935 bp-core/bp-core-update.php:1793
-#, fuzzy
-#| msgid "Recipient was mentioned in an activity update."
 msgid "A member is mentioned in an activity post"
-msgstr "Le(La) destinataire a été mentionné(e) dans une publication."
+msgstr "Un membre est mentionné dans un message d’activité"
 
 #: bp-core/bp-core-functions.php:3938 bp-core/bp-core-functions.php:3946
 msgid ""
@@ -7708,46 +7696,30 @@ msgstr ""
 "publication."
 
 #: bp-core/bp-core-functions.php:3943 bp-core/bp-core-update.php:1794
-#, fuzzy
-#| msgid "Recipient was mentioned in a group activity update."
 msgid "A member is mentioned in a group activity post"
-msgstr ""
-"Le(La) destinataire a été mentionné(e) dans une mise à jour d'activité d'un "
-"groupe."
+msgstr "Un membre est mentionné dans un message d’activité de groupe"
 
 #: bp-core/bp-core-functions.php:3951
-#, fuzzy
-#| msgid "Member's email address"
 msgid "A member's email is changed"
-msgstr "Adresse e-mail du membre"
+msgstr "L’adresse e-mail d’un membre est modifiée"
 
 #: bp-core/bp-core-functions.php:3956
 #, fuzzy
-#| msgid "Recipient has had an invitation to connect accepted by a member."
 msgid "Recepient is invited to the site by a member"
-msgstr ""
-"Le destinataire a reçu une invitation à se connecter acceptée par un membre."
+msgstr "Recepient est invité sur le site par un membre"
 
 #: bp-core/bp-core-functions.php:3961
-#, fuzzy
-#| msgid ""
-#| "When content is automatically hidden due to reaching the reporting "
-#| "threshold."
 msgid "Content is automatically hidden due to reaching the reporting threshold"
 msgstr ""
-"Lorsque le contenu est automatiquement masqué en raison de l’atteinte du "
-"seuil de signalement."
+"Le contenu est automatiquement masqué en raison de l’atteinte du seuil de "
+"rapport"
 
 #: bp-core/bp-core-functions.php:3966
-#, fuzzy
-#| msgid ""
-#| "When a member has been automatically suspended due to reaching the "
-#| "reporting threshold."
 msgid ""
 "A member is automatically suspended due to reaching the reporting threshold"
 msgstr ""
-"Lorsqu’un membre a été automatiquement suspendu en raison de l’atteinte du "
-"seuil de signalement."
+"Un membre est automatiquement suspendu en raison de l’atteinte du seuil de "
+"déclaration"
 
 #: bp-core/bp-core-functions.php:4012 bp-core/bp-core-functions.php:4018
 #: bp-core/bp-core-functions.php:4023
@@ -7865,24 +7837,18 @@ msgid "Choose which notifications to receive across all your devices."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:7104
-#, fuzzy
-#| msgid "Choose your email notification preferences."
 msgid "Choose which notifications to receive by email."
-msgstr "Choisissez vos préférences de notification par e-mail."
+msgstr "Choisissez les notifications à recevoir par e-mail."
 
 #: bp-core/bp-core-functions.php:7125
-#, fuzzy
-#| msgid "Email Notification"
 msgid "Enable Notifications"
-msgstr "Notification Mail"
+msgstr "Activer les notifications"
 
 #: bp-core/bp-core-functions.php:7132 bp-core/bp-core-functions.php:7212
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:662
 #: bp-templates/bp-nouveau/buddypress/members/single/settings/notifications.php:52
-#, fuzzy
-#| msgid "Website"
 msgid "Web"
-msgstr "Site web"
+msgstr "Web"
 
 #: bp-core/bp-core-functions.php:7207
 msgid "A manual notification from a site admin"
@@ -10618,22 +10584,16 @@ msgid "Go to document"
 msgstr "Aller au document"
 
 #: bp-document/bp-document-filters.php:1518
-#, fuzzy
-#| msgid "Report Document"
 msgid "Repair documents"
-msgstr "Document de rapport"
+msgstr "Réparer les documents"
 
 #: bp-document/bp-document-filters.php:1579
-#, fuzzy
-#| msgid "%s document updated successfully."
 msgid "%s documents updated successfully."
-msgstr "Le document %s a été mis à jour avec succès."
+msgstr "%s documents mis à jour avec succès."
 
 #: bp-document/bp-document-filters.php:1589
-#, fuzzy
-#| msgid "Search Documents&hellip;"
 msgid "Repairing documents &hellip; Complete!"
-msgstr "Recherche des Documents&hellip;"
+msgstr "Réparation des documents &hellip; Complète !"
 
 #: bp-document/bp-document-filters.php:1786
 msgid "%s document"
@@ -14339,10 +14299,8 @@ msgstr "Vous avez %1$d nouvelles mentions"
 
 #. translators: 1.Member display name 2. discussions title.
 #: bp-forums/classes/class-bp-forums-notification.php:253
-#, fuzzy
-#| msgid "%1$s started a new discussion in the forum %2$s"
 msgid "%1$s started a discussion: %2$s"
-msgstr "%1$s a lancé un nouveau sujet de discussion dans le forum %2$s"
+msgstr "%1$s a lancé un nouveau sujet de discussion : %2$s"
 
 #. translators: discussions title.
 #: bp-forums/classes/class-bp-forums-notification.php:260
@@ -16290,10 +16248,8 @@ msgid "Discussion started"
 msgstr "Discussion enregistrée."
 
 #: bp-forums/notifications.php:128
-#, fuzzy
-#| msgid "%1$s started a new discussion in the forum %2$s"
 msgid "%1$s started a discussion: \"%2$s\""
-msgstr "%1$s a lancé un nouveau sujet de discussion dans le forum %2$s"
+msgstr "%1$s a lancé un nouveau sujet de discussion : \"%2$s\""
 
 #: bp-forums/notifications.php:130
 #, fuzzy
