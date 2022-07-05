@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-06-23 05:00:19+00:00\n"
-"PO-Revision-Date: 2022-07-04 16:43+0200\n"
+"PO-Revision-Date: 2022-07-05 10:53+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -11852,10 +11852,8 @@ msgid "%1$s started a new discussion in the forum %2$s"
 msgstr "%1$s a lancé la discussion %2$s dans le forum %3$s"
 
 #: bp-forums/activity.php:895
-#, fuzzy
-#| msgid "%1$s replied to the discussion %2$s in the forum %3$s"
 msgid "%1$s replied to a discussion in the forum %2$s"
-msgstr "%1$s a répondu à la discussion %2$s dans le forum %3$s"
+msgstr "%1$s a répondu à un sujet de discussion dans le forum %2$s"
 
 #: bp-forums/activity.php:925
 msgid "%1$s started the discussion %2$s in the group %3$s"
@@ -14898,10 +14896,8 @@ msgstr "Vous avez %d nouvelles réponses"
 #. translators: 1. Member display name. 2. excerpt.
 #: bp-forums/classes/class-bp-forums-notification.php:207
 #: bp-forums/classes/class-bp-forums-notification.php:381
-#, fuzzy
-#| msgid "%1$s replied to the discussion %2$s in the forum %3$s"
 msgid "%1$s replied to a discussion: %2$s"
-msgstr "%1$s a répondu à la discussion %2$s dans le forum %3$s"
+msgstr "%1$s a répondu à un sujet de discussion : %2$s"
 
 #. translators: Member display name.
 #: bp-forums/classes/class-bp-forums-notification.php:216
@@ -14912,18 +14908,14 @@ msgstr "%s a répondu à une discussion : quelques photos"
 #. translators: Member display name.
 #: bp-forums/classes/class-bp-forums-notification.php:222
 #: bp-forums/classes/class-bp-forums-notification.php:396
-#, fuzzy
-#| msgid "%1$s replied to the discussion %2$s in the forum %3$s"
 msgid "%s replied to a discussion: a photo"
-msgstr "%1$s a répondu à la discussion %2$s dans le forum %3$s"
+msgstr "%s a répondu à une discussion : une photo"
 
 #. translators: Member display name.
 #: bp-forums/classes/class-bp-forums-notification.php:231
 #: bp-forums/classes/class-bp-forums-notification.php:405
-#, fuzzy
-#| msgid "%1$s replied to the discussion %2$s in the forum %3$s"
 msgid "%s replied to a discussion: some documents"
-msgstr "%1$s a répondu à la discussion %2$s dans le forum %3$s"
+msgstr "%s a répondu à une discussion : quelques documents"
 
 #. translators: Member display name.
 #: bp-forums/classes/class-bp-forums-notification.php:237
@@ -32225,10 +32217,8 @@ msgstr "Par %s"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/reply-ajax.php:34
 #: bp-templates/bp-nouveau/buddypress/search/loop/reply.php:40
-#, fuzzy
-#| msgid "Member replies to a forum discussion"
 msgid "replied to a discussion"
-msgstr "Un membre répond à une discussion de forum"
+msgstr "a répondu à une discussion"
 
 #: bp-templates/bp-nouveau/buddypress/search/loop/sfwd-courses-ajax.php:52
 #: bp-templates/bp-nouveau/buddypress/search/loop/sfwd-courses.php:62
