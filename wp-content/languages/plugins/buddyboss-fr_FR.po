@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-07-04 16:39+0200\n"
+"PO-Revision-Date: 2022-07-05 10:55+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -14270,17 +14270,13 @@ msgstr "Vous avez %d nouvelles réponses"
 
 #. translators: 1. Member display name. 2. excerpt.
 #: bp-forums/classes/class-bp-forums-notification.php:197
-#, fuzzy
-#| msgid "%1$s replied to a discussion in the forum %2$s"
 msgid "%1$s replied to a discussion: %2$s"
-msgstr "%1$s a répondu à un sujet de discussion dans le forum %2$s"
+msgstr "%1$s a répondu à un sujet de discussion : %2$s"
 
 #. translators: Member display name.
 #: bp-forums/classes/class-bp-forums-notification.php:204
-#, fuzzy
-#| msgid "Member replies to a forum discussion"
 msgid "%s replied to a discussion"
-msgstr "Un membre répond à une discussion de forum"
+msgstr "%1$s a répondu à un sujet de discussion : %2$s"
 
 #. translators: topic title.
 #: bp-forums/classes/class-bp-forums-notification.php:210
