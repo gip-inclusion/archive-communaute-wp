@@ -30,7 +30,7 @@ $event_id = get_the_ID();
 
 	<!-- Notices -->
 	<?php tribe_the_notices() ?>
-    
+
     <div class="bs-event-heading">
         <div class="tribe-event-schedule-short">
             <div class="bs-schedule-short-date">
@@ -43,7 +43,7 @@ $event_id = get_the_ID();
                 <?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
                 <?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
             </div>
-            
+
             <div class="tribe-events-schedule tribe-clearfix">
         		<?php if ( tribe_get_cost() ) : ?>
         			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
@@ -67,11 +67,11 @@ $event_id = get_the_ID();
 
 	<?php while ( have_posts() ) :  the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        
+
             <div class="bs-single-body">
     			<!-- Event featured image, but exclude link -->
     			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-                
+
                 <div class="bs-single-content">
         			<!-- Event content -->
         			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
