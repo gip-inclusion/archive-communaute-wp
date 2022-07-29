@@ -30,3 +30,5 @@ db-data/
 wp-uploads/
 wp-content/cache
 wp-content/wflogs
+docker/sql/dump.sql
+docker/sql/dump.sql.gz
