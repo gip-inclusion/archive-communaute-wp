@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-06-23 05:00:19+00:00\n"
-"PO-Revision-Date: 2022-07-22 16:29+0200\n"
+"PO-Revision-Date: 2022-07-29 10:48+0200\n"
 "Last-Translator: BuddyBoss <support@buddyboss.com>\n"
 "Language-Team: Jean-Pierre Michaud <unpapapro@icloud.com>\n"
 "Language: fr_FR\n"
@@ -3524,6 +3524,9 @@ msgid ""
 "after they have registerd and activated their account. This setting does not "
 "apply to hidden groups."
 msgstr ""
+"Ajouter automatiquement les membres de ce type de profil aux types de "
+"groupes suivants, après qu'ils se soient enregistrés et aient activé leur "
+"compte. Ce paramètre ne s'applique pas aux groupes cachés."
 
 #: bp-core/admin/bp-core-admin-functions.php:2046
 #: bp-core/bp-core-functions.php:2643 bp-invites/bp-invites-functions.php:59
@@ -3883,6 +3886,8 @@ msgstr "Pages de connexion"
 #: bp-core/admin/bp-core-admin-pages.php:212
 msgid "New users fill out this form to register their accounts."
 msgstr ""
+"Les nouveaux utilisateurs remplissent ce formulaire pour enregistrer leurs "
+"comptes."
 
 #: bp-core/admin/bp-core-admin-pages.php:215
 #: bp-core/admin/bp-core-admin-pages.php:221
@@ -3901,6 +3906,8 @@ msgstr ""
 msgid ""
 "After registering, users are sent to this page to activate their accounts."
 msgstr ""
+"Après l’inscription, les utilisateurs sont envoyés à cette page pour activer "
+"leurs comptes."
 
 #: bp-core/admin/bp-core-admin-pages.php:246
 msgid "Associate a WordPress page with each of the following components."
@@ -4577,16 +4584,12 @@ msgstr ""
 "Autoriser les membres à téléverser des photos pour les avatars de profil"
 
 #: bp-core/admin/bp-core-admin-settings.php:1930
-#, fuzzy
-#| msgid ""
-#| "Allow members to use <a href=\"https://gravatar.com/\">gravatars</a> for "
-#| "profile avatars"
 msgid ""
 "When enabled, members will be able to use avatars from their <a href="
 "\"https://gravatar.com/\">Gravatar</a> account."
 msgstr ""
-"Permettre aux membres d'utiliser des <a href=\"https://gravatar.com/"
-"\">gravatars</a> pour les avatars de profil"
+"Lorsque cette option est activée, les membres pourront utiliser les avatars "
+"de leur compte <a href=\"https://gravatar.com/\">Gravatar</a> ."
 
 #: bp-core/admin/bp-core-admin-settings.php:1975
 #: bp-core/admin/bp-core-admin-settings.php:2026
@@ -4939,6 +4942,11 @@ msgid ""
 "be able manage each the notification types used on your site in the "
 "Notifications settings."
 msgstr ""
+"Une fois activé, un écran Préférences de notification sera disponible pour "
+"chaque membre dans les paramètres de son compte. Dans cet écran, les membres "
+"peuvent configurer les notifications qu’ils reçoivent par e-mail, web ou "
+"application. De plus, vous pourrez gérer chacun des types de notification "
+"utilisés sur votre site dans les paramètres Notifications."
 
 #. translators: Notification settings link.
 #: bp-core/admin/bp-core-admin-settings.php:2941
@@ -4949,6 +4957,12 @@ msgid ""
 "be able manage each the notification types used on your site in the <a href="
 "\"%s\">Notifications</a> settings."
 msgstr ""
+"Une fois activé, un écran Préférences de notification sera disponible pour "
+"chaque membre dans les paramètres de son compte. Dans cet écran, les membres "
+"peuvent configurer les notifications qu’ils reçoivent par e-mail, web ou "
+"application. De plus, vous pourrez gérer chacun des types de notification "
+"utilisés sur votre site dans les paramètres <a href=\"%s\">Notifications</"
+"a> ."
 
 #: bp-core/admin/bp-core-admin-settings.php:2977
 #, fuzzy
@@ -8081,16 +8095,12 @@ msgid ""
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3935
-#, fuzzy
-#| msgid "Activate Account"
 msgid "Activate a new account"
-msgstr "Activez votre compte"
+msgstr "Activer un nouveau compte"
 
 #: bp-core/bp-core-functions.php:3940
-#, fuzzy
-#| msgid "Activate Pending Accounts"
 msgid "Activate a new account and site"
-msgstr "Activer les comptes en attente"
+msgstr "Activer un nouveau compte et un nouveau site"
 
 #: bp-core/bp-core-functions.php:3945 bp-core/bp-core-update.php:1793
 #, fuzzy
@@ -25289,28 +25299,20 @@ msgid "%s became a registered member"
 msgstr "%s membre est inscrit"
 
 #: bp-members/bp-members-admin.php:27 bp-members/bp-members-admin.php:93
-#, fuzzy
-#| msgid "Status"
 msgid "Online Status"
-msgstr "Statut"
+msgstr "Statut en ligne"
 
 #: bp-members/bp-members-admin.php:39
-#, fuzzy
-#| msgid "Members Filter"
 msgid "Member Handle"
-msgstr "Filtrer des membres"
+msgstr "Membre suspendu"
 
 #: bp-members/bp-members-admin.php:44 bp-members/bp-members-admin.php:117
-#, fuzzy
-#| msgid "Joined %s"
 msgid "Joined Date"
-msgstr "Inscrit depuis le %s"
+msgstr "Date d'inscription"
 
 #: bp-members/bp-members-admin.php:55 bp-members/bp-members-admin.php:106
-#, fuzzy
-#| msgid "My Followers"
 msgid "Followers"
-msgstr "Mes Abonnés"
+msgstr "Abonnés"
 
 #: bp-members/bp-members-admin.php:67
 #: bp-xprofile/classes/class-bp-xprofile-field-type-social-networks.php:28
@@ -25322,10 +25324,8 @@ msgstr "Réseaux sociaux"
 #: bp-messages/bp-messages-template.php:1483
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/private-message.php:329
 #: bp-templates/bp-nouveau/buddypress/groups/single/messages/public-message.php:262
-#, fuzzy
-#| msgid "Send Messages"
 msgid "Send Message"
-msgstr "Envoyer Messages"
+msgstr "Envoyer le message"
 
 #: bp-members/bp-members-adminbar.php:108
 msgid "Edit Member"
@@ -25553,17 +25553,12 @@ msgid "their"
 msgstr "leur"
 
 #: bp-members/bp-members-functions.php:3938
-#, fuzzy
-#| msgid "is"
 msgid "his"
-msgstr "est"
+msgstr "son"
 
 #: bp-members/bp-members-functions.php:3940
-#, fuzzy
-#| msgid "hr"
-#| msgid_plural "hrs"
 msgid "her"
-msgstr "hr"
+msgstr "sa"
 
 #: bp-members/bp-members-template.php:519
 msgid "Viewing 1 member with connections"
@@ -25620,27 +25615,21 @@ msgstr "Voir comme"
 #. translators: 1: Total followers count. 2: Follower string.
 #: bp-members/bp-members-template.php:2824
 #: bp-members/bp-members-template.php:2837
-#, fuzzy
-#| msgid "My Followers"
 msgid "followers"
-msgstr "Mes Abonnés"
+msgstr "abonnés"
 
 #. translators: Follower string.
 #: bp-members/bp-members-template.php:2830
-#, fuzzy
-#| msgid "Unfollow"
 msgid "follower"
-msgstr "Ne plus suivre"
+msgstr "abonné"
 
 #. translators: Following string.
 #. translators: 1: Total following count. 2: Following string.
 #: bp-members/bp-members-template.php:2881
 #: bp-members/bp-members-template.php:2887
 #: bp-members/bp-members-template.php:2894
-#, fuzzy
-#| msgid "Following"
 msgid "following"
-msgstr "Abonnements"
+msgstr "abonnements"
 
 #: bp-members/classes/class-bp-core-members-switching.php:86
 msgid "Member Switching"
@@ -26939,10 +26928,8 @@ msgid "New user confirm account password."
 msgstr ""
 
 #: bp-members/classes/class-bp-rest-signup-endpoint.php:1313
-#, fuzzy
-#| msgid "Yes, I'd like to create a new site"
 msgid "If user likes to create a new site."
-msgstr "Oui, j'aimerais créé un nouveau site"
+msgstr "Si l’utilisateur aime créer un nouveau site."
 
 #: bp-members/classes/class-bp-rest-signup-endpoint.php:1321
 #, fuzzy
@@ -29510,13 +29497,12 @@ msgstr "Réponse mise à jour."
 
 #: bp-moderation/classes/suspend/class-bp-suspend-member.php:389
 #: bp-moderation/classes/suspend/class-bp-suspend-member.php:469
-#, fuzzy
-#| msgid "<strong>ERROR</strong>: Your account has been marked as a spammer."
 msgid ""
 "<strong>ERROR</strong>: Your account has been suspended. Please contact a "
 "site admin for more information."
 msgstr ""
-"<strong>ERREUR</strong>: votre compte a été marqué comme étant indésirable."
+"<strong>ERREUR</strong>: Votre compte a été suspendu. Veuillez contacter un "
+"administrateur du site pour plus d’informations."
 
 #: bp-moderation/screens/block-member-form.php:16
 #, fuzzy
@@ -30333,10 +30319,8 @@ msgstr ""
 "\">annulez la modification en attente</a>."
 
 #: bp-settings/classes/class-bp-rest-account-settings-endpoint.php:131
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to see the account settings."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr "Désolé, vous n’êtes pas autorisé à voir les paramètres du compte."
 
 #: bp-settings/classes/class-bp-rest-account-settings-endpoint.php:222
 msgid "A unique name for the setting navigation."
@@ -30360,10 +30344,9 @@ msgstr "Navigation dans la liste de usagers en attente"
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:158
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:171
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:295
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to see the account settings options."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr ""
+"Désolé, vous n’êtes pas autorisé à voir les options de paramètres de compte."
 
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:264
 #, fuzzy
@@ -30372,10 +30355,10 @@ msgid "Your settings has been successfully updated."
 msgstr "Les paramètres de groupe ont été correctement mis à jour."
 
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:308
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, you are not allowed to update the account settings options."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr ""
+"Désolé, vous n’êtes pas autorisé à mettre à jour les options de paramètres "
+"de compte."
 
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:441
 msgid "A unique name for the field."
@@ -30466,10 +30449,8 @@ msgid "I understand the consequences."
 msgstr "Je comprends les conséquences."
 
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:1623
-#, fuzzy
-#| msgid "Sorry, you are not allowed to create groups."
 msgid "Sorry, You can not able to delete the account."
-msgstr "Désolé, vous n'êtes pas autorisé à créer des groupes."
+msgstr "Désolé, vous ne pouvez pas supprimer le compte."
 
 #. translators: 1: New email. 2: Current email.
 #: bp-settings/classes/class-bp-rest-account-settings-options-endpoint.php:1672
@@ -34359,14 +34340,8 @@ msgid "<label for=\"%1$s\">%2$s %3$s</label>"
 msgstr "<label for=\"%1$s\"> %2$s %3$s</label>"
 
 #: bp-templates/bp-nouveau/includes/template-tags.php:2604
-#, fuzzy
-#| msgid ""
-#| "By creating an account you are agreeing to the <a class=\"popup-modal-"
-#| "register popup-terms\" href=\"#terms-modal\">%s</a>."
 msgid "By creating an account you are agreeing to the %1$s and %2$s."
-msgstr ""
-"En créant un compte, vous acceptez les <a class=\"popup-modal-register popup-"
-"terms\" href=\"#terms-modal\">%s</a>."
+msgstr "En créant un compte, vous acceptez %1$s, et %2$s."
 
 #: bp-templates/bp-nouveau/includes/template-tags.php:2613
 #: bp-templates/bp-nouveau/includes/template-tags.php:2621
@@ -34378,7 +34353,7 @@ msgstr "×"
 #: bp-templates/bp-nouveau/includes/template-tags.php:2636
 #: bp-templates/bp-nouveau/includes/template-tags.php:2660
 msgid "By creating an account you are agreeing to the %s."
-msgstr ""
+msgstr "En créant un compte, vous acceptez les %s."
 
 #: bp-templates/bp-nouveau/includes/video/ajax.php:357
 #: bp-templates/bp-nouveau/includes/video/ajax.php:584
@@ -35886,6 +35861,9 @@ msgid ""
 "On Registration and Account activation, Profile Type members will auto-join "
 "Groups from Selected Group Types below other than Hidden Groups."
 msgstr ""
+"Lors de l’enregistrement et de l’activation du compte, les types de profils "
+"des membres rejoindront automatiquement des groupes de types de groupes "
+"sélectionnés ci-dessous autres que les groupes cachés."
 
 #: bp-xprofile/classes/class-bp-rest-xprofile-types-endpoint.php:437
 #, fuzzy
