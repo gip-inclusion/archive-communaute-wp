@@ -202,7 +202,7 @@ class PAFE_Navigation_Arrows_Icon extends \Elementor\Widget_Base {
 					'class' => 'pafe-navigation-arrows-icon',
 					'data-pafe-navigation-arrows-icon' => '',
 					'data-pafe-navigation-arrows-icon-size' => $settings['pafe_navigation_arrows_icon_size']['size'] . $settings['pafe_navigation_arrows_icon_size']['unit'],
-					'data-pafe-navigation-arrows-icon-opacity' => $settings['pafe_navigation_arrows_icon_opacity']['size'] . $settings['pafe_navigation_arrows_icon_opacity']['unit'],
+					'data-pafe-navigation-arrows-icon-opacity' => $settings['pafe_navigation_arrows_icon_opacity'] . $settings['pafe_navigation_arrows_icon_opacity'],
 					'data-pafe-navigation-arrows-icon-position' => $settings['pafe_navigation_arrows_icon_position'],
 					'data-pafe-navigation-arrows-icon-previous' => $settings['pafe_navigation_arrows_icon_previous'],
 					'data-pafe-navigation-arrows-icon-next' => $settings['pafe_navigation_arrows_icon_next'],
@@ -216,7 +216,7 @@ class PAFE_Navigation_Arrows_Icon extends \Elementor\Widget_Base {
 					'class' => 'pafe-navigation-arrows-icon',
 					'data-pafe-navigation-arrows-icon-image' => '',
 					'data-pafe-navigation-arrows-icon-size' => $settings['pafe_navigation_arrows_icon_size']['size'] . $settings['pafe_navigation_arrows_icon_size']['unit'],
-					'data-pafe-navigation-arrows-icon-opacity' => $settings['pafe_navigation_arrows_icon_opacity']['size'] . $settings['pafe_navigation_arrows_icon_opacity']['unit'],
+					'data-pafe-navigation-arrows-icon-opacity' => $settings['pafe_navigation_arrows_icon_opacity'] . $settings['pafe_navigation_arrows_icon_opacity'],
 					'data-pafe-navigation-arrows-icon-position' => $settings['pafe_navigation_arrows_icon_position'],
 					'data-pafe-navigation-arrows-icon-previous' => $settings['pafe_navigation_arrows_icon_previous_image']['url'],
 					'data-pafe-navigation-arrows-icon-next' => $settings['pafe_navigation_arrows_icon_next_image']['url'],
@@ -229,6 +229,7 @@ class PAFE_Navigation_Arrows_Icon extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/image-carousel/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/posts/custom_section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/slides/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/pafe-slider-builder/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/media-carousel/section_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );

@@ -324,3 +324,32 @@ a.pafe-toggle-features__button:hover {
 #pafe-pdf-font-url{
   width: 70%;
 }
+
+/* Tooltip container */
+.pafe-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.pafe-tooltip .pafe-tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.pafe-tooltip:hover .pafe-tooltiptext {
+  visibility: visible;
+}

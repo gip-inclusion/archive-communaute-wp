@@ -194,6 +194,7 @@ class PAFE_Sticky_Header extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/section_layout/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/section/before_render', [ $this, 'before_render_section'], 10, 1 );
 	}
 

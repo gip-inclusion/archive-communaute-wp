@@ -551,28 +551,35 @@
 					}
 					$customer_array["description"] = replace_email_stripe($form['settings']['pafe_stripe_customer_info_field'], $fields);
 					// Create Customer In Stripe
-					$customer = \Stripe\Customer::create($customer_array);
+					try{
+						$customer = \Stripe\Customer::create($customer_array);
 
-					$fields_metadata = array();
+						$fields_metadata = array();
 
-					$fields_metadata_index = 0;
-					foreach ($fields as $field) {
-						$fields_metadata_index++;
+						$fields_metadata_index = 0;
+						foreach ($fields as $field) {
+							$fields_metadata_index++;
 
-						if ($fields_metadata_index < 50) {
-							if (!empty($field['type'])) {
-								if ($field['type'] != 'signature') {
-									$fields_metadata[$field['name']] = $field['value'];
+							if ($fields_metadata_index < 50) {
+								if (!empty($field['type'])) {
+									if ($field['type'] != 'signature') {
+										$fields_metadata[$field['name']] = $field['value'];
+									}
 								}
 							}
 						}
-					}
 
-					$subscriptions = $form['settings']['pafe_stripe_subscriptions_list'];
-					$product_name = $form['settings']['pafe_stripe_subscriptions_product_name'];
-					$product_id = $form['settings']['pafe_stripe_subscriptions_product_id'];
-					$one_time_fee = 0;
-					$cancel_after = '';
+						$subscriptions = $form['settings']['pafe_stripe_subscriptions_list'];
+						$product_name = $form['settings']['pafe_stripe_subscriptions_product_name'];
+						$product_id = $form['settings']['pafe_stripe_subscriptions_product_id'];
+						$one_time_fee = 0;
+						$cancel_after = '';
+					}catch(\Stripe\Exception\ApiErrorException $e){
+						echo json_encode([
+							'error' => $e->getMessage()
+						]);
+						wp_die();
+					}
 					if(!empty($form['settings']['pafe_stripe_subscriptions_only_price_enable'])){
 						try{
 							$subscription_array = array(

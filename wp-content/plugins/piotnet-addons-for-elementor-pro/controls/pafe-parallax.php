@@ -120,9 +120,11 @@ class PAFE_Parallax extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_background/before_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/section_background/before_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/column/section_style/before_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/common/_section_background/before_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/section/before_render', [ $this, 'before_render_element'], 10, 1 );
+		add_action( 'elementor/frontend/container/before_render', [ $this, 'before_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', [ $this, 'before_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/widget/before_render', [ $this, 'before_render_element'], 10, 1 );
 		

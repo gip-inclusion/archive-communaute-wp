@@ -5,6 +5,10 @@
     counter-reset: step;
 }
 
+.pafe-progressbar-hidden {
+    display: none;
+}
+
 .pafe-multi-step-form__progressbar-item {
     position: relative;
     text-align: center;

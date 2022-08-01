@@ -147,6 +147,21 @@ class PAFE_Conditional_Logic_Form extends \Elementor\Widget_Base {
 			]
 		);
 
+		if ($element->get_name() == 'form') {
+			$repeater->add_control(
+				'pafe_conditional_logic_form_required_field',
+				[
+					'label' => __( 'Required Field', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::SWITCHER,
+					'default' => '',
+                    'description' => __( 'Please do not enable "Required" in Form Fields Setting if this field is mandatory', 'pafe' ),
+					'label_on' => 'Yes',
+					'label_off' => 'No',
+					'return_value' => 'yes',
+				]
+			);
+		}
+
 		$element->add_control(
 			'pafe_conditional_logic_form_list',
 			[
@@ -174,6 +189,12 @@ class PAFE_Conditional_Logic_Form extends \Elementor\Widget_Base {
 						'data-pafe-conditional-logic-form-speed' => $settings['pafe_conditional_logic_form_speed'],
 						'data-pafe-conditional-logic-form-easing' => $settings['pafe_conditional_logic_form_easing'],
 					] );
+
+					if (!empty($settings['mark_required'])) {
+						$element->add_render_attribute( '_wrapper', [
+							'data-pafe-conditional-logic-form-mark-required' => '',
+						] );
+					}
 				}
 			}
 		}

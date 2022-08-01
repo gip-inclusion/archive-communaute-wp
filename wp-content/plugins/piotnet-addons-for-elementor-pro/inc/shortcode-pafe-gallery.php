@@ -134,7 +134,7 @@ function pafe_gallery_shortcode( $attr ) {
 	 */
 
 	$size_class = sanitize_html_class( $atts['size'] );
-	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'";
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}' data-pafe-lightbox-gallery-inner ";
 
 	if( !empty($attr['masonry']) ) {
 		if( $attr['masonry'] == 'yes' ) {
@@ -277,9 +277,9 @@ function pafe_gallery_shortcode( $attr ) {
 		}
 
 		if ($i > 1 && !empty($thumbnail_first)) {
-			$output .= "<a class='gallery-item' style='display:none' data-href='" . wp_get_attachment_url($id) . "' data-med='" . wp_get_attachment_url($id) . "' data-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "' data-med-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "'>";
+			$output .= "<div class='pafe-pswp'><a class='gallery-item' style='display:none' data-href='" . wp_get_attachment_url($id) . "' data-med='" . wp_get_attachment_url($id) . "' data-width='" . $image_meta['width'] . "' data-height='" . $image_meta['height'] . "' data-med-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "'>";
 		} else {
-			$output .= "<a class='gallery-item' data-href='" . wp_get_attachment_url($id) . "' data-med='" . wp_get_attachment_url($id) . "' data-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "' data-med-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "'>";
+			$output .= "<div class='pafe-pswp'><a class='gallery-item' data-href='" . wp_get_attachment_url($id) . "' data-med='" . wp_get_attachment_url($id) . "' data-width='" . $image_meta['width'] . "' data-height='" . $image_meta['height'] . "' data-med-size='" . $image_meta['width'] . "x" . $image_meta['height'] . "'>";
 		}
 
 		$output .= "$image_output";
@@ -295,12 +295,11 @@ function pafe_gallery_shortcode( $attr ) {
 			$output .= '</div>';
 		}
 
-		$output .= "</a>";
+		$output .= "</a></div>";
 
 	}
 
-	$output .= "
-		</div>\n";
+	$output .= "</div>\n";
 
 	return $output;
 }

@@ -53,7 +53,8 @@ function pafe_export_database() {
 		if ($index == 1) {
 			$fields_database = get_post_meta(get_the_ID(), '_pafe_form_builder_fields_database', true);
 			if ($fields_database) {
-				$fields_database = json_decode($fields_database, true);
+                $fields_database = strip_tags($fields_database);
+                $fields_database = json_decode($fields_database, true);
 			}
 		}
 		$metas = get_post_meta(get_the_ID());
@@ -79,7 +80,7 @@ function pafe_export_database() {
 					$th[] = !empty($fields_database[$id]['label']) ? $fields_database[$id]['label'] : $id;
 				}
 			} else {
-				//$th[] = $id;
+				$th[] = $id;
 			}
 		}
 	}

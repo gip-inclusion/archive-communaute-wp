@@ -173,9 +173,9 @@ class PAFE_Toggle_Content extends \Elementor\Widget_Base {
 
 				if ( $settings['pafe_toggle_content_height_type'] == '1' ) {
 					$element->add_render_attribute( '_wrapper', [
-						'data-pafe-toggle-content-height' => $settings['pafe_toggle_content_height'],
-						'data-pafe-toggle-content-height-tablet' => $settings['pafe_toggle_content_height_tablet'],
-						'data-pafe-toggle-content-height-mobile' => $settings['pafe_toggle_content_height_mobile'],
+						'data-pafe-toggle-content-height' => !empty($settings['pafe_toggle_content_height']) ? $settings['pafe_toggle_content_height'] : '',
+						'data-pafe-toggle-content-height-tablet' => !empty($settings['pafe_toggle_content_height_tablet']) ? $settings['pafe_toggle_content_height_tablet'] : '',
+						'data-pafe-toggle-content-height-mobile' => !empty($settings['pafe_toggle_content_height_mobile']) ? $settings['pafe_toggle_content_height_mobile'] : '',
 						'data-pafe-toggle-content-speed' => $settings['pafe_toggle_content_speed'],
 						'data-pafe-toggle-content-easing' => $settings['pafe_toggle_content_easing'],
 					] );
@@ -199,10 +199,12 @@ class PAFE_Toggle_Content extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/section_layout/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/column/section_advanced/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/common/_section_background/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/section/before_render', [ $this, 'after_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', [ $this, 'after_render_element'], 10, 1 );
+		add_action( 'elementor/frontend/container/before_render', [ $this, 'after_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/widget/before_render', [ $this, 'after_render_element'], 10, 1 );
 	}
 

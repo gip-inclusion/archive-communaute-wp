@@ -523,6 +523,7 @@
 	function pafe_ajax_form_builder() {
 
 		global $wpdb;
+
 			if ( !empty($_POST['post_id']) && !empty($_POST['form_id']) && !empty($_POST['fields']) ) {
 				$post_id = $_POST['post_id'];
 				$form_id = $_POST['form_id'];
@@ -542,6 +543,34 @@
 				$upload_dir = $upload['basedir'];
 				$upload_dir = $upload_dir . '/piotnet-addons-for-elementor';
 				$upload_dir = apply_filters( 'pafe/form_builder/upload_dir', $upload_dir );
+				$elementor = \Elementor\Plugin::$instance;
+
+				if ( version_compare( ELEMENTOR_VERSION, '2.6.0', '>=' ) ) {
+					$meta = $elementor->documents->get( $post_id )->get_elements_data();
+				} else {
+					$meta = $elementor->db->get_plain_editor( $post_id );
+				}
+
+				$form = find_element_recursive( $meta, $form_id );
+
+				$widget = $elementor->elements_manager->create_element_instance( $form );
+				$limit_entries_message = '';
+				$form['settings'] = $widget->get_active_settings();
+				$args = array(
+					'post_type' => 'pafe-form-database',
+					'meta_value' => $form['settings']['form_id'],
+					'meta_key' => 'form_id',
+				);
+				$the_query = new WP_Query( $args );
+				$form_database_total = $the_query->found_posts;
+				if ( !empty($form['settings']['pafe_limit_form_enable']) && $form_database_total > $form['settings']['pafe_limit_entries_total_post'] ) {
+					$limit_entries_message = 'expired';
+					$pafe_response = array(
+						'limit_entries_status' => $limit_entries_message,
+					);
+					echo json_encode($pafe_response);
+					wp_die();
+				}
 
 				$attachment = array();
 
@@ -614,18 +643,7 @@
 					}
 				}
 
-				$elementor = \Elementor\Plugin::$instance;
 
-				if ( version_compare( ELEMENTOR_VERSION, '2.6.0', '>=' ) ) {
-					$meta = $elementor->documents->get( $post_id )->get_elements_data();
-				} else {
-					$meta = $elementor->db->get_plain_editor( $post_id );
-				}
-
-				$form = find_element_recursive( $meta, $form_id );
-
-				$widget = $elementor->elements_manager->create_element_instance( $form );
-				$form['settings'] = $widget->get_active_settings();
 
 				$body = array(); // Webhook
 
@@ -947,6 +965,7 @@
 					}
 				}
 
+				$fields_db = $fields;
 				if (!empty($form['settings']['remove_empty_form_input_fields'])) {
 					$fields_new = array();
 					$field_remove = [];
@@ -967,7 +986,6 @@
 				    }
 				    $fields = $fields_new;
 				}
-
 				// Filter Hook
 					
 				$fields = apply_filters( 'pafe/form_builder/fields', $fields );
@@ -1063,7 +1081,7 @@
 
 							$repeater = array();
 
-							foreach ($fields as $field) {
+							foreach ($fields_db as $field) {
 
 								if (!empty($field['repeater_id'])) {
 									if (substr_count($field['repeater_id'],',') == 1) {
@@ -1096,7 +1114,7 @@
 
 								$fields_database[$repeater_item['repeater_id']] = array(
 									'name' => $repeater_item['repeater_id'],
-									'value' => $repeater_value,
+									'value' => nl2br($repeater_value),
 									'label' => $repeater_item['repeater_label'],
 								);
 							}
@@ -1190,6 +1208,11 @@
 					// Submit Post
 
 					if( in_array('submit_post', $form['settings']['submit_actions']) ) {
+						$sp_user_id = get_current_user_id();
+						if(!$sp_user_id && in_array("register", $form['settings']['submit_actions'])){
+							$sp_user_data = get_user_by( 'email', replace_email($form['settings']['register_email'], $fields));
+							$sp_user_id = $sp_user_data->id;
+						}
 						$sp_post_type = $form['settings']['submit_post_type'];
 						$sp_post_taxonomy = $form['settings']['submit_post_taxonomy'];
 						$sp_terms = $form['settings']['submit_post_terms_list'];
@@ -1227,6 +1250,9 @@
 								'post_title'    => wp_strip_all_tags( $post_title ),
 								'post_content'  => $post_content,
 							);
+							if($sp_user_id){
+								$submit_post['post_author'] = $sp_user_id;
+							}
 
 							if (empty($_POST['edit'])) {
 								$submit_post_id = wp_insert_post( $submit_post );
@@ -1483,6 +1509,13 @@
 															}
 															if (!empty($images_id)) {
 																$item_value = rtrim($images_id, ',');
+															}
+														}
+
+														if ($field_type == 'checkbox') {
+															$item_value = explode(',', $item_value);
+															foreach ($item_value as $itemx) {
+																$item_value[$itemx] = 'true';
 															}
 														}
 
@@ -1942,6 +1975,8 @@
 							'body' => $body,
 						];
 						$webhook_response = wp_remote_post( replace_email($form['settings']['webhooks'], $fields), $args );
+					}else{
+						$webhook_response = false;
 					}
 
 					// Google Sheets
@@ -1978,7 +2013,7 @@
 
 					        }
 
-					        $row[] = $value;
+					        $row[] = strpos($value, '[field id="') === false ? $value : '';
 				        }
 					    // Submission
 					    //$row = rtrim($row, ',');
@@ -2095,7 +2130,7 @@
 								$helper = new PAFE_Helper();
 								$mailchimp_url = 'https://' . substr($mailchimp_api_key,strpos($mailchimp_api_key,'-')+1) . '.api.mailchimp.com/3.0/lists/'.$list_id.'/members/'.$memberId.'';
 								if(!empty($mailchimp_data['merge_fields']['ADDRESS'])){
-									if(empty($mailchimp_data['merge_fields']['ADDRESS']['country']) || empty($mailchimp_data['merge_fields']['ADDRESS']['zip']) || empty($mailchimp_data['merge_fields']['ADDRESS']['state']) || empty($mailchimp_data['merge_fields']['ADDRESS']['city'])){
+									if(empty($mailchimp_data['merge_fields']['ADDRESS']['addr1']) || empty($mailchimp_data['merge_fields']['ADDRESS']['zip']) || empty($mailchimp_data['merge_fields']['ADDRESS']['state']) || empty($mailchimp_data['merge_fields']['ADDRESS']['city'])){
 										echo "Please enter a valid address.";
 									}else{
 										$mailchimp_res = $helper->mailchimp_curl_put_member($mailchimp_url, $mailchimp_api_key, $mailchimp_data);
@@ -2962,6 +2997,7 @@
 						$sendgrid_list_ids = $form['settings']['twilio_sendgrid_list_ids'];
 						$sendgrid_email = pafe_get_field_value( $form['settings']['twilio_sendgrid_email_field_shortcode'], $fields );
 						$sendgrid_field_mapping_list = $form['settings']['twilio_sendgrid_field_mapping_list'];
+						$sendgrid_custom_field_mapping_list = $form['settings']['twilio_sendgrid_field_mapping_custom_field_list'];
 
 						// $sendgrid_api_key_source = $form['settings']['sendgrid_api_key_source'];
 						// if ($sendgrid_api_key_source == 'default') {
@@ -2974,6 +3010,7 @@
 
 							$post_fields = array();
 							$sendgrid_fields = array();
+							$custom_field = array();
 
 							$sendgrid_list_ids = explode(',', $sendgrid_list_ids);
 							
@@ -2994,9 +3031,46 @@
 								}
 							}
 
-							$post_fields['contacts'] = [$sendgrid_fields];
-
 							$sendgrid_api_key = 'authorization: Bearer ' . $form['settings']['twilio_sendgrid_api_key'];
+
+							if ( !empty($sendgrid_custom_field_mapping_list) ) {
+								$curl = curl_init();
+								curl_setopt_array($curl, array(
+									CURLOPT_URL => "https://api.sendgrid.com/v3/marketing/field_definitions",
+									CURLOPT_RETURNTRANSFER => true,
+									CURLOPT_ENCODING => '',
+									CURLOPT_MAXREDIRS => 10,
+									CURLOPT_TIMEOUT => 0,
+									CURLOPT_FOLLOWLOCATION => true,
+									CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+									CURLOPT_CUSTOMREQUEST => 'GET',
+									CURLOPT_SSL_VERIFYPEER => false,
+									CURLOPT_HTTPHEADER => array(
+										$sendgrid_api_key
+									),
+								));
+
+								$response = curl_exec($curl);
+								curl_close($curl);
+
+								$response = json_decode($response, true);
+								$custom_fields = $response["custom_fields"];
+
+								foreach ($sendgrid_custom_field_mapping_list as $item) {
+									foreach ($custom_fields as $field_item) {
+										if ( $item['twilio_sendgrid_field_mapping_custom_field_name'] == $field_item['name'] ) {
+											$key = $field_item['id'];
+											$shortcode = $item['twilio_sendgrid_field_mapping_custom_field_shortcode'];
+											if (!empty($key) && !empty($shortcode)) {
+												$custom_field[$key] = pafe_get_field_value($shortcode, $fields, $payment_status, $payment_id);
+											}
+										}
+									}
+								}
+							}
+
+							$sendgrid_fields['custom_fields'] = $custom_field;
+							$post_fields['contacts'] = [$sendgrid_fields];
 
 							$curl = curl_init();
 							curl_setopt_array($curl, array(
@@ -3243,6 +3317,9 @@
 							foreach ($form['settings']['remote_request_body_list'] as $item) {
 								if (!empty($item['remote_request_body_parameter']) && !empty($item['remote_request_body_value'])) {
 									$wp_args['body'][$item['remote_request_body_parameter']] = replace_email($item['remote_request_body_value'], $fields);
+									if(strpos($wp_args['body'][$item['remote_request_body_parameter']], '[post_url]') !== false && !empty($post_url)){
+										$wp_args['body'][$item['remote_request_body_parameter']] = str_replace( '[post_url]', $post_url, $wp_args['body'][$item['remote_request_body_parameter']] );
+									}
 								}
 							}
 						}
@@ -3261,6 +3338,8 @@
 						}
 						$remote_request_response = wp_remote_retrieve_body(wp_remote_request(replace_email($form['settings']['remote_request_url'], $fields), $wp_args));
 
+					}else{
+						$remote_request_response = false;
 					}
 
 					//Hubspot integration
@@ -3415,6 +3494,7 @@
 									}
 								}
 								$data_constant_contact['create_source'] = 'Contact';
+								$data_constant_contact['list_memberships'] = explode(',', $form['settings']['constant_contact_list_id']);
 								if(time() > intval($constant_time_get_token + 7000)){
 									$constant_contact_key = get_option('piotnet-addons-for-elementor-pro-constant-contact-client-id');
 									$constant_contact_secret = get_option('piotnet-addons-for-elementor-pro-constant-contact-app-secret-id');
@@ -3571,6 +3651,9 @@
 							//echo $sendfox_response;
 						}
                     }
+					//Open popup
+					$popup = in_array("open_popup", $form['settings']['submit_actions']) ? 'true' : 'false';
+	
 					// Register
 					$register_message = '';
 
@@ -3593,6 +3676,11 @@
 									if (is_wp_error($register_user)){ // if there was an error creating a new user
 										$failed = true;
 								        $register_message = $register_user->get_error_message();
+										if (empty($form['settings']['form_database_disable'])) {
+											$a = delete_post_meta($form_database_post_id, '_pafe_form_builder_fields_database');
+											wp_delete_post($form_database_post_id, true);
+											$popup = false;
+										}
 								    } else {
 								    	wp_update_user( array(
 								    		'ID' => $register_user,
@@ -3771,7 +3859,7 @@
 
 														}
 													} else {
-														update_user_meta( $register_user, $register_user_meta_key, pafe_get_field_value($user_meta['update_user_meta_field_shortcode'], $fields) );
+														update_user_meta( $register_user, $register_user_meta_key, pafe_get_field_value($user_meta_item['register_user_meta_field_id'], $fields) );
 													}
 												}
 											}
@@ -4079,7 +4167,7 @@
 
 					do_action('pafe/form_builder/remote_request_response', $form_submission, $remote_request_response, $webhook_response);
 					$custom_message = apply_filters('pafe/form_builder/custom_message', false, $form_submission, $remote_request_response, $webhook_response);
-					$failed = apply_filters('pafe/form_builder/not_send_email', false, $form_submission, $remote_request_response, $webhook_response);
+					$failed = apply_filters('pafe/form_builder/not_send_email', $failed, $form_submission, $remote_request_response, $webhook_response);
 
 					// Email
 					if (in_array("email", $form['settings']['submit_actions']) && $failed == false) {
@@ -4139,13 +4227,20 @@
 						$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
 						if (!empty($post_url)) {
-							$subject = str_replace( '[post_url]', $post_url, $subject );
-							$message = str_replace( '[post_url]', '<a href="' . $post_url . '">' . $post_url . '</a>', $message );
+							$subject = str_replace( ['[post_url]', '[post_id]'], [$post_url, $submit_post_id], $subject );
+							$message = str_replace( ['[post_url]', '[post_id]'], ['<a href="' . $post_url . '">' . $post_url . '</a>', $submit_post_id], $message );
+
 						}
 						//Remove field shortcde when send email
 						if (!empty($form['settings']['remove_empty_form_input_fields'])) {
 							foreach($field_remove as $field_rm){
 								$message = str_replace([$field_rm.'<br />', $field_rm.'<br>', $field_rm], '', $message);
+							}
+						}
+						if(!empty($form['settings']['disable_attachment_pdf_email'])){
+							$pdf_dir = WP_CONTENT_DIR . '/uploads/piotnet-addons-for-elementor/' . $pdf_file_name . '.pdf';
+							if (($key = array_search($pdf_dir, $attachment)) !== false) {
+								unset($attachment[$key]);
 							}
 						}
 						$status = wp_mail( $to, $subject, $message . $meta_content, $headers, $attachment );
@@ -4206,26 +4301,32 @@
 						$reply_to = replace_email($reply_to, $fields, '', '', '', '', '', $form_database_post_id );
 
 						if ( ! empty( $form['settings']['email_from_2'] ) ) {
-							$headers[] = 'From: ' . replace_email($form['settings']['email_from_name_2'], $fields, '', '', '', '', '', $form_database_post_id ) . ' <' . replace_email($form['settings']['email_from_2'], $fields, '', '', '', '', '', $form_database_post_id ) . '>';
-							$headers[] = 'Reply-To: ' . $reply_to;
+							$headers_email[] = 'From: ' . replace_email($form['settings']['email_from_name_2'], $fields, '', '', '', '', '', $form_database_post_id ) . ' <' . replace_email($form['settings']['email_from_2'], $fields, '', '', '', '', '', $form_database_post_id ) . '>';
+							$headers_email[] = 'Reply-To: ' . $reply_to;
 						}
 
 						if ( ! empty( $form['settings']['email_to_cc_2'] ) ) {
-							$headers[] = 'Cc: ' . replace_email($form['settings']['email_to_cc_2'], $fields, '', '', '', '', '', $form_database_post_id );
+							$headers_email[] = 'Cc: ' . replace_email($form['settings']['email_to_cc_2'], $fields, '', '', '', '', '', $form_database_post_id );
 						}
 
 						if ( ! empty( $form['settings']['email_to_bcc_2'] ) ) {
-							$headers[] = 'Bcc: ' . replace_email($form['settings']['email_to_bcc_2'], $fields, '', '', '', '', '', $form_database_post_id );
+							$headers_email[] = 'Bcc: ' . replace_email($form['settings']['email_to_bcc_2'], $fields, '', '', '', '', '', $form_database_post_id );
 						}
 
-						$headers[] = 'Content-Type: text/html; charset=UTF-8';
+						$headers_email[] = 'Content-Type: text/html; charset=UTF-8';
 
 						if (!empty($post_url)) {
 							$subject = str_replace( '[post_url]', $post_url, $subject );
 							$message = str_replace( '[post_url]', '<a href="' . $post_url . '">' . $post_url . '</a>', $message );
 						}
 
-						$status = wp_mail( $to, $subject, $message . $meta_content_2, $headers, $attachment );
+						if(!empty($form['settings']['disable_attachment_pdf_email2'])){
+							$pdf_dir = WP_CONTENT_DIR . '/uploads/piotnet-addons-for-elementor/' . $pdf_file_name . '.pdf';
+							if (($key = array_search($pdf_dir, $attachment)) !== false) {
+								unset($attachment[$key]);
+							}
+						}
+						$status = wp_mail( $to, $subject, $message . $meta_content_2, $headers_email, $attachment );
 
 						// if ( ! empty( $form['settings']['email_to_bcc_2'] ) ) {
 						// 	$bcc_emails = explode( ',', replace_email($form['settings']['email_to_bcc_2'], $fields, '', '', '', '', '', $form_database_post_id ) );
@@ -4263,7 +4364,8 @@
 						'redirect' => $redirect,
 						'register_message' => str_replace(',', '###', $register_message),//$register_message,
 						'failed_status' => $failed_status,
-						'custom_message' => $custom_message
+						'custom_message' => $custom_message,
+						'popup' => $popup
 					);
 					echo json_encode($pafe_response);
 
@@ -4283,7 +4385,7 @@
 
 
 		$data_gg_calendar = [
-			'summary' => pafe_get_field_value($form['settings']['google_calendar_summary'],$fields, $payment_id),
+			'summary' => replace_email($form['settings']['google_calendar_summary'],$fields, $payment_id),
 			'location' => pafe_get_field_value($form['settings']['google_calendar_location'],$fields, $payment_id),
 			'description' => replace_email($form['settings']['google_calendar_description'], $fields)
 		];

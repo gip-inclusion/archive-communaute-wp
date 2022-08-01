@@ -6,6 +6,10 @@ jQuery(document).ready(function( $ ) {
 			height = $(document).find('[data-pafe-toggle-content-type="content"][data-pafe-toggle-content-slug="' + slug + '"]>div').height(),
 			speed = $(document).find('[data-pafe-toggle-content-type="content"][data-pafe-toggle-content-slug="' + slug + '"]').data('pafe-toggle-content-speed'),
 			easing = $(document).find('[data-pafe-toggle-content-type="content"][data-pafe-toggle-content-slug="' + slug + '"]').data('pafe-toggle-content-easing');
+        if (height >= 0 && $(this).data('element_type') == 'container') {
+			height = $(document).find('[data-pafe-toggle-content-type="content"][data-pafe-toggle-content-slug="' + slug + '"]').css({'height':'auto'}).height();
+			$(document).find('[data-pafe-toggle-content-type="content"][data-pafe-toggle-content-slug="' + slug + '"]').css({'height':'0'});
+		}
 
 		$(this).addClass('inactive');
 		$(document).find('[data-pafe-toggle-content-type="trigger-close"][data-pafe-toggle-content-slug="' + slug + '"]').addClass('active');

@@ -1,4 +1,5 @@
 <?php
+require_once( __DIR__ . '/controls-manager.php' );
 
 class PAFE_Responsive_Section_Column_Text_Align extends \Elementor\Widget_Base {
 
@@ -13,11 +14,13 @@ class PAFE_Responsive_Section_Column_Text_Align extends \Elementor\Widget_Base {
 
 	public function pafe_register_controls( $element, $args ) {
 
+		$element_name = $element->get_name();
+
 		$element->start_controls_section(
 			'pafe_responsive_section_column_text_align_section',
 			[
 				'label' => __( 'PAFE Responsive Section Column Text Align', 'pafe' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'tab' => $element_name != 'container' ? \Elementor\Controls_Manager::TAB_STYLE : PAFE_Controls_Manager::TAB_PAFE,
 			]
 		);
 
@@ -43,6 +46,7 @@ class PAFE_Responsive_Section_Column_Text_Align extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} > .elementor-container' => 'text-align: {{VALUE}};',
 					'{{WRAPPER}} > .elementor-element-populated' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -53,6 +57,7 @@ class PAFE_Responsive_Section_Column_Text_Align extends \Elementor\Widget_Base {
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_typo/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/column/section_typo/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 	}
 
 }

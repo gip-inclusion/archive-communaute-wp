@@ -23,7 +23,8 @@ jQuery(document).ready(function($) {
                             fieldIf = conditionals[i]['pafe_conditional_logic_form_if'].trim(),
                             comparison = conditionals[i]['pafe_conditional_logic_form_comparison_operators'],
                             value = conditionals[i]['pafe_conditional_logic_form_value'],
-                            type = conditionals[i]['pafe_conditional_logic_form_type'];
+                            type = conditionals[i]['pafe_conditional_logic_form_type'],
+                            required = conditionals[i]['pafe_conditional_logic_form_required_field'] ? true : false;
 
                         if (type == 'number') {
                             value = parseFloat( value );
@@ -198,13 +199,17 @@ jQuery(document).ready(function($) {
                                 $fieldGroup.show();
                             } else {
                                 $fieldGroup.slideDown(speed,easing);
-                            } 
+                            }
+
+                            pafeSetRequired($fieldGroup, required, true);
                         } else {
                             if (popupLength > 0) {
                                 $fieldGroup.hide();
                             } else {
                                 $fieldGroup.slideUp(speed,easing);
                             }
+
+                            pafeSetRequired($fieldGroup, required, false);
                         }
                     } 
 
@@ -215,12 +220,16 @@ jQuery(document).ready(function($) {
                             } else {
                                 $fieldGroup.slideDown(speed,easing);
                             }
+
+                            pafeSetRequired($fieldGroup, required, true);
                         } else {
                             if (popupLength > 0) {
                                 $fieldGroup.hide();
                             } else {
                                 $fieldGroup.slideUp(speed,easing);
                             }
+
+                            pafeSetRequired($fieldGroup, required, false);
                         }
                     }
                 }
@@ -426,7 +435,19 @@ jQuery(document).ready(function($) {
     pafeConditionalLogicFormCheck();
 
     $(document).on('keyup change','[data-pafe-conditional-logic-form] [name^="form_fields"]', function(){
-		pafeConditionalLogicFormCheck();
-	});
+        pafeConditionalLogicFormCheck();
+    });
+
+    function pafeSetRequired($fieldGroup, $first_status, $status) {
+        if ($first_status) {
+            let $requiredField = $fieldGroup.find('.elementor-field');
+            $requiredField.each(function(){
+                $(this).attr('required', $status);
+                if ($(this).closest('[data-pafe-conditional-logic-form-mark-required]').length > 0) {
+                    $fieldGroup.addClass('elementor-mark-required');
+                }
+            });
+        }
+    }
 
 });

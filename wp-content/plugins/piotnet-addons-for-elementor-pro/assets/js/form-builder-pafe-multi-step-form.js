@@ -28,6 +28,7 @@ jQuery(document).ready(function( $ ) {
     		$fields = $wrapper.find('[data-pafe-form-builder-form-id='+ formID +']'),
     		requiredText = $(this).data('pafe-form-builder-required-text'), 
     		error = 0;
+    	var isAlertRequired = false;
 
 		$fields.each(function(){
 			if ( $(this).data('pafe-form-builder-stripe') == undefined && $(this).data('pafe-form-builder-html') == undefined ) {
@@ -64,24 +65,25 @@ jQuery(document).ready(function( $ ) {
 					if ($(this).css('display') == 'none' || $(this).closest('div').css('display') == 'none' || $(this).data('pafe-form-builder-image-select') != undefined || $checkboxRequired.length > 0) {
 						$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
 					} else {
-						if ($(this).data('pafe-form-builder-image-select') == undefined) {
+						if (!isAlertRequired && $(this).data('pafe-form-builder-image-select') == undefined) {
 							$(this)[0].reportValidity();
+							isAlertRequired = true;
 						}
 					}
 
 					error++;
 				} else {
-					if ($(this).val()=='' && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
+					if ($(this).val()=='' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
 						$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
 						error++;
 					} else {
 
 						if ( $(this).data('pafe-form-builder-image-select') != undefined ) {
 							if ( $(this).closest('.pafe-image-select-field').find('.image_picker_selector').find('.selected').length < $(this).data('pafe-form-builder-image-select-min-select') ) {
-								$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').html($(this).data('pafe-form-builder-image-select-min-select-message'));
+								$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').html($(this).data('pafe-form-builder-image-select-min-select-message')).fadeIn();
 								error++;
 							} else {
-								$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').remove();
+								$(this).closest('.elementor-field-group').find('[data-pafe-image_select_min_select_check]').fadeOut();
 							}
 						}
 
@@ -100,6 +102,13 @@ jQuery(document).ready(function( $ ) {
 							}
 
 						$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html('');
+
+						if ($(this).data('pafe-flatpickr-custom-options')!= undefined) {
+                            if ($(this).val() == '' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).attr('required') != undefined) {
+                                $(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
+                                error++;
+                            }
+                        }
 
 						if ($(this).closest('[data-pafe-signature]').length > 0) {
 							var $pafeSingature = $(this).closest('[data-pafe-signature]'),

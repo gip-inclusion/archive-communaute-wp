@@ -674,7 +674,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                 ],
                 'default' => 'text',
                 'condition' => [
-                    'register_user_meta' => 'acf'
+                    'register_user_meta' => ['acf', 'metabox', 'toolset']
                 ],
             ]
         );
@@ -982,7 +982,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				],
 				'default' => 'text',
 				'condition' => [
-					'update_user_meta' => 'acf'
+					'update_user_meta' => ['acf', 'metabox', 'toolset']
 				],
 			]
 		);
@@ -994,7 +994,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'description' => 'E.g description',
 				'condition' => [
-					'update_user_meta' => ['meta','acf']
+					'update_user_meta' => ['meta', 'acf', 'metabox', 'toolset']
 				],
 			]
 		);
@@ -1173,6 +1173,16 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
 				'classes' => 'forms-field-shortcode',
 				'raw' => '<input class="elementor-form-field-shortcode" value="[post_url]" readonly />',
+			]
+		);
+
+		$this->add_control(
+			'submit_post_id_shortcode',
+			[
+				'label' => __( 'Post ID Shortcode', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'classes' => 'forms-field-shortcode',
+				'raw' => '<input class="elementor-form-field-shortcode" value="[post_id]" readonly />',
 			]
 		);
 
@@ -1532,7 +1542,12 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 							'name' => 'pafe_stripe_subscriptions_only_price_enable',
 							'operator' => '==',
 							'value' => 'yes'
-						]
+						],
+						[
+							'name' => 'pafe_stripe_subscriptions',
+							'operator' => '==',
+							'value' => 'yes'
+						],
 					]
 				]
 			]
@@ -1934,6 +1949,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label_off' => __( 'No', 'pafe' ),
 				'return_value' => 'yes',
 				'default' => '',
+				'condition' => [
+					'pafe_stripe_enable' => 'yes',
+				]
 			]
 		);
 		$this->add_control(
@@ -2545,7 +2563,52 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-		$this->start_controls_section(
+        $this->start_controls_section(
+            'section_limit_form_entries',
+            [
+                'label' => __( 'Limit The Form Entries', 'pafe' ),
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_form_enable',
+            [
+                'label' => __( 'Enable', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'label_on' => 'Yes',
+                'label_off' => 'No',
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_entries_total_post',
+            [
+                'label' => __( 'Total Post', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( '', 'pafe' ),
+                'label_block' => true,
+                'condition' => [
+                    'pafe_limit_form_enable' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_entries_custom_message',
+            [
+                'label' => __( 'Custom Message', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( '', 'pafe' ),
+                'label_block' => true,
+                'default' => __( 'Your contents have not been sent yet. The Form will be opened soon.', 'pafe' ),
+                'condition' => [
+                    'pafe_limit_form_enable' => 'yes'
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
 			'section_email',
 			[
 				'label' => 'Email',
@@ -2668,6 +2731,21 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'default' => '',
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'disable_attachment_pdf_email',
+			[
+				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'submit_actions' => 'pdfgenerator'
+				]
 			]
 		);
 
@@ -2832,6 +2910,21 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'default' => '',
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'disable_attachment_pdf_email2',
+			[
+				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'submit_actions' => 'pdfgenerator'
+				]
 			]
 		);
 
@@ -3820,6 +3913,18 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		);
 
 		$repeater->add_control(
+			'address_note',
+			[
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'raw' => esc_html__( 'Address 1, City, State and Zip are required fields.', 'pafe' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+				'condition' => [
+					'mailchimp_field_mapping_address_v3' => 'yes'
+				]
+			]
+		);
+
+		$repeater->add_control(
 			'mailchimp_checkbox_field_mapping',
 			[
 				'label' => __( 'Field is Checkbox?', 'pafe' ),
@@ -4235,7 +4340,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'mailpoet_get_custom_field',
 			[
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => __( '<button class="elementor-button elementor-button-default piotnet-button-mailpoet-get-fields" data-piotnet-mailpoet-get-custom-fields>GET CUSTOM FIELDS <i class="fa fa-spinner fa-spin"></i></button><div class="piotnet-custom-fiedls-result" data-piotnet-mailpoet-result-custom-field></div>', 'plugin-name' ),
+				'raw' => __( '<button class="elementor-button elementor-button-default piotnet-button-mailpoet-get-fields" data-piotnet-mailpoet-get-custom-fields>GET CUSTOM FIELDS <i class="fa fa-spinner fa-spin"></i></button><div class="piotnet-custom-fiedls-result" data-piotnet-mailpoet-result-custom-field></div>', 'pafe' ),
 			]
 		);
 		$repeater = new \Elementor\Repeater();
@@ -4810,7 +4915,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'constant_contact_token_note',
 				[
 					'type' => \Elementor\Controls_Manager::RAW_HTML,
-					'raw' => __( 'Please get the Zoho CRM token in admin page.', 'pafe' ),
+					'raw' => __( 'Please get the Constant Contact token in admin page.', 'pafe' ),
 				]
 			);
 		}else{
@@ -5095,10 +5200,41 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                 'type'    => Elementor\Controls_Manager::REPEATER,
                 'fields'  => $repeater->get_controls(),
                 'title_field' => '{{{ twilio_sendgrid_field_mapping_tag_name }}} = {{{ twilio_sendgrid_field_mapping_field_shortcode }}}',
-                'label' => __( 'Field Mapping', 'pafe' ),
+                'label' => __( 'Reserved Field Mapping', 'pafe' ),
             )
         );
 
+        $repeater = new \Elementor\Repeater();
+
+        $repeater->add_control(
+            'twilio_sendgrid_field_mapping_custom_field_name',
+            [
+                'label' => __( 'Tag Name', 'pafe' ),
+                'label_block' => true,
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( 'your_custom_field_name', 'pafe' ),
+            ]
+        );
+
+        $repeater->add_control(
+            'twilio_sendgrid_field_mapping_custom_field_shortcode',
+            [
+                'label' => __( 'Field Shortcode', 'pafe' ),
+                'label_block' => true,
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( '[field id="custom_field"]', 'pafe' ),
+            ]
+        );
+
+        $this->add_control(
+            'twilio_sendgrid_field_mapping_custom_field_list',
+            array(
+                'type'    => Elementor\Controls_Manager::REPEATER,
+                'fields'  => $repeater->get_controls(),
+                'title_field' => '{{{ twilio_sendgrid_field_mapping_custom_field_name }}} = {{{ twilio_sendgrid_field_mapping_custom_field_shortcode }}}',
+                'label' => __( 'Custom Field Mapping', 'pafe' ),
+            )
+        );
         $this->end_controls_section();
         //End SendGrid
 
@@ -5899,6 +6035,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					'<=' => __( '<=', 'pafe' ),
 					'checked' => __( 'checked', 'pafe' ),
 					'unchecked' => __( 'unchecked', 'pafe' ),
+					'contains' => __( 'contains', 'pafe' ),
 				],
 			]
 		);
@@ -5915,7 +6052,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				],
 				'default' => 'string',
 				'condition' => [
-					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<='],
+					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<=', 'contains'],
 				],
 			]
 		);
@@ -5928,7 +6065,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'placeholder' => __( '50', 'pafe' ),
 				'condition' => [
-					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<='],
+					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<=', 'contains'],
 				],
 			]
 		);
@@ -6853,6 +6990,18 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                                                 }
                                                             }
 
+                                                            if ($field_type == 'checkbox') {
+                                                                if (is_array($item_value)) {
+                                                                    $value_string = '';
+                                                                    foreach ($item_value as $itemx => $itemx_value) {
+                                                                        if ($itemx_value == 'true') {
+                                                                            $value_string .= $itemx . ',';
+                                                                        }
+                                                                    }
+                                                                    $item_value = rtrim($value_string, ',');
+                                                                }
+                                                            }
+
                                                             if ($field_type == 'date') {
                                                                 $time = strtotime( $item_value );
                                                                 if (empty($item_value)) {
@@ -6870,7 +7019,11 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                                             $custom_field_item[$key] = $item_value;
                                                         }
                                                     }
-                                                    $custom_field_value[$item_key] = $custom_field_item;
+
+                                                    if ( is_string($item_key) ) {
+                                                        unset($custom_field_value[$item_key]);
+                                                        $custom_field_value[] = $custom_field_item;
+                                                    } else { $custom_field_value[$item_key] = $custom_field_item; }
                                                 }
 
                                                 ?>
@@ -7051,6 +7204,9 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                 }
                 $paypal_sdk_script_id = "script-pafe-paypal-" . $settings['form_id'];
                 wp_enqueue_script( $paypal_sdk_script_id, $paypal_sdk_src, [], null );
+
+                // Fix Conflict with WooCommerce PayPal Payments
+                wp_dequeue_script('ppcp-smart-button');
             ?>
 		    
 		    <script>
@@ -7209,7 +7365,13 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			</div>
 		<?php endif; ?>
 
-		<?php if ( !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-site-key')) && !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-secret-key')) && !empty($settings['pafe_recaptcha_enable']) ) : ?>
+        <?php if( !empty($settings['pafe_limit_form_enable']) ) : ?>
+            <div class="pafe-form-builder-alert pafe-form-builder-alert--limit-entries">
+                <div class="elementor-message elementor-message-success" role="alert"><?php echo $settings['pafe_limit_entries_custom_message']; ?></div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ( !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-site-key')) && !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-secret-key')) && !empty($settings['pafe_recaptcha_enable']) ) : ?>
 		<script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr(get_option('piotnet-addons-for-elementor-pro-recaptcha-site-key')); ?>"></script>
 		<?php if (!empty($settings['pafe_recaptcha_hide_badge'])) : ?>
 			<style type="text/css">

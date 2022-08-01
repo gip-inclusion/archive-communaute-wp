@@ -112,8 +112,10 @@ class PAFE_Crossfade_Multiple_Background_Images extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_background/after_section_end', [ $this, 'pafe_register_controls' ], 20, 2 );
+		add_action( 'elementor/element/container/section_background_overlay/after_section_end', [ $this, 'pafe_register_controls' ], 20, 2 );
 		add_action( 'elementor/element/column/section_style/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/section/before_render', [ $this, 'before_render_element'], 10, 1 );
+		add_action( 'elementor/frontend/container/before_render', [ $this, 'before_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', [ $this, 'before_render_element'], 10, 1 );
 	}
 

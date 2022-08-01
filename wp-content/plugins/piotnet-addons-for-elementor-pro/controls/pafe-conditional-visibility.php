@@ -1090,10 +1090,12 @@ class PAFE_Conditional_Visibility extends \Elementor\Widget_Base {
     }
     protected function init_control() {
         add_action( 'elementor/element/section/pafe_support_section/after_section_end',[ $this, 'pafe_register_controls' ], 10, 2 );
+        add_action( 'elementor/element/container/pafe_support_section/after_section_end',[ $this, 'pafe_register_controls' ], 10, 2 );
         add_action( 'elementor/element/column/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
         add_action( 'elementor/element/common/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 
         add_filter( 'elementor/frontend/section/should_render', [ $this, 'should_render' ] , 10, 2 );
+        add_filter( 'elementor/frontend/container/should_render', [ $this, 'should_render' ] , 10, 2 );
         add_filter( 'elementor/frontend/column/should_render', [ $this, 'should_render' ] , 10, 2 );
         add_filter( 'elementor/frontend/widget/should_render', [ $this, 'should_render' ] , 10, 2 );
         add_filter( 'elementor/frontend/repeater/should_render', [ $this, 'should_render' ] , 10, 2 );

@@ -16,7 +16,7 @@
         $html = '';
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://api.cc.email/v3/contact_lists?limit=50&include_count=false',
+        CURLOPT_URL => 'https://api.cc.email/v3/contact_lists',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

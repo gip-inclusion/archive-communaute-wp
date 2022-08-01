@@ -144,8 +144,26 @@ jQuery(document).ready(function( $ ) {
 
 	elementor.hooks.addAction( 'panel/open_editor/widget/pafe-form-builder-field', function( panel, model, view ) {
 		var $element = panel.$el.find( '.pafe-form-builder-live-preview-code' ),
-			$fieldID = panel.$el.find( '[data-setting="field_id"]' );
-
+			$fieldID = panel.$el.find( '[data-setting="field_id"]' ),
+			$image_preview = panel.$el.find( '.pafe-form-builder-live-preview-image' ),
+			$image_preview_w = panel.$el.find( '[data-setting="live_preview_image_width"]' ),
+			$image_preview_h = panel.$el.find( '[data-setting="live_preview_image_height"]' );
+		if($image_preview_h.length){
+			var id = $fieldID.val().trim();
+			if (id != '') {
+				$image_preview.val('<div class="pafe-live-preivew-image" data-pafe-form-builder-live-preview="' + id + '" data-image-width="'+$image_preview_w.val()+'" data-image-height="'+$image_preview_h.val()+'"></div>');
+			} else {
+				$image_preview.val('');
+			}
+		}
+		($image_preview_w, $image_preview_h).on('change, keyup', function(){
+			var id = $fieldID.val().trim();
+			if (id != '') {
+				$image_preview.val('<div class="pafe-live-preivew-image" data-pafe-form-builder-live-preview="' + id + '" data-image-width="'+$image_preview_w.val()+'" data-image-height="'+$image_preview_h.val()+'"></div>');
+			} else {
+				$image_preview.val('');
+			}
+		});
 		if ( $element.length ) {
 			var id = $fieldID.val().trim();
 			if (id != '') {

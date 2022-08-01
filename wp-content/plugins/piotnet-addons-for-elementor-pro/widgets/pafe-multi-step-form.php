@@ -375,6 +375,10 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label' => 'Login'
 			],
 			[
+				'name' => 'update_user_profile',
+				'label' => 'Update User Profile'
+			],
+			[
 				'name' => 'webhook',
 				'label' => 'Webhook'
 			],
@@ -928,6 +932,123 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'section_update_user_profile',
+			[
+				'label' => __( 'Update User Profile', 'pafe' ),
+				'condition' => [
+					'submit_actions' => 'update_user_profile',
+				],
+			]
+		);
+
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
+			'update_user_meta',
+			[
+				'label' => __( 'User Meta', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'Choose', 'pafe' ),
+					'display_name' => __( 'Display Name', 'pafe' ),
+					'first_name' => __( 'First Name', 'pafe' ),
+					'last_name' => __( 'Last Name', 'pafe' ),
+					'description' => __( 'Bio', 'pafe' ),
+					'email' => __( 'Email', 'pafe' ),
+					'password' => __( 'Password', 'pafe' ),
+					'url' => __( 'Website', 'pafe' ),
+					'meta' => __( 'User Meta Key', 'pafe' ),
+					'acf' => __( 'ACF Field', 'pafe' ),
+					'metabox' => __( 'MetaBox Field', 'pafe' ),
+					'toolset' => __( 'Toolset Field', 'pafe' ),
+				],
+				'description' => __( 'If you want to update user password, you have to create a password field and confirm password field', 'pafe' ),
+			]
+		);
+
+		$repeater->add_control(
+			'update_user_meta_type',
+			[
+				'label' => __( 'User Meta Type', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'text' => __( 'Text,Textarea,Number,Email,Url,Password', 'pafe' ),
+					'image' => __( 'Image', 'pafe' ),
+					'gallery' => __( 'Gallery', 'pafe' ),
+					'select' => __( 'Select', 'pafe' ),
+					'radio' => __( 'Radio', 'pafe' ),
+					'checkbox' => __( 'Checkbox', 'pafe' ),
+					'true_false' => __( 'True / False', 'pafe' ),
+					'date' => __( 'Date', 'pafe' ),
+					'time' => __( 'Time', 'pafe' ),
+					// 'repeater' => __( 'ACF Repeater', 'pafe' ),
+					// 'google_map' => __( 'ACF Google Map', 'pafe' ),
+				],
+				'default' => 'text',
+				'condition' => [
+					'update_user_meta' => ['acf', 'metabox', 'toolset']
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'update_user_meta_key',
+			[
+				'label' => __( 'User Meta Key', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'description' => 'E.g description',
+				'condition' => [
+					'update_user_meta' => ['meta', 'acf', 'metabox', 'toolset']
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'update_user_meta_field_shortcode',
+			[
+				'label' => __( 'Field Shortcode', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'description' => __( 'E.g [field id="description"]', 'pafe' ),
+			]
+		);
+
+		$repeater->add_control(
+			'update_user_meta_field_shortcode_confirm_password',
+			[
+				'label' => __( 'Confirm Password Field Shortcode', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'description' => __( 'E.g [field id="confirm_password"]', 'pafe' ),
+				'condition' => [
+					'update_user_meta' => 'password',
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'wrong_password_message',
+			[
+				'label' => __( 'Wrong Password Message', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __( 'Wrong Password', 'pafe' ),
+				'condition' => [
+					'update_user_meta' => 'password',
+				],
+			]
+		);
+
+		$this->add_control(
+			'update_user_meta_list',
+			array(
+				'type'    => Elementor\Controls_Manager::REPEATER,
+				'fields'  => $repeater->get_controls(),
+				'title_field' => '{{{ update_user_meta }}} - {{{ update_user_meta_key }}} - {{{ update_user_meta_field_shortcode }}}',
+				'label' => __( 'User Meta List', 'pafe' ),
+			)
+		);
+
+		$this->end_controls_section();
+
         $this->start_controls_section(
             'pafe_hubspot_section',
             [
@@ -1151,6 +1272,16 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
 				'classes' => 'forms-field-shortcode',
 				'raw' => '<input class="elementor-form-field-shortcode" value="[post_url]" readonly />',
+			]
+		);
+
+		$this->add_control(
+			'submit_post_id_shortcode',
+			[
+				'label' => __( 'Post ID Shortcode', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'classes' => 'forms-field-shortcode',
+				'raw' => '<input class="elementor-form-field-shortcode" value="[post_id]" readonly />',
 			]
 		);
 
@@ -1492,6 +1623,11 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 						],
 						[
 							'name' => 'pafe_stripe_subscriptions_only_price_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'pafe_stripe_subscriptions',
 							'operator' => '==',
 							'value' => 'yes'
 						]
@@ -1896,6 +2032,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_off' => __( 'No', 'pafe' ),
 				'return_value' => 'yes',
 				'default' => '',
+				'condition' => [
+					'pafe_stripe_amount_field_enable' => 'yes',
+				]
 			]
 		);
 		$this->add_control(
@@ -2628,6 +2767,21 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'disable_attachment_pdf_email',
+			[
+				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'submit_actions' => 'pdfgenerator'
+				]
+			]
+		);
+
+		$this->add_control(
 			'form_metadata',
 			[
 				'label' => __( 'Meta Data', 'elementor-pro' ),
@@ -2778,6 +2932,21 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'default' => '',
 				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
 				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'disable_attachment_pdf_email2',
+			[
+				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'submit_actions' => 'pdfgenerator'
+				]
 			]
 		);
 
@@ -4648,7 +4817,7 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'constant_contact_token_note',
 				[
 					'type' => \Elementor\Controls_Manager::RAW_HTML,
-					'raw' => __( 'Please get the Zoho CRM token in admin page.', 'pafe' ),
+					'raw' => __( 'Please get the Constant Contact token in admin page.', 'pafe' ),
 				]
 			);
 		}else{
@@ -5565,7 +5734,17 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				]
 			]
 		);
-
+		$this->add_control(
+			'pdfgenerator_content_html',
+			[
+				'label' => __( 'Content HTML?', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
 		$this->add_control(
 			'pdfgenerator_background_image_enable',
 			[
@@ -6109,6 +6288,7 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 					'<=' => __( '<=', 'pafe' ),
 					'checked' => __( 'checked', 'pafe' ),
 					'unchecked' => __( 'unchecked', 'pafe' ),
+					'contains' => __( 'contains', 'pafe' ),
 				],
 			]
 		);
@@ -6125,7 +6305,7 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				],
 				'default' => 'string',
 				'condition' => [
-					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<='],
+					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<=', 'contains'],
 				],
 			]
 		);
@@ -6138,7 +6318,7 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'placeholder' => __( '50', 'pafe' ),
 				'condition' => [
-					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<='],
+					'pafe_conditional_logic_form_comparison_operators' => ['=','!=','>','>=','<','<=', 'contains'],
 				],
 			]
 		);
@@ -6176,6 +6356,18 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'progress_bar_show',
+            [
+                'label' => __( 'Show Progress Bar', 'elementor' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __( 'Show', 'elementor' ),
+                'label_off' => __( 'Hide', 'elementor' ),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
@@ -6183,6 +6375,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label' => 'Step Number',
 				'scheme' => \Elementor\Core\Schemes\Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step',
+                'condition' => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6193,6 +6388,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label' => 'Step Title',
 				'scheme' => \Elementor\Core\Schemes\Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .pafe-multi-step-form__progressbar-item-title',
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6205,6 +6403,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_on' => __( 'Hide', 'elementor' ),
 				'label_off' => __( 'Show', 'elementor' ),
 				'return_value' => 'elementor-hidden-desktop',
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6217,6 +6418,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_on' => __( 'Hide', 'elementor' ),
 				'label_off' => __( 'Show', 'elementor' ),
 				'return_value' => 'elementor-hidden-tablet',
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6229,6 +6433,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'label_on' => __( 'Hide', 'elementor' ),
 				'label_off' => __( 'Show', 'elementor' ),
 				'return_value' => 'elementor-hidden-phone',
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6251,6 +6458,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step' => 'width: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6263,6 +6473,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6272,6 +6485,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 			'tab_progress_bar_normal',
 			[
 				'label' => __( 'Normal', 'elementor' ),
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6284,6 +6500,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step' => 'color: {{VALUE}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6297,6 +6516,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item-step-number::after' => 'background-color: {{VALUE}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6306,6 +6528,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 			'tab_progress_bar_active',
 			[
 				'label' => __( 'Active', 'pafe' ),
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6318,6 +6543,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .active .pafe-multi-step-form__progressbar-item-step' => 'color: {{VALUE}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6331,6 +6559,9 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 					'{{WRAPPER}} .active .pafe-multi-step-form__progressbar-item-step' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .pafe-multi-step-form__progressbar-item.active .pafe-multi-step-form__progressbar-item-step-number::after' => 'background-color: {{VALUE}};',
 				],
+                'condition'   => [
+                    'progress_bar_show' => 'yes',
+                ],
 			]
 		);
 
@@ -6847,6 +7078,18 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
                                                                         }
                                                                     }
 
+                                                                    if ($field_type == 'checkbox') {
+                                                                        if (is_array($item_value)) {
+                                                                            $value_string = '';
+                                                                            foreach ($item_value as $itemx => $itemx_value) {
+                                                                                if ($itemx_value == 'true') {
+                                                                                    $value_string .= $itemx . ',';
+                                                                                }
+                                                                            }
+                                                                            $item_value = rtrim($value_string, ',');
+                                                                        }
+                                                                    }
+
                                                                     if ($field_type == 'date') {
                                                                         $time = strtotime( $item_value );
                                                                         if (empty($item_value)) {
@@ -6864,7 +7107,11 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
                                                                     $custom_field_item[$key] = $item_value;
                                                                 }
                                                             }
-                                                            $custom_field_value[$item_key] = $custom_field_item;
+
+                                                            if ( is_string($item_key) ) {
+                                                                unset($custom_field_value[$item_key]);
+                                                                $custom_field_value[] = $custom_field_item;
+                                                            } else { $custom_field_value[$item_key] = $custom_field_item; }
                                                         }
 
                                                         ?>
@@ -7009,13 +7256,13 @@ class PAFE_Multi_Step_Form extends \Elementor\Widget_Base {
 				}
 		?>
 			<div class="pafe-multi-step-form"<?php if( !empty($settings['pafe_multi_step_form_scroll_to_top'] ) ) : ?> data-pafe-multi-step-form-scroll-to-top data-pafe-multi-step-form-scroll-to-top-offset-desktop="<?php echo $settings['pafe_multi_step_form_scroll_to_top_offset_desktop']; ?>" data-pafe-multi-step-form-scroll-to-top-offset-tablet="<?php echo $settings['pafe_multi_step_form_scroll_to_top_offset_tablet']; ?>" data-pafe-multi-step-form-scroll-to-top-offset-mobile="<?php echo $settings['pafe_multi_step_form_scroll_to_top_offset_mobile']; ?>"<?php endif; ?>>
-				<div class="pafe-multi-step-form__progressbar">
+				<div class="pafe-multi-step-form__progressbar <?php if ( $settings['progress_bar_show'] != 'yes') { echo ('pafe-progressbar-hidden'); }?>">
 					<?php foreach ($list as $item) : $index++; ?>
 						<div class="pafe-multi-step-form__progressbar-item<?php if($index == 1) : ?> active<?php endif; ?>">
 							<div class="pafe-multi-step-form__progressbar-item-step-number">
 								<div class="pafe-multi-step-form__progressbar-item-step"><?php echo $index; ?></div>
 							</div>
-							<div class="pafe-multi-step-form__progressbar-item-title<?php echo $settings['progress_bar_step_title_hide_desktop'] . ' ' . $settings['progress_bar_step_title_hide_tablet'] . ' ' . $settings['progress_bar_step_title_hide_mobile'] ; ?>"><?php echo $item['pafe_multi_step_form_item_title']; ?></div>
+							<div class="pafe-multi-step-form__progressbar-item-title<?php echo ' ' . $settings['progress_bar_step_title_hide_desktop'] . ' ' . $settings['progress_bar_step_title_hide_tablet'] . ' ' . $settings['progress_bar_step_title_hide_mobile'] ; ?>"><?php echo $item['pafe_multi_step_form_item_title']; ?></div>
 						</div>
 					<?php endforeach; ?>
 				</div>

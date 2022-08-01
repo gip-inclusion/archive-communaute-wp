@@ -200,9 +200,11 @@ class PAFE_Scroll_Box_With_Custom_Scrollbar extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/section_layout/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/column/section_advanced/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/common/_section_background/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/section/before_render', [ $this, 'after_render_element'], 10, 1 );
+		add_action( 'elementor/frontend/container/before_render', [ $this, 'after_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', [ $this, 'after_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/widget/before_render', [ $this, 'after_render_element'], 10, 1 );
 	}

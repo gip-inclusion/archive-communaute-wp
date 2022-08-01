@@ -59,8 +59,10 @@ class PDF_Template extends Fpdi\Tfpdf\Fpdi
                 // Text
                 if($this->HREF)
                     $this->PutLink($this->HREF,$e);
-                else
+                else{
+                    $this->SetX($x);
                     $this->MultiCell($w, 5, $e);
+                }
             }
             else
             {

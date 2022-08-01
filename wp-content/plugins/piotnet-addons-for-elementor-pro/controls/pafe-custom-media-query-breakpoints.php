@@ -675,8 +675,10 @@ class PAFE_Custom_Media_Query_Breakpoints extends \Elementor\Widget_Base {
 	protected function init_control() {
 		add_action( 'elementor/element/column/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/common/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/frontend/widget/before_render', [ $this, 'before_render_element'], 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', [ $this, 'before_render_element'], 10, 1 );
+		add_action( 'elementor/frontend/container/before_render', [ $this, 'before_render_element'], 10, 1 );
 	}
 
 }

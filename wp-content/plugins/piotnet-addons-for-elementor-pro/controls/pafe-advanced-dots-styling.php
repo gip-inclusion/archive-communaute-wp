@@ -334,6 +334,7 @@ class PAFE_Advanced_Dots_Styling extends \Elementor\Widget_Base {
 	protected function init_control() {
 		add_action( 'elementor/element/image-carousel/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/slides/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/posts/custom_section_design_layout/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/pafe-slider-builder/section_style_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/media-carousel/section_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/testimonial-carousel/section_navigation/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );

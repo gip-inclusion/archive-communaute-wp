@@ -63,6 +63,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			'honeypot' => __( 'Honeypot', 'pafe' ),
 			'color' => __( 'Color Picker', 'pafe' ),
 			'iban' => __( 'Iban', 'pafe' ),
+			'confirm' => __( 'Confirm', 'pafe' ),
 		];
 
 		if( get_option( 'pafe-features-submit-post', 2 ) == 2 || get_option( 'pafe-features-submit-post', 2 ) == 1 ) {
@@ -134,8 +135,68 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
 				'classes' => 'forms-field-shortcode',
 				'raw' => '<input class="pafe-form-builder-live-preview-code" readonly />',
+				'condition' => [
+					'field_type!' => 'image_upload'
+				]
 			]
 		);
+
+		$this->add_control(
+			'live_preview_show_label',
+			[
+				'label' => esc_html__( 'Show Label Preview', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'field_type' => ['select', 'checkbox', 'radio']
+				]
+			]
+		);
+
+        $this->add_control(
+            'live_preview_image',
+            [
+                'label'   => __( 'Live Preview Code', 'piotnetforms' ),
+                'type' => \Elementor\Controls_Manager::RAW_HTML,
+                'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
+                'classes' => 'forms-field-shortcode',
+                'raw' => '<input class="pafe-form-builder-live-preview-image" readonly />',
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
+        $this->add_control(
+            'live_preview_image_width',
+            [
+                'label' => esc_html__( 'Live Preview Width', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 5,
+                'max' => 1000,
+                'step' => 1,
+                'default' => 150,
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
+        $this->add_control(
+            'live_preview_image_height',
+            [
+                'label' => esc_html__( 'Live Preview height', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 5,
+                'max' => 1000,
+                'step' => 1,
+                'default' => 150,
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
 
 		$this->add_control(
 			'field_type',
@@ -145,6 +206,50 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'options' => $field_types,
 				'default' => 'text',
 				'description' => 'TinyMCE only works on the frontend.'
+			]
+		);
+		
+		$this->add_control(
+			'confirm_type',
+			[
+				'label' => esc_html__( 'Confirm Type', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'text',
+				'options' => [
+					'text'  => esc_html__( 'Text', 'pafe' ),
+					'email' => esc_html__( 'Email', 'pafe' ),
+					'textarea' => esc_html__( 'Textarea', 'pafe' ),
+					'url' => esc_html__( 'Url', 'pafe' ),
+					'tel' => esc_html__( 'Tel', 'pafe' ),
+				],
+				'condition' => [
+					'field_type' => 'confirm'
+				]
+			]
+		);
+
+		$this->add_control(
+			'confirm_field_name',
+			[
+				'label' => esc_html__( 'Confirm Field ID*', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Type confirm field ID here', 'pafe' ),
+				'condition' => [
+					'field_type' => 'confirm'
+				]
+			]
+		);
+
+		$this->add_control(
+			'confirm_error_msg',
+			[
+				'label' => esc_html__( 'Confirm error messenger ', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Type confirm error messenger here', 'pafe' ),
+				'default' => "Field don't match",
+				'condition' => [
+					'field_type' => 'confirm'
+				]
 			]
 		);
 
@@ -959,6 +1064,26 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'field_dial_code',
+            [
+                'label' => __( 'International Telephone Input', 'elementor-pro' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'conditions' => [
+                'terms' => [
+                    [
+                        'name' => 'field_type',
+                        'operator' => 'in',
+                        'value' => [
+                            'tel',
+                        ],
+                    ],
+                ],
+            ],
+            ]
+        );
+
 		$this->add_control(
 			'field_pattern_not_tel',
 			[
@@ -1220,6 +1345,25 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'min_length',
+			[
+				'label' => __( 'Min Length', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'tel',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
 			'mark_required',
 			[
 				'label' => __( 'Required Mark', 'elementor-pro' ),
@@ -1385,7 +1529,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$this->add_control(
 			'stripe_heading',
 			[
-				'label' => __( 'Style', 'plugin-name' ),
+				'label' => __( 'Style', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1616,6 +1760,18 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'condition' => [
 					'field_type' => 'image_select',
 					'allow_multiple' => 'true',
+				],
+			]
+		);
+
+        $this->add_control(
+			'checkbox_limit_multiple',
+			[
+				'label' => __( 'Limit Multiple Selects', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'default' => 0,
+				'condition' => [
+					'field_type' => 'checkbox',
 				],
 			]
 		);
@@ -3501,12 +3657,12 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'pafe_image_select_field_image_align',
+			'pafe_image_select_field_image_alignment',
 			[
 				'label' => __( 'Image Align', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
-					'flex-start' => [
+					'left' => [
 						'title' => __( 'Left', 'elementor' ),
 						'icon' => 'eicon-text-align-left',
 					],
@@ -3514,14 +3670,13 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						'title' => __( 'Center', 'elementor' ),
 						'icon' => 'eicon-text-align-center',
 					],
-					'flex-end' => [
+					'right' => [
 						'title' => __( 'Right', 'elementor' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .pafe-image-select-field .image_picker_selector' => 'justify-content: {{VALUE}};',
-					'{{WRAPPER}} .pafe-image-select-field' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .image_picker_selector .thumbnail' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -3544,7 +3699,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						'title' => __( 'Right', 'elementor' ),
 						'icon' => 'eicon-text-align-right',
 					],
+
 				],
+				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .image_picker_selector .thumbnail p' => 'text-align: {{VALUE}};',
 				],
@@ -3567,6 +3724,32 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 		$columns_margin = is_rtl() ? '-{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}};' : '-{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}} -{{SIZE}}{{UNIT}};';
 		$columns_padding = is_rtl() ? '{{SIZE}}{{UNIT}} !important;' : '{{SIZE}}{{UNIT}} !important;';
+
+		$this->add_responsive_control(
+			'pafe_image_select_field_image_align',
+			[
+				'label' => __( 'Item Align', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'elementor' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'elementor' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'elementor' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-image-select-field .image_picker_selector' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .pafe-image-select-field' => 'justify-content: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->add_responsive_control(
 			'pafe_image_select_field_item_spacing',
@@ -4299,6 +4482,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field.elementor-field-textual::-moz-placeholder' => 'color: {{VALUE}}; opacity: 1;',
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field.elementor-field-textual:-ms-input-placeholder' => 'color: {{VALUE}}; opacity: 1;',
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field.elementor-field-textual:-moz-placeholder' => 'color: {{VALUE}}; opacity: 1;',
+					'{{WRAPPER}} .pafe-field-container .flatpickr-mobile:before' => 'color: {{VALUE}}; opacity: 1;',
 				],
 			]
 		);
@@ -4545,6 +4729,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 	}
 
 	protected function make_select_field( $item, $i, $form_id, $image_select = false, $terms_select = false, $select_autocomplete = false ) {
+		$preview_class = !empty($item['live_preview_show_label']) ? ' pafe-preview-label' : '';
 		$this->add_render_attribute(
 			[
 				'select-wrapper' . $i => [
@@ -4558,9 +4743,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					'name' => $this->get_attribute_name( $item ) . ( ! empty( $item['allow_multiple'] ) ? '[]' : '' ),
 					'id' => $this->get_attribute_id( $item ),
 					'class' => [
-						'elementor-field-textual',
+						'elementor-field-textual' . $preview_class,
 						'elementor-size-' . $item['input_size'],
 					],
+					'data-pafe-field-type' => 'select'
 				],
 			]
 		);
@@ -4804,9 +4990,17 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				$name = $this->get_field_name_shortcode($this->get_attribute_name( $item ));
 				$value = $this->get_value_edit_post($name);
 
+                if ( ! empty( $item['checkbox_limit_multiple'] ) ) {
+                    $this->add_render_attribute( $element_id, 'data-pafe-checkbox-limit-multiple', $item['checkbox_limit_multiple'] );
+                }
+
 				if (empty($value)) {
 					$value = $item['field_value'];
 					$this->add_render_attribute( $element_id, 'data-pafe-form-builder-default-value', $item['field_value'] );
+				}
+
+				if(!empty($item['live_preview_show_label'])){
+					$this->add_render_attribute( $element_id, 'class', "pafe-preview-label" );
 				}
 
 				if ( ! empty( $item['invalid_message'] ) ) {
@@ -4947,7 +5141,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			$this->add_render_attribute(
 				[
 					'input' . $i => [
-						'type' => $item['field_type'],
+						'type' => $item['field_type'] != 'confirm' ? $item['field_type'] : $item['confirm_type'],
 						'name' => $this->get_attribute_name( $item ),
 						'id' => $this->get_attribute_id( $item ),
 					],
@@ -4979,6 +5173,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 		if ( ! empty( $item['max_length'] ) ) {
 			$this->add_render_attribute( 'input' . $i, 'maxlength', $item['max_length'] );
+		}
+
+		if ( ! empty( $item['min_length'] ) ) {
+			$this->add_render_attribute( 'input' . $i, 'minlength', $item['min_length'] );
 		}
 
 		if ( ! empty( $item['field_pattern_not_tel'] && $item['field_type'] != 'tel' ) ) {
@@ -5260,7 +5458,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 										} elseif ($form['settings']['submit_post_custom_field_source'] == 'jet_engine_field') {
 											$value = get_post_meta($post_id,$sp_custom_field['submit_post_custom_field'],true);
 
-											if ($meta_type == 'image') {
+                                            if ($meta_type == 'image') {
 												if (!empty($value)) {
 													$value = wp_get_attachment_url( $value );
 												}
@@ -5291,7 +5489,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 												if (is_array($value)) {
 													$value_string = '';
 													foreach ($value as $key => $item) {
-														if ($item) {
+														if ($item == 'true') {
 															$value_string .= $key . ',';
 														}
 													}
@@ -5536,6 +5734,13 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						echo $this->make_select_field( $item, $item_index, $form_id );
 						break;
 
+					case 'confirm':
+						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
+						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-confirm-field', $item['confirm_field_name'] );
+						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-confirm-msg', $item['confirm_error_msg'] );
+						echo '<input size="1" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
+						break;
+
 					case 'select_autocomplete':
 						echo $this->make_select_field( $item, $item_index, $form_id, false, false, true );
 						break;
@@ -5766,8 +5971,13 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						$this->add_render_attribute( 'input' . $item_index, 'pattern', esc_attr( $item['field_pattern'] ) );
 						$this->add_render_attribute( 'input' . $item_index, 'title', __( 'Only numbers and phone characters (#, -, *, etc) are accepted.', 'elementor-pro' ) );
-						echo '<input size="1" '. $this->get_render_attribute_string( 'input' . $item_index ) . '>';	
-						break;
+                        if ( !empty($item['field_dial_code']) ) {
+                            $this->add_render_attribute( 'input' . $item_index, 'data-pafe-tel-field');
+                            wp_enqueue_script( 'pafe-widget-tel', plugin_dir_url( __DIR__ ) . 'assets/js/utils.js', array('jquery'), null );
+                        }
+                        echo '<input size="1" '. $this->get_render_attribute_string( 'input' . $item_index ) . '>';
+
+                        break;
 					case 'number':
 						if(!empty($settings['field_value_remove']) || $settings['field_value_remove'] == '0'){
 							$remove_value = $settings['field_value_remove'];
@@ -5778,8 +5988,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );
 						$this->add_render_attribute( 'input' . $item_index, 'step', 'any' );
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-remove-value', $remove_value);
-
-						if ( !empty( $item['field_min'] ) || $item['field_min'] === 0 ) {
+                        if ( !empty( $item['field_min'] ) || $item['field_min'] === 0 ) {
 							$this->add_render_attribute( 'input' . $item_index, 'min', esc_attr( $item['field_min'] ) );
 						}
 
@@ -5855,6 +6064,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 						} else {
 							$this->add_render_attribute( 'input' . $item_index, 'class' , 'flatpickr-custom-options' );
+							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-flatpickr-custom-options', esc_attr( $item['flatpickr_custom_options'] ) );
+
 						}
 
 						echo '<input ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';

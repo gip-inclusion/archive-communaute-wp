@@ -238,7 +238,7 @@ class PAFE_Helper{
 	public function pafe_constant_contact_refresh_token($key, $secret, $refresh_token){
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
-		CURLOPT_URL => 'https://idfed.constantcontact.com/as/token.oauth2?refresh_token='.$refresh_token.'&grant_type=refresh_token',
+		CURLOPT_URL => 'https://authz.constantcontact.com/oauth2/default/v1/token?refresh_token='.$refresh_token.'&grant_type=refresh_token',
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => '',
 		CURLOPT_MAXREDIRS => 10,
@@ -247,6 +247,7 @@ class PAFE_Helper{
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => 'POST',
 		CURLOPT_HTTPHEADER => array(
+			'Content-Type: application/x-www-form-urlencoded',
 			'Authorization: Basic '. base64_encode($key.':'.$secret),
 		),
 		));
@@ -258,6 +259,6 @@ class PAFE_Helper{
 			update_option('piotnet-constant-contact-refresh-token', $response->refresh_token);
 			update_option('piotnet-constant-contact-time-get-token', time());
 		}
-		return $response->access_token;
+		return $response->access_token ? $response->access_token : false;
 	}
 }

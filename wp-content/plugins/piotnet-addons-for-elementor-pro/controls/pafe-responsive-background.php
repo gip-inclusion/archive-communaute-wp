@@ -12,7 +12,7 @@ class PAFE_Responsive_Background extends \Elementor\Widget_Base {
 
 	public function pafe_register_controls( $element, $section_id ) {
 
-		if( $element->get_name() == 'section' || $element->get_name() == 'column' ) {
+		if( $element->get_name() == 'section' || $element->get_name() == 'column' || $element->get_name() == 'container' ) {
 			$element->start_controls_section(
 				'pafe_responsive_background_section',
 				[
@@ -261,6 +261,7 @@ class PAFE_Responsive_Background extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_background/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/section_background_overlay/after_section_end', [ $this, 'pafe_register_controls' ], 20, 2 );
 		add_action( 'elementor/element/column/section_style/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/common/_section_background/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 	}

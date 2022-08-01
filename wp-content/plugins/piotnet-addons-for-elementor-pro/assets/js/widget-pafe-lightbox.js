@@ -36,7 +36,7 @@ jQuery(document).ready(function( $ ) {
 
         var $grid = $('[data-pafe-masonry]').imagesLoaded( function() {
 			$grid.masonry({
-				"itemSelector": ".gallery-item", "columnWidth": ".gallery-item",  "percentPosition": true
+				"itemSelector": ".pafe-pswp", "columnWidth": ".pafe-pswp",  "percentPosition": true
 			});
 		});
 

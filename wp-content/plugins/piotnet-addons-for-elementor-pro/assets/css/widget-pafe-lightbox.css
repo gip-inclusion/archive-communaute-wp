@@ -56,10 +56,12 @@
   width: 44px;
   height: 44px; }
 
-.pafe-lightbox-gallery-light-skin .pswp__button,
+.pafe-lightbox-gallery-light-skin .pswp__button--close,
+.pafe-lightbox-gallery-light-skin .pswp__button--share,
+.pafe-lightbox-gallery-light-skin .pswp__button--zoom,
 .pafe-lightbox-gallery-light-skin .pswp__button--arrow--left:before,
 .pafe-lightbox-gallery-light-skin .pswp__button--arrow--right:before {
-  background-image: url(../../images/light-skin.png);
+  background-image: url(../../images/light-skin.png) !important;
 }
 
 .pafe-lightbox-gallery-light-skin .pswp__button--arrow--left,

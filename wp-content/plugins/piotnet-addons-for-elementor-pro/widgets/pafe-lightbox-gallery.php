@@ -157,10 +157,15 @@ class PAFE_Lightbox_Gallery extends \Elementor\Widget_Base {
 		$this->add_control(
 			'gallery_columns',
 			[
-				'label' => __( 'Columns', 'elementor' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 4,
-				'options' => $gallery_columns,
+                'label' => __( 'Column Width (%)', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => 50,
+                'min' => 1,
+                'max' => 100,
+                'selectors' => [
+                    '{{WRAPPER}} .pafe-pswp' => 'width: {{VALUE}}%; max-width: 100%;',
+                    '{{WRAPPER}} .pafe-pswp .gallery-item' => 'width:100%;',
+                ],
 			]
 		);
 
@@ -535,7 +540,7 @@ class PAFE_Lightbox_Gallery extends \Elementor\Widget_Base {
 		echo '<style>.pswp {display: none;}</style>';
 		
 		?>
-		<div class="elementor-image-gallery pafe-lightbox-gallery">
+		<div class="elementor-image-gallery pafe-lightbox-gallery" data-pafe-lightbox-gallery>
 			<?php
 			// $this->add_render_attribute( 'link', [
 			// 	'data-elementor-open-lightbox' => $settings['open_lightbox'],

@@ -181,9 +181,14 @@ var $jscomp=$jscomp||{};$jscomp.scope={},$jscomp.findInternal=function(t,a,e){t 
   }
 }(jQuery));
 
-function parseFloatWithRemoveSepChar(text, separator_char) {
-	if (typeof text === 'string' && typeof separator_char === 'string') {
-		text = text.replaceAll(separator_char, "");
+function parseFloatWithRemoveSepChar(text, separator_char, decimals_symbol) {
+	if (typeof text === 'string') {
+		if (typeof separator_char === 'string') {
+			text = text.replaceAll(separator_char, "");
+		}
+		if (typeof decimals_symbol === 'string' && decimals_symbol !== '.') {
+			text = text.replaceAll(decimals_symbol, ".");
+		}
 	}
 	return parseFloat(text);
 }
@@ -318,6 +323,7 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
             }
 
             $($element).closest('.elementor-field').addClass('pafe-image-select-field');
+			$($element).closest('.pafe-image-select-field').find('.image_picker_selector').remove();
 
             if ($options.eq(0).attr('value').trim() == '') {}
             
@@ -451,6 +457,21 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 								}
 							}
 
+							// Check confirm field
+							if(typeof $(this).attr('data-pafe-confirm-field') !== 'undefined' && $(this).attr('data-pafe-confirm-field') !== false){
+								let confirmValue = $('[name="form_fields['+$(this).attr('data-pafe-confirm-field')+']"]').val();
+								let confirmMsg = $(this).attr('data-pafe-confirm-msg');
+								if(String(confirmValue) !== String($(this).val())){
+									this.setCustomValidity(confirmMsg);
+									error++;
+									$(this).on('keyup', function(){
+										this.setCustomValidity("");
+									})
+								}else{
+									this.setCustomValidity("");
+								}
+							}
+
 							var isValid = $(this)[0].checkValidity();
 							var next_ele = $($(this)[0]).next()[0];
 							if ($(next_ele).hasClass('flatpickr-mobile')) {
@@ -468,7 +489,7 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 								}
 								error++;
 							} else {
-								if ($(this).val()=='' && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
+								if ($(this).val()=='' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
 									$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
 									error++;
 								} else {
@@ -483,6 +504,13 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 									}
 
 									$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html('');
+
+                                    if ($(this).data('pafe-flatpickr-custom-options')!= undefined) {
+                                        if ($(this).val() == '' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).attr('required') != undefined) {
+                                            $(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
+                                            error++;
+                                        }
+                                    }
 
 									if ($(this).closest('[data-pafe-signature]').length > 0) {
 										var $pafeSingature = $(this).closest('[data-pafe-signature]'),
@@ -781,7 +809,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 														processData: false,
 														contentType: false,
 														success: function (response) {
-															//console.log(response); 
 															var post_id = $(document).find('input[name="post_id"][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').eq(0).closest('[data-elementor-id]').data('elementor-id'),
 																fields = JSON.stringify(fieldsOj);
 
@@ -823,7 +850,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 												processData: false,
 												contentType: false,
 												success: function (response) {
-													//console.log(response); 
 													var post_id = $(document).find('input[name="post_id"][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').eq(0).closest('[data-elementor-id]').data('elementor-id'),
 														fields = JSON.stringify(fieldsOj);
 											        var	json = JSON.parse(response);
@@ -892,7 +918,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 					processData: false,
 					contentType: false,
 					success: function (confirmResult) {
-						//console.log(confirmResult);
 			        	handleServerResponse(JSON.parse(confirmResult), post_id, form_id, fields, amount, stripe, formData); 
 			        }
 		        }); 
@@ -931,7 +956,6 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 				processData: false,
 				contentType: false,
 				success: function (response) {
-					//console.log(response);
 					$(document).find('[data-pafe-form-builder-form-id="' + formID + '"]').closest('.elementor-element').css({'opacity' : 1});
 		        	$parent.css({'opacity' : 1});
 					$parent.removeClass('elementor-form-waiting');
@@ -992,16 +1016,18 @@ function parseFloatWithRemoveSepChar(text, separator_char) {
 		        		}
 
 		        		// Popup
-		        		if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-		        			$(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+						
+						if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+							$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
 						}
-
-						if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-		        			$(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+						if(responseArray.popup){
+							if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+								$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+							}
 						}
 
 						if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-		        			$(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+							$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
 						}
 					}
 		        }
@@ -1170,7 +1196,6 @@ jQuery(document).ready(function( $ ) {
 	    		fieldsOj = [],
 	    		error = 0
 	    		formData = new FormData();
-
             var isAlertRequired = false;
     		var $submit = $(this);
 			var $parent = $submit.closest('.elementor-element');
@@ -1191,6 +1216,20 @@ jQuery(document).ready(function( $ ) {
 						var password_msg = $(this).attr('data-pafe-repassword-msg');
 						if(String(password_compare) !== String($(this).val())){
 							this.setCustomValidity(password_msg);
+							error++;
+							$(this).on('keyup', function(){
+								this.setCustomValidity("");
+							})
+						}else{
+							this.setCustomValidity("");
+						}
+					}
+					// Check confirm field
+					if(typeof $(this).attr('data-pafe-confirm-field') !== 'undefined' && $(this).attr('data-pafe-confirm-field') !== false){
+						let confirmValue = $('[name="form_fields['+$(this).attr('data-pafe-confirm-field')+']"]').val();
+						let confirmMsg = $(this).attr('data-pafe-confirm-msg');
+						if(String(confirmValue) !== String($(this).val())){
+							this.setCustomValidity(confirmMsg);
 							error++;
 							$(this).on('keyup', function(){
 								this.setCustomValidity("");
@@ -1220,6 +1259,11 @@ jQuery(document).ready(function( $ ) {
 					if ( !isValid && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).closest('[data-pafe-form-builder-conditional-logic]').css('display') != 'none' && $(this).data('pafe-form-builder-honeypot') == undefined &&  $(this).closest('[data-pafe-signature]').length == 0 || checked == 0 && $checkboxRequired.length > 0 && $(this).closest('.elementor-element').css('display') != 'none') {
 						if ($(this).css('display') == 'none' || $(this).closest('div').css('display') == 'none' || $(this).data('pafe-form-builder-image-select') != undefined || $checkboxRequired.length > 0) {
 							$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
+                            var scrollRequired = $(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').next();
+                                if (scrollRequired.length !== 0 && !isAlertRequired ) {
+                                    $('html, body').animate({scrollTop: scrollRequired.offset().top}, 500);
+                                    isAlertRequired = true;
+                                }
 						} else {
 							if (!isAlertRequired && $(this).data('pafe-form-builder-image-select') == undefined) {
 								$(this)[0].reportValidity();
@@ -1228,7 +1272,7 @@ jQuery(document).ready(function( $ ) {
 						}
 						error++;
 					} else {
-						if ($(this).val()=='' && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
+						if ($(this).val()=='' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0  && $(this).attr('aria-required') == "true" && $(this).attr('data-pafe-form-builder-select-autocomplete') !== undefined) {
 							$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
 							error++;
 						} else {
@@ -1256,6 +1300,13 @@ jQuery(document).ready(function( $ ) {
 							}
 
 							$(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html('');
+
+                            if ($(this).data('pafe-flatpickr-custom-options')!= undefined) {
+                                if ($(this).val() == '' && $(this).closest('.pafe-form-builder-conditional-logic-hidden').length == 0 && $(this).attr('required') != undefined) {
+                                    $(this).closest('.elementor-field-group').find('[data-pafe-form-builder-required]').html(requiredText);
+                                    error++;
+                                }
+                            }
 
 							if ($(this).closest('[data-pafe-signature]').length > 0) {
 								var $pafeSingature = $(this).closest('[data-pafe-signature]'),
@@ -1414,6 +1465,9 @@ jQuery(document).ready(function( $ ) {
 				                				var fieldValue = $(this).val().trim();
 				                			}
 					                	}
+										if ( fieldType == 'tel' && $(this).attr('data-pafe-tel-field') !== undefined) {
+											var fieldValue = $(this).intlTelInput("getNumber");
+										}
 					                }
 								}
 								
@@ -1513,11 +1567,12 @@ jQuery(document).ready(function( $ ) {
 				}
 
 				if ($(this).data('pafe-form-builder-submit-recaptcha') != undefined) {
+					let r_molliePayment = $(this).data('pafe-form-builder-mollie-payment');
 					var recaptchaSiteKey = $(this).data('pafe-form-builder-submit-recaptcha');
 
 					grecaptcha.ready(function() {
 			            grecaptcha.execute(recaptchaSiteKey, {action: 'create_comment'}).then(function(token) {
-							if($(this).data('pafe-form-builder-mollie-payment') != undefined){
+							if(typeof r_molliePayment !== 'undefined' && r_molliePayment !== false){
 								let mollie_redirect_url = new URL(window.location.href);
 								let mollie_redirect_url_params = new URLSearchParams(mollie_redirect_url.search);
 								if(window.location.href.indexOf('#') != -1){
@@ -1629,17 +1684,18 @@ jQuery(document).ready(function( $ ) {
 					        		}
 
 					        		// Popup
-					        		if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-					        			$(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-	        						}
-
-	        						if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-					        			$(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-	        						}
-
-	        						if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-					        			$(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-	        						}
+									
+									if ($submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+										$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+									}
+									if(responseArray.popup){
+										if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+											$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+										}
+									}
+									if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+										$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+									}
 								}
 							});
 			            });
@@ -1708,8 +1764,15 @@ jQuery(document).ready(function( $ ) {
 							$parent.removeClass('elementor-form-waiting');
 							$(document).find('[data-pafe-form-builder-form-id="' + formID + '"]').closest('.elementor-element').css({'opacity' : 1});
 
+							if (response) {
+								let responseArray = JSON.parse(response);
+								if (responseArray.limit_entries_status) {
+									$parent.find('.pafe-form-builder-alert--limit-entries .elementor-message').addClass('visible');
+									return;
+								}
+							}
+
 			        		if (response.indexOf(',') !== -1) {
-								
 								var responseArray = JSON.parse(response);
 								if(responseArray.custom_message){
 									$parent.find('[data-pafe-form-builder-message]').html(responseArray.custom_message);
@@ -1778,17 +1841,19 @@ jQuery(document).ready(function( $ ) {
 			        		}
 
 			        		// Popup
-			        		if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-			        			$(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-    						}
+							
+							if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+								$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+							}
+							if(responseArray.popup){
+								if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+									$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+								}
+							}
 
-    						if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-			        			$(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-    						}
-
-    						if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-			        			$(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
-    						}
+							if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+								$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+							}
 						}
 					});
 				} // recaptcha
@@ -1937,15 +2002,16 @@ jQuery(document).ready(function( $ ) {
 
 					// Popup
 					if ($(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-						$(document).find('[data-pafe-form-builder-popup][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+						$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
 					}
-
-					if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-						$(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+					if(responseArray.popup){
+						if ($(document).find('[data-pafe-form-builder-popup-open][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
+							$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+						}
 					}
 
 					if ($(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').length != 0) {
-						$(document).find('[data-pafe-form-builder-popup-close][data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
+						$submit.closest('.elementor-widget-container').find('[data-pafe-form-builder-hidden-form-id="'+ formID +'"]').trigger('click');
 					}
 				}
 			});
@@ -1955,6 +2021,7 @@ jQuery(document).ready(function( $ ) {
 });
 
 jQuery(document).ready(function($) {
+	$.applyDataMask();
 
 	function resizeSignature() {
     	$(document).find('[data-pafe-signature] canvas').each(function(){
@@ -2130,18 +2197,24 @@ jQuery(document).ready(function($) {
 	                                            error += 1;
 	                                        }
 	                                    }
-	                                    if(comparison == 'checked') {
-	                                        if (!$fieldIfSelector.prop('checked')) {
-	                                            error += 1;
-	                                        }
-	                                    }
 	                                    if(comparison == 'unchecked') {
 	                                        if ($fieldIfSelector.prop('checked')) {
 	                                            error += 1;
 	                                        }
 	                                    }
+	                                    if(comparison == 'checked') {
+											let checked  = false;
+											$.each($fieldIfSelector, function(){
+												if($(this).prop('checked')){
+													checked = true;
+												}
+											});
+	                                        if (!checked) {
+	                                            error += 1;
+	                                        }
+	                                    }
 	                                    if(comparison == 'contains') {
-	                                    	if (fieldIfValue.indexOf(value) === -1) {
+	                                    	if (!fieldIfValue || fieldIfValue.indexOf(value) === -1) {
 	                                            error += 1;
 	                                        }
 	                                	}
@@ -2183,7 +2256,16 @@ jQuery(document).ready(function($) {
 	                                            var fieldIfValueMultiple = [];
 	                                        }
 	                                    }
-
+										if(comparison == 'checked') {
+											if(fieldIfValueMultiple.length <= 0){
+												error += 1;
+											}
+	                                    }
+	                                    if(comparison == 'unchecked') {
+											if(fieldIfValueMultiple.length > 0){
+												error += 1;
+											}
+	                                    }
 	                                    if(comparison == 'not-empty') {
 	                                        if (fieldIfValueMultiple.length == 0) {
 	                                            error += 1;
@@ -2790,9 +2872,9 @@ jQuery(document).ready(function($) {
 	                    } else {
 	                    	pafeCalculatedFieldsForm(''); 
 	                    }
-
-	                    resizeSignature();
-
+						if($(this).hasClass('elementor-field-type-signature') && $(this).closest('.elementor-widget-pafe-form-builder-field').hasClass('pafe-form-builder-conditional-logic-hidden')){
+							resizeSignature();
+						}
 	                //}
 	            //});
 
@@ -3078,7 +3160,10 @@ jQuery(document).ready(function($) {
 					formattedNumber += decimalsSymbol + '0'.repeat(decimals);
 				} else if (typeof(afterFixed) === 'number') {
 					const decimalsCurrent = formattedNumber.length - formattedNumber.indexOf(decimalsSymbol) - 1;
-					formattedNumber += '0'.repeat(decimals -decimalsCurrent);
+					if(decimals -decimalsCurrent > 0){
+						formattedNumber += '0'.repeat(decimals -decimalsCurrent);
+					}
+					
 				}
 			}
 			return formattedNumber;
@@ -3152,7 +3237,7 @@ jQuery(document).ready(function($) {
 	                        if (fieldValue == undefined) {
 	                            fieldValue = 0;
 	                        } else {
-	                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+	                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol, decimalsSymbol);
 	                            if (isNaN(fieldValue)) {
 	                                fieldValue = 0;
 	                            }
@@ -3202,7 +3287,7 @@ jQuery(document).ready(function($) {
 	                            var fieldValueMultipleTotal = 0;
 
 	                            for (var j = 0; j < fieldValueMultiple.length; j++) {
-	                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol);
+	                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol, decimalsSymbol);
 	                                if (isNaN(fieldValue)) {
 	                                    fieldValue = 0;
 	                                }
@@ -3251,7 +3336,7 @@ jQuery(document).ready(function($) {
 		                        if (fieldValue == undefined) {
 		                            fieldValue = 0;
 		                        } else {
-		                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+		                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol, decimalsSymbol);
 		                            if (isNaN(fieldValue)) {
 		                                fieldValue = 0;
 		                            }
@@ -3269,7 +3354,7 @@ jQuery(document).ready(function($) {
 		                        	fieldValue = $fieldSelector.attr('data-pafe-form-builder-form-booking-price');
 		                        }
 
-								calculated_data[fieldName] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+								calculated_data[fieldName] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol, decimalsSymbol);
 
 		                        if ($fieldSelector.closest('[data-pafe-form-builder-conditional-logic]').length > 0 && $fieldSelector.closest('.elementor-element').css('display') == 'none') {
 									calculated_data[fieldName] = 0;
@@ -3289,7 +3374,7 @@ jQuery(document).ready(function($) {
 				                        if (fieldValue == undefined) {
 				                            fieldValue = 0;
 				                        } else {
-				                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+				                            fieldValue = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol, decimalsSymbol);
 				                            if (isNaN(fieldValue)) {
 				                                fieldValue = 0;
 				                            }
@@ -3306,7 +3391,7 @@ jQuery(document).ready(function($) {
 				                        	fieldValue = 0;
 				                        }
 
-										calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol);
+										calculated_data['pafe_'+fieldName+'_piotnetpafe'+repeaterIndex+'x'] = parseFloatWithRemoveSepChar(fieldValue, separatorsSymbol, decimalsSymbol);
 			                    	});
 		                    	}
 		                    }
@@ -3339,15 +3424,18 @@ jQuery(document).ready(function($) {
 		                            var fieldValueMultipleTotal = 0;
 
 		                            for (var j = 0; j < fieldValueMultiple.length; j++) {
-		                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol);
+		                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol, decimalsSymbol);
 		                                if (isNaN(fieldValue)) {
 		                                    fieldValue = 0;
 		                                }
 		                                fieldValueMultipleTotal += fieldValue;
 		                            }
-
-		                            if ($fieldSelectorMultiple.closest('[data-pafe-form-builder-conditional-logic]').length > 0 && $fieldSelectorMultiple.closest('.elementor-element').css('display') == 'none') {
-			                        	fieldValueMultipleTotal = 0;
+		                            if ($fieldSelectorMultiple.closest('[data-pafe-form-builder-conditional-logic]').length > 0 && $fieldSelectorMultiple.closest('.elementor-element').hasClass('pafe-form-builder-conditional-logic-hidden')) {
+										fieldValueMultipleTotal = 0;
+										let fieldAttr = $fieldSelectorMultiple.attr('data-pafe-form-builder-image-select');
+										if(typeof fieldAttr !== 'undefined' && fieldAttr !== false){
+											$fieldSelectorMultiple.imagepicker({show_label: true});
+										}
 			                        }
 
 									calculated_data[fieldName] = fieldValueMultipleTotal;
@@ -3377,7 +3465,7 @@ jQuery(document).ready(function($) {
 				                            fieldValueMultipleTotal = 0;
 
 				                            for (var j = 0; j < fieldValueMultiple.length; j++) {
-				                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol);
+				                                fieldValue = parseFloatWithRemoveSepChar(fieldValueMultiple[j], separatorsSymbol, decimalsSymbol);
 				                                if (isNaN(fieldValue)) {
 				                                    fieldValue = 0;
 				                                }
@@ -3448,7 +3536,7 @@ jQuery(document).ready(function($) {
 
 							if (sectionNumbers.indexOf(sectionNumber) < 0) {
 								sectionNumbers.push(sectionNumber);
-								fieldCalcTotal += parseFloatWithRemoveSepChar($(this).val(), separatorsSymbol);
+								fieldCalcTotal += parseFloatWithRemoveSepChar($(this).val(), separatorsSymbol, decimalsSymbol);
 							}
 						});
 						var find = fieldName;
@@ -3673,7 +3761,8 @@ jQuery(document).ready(function($) {
 
 		imageUploadedURL = imageUploadedURL.replace(/.$/,"");
 
-		$widget.find('[data-pafe-form-builder-form-id]').attr('value',imageUploadedURL);
+		$widget.find('[data-pafe-form-builder-form-id]').val(imageUploadedURL);//attr('value',imageUploadedURL);
+		$widget.find('[data-pafe-form-builder-form-id]').change();
 	});
 
 	$('[data-pafe-form-builder-form-id][type="hidden"]').each(function(){
@@ -3695,6 +3784,16 @@ jQuery(document).ready(function($) {
 	function checkIsMobile() {
 	   return (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ); 
 	}
+
+    // Check Valid JSONS String 
+    function isValidJSONString(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
 
 	$(document).on('click','[data-pafe-form-builder-repeater-form-id-trigger]', function(e){
 		e.preventDefault();
@@ -3794,6 +3893,7 @@ jQuery(document).ready(function($) {
 
 						});
 					}
+
 
 					var $rangeSlider = $repeaterNew.find('[data-pafe-form-builder-range-slider]');
 
@@ -3915,7 +4015,7 @@ jQuery(document).ready(function($) {
 					var $dateField = $repeaterNew.find('.elementor-date-field');
 					if ($dateField.length > 0 && !checkIsMobile()) {
 						var addDatePicker = function addDatePicker($element) {
-							if ($element.hasClass('elementor-use-native') || $element.hasClass('flatpickr-custom-options')) { 
+							if ($element.hasClass('elementor-use-native')) { 
 								return;
 							}
 
@@ -3969,14 +4069,67 @@ jQuery(document).ready(function($) {
 
 							if ($element.data('pafe-form-builder-date-language') != 'english') { 
 								options['locale'] = $element.attr('data-pafe-form-builder-date-language');
-							} 
+							}
 
-							$element.flatpickr(options); 
+                            if ($element.hasClass('flatpickr-custom-options')) {
+                                if (isValidJSONString($element.attr('data-pafe-flatpickr-custom-options'))) {
+                                   options = JSON.parse($element.attr('data-pafe-flatpickr-custom-options'));
+                                } else {
+                                   options = $element.attr('data-pafe-flatpickr-custom-options');
+                                }
+                            }
+
+							$element.flatpickr(options);
 						};
 
 						$dateField.each(function(){
 							addDatePicker($(this));
 						});
+					}
+
+					window.pafeIntlTelInput = function (selector,countryCode) {
+						if ( selector.length > 0 ) {
+							selector.each(function(){
+								$(this).intlTelInput({
+									autoHideDialCode: true,
+									autoPlaceholder: "off",
+									dropdownContainer: document.body,
+									formatOnDisplay: false,
+									hiddenInput: "full_number",
+									initialCountry: countryCode,
+									nationalMode: false,
+									preferredCountries: ['US'],
+									separateDialCode: true,
+									utilsScript: ''
+								});
+							})
+							if ($('html').attr('dir') == 'rtl') {
+								$('body').addClass('iti-rtl');
+							}
+						}
+					}
+
+					var $pafeTelField = $(document).find('[data-pafe-tel-field]');
+					if ( $pafeTelField.length > 0 ) {
+						let countryCode = '';
+						let data = {
+							'action': 'pafe_get_country_code',
+						};
+						$.ajax(ajaxurl,
+							{
+								data: data,
+								timeout: 5000,
+								success: function (response) {
+									if(response != 'error'){
+										countryCode = response;
+									}
+									pafeIntlTelInput($pafeTelField,countryCode);
+								},
+								error: function (e) {
+									pafeIntlTelInput($pafeTelField,countryCode);
+								}
+							}
+						);
 					}
 
 					var $timeField = $repeaterNew.find('.elementor-time-field');
@@ -4311,8 +4464,7 @@ jQuery(document).ready(function($) {
 
 	$('[data-pafe-form-builder-repeater-form-id] [data-pafe-form-builder-repeater-trigger-action="remove"]').hide();
 
-   $(window).on('load', function(){
-
+   function pafeRepeaterFillValue() {
 		$('[data-pafe-form-builder-repeater-value]').each(function(){
 	    	var repeaterJson = JSON.parse($(this).html().trim()),
 	    		formID = $(this).data('pafe-form-builder-repeater-value-form-id'),
@@ -4387,7 +4539,9 @@ jQuery(document).ready(function($) {
 
 			}
 		});
-	});
+	}
+
+	setTimeout(pafeRepeaterFillValue(), 1000);
 
 	setTimeout(pafePreviewSubmission(), 1000);
 	
@@ -4853,7 +5007,7 @@ jQuery(document).ready(function($) {
 
 	setTimeout(pafeLivePreview(), 1000);
 
-	$(document).on('keyup change','[data-pafe-form-builder-form-id]', $.debounce( 250, function(){
+	$(document).on('keyup change','[data-pafe-form-builder-form-id]', $.debounce( 100, function(){
 			pafeLivePreview($(this)); 
 		})
 	);
@@ -4881,6 +5035,13 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
+	function pafe_nl2br (str, is_xhtml) {
+		if (typeof str === 'undefined' || str === null) {
+			return '';
+		}
+		var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+		return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+	}
 	function pafeLivePreview(field) {
 		if ($(document).find('[data-pafe-form-builder-live-preview]').length > 0) {
 			let section = $(field).closest('section').attr('data-pafe-form-builder-repeater-form-id');
@@ -4888,28 +5049,60 @@ jQuery(document).ready(function($) {
 			var fieldValue = $(field).val(),
                 fieldType = $(field).attr('type'),
 				fieldId = $(field).attr('id');
+				fieldType = fieldType ? fieldType : $(field).attr('data-pafe-field-type');
 			if (fieldId !== undefined) {
                 var allVals = [];
                 var fieldName = $(field).attr('name').replace('[]','').replace('form_fields[','').replace(']','');
                 if (fieldType == 'checkbox') {
                    $.each($('input[name="'+ $(field).attr('name') +'"]:checked'), function() {
-                        allVals.push($(this).val());
+					   	let checkboxValue = $(field).hasClass('pafe-preview-label') ? $(this).closest('.elementor-field-option').find('label').text() : $(this).val();
+                    	allVals.push(checkboxValue);
                    });
-
                    fieldValue = allVals.join(", ");
 
                 }
+				if(fieldType == 'radio'){
+					fieldValue = $(field).hasClass('pafe-preview-label') ? $(field).closest('.elementor-field-option').find('label').text() : $(field).val();
+				}
+				if(fieldType == 'select'){
+					fieldValue = $(field).hasClass('pafe-preview-label') ? $(field).find('[value="'+fieldValue+'"]').text() : fieldValue;
+				}
 				if(section){
 					$livePreview = $(field).closest('section').find('[data-pafe-form-builder-live-preview="' + fieldName + '"]');
 				}else{
+					fieldValue = pafe_nl2br($(field).val());
 					$livePreview = $(document).find('[data-pafe-form-builder-live-preview="' + fieldName + '"]');
 				}
 				$livePreview.each(function(){
-					$(this).html(fieldValue);
+					if($(this).hasClass('pafe-live-preivew-image')){
+						fieldValue = $(field).val();
+						let width = $(this).data('image-width');
+						let height = $(this).data('image-height');
+						let images = $(field).val() ? $(field).val().split(',') : [];
+						let html = '';
+						if(images){
+							$.each(images, function(index, item){
+								html +=  '<img width="'+width+'" height="'+height+'" src="'+item+'"/>';
+							});
+						}
+						$(this).html(html);
+					}else{
+						$(this).html(fieldValue);
+					}
 				});
 			}
 		}
 	}
+
+	$(document).on('change', '.elementor-field-option input[type="checkbox"]', function(evt) {
+		var $parent = $(this).closest('.elementor-field-group'),
+			$input = $parent.find('.elementor-field-option input[type="checkbox"]'),
+			limit = $(this).data('pafe-checkbox-limit-multiple');
+
+		if($input.filter(':checked').length > limit) {
+			this.checked = false;
+		}
+	});
 
 });
 

@@ -30,47 +30,6 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'label_on' => 'Yes',
 				'label_off' => 'No',
 				'return_value' => 'yes',
-				'selectors' => [
-					'{{WRAPPER}}.elementor-tabs-view-horizontal .elementor-tabs-wrapper' => 'display: flex;',
-					'{{WRAPPER}} .elementor-tab-desktop-title' => 'display: block;',
-				],
-			]
-		);
-
-		$element->add_control(
-			'pafe_advanced_tabs_styling_title_same_width',
-			[
-				'label' => __( 'Title Same Width', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'default' => '',
-				'label_on' => 'Yes',
-				'label_off' => 'No',
-				'return_value' => 'yes',
-				'selectors' => [
-					'{{WRAPPER}}.elementor-tabs-view-horizontal .elementor-tab-title' => 'flex: 1;',
-				],
-				'condition' => [
-					'pafe_advanced_tabs_styling_enable' => 'yes',
-				],
-			]
-		);
-
-		$element->add_responsive_control(
-			'pafe_advanced_tabs_styling_title_margin',
-			[
-				'label' => __( 'Title Margin', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}}.elementor-tabs-view-horizontal .elementor-tabs-wrapper' => 'display: flex;',
-					'{{WRAPPER}} .elementor-tab-desktop-title' => 'display: block;',
-					'{{WRAPPER}} .elementor-tab-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-tab-title:last-child' => 'margin-right: 0{{UNIT}};',
-					'{{WRAPPER}} .elementor-tab-mobile-title:not(:last-child)' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition' => [
-					'pafe_advanced_tabs_styling_enable' => 'yes',
-				],
 			]
 		);
 
@@ -81,38 +40,10 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}}.elementor-tabs-view-horizontal .elementor-tabs-wrapper' => 'display: flex;',
 					'{{WRAPPER}} .elementor-tab-title a' => 'display: block; padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-tab-desktop-title' => 'padding: 0',
+					'{{WRAPPER}} .elementor-tab-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-tab-desktop-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition' => [
-					'pafe_advanced_tabs_styling_enable' => 'yes',
-				],
-			]
-		);
-
-		$element->add_responsive_control(
-			'pafe_advanced_tabs_styling_title_align',
-			[
-				'label' => __( 'Title Align', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'options' => [
-					'flex-start' => [
-						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'elementor' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'flex-end' => [
-						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-tabs-wrapper' => 'justify-content: {{VALUE}};',
 				],
 				'condition' => [
 					'pafe_advanced_tabs_styling_enable' => 'yes',
@@ -154,8 +85,9 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'label' => __( 'Title Background', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-tab-title a' => 'background: {{VALUE}};',
-					'{{WRAPPER}} .elementor-tab-mobile-title' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-mobile-title' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
 					'pafe_advanced_tabs_styling_enable' => 'yes',
@@ -169,8 +101,9 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'label' => __( 'Title Active Background', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-tab-title.elementor-active a' => 'background: {{VALUE}};',
-					'{{WRAPPER}} .elementor-tab-mobile-title.elementor-active' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title.elementor-active a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title.elementor-active' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-mobile-title.elementor-active' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
 					'pafe_advanced_tabs_styling_enable' => 'yes',
@@ -193,6 +126,7 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-tab-title a' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title' => 'border-style: {{VALUE}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title' => 'border-style: {{VALUE}};',
 				],
 				'condition' => [
@@ -208,6 +142,7 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-tab-title a' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-tab-title' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
@@ -225,6 +160,7 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-tab-title a' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
@@ -242,6 +178,7 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-tab-title.elementor-active a' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-tab-title.elementor-active' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title.elementor-active' => 'border-color: {{VALUE}};',
 				],
 				'condition' => [
@@ -259,6 +196,7 @@ class PAFE_Advanced_Tabs_Styling extends \Elementor\Widget_Base {
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-tab-title a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-tab-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-tab-mobile-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
