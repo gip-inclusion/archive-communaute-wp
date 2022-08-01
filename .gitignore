@@ -27,8 +27,9 @@ wp-content/uploads/
 
 .htaccess
 db-data/
+docker/sql/
 wp-uploads/
 wp-content/cache
 wp-content/wflogs
-docker/sql/dump.sql
-docker/sql/dump.sql.gz
+*.sql
+*.sql.gz
