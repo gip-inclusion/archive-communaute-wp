@@ -11,7 +11,7 @@ class Element_Search extends Element_Textbox {
 	 * @var array
 	 */
 	protected $_attributes = array(
-		'class' => 'search-query',
+		"class" => "search-query",
 	);
 	/**
 	 * @var string

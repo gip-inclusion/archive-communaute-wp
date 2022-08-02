@@ -2,8 +2,8 @@
 Contributors: svenl77, konrads, themekraft, buddyforms, shabushabu, christianwach, projectkarol, phuck22, gfirem, jnfdev
 Tags:  content, content generation, user submitted, user-generated, user-submit, generated content, create content, frontend create content, form builder, contact forms, post forms, user-generated content, user submitted posts, contact form, form, forms, frontend post, frontend publisher, frontend post, submit, submissions, custom form, custom forms, form, form administration, form creation, form creator, form manager, forms, forms builder, forms creation, forms creator, forms manager, community, crowdsourced content, frontend generated content, images, Post, posts, public, publish, Share, submission, submissions, submit, submitted, upload
 Requires at least: 4.0
-Tested up to: 6.0
-Stable tag: 2.6.10
+Tested up to: 6.0.1
+Stable tag: 2.7.0
 Requires PHP: 5.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -383,6 +383,28 @@ If you still get stuck somewhere, our support gets you back on the right track. 
 
 
 == Changelog ==
+= 2.7.0 - 19 Jul 2022 =
+* Fixed issue with fields validation.
+
+= 2.6.15 - 19 Jul 2022 =
+* Fixed issue with global JS.
+
+= 2.6.14 - 19 Jul 2022 =
+* Fixed issue with form render.
+
+= 2.6.13 - 16 Jul 2022 =
+* Fixed issue with required attribute.
+* Fixed issue with email notification table.
+
+= 2.6.12 - 13 Jul 2022 =
+* Fixed issue with reCaptcha validation.
+* Fixed issue with email field validation.
+* Tested up to WordPress 6.0.1
+
+= 2.6.11 - 06 Jul 2022 =
+* Fixed issue with Post type selection.
+* Fixed issue with form fields values.
+
 = 2.6.10 - 26 Jun 2022 =
 * Fixed vulnerability issue.
 

@@ -10,7 +10,7 @@ class Element_Radio extends OptionElement {
 	/**
 	 * @var array
 	 */
-	protected $_attributes = array( 'type' => 'radio' );
+	protected $_attributes = array( "type" => "radio" );
 	/**
 	 * @var
 	 */
@@ -19,7 +19,7 @@ class Element_Radio extends OptionElement {
 	public function render() {
 		$labelClass = $this->getAttribute( 'class' );
 		if ( ! empty( $this->inline ) ) {
-			$labelClass .= 'radio-inline';
+			$labelClass .= "radio-inline";
 		}
 
 		$count = 0;
@@ -36,15 +36,15 @@ class Element_Radio extends OptionElement {
 			if ( ! empty( $this->_attributes['id'] ) ) {
 				$input[] = sprintf( 'id="%s"', $this->_attributes['id'] . '-' . $count );
 			}
-			$input[] = $this->getAttributes( array( 'id', 'class', 'value', 'checked' ) );
+			$input[] = $this->getAttributes( array( "id", "class", "value", "checked" ) );
 			$input[] = sprintf( 'value="%s"', $this->filter( $value ) );
-			if ( isset( $this->_attributes['value'] ) && $this->_attributes['value'] == $value ) {
+			if ( isset( $this->_attributes["value"] ) && $this->_attributes["value"] == $value ) {
 				$input[] = 'checked="checked"';
 			}
 			$input[] = '/>';
 
-			$text_out = sprintf( ' %s ', $text );
-			echo wp_kses( $label_start . join( ' ', $input ) . $text_out . $label_end, buddyforms_form_allowed_tags() );
+			$text_out = sprintf( ' %s ',  $text );
+			echo $label_start . join( ' ', $input ) . $text_out . $label_end;
 
 			++ $count;
 			if ( $labelClass != 'radio-inline' ) {

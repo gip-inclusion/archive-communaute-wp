@@ -14,7 +14,7 @@ class Element_File extends Element_Textbox {
 	/**
 	 * @var array
 	 */
-	protected $_attributes = array( 'type' => 'file' );
+	protected $_attributes = array( "type" => "file" );
 
 	public function render() {
 		ob_start();
@@ -22,13 +22,10 @@ class Element_File extends Element_Textbox {
 		$box = ob_get_contents();
 		ob_end_clean();
 		if ( $this->bootstrapVersion == 3 ) {
-			echo wp_kses_post( $box );
+			echo $box;
 		} else {
-			echo preg_replace(
-				'/(.*)(<input .*\/>)(.*)/i',
-				'${1}<label class="file">${2}<span class="file-custom"></span></label>${3}',
-				$box
-			);
+			echo preg_replace( "/(.*)(<input .*\/>)(.*)/i",
+				'${1}<label class="file">${2}<span class="file-custom"></span></label>${3}', $box );
 		}
 	}
 }

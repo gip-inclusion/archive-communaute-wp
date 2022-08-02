@@ -10,7 +10,7 @@ class View_Metabox extends FormView {
 	/**
 	 * @var string
 	 */
-	protected $class = 'form-inline';
+	protected $class = "form-inline";
 
 	/**
 	 * @param Element $element
@@ -22,21 +22,22 @@ class View_Metabox extends FormView {
 			return;
 		}
 
-		// if ( ! $element instanceof Element_Radio && ! $element instanceof Element_Checkbox && ! $element instanceof Element_File ) {
-		// $element->appendAttribute( "class", "form-control" );
-		// }
+
+//		if ( ! $element instanceof Element_Radio && ! $element instanceof Element_Checkbox && ! $element instanceof Element_File ) {
+//			$element->appendAttribute( "class", "form-control" );
+//		}
 
 		if ( $this->noLabel ) {
 			$label = $element->getLabel();
-			$element->setAttribute( 'placeholder', $label );
-			$element->setLabel( '' );
+			$element->setAttribute( "placeholder", $label );
+			$element->setLabel( "" );
 		}
 
-		echo '<div class="bf_field_group elem-' . esc_attr( $element->getAttribute( 'id' ) ) . '"> ', wp_kses( $this->renderLabel( $element ), buddyforms_form_allowed_tags() );
+		echo '<div class="bf_field_group elem-' . $element->getAttribute( "id" ) . '"> ', $this->renderLabel( $element );
 		echo '<div class="bf-input">';
-		echo wp_kses( $element->render(), buddyforms_form_allowed_tags() );
-		echo wp_kses( $this->renderDescriptions( $element ), buddyforms_form_allowed_tags() );
-		echo '</div></div>';
+		echo $element->render();
+		echo $this->renderDescriptions( $element );
+		echo "</div></div>";
 
 	}
 
@@ -54,6 +55,6 @@ class View_Metabox extends FormView {
 			$label = $label . $this->renderRequired();
 		}
 
-		return sprintf( '<div class="bf-label"><label for="%s">%s</label></div>', $element->getAttribute( 'id' ), $label );
+		return sprintf('<div class="bf-label"><label for="%s">%s</label></div>', $element->getAttribute( "id" ), $label);
 	}
 }
