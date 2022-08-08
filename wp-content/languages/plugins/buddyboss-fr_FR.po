@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Platform\n"
 "Report-Msgid-Bugs-To: https://www.buddyboss.com/contact/\n"
 "POT-Creation-Date: 2022-05-19 08:33:42+00:00\n"
-"PO-Revision-Date: 2022-07-05 10:55+0200\n"
+"PO-Revision-Date: 2022-08-08 18:11+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: bp-loader.php\n"
@@ -1548,20 +1548,12 @@ msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
 #: bp-activity/classes/class-bp-activity-notification.php:79
-#, fuzzy
-#| msgid "A member replies to an update or comment you've posted"
 msgid "A member replies to your post or comment"
-msgstr ""
-"Quelqu'un a répondu à une publication ou à un commentaire que vous avez "
-"publié"
+msgstr "Un membre a répondu à votre message ou commentaire"
 
 #: bp-activity/classes/class-bp-activity-notification.php:80
-#, fuzzy
-#| msgid "A member replies to an update or comment you've posted"
 msgid "A member receives a reply to their post or comment"
-msgstr ""
-"Quelqu'un a répondu à une publication ou à un commentaire que vous avez "
-"publié"
+msgstr "Un membre a reçu une réponse à son message ou à son commentaire"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-activity/classes/class-bp-activity-notification.php:88
@@ -1599,11 +1591,8 @@ msgstr ""
 "url}}}"
 
 #: bp-activity/classes/class-bp-activity-notification.php:93
-#, fuzzy
-#| msgid "Allow your members to \"Like\" each other's activity posts"
 msgid "A member receives a reply to their activity post"
-msgstr ""
-"Permettre à vos membres d' « Aimer » les messages d’activité de l’autre"
+msgstr "Un membre a reçu une réponse à sa bublication"
 
 #: bp-activity/classes/class-bp-activity-notification.php:94
 #: bp-activity/classes/class-bp-activity-notification.php:109
@@ -1650,44 +1639,32 @@ msgstr ""
 "url}}}"
 
 #: bp-activity/classes/class-bp-activity-notification.php:108
-#, fuzzy
-#| msgid "%1$s replied to one of your activity comments"
 msgid "A member receives a reply to their activity comment"
-msgstr "%1$s a répondu à l'un de vos commentaires d'activité"
+msgstr "Un membre a reçu une réponse à son commentaire d'activité"
 
 #: bp-activity/classes/class-bp-activity-notification.php:122
-#, fuzzy
-#| msgid "New Activity comment reply"
 msgid "New activity comments"
 msgstr "Nouvelle réponse de commentaire d'activité"
 
 #. translators: 1: User full name, 2: Activity type, 3: Activity content.
 #: bp-activity/classes/class-bp-activity-notification.php:231
-#, fuzzy
-#| msgid "%1$s on %2$s %3$s"
 msgid "%1$s replied to your %2$s: %3$s"
-msgstr "%1$s sur %2$s %3$s"
+msgstr "%1$s a répondu à votre %2$s : %3$s"
 
 #. translators: 1: User full name, 2: Activity type.
 #: bp-activity/classes/class-bp-activity-notification.php:239
-#, fuzzy
-#| msgid "%1$s created the group %2$s"
 msgid "%1$s replied to your %2$s"
-msgstr "%1$s a créé le groupe%2$s"
+msgstr "%1$s a répondu à votre %2$s"
 
 #. translators: 1: User full name, 2: Activity content.
 #: bp-activity/classes/class-bp-activity-notification.php:248
-#, fuzzy
-#| msgid "%1$s: %2$s"
 msgid "%1$s replied: %2$s"
-msgstr "%1$s: %2$s"
+msgstr "%1$s a répondu : %2$s"
 
 #. translators: %s: User full name.
 #: bp-activity/classes/class-bp-activity-notification.php:255
-#, fuzzy
-#| msgid "%s Replies"
 msgid "%1$s replied"
-msgstr "%s Réponses"
+msgstr "%1$s a répondu"
 
 #: bp-activity/classes/class-bp-activity-oembed-extension.php:194
 msgid "Embedded Activity Item"
@@ -14133,29 +14110,22 @@ msgstr ""
 
 #: bp-forums/classes/class-bp-forums-notification.php:63
 #: bp-forums/classes/class-bp-forums-notification.php:64
-#, fuzzy
-#| msgid "Discussion Forum"
 msgid "Discussion Forums"
-msgstr "Forum de discussion"
+msgstr "Forums de discussion"
 
 #: bp-forums/classes/class-bp-forums-notification.php:75
-#, fuzzy
-#| msgid "Subscriptions"
 msgid "Forum subscriptions"
-msgstr "Abonnements"
+msgstr "Suivis de forum"
 
 #: bp-forums/classes/class-bp-forums-notification.php:89
-#, fuzzy
-#| msgid "A member replies to a discussion you are subscribed to."
 msgid "New reply in a discussion you're subscribed to"
-msgstr "Un membre répond à une discussion à laquelle vous êtes abonné."
+msgstr "Nouvelle réponse à sujet de discussion auquel vous êtes abonné"
 
 #: bp-forums/classes/class-bp-forums-notification.php:90
 #: bp-forums/classes/class-bp-forums-notification.php:103
-#, fuzzy
-#| msgid "A member replies to a discussion you are subscribed to."
 msgid "A new reply in a discussion a member is subscribed to"
-msgstr "Un membre répond à une discussion à laquelle vous êtes abonné."
+msgstr ""
+"Une nouvelle réponse dans un sujet de discussion auquel un membre est abonné"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-forums/classes/class-bp-forums-notification.php:98
@@ -14205,17 +14175,14 @@ msgstr ""
 "discussions du forum."
 
 #: bp-forums/classes/class-bp-forums-notification.php:125
-#, fuzzy
-#| msgid "A member creates discussion in a forum you are subscribed"
 msgid "New discussion in a forum you're subscribed to"
-msgstr "Un membre a créé une discussion dans un forum auquel vous êtes abonné"
+msgstr "Nouveau sujet de discussion dans un forum auquel vous êtes abonné(e)"
 
 #: bp-forums/classes/class-bp-forums-notification.php:126
 #: bp-forums/classes/class-bp-forums-notification.php:139
-#, fuzzy
-#| msgid "A member creates discussion in a forum you are subscribed"
 msgid "A new discussion in a forum a member is subscribed to"
-msgstr "Un membre a créé une discussion dans un forum auquel vous êtes abonné"
+msgstr ""
+"Un nouveau sujet de discussion dans un forum auquel un membre est abonné"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-forums/classes/class-bp-forums-notification.php:134
@@ -14280,18 +14247,14 @@ msgstr "%1$s a répondu à un sujet de discussion : %2$s"
 
 #. translators: topic title.
 #: bp-forums/classes/class-bp-forums-notification.php:210
-#, fuzzy
-#| msgid "You have %1$d new reply to %2$s"
 msgid "You have a new reply to %s"
-msgstr "Vous avez %1$d nouvelle réponse à %2$s"
+msgstr "Vous avez une nouvelle réponse de %s"
 
 #. translators: discussions count.
 #: bp-forums/classes/class-bp-forums-notification.php:247
 #: bp-forums/notifications.php:123
-#, fuzzy
-#| msgid "You have %d new mentions"
 msgid "You have %d new discussion"
-msgstr "Vous avez %1$d nouvelles mentions"
+msgstr "Vous avez %d nouveau sujet de discussion"
 
 #. translators: 1.Member display name 2. discussions title.
 #: bp-forums/classes/class-bp-forums-notification.php:253
@@ -14300,10 +14263,8 @@ msgstr "%1$s a lancé un nouveau sujet de discussion : %2$s"
 
 #. translators: discussions title.
 #: bp-forums/classes/class-bp-forums-notification.php:260
-#, fuzzy
-#| msgid "You cannot create new discussions."
 msgid "You have a new discussion: %s"
-msgstr "Vous ne pouvez pas créer de nouvelles discussions."
+msgstr "Vous avez un nouveau sujet de discussion : %s"
 
 #: bp-forums/classes/class-bp-rest-forums-endpoint.php:54
 #: bp-forums/classes/class-bp-rest-forums-endpoint.php:74
@@ -18226,22 +18187,16 @@ msgid "No Pending Requests"
 msgstr "Pas de demandes en attente"
 
 #: bp-friends/classes/class-bp-friends-notification.php:72
-#, fuzzy
-#| msgid "Connection requested"
 msgid "Connection requests"
 msgstr "Demande d’amis"
 
 #: bp-friends/classes/class-bp-friends-notification.php:86
-#, fuzzy
-#| msgid "Cancel connection request"
 msgid "You receive a new connection request"
-msgstr "Annuler la demande d'amitié"
+msgstr "Vous recevez une nouvelle demande d'ami"
 
 #: bp-friends/classes/class-bp-friends-notification.php:87
-#, fuzzy
-#| msgid "A member accepts your connection request"
 msgid "A member receives a new connection request"
-msgstr "Un membre accepte votre demande de connexion"
+msgstr "Un membre reçoit une nouvelle demande d'ami"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-friends/classes/class-bp-friends-notification.php:95
@@ -18287,10 +18242,8 @@ msgstr ""
 "Pour afficher le profil de {{initiator.name}}, visitez: {{{initiator.url}}}"
 
 #: bp-friends/classes/class-bp-friends-notification.php:100
-#, fuzzy
-#| msgid "A member accepts your connection request"
 msgid "A member recieves a new connection request"
-msgstr "Un membre accepte votre demande de connexion"
+msgstr "Un membre reçoit une nouvelle demande de d'ami"
 
 #: bp-friends/classes/class-bp-friends-notification.php:101
 msgid ""
@@ -18301,17 +18254,13 @@ msgstr ""
 "invitation à vous connecter."
 
 #: bp-friends/classes/class-bp-friends-notification.php:123
-#, fuzzy
-#| msgid "Connection requested"
 msgid "Your connection request is accepted"
-msgstr "Demande d’amis"
+msgstr "Votre demande d'ami est acceptée"
 
 #: bp-friends/classes/class-bp-friends-notification.php:124
 #: bp-friends/classes/class-bp-friends-notification.php:137
-#, fuzzy
-#| msgid "Group membership request accepted"
 msgid "A member's connection request is accepted"
-msgstr "Demande d'adhésion au groupe acceptée"
+msgstr "La demande d'ami d'un membre est acceptée"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-friends/classes/class-bp-friends-notification.php:132
@@ -18353,17 +18302,13 @@ msgstr ""
 
 #. translators: member name
 #: bp-friends/classes/class-bp-friends-notification.php:207
-#, fuzzy
-#| msgid "%d members accepted your connection requests"
 msgid "%s has accepted your connection request"
-msgstr "Les membres %d ont accepté vos demandes de connexion"
+msgstr "%s a accepté votre demande d'ami"
 
 #. translators: users display name.
 #: bp-friends/classes/class-bp-friends-notification.php:242
-#, fuzzy
-#| msgid "%d members accepted your connection requests"
 msgid "%s has sent you a connection request"
-msgstr "Les membres %d ont accepté vos demandes de connexion"
+msgstr "%s vous a envoyé une demande d'ami"
 
 #: bp-friends/classes/class-bp-rest-friends-endpoint.php:69
 msgid "Identifier for the friendship."
@@ -19683,33 +19628,25 @@ msgid "Group Moderator"
 msgstr "Modérateur(trice) du groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:91
-#, fuzzy
-#| msgid "Group invitations menu"
 msgid "Group invitations and requests"
-msgstr "Menu des invitations du projet"
+msgstr "Invitations et demandes de groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:97
-#, fuzzy
-#| msgid "Group Moderator promotions"
 msgid "Group promotions"
-msgstr "Nominations des modérateurs de projet"
+msgstr "Promotions de groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:103
-#, fuzzy
-#| msgid "Group details edited"
 msgid "Group details changed"
 msgstr "Détails du groupe édités"
 
 #: bp-groups/classes/class-bp-groups-notification.php:117
 msgid "The details of a group you manage are updated"
-msgstr ""
+msgstr "Les détails d’un groupe que vous gérez sont mis à jour"
 
 #: bp-groups/classes/class-bp-groups-notification.php:118
 #: bp-groups/classes/class-bp-groups-notification.php:131
-#, fuzzy
-#| msgid "A group's details were updated."
 msgid "A group's details are updated"
-msgstr "Les options d'un groupe ont été mises à jour."
+msgstr "Les options d'un groupe ont été mises à jour"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:126
@@ -19755,17 +19692,13 @@ msgstr ""
 "jour."
 
 #: bp-groups/classes/class-bp-groups-notification.php:154
-#, fuzzy
-#| msgid "You were promoted to a %1$s in %2$d groups"
 msgid "You're promoted in a group"
-msgstr "Vous avez été promu à un %1$s dans les groupes %2$d"
+msgstr "Vous êtes promu dans un groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:155
 #: bp-groups/classes/class-bp-groups-notification.php:168
-#, fuzzy
-#| msgid "A member invites you to join a group"
 msgid "A member is promoted in a group"
-msgstr "Un membre vous invite à rejoindre un groupe"
+msgstr "Un membre est promu dans un groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:163
@@ -19807,17 +19740,12 @@ msgstr ""
 "groupe."
 
 #: bp-groups/classes/class-bp-groups-notification.php:191
-#, fuzzy
-#| msgid ""
-#| "You will no longer receive emails when you are invited to join a group."
 msgid "You receive a new invite to join a group"
-msgstr "Vous ne recevrez plus de courriels d'invitation à rejoindre un groupe."
+msgstr "Vous recevez une nouvelle invitation à rejoindre un groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:192
-#, fuzzy
-#| msgid "A member invites you to join a group"
 msgid "A member receives an invite to join a group"
-msgstr "Un membre vous invite à rejoindre un groupe"
+msgstr "Un membre reçoit une invitation à rejoindre un groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:200
@@ -19871,27 +19799,21 @@ msgstr ""
 "Pour afficher le profil de {{inviter.name}}, visitez: {{{inviter.url}}}"
 
 #: bp-groups/classes/class-bp-groups-notification.php:205
-#, fuzzy
-#| msgid "A member invites you to join a group"
 msgid "A member recieves an invite to join a group"
-msgstr "Un membre vous invite à rejoindre un groupe"
+msgstr "Un membre reçoit une invitation à rejoindre un groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:206
 msgid "You will no longer receive emails when you are invited to join a group."
 msgstr "Vous ne recevrez plus de courriels d'invitation à rejoindre un groupe."
 
 #: bp-groups/classes/class-bp-groups-notification.php:228
-#, fuzzy
-#| msgid "A member requests to join a private group you organize"
 msgid "A member requests to join a group you manage"
-msgstr "Un membre demande à rejoindre un groupe privé que vous organisez"
+msgstr "Un membre demande à rejoindre un groupe que vous gérez"
 
 #: bp-groups/classes/class-bp-groups-notification.php:229
 #: bp-groups/classes/class-bp-groups-notification.php:242
-#, fuzzy
-#| msgid "You have already requested to join this group."
 msgid "A group organizer receives a request to join their group"
-msgstr "Vous avez déjà demandé à rejoindre ce groupe."
+msgstr "Un organisateur de groupe reçoit une demande pour rejoindre son groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:237
@@ -19952,17 +19874,13 @@ msgstr ""
 "membre de votre groupe."
 
 #: bp-groups/classes/class-bp-groups-notification.php:266
-#, fuzzy
-#| msgid "Your request to join a group has been approved or denied"
 msgid "Your request to join a group is accepted"
-msgstr "Votre demande pour rejoindre un groupe a été examinée"
+msgstr "Votre demande d’adhésion à un groupe est acceptée"
 
 #: bp-groups/classes/class-bp-groups-notification.php:267
 #: bp-groups/classes/class-bp-groups-notification.php:280
-#, fuzzy
-#| msgid "A member invites you to join a group"
 msgid "A member is accepted into a group"
-msgstr "Un membre vous invite à rejoindre un groupe"
+msgstr "Un membre est accepté dans un groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:275
@@ -20006,17 +19924,13 @@ msgstr ""
 "seront acceptées ou refusées."
 
 #: bp-groups/classes/class-bp-groups-notification.php:304
-#, fuzzy
-#| msgid "Your request to join a group has been approved or denied"
 msgid "Your request to join a group is rejected"
-msgstr "Votre demande pour rejoindre un groupe a été examinée"
+msgstr "Votre demande d’adhésion à un groupe est rejetée"
 
 #: bp-groups/classes/class-bp-groups-notification.php:305
 #: bp-groups/classes/class-bp-groups-notification.php:318
-#, fuzzy
-#| msgid "A member has requested permission to join a group."
 msgid "A member is rejected from joining a group"
-msgstr "Un membre a fait une demande pour rejoindre un groupe."
+msgstr "Un membre est refusé dans un groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:313
@@ -20051,17 +19965,13 @@ msgstr ""
 "Pour introduire une nouvelle demande, cliquez ici: {{{group.url}}}"
 
 #: bp-groups/classes/class-bp-groups-notification.php:341
-#, fuzzy
-#| msgid "You have %d new messages"
 msgid "You receive a new group message"
-msgstr "Vous avez %d nouveaux messages"
+msgstr "Vous recevez un nouveau message de groupe"
 
 #: bp-groups/classes/class-bp-groups-notification.php:342
 #: bp-groups/classes/class-bp-groups-notification.php:355
-#, fuzzy
-#| msgid "A member sends you a new message"
 msgid "A member receives a new group message"
-msgstr "Un membre vous a envoyé un message"
+msgstr "Un membre reçoit un nouveau message de groupe"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-groups/classes/class-bp-groups-notification.php:350
@@ -24688,10 +24598,8 @@ msgstr "Un membre vous cite dans une publication avec \"@%s\""
 
 #: bp-members/classes/class-bp-members-mentions-notification.php:84
 #: bp-members/classes/class-bp-members-mentions-notification.php:97
-#, fuzzy
-#| msgid "A member sends you a new message"
 msgid "A member is mentioned by another member"
-msgstr "Un membre vous a envoyé un message"
+msgstr "Un membre est mentionné par un autre membre"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-members/classes/class-bp-members-mentions-notification.php:92
@@ -24832,10 +24740,8 @@ msgid "Your password is changed"
 msgstr "Le mot de passe actuel n’est pas valable."
 
 #: bp-members/classes/class-bp-members-notification.php:81
-#, fuzzy
-#| msgid "All members of this group are invited."
 msgid "A member's password is updated"
-msgstr "Tous les membres de ce groupe sont invités."
+msgstr "Le mot de passe d’un membre est mis à jour"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-members/classes/class-bp-members-notification.php:89
@@ -25703,17 +25609,14 @@ msgstr "%s vous a envoyé un nouveau message privé"
 #: bp-messages/bp-messages-notifications.php:72
 #: bp-messages/bp-messages-notifications.php:86
 #: bp-messages/bp-messages-notifications.php:93
-#, fuzzy
-#| msgid "%s sent you a new private message from the group: %s"
 msgid "%1$s sent you a new private message from the group: %2$s"
-msgstr "%s vous a envoyé un nouveau message privé du groupe: %s"
+msgstr "%1$s vous a envoyé un nouveau message privé du groupe : %2$s"
 
 #. translators: %1$s and %2$s is replaced with the username and group name
 #: bp-messages/bp-messages-notifications.php:79
-#, fuzzy
-#| msgid "%s sent you a new group message from the group: %s"
 msgid "%1$s sent you a new group message from the group: %2$s"
-msgstr "%s vous a envoyé un nouveau message de groupe depuis le groupe: %s"
+msgstr ""
+"%1$s vous a envoyé un nouveau message de groupe à partir du groupe : %2$s"
 
 #. translators: Number of total private messages
 #: bp-messages/bp-messages-notifications.php:114
@@ -25921,18 +25824,13 @@ msgid "Deactivate Notice"
 msgstr "Désactiver l'avis"
 
 #: bp-messages/classes/class-bp-messages-notification.php:79
-#, fuzzy
-#| msgid "You have %s new private message"
-#| msgid_plural "You have %s new private messages"
 msgid "You receive a new private message"
-msgstr "Vous avez %s nouveau message privé"
+msgstr "Vous recevez un nouveau message privé"
 
 #: bp-messages/classes/class-bp-messages-notification.php:80
 #: bp-messages/classes/class-bp-messages-notification.php:93
-#, fuzzy
-#| msgid "A member sends you a new message"
 msgid "A member receives a new private message"
-msgstr "Un membre vous a envoyé un message"
+msgstr "Un membre reçoit un nouveau message privé"
 
 #. translators: do not remove {} brackets or translate its contents.
 #: bp-messages/classes/class-bp-messages-notification.php:88
@@ -25973,8 +25871,6 @@ msgstr ""
 "Vous ne recevrez plus de courriels lorsque quelqu'un vous enverra un message."
 
 #: bp-messages/classes/class-bp-messages-notification.php:113
-#, fuzzy
-#| msgid "New Messages"
 msgid "New messages"
 msgstr "Nouveaux messages"
 
@@ -25985,10 +25881,8 @@ msgstr "Nouveaux messages"
 #: bp-messages/classes/class-bp-messages-notification.php:377
 #: bp-messages/classes/class-bp-messages-notification.php:452
 #: bp-messages/classes/class-bp-messages-notification.php:527
-#, fuzzy
-#| msgid "sent you a new message"
 msgid "%1$s sent you a message: %2$s"
-msgstr "vous a envoyé un nouveau message"
+msgstr "%1$s vous a envoyé un message : %2$s"
 
 #. translators: 1. user display name 2. photos text
 #. translators: 1. user display name 2. photo text
@@ -26046,41 +25940,32 @@ msgstr "vous a envoyé un nouveau message"
 #: bp-messages/classes/class-bp-messages-notification.php:570
 #: bp-messages/classes/class-bp-messages-notification.php:577
 #: bp-messages/classes/class-bp-messages-notification.php:585
-#, fuzzy
-#| msgid "%1$s at %2$s"
 msgid "%1$s sent you %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s vous a envoyé %2$s"
 
 #: bp-messages/classes/class-bp-messages-notification.php:233
 #: bp-messages/classes/class-bp-messages-notification.php:307
 #: bp-messages/classes/class-bp-messages-notification.php:388
 #: bp-messages/classes/class-bp-messages-notification.php:463
 #: bp-messages/classes/class-bp-messages-notification.php:538
-#, fuzzy
-#| msgid "sent some photos"
 msgid "some photos"
-msgstr "a envoyé des photos"
+msgstr "quelques photos"
 
 #: bp-messages/classes/class-bp-messages-notification.php:240
 #: bp-messages/classes/class-bp-messages-notification.php:315
 #: bp-messages/classes/class-bp-messages-notification.php:395
 #: bp-messages/classes/class-bp-messages-notification.php:470
 #: bp-messages/classes/class-bp-messages-notification.php:545
-#, fuzzy
-#| msgid "%s photo"
-#| msgid_plural "%s photos"
 msgid "a photo"
-msgstr "%s photo"
+msgstr "une photo"
 
 #: bp-messages/classes/class-bp-messages-notification.php:250
 #: bp-messages/classes/class-bp-messages-notification.php:326
 #: bp-messages/classes/class-bp-messages-notification.php:405
 #: bp-messages/classes/class-bp-messages-notification.php:480
 #: bp-messages/classes/class-bp-messages-notification.php:555
-#, fuzzy
-#| msgid "sent some documents"
 msgid "some documents"
-msgstr "a envoyé quelques documents"
+msgstr "quelques documents"
 
 #: bp-messages/classes/class-bp-messages-notification.php:257
 #: bp-messages/classes/class-bp-messages-notification.php:334
@@ -26129,10 +26014,8 @@ msgstr "a envoyé un gif"
 #: bp-messages/classes/class-bp-messages-notification.php:442
 #: bp-messages/classes/class-bp-messages-notification.php:517
 #: bp-messages/classes/class-bp-messages-notification.php:592
-#, fuzzy
-#| msgid "sent you a new message"
 msgid "%1$s sent you a message"
-msgstr "vous a envoyé un nouveau message"
+msgstr "%1$s vous a envoyé un message"
 
 #. translators: 1. user display name 2. group name 3. excerpt
 #: bp-messages/classes/class-bp-messages-notification.php:295
@@ -26851,20 +26734,16 @@ msgid "Block"
 msgstr "Bloquer"
 
 #: bp-moderation/bp-moderation-filters.php:655
-#, fuzzy
-#| msgid "Repair moderation data."
 msgid "Repair moderation data"
-msgstr "Réparer les données de modération."
+msgstr "Réparer les données de modération"
 
 #: bp-moderation/bp-moderation-filters.php:681
 msgid "%s moderation item updated successfully."
 msgstr "%s l'élément de modération a été mis à jour avec succès."
 
 #: bp-moderation/bp-moderation-filters.php:691
-#, fuzzy
-#| msgid "Repair moderation data."
 msgid "Repairing moderation data &hellip; Complete!"
-msgstr "Réparer les données de modération."
+msgstr "Réparation des données de modération &hellip; Terminé !"
 
 #: bp-moderation/bp-moderation-functions.php:1123
 #: bp-moderation/screens/content-report-form.php:16
@@ -27739,6 +27618,11 @@ msgid ""
 "generated for any member. Members can configure which notifications they "
 "receive via email, web or app in their Notification Preferences."
 msgstr ""
+"Sélectionnez les types de notifications envoyés aux membres lorsque des "
+"actions spécifiques se produisent sur votre site. Lorsqu’une notification "
+"est désactivée, elle ne sera générée pour aucun membre. Les membres peuvent "
+"configurer les notifications qu’ils reçoivent par e-mail, sur le Web ou par "
+"application dans leurs préférences de notification."
 
 #: bp-notifications/bp-notifications-settings.php:243
 #, fuzzy
@@ -27765,17 +27649,12 @@ msgid "Manage Defaults"
 msgstr "Gérer les commentaires"
 
 #: bp-notifications/bp-notifications-settings.php:334
-#, fuzzy
-#| msgid "Viewing 1 notification"
-#| msgid_plural "Viewing %1$s - %2$s of %3$s notifications"
 msgid "Hide Messaging Notifications"
-msgstr "Aperçu: 1 notification"
+msgstr "Masquer les notifications de messagerie"
 
 #: bp-notifications/bp-notifications-settings.php:338
-#, fuzzy
-#| msgid "%s sent you a new private message from the group: %s"
 msgid "Hide group and private messages from notifications"
-msgstr "%s vous a envoyé un nouveau message privé du groupe: %s"
+msgstr "Exclure les messages de groupe et messages privés des notifications"
 
 #: bp-notifications/bp-notifications-settings.php:339
 msgid ""
@@ -27785,6 +27664,12 @@ msgid ""
 "(via email, web and/or app) and shown in a member's list of messages, as "
 "well as the count of unread messages."
 msgstr ""
+"Lorsqu’elles sont activées, les notifications pour les messages de groupe et "
+"les messages privés ne s’affichent pas dans la liste des notifications d’un "
+"membre et ne sont pas incluses dans le nombre de notifications non lues. "
+"Cependant, les notifications seront toujours envoyées en externe (par e-"
+"mail, web et /ou application) et affichées dans la liste des messages d’un "
+"membre, ainsi que le nombre de messages non lus."
 
 #. translators: 1. Notification Preferences label. 2. BuddyBoss labs.
 #: bp-notifications/bp-notifications-settings.php:358
