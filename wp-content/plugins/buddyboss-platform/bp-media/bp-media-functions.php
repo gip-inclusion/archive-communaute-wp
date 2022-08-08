@@ -883,7 +883,7 @@ function bp_get_total_media_count() {
  * @since BuddyBoss 1.1.9
  */
 function bp_media_object_results_media_all_scope( $querystring ) {
-	$querystring = wp_parse_args( $querystring );
+	$querystring = bp_parse_args( $querystring );
 
 	$querystring['scope'] = 'all';
 
@@ -902,7 +902,7 @@ function bp_media_object_results_media_all_scope( $querystring ) {
  * @since BuddyBoss 1.0.0
  */
 function bp_media_object_template_results_media_personal_scope( $querystring ) {
-	$querystring = wp_parse_args( $querystring );
+	$querystring = bp_parse_args( $querystring );
 
 	$querystring['scope']       = 'personal';
 	$querystring['page']        = 1;
@@ -919,7 +919,7 @@ function bp_media_object_template_results_media_personal_scope( $querystring ) {
  * @since BuddyBoss 1.0.0
  */
 function bp_media_object_template_results_media_groups_scope( $querystring ) {
-	$querystring = wp_parse_args( $querystring );
+	$querystring = bp_parse_args( $querystring );
 
 	$querystring['scope']       = 'groups';
 	$querystring['page']        = 1;
@@ -2365,7 +2365,7 @@ function bp_media_update_activity_privacy( $activity_id = 0, $privacy = '' ) {
  * @return string
  * @since BuddyBoss 1.4.4
  */
-function bp_media_default_scope( $scope ) {
+function bp_media_default_scope( $scope = 'all' ) {
 
 	$new_scope = array();
 
@@ -2398,6 +2398,8 @@ function bp_media_default_scope( $scope ) {
 		}
 	} elseif ( bp_is_user_media() && ( 'all' === $scope || empty( $scope ) ) && bp_is_profile_media_support_enabled() ) {
 		$new_scope[] = 'personal';
+	} elseif ( bp_is_active( 'groups' ) && bp_is_group() && ( 'all' === $scope || empty( $scope ) ) ) {
+		$new_scope[] = 'groups';
 	}
 
 	if ( empty( $new_scope ) ) {

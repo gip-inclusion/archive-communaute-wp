@@ -698,6 +698,7 @@ function bb_onesignal_admin_setting_callback_enable_soft_prompt_fields_image() {
 	?>
 
 	<div class="bb-default-custom-upload-file bbpro-upload-attachment" data-object="prompt">
+		<p class="description soft_prompt_label_header"><?php esc_html_e( 'Image', 'buddyboss-pro' ); ?></p>
 		<div class="bb-upload-container bbpro-attachment-upload-container">
 			<img src="<?php echo esc_url( $default_soft_prompt_image ); ?>" class="bb-upload-preview prompt-0-avatar <?php echo esc_attr( $hide_show_style ); ?>" >
 			<input type="hidden" name="bb-onesignal-enable-soft-prompt-image" class="bb-default-custom-avatar-field" value="<?php echo esc_url( $default_soft_prompt_image ); ?>">

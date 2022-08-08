@@ -538,27 +538,44 @@ function bb_pro_onesignal_notification_after_save( $notification ) {
 	}
 
 	if ( isset( $notification->inserted ) && true === $notification->inserted && bp_can_send_notification( $notification->user_id, $notification->component_name, $notification->component_action, 'web' ) ) {
-		$notification_content = array(
-			'title'       => '',
-			'description' => bp_get_the_notification_description( $notification ),
-			'link'        => '',
-			'image'       => bb_onesignal_default_notification_icon(),
-		);
+		if ( function_exists( 'bb_notification_get_renderable_notifications' ) ) {
+			$content = array(
+				'title'   => '',
+				'content' => '',
+				'href'    => '',
+				'image'   => bb_onesignal_default_notification_icon(),
+			);
 
-		$notification_content = apply_filters_ref_array(
-			'bb_notifications_get_push_notifications_content',
-			array(
-				$notification_content,
-				$notification,
-			)
+			$notification_content = bb_notification_get_renderable_notifications( $notification, 'object', 'web_push' );
+		} else {
+			$content = array(
+				'title'       => '',
+				'description' => bp_get_the_notification_description( $notification ),
+				'link'        => '',
+				'image'       => bb_onesignal_default_notification_icon(),
+			);
+
+			// Do not use we will remove after some time.
+			$notification_content = apply_filters_ref_array(
+				'bb_notifications_get_push_notifications_content',
+				array(
+					$content,
+					$notification,
+				)
+			);
+		}
+
+		$notification_content = bp_parse_args(
+			$notification_content,
+			$content
 		);
 
 		bb_onesingnal_send_notification(
 			array(
 				'user_id' => $notification->user_id,
 				'title'   => $notification_content['title'],
-				'content' => $notification_content['description'],
-				'link'    => $notification_content['link'],
+				'content' => ( isset( $notification_content['content'] ) ? $notification_content['content'] : $notification_content['description'] ),
+				'link'    => ( isset( $notification_content['href'] ) ? $notification_content['href'] : $notification_content['link'] ),
 				'image'   => $notification_content['image'],
 			)
 		);

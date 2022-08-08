@@ -1,9 +1,9 @@
 === BuddyBoss Platform Pro ===
 Contributors: buddyboss
 Requires at least: 4.9.1
-Tested up to: 5.9.3
+Tested up to: 6.0.1
 Requires PHP: 5.6.20
-Stable tag: 2.0.3
+Stable tag: 2.0.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,13 @@ To run BuddyBoss Platform Pro, we recommend your host supports:
 5. Activate 'BuddyBoss Platform Pro' from your Plugins page.
 
 == Changelog ==
+
+= 2.0.5 =
+* Zoom - Handled add meeting/webinar performance issue by processing notifications and emails in the background
+
+= 2.0.4 =
+* Zoom - Updated Zoom Client WebSDK to 2.4.0
+* Coding Standards - Code refactoring to support different notification types for custom development
 
 = 2.0.3 =
 * Notifications - Added OneSignal integration option to enable Web Push Notifications
