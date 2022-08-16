@@ -30,7 +30,7 @@
 <?php wp_footer(); ?>
 
 
-<?php 
+<?php
 if( function_exists('heateor_sss_run') ) {
   echo '<div class="social-sharer">';
   echo do_shortcode('[Sassy_Social_Share]');
@@ -56,7 +56,7 @@ if( function_exists('heateor_sss_run') ) {
 
 
 <?php
- // If pages aide/doc alors injection code hotjar 
+ // If pages aide/doc alors injection code hotjar
   if (is_post_type('docs') || is_post_type_archive('docs')) {
     echo "
     <!-- Hotjar Tracking Code for https://communaute.inclusion.beta.gouv.fr/ -->
@@ -75,7 +75,7 @@ if( function_exists('heateor_sss_run') ) {
 	?>
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.9.3/tarteaucitron.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.9.3/tarteaucitron.js"></script>
 <script type="text/javascript">
   tarteaucitron.init({
   "privacyUrl": "", /* Privacy policy url */
@@ -105,13 +105,15 @@ if( function_exists('heateor_sss_run') ) {
 </script>
 
 <script type="text/javascript">
-  (tarteaucitron.job = tarteaucitron.job || []).push('hotjar');
   tarteaucitron.user.matomoId = 146;
   tarteaucitron.user.matomoHost = "https://stats.data.gouv.fr/";
-  (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
   tarteaucitron.user.googleFonts = ['Roboto'];
+  (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+  (tarteaucitron.job = tarteaucitron.job || []).push('hotjar');
   (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
+  (tarteaucitron.job = tarteaucitron.job || []).push('youtube');
+  (tarteaucitron.job = tarteaucitron.job || []).push('youtubeapi');
 </script>
-              
+
 </body>
 </html>
