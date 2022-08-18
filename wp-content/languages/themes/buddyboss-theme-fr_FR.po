@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BuddyBoss Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-29 06:14:00+00:00\n"
-"PO-Revision-Date: 2022-07-22 16:24+0200\n"
+"PO-Revision-Date: 2022-08-18 12:14+0200\n"
 "Last-Translator: Sophie Garcia\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -26,22 +26,22 @@ msgstr ""
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:21
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:21
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:22
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:22
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:23
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:23
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: inc/plugins/elementor/widgets/courses/controls/learndash-courses-controls.php:24
 #: inc/plugins/elementor/widgets/courses/controls/lifterlms-courses-controls.php:24
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:118
 msgid "404"
@@ -244,7 +244,7 @@ msgstr "Connectez-vous pour répondre"
 
 #: bbpress/content-single-topic.php:147
 msgid "Start of Discussion"
-msgstr ""
+msgstr "Début de la discussion"
 
 #: bbpress/content-single-topic.php:151 learndash/ld30/lesson.php:118
 #: learndash/ld30/quiz.php:99
@@ -1116,6 +1116,9 @@ msgid ""
 "Please update BuddyBoss Platform to v1.4.0 to maintain compatibility with "
 "BuddyBoss Theme. Some icons in your theme will look wrong until you update."
 msgstr ""
+"Veuillez mettre à jour la plateforme BuddyBoss vers la v1.4.0 pour maintenir "
+"la compatibilité avec le thème BuddyBoss. Certaines icônes de votre thème "
+"auront une apparence incorrecte jusqu'à ce que vous les mettiez à jour."
 
 #: inc/admin/admin-init.php:641
 msgid "This panel is set to be Read-Only. Saving is disabled."
@@ -1178,7 +1181,7 @@ msgstr "Alignement du texte"
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:438
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:462
 msgid "inherit"
-msgstr ""
+msgstr "hériter"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:387
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:189
@@ -1197,12 +1200,12 @@ msgstr "centre"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:390
 msgid "justify"
-msgstr ""
+msgstr "justifié"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:391
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:416
 msgid "initial"
-msgstr ""
+msgstr "initial"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:400
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:401
@@ -1214,19 +1217,19 @@ msgstr "Transformation du texte"
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:412
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:461
 msgid "none"
-msgstr ""
+msgstr "aucun"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:413
 msgid "capitalize"
-msgstr ""
+msgstr "mettre en majuscules"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:414
 msgid "uppercase"
-msgstr ""
+msgstr "majuscule"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:415
 msgid "lowercase"
-msgstr ""
+msgstr "minuscule"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:426
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:427
@@ -1237,11 +1240,11 @@ msgstr "Variante de police"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:439
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:440
 msgid "small-caps"
-msgstr ""
+msgstr "petites capitalisations"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:449
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:450
@@ -1252,19 +1255,19 @@ msgstr "Décoration de texte"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:463
 msgid "underline"
-msgstr ""
+msgstr "souligner"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:464
 msgid "overline"
-msgstr ""
+msgstr "surligner"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:465
 msgid "line-through"
-msgstr ""
+msgstr "barré"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:466
 msgid "blink"
-msgstr ""
+msgstr "clignotement"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:476
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:481
@@ -1315,7 +1318,7 @@ msgstr "Espacement des lettres"
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:555
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:557
 msgid "Margin Top"
-msgstr ""
+msgstr "Marge supérieure"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:557
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:690
@@ -1334,7 +1337,7 @@ msgstr "Haut"
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:566
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:568
 msgid "Margin Bottom"
-msgstr ""
+msgstr "Marge inférieure"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:568
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:710
@@ -1358,26 +1361,26 @@ msgstr "Couleur de la police"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:636
 msgid "Shadow Color"
-msgstr ""
+msgstr "Couleur de l’ombre"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:641
 msgid "Shadow color"
-msgstr ""
+msgstr "Couleur d'ombre"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:652
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:661
 msgid "Horizontal"
-msgstr ""
+msgstr "Horizontal"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:668
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:677
 msgid "Vertical"
-msgstr ""
+msgstr "Vertical"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:684
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:693
 msgid "Blur"
-msgstr ""
+msgstr "Flou"
 
 #: inc/admin/buddyboss-extensions/extensions/bb_typography/bb_typography/field_bb_typography.php:1078
 msgid "Standard Fonts"
@@ -1392,6 +1395,8 @@ msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
+"Vos options actuelles vont être remplacées par les valeurs de ce préréglage. "
+"Souhaitez-vous poursuivre ?"
 
 #: inc/admin/buddyboss-extensions/extensions/custom_image_select/custom_image_select/field_custom_image_select.php:229
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:658
@@ -1413,32 +1418,28 @@ msgid "Styling"
 msgstr "Style"
 
 #: inc/admin/options-init.php:71
-#, fuzzy
-#| msgid "Header Style"
 msgid "Theme Style"
-msgstr "Style d’en-tête"
+msgstr "Style du thème"
 
 #: inc/admin/options-init.php:72
 msgid "Select which theme style to use."
-msgstr ""
+msgstr "Sélectionnez le style de thème à utiliser."
 
 #: inc/admin/options-init.php:73
 msgid ""
 "The theme style controls the look of elements such as buttons, forms, "
 "navigation bars and form fields."
 msgstr ""
+"Le style de thème contrôle l’apparence des éléments tels que les boutons, "
+"les formulaires, les barres de navigation et les champs de formulaire."
 
 #: inc/admin/options-init.php:92
-#, fuzzy
-#| msgid "Button Border Radius"
 msgid "Button Radius"
-msgstr "Rayon de bordure de bouton"
+msgstr "Coin du bouton"
 
 #: inc/admin/options-init.php:93
-#, fuzzy
-#| msgid "Select the header layout."
 msgid "Select the border radius of your buttons."
-msgstr "Sélectionnez la mise en page d'en-tête."
+msgstr "Sélectionnez le rayon de bordure de vos boutons."
 
 #: inc/admin/options-init.php:94
 msgid ""
@@ -1446,6 +1447,10 @@ msgid ""
 "and any number in between for a rounded button. When using the 2.0 theme "
 "style, we recommend setting the button radius to \"6\"."
 msgstr ""
+"Définissez le rayon sur « 0 » pour un bouton carré, « 100 » pour un bouton "
+"de style pilule et n’importe quel nombre entre les deux pour un bouton "
+"arrondi. Lorsque vous utilisez le style de thème 2.0, nous vous recommandons "
+"de définir le rayon du bouton sur « 6 »."
 
 #: inc/admin/options-init.php:125
 msgid "Desktop Logo (Dark Mode)"
@@ -1544,32 +1549,25 @@ msgstr "Ajuster la taille de votre logo"
 #: inc/admin/options-init.php:147 inc/admin/options-init.php:190
 #: inc/admin/options-init.php:239 inc/admin/options-init.php:284
 msgid "Maximum logo width 350px."
-msgstr ""
+msgstr "Largeur maximale du logo 350px."
 
 #: inc/admin/options-init.php:148 inc/admin/options-init.php:191
 #: inc/admin/options-init.php:240 inc/admin/options-init.php:285
-#, fuzzy
-#| msgid ""
-#| "Maximum logo width 350px.<br ?>If the logo size is taller than the header "
-#| "height, it will be made smaller to fit within the header."
 msgid ""
 "If the logo size is taller than the header height, it will be made smaller "
 "to fit within the header."
 msgstr ""
-"Largeur maximale du logo 350px.<br ?>Si la taille du logo est plus grande "
-"que la hauteur de l'en-tête, il sera réduit pour tenir dans l'en-tête."
+"Si la taille du logo est plus grande que la hauteur de l’en-tête, elle sera "
+"réduite pour s’adapter à l’en-tête."
 
 #: inc/admin/options-init.php:149 inc/admin/options-init.php:241
-#, fuzzy
-#| msgid ""
-#| "Maximum logo width 350px.<br ?>If the logo size is taller than the header "
-#| "height, it will be made smaller to fit within the header."
 msgid ""
 "If \"Show Logo in BuddyPanel\" is enabled and the logo size is wider than "
 "the BuddyPanel, it will be made smaller to fit within the BuddyPanel."
 msgstr ""
-"Largeur maximale du logo 350px.<br ?>Si la taille du logo est plus grande "
-"que la hauteur de l'en-tête, il sera réduit pour tenir dans l'en-tête."
+"Si « Afficher le logo dans BuddyPanel » est activé et que la taille du logo "
+"est plus large que le BuddyPanel, il sera réduit pour s’adapter au "
+"BuddyPanel."
 
 #: inc/admin/options-init.php:168
 msgid "Mobile Logo (Dark Mode)"
@@ -1621,15 +1619,11 @@ msgstr "Icône du site"
 
 #. translators: 1. Admin customise URL with text.
 #: inc/admin/options-init.php:311
-#, fuzzy
-#| msgid ""
-#| "Upload your custom site icon(favicon) at <a href=\"%s\">Appearance &gt; "
-#| "Customize</a> in the Site Identity section."
 msgid ""
 "Upload your custom site icon (favicon) at %1$s in the Site Identity section."
 msgstr ""
-"Téléchargez votre icône de site personnalisé (favicon) à <a href=\"%s"
-"\">Apparence &gt; Personnaliser dans</a> la section Identité du site."
+"Téléchargez votre icône de site personnalisée (favicon) à %1$s dans la "
+"section Identité du site."
 
 #. translators: 1. Admin customise URL. 2. Text. 3. Text.
 #: inc/admin/options-init.php:316
@@ -1638,10 +1632,8 @@ msgid "Appearance"
 msgstr "Apparence"
 
 #: inc/admin/options-init.php:317
-#, fuzzy
-#| msgid "Customizer"
 msgid "Customize"
-msgstr "Personnalisation"
+msgstr "Personnaliser"
 
 #: inc/admin/options-init.php:329
 msgid "ss"
@@ -1659,12 +1651,9 @@ msgid "Primary color"
 msgstr "Couleur primaire"
 
 #: inc/admin/options-init.php:343
-#, fuzzy
-#| msgid "Used for various theme elements, hover links color and icons."
 msgid "Used in various elements such as links, icons and counts."
 msgstr ""
-"Utilisé pour divers éléments de thème, le survol des liens de couleur et des "
-"icônes."
+"Utilisé dans divers éléments tels que les liens, les icônes et les comptes."
 
 #: inc/admin/options-init.php:350
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:246
@@ -1698,106 +1687,78 @@ msgid "Background Color"
 msgstr "Couleur d’arrière-plan"
 
 #: inc/admin/options-init.php:358
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Content Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Couleur d’arrière-plan du contenu"
 
 #: inc/admin/options-init.php:366
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Content Alternate Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Couleur d’arrière-plan alternative du contenu"
 
 #: inc/admin/options-init.php:374
-#, fuzzy
-#| msgid "Content Color"
 msgid "Content Border Color"
-msgstr "Couleur du contenu"
+msgstr "Couleur de bordure du contenu"
 
 #: inc/admin/options-init.php:382
-#, fuzzy
-#| msgid "Cover Image Background"
 msgid "Cover Image Background Color"
-msgstr "Arrière-plan Image de couverture"
+msgstr "Couleur d’arrière-plan de l’image de couverture"
 
 #: inc/admin/options-init.php:383
 msgid "The background color used behind default cover images."
 msgstr ""
+"La couleur d'arrière plan utilisée derrière les images de couverture par "
+"défaut."
 
 #: inc/admin/options-init.php:390
-#, fuzzy
-#| msgid "Heading Color"
 msgid "Headings Color"
-msgstr "Couleur de l'entête"
+msgstr "Couleur des titres"
 
 #: inc/admin/options-init.php:391
 msgid "Used for headings tags (H1, H2. H3, etc)"
-msgstr ""
+msgstr "Utilisé pour les balises de titres (H1, H2. H3, etc.)"
 
 #: inc/admin/options-init.php:398
-#, fuzzy
-#| msgid "Text Color"
 msgid "Body Text Color"
-msgstr "Couleur du texte"
+msgstr "Couleur du texte du corps"
 
 #: inc/admin/options-init.php:399
-#, fuzzy
-#| msgid "Paragraphs and main content text"
 msgid "Used for paragraph and main content text."
-msgstr "Paragraphes et texte principal du contenu"
+msgstr "Utilisé pour le texte du paragraphe et du contenu principal."
 
 #: inc/admin/options-init.php:406
-#, fuzzy
-#| msgid "Alternate Text"
 msgid "Alternate Text Color"
-msgstr "Texte alternatif"
+msgstr "Couleur de texte alternative"
 
 #: inc/admin/options-init.php:407
 msgid "Used for meta data and supplementary text."
-msgstr ""
+msgstr "Utilisé pour les métadonnées et le texte supplémentaire."
 
 #: inc/admin/options-init.php:415
-#, fuzzy
-#| msgid "Button"
 msgid "Buttons"
-msgstr "Bouton"
+msgstr "Boutons"
 
 #: inc/admin/options-init.php:420
-#, fuzzy
-#| msgid "Play Button Background Color"
 msgid "Primary Button Background Color"
-msgstr "Couleur d’arrière-plan du bouton"
+msgstr "Couleur d’arrière-plan du bouton principal"
 
 #: inc/admin/options-init.php:432
-#, fuzzy
-#| msgid "Play Button Background Color"
 msgid "Primary Button Border Color"
-msgstr "Couleur d’arrière-plan du bouton"
+msgstr "Couleur de bordure du bouton principal"
 
 #: inc/admin/options-init.php:444
-#, fuzzy
-#| msgid "Play Button Color"
 msgid "Primary Button Text Color"
-msgstr "Couleur du Bouton JOUER"
+msgstr "Couleur de texte du bouton principal"
 
 #: inc/admin/options-init.php:456
-#, fuzzy
-#| msgid "Play Button Background Color"
 msgid "Secondary Button Background Color"
-msgstr "Couleur d’arrière-plan du bouton"
+msgstr "Couleur d’arrière-plan du bouton secondaire"
 
 #: inc/admin/options-init.php:468
-#, fuzzy
-#| msgid "Play Button Background Color"
 msgid "Secondary Button Border Color"
-msgstr "Couleur d’arrière-plan du bouton"
+msgstr "Couleur de bordure du bouton secondaire"
 
 #: inc/admin/options-init.php:480
-#, fuzzy
-#| msgid "Play Button Color"
 msgid "Secondary Button Text Color"
-msgstr "Couleur du Bouton JOUER"
+msgstr "Couleur de texte du bouton secondaire"
 
 #: inc/admin/options-init.php:493 inc/admin/options-init.php:1170
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1709
@@ -1806,36 +1767,28 @@ msgid "Header"
 msgstr "En-tête"
 
 #: inc/admin/options-init.php:498
-#, fuzzy
-#| msgid "Header Background"
 msgid "Header Background Color"
-msgstr "Arrière-plan de l’en-tête"
+msgstr "Couleur d'arrière-plan de l'en-tête"
 
 #: inc/admin/options-init.php:506
-#, fuzzy
-#| msgid "Overlay Background Color"
 msgid "Header Alternate Background Color"
-msgstr "Définir la couleur de recouvrement de l'arrière plan"
+msgstr "Couleur d’arrière-plan alternative de l’en-tête"
 
 #: inc/admin/options-init.php:507
 msgid "Used for the search bar and hover effects."
-msgstr ""
+msgstr "Utilisé pour la barre de recherche et les effets de survol."
 
 #: inc/admin/options-init.php:514
-#, fuzzy
-#| msgid "Header Links Color"
 msgid "Header Text/Link Color"
-msgstr "Couleur des liens de l’en-tête"
+msgstr "Texte de l’en-tête/couleur du lien"
 
 #: inc/admin/options-init.php:515
 msgid "Menu and Icons Links Color"
 msgstr "Couleur des liens des menus et des icônes"
 
 #: inc/admin/options-init.php:522
-#, fuzzy
-#| msgid "Header Active Links Color"
 msgid "Header Hover/Active Link Color"
-msgstr "Header : Couleur des liens actifs"
+msgstr "Survol de l’en-tête/Couleur du lien actif"
 
 #: inc/admin/options-init.php:523
 msgid "Menu and Icons Hover Links Color"
@@ -1848,34 +1801,24 @@ msgid "BuddyPanel"
 msgstr "BuddyPanel"
 
 #: inc/admin/options-init.php:536
-#, fuzzy
-#| msgid "BuddyPanel background color"
 msgid "BuddyPanel Background Color"
-msgstr "BuddyPanel : Couleur arrière plan"
+msgstr "Couleur d’arrière-plan BuddyPanel"
 
 #: inc/admin/options-init.php:544
-#, fuzzy
-#| msgid "BuddyPanel menu items color"
 msgid "BuddyPanel Menu Text Color"
-msgstr "BuddyPanel : Couleur des éléments du menu"
+msgstr "Couleur du texte du menu BuddyPanel"
 
 #: inc/admin/options-init.php:556
-#, fuzzy
-#| msgid "BuddyPanel background color"
 msgid "BuddyPanel Menu Background Color"
-msgstr "BuddyPanel : Couleur arrière plan"
+msgstr "Couleur d’arrière-plan du menu BuddyPanel"
 
 #: inc/admin/options-init.php:568
-#, fuzzy
-#| msgid "BuddyPanel Links Color"
 msgid "BuddyPanel Count Text Color"
-msgstr "Couleur Liens BuddyPanel"
+msgstr "Couleur du texte BuddyPanel Count"
 
 #: inc/admin/options-init.php:580
-#, fuzzy
-#| msgid "BuddyPanel background color"
 msgid "BuddyPanel Count Background Color"
-msgstr "BuddyPanel : Couleur arrière plan"
+msgstr "BuddyPanel Count Couleur d’arrière-plan"
 
 #: inc/admin/options-init.php:593 inc/admin/options-init.php:1717
 #: inc/plugins/elementor/widgets/bb-review.php:855
@@ -1884,28 +1827,20 @@ msgid "Footer"
 msgstr "Pied de page"
 
 #: inc/admin/options-init.php:598
-#, fuzzy
-#| msgid "Counter Background Color"
 msgid "Footer Background Color"
-msgstr "Couleur de fond de compteur"
+msgstr "Couleur d’arrière-plan du pied de page"
 
 #: inc/admin/options-init.php:606
-#, fuzzy
-#| msgid "Footer Widgets Background"
 msgid "Footer Widgets Background Color"
-msgstr "Arrière-plan Footer Widgets"
+msgstr "Couleur de fond de l'arrière plan du widget de pied de page"
 
 #: inc/admin/options-init.php:614
-#, fuzzy
-#| msgid "Footer Colors"
 msgid "Footer Text Color"
-msgstr "Couleurs du pied de Page"
+msgstr "Couleur de texte du pied de page"
 
 #: inc/admin/options-init.php:622
-#, fuzzy
-#| msgid "Footer Links Color"
 msgid "Footer Menu Link Color"
-msgstr "Couleur des liens de pied de page"
+msgstr "Couleur de lien du menu de pied de page"
 
 #: inc/admin/options-init.php:635
 msgid "Login / Register Screens"
@@ -1920,46 +1855,32 @@ msgid "Login / Register Text Color"
 msgstr "Connexion / Enregistrement Couleur du texte"
 
 #: inc/admin/options-init.php:656
-#, fuzzy
-#| msgid "Login / Register Text Color"
 msgid "Login / Register Link Color"
 msgstr "Connexion / Enregistrement Couleur du texte"
 
 #: inc/admin/options-init.php:668
-#, fuzzy
-#| msgid "Login / Register Background Color"
 msgid "Login / Register Button Background Color"
-msgstr "Connexion / Enregistrement Couleur de fond"
+msgstr "Couleur d’arrière-plan du bouton Connexion / Enregistrement"
 
 #: inc/admin/options-init.php:680
-#, fuzzy
-#| msgid "Login / Register Links and Button Hover Color"
 msgid "Login / Register Button Border Color"
-msgstr "Connexion/Inscription : Couleur des liens et des boutons au survol"
+msgstr "Couleur de bordure du bouton Connexion / Enregistrement"
 
 #: inc/admin/options-init.php:692
-#, fuzzy
-#| msgid "Login / Register Text Color"
 msgid "Login / Register Button Text Color"
-msgstr "Connexion / Enregistrement Couleur du texte"
+msgstr "Couleur du texte du bouton Connexion / Enregistrement"
 
 #: inc/admin/options-init.php:705
-#, fuzzy
-#| msgid "Hide Label"
 msgid "Labels"
-msgstr "Masquer le libellé"
+msgstr "Étiquettes"
 
 #: inc/admin/options-init.php:710
-#, fuzzy
-#| msgid "Background Color"
 msgid "Label Background Color"
-msgstr "Couleur d’arrière-plan"
+msgstr "Couleur d’arrière-plan du libellé"
 
 #: inc/admin/options-init.php:718
-#, fuzzy
-#| msgid "Banner Text Color"
 msgid "Label Text Color"
-msgstr "Couleur du texte de la bannière"
+msgstr "Couleur du texte de l'étiquette"
 
 #: inc/admin/options-init.php:727
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:534
@@ -1969,16 +1890,12 @@ msgid "Tooltips"
 msgstr "Infos-Bulles"
 
 #: inc/admin/options-init.php:732
-#, fuzzy
-#| msgid "Tooltips background color"
 msgid "Tooltips Background Color"
-msgstr "Tooltips : Couleur arrière plan"
+msgstr "Couleur d’arrière-plan des info-bulles"
 
 #: inc/admin/options-init.php:740
-#, fuzzy
-#| msgid "Tooltips Color"
 msgid "Tooltips Text Color"
-msgstr "Infos-Bulles Couleur"
+msgstr "Couleur de texte des infobulles"
 
 #: inc/admin/options-init.php:749
 msgid "Notices / Alerts"
@@ -1998,7 +1915,7 @@ msgstr "Info"
 
 #: inc/admin/options-init.php:762
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 #: inc/admin/options-init.php:770
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:1219
@@ -2161,7 +2078,7 @@ msgstr "Style d’en-tête"
 
 #: inc/admin/options-init.php:1184
 msgid "Select the layout of your desktop header."
-msgstr ""
+msgstr "Sélectionnez la disposition de l’en-tête de votre bureau."
 
 #. translators: 1. Text, 2. Link
 #: inc/admin/options-init.php:1187
@@ -2169,26 +2086,22 @@ msgid ""
 "If you have enabled %1$s in the %2$s settings, it will be hidden in your "
 "desktop header."
 msgstr ""
+"Si vous avez activé %1$s dans les paramètres %2$s, il sera masqué dans l’en-"
+"tête de votre bureau."
 
 #: inc/admin/options-init.php:1188
-#, fuzzy
-#| msgid "BuddyPanel Colors"
 msgid "BuddyPanel Logo"
-msgstr "Couleur BuddyPanel"
+msgstr "BuddyPanel Logo"
 
 #. translators: 1. Link, 2. Text
 #: inc/admin/options-init.php:1204
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:917
-#, fuzzy
-#| msgid "Style"
 msgid "Menu Style"
-msgstr "Style"
+msgstr "Style du menu"
 
 #: inc/admin/options-init.php:1205
-#, fuzzy
-#| msgid "Select the blog post sidebar alignment."
 msgid "Select the style of your desktop header menu."
-msgstr "Sélectionnez l'alignement de la barre latérale du blog."
+msgstr "Sélectionnez le style du menu d’en-tête de votre bureau."
 
 #. translators: Link with description.
 #: inc/admin/options-init.php:1208
@@ -2196,13 +2109,13 @@ msgid ""
 "The Tab Bar style requires icons, which you can assign to menu items in the "
 "%s settings."
 msgstr ""
+"Le style Barre d’onglets nécessite des icônes, que vous pouvez affecter aux "
+"éléments de menu dans les paramètres %s."
 
 #. translators: 1. Link URL. 2. Link text.
 #: inc/admin/options-init.php:1213 inc/admin/options-init.php:1360
-#, fuzzy
-#| msgid "Menu"
 msgid "Menus"
-msgstr "Menu"
+msgstr "Menus"
 
 #: inc/admin/options-init.php:1218 inc/admin/options-init.php:2064
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:254
@@ -2211,20 +2124,16 @@ msgid "Standard"
 msgstr "Standard"
 
 #: inc/admin/options-init.php:1219
-#, fuzzy
-#| msgid "Tab #1"
 msgid "Tab Bar"
-msgstr "Onglet N°1"
+msgstr "Barre d’onglets"
 
 #: inc/admin/options-init.php:1225 inc/admin/options-init.php:1274
-#, fuzzy
-#| msgid "Comments"
 msgid "Components"
-msgstr "Commentaires"
+msgstr "Composants"
 
 #: inc/admin/options-init.php:1226
 msgid "Select which components show in your desktop header."
-msgstr ""
+msgstr "Sélectionnez les composants affichés dans l’en-tête de votre bureau."
 
 #: inc/admin/options-init.php:1231 inc/admin/options-init.php:1280
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:106
@@ -2237,11 +2146,8 @@ msgid "Messages"
 msgstr "Messages"
 
 #: inc/admin/options-init.php:1233 inc/admin/options-init.php:1282
-#, fuzzy
-#| msgid "Show/hide shopping cart in titlebar. (requires WooCommerce)"
 msgid "Shopping Cart - requires WooCommerce"
-msgstr ""
-"Afficher/masquer le panier dans la barre de titre. (nécessite WooCommerce)"
+msgstr "Panier d’achat - nécessite WooCommerce"
 
 #: inc/admin/options-init.php:1247
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:79
@@ -2256,12 +2162,16 @@ msgid ""
 "Select your style of profile dropdown. Sign In / Sign Up buttons will be "
 "used for logged out users."
 msgstr ""
+"Sélectionnez votre style de liste déroulante de profil. Les boutons Se "
+"connecter / S’inscrire seront utilisés pour les utilisateurs déconnectés."
 
 #. translators: Link with description.
 #: inc/admin/options-init.php:1251
 msgid ""
 "You can create a menu assign it to the Profile Dropdown in the %s settings."
 msgstr ""
+"Vous pouvez créer un menu pour l’affecter à la liste déroulante Profil dans "
+"les paramètres %s."
 
 #. translators: 1. Link URL. 2. Link text.
 #: inc/admin/options-init.php:1256
@@ -2273,16 +2183,12 @@ msgid "Menu"
 msgstr "Menu"
 
 #: inc/admin/options-init.php:1261
-#, fuzzy
-#| msgid "Avatar"
 msgid "Name & Avatar"
-msgstr "Avatar"
+msgstr "Nom et avatar"
 
 #: inc/admin/options-init.php:1262
-#, fuzzy
-#| msgid "Avatar"
 msgid "Avatar Only"
-msgstr "Avatar"
+msgstr "Avatar Uniquement"
 
 #: inc/admin/options-init.php:1269
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1648
@@ -2293,11 +2199,11 @@ msgstr "Mobile"
 
 #: inc/admin/options-init.php:1275
 msgid "Select which components show in your mobile header."
-msgstr ""
+msgstr "Sélectionnez les composants affichés dans l’en-tête de votre mobile."
 
 #: inc/admin/options-init.php:1296
 msgid "Advanced"
-msgstr ""
+msgstr "Avancé"
 
 #: inc/admin/options-init.php:1301
 msgid "Sticky Header"
@@ -2305,18 +2211,12 @@ msgstr "En-tête fixe"
 
 #. translators: 1. LearnDash URL with text.
 #: inc/admin/options-init.php:1304
-#, fuzzy
-#| msgid ""
-#| "Position header to the top of the scrollview during scrolling. Header is "
-#| "always sticky in <a href=\"https://learndash.idevaffiliate.com/111.html"
-#| "\">LearnDash</a> lessons and topics."
 msgid ""
 "Stick your headers to the top of the screen while scrolling. Header is "
 "always sticky in %1$s lessons and topics."
 msgstr ""
-"Positionnez l'en-tête vers le haut de la vue de défilement pendant le "
-"défilement. L'en-tête est toujours fixe dans les leçons et les sujets <a "
-"href=\"https://learndash.idevaffiliate.com/111.html\">LearnDash</a>."
+"Collez vos en-têtes en haut de l’écran pendant le défilement. L’en-tête est "
+"toujours collant dans %1$s leçons et les sujets."
 
 #. translators: 1. Link URL. 2. Link text.
 #: inc/admin/options-init.php:1309 inc/admin/options-init.php:2295
@@ -2332,49 +2232,43 @@ msgstr "Hauteur de l’en tête"
 
 #: inc/admin/options-init.php:1320
 msgid "Set a height for your headers."
-msgstr ""
+msgstr "Définissez une hauteur pour vos en-têtes."
 
 #: inc/admin/options-init.php:1321
-#, fuzzy
-#| msgid "Value between 60px and 200px"
 msgid "Select a value between 60px and 200px."
-msgstr "Valeur entre 60px et 200px"
+msgstr "Sélectionnez une valeur comprise entre 60px et 200px."
 
 #: inc/admin/options-init.php:1331
-#, fuzzy
-#| msgid "Header shadow"
 msgid "Header Shadow"
 msgstr "Ombre de l'en-tête"
 
 #: inc/admin/options-init.php:1332
 msgid "Select whether to show a shadow under your headers."
-msgstr ""
+msgstr "Indiquez si vous souhaitez afficher une ombre sous vos en-têtes."
 
 #: inc/admin/options-init.php:1352
-#, fuzzy
-#| msgid ""
-#| "Display the BuddyPanel menu. BuddyPanel is the side navigation panel."
 msgid ""
 "Select whether to display the BuddyPanel menu in a side navigation panel on "
 "your site."
 msgstr ""
-"Affichez le menu BuddyPanel. BuddyPanel est le panneau de navigation latéral."
+"Indiquez si vous souhaitez afficher le menu BuddyPanel dans un panneau de "
+"navigation latéral de votre site."
 
 #. translators: 1. Link with description.
 #: inc/admin/options-init.php:1355
 msgid ""
 "Go to the %s page to create a menu and assign it to the BuddyPanel location."
 msgstr ""
+"Accédez à la page %s pour créer un menu et l’affecter à l’emplacement "
+"BuddyPanel."
 
 #: inc/admin/options-init.php:1370
-#, fuzzy
-#| msgid "Show Logo Image"
 msgid "Show Logo in BuddyPanel"
-msgstr "Afficher l’image du logo"
+msgstr "Afficher le logo dans BuddyPanel"
 
 #: inc/admin/options-init.php:1371
 msgid "Select whether to show a logo in the BuddyPanel."
-msgstr ""
+msgstr "Indiquez si vous souhaitez afficher un logo dans le BuddyPanel."
 
 #. translators: 1. Description with Text, 2. Description with Text
 #: inc/admin/options-init.php:1374
@@ -2382,16 +2276,17 @@ msgid ""
 "When enabled, the %1$s will be hidden your from header and shown in the "
 "BuddyPanel's open state. In the closed state, your %2$s will be used."
 msgstr ""
+"Lorsqu’il est activé, le %1$s sera masqué de l’en-tête et affiché dans "
+"l’état ouvert du BuddyPanel. À l’état fermé, votre %2$s sera utilisé."
 
 #: inc/admin/options-init.php:1390 inc/admin/options-init.php:1405
 msgid "BuddyPanel Position"
 msgstr "Position du panneau BuddyPanel"
 
 #: inc/admin/options-init.php:1391 inc/admin/options-init.php:1406
-#, fuzzy
-#| msgid "Select the BuddyPanel alignment."
 msgid "Select which side of the screen the BuddyPanel should be aligned to."
-msgstr "Sélectionnez l'alignement BuddyPanel."
+msgstr ""
+"Sélectionnez le côté de l’écran sur lequel le BuddyPanel doit être aligné."
 
 #: inc/admin/options-init.php:1398 inc/admin/options-init.php:1413
 #: inc/admin/options-init.php:1453 inc/admin/options-init.php:1464
@@ -2458,25 +2353,22 @@ msgid "Right"
 msgstr "Droite"
 
 #: inc/admin/options-init.php:1420
-#, fuzzy
-#| msgid "BuddyPanel"
 msgid "Toggle BuddyPanel"
-msgstr "BuddyPanel"
+msgstr "Basculer BuddyPanel"
 
 #: inc/admin/options-init.php:1421
 msgid "When enabled, the BuddyPanel can be toggled between open and closed."
 msgstr ""
+"Lorsqu’il est activé, le BuddyPanel peut basculer entre ouvert et fermé."
 
 #: inc/admin/options-init.php:1434
 msgid "BuddyPanel Default State"
 msgstr "État par défaut de BuddyPanel"
 
 #: inc/admin/options-init.php:1435
-#, fuzzy
-#| msgid "Select the BuddyPanel default state for new sessions."
 msgid "Select the BuddyPanel's default state for new sessions."
 msgstr ""
-"Sélectionnez l'état par défaut de BuddyPanel pour les nouvelles sessions."
+"Sélectionnez l’état par défaut du BuddyPanel pour les nouvelles sessions."
 
 #: inc/admin/options-init.php:1449 inc/theme/sidebars.php:13
 msgid "Blog Sidebar"
@@ -2538,11 +2430,8 @@ msgstr "Sélectionnez l'alignement de la barre latérale des forums."
 
 #. translators: 1. Text, 2. Text
 #: inc/admin/options-init.php:1548
-#, fuzzy
-#| msgctxt "placeholders: comment date, comment time"
-#| msgid "%1$s at %2$s"
 msgid "%1$s &rarr; %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s → %2$s"
 
 #: inc/admin/options-init.php:1549
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2543
@@ -2551,10 +2440,8 @@ msgid "WooCommerce"
 msgstr "WooCommerce"
 
 #: inc/admin/options-init.php:1550
-#, fuzzy
-#| msgid "Blog Sidebar"
 msgid "Shop Sidebar"
-msgstr "Barre latérale du blog"
+msgstr "Barre latérale de la boutique"
 
 #: inc/admin/options-init.php:1552
 msgid "Select the woocommerce sidebar alignment."
@@ -2624,33 +2511,30 @@ msgstr ""
 "&gt; Widgets%2$s."
 
 #: inc/admin/options-init.php:1760 inc/admin/options-init.php:1765
-#, fuzzy
-#| msgid "Footer Position"
 msgid "Footer Info Section"
-msgstr "Footer Position"
+msgstr "Section d’informations de pied de page"
 
 #: inc/admin/options-init.php:1766
 msgid ""
 "Add a section for displaying information in the footer, including your logo, "
 "menus, copyright, etc."
 msgstr ""
+"Ajoutez une section pour afficher les informations dans le pied de page, y "
+"compris votre logo, vos menus, vos droits d’auteur, etc."
 
 #: inc/admin/options-init.php:1773
 msgid "Footer Style"
 msgstr "Style du pied de page"
 
 #: inc/admin/options-init.php:1774
-#, fuzzy
-#| msgid "Select your text color for custom heading section."
 msgid "Select the layout of your footer info section."
 msgstr ""
-"Sélectionnez votre couleur de texte pour la section d'en-tête personnalisée."
+"Sélectionnez la mise en page de la section d’informations de votre pied de "
+"page."
 
 #: inc/admin/options-init.php:1784 inc/admin/options-init.php:1823
-#, fuzzy
-#| msgid "After Content"
 msgid "Left Side Content"
-msgstr "Après le contenu"
+msgstr "Contenu du côté gauche"
 
 #: inc/admin/options-init.php:1789
 msgid "Footer Logo"
@@ -2672,71 +2556,56 @@ msgstr "Ajustez la taille de votre logo de pied de page"
 
 #. translators: 1. Break the current line.
 #: inc/admin/options-init.php:1803
-#, fuzzy
-#| msgid ""
-#| "Maximum logo width 350px.<br ?>If the logo size is taller than the footer "
-#| "height, it will be made smaller to fit within the footer."
 msgid ""
 "Maximum logo width 350px.%sIf the logo size is taller than the footer "
 "height, it will be made smaller to fit within the footer."
 msgstr ""
-"Largeur maximale du logo 350px.<br ?>Si la taille du logo est plus grande "
-"que la hauteur du pied de page, il sera plus petit pour tenir dans le pied "
-"de page."
+"Largeur maximale du logo 350px. %s Si la taille du logo est plus grande que "
+"la hauteur du pied de page, il sera réduit pour s’adapter au pied de page."
 
 #: inc/admin/options-init.php:1815
-#, fuzzy
-#| msgid "Footer Tagline"
 msgid "Logo Tagline"
-msgstr "Slogan du pied de page"
+msgstr "Logo Slogan"
 
 #: inc/admin/options-init.php:1816
 msgid "Add a tagline next to your logo."
 msgstr "Ajoutez un slogan à côté de votre logo."
 
 #: inc/admin/options-init.php:1829
-#, fuzzy
-#| msgid "Footer Secondary Menu"
 msgid "Footer Primary Menu"
-msgstr "Menu secondaire du pied de page"
+msgstr "Menu principal de pied de page"
 
 #: inc/admin/options-init.php:1830 inc/admin/options-init.php:1856
-#, fuzzy
-#| msgid "Select menu from the dropdown."
 msgid "Select a navigation menu from the dropdown."
-msgstr "Sélectionnez le menu depuis le menu déroulant."
+msgstr "Sélectionnez un menu de navigation dans la liste déroulante."
 
 #: inc/admin/options-init.php:1838
-#, fuzzy
-#| msgid "Copyright Text"
 msgid "Copyright Notice"
-msgstr "Texte de copyright"
+msgstr "Notice de droit d'auteur"
 
 #: inc/admin/options-init.php:1839
 msgid ""
 "Use the shortcode [buddyboss_current_year] to always display the current "
 "year before your copyright notice."
 msgstr ""
+"Utilisez le shortcode [buddyboss_current_year] pour toujours afficher "
+"l’année en cours avant votre avis de droit d’auteur."
 
 #: inc/admin/options-init.php:1855
 msgid "Footer Menu"
 msgstr "Menu du pied de page"
 
 #: inc/admin/options-init.php:1864
-#, fuzzy
-#| msgid "After Content"
 msgid "Right Side Content"
-msgstr "Après le contenu"
+msgstr "Contenu du côté droit"
 
 #: inc/admin/options-init.php:1870
 msgid "Footer Description"
 msgstr "Description du pied de page"
 
 #: inc/admin/options-init.php:1871
-#, fuzzy
-#| msgid "Enter content or shortcode to show on footer right side."
 msgid "Enter text or shortcode to display in your footer."
-msgstr "Entrez le contenu ou le code de raccourci à afficher en bas à droite."
+msgstr "Entrez du texte ou un shortcode à afficher dans votre pied de page."
 
 #: inc/admin/options-init.php:1887 inc/admin/options-init.php:2737
 #: inc/admin/options-init.php:2753
@@ -2746,12 +2615,12 @@ msgstr "Réseaux sociaux"
 #: inc/admin/options-init.php:1888
 msgid "Enter URLs to social links to display as icons in the footer."
 msgstr ""
+"Entrez les URL des liens sociaux à afficher sous forme d’icônes dans le pied "
+"de page."
 
 #: inc/admin/options-init.php:1898
-#, fuzzy
-#| msgid "Login / Register"
 msgid "Login &amp; Registration"
-msgstr "Connexion / Inscription"
+msgstr "Connexion &amp; Inscription"
 
 #: inc/admin/options-init.php:1907
 msgid "Custom Login/Register Screen"
@@ -2785,10 +2654,8 @@ msgid "Value between 50 and 320px"
 msgstr "Valeur entre 50 et 320px"
 
 #: inc/admin/options-init.php:1939
-#, fuzzy
-#| msgid "Toggle custom background"
 msgid "Toggle Custom Background"
-msgstr "Basculer l'arrière-plan personnalisé"
+msgstr "Basculer l’arrière-plan personnalisé"
 
 #: inc/admin/options-init.php:1940
 msgid "Set custom background design on or off."
@@ -2813,10 +2680,8 @@ msgid "We display a custom title above the background image."
 msgstr "Nous affichons un titre personnalisé au-dessus de l'image de fond."
 
 #: inc/admin/options-init.php:1959 inc/admin/options-init.php:2493
-#, fuzzy
-#| msgid "Custom Heading"
 msgid "Custom login heading"
-msgstr "En-tête personnalisée"
+msgstr "En-tête de connexion personnalisé"
 
 #: inc/admin/options-init.php:1966
 msgid "Custom Text"
@@ -2867,7 +2732,7 @@ msgstr ""
 
 #: inc/admin/options-init.php:2023
 msgid "In the Grid layout, the first post will be enlarged."
-msgstr ""
+msgstr "Dans la disposition Grille, le premier message sera agrandi."
 
 #: inc/admin/options-init.php:2030
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1548
@@ -2881,7 +2746,7 @@ msgstr "Liste"
 
 #: inc/admin/options-init.php:2035
 msgid "Masonry"
-msgstr ""
+msgstr "Masonry"
 
 #: inc/admin/options-init.php:2040
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:91
@@ -2894,104 +2759,97 @@ msgstr "Article seul"
 
 #: inc/admin/options-init.php:2052 inc/admin/options-init.php:2516
 #: inc/admin/options-init.php:2630
-#, fuzzy
-#| msgid "Featured Image Style"
 msgid "Featured Image"
-msgstr "Style de l'image mise en avant"
+msgstr "Image à la une"
 
 #: inc/admin/options-init.php:2053
-#, fuzzy
-#| msgid "Select the blog post sidebar alignment."
 msgid "Select the style of featured images in your blog posts."
-msgstr "Sélectionnez l'alignement de la barre latérale du blog."
+msgstr "Sélectionnez le style des images en vedette dans vos articles de blog."
 
 #: inc/admin/options-init.php:2057
-#, fuzzy
-#| msgid "In fullwidth the sidebar will not be visible."
 msgid "In the Full Width layouts, the sidebar will not be visible."
-msgstr "En pleine largeur, la barre latérale ne sera pas visible."
+msgstr ""
+"Dans les mises en page pleine largeur, la barre latérale ne sera pas visible."
 
 #: inc/admin/options-init.php:2069
 msgid "Full Width (Below Title)"
-msgstr ""
+msgstr "Pleine largeur (sous le titre)"
 
 #: inc/admin/options-init.php:2074
 msgid "Full Width (Above Title)"
-msgstr ""
+msgstr "Pleine largeur (au-dessus du titre)"
 
 #: inc/admin/options-init.php:2087
-#, fuzzy
-#| msgid "Related Jobs"
 msgid "Related Posts"
-msgstr "Offres similaires"
+msgstr "Articles similaires"
 
 #: inc/admin/options-init.php:2088
-#, fuzzy
-#| msgid "Limit the number of related posts on single blog page"
 msgid "Show related posts under single blog posts."
-msgstr "Limiter le nombre d'articles relatifs sur une seule page de blog"
+msgstr "Afficher les articles connexes sous des articles de blog uniques."
 
 #: inc/admin/options-init.php:2096
-#, fuzzy
-#| msgid "Limit the number of related posts on single blog page"
 msgid "Enter the maximum number of related posts to show."
-msgstr "Limiter le nombre d'articles relatifs sur une seule page de blog"
+msgstr "Entrez le nombre maximal de publications associées à afficher."
 
 #: inc/admin/options-init.php:2110
-#, fuzzy
-#| msgid "Enable Post Author Box"
 msgid "Post Author Box"
-msgstr "Activer la boîte d'informations sur l'auteur"
+msgstr "Boîte d’infos d’auteur"
 
 #: inc/admin/options-init.php:2111
 msgid "Show information about the post’s author below the post."
-msgstr ""
+msgstr "Affichez des informations sur l’auteur de l’article sous le message."
 
 #: inc/admin/options-init.php:2124
-#, fuzzy
-#| msgid "Enable Floating Social Share"
 msgid "Floating Social Share"
-msgstr "Activer le partage social flottant"
+msgstr "Partage social flottant"
 
 #: inc/admin/options-init.php:2125
 msgid "Show floating icons for sharing the post on Facebook and Twitter."
 msgstr ""
+"Afficher des icônes flottantes pour partager la publication sur Facebook et "
+"Twitter."
 
 #: inc/admin/options-init.php:2126
 msgid ""
 "Social share icons will be visible underneath the post, even when the "
 "floating icons are disabled."
 msgstr ""
+"Les icônes de partage social seront visibles sous la publication, même "
+"lorsque les icônes flottantes sont désactivées."
 
 #: inc/admin/options-init.php:2139
-#, fuzzy
-#| msgid "Enable BuddyPress Profile Link"
 msgid "BuddyBoss Profile Link"
-msgstr "Activer le lien du profil BuddyPress"
+msgstr "Lien de profil BuddyBoss"
 
 #: inc/admin/options-init.php:2140
 msgid "Link the post author’s name to their BuddyBoss profile."
-msgstr ""
+msgstr "Liez le nom de l’auteur de la publication à son profil BuddyBoss."
 
 #: inc/admin/options-init.php:2141
 msgid ""
 "When disabled, the post author’s name will link to an archive displaying all "
 "their posts."
 msgstr ""
+"Lorsqu’il est désactivé, le nom de l’auteur de l’article sera lié à une "
+"archive affichant tous ses messages."
 
 #: inc/admin/options-init.php:2154
 msgid "Call to Action / Sign Up Form"
-msgstr ""
+msgstr "Appel à l’action / Formulaire d’inscription"
 
 #: inc/admin/options-init.php:2155
 msgid ""
 "Show a call to action, such as a sign up form or advertisement, under the "
 "blog post."
 msgstr ""
+"Affichez un appel à l’action, tel qu’un formulaire d’inscription ou une "
+"publicité, sous l’article de blog."
 
 #: inc/admin/options-init.php:2163
 msgid "Enter the content for the call to action. You can add shortcodes here."
 msgstr ""
+"Entrez le contenu de l’appel à l’action. Vous pouvez ajouter des shortcodes "
+"ici."
 
 #: inc/admin/options-init.php:2184
 #: inc/plugins/elementor/widgets/bb-forums.php:40
@@ -3073,6 +2931,8 @@ msgid ""
 "Find answers, ask questions, and connect with our <br>community around the "
 "world."
 msgstr ""
+"Trouvez des réponses, posez des questions et connectez-vous avec notre "
+"<br>communauté dans le monde entier."
 
 #: inc/admin/options-init.php:2280
 msgid "Enable Search"
@@ -3143,6 +3003,9 @@ msgid ""
 "Display the course author bio on single courses. This data comes from the "
 "\"Biographical Info\" section when editing a user in the backend."
 msgstr ""
+"Affichez la biographie de l'auteur du cours sur des cours uniques. Ces "
+"données proviennent de la section \"Informations biographiques\" lors de "
+"l'édition d'un utilisateur dans le backend."
 
 #: inc/admin/options-init.php:2363 inc/admin/options-init.php:2449
 msgid "Course Date"
@@ -3211,7 +3074,7 @@ msgstr "Entrez un titre pour votre page 404."
 
 #: inc/admin/options-init.php:2494
 msgid "Looks like you got lost!"
-msgstr ""
+msgstr "On dirait que vous vous êtes perdu!"
 
 #: inc/admin/options-init.php:2499 inc/admin/options-init.php:2612
 msgid "Page Description"
@@ -3219,33 +3082,29 @@ msgstr "Description de la page"
 
 #: inc/admin/options-init.php:2500
 msgid "Enter a description for your 404 page."
-msgstr ""
+msgstr "Entrez une description pour votre page 404."
 
 #: inc/admin/options-init.php:2502
-#, fuzzy
-#| msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgid "We couldn't find the page you were looking for."
-msgstr "Il semble que nous ne pouvons pas trouver ce que vous rechercher."
+msgstr "Nous n’avons pas trouvé la page que vous cherchiez."
 
 #: inc/admin/options-init.php:2517
 msgid "Select which type of image to use on your 404 page."
-msgstr ""
+msgstr "Sélectionnez le type d’image à utiliser sur votre page 404."
 
 #: inc/admin/options-init.php:2520
 msgid "2.0"
-msgstr ""
+msgstr "2.0"
 
 #: inc/admin/options-init.php:2521
 msgid "1.0"
-msgstr ""
+msgstr "1.0"
 
 #: inc/admin/options-init.php:2522
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:121
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:730
-#, fuzzy
-#| msgid "Customizer"
 msgid "Custom"
-msgstr "Personnalisation"
+msgstr "Personnalisé"
 
 #: inc/admin/options-init.php:2523
 #: inc/plugins/beaver-builder/header-bar/header-bar.php:352
@@ -3258,7 +3117,7 @@ msgstr "Aucun"
 
 #: inc/admin/options-init.php:2531
 msgid "The image will be tinted with your <b>Primary Color</b>."
-msgstr ""
+msgstr "L’image sera teintée avec votre <b>couleur primaire</b>."
 
 #: inc/admin/options-init.php:2552
 msgid "Page Button"
@@ -3266,7 +3125,7 @@ msgstr "Bouton Page"
 
 #: inc/admin/options-init.php:2553
 msgid "Show a button at the bottom of your 404 page."
-msgstr ""
+msgstr "Affichez un bouton au bas de votre page 404."
 
 #: inc/admin/options-init.php:2561
 #: inc/plugins/elementor/widgets/bb-forums-activity.php:144
@@ -3277,26 +3136,20 @@ msgid "Button Text"
 msgstr "Texte du bouton"
 
 #: inc/admin/options-init.php:2562
-#, fuzzy
-#| msgid "Enter no forums button text"
 msgid "Enter the text for your button."
-msgstr "Texte du bouton Ne pas entrer dans les forums"
+msgstr "Entrez le texte de votre bouton."
 
 #: inc/admin/options-init.php:2563
-#, fuzzy
-#| msgid "Return"
 msgid "Return Home"
-msgstr "Retour"
+msgstr "Retour à la page d’accueil"
 
 #: inc/admin/options-init.php:2569
 msgid "Button Link"
 msgstr "Lien du bouton"
 
 #: inc/admin/options-init.php:2570
-#, fuzzy
-#| msgid "Enter no forums button text"
 msgid "Enter the URL for your button."
-msgstr "Texte du bouton Ne pas entrer dans les forums"
+msgstr "Entrez l’URL de votre bouton."
 
 #: inc/admin/options-init.php:2579 inc/admin/options-init.php:2606
 msgid "Maintenance Mode"
@@ -3311,60 +3164,51 @@ msgid ""
 "If enabled, only site administrators will be able to login to your site. "
 "Logged-out members will see the maintenance mode page."
 msgstr ""
+"Si cette option est activée, seuls les administrateurs de site pourront se "
+"connecter à votre site. Les membres déconnectés verront la page du mode de "
+"maintenance."
 
 #: inc/admin/options-init.php:2597
-#, fuzzy
-#| msgid "Tabbed Content"
 msgid "Page Content"
-msgstr "Contenu par onglet"
+msgstr "Contenu de la page"
 
 #: inc/admin/options-init.php:2604
-#, fuzzy
-#| msgid "Title that will be shown on Maintenance page."
 msgid "Enter a title for your maintenance mode page."
-msgstr "Titre qui sera affiché sur la page de maintenance."
+msgstr "Entrez un titre pour votre page de mode de maintenance."
 
 #: inc/admin/options-init.php:2605
-#, fuzzy
-#| msgid "Maintenance Mode"
 msgid "Custom Maintenance Title"
-msgstr "Mode Maintenance"
+msgstr "Titre de maintenance personnalisé"
 
 #: inc/admin/options-init.php:2613
 msgid "Enter a description for your maintenance mode page."
-msgstr ""
+msgstr "Entrez une description pour votre page de mode de maintenance."
 
 #: inc/admin/options-init.php:2615
 msgid "Undergoing scheduled maintenance. <br>Sorry for the inconvenience."
-msgstr ""
+msgstr "En cours d’entretien programmé. <br>Désolé pour la gêne occasionnée."
 
 #: inc/admin/options-init.php:2631
 msgid "Show a featured image on your maintenance mode page."
-msgstr ""
+msgstr "Affichez une image en vedette sur votre page de mode maintenance."
 
 #: inc/admin/options-init.php:2646
-#, fuzzy
-#| msgid "Button Text"
 msgid "Bottom Text"
-msgstr "Texte du bouton"
+msgstr "Texte inférieur"
 
 #: inc/admin/options-init.php:2647
 msgid "Enter text for the bottom of your maintenance mode page."
-msgstr ""
+msgstr "Entrez du texte au bas de votre page de mode de maintenance."
 
 #. translators: 1. email url
 #: inc/admin/options-init.php:2650
-#, fuzzy
-#| msgid "Contact us"
 msgid "Contact us at  %1$s"
-msgstr "Contactez-nous"
+msgstr "Contactez-nous à %1$s"
 
 #. translators: 1. Link URL. 2. Link text.
 #: inc/admin/options-init.php:2672
-#, fuzzy
-#| msgid "Counter"
 msgid "Countdown Timer"
-msgstr "Compteur"
+msgstr "Compte à rebours"
 
 #: inc/admin/options-init.php:2678
 msgid "Enable Countdown"
@@ -3375,56 +3219,52 @@ msgid ""
 "Enter the date the timer should count down to, using the following date "
 "format: MM/DD/YYYY"
 msgstr ""
+"Entrez la date à laquelle le compte à rebours doit être atteint, en "
+"utilisant le format de date suivant : MM/JJ/AAAA"
 
 #: inc/admin/options-init.php:2695
-#, fuzzy
-#| msgid "Tabbed Content"
 msgid "Featured Content"
-msgstr "Contenu par onglet"
+msgstr "Contenu en vedette"
 
 #: inc/admin/options-init.php:2701
-#, fuzzy
-#| msgid "Enable Related Posts"
 msgid "Enable Featured Content"
-msgstr "Activer les articles relatifs"
+msgstr "Activer le contenu en vedette"
 
 #: inc/admin/options-init.php:2702
 msgid "Enable a featured content section on your maintenance mode page."
 msgstr ""
+"Activez une section de contenu en vedette sur votre page de mode de "
+"maintenance."
 
 #: inc/admin/options-init.php:2711
-#, fuzzy
-#| msgid "Section"
 msgid "Section Title"
-msgstr "Section"
+msgstr "Titre de la section"
 
 #: inc/admin/options-init.php:2712
 msgid "Enter a title for your featured content section."
-msgstr ""
+msgstr "Entrez un titre pour votre section de contenu en vedette."
 
 #: inc/admin/options-init.php:2713
 msgid "Subscribe Title"
 msgstr "Titre souscription"
 
 #: inc/admin/options-init.php:2719
-#, fuzzy
-#| msgid "Show Content"
 msgid "Section Content"
-msgstr "Afficher le contenu"
+msgstr "Contenu de la section"
 
 #: inc/admin/options-init.php:2720
 msgid "You can use shortcodes in this content."
 msgstr "Vous pouvez utiliser des shortcodes dans ce contenu."
 
 #: inc/admin/options-init.php:2743
-#, fuzzy
-#| msgid "Enable Social Networks"
 msgid "Enable Social Links"
-msgstr "Activer les réseaux sociaux"
+msgstr "Activer les liens sociaux"
 
 #: inc/admin/options-init.php:2744
 msgid "Show links to your social networks on your maintenance mode page."
 msgstr ""
+"Affichez des liens vers vos réseaux sociaux sur votre page en mode "
+"maintenance."
 
 #: inc/admin/options-init.php:2763
 msgid "Custom Codes"
@@ -3515,11 +3355,11 @@ msgstr "BuddyBoss Theme"
 
 #: inc/admin/options-init.php:2939
 msgid "Follow BuddyBoss on YouTube"
-msgstr ""
+msgstr "Suivez BuddyBoss sur YouTube"
 
 #: inc/admin/options-init.php:2944
 msgid "Follow BuddyBoss on Twitter"
-msgstr ""
+msgstr "Suivez BuddyBoss sur Twitter"
 
 #: inc/admin/options-init.php:2949
 msgid "Like BuddyBoss on Facebook"
@@ -3698,6 +3538,8 @@ msgid ""
 "Warning: Access Restricted. Please enable BuddyBoss Theme License key <a "
 "href=\"%s\">here</a> and try again."
 msgstr ""
+"Avertissement: accès restreint. Veuillez activer la clé de licence du thème "
+"BuddyBoss <a href=\"%s\">ici</a> et réessayer."
 
 #: inc/custom-fonts/classes/class-buddyboss-custom-fonts-cpt.php:264
 #: inc/custom-fonts/classes/class-buddyboss-custom-fonts-cpt.php:342
@@ -3942,7 +3784,7 @@ msgstr "OneSocial Theme"
 
 #: inc/lib/buddyboss-updater/includes/functions.php:118
 msgid "BB Theme & Platform Pro"
-msgstr ""
+msgstr "BB Thème - Plateform Pro"
 
 #: inc/lib/buddyboss-updater/includes/functions.php:128
 #: inc/lib/buddyboss-updater/includes/functions.php:169
@@ -4219,7 +4061,7 @@ msgstr ""
 
 #: inc/plugins/bbpress-helper.php:111
 msgid "Type your reply here"
-msgstr ""
+msgstr "Tapez votre réponse ici"
 
 #: inc/plugins/bbpress-helper.php:528 inc/plugins/bbpress-helper.php:529
 msgid "Quick Reply"
@@ -4684,32 +4526,24 @@ msgid "Icon Style"
 msgstr "Style de l’icone"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:618
-#, fuzzy
-#| msgid "Lines"
 msgid "Lined"
-msgstr "Lignes"
+msgstr "Bordures"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:622
-#, fuzzy
-#| msgid "Star: Filled"
 msgid "Filled"
-msgstr "Étoile: remplie"
+msgstr "Rempli"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:629
-#, fuzzy
-#| msgid "Border Style"
 msgid "Box Style"
-msgstr "Style de bordure"
+msgstr "Style de boite"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:638
 msgid "Boxed"
-msgstr ""
+msgstr "Encadré"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:642
-#, fuzzy
-#| msgid "Refunded"
 msgid "Rounded"
-msgstr "Remboursé"
+msgstr "Arrondi"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:649
 msgid "Hide Label"
@@ -4722,10 +4556,8 @@ msgid "No"
 msgstr "Non"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:665
-#, fuzzy
-#| msgid "Logo Position"
 msgid "Icon Position"
-msgstr "Position du logo"
+msgstr "Position de l'icône"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:670
 msgid "Before"
@@ -4764,10 +4596,8 @@ msgid "Sub"
 msgstr "Sous"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:721
-#, fuzzy
-#| msgid "Icons Size"
 msgid "Icon Size"
-msgstr "Taille des icônes"
+msgstr "Taille de l’icône"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:726
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:914
@@ -4802,30 +4632,28 @@ msgid "Preview"
 msgstr "Aperçu"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:906
-#, fuzzy
-#| msgid "Account Settings"
 msgid "Icon Settings"
-msgstr "Paramètres du compte"
+msgstr "Paramètres de l'icône"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:907
-#, fuzzy
-#| msgid "Header"
 msgid "Header Menu"
-msgstr "En-tête"
+msgstr "Menu d’entête"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:908
 msgid "Select an icon to configure its appearance."
-msgstr ""
+msgstr "Sélectionnez une icône pour configurer son apparence."
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:909
 msgid "Tip:"
-msgstr ""
+msgstr "Astuce :"
 
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:909
 msgid ""
 "If you select lined, the icon will be dynamically changed to filled when the "
 "menu item is active."
 msgstr ""
+"Si vous sélectionnez lined, l’icône sera dynamiquement remplacée par remplie "
+"lorsque l’élément de menu est actif."
 
 #. translators: Description with link.
 #: inc/plugins/buddyboss-menu-icons/includes/settings.php:912
@@ -4833,6 +4661,8 @@ msgid ""
 "Menu labels are hidden in your header menu as you've set your %s to Tab Bar "
 "Menu."
 msgstr ""
+"Les étiquettes de menu sont masquées dans votre menu d’en-tête lorsque vous "
+"avez défini votre %s sur Menu de la barre d’onglets."
 
 #: inc/plugins/buddyboss-menu-icons/menu-icons.php:109
 msgid ""
@@ -4902,16 +4732,12 @@ msgid "All Categories"
 msgstr "Toutes les catégories"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/loader.php:270
-#, fuzzy
-#| msgid "Search Icon"
 msgid "Search Icons..."
-msgstr "Icône de recherche"
+msgstr "Icônes de recherche..."
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/loader.php:271
-#, fuzzy
-#| msgid "Search forums..."
 msgid "Search Library..."
-msgstr "Rechercher des forums ..."
+msgstr "Rechercher dans la bibliothèque..."
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:60
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:64
@@ -4947,44 +4773,32 @@ msgid "Brands"
 msgstr "Marques"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:76
-#, fuzzy
-#| msgid "Interactive"
 msgid "Interfaces"
-msgstr "Interactif"
+msgstr "Interfaces"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:80
-#, fuzzy
-#| msgid "Media Size"
 msgid "Media & Files"
-msgstr "Taille des médias"
+msgstr "Médias et fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:84
-#, fuzzy
-#| msgid "Eject"
 msgid "Objects"
-msgstr "Éjecter"
+msgstr "Objets"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:88
-#, fuzzy
-#| msgid "Shopping Cart Sign"
 msgid "Shopping & Money"
-msgstr "Signe de panier d'achat"
+msgstr "Shopping & Argent"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:92
 msgid "Technology"
-msgstr ""
+msgstr "Technologie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:96
-#, fuzzy
-#| msgid "Formatting"
 msgid "Text & Formatting"
-msgstr "Mise en forme"
+msgstr "Texte et mise en forme"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:100
-#, fuzzy
-#| msgid "User: Remove"
 msgid "Users & People"
-msgstr "Utilisateur: supprimer"
+msgstr "Utilisateurs et personnes"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:128
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:153
@@ -4995,10 +4809,8 @@ msgid "Activity"
 msgstr "Activité"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:133
-#, fuzzy
-#| msgid "Activity"
 msgid "Activity Slash"
-msgstr "Activité"
+msgstr "Barre oblique d’activité"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:138
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:106
@@ -5014,8 +4826,6 @@ msgid "Airplay"
 msgstr "Diffusion"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:148
-#, fuzzy
-#| msgid "Watch Alarm"
 msgid "Alarm"
 msgstr "Alarme"
 
@@ -5034,10 +4844,8 @@ msgid "Align Center"
 msgstr "Alignement au centre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:163
-#, fuzzy
-#| msgid "Align: Justify"
 msgid "Align Justify"
-msgstr "Aligner: Justifier"
+msgstr "Alignement Justifié"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:168
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:409
@@ -5069,7 +4877,7 @@ msgstr "Ancre"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:224
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:181
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:188
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:234
@@ -5120,7 +4928,7 @@ msgstr "Ouverture"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:274
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:191
 msgid "Apple"
-msgstr ""
+msgstr "Apple"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:238
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:146
@@ -5151,26 +4959,20 @@ msgid "Arrow Up"
 msgstr "Flèche vers le haut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:263
-#, fuzzy
-#| msgid "Graph: Horizontal"
 msgid "Arrows Horizontal"
-msgstr "Graphique: horizontal"
+msgstr "Flèches verticales"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:268
-#, fuzzy
-#| msgid "Resize Vertical"
 msgid "Arrows Vertical"
-msgstr "Redimensionner verticalalement"
+msgstr "Flèches verticales"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:273
-#, fuzzy
-#| msgid "Related Articles"
 msgid "Article"
-msgstr "Articles liés"
+msgstr "Article"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:278
 msgid "Article Slash"
-msgstr ""
+msgstr "Barre oblique de l’article"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:283
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:166
@@ -5186,10 +4988,8 @@ msgstr "À"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:293
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:288
-#, fuzzy
-#| msgid "Attachment"
 msgid "Attach"
-msgstr "Pièce jointe"
+msgstr "Attacher"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:298
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:404
@@ -5208,10 +5008,8 @@ msgid "Backward"
 msgstr "Précédent"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:313
-#, fuzzy
-#| msgid "Ball: Soccer"
 msgid "Ball Soccer"
-msgstr "Ballon: Soccer"
+msgstr "Ballon de football"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:318
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:439
@@ -5219,10 +5017,8 @@ msgid "Bars"
 msgstr "Bars"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:323
-#, fuzzy
-#| msgid "Bars"
 msgid "Bars 2"
-msgstr "Bars"
+msgstr "Barres 2"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:328
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:333
@@ -5234,38 +5030,28 @@ msgid "Battery"
 msgstr "Batterie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:333
-#, fuzzy
-#| msgid "Battery: Empty"
 msgid "Battery Empty"
-msgstr "Batterie: vide"
+msgstr "Batterie vide"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:338
-#, fuzzy
-#| msgid "Battery: Full"
 msgid "Battery Full"
 msgstr "Batterie: pleine"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:343
-#, fuzzy
-#| msgid "Battery: Half"
 msgid "Battery Half"
-msgstr "Batterie: Moitié Remplie"
+msgstr "Moitié de batterie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:348
-#, fuzzy
-#| msgid "Battery: Full"
 msgid "Battery Quarter"
-msgstr "Batterie: pleine"
+msgstr "Quartier de la batterie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:353
-#, fuzzy
-#| msgid "Battery"
 msgid "Battery Slash"
-msgstr "Batterie"
+msgstr "Barre oblique de la batterie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:358
 msgid "Battery Three Quarters"
-msgstr ""
+msgstr "Batterie Trois Quarts"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:363
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:343
@@ -5278,16 +5064,12 @@ msgid "Bell"
 msgstr "Cloche"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:368
-#, fuzzy
-#| msgid "Bell: Plus"
 msgid "Bell Plus"
-msgstr "Cloche: plus"
+msgstr "Bell Plus"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:373
-#, fuzzy
-#| msgid "Bell: Plus"
 msgid "Bell Slash"
-msgstr "Cloche: plus"
+msgstr "Cloche (pointillés)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:378
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:363
@@ -5324,10 +5106,8 @@ msgid "Book"
 msgstr "Réserver"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:398
-#, fuzzy
-#| msgid "Book: Open"
 msgid "Book Open"
-msgstr "Livre: Ouvert"
+msgstr "Livre ouvert"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:403
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:408
@@ -5340,10 +5120,8 @@ msgid "Bookmark"
 msgstr "Favoris"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:408
-#, fuzzy
-#| msgid "Book"
 msgid "Books"
-msgstr "Réserver"
+msgstr "Livres"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:413
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:423
@@ -5368,40 +5146,28 @@ msgid "Briefcase"
 msgstr "Porte-documents"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:423
-#, fuzzy
-#| msgid "Arrows"
 msgid "Browser"
-msgstr "Flèches"
+msgstr "Navigateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:428
-#, fuzzy
-#| msgid "Board: Code"
 msgid "Browser Code"
-msgstr "Board: Code"
+msgstr "Code du navigateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:433
-#, fuzzy
-#| msgid "Terminal"
 msgid "Browser Terminal"
-msgstr "Terminal"
+msgstr "Terminal de navigateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:443
-#, fuzzy
-#| msgid "BuddyBoss"
 msgid "BuddyBoss App"
-msgstr "BuddyBoss"
+msgstr "BuddyBoss App"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:448
-#, fuzzy
-#| msgid "BuddyBoss Wall"
 msgid "BuddyBoss Bolt"
-msgstr "Mur BuddyBoss"
+msgstr "BuddyBoss Bolt"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:453
-#, fuzzy
-#| msgid "BuddyBoss"
 msgid "BuddyPress"
-msgstr "BuddyBoss"
+msgstr "BuddyPress"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:458
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:599
@@ -5445,16 +5211,12 @@ msgid "Camera"
 msgstr "Caméra"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:483
-#, fuzzy
-#| msgid "Camera: Small"
 msgid "Camera Slash"
-msgstr "Camera: Small"
+msgstr "Barre oblique de la caméra"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:493
-#, fuzzy
-#| msgid "Car: Small"
 msgid "Car Small"
-msgstr "Car: Small"
+msgstr "Voiture petite"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:498
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:286
@@ -5551,10 +5313,8 @@ msgid "Check"
 msgstr "Vérifier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:563
-#, fuzzy
-#| msgid "Check"
 msgid "Checkbox"
-msgstr "Vérifier"
+msgstr "Case à cocher"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:568
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:568
@@ -5624,10 +5384,8 @@ msgid "Cloud Lightning"
 msgstr "Nuage: Foudre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:613
-#, fuzzy
-#| msgid "Cloud: Rain"
 msgid "Cloud Rain"
-msgstr "Nuage: Pluie"
+msgstr "Pluie nuageuse"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:618
 #, fuzzy
@@ -5636,8 +5394,6 @@ msgid "Cloud Slash"
 msgstr "Nuage Téléversement"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:623
-#, fuzzy
-#| msgid "Cloud: Snow"
 msgid "Cloud Snow"
 msgstr "Nuage: Neige"
 
@@ -5655,7 +5411,7 @@ msgstr "Nuage Téléversement"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:638
 msgid "Clubhouse"
-msgstr ""
+msgstr "Clubhouse"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:643
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:909
@@ -5673,10 +5429,8 @@ msgstr "Image de marque modeste"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:653
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:894
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:233
-#, fuzzy
-#| msgid "Codepen"
 msgid "CodePen"
-msgstr "Codepen"
+msgstr "CodePen"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:658
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:376
@@ -5694,11 +5448,11 @@ msgstr "Rouages"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:668
 msgid "Coin"
-msgstr ""
+msgstr "Pièce de monnaie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:673
 msgid "Coins"
-msgstr ""
+msgstr "Pièces de monnaie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:678
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:919
@@ -5724,46 +5478,32 @@ msgid "Comment"
 msgstr "Commentaire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:693
-#, fuzzy
-#| msgid "Comment: Activity"
 msgid "Comment Activity"
-msgstr "Commentaire: Activité"
+msgstr "Activité de commentaire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:698
-#, fuzzy
-#| msgid "Comment: Quotes"
 msgid "Comment Dots"
-msgstr "Commentaire: citations"
+msgstr "Afficher les points"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:703
-#, fuzzy
-#| msgid "Admin Notifications"
 msgid "Comment Notification"
-msgstr "Notifications d'Admin"
+msgstr "%s notification"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:708
-#, fuzzy
-#| msgid "Comments"
 msgid "Comment Slash"
-msgstr "Commentaires"
+msgstr "Barre oblique d’activité"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:713
-#, fuzzy
-#| msgid "Comment: Square"
 msgid "Comment Square"
-msgstr "Commentaire: Carré"
+msgstr "Commentaire Carré"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:718
-#, fuzzy
-#| msgid "Comment: Square"
 msgid "Comment Square Dots"
-msgstr "Commentaire: Carré"
+msgstr "Commentaire Points carrés"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:723
-#, fuzzy
-#| msgid "Comment: Square"
 msgid "Comment Square Slash"
-msgstr "Commentaire: Carré"
+msgstr "Commentaire Barre oblique carrée"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:728
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:174
@@ -5830,8 +5570,6 @@ msgid "Corner Right"
 msgstr "Coin: Droite Haut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:778
-#, fuzzy
-#| msgid "Courses"
 msgid "Course"
 msgstr "Cours"
 
@@ -5876,70 +5614,48 @@ msgid "Cube"
 msgstr "Cube"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:813
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Bitcoin"
-msgstr "Devise"
+msgstr "Devise Bitcoin"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:818
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Crypto"
-msgstr "Devise"
+msgstr "Devise Crypto"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:823
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Dollar"
-msgstr "Devise"
+msgstr "Devise Dollar"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:828
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Euro"
-msgstr "Devise"
+msgstr "Devise Euro"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:833
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Lira"
-msgstr "Devise"
+msgstr "Devise Lire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:838
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Peso"
-msgstr "Devise"
+msgstr "Devise Peso"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:843
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Pound"
-msgstr "Devise"
+msgstr "Devise Livre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:848
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Ruble"
-msgstr "Devise"
+msgstr "Devise Rouble"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:853
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Rupee"
-msgstr "Devise"
+msgstr "Devise Roupie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:858
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Won"
-msgstr "Devise"
+msgstr "Devise gagnée"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:863
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Yen"
-msgstr "Devise"
+msgstr "Devise Yen"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:868
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1029
@@ -5953,20 +5669,16 @@ msgid "Database"
 msgstr "Base de données"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:878
-#, fuzzy
-#| msgid "Delete Page"
 msgid "Delete Tag"
-msgstr "Supprimer la page"
+msgstr "Supprimer une balise"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:888
 msgid "Divide"
-msgstr ""
+msgstr "Diviser"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:893
-#, fuzzy
-#| msgid "Circle"
 msgid "Dot Circle"
-msgstr "Cercle"
+msgstr "Cercle de points"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:898
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:808
@@ -5984,10 +5696,8 @@ msgstr "Télécharger"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1109
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:546
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:283
-#, fuzzy
-#| msgid "Dribbble: Circle"
 msgid "Dribbble"
-msgstr "Goutte: Cercle"
+msgstr "Dribbble"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:908
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:828
@@ -5995,10 +5705,8 @@ msgid "Droplet"
 msgstr "Droplet"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:913
-#, fuzzy
-#| msgid "Duplicate Page"
 msgid "Duplicate"
-msgstr "Dupliquer la page"
+msgstr "Dupliquer"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:923
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:461
@@ -6008,42 +5716,32 @@ msgid "Eject"
 msgstr "Éjecter"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:928
-#, fuzzy
-#| msgid "Elementor Pro"
 msgid "Elementor"
-msgstr "Elementor Pro"
+msgstr "Elementor"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:933
-#, fuzzy
-#| msgid "Flip Horizontal"
 msgid "Ellipsis Horizontal"
-msgstr "Retournement horizontal"
+msgstr "Ellipse horizontale"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:938
-#, fuzzy
-#| msgid "Flip Vertical"
 msgid "Ellipsis Vertical"
-msgstr "Retournement vertical"
+msgstr "Ellipse verticale"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:943
 msgid "Emoticon Frown"
-msgstr ""
+msgstr "Froncement de sourcils émoticône"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:948
-#, fuzzy
-#| msgid "Exclamation Sign"
 msgid "Emoticon Smile"
-msgstr "Signe d'exclamation"
+msgstr "Sourire émoticône"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:953
-#, fuzzy
-#| msgid "Icon Link"
 msgid "Emoticon Wink"
-msgstr "Lien de l'icône"
+msgstr "Clin d’œil à l’émoticône"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:958
 msgid "Emotion Laugh"
-msgstr ""
+msgstr "Émotion Rire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:963
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:466
@@ -6057,10 +5755,8 @@ msgid "Envelope"
 msgstr "Enveloppe"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:968
-#, fuzzy
-#| msgid "Envelope"
 msgid "Envelope Open"
-msgstr "Enveloppe"
+msgstr "Enveloppe ouverte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:973
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1209
@@ -6075,10 +5771,8 @@ msgid "Exclamation"
 msgstr "Exclamation"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:983
-#, fuzzy
-#| msgid "Exclamation Sign"
 msgid "Exclamation Triangle"
-msgstr "Signe d'exclamation"
+msgstr "Exclamation (triangle)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:988
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1229
@@ -6105,10 +5799,8 @@ msgid "Eye"
 msgstr "Oeil"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1003
-#, fuzzy
-#| msgid "Slash"
 msgid "Eye Slash"
-msgstr "Slash"
+msgstr "Œil (pointillés)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1008
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:868
@@ -6179,10 +5871,8 @@ msgid "File Audio"
 msgstr "Fichier: Audio"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1053
-#, fuzzy
-#| msgid "Bookmark"
 msgid "File Bookmark"
-msgstr "Favoris"
+msgstr "Ficher de signets"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1058
 #, fuzzy
@@ -6191,10 +5881,8 @@ msgid "File Checklist"
 msgstr "Modification de fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1063
-#, fuzzy
-#| msgid "File: Code"
 msgid "File Cloud"
-msgstr "Fichier: Code"
+msgstr "Nuage de fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1068
 #, fuzzy
@@ -6209,16 +5897,12 @@ msgid "File Contact"
 msgstr "Activer le contact"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1078
-#, fuzzy
-#| msgid "File: Code"
 msgid "File CSS"
-msgstr "Fichier: Code"
+msgstr "Fichier CSS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1083
-#, fuzzy
-#| msgid "File Types"
 msgid "File Design"
-msgstr "Types de Fichiers"
+msgstr "Style du fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1088
 #, fuzzy
@@ -6233,16 +5917,12 @@ msgid "File Dollar"
 msgstr "Dollar"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1098
-#, fuzzy
-#| msgid "Download"
 msgid "File Download"
-msgstr "Télécharger"
+msgstr "Téléchargement du Fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1103
-#, fuzzy
-#| msgid "File: Excel"
 msgid "File Excel"
-msgstr "Fichier: Excel"
+msgstr "Fichier Excel"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1108
 #, fuzzy
@@ -6251,10 +5931,8 @@ msgid "File Exclamation"
 msgstr "Alerte: Exclamation"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1113
-#, fuzzy
-#| msgid "Export"
 msgid "File Export"
-msgstr "Exporter"
+msgstr "Export de fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1118
 #, fuzzy
@@ -6281,22 +5959,16 @@ msgid "File Image"
 msgstr "Fichier: Image"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1138
-#, fuzzy
-#| msgid "File: Word"
 msgid "File Import"
-msgstr "Fichier: Word"
+msgstr "Import souboru"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1143
-#, fuzzy
-#| msgid "Profile: Info"
 msgid "File Info"
-msgstr "Profil: Info"
+msgstr "Information"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1148
-#, fuzzy
-#| msgid "File Edit"
 msgid "File List"
-msgstr "Modification de fichier"
+msgstr "Liste des fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1153
 #, fuzzy
@@ -6336,7 +6008,7 @@ msgstr "Fichier: Powerpoint"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1183
 msgid "File Presentation"
-msgstr ""
+msgstr "Présentation de fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1188
 #, fuzzy
@@ -6351,16 +6023,12 @@ msgid "File RSS"
 msgstr "Fichier: PDF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1198
-#, fuzzy
-#| msgid "File New"
 msgid "File Share"
-msgstr "Fichier nouveau"
+msgstr "Partage de fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1203
-#, fuzzy
-#| msgid "Mobile Signal"
 msgid "File Signature"
-msgstr "Signal mobile"
+msgstr "Signature du fichier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1208
 #, fuzzy
@@ -6369,10 +6037,8 @@ msgid "File Spreadsheet"
 msgstr "Tableur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1213
-#, fuzzy
-#| msgid "File: Text"
 msgid "File Text"
-msgstr "Fichier: Texte"
+msgstr "Fichier texte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1218
 #, fuzzy
@@ -6381,10 +6047,8 @@ msgid "File Times"
 msgstr "Types de Fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1223
-#, fuzzy
-#| msgid "Upload"
 msgid "File Upload"
-msgstr "Télécharger"
+msgstr "Téléchargement de fichiers"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1228
 #, fuzzy
@@ -6393,8 +6057,6 @@ msgid "File Vector"
 msgstr "Fichier: Vidéo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1233
-#, fuzzy
-#| msgid "File: Video"
 msgid "File Video"
 msgstr "Fichier: Vidéo"
 
@@ -6429,10 +6091,8 @@ msgstr "Filtre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1258
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1394
-#, fuzzy
-#| msgid "Fire"
 msgid "Firefox"
-msgstr "Incendie"
+msgstr "Firefox"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1263
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1208
@@ -6457,10 +6117,8 @@ msgstr "Flask"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1424
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:656
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:348
-#, fuzzy
-#| msgid "Flickr: Circle"
 msgid "Flickr"
-msgstr "Flickr: Cercle"
+msgstr "Flickr"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1278
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1223
@@ -6472,16 +6130,12 @@ msgid "Folder"
 msgstr "Dossier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1283
-#, fuzzy
-#| msgid "Folder: Add"
 msgid "Folder Alt"
-msgstr "Dossier: ajouter"
+msgstr "Alt de dossier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1288
-#, fuzzy
-#| msgid "Folder Close"
 msgid "Folder Alt Slash"
-msgstr "Fermer le dossier"
+msgstr "Barre oblique alt du dossier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1293
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:596
@@ -6491,16 +6145,12 @@ msgid "Folder Open"
 msgstr "Dossier ouvert"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1298
-#, fuzzy
-#| msgid "Folder Close"
 msgid "Folder Plus"
-msgstr "Fermer le dossier"
+msgstr "Dossier Plus"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1303
-#, fuzzy
-#| msgid "Folder Close"
 msgid "Folder Slash"
-msgstr "Fermer le dossier"
+msgstr "Barre oblique du dossier"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1313
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1233
@@ -6517,16 +6167,16 @@ msgstr "Transfert"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1323
 msgid "GamiPress"
-msgstr ""
+msgstr "GamiPress"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1328
 msgid "Gem"
-msgstr ""
+msgstr "Gemme"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1333
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1238
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1338
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:656
@@ -6543,11 +6193,11 @@ msgstr "Cadeau"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:701
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:368
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1348
 msgid "GitLab"
-msgstr ""
+msgstr "GitLab"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1353
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1263
@@ -6558,10 +6208,8 @@ msgid "Globe"
 msgstr "Globe"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1358
-#, fuzzy
-#| msgid "Layers"
 msgid "Globe Layers"
-msgstr "Calques"
+msgstr "Couches de globe"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1363
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1594
@@ -6569,22 +6217,16 @@ msgid "Google"
 msgstr "Google"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1368
-#, fuzzy
-#| msgid "Google"
 msgid "Google AdMob"
-msgstr "Google"
+msgstr "Google AdMob"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1373
-#, fuzzy
-#| msgid "Google Webfonts"
 msgid "Google Firebase"
-msgstr "Google Webfonts"
+msgstr "Polices Google"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1378
-#, fuzzy
-#| msgid "Google Webfonts"
 msgid "Google Fonts"
-msgstr "Google Webfonts"
+msgstr "Polices Google"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1383
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1273
@@ -6593,28 +6235,20 @@ msgid "Graduation Cap"
 msgstr "Casquette de fin d'études"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1388
-#, fuzzy
-#| msgid "TH Large"
 msgid "Grid Large"
-msgstr "TH Large"
+msgstr "Grille large"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1393
-#, fuzzy
-#| msgid "Grid View: Small"
 msgid "Grid Small"
-msgstr "Vue grille: Petit"
+msgstr "Grille petite"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1398
-#, fuzzy
-#| msgid "Hash Tag"
 msgid "Hashtag"
-msgstr "Hash Tag"
+msgstr "Hashtag"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1403
-#, fuzzy
-#| msgid "Heading Text"
 msgid "Heading"
-msgstr "Texte d’en-tête"
+msgstr "En-tête"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1408
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1303
@@ -6661,20 +6295,16 @@ msgid "Image"
 msgstr "Image"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1428
-#, fuzzy
-#| msgid "Images"
 msgid "Image Slash"
-msgstr "Images"
+msgstr "Barre oblique de l’image"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1433
-#, fuzzy
-#| msgid "Image Size"
 msgid "Image Video"
-msgstr "Taille de l'image"
+msgstr "Vidéo d'images"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1438
 msgid "Image Video Slash"
-msgstr ""
+msgstr "Barre oblique de la vidéo de l’image"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1443
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:1039
@@ -6683,10 +6313,8 @@ msgid "Images"
 msgstr "Images"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1448
-#, fuzzy
-#| msgid "Images"
 msgid "Images Slash"
-msgstr "Images"
+msgstr "Barres obliques des images"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1453
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1358
@@ -6705,10 +6333,8 @@ msgid "Indent"
 msgstr "Retrait"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1468
-#, fuzzy
-#| msgid "Triangle"
 msgid "Info Triangle"
-msgstr "Triangle"
+msgstr "Triangle d’information"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1473
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1383
@@ -6729,10 +6355,8 @@ msgid "Key"
 msgstr "Clé"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1488
-#, fuzzy
-#| msgid "Slash"
 msgid "Key Slash"
-msgstr "Slash"
+msgstr "Barre oblique"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1493
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1879
@@ -6753,18 +6377,16 @@ msgid "Layers"
 msgstr "Calques"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1513
-#, fuzzy
-#| msgid "Lesson"
 msgid "Less Than"
-msgstr "Leçon"
+msgstr "Moins que"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1518
 msgid "Less Than Equal"
-msgstr ""
+msgstr "Bouée"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1523
 msgid "Life Ring"
-msgstr ""
+msgstr "Bouée"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1533
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:1104
@@ -6795,16 +6417,12 @@ msgstr "Lien"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:831
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:443
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:448
-#, fuzzy
-#| msgid "LinkedIn Link:"
 msgid "LinkedIn"
-msgstr "Lien LinkedIn:"
+msgstr "LinkedIn"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1553
-#, fuzzy
-#| msgid "List: Number"
 msgid "List Number"
-msgstr "Liste: nombre"
+msgstr "Numéro de liste"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1558
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1984
@@ -6823,22 +6441,16 @@ msgid "Lock"
 msgstr "Verrouiller"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1568
-#, fuzzy
-#| msgid "Lock"
 msgid "Lock Alt"
-msgstr "Verrouiller"
+msgstr "Verrouiller Alt"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1573
-#, fuzzy
-#| msgid "Book: Open"
 msgid "Lock Alt Open"
-msgstr "Livre: Ouvert"
+msgstr "Verrouiller Alt Ouvrir"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1578
-#, fuzzy
-#| msgid "Book: Open"
 msgid "Lock Open"
-msgstr "Livre: Ouvert"
+msgstr "Verrou ouvert"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1583
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1538
@@ -6856,10 +6468,8 @@ msgid "Map Marker"
 msgstr "Marqueur de carte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1593
-#, fuzzy
-#| msgid "Social MarketPlace"
 msgid "Marketplace"
-msgstr "Social MarketPlace"
+msgstr "Marketplace"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1598
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1553
@@ -6875,20 +6485,16 @@ msgid "Meetup"
 msgstr "Rencontre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1613
-#, fuzzy
-#| msgid "Members"
 msgid "MemberPress"
-msgstr "Membres"
+msgstr "MemberPress"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1618
-#, fuzzy
-#| msgid "Membership"
 msgid "Membership Card"
-msgstr "Adhésion"
+msgstr "Carte de membre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1623
 msgid "Merge"
-msgstr ""
+msgstr "Fusionner"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1628
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2149
@@ -6899,14 +6505,12 @@ msgid "Microphone"
 msgstr "Microphone"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1633
-#, fuzzy
-#| msgid "Microphone"
 msgid "Microphone Slash"
-msgstr "Microphone"
+msgstr "Microphone (pointillés)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1638
 msgid "Microsoft Edge"
-msgstr ""
+msgstr "Microsoft Edge"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1643
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1628
@@ -6935,10 +6539,8 @@ msgid "Moon"
 msgstr "Lune"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1663
-#, fuzzy
-#| msgid "More actions"
 msgid "More Than"
-msgstr "Plus d'actions"
+msgstr "Plus que"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1668
 msgid "More Than Equal"
@@ -6958,10 +6560,8 @@ msgid "Music"
 msgstr "Musique"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1683
-#, fuzzy
-#| msgid "Music"
 msgid "Music Note"
-msgstr "Musique"
+msgstr "Note de musique"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1688
 msgid "Music Note Slash"
@@ -6974,10 +6574,8 @@ msgid "Music Slash"
 msgstr "Musique"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1698
-#, fuzzy
-#| msgid "Signal"
 msgid "OneSignal"
-msgstr "Signaux"
+msgstr "OneSignal"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1703
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:489
@@ -6998,10 +6596,8 @@ msgid "Package"
 msgstr "Forfait"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1718
-#, fuzzy
-#| msgid "My Memberships"
 msgid "Paid Memberships Pro"
-msgstr "Mes abonnements"
+msgstr "Abonnements payants Pro"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1723
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2289
@@ -7040,10 +6636,8 @@ msgid "Pause"
 msgstr "Pause"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1748
-#, fuzzy
-#| msgid "Yen"
 msgid "Pen"
-msgstr "Yen"
+msgstr "Stylo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1753
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1733
@@ -7057,10 +6651,8 @@ msgid "Pencil"
 msgstr "Crayon"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1758
-#, fuzzy
-#| msgid "Percent"
 msgid "Percentage"
-msgstr "Pourcent"
+msgstr "Pourcentage"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1763
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1743
@@ -7075,10 +6667,8 @@ msgid "Phone"
 msgstr "Téléphone"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1768
-#, fuzzy
-#| msgid "Phone Calls"
 msgid "Phone Call"
-msgstr "Appels téléphoniques"
+msgstr "Appel téléphonique"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1773
 #, fuzzy
@@ -7105,10 +6695,8 @@ msgid "Phone Slash"
 msgstr "Appels téléphoniques"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1793
-#, fuzzy
-#| msgid "Print"
 msgid "Pin"
-msgstr "Imprimer"
+msgstr "Epingler"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1798
 #, fuzzy
@@ -7124,10 +6712,8 @@ msgstr "Étoile"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1026
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:543
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:548
-#, fuzzy
-#| msgid "Pinterest: Circle"
 msgid "Pinterest"
-msgstr "Pinterest: Cercle"
+msgstr "Pinterest"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1808
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1788
@@ -7175,7 +6761,7 @@ msgstr "Pocket"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1833
 msgid "Poll"
-msgstr ""
+msgstr "Sondage"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1838
 #, fuzzy
@@ -7190,14 +6776,12 @@ msgid "Power On"
 msgstr "Éteindre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1848
-#, fuzzy
-#| msgid "Print"
 msgid "Printer"
-msgstr "Imprimer"
+msgstr "Imprimante"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1853
 msgid "Pusher"
-msgstr ""
+msgstr "Pusher"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1863
 #, fuzzy
@@ -7206,8 +6790,6 @@ msgid "Question Triangle"
 msgstr "Question: Plate"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1868
-#, fuzzy
-#| msgid ", Quiz"
 msgid "Quiz"
 msgstr "Quiz"
 
@@ -7240,17 +6822,15 @@ msgstr "Aléatoire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1898
 msgid "Receipt"
-msgstr ""
+msgstr "Reçu"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1903
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1156
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2559
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1116
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:613
-#, fuzzy
-#| msgid "Reddit: Circle"
 msgid "Reddit"
-msgstr "Reddit: Cercle"
+msgstr "Reddit"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1908
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:379
@@ -7272,10 +6852,8 @@ msgid "Reply All"
 msgstr "Répondre à tous"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1933
-#, fuzzy
-#| msgid "After Content"
 msgid "Restrict Content Pro"
-msgstr "Après le contenu"
+msgstr "Restrict Content Pro"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1938
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1973
@@ -7284,15 +6862,13 @@ msgid "Rocket"
 msgstr "Fusée"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1943
-#, fuzzy
-#| msgid "ss"
 msgid "Rss"
-msgstr "ss"
+msgstr "Rss"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1948
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2634
 msgid "Safari"
-msgstr ""
+msgstr "Safari"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1953
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1988
@@ -7348,10 +6924,8 @@ msgid "Share Dots"
 msgstr "Afficher les points"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1993
-#, fuzzy
-#| msgid "RSS Square"
 msgid "Share Square"
-msgstr "RSS (carré)"
+msgstr "Partager (carré)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:1998
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2043
@@ -7440,7 +7014,7 @@ msgstr "Signaux"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1201
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:688
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2068
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2073
@@ -7466,7 +7040,7 @@ msgstr "Retournement vertical"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2799
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1211
 msgid "Snapchat"
-msgstr ""
+msgstr "Snapchat"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2088
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2098
@@ -7544,7 +7118,7 @@ msgstr "Spinner"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1221
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:698
 msgid "Spotify"
-msgstr ""
+msgstr "Spotify"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2153
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2128
@@ -7598,7 +7172,7 @@ msgstr "Lever du soleil"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2188
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1993
 msgid "Sync"
-msgstr ""
+msgstr "Synchroniser"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2193
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2173
@@ -7626,7 +7200,7 @@ msgstr "Étiquettes"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2208
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3099
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2213
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3114
@@ -7679,7 +7253,7 @@ msgstr "Punaise"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2248
 msgid "TikTok"
-msgstr ""
+msgstr "TikTok"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2253
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3184
@@ -7755,14 +7329,12 @@ msgstr "Trophée"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3294
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1371
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:768
-#, fuzzy
-#| msgid "Tumblr: Circle"
 msgid "Tumblr"
-msgstr "Tumblr: Cercle"
+msgstr "Tumblr"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2313
 msgid "Tutor LMS"
-msgstr ""
+msgstr "Module Expert"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2318
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2168
@@ -7772,10 +7344,8 @@ msgstr "TV"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2323
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3304
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:773
-#, fuzzy
-#| msgid "Twitter"
 msgid "Twitch"
-msgstr "Twitter"
+msgstr "Twitch"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2328
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2268
@@ -7828,66 +7398,48 @@ msgid "User"
 msgstr "Usager"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2363
-#, fuzzy
-#| msgid "Avatar"
 msgid "User Avatar"
-msgstr "Avatar"
+msgstr "Avatar de l'utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2368
-#, fuzzy
-#| msgid "Sheriff Badge"
 msgid "User Badge"
-msgstr "Insigne de shérif"
+msgstr "Insigne d'utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2373
-#, fuzzy
-#| msgid "User: Password"
 msgid "User Card"
-msgstr "Utilisateur: Mot de passe"
+msgstr "Carte d’utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2378
-#, fuzzy
-#| msgid "User: Check"
 msgid "User Check"
-msgstr "Utilisateur: Vérifier"
+msgstr "Vérification de l’utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2383
-#, fuzzy
-#| msgid "User: Check"
 msgid "User Clock"
-msgstr "Utilisateur: Vérifier"
+msgstr "Horloge utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2388
-#, fuzzy
-#| msgid "User: Doc"
 msgid "User Cog"
-msgstr "Utilisateur: Doc"
+msgstr "Cog de l’utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2393
-#, fuzzy
-#| msgid "File Edit"
 msgid "User Edit"
-msgstr "Modification de fichier"
+msgstr "Modification de l’utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2398
-#, fuzzy
-#| msgid "User: Minus"
 msgid "User Friends"
-msgstr "Utilisateur: Moins"
+msgstr "Amis de l'Utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2403
-#, fuzzy
-#| msgid "User: Alt"
 msgid "User Friends Alt"
-msgstr "Utilisateur: Alt"
+msgstr "Amis de l’utilisateur Alt"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2408
 msgid "User Friends Alt Slash"
-msgstr ""
+msgstr "Amis de l’utilisateur Alt Slash"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2413
 msgid "User Friends Slash"
-msgstr ""
+msgstr "Barre oblique des amis de l’utilisateur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2418
 #, fuzzy
@@ -7935,7 +7487,7 @@ msgstr "Utilisateur: Plus"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2453
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3424
 msgid "VK"
-msgstr ""
+msgstr "VK"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2458
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2368
@@ -7989,10 +7541,8 @@ msgid "Volume Mute"
 msgstr "Volume: muet"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2488
-#, fuzzy
-#| msgid "Volume: Off"
 msgid "Volume Off"
-msgstr "Volume : inactif"
+msgstr "Volume désactivé"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2493
 #, fuzzy
@@ -8007,10 +7557,8 @@ msgid "Volume Up"
 msgstr "Augmenter le volume"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2503
-#, fuzzy
-#| msgid "Gallery"
 msgid "Wallet"
-msgstr "Galerie"
+msgstr "Portefeuille"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2508
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2443
@@ -8020,7 +7568,7 @@ msgstr "Regarder"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2513
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3524
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2518
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1516
@@ -8032,7 +7580,7 @@ msgstr "Fauteuil roulant"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2523
 msgid "Wi-Fi"
-msgstr ""
+msgstr "WiFi"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2528
 #, fuzzy
@@ -8046,10 +7594,8 @@ msgid "Wind"
 msgstr "Vent"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2538
-#, fuzzy
-#| msgid "List: Number"
 msgid "WishList Member"
-msgstr "Liste: nombre"
+msgstr "WishList Member"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2548
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:739
@@ -8071,7 +7617,7 @@ msgstr "Wrench"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2558
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3599
 msgid "XING"
-msgstr ""
+msgstr "XING"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss.php:2563
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1536
@@ -8631,46 +8177,32 @@ msgid "Facebook: Small"
 msgstr "Facebook: Petit"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:903
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: 7z"
-msgstr "Fichier: PDF"
+msgstr "Dossier : 7z"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:908
-#, fuzzy
-#| msgid "File: Word"
 msgid "File: ABW"
-msgstr "Fichier: Word"
+msgstr "Dossier : ABW"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:913
-#, fuzzy
-#| msgid "File: Code"
 msgid "File: ACE"
-msgstr "Fichier: Code"
+msgstr "Dossier : ACE"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:918
-#, fuzzy
-#| msgid "File: Audio"
 msgid "File: AI"
-msgstr "Fichier: Audio"
+msgstr "Dossier : AI"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:923
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: APK"
-msgstr "Fichier: PDF"
+msgstr "Dossier : APK"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:928
-#, fuzzy
-#| msgid "File: Code"
 msgid "File: CSS"
-msgstr "Fichier: Code"
+msgstr "Fichier : CSS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:933
-#, fuzzy
-#| msgid "File: Code"
 msgid "File: CSV"
-msgstr "Fichier: Code"
+msgstr "Dossier : CSV"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:938
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1324
@@ -8678,138 +8210,96 @@ msgid "File: Code"
 msgstr "Fichier: Code"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:943
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: DOC"
-msgstr "Fichier: PDF"
+msgstr "Dossier : DOC"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:948
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: DOCM"
-msgstr "Fichier: PDF"
+msgstr "Dossier : DOCM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:953
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: DOCX"
-msgstr "Fichier: PDF"
+msgstr "Dossier : DOCX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:958
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: DOTM"
-msgstr "Fichier: PDF"
+msgstr "Dossier : DOTM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:963
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: DOTX"
-msgstr "Fichier: PDF"
+msgstr "Dossier : DOTX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:968
 msgid "File: Default"
 msgstr "Fichier : Défaut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:973
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: GIF"
-msgstr "Fichier: PDF"
+msgstr "Dossier : GIF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:978
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: GZIP"
-msgstr "Fichier: PDF"
+msgstr "Dossier : GZIP"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:983
-#, fuzzy
-#| msgid "File: Minus"
 msgid "File: HLAM"
-msgstr "Fichier: Moins"
+msgstr "Dossier : HLAM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:988
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: HLSB"
-msgstr "Fichier: PDF"
+msgstr "Dossier : HLSB"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:993
-#, fuzzy
-#| msgid "File: Minus"
 msgid "File: HLSM"
-msgstr "Fichier: Moins"
+msgstr "Dossier : HLSM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:998
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: HTM"
-msgstr "Fichier: Texte"
+msgstr "Fichier: HTM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1003
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: HTML"
-msgstr "Fichier: Texte"
+msgstr "Fichier: HTML"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1008
-#, fuzzy
-#| msgid "File: Code"
 msgid "File: ICO"
-msgstr "Fichier: Code"
+msgstr "Fichier: ICO"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1013
-#, fuzzy
-#| msgid "File: Code"
 msgid "File: ICS"
-msgstr "Fichier: Code"
+msgstr "Fichier: ICS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1018
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: IPA"
-msgstr "Fichier: PDF"
+msgstr "Fichier: IPA"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1023
-#, fuzzy
-#| msgid "File: Audio"
 msgid "File: JAR"
-msgstr "Fichier: Audio"
+msgstr "Fichier: JAR"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1028
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: JPG"
-msgstr "Fichier: PDF"
+msgstr "Fichier: JPG"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1033
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: JS"
-msgstr "Fichier: PDF"
+msgstr "Fichier: JS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1038
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: MP3"
-msgstr "Fichier: PDF"
+msgstr "Fichier: MP3"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1043
 msgid "File: Minus"
 msgstr "Fichier: Moins"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1048
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: ODS"
-msgstr "Fichier: PDF"
+msgstr "Fichier: ODS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1053
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: ODT"
-msgstr "Fichier: PDF"
+msgstr "Fichier: ODT"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1058
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1339
@@ -8817,98 +8307,68 @@ msgid "File: PDF"
 msgstr "Fichier: PDF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1063
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PNG"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PNG"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1068
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: POTM"
-msgstr "Fichier: PDF"
+msgstr "Fichier: POTM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1073
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: POTX"
-msgstr "Fichier: PDF"
+msgstr "Fichier: POTX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1078
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PPS"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PPS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1083
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PPSX"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PPSX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1088
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PPT"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PPT"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1093
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PPTM"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PPTM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1098
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PPTX"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PPTX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1103
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: PSD"
-msgstr "Fichier: PDF"
+msgstr "Fichier: PSD"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1108
 msgid "File: Plus"
 msgstr "Fichier: Plus"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1113
-#, fuzzy
-#| msgid "File: Audio"
 msgid "File: RAR"
-msgstr "Fichier: Audio"
+msgstr "Fichier: RAR"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1118
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: RSS"
-msgstr "Fichier: PDF"
+msgstr "Fichier: RSS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1123
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: RTF"
-msgstr "Fichier: PDF"
+msgstr "Fichier: RTF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1128
-#, fuzzy
-#| msgid "File: Video"
 msgid "File: SVG"
-msgstr "Fichier: Vidéo"
+msgstr "Fichier: SVG"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1133
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: Sketch"
-msgstr "Fichier: Texte"
+msgstr "Fichier: Sketch"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1138
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: TAR"
-msgstr "Fichier: Texte"
+msgstr "Fichier: TAR"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1143
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1349
@@ -8917,10 +8377,8 @@ msgid "File: Text"
 msgstr "Fichier: Texte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1148
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: VCF"
-msgstr "Fichier: PDF"
+msgstr "Fichier: VCF"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1153
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1359
@@ -8928,52 +8386,36 @@ msgid "File: Video"
 msgstr "Fichier: Vidéo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1158
-#, fuzzy
-#| msgid "File: Word"
 msgid "File: WAV"
-msgstr "Fichier: Word"
+msgstr "Fichier: WAV"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1163
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: XLS"
-msgstr "Fichier: PDF"
+msgstr "Fichier: XLS"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1168
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: XLSX"
-msgstr "Fichier: PDF"
+msgstr "Fichier: XLSX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1173
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: XLTM"
-msgstr "Fichier: Texte"
+msgstr "Fichier: XLTM"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1178
-#, fuzzy
-#| msgid "File: Text"
 msgid "File: XLTX"
-msgstr "Fichier: Texte"
+msgstr "Fichier: XLTX"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1183
-#, fuzzy
-#| msgid "File: Minus"
 msgid "File: XML"
-msgstr "Fichier: Moins"
+msgstr "Fichier: XML"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1188
-#, fuzzy
-#| msgid "File: Minus"
 msgid "File: YAML"
-msgstr "Fichier: Moins"
+msgstr "Fichier: YAML"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1193
-#, fuzzy
-#| msgid "File: PDF"
 msgid "File: ZIP"
-msgstr "Fichier: PDF"
+msgstr "Fichier: ZIP"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1213
 msgid "Flag: Small"
@@ -9288,7 +8730,7 @@ msgstr "Octogone"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1698
 msgid "Only me"
-msgstr ""
+msgstr "Seulement moi"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1713
 #, fuzzy
@@ -9405,10 +8847,8 @@ msgid "Profile: Type"
 msgstr "Profil: Type"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1878
-#, fuzzy
-#| msgid "Publish"
 msgid "Public"
-msgstr "Publier"
+msgstr "Public"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1883
 msgid "Question: Thin"
@@ -9469,10 +8909,8 @@ msgid "Refresh: CW"
 msgstr "Rafraîchir: OC"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1963
-#, fuzzy
-#| msgid "Export"
 msgid "Report"
-msgstr "Exporter"
+msgstr "Rapport"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:1968
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1141
@@ -9803,7 +9241,7 @@ msgstr "Youtube: Logo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2508
 msgid "ZIP"
-msgstr ""
+msgstr "Code Postal"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/buddyboss_legacy.php:2513
 msgid "Zap"
@@ -9819,7 +9257,7 @@ msgstr "Zoom: Arrière"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:53
 msgid "Dashicons"
-msgstr ""
+msgstr "Icônes par défaut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/dashicons.php:84
 msgid "Admin"
@@ -10346,10 +9784,8 @@ msgstr "Code barre"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:479
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:484
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:266
-#, fuzzy
-#| msgid "Balance"
 msgid "Behance"
-msgstr "Solde"
+msgstr "Behance"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:196
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:544
@@ -10359,10 +9795,8 @@ msgstr "Utilisateur aveugle"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:201
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:291
-#, fuzzy
-#| msgid "Blog"
 msgid "Blogger"
-msgstr "Blog"
+msgstr "Blogger"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:221
 msgid "Bookmark Empty"
@@ -10444,25 +9878,23 @@ msgstr "Flèche vers le haut encerclée"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1059
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:471
 msgid "Delicious"
-msgstr ""
+msgstr "Delicious"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:426
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:481
 msgid "DeviantArt"
-msgstr ""
+msgstr "DeviantART"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:431
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1079
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:516
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:258
 msgid "Digg"
-msgstr ""
+msgstr "Digg"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:451
-#, fuzzy
-#| msgid "EURO"
 msgid "EUR"
-msgstr "EURO"
+msgstr "EUR"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:486
 msgid "Exclamation Sign"
@@ -10519,15 +9951,13 @@ msgstr "Fourchette"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1479
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:691
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:353
-#, fuzzy
-#| msgid "Plus: Square"
 msgid "Foursquare"
-msgstr "Plus: Carré"
+msgstr "Foursquare"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:636
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:641
 msgid "FriendFeed"
-msgstr ""
+msgstr "FriendFeed"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:646
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:358
@@ -10628,10 +10058,8 @@ msgstr "Retrait droit"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1894
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1899
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:806
-#, fuzzy
-#| msgid "Last name"
 msgid "Last.fm"
-msgstr "Nom"
+msgstr "Last.fm"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:866
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1904
@@ -10644,7 +10072,7 @@ msgstr "Lignes"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:896
 msgid "LiveJournal"
-msgstr ""
+msgstr "LiveJournal"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:911
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2024
@@ -10673,10 +10101,8 @@ msgid "Mute"
 msgstr "Muet"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:966
-#, fuzzy
-#| msgid "Row Space"
 msgid "MySpace"
-msgstr "Espacement de rangée"
+msgstr "MySpace"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:976
 msgid "OK"
@@ -10703,7 +10129,7 @@ msgstr "Trombone"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:991
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:518
 msgid "Path"
-msgstr ""
+msgstr "Chemin"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1036
 msgid "Person"
@@ -10718,7 +10144,7 @@ msgstr "Photo"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1061
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1021
 msgid "Picasa"
-msgstr ""
+msgstr "Picasa"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1066
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2379
@@ -10814,22 +10240,18 @@ msgid "Signal"
 msgstr "Signaux"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1276
-#, fuzzy
-#| msgid "Slides"
 msgid "Slideshare"
-msgstr "Diapositives"
+msgstr "Slideshare"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1291
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2864
-#, fuzzy
-#| msgid "Cloud"
 msgid "SoundCloud"
-msgstr "Nuage"
+msgstr "SoundCloud"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1306
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2904
 msgid "Stack Overflow"
-msgstr ""
+msgstr "Stack Overflow"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1331
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3004
@@ -10837,7 +10259,7 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1256
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:723
 msgid "StumbleUpon"
-msgstr ""
+msgstr "StumbleUpon"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1346
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3089
@@ -10884,10 +10306,8 @@ msgid "Torso"
 msgstr "Torse"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1426
-#, fuzzy
-#| msgid "USB"
 msgid "USD"
-msgstr "USB"
+msgstr "USD"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1431
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3339
@@ -10897,13 +10317,13 @@ msgstr "Accès universel"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1456
 msgid "VKontakte"
-msgstr ""
+msgstr "VKontakte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1461
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3449
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3454
 msgid "Viadeo"
-msgstr ""
+msgstr "Viadeo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/elusive.php:1476
 msgid "View Mode"
@@ -10934,10 +10354,8 @@ msgid "Zoom Out"
 msgstr "Zoom arrière"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:48
-#, fuzzy
-#| msgid "Font style"
 msgid "Font Awesome"
-msgstr "Style de police"
+msgstr "Font Awesome"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:68
 msgid "Brand"
@@ -10974,11 +10392,11 @@ msgstr "Lecteur vidéo"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:149
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:121
 msgid "500px"
-msgstr ""
+msgstr "500px"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:154
 msgid "ADN"
-msgstr ""
+msgstr "ADN"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:169
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:174
@@ -10988,7 +10406,7 @@ msgstr "Carte d'adresse"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:199
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:171
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:204
 msgid "Ambulance"
@@ -10996,17 +10414,15 @@ msgstr "Ambulance"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:209
 msgid "American Express"
-msgstr ""
+msgstr "American Express"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:214
 msgid "American Sign Language"
 msgstr "Langue des signes américaine"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:229
-#, fuzzy
-#| msgid "List"
 msgid "AngelList"
-msgstr "Liste"
+msgstr "AngelList"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:284
 msgid "Area Chart"
@@ -11046,7 +10462,7 @@ msgstr "Bannir"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:424
 msgid "Bandcamp"
-msgstr ""
+msgstr "Bandcamp"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:444
 msgid "Bathtub"
@@ -11074,10 +10490,8 @@ msgstr "Gâteau d’anniversaire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:524
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:529
-#, fuzzy
-#| msgid "Paint Bucket"
 msgid "Bitbucket"
-msgstr "Seau de peinture"
+msgstr "Bitbucket"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:534
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:276
@@ -11101,12 +10515,12 @@ msgstr "Bus"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:629
 msgid "BuySellAds"
-msgstr ""
+msgstr "BuySellAds"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:634
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:341
 msgid "CSS3"
-msgstr ""
+msgstr "CSS3"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:639
 msgid "Calculator"
@@ -11174,10 +10588,8 @@ msgid "Contao"
 msgstr "Contient"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:984
-#, fuzzy
-#| msgid "Inactive Color"
 msgid "Creative Commons"
-msgstr "Inactive Color"
+msgstr "Creative Commons"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1019
 msgid "Cubes"
@@ -11203,7 +10615,7 @@ msgstr "Sourds"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1069
 msgid "DeviantART"
-msgstr ""
+msgstr "DeviantART"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1074
 msgid "Diamond"
@@ -11211,13 +10623,11 @@ msgstr "Diamant"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1084
 msgid "Diners Club"
-msgstr ""
+msgstr "Diners Club"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1089
-#, fuzzy
-#| msgid "Disc"
 msgid "Discover"
-msgstr "Disque"
+msgstr "Découvrir"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1094
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:531
@@ -11232,18 +10642,16 @@ msgstr "Point"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1114
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:556
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:288
-#, fuzzy
-#| msgid "Dropdown"
 msgid "DropBox"
-msgstr "Menu déroulant"
+msgstr "DropBox"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1119
 msgid "Drupal"
-msgstr ""
+msgstr "Drupal"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1124
 msgid "Edge"
-msgstr ""
+msgstr "Bord"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1134
 msgid "Eercast"
@@ -11256,10 +10664,8 @@ msgid "Ellipsis"
 msgstr "Points de suspension"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1154
-#, fuzzy
-#| msgid "Expires"
 msgid "Empire"
-msgstr "Expire"
+msgstr "Empire"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1184
 msgid "Envira"
@@ -11272,7 +10678,7 @@ msgstr "Gomme"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1199
 msgid "Etsy"
-msgstr ""
+msgstr "Etsy"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1204
 msgid "Euro"
@@ -11345,10 +10751,8 @@ msgid "Fort Awesome"
 msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1469
-#, fuzzy
-#| msgid "Forum:"
 msgid "Forumbee"
-msgstr "Forum:"
+msgstr "Forumbee"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1484
 msgid "Free Code Camp"
@@ -11380,10 +10784,8 @@ msgstr "Asexués"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1539
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1544
-#, fuzzy
-#| msgid "Gift"
 msgid "Git"
-msgstr "Cadeau"
+msgstr "Git"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1564
 msgid "GitTip"
@@ -11397,10 +10799,8 @@ msgid "Glide"
 msgstr "Slider"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1599
-#, fuzzy
-#| msgid "Google Webfonts"
 msgid "Google Wallet"
-msgstr "Google Webfonts"
+msgstr "Portefeuille Google (Google Wallet)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1619
 msgid "Grav"
@@ -11409,12 +10809,12 @@ msgstr ""
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1634
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:736
 msgid "HTML5"
-msgstr ""
+msgstr "HTML5"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1639
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:741
 msgid "Hacker News"
-msgstr ""
+msgstr "Hacker News"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1644
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1649
@@ -11449,7 +10849,7 @@ msgstr "Hôpital"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1779
 msgid "Houzz"
-msgstr ""
+msgstr "Houzz"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1784
 msgid "ID Badge"
@@ -11457,7 +10857,7 @@ msgstr "Badge d'identité"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1799
 msgid "IMDb"
-msgstr ""
+msgstr "IMDb"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1814
 msgid "Industry"
@@ -11465,7 +10865,7 @@ msgstr "Industrie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1834
 msgid "Internet Explorer"
-msgstr ""
+msgstr "Internet Explorer"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1839
 msgid "IoxHost"
@@ -11477,17 +10877,15 @@ msgstr "Sheqel israélien"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1854
 msgid "JCB"
-msgstr ""
+msgstr "JCB"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1859
-#, fuzzy
-#| msgid "Middle"
 msgid "JSFiddle"
-msgstr "Milieu"
+msgstr "JSFiddle"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1864
 msgid "Joomla"
-msgstr ""
+msgstr "Joomla"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1884
 msgid "Language"
@@ -11523,7 +10921,7 @@ msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1969
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:1994
 msgid "Long Arrow Down"
@@ -11574,18 +10972,16 @@ msgid "Mars"
 msgstr "Mars"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2104
-#, fuzzy
-#| msgid "Paste Word"
 msgid "MasterCard"
-msgstr "Coller le mot"
+msgstr "Mastercard"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2109
 msgid "MaxCDN"
-msgstr ""
+msgstr "MaxCDN"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2114
 msgid "Meanpath"
-msgstr ""
+msgstr "Chemin moyeux"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2124
 msgid "Medkit"
@@ -11604,10 +11000,8 @@ msgid "Microchip"
 msgstr "Micropuce"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2179
-#, fuzzy
-#| msgid "Cloud"
 msgid "Mixcloud"
-msgstr "Nuage"
+msgstr "Mixcloud"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2189
 msgid "Mobile Phone"
@@ -11636,33 +11030,27 @@ msgstr "Objets dissociés"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2239
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2244
 msgid "Odnoklassniki"
-msgstr ""
+msgstr "Odnoklassniki"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2249
-#, fuzzy
-#| msgid "Cart"
 msgid "OpenCart"
-msgstr "Panier"
+msgstr "OpenCart"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2254
-#, fuzzy
-#| msgid "Open"
 msgid "OpenID"
-msgstr "Ouvert"
+msgstr "OpenID"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2259
 msgid "Opera"
-msgstr ""
+msgstr "Opera"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2264
 msgid "OptinMonster"
-msgstr ""
+msgstr "OptinMonster"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2279
-#, fuzzy
-#| msgid "Pages"
 msgid "Pagelines"
-msgstr "Pages"
+msgstr "Pagelines"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2284
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:513
@@ -11678,7 +11066,7 @@ msgstr "Patte"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2339
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1006
 msgid "PayPal"
-msgstr ""
+msgstr "PayPal"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2374
 msgid "Phone Volume Control"
@@ -11687,17 +11075,15 @@ msgstr "Contrôle du volume du téléphone"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2389
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2394
 msgid "Pied Piper"
-msgstr ""
+msgstr "Joueur de flûte"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2469
 msgid "Power Off"
 msgstr "Éteindre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2479
-#, fuzzy
-#| msgid "Product"
 msgid "Product Hunt"
-msgstr "Produit"
+msgstr "Produit de chasse"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2484
 msgid "Puzzle Piece"
@@ -11705,7 +11091,7 @@ msgstr "Pièce de puzzle"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2489
 msgid "QQ"
-msgstr ""
+msgstr "QQ"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2534
 msgid "RSS Square"
@@ -11732,14 +11118,12 @@ msgid "Reddit Alien"
 msgstr "Reddit: Cercle"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2569
-#, fuzzy
-#| msgid "Edit: Square"
 msgid "Reddit Square"
-msgstr "Edit: Carré"
+msgstr "Place Reddit"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2584
 msgid "Renren"
-msgstr ""
+msgstr "Renren"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2609
 msgid "Road"
@@ -11758,10 +11142,8 @@ msgid "SELLSY"
 msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2644
-#, fuzzy
-#| msgid "Subscribed"
 msgid "Scribd"
-msgstr "Abonné"
+msgstr "Scribd"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2699
 msgid "Ship"
@@ -11781,7 +11163,7 @@ msgstr "Langue des signes"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2749
 msgid "SimplyBuilt"
-msgstr ""
+msgstr "SimplyBuilt"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2754
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:673
@@ -11793,10 +11175,8 @@ msgid "Skyatlas"
 msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2774
-#, fuzzy
-#| msgid "Slider"
 msgid "SlideShare"
-msgstr "Slider"
+msgstr "SlideShare"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2804
 msgid "Snowflake"
@@ -11843,10 +11223,8 @@ msgid "Spoon"
 msgstr "Cuillere"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2899
-#, fuzzy
-#| msgid "Exchange"
 msgid "Stack Exchange"
-msgstr "Echange"
+msgstr "Stack Exchange"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2929
 msgid "Star Half Empty"
@@ -11860,7 +11238,7 @@ msgstr "Étoile à moitié plein"
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2944
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1241
 msgid "Steam"
-msgstr ""
+msgstr "Steam"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2959
 msgid "Stethoscope"
@@ -11877,7 +11255,7 @@ msgstr "Street View"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:2999
 msgid "Stripe"
-msgstr ""
+msgstr "Stripe"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3014
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1261
@@ -11937,7 +11315,7 @@ msgstr "Télévision"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3109
 msgid "Tencent Weibo"
-msgstr ""
+msgstr "Tencent Weibo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3154
 msgid "Thumb Tack"
@@ -11979,11 +11357,11 @@ msgstr "Arbre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3269
 msgid "Trello"
-msgstr ""
+msgstr "Trello"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3274
 msgid "TripAdvisor"
-msgstr ""
+msgstr "TripAdvisor"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3284
 msgid "Truck"
@@ -12044,11 +11422,11 @@ msgstr "Caméra vidéo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3474
 msgid "Vine"
-msgstr ""
+msgstr "Vine"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3479
 msgid "Visa"
-msgstr ""
+msgstr "Visa"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3489
 msgid "Volume Of"
@@ -12065,14 +11443,12 @@ msgid "WP Explorer"
 msgstr "Explorez les forums"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3509
-#, fuzzy
-#| msgid "Forms"
 msgid "WP Forms"
-msgstr "Formulaires"
+msgstr "WP Forms"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3519
 msgid "Weixin"
-msgstr ""
+msgstr "Weixin"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3544
 msgid "Wibo"
@@ -12080,7 +11456,7 @@ msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3549
 msgid "Wikipedia"
-msgstr ""
+msgstr "Wikipedia"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3554
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3559
@@ -12101,10 +11477,8 @@ msgstr "Restauration de fenêtre"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3579
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1451
-#, fuzzy
-#| msgid "Window Close"
 msgid "Windows"
-msgstr "Fermer la fenêtre"
+msgstr "Windows"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3584
 msgid "Won"
@@ -12118,17 +11492,17 @@ msgstr "X: Carré"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3609
 msgid "Y Combinator"
-msgstr ""
+msgstr "Y Combinator"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3614
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1476
 msgid "Yahoo!"
-msgstr ""
+msgstr "Yahoo!"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3619
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1481
 msgid "Yelp"
-msgstr ""
+msgstr "Yelp"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3624
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1486
@@ -12140,10 +11514,8 @@ msgid "YouTube Play"
 msgstr "Lecture YouTube"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/fa.php:3639
-#, fuzzy
-#| msgid "YouTube Play"
 msgid "YouTube Square"
-msgstr "Lecture YouTube"
+msgstr "YouTube (carré)"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/font.php:204
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/svg.php:110
@@ -12233,7 +11605,7 @@ msgstr "Batterie: Moitié Remplie"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:271
 msgid "Bing"
-msgstr ""
+msgstr "Bing"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:326
 msgid "Burst"
@@ -12333,7 +11705,7 @@ msgstr "Billet de Dollar"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:551
 msgid "Drive"
-msgstr ""
+msgstr "Drive"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:561
 msgid "Duplicate Page"
@@ -12353,7 +11725,7 @@ msgstr "Ascenseur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:586
 msgid "Evernote"
-msgstr ""
+msgstr "Evernote"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:591
 msgid "Export"
@@ -12393,7 +11765,7 @@ msgstr "Pied"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:681
 msgid "Forrst"
-msgstr ""
+msgstr "Forrst"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:696
 #, fuzzy
@@ -12427,7 +11799,7 @@ msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:786
 msgid "Joomla!"
-msgstr ""
+msgstr "Joomla !"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:841
 msgid "List: Bullet"
@@ -12472,10 +11844,8 @@ msgid "Mountains"
 msgstr "Montagnes"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:946
-#, fuzzy
-#| msgid "Row Space"
 msgid "My Space"
-msgstr "Espacement de rangée"
+msgstr "My Space"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:951
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:503
@@ -12499,7 +11869,7 @@ msgstr "Non fumeur"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:966
 msgid "Orkut"
-msgstr ""
+msgstr "Orkut"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:976
 msgid "PDF"
@@ -12594,11 +11964,11 @@ msgstr "Son"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1226
 msgid "Squidoo"
-msgstr ""
+msgstr "Squidoo"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1231
 msgid "StackOverflow"
-msgstr ""
+msgstr "StackOverflow"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/foundation-icons.php:1271
 msgid "Tablet: Landscape"
@@ -12683,10 +12053,8 @@ msgid "Zurb"
 msgstr ""
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:45
-#, fuzzy
-#| msgid "Generic"
 msgid "Genericons"
-msgstr "Générique"
+msgstr "Icones génériques"
 
 #: inc/plugins/buddyboss-menu-icons/vendor/kucrut/icon-picker/includes/types/genericon.php:69
 msgid "Meta"
@@ -12919,7 +12287,7 @@ msgstr "Espacement de rangée"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:151
 msgid "Show All Activity Link"
-msgstr ""
+msgstr "Afficher tout le lien d'activité"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:160
 #: inc/plugins/elementor/widgets/bb-forums.php:143
@@ -12935,7 +12303,7 @@ msgstr "Afficher le contenu"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:178
 msgid "Show Content Media"
-msgstr ""
+msgstr "Afficher les médias de contenu"
 
 #: inc/plugins/elementor/widgets/bb-activity.php:190
 msgid "Show Actions"
@@ -13176,27 +12544,27 @@ msgstr "Éléments Grille"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:202
 msgid "First item on the list"
-msgstr ""
+msgstr "Premier élément de la liste"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:203
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:209
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:215
 msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor."
-msgstr ""
+msgstr "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor."
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:204
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:210
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:216
 msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
-msgstr ""
+msgstr "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:208
 msgid "Second item on the list"
-msgstr ""
+msgstr "Deuxième élément de la liste"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:214
 msgid "Third item on the list"
-msgstr ""
+msgstr "Troisième élément de la liste"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:237
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:96
@@ -13210,7 +12578,7 @@ msgstr "Position"
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:246
 #: inc/plugins/elementor/widgets/bb-dashboard-intro.php:105
 msgid "Above"
-msgstr ""
+msgstr "Au-dessus"
 
 #: inc/plugins/elementor/widgets/bb-dashboard-grid.php:262
 msgid "Show Icon Link"
@@ -13662,10 +13030,8 @@ msgid "Linear"
 msgstr "Linéaire"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:105
-#, fuzzy
-#| msgid "Circle"
 msgid "Semicircle"
-msgstr "Cercle"
+msgstr "Demi-cercle"
 
 #: inc/plugins/elementor/widgets/bb-profile-completion.php:155
 #: template-parts/header-profile-menu.php:33
@@ -14301,11 +13667,11 @@ msgstr "Explorer les cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:315
 msgid "Enter no courses button text"
-msgstr ""
+msgstr "Entrez le texte du bouton Aucun cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:323
 msgid "Explore Courses Custom Link"
-msgstr ""
+msgstr "Explorer le lien personnalisé des cours"
 
 #: inc/plugins/elementor/widgets/courses/bb-lms-activity.php:433
 msgid "Media Overlay"
@@ -15068,10 +14434,8 @@ msgid "Leave Review"
 msgstr "Laisser un avis"
 
 #: inc/plugins/lifterlms-helper.php:2109
-#, fuzzy
-#| msgid "Certificates"
 msgid "All certificates"
-msgstr "Certificats"
+msgstr "Tous les certificats"
 
 #: inc/plugins/woocommerce-helper.php:150
 #: inc/plugins/woocommerce-helper.php:159
@@ -15116,86 +14480,67 @@ msgstr "Etat / Région"
 
 #. translators: 1: Theme name, 2: Theme details URL
 #: inc/theme/bb-theme-update.php:103
-#, fuzzy
-#| msgid "There are no menus available."
 msgid "There is a new version of %1$s available. %2$s"
-msgstr "Il n’y a pas de menus disponibles."
+msgstr "Il y a une nouvelle version de %1$s disponible. %2$s"
 
 #. translators: 1: Theme name, 2: Version number.
 #: inc/theme/bb-theme-update.php:112 inc/theme/bb-theme-update.php:133
 #: inc/theme/bb-theme-update.php:159
-#, fuzzy
-#| msgctxt "link: View Course details"
-#| msgid "View %s details"
 msgid "View %1$s version %2$s details"
-msgstr "Voir le détail de %s"
+msgstr "Détails de vue %1$s la version de %2$s"
 
 #. translators: 1: Version number.
 #: inc/theme/bb-theme-update.php:116 inc/theme/bb-theme-update.php:137
 #: inc/theme/bb-theme-update.php:163
-#, fuzzy
-#| msgctxt "link: View Course details"
-#| msgid "View %s details"
 msgid "View version %1$s details"
-msgstr "Voir le détail de %s"
+msgstr "Voir les détails de la version %1$s"
 
 #. translators: 1: Theme name, 2: Theme details URL, 3: Additional link
 #. attributes
 #: inc/theme/bb-theme-update.php:124
-#, fuzzy
-#| msgid "There is an update available for: %1$s."
-#| msgid_plural "There are updates available for the following plugins: %1$s."
 msgid "There is a new version of %1$s available. %2$s. %3$s"
-msgstr "Une mise à jour est disponible pour: %1$s."
+msgstr "Une nouvelle version de %1$s est disponible. %2$s. %3$s"
 
 #. translators: 1: Automatic Update Text.
 #: inc/theme/bb-theme-update.php:144
 msgid "Automatic update is unavailable for this theme."
-msgstr ""
+msgstr "La mise à jour automatique n’est pas disponible pour ce thème."
 
 #. translators: 1: Theme name, 2: Theme details URL, 3: Additional link
 #. attributes
 #: inc/theme/bb-theme-update.php:150
-#, fuzzy
-#| msgid "There is an update available for: %1$s."
-#| msgid_plural "There are updates available for the following plugins: %1$s."
 msgid "There is a new version of %1$s available. %2$s or %3$s."
-msgstr "Une mise à jour est disponible pour: %1$s."
+msgstr "Une nouvelle version de %1$s est disponible. %2$s ou %3$s."
 
 #: inc/theme/bb-theme-update.php:177
-#, fuzzy
-#| msgid "updated"
 msgid "update now"
-msgstr "mis à jour"
+msgstr "mettre à jour maintenant"
 
 #: inc/theme/class-buddypanel-section.php:72
-#, fuzzy
-#| msgid "BuddyPanel Position"
 msgid "BuddyPanel Sections"
-msgstr "Position du panneau BuddyPanel"
+msgstr "BuddyPanel Sections"
 
 #: inc/theme/class-buddypanel-section.php:145
 msgid ""
 "You can visually group menu items in the BuddyPanel menu by indenting them "
 "within Sections."
 msgstr ""
+"Vous pouvez regrouper visuellement des éléments de menu dans le menu "
+"BuddyPanel en les mettant en retrait dans Sections."
 
 #: inc/theme/class-buddypanel-section.php:149
-#, fuzzy
-#| msgid "Section"
 msgid "Add Section"
-msgstr "Section"
+msgstr "Ajouter une section"
 
 #. translators: BuddyPanel menu location text.
 #: inc/theme/class-buddypanel-section.php:157
 msgid "Link this menu to either %s only to add sections."
 msgstr ""
+"Liez ce menu à l’un ou l’autre %s uniquement pour ajouter des sections."
 
 #: inc/theme/class-buddypanel-section.php:158
-#, fuzzy
-#| msgid "BuddyPanel Position"
 msgid "BuddyPanel or Mobile menu location"
-msgstr "Position du panneau BuddyPanel"
+msgstr "Emplacement du menu BuddyPanel ou Mobile"
 
 #: inc/theme/functions.php:71
 msgid "BuddyPanel - Logged in users"
@@ -15206,28 +14551,20 @@ msgid "BuddyPanel - Logged out users"
 msgstr "BuddyPanel - Utilisateurs déconnectés"
 
 #: inc/theme/functions.php:73
-#, fuzzy
-#| msgid "BuddyPanel - Logged in users"
 msgid "Header Menu - Logged in users"
-msgstr "BuddyPanel - Utilisateurs connectés"
+msgstr "Menu d’en-tête - Utilisateurs connectés"
 
 #: inc/theme/functions.php:74
-#, fuzzy
-#| msgid "BuddyPanel - Logged out users"
 msgid "Header Menu - Logged out users"
-msgstr "BuddyPanel - Utilisateurs déconnectés"
+msgstr "Menu d’en-tête - Utilisateurs déconnectés"
 
 #: inc/theme/functions.php:75
-#, fuzzy
-#| msgid "Mobile Logo Size"
 msgid "Mobile Menu - Logged in"
-msgstr "Taille du logo pour appareils mobiles"
+msgstr "Menu Mobile - Connecté"
 
 #: inc/theme/functions.php:76
-#, fuzzy
-#| msgid "Mobile Logo"
 msgid "Mobile Menu - Logged out"
-msgstr "Logo mobile"
+msgstr "Menu Mobile - Déconnecté"
 
 #: inc/theme/functions.php:395
 msgid "Share on Facebook"
@@ -15503,10 +14840,8 @@ msgid "Widgets in this area will be shown on courses page."
 msgstr "Les Widgets dans cette zone seront affichés sur la page des cours."
 
 #: inc/theme/sidebars.php:200
-#, fuzzy
-#| msgid "Footer #%s"
 msgid "Footer Column #%s"
-msgstr "Pied de page #%s"
+msgstr "Colonne de pied de page #%s"
 
 #: inc/theme/sidebars.php:202
 msgid "The footer widget area %s. Only appears if widgets are added."
@@ -15665,9 +15000,8 @@ msgid "Return to the Dashboard"
 msgstr "Retour au tableau de bord"
 
 #: inc/theme-activation.php:349 inc/theme-activation.php:2995
-#, fuzzy
 msgid "The following plugin was activated successfully:"
-msgstr "L’extension suivante a été activée avec succès:"
+msgstr "L’extension suivante a été activée avec succès :"
 
 #. translators: 1: plugin name.
 #: inc/theme-activation.php:351
@@ -16036,6 +15370,7 @@ msgstr "Voir plus"
 #: learndash/ld30/lesson/partials/row.php:66
 msgid "Please login to view sample content"
 msgstr ""
+"S’il vous plaît connectez-vous pour afficher le contenu de l’échantillon"
 
 #: learndash/ld30/lesson.php:134 learndash/ld30/quiz.php:109
 #: learndash/ld30/topic.php:141
@@ -16159,10 +15494,8 @@ msgstr "0 "
 
 #. translators: placeholder: %1$s: Current points, %2$s: Maximum points
 #: learndash/ld30/shortcodes/profile/assignment-row.php:107
-#, fuzzy
-#| msgid "%s/%s Points Awarded "
 msgid "%1$s/%2$s Points Awarded "
-msgstr "%s/ %s points attribués "
+msgstr "%1$s/%2$s Points gagnés "
 
 #: learndash/ld30/shortcodes/profile.php:93
 msgid "Edit profile"
@@ -16278,10 +15611,8 @@ msgid "Enable sharing"
 msgstr "Activer le partage"
 
 #: lifterlms/certificates/content-legacy.php:20
-#, fuzzy
-#| msgid "Media Background"
 msgid "Certificate Background"
-msgstr "Arrière-plan des médias"
+msgstr "Fond du Certificat"
 
 #: lifterlms/certificates/loop.php:33
 msgid "You do not have any certificates yet."
@@ -17018,7 +16349,7 @@ msgstr "Vous n'avez pas de notification"
 
 #: template-parts/update-hello-theme-popup.php:16
 msgid "Important Notice"
-msgstr ""
+msgstr "Avis important"
 
 #: template-parts/update-hello-theme-popup.php:32
 msgid "You are about to update to BuddyBoss Theme 2.0. 🥳"
@@ -17456,15 +16787,15 @@ msgstr "Compétences"
 
 #. Template Name of the plugin/theme
 msgid "Fullscreen Page"
-msgstr ""
+msgstr "Page plein écran"
 
 #. Template Name of the plugin/theme
 msgid "Full Width Content"
-msgstr ""
+msgstr "Contenu pleine page"
 
 #. Template Name of the plugin/theme
 msgid "No Sidebar"
-msgstr ""
+msgstr "Pas de barre latérale"
 
 #: 404.php:11
 msgctxt "404 page title"
@@ -17793,11 +17124,9 @@ msgstr "%1$s à %2$s"
 
 #. translators: %s: Update now.
 #: inc/theme/bb-theme-update.php:174
-#, fuzzy
-#| msgid "Updated %s ago"
 msgctxt "theme"
 msgid "Update %s now"
-msgstr "Mis à jour il y a %s"
+msgstr "Mise à jour %s maintenant"
 
 #: inc/theme-activation.php:1150 inc/theme-activation.php:2991
 msgctxt "plugin A *and* plugin B"
@@ -17867,27 +17196,19 @@ msgstr "%1$d/%2$d étape(s)"
 
 #. translators: placeholders: Topic Count, Topic/Topics Label.
 #: learndash/ld30/lesson/partials/row.php:174
-#, fuzzy
-#| msgctxt "placeholders: Topic Count, Topic/Topics Label"
-#| msgid "%1$d %2$s"
-#| msgid_plural "%1$d %2$s"
 msgctxt "placeholders: Topic Count, Topic/Topics Label"
 msgid "%1$d %2$s"
 msgid_plural "%1$d %2$s"
 msgstr[0] "%1$d %2$s"
-msgstr[1] "%1$s %2$s"
+msgstr[1] "%1$d %2$s"
 
 #. translators: placeholders: Quiz Count, Quiz/Quizzes Label.
 #: learndash/ld30/lesson/partials/row.php:200
-#, fuzzy
-#| msgctxt "placeholders: Quiz Count, Quiz/Quizzes Label"
-#| msgid "%1$d %2$s"
-#| msgid_plural "%1$d %2$s"
 msgctxt "placeholders: Quiz Count, Quiz/Quizzes Label"
 msgid "%1$d %2$s"
 msgid_plural "%1$d %2$s"
 msgstr[0] "%1$d %2$s"
-msgstr[1] "%1$s %2$s"
+msgstr[1] "%1$d %2$s"
 
 #. translators: placeholder: course.
 #: learndash/ld30/modules/login-modal.php:75
