@@ -51,7 +51,6 @@ body .tribe-events-calendar-list__event-category-link {
 	display: none;
 }
 
-
 /* BB V2 */
 body .widget.bb_widget_recent_posts .bb-recent-posts li .bb-title {
   font-weight: normal;
@@ -88,6 +87,9 @@ body.bb-template-v2 .bp-navs ul li.selected a .bb-component-nav-item-point {
 body .widget.widget_block .wp-block-group .bb_widget_recent_posts {
   padding: 1rem 1.5rem;
 } */
+.bb-footer .footer-menu a {
+  text-transform: initial !important;
+}
 
 /* Responsive */
 body #tribe-events-content {
