@@ -87,6 +87,10 @@ strong,
   z-index: 2147483646;
 }
 
-.footer-bottom{
+.footer-bottom {
   padding-bottom: 60px !important;
+}
+
+.b-footer .footer-menu a {
+  text-transform: initial !important;
 }
