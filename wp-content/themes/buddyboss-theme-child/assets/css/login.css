@@ -1,5 +1,11 @@
-#login {
+div#login {
 	width: 360px;
+}
+
+@media (min-width: 992px) {
+	body.login.login-split-page #login {
+		max-width: none !important;
+	}
 }
 
 div#login form#loginform p.forgetmenot label {
