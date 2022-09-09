@@ -1,5 +1,5 @@
 <?php
-	function pafe_template_form_booking($settings, $element_id, $post_id, $date = '') {
+	function pafe_template_form_booking($settings, $element_id, $post_id, $date = '', $form_id) {
 		if (!is_array($settings)) {
 			$settings = json_decode(stripslashes($settings),true);
 		}
@@ -15,6 +15,7 @@
 		$item['pafe_form_booking_date'] = $date;
 		$item['pafe_form_booking_element_id'] = $element_id;
 		$item['pafe_form_booking_post_id'] = $post_id;
+		$item['pafe_form_booking_title'] = !empty($item['pafe_form_booking_title']) ? $item['pafe_form_booking_title'] : $item['pafe_form_booking_slot_id'];
 
 		if (empty($settings['pafe_form_booking_field_allow_multiple']) && !empty($settings['pafe_form_booking_slot_quantity_field'])) {
 			$item['pafe_form_booking_slot_quantity_field'] =  $settings['pafe_form_booking_slot_quantity_field'];
@@ -81,7 +82,7 @@
 ?>	
 	<div class="pafe-form-booking__item<?php if(empty($slot_availble)) { echo ' pafe-form-booking__item--disabled'; } ?>">
 		<div class="pafe-form-booking__item-inner">
-			<input type="checkbox"<?php if(empty($slot_availble)) { echo ' disabled'; } ?> value="<?php echo $item['pafe_form_booking_title']; ?>" data-value="<?php echo $item['pafe_form_booking_title']; ?>" id="form-field-<?php echo $item['pafe_form_booking_id']; ?>-<?php echo $key; ?>" name="form_fields[<?php echo $item['pafe_form_booking_id']; ?>][]" data-pafe-form-builder-default-value="<?php echo $item['pafe_form_booking_title']; ?>" data-pafe-form-builder-form-booking-price="<?php echo $item['pafe_form_booking_price']; ?>" data-pafe-form-builder-form-id="<?php echo $settings['pafe_form_booking_form_id']; ?>" data-pafe-form-booking-item data-pafe-form-booking-item-options='<?php echo json_encode( $item, JSON_UNESCAPED_UNICODE ); ?>'<?php if(empty($settings['pafe_form_booking_field_allow_multiple'])) { echo ' data-pafe-form-booking-item-radio'; } ?> data-pafe-form-builder-form-booking-availble="<?php echo $slot_availble; ?>">
+			<input type="checkbox"<?php if(empty($slot_availble)) { echo ' disabled'; } ?> value="<?php echo $item['pafe_form_booking_title']; ?>" data-value="<?php echo $item['pafe_form_booking_title']; ?>" id="form-field-<?php echo $item['pafe_form_booking_id']; ?>-<?php echo $key; ?>" name="form_fields[<?php echo $item['pafe_form_booking_id']; ?>][]" data-pafe-form-builder-default-value="<?php echo $item['pafe_form_booking_title']; ?>" data-pafe-form-builder-form-booking-price="<?php echo $item['pafe_form_booking_price']; ?>" data-pafe-form-builder-form-id="<?php echo $form_id; ?>" data-pafe-form-booking-item data-pafe-form-booking-item-options='<?php echo json_encode( $item, JSON_UNESCAPED_UNICODE ); ?>'<?php if(empty($settings['pafe_form_booking_field_allow_multiple'])) { echo ' data-pafe-form-booking-item-radio'; } ?> data-pafe-form-builder-form-booking-availble="<?php echo $slot_availble; ?>">
 			<?php if (!empty($item['pafe_form_booking_title'])) : ?>
 				<div class="pafe-form-booking__title"><?php echo $item['pafe_form_booking_title']; ?></div>
 			<?php endif; ?>

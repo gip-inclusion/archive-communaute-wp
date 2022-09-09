@@ -384,10 +384,12 @@
 									}
 								} else {
 									if ($fields[$key_field]['name'] == get_field_name_shortcode_woocommerce_checkout( $item['woocommerce_add_to_cart_custom_order_item_field_shortcode'] )) {
-										if (empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_field_empty'])) {
+										if (empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_field_empty']) && $field['value'] != '0') {
 											$fields_cart[] = $field;
 										} else {
-											if (!empty($field['value'])) {
+											if (!empty($field['value']) && empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_value_zero'])) {
+												$fields_cart[] = $field;
+											}elseif($field['value'] != '0'){
 												$fields_cart[] = $field;
 											}
 										}
@@ -417,7 +419,7 @@
 					}
 
 					$cart_item_data['fields'][] = array(
-						'label' => $fields_cart[$key_field]['label'],
+						'label' => !empty($fields_cart[$key_field]['label']) ? $fields_cart[$key_field]['label'] : $fields_cart[$key_field]['name'],
 						'name' => $fields_cart[$key_field]['name'],
 						'value' => $field_value,
 					);

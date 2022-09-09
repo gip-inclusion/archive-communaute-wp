@@ -178,7 +178,7 @@ define('PAFE_FEATURES', json_encode(array(
                 'option' => 'pafe-features-equal-height-for-woocommerce-products',
                 'url' => 'https://pafe.piotnet.com/docs/equal-height/?wpam_id=1',
                 'pro' => 1,
-                'form-builder' => true,
+                'extension' => true,
             ), array(
                 'name' => 'Font Awesome 5',
                 'option' => 'pafe-features-font-awesome-5',
@@ -503,6 +503,13 @@ define('PAFE_FEATURES', json_encode(array(
                 'option' => 'pafe-features-video-playlist',
                 'url' => 'https://pafe.piotnet.com/docs/video-playlist/?wpam_id=1',
                 'pro' => false,
+                'widget' => true,
+            ),
+            array(
+                'name' => 'Widget Creator',
+                'option' => 'pafe-features-widget-creator',
+                'url' => 'https://pafe.piotnet.com/docs/pafe-widget-creator/?wpam_id=1',
+                'pro' => 1,
                 'widget' => true,
             ),
             array(

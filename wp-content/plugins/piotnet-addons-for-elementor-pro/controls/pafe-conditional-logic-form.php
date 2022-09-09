@@ -196,6 +196,8 @@ class PAFE_Conditional_Logic_Form extends \Elementor\Widget_Base {
 						] );
 					}
 				}
+
+				wp_enqueue_script( 'pafe-form-builder-advanced-script' );
 			}
 		}
 	}

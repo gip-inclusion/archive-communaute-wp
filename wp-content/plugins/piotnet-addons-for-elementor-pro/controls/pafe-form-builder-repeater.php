@@ -33,11 +33,13 @@ class PAFE_Form_Builder_Repeater extends \Elementor\Widget_Base {
 			]
 		);
 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 		$element->add_control(
 			'pafe_form_builder_repeater_form_id',
 			[
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
 				'condition' => [
 					'pafe_form_builder_repeater_enable' => 'yes',
@@ -85,8 +87,8 @@ class PAFE_Form_Builder_Repeater extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Click here to get the Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => '<input class="elementor-form-field-shortcode" readonly style="margin-top: 10px;" />',
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'classes' => 'pafe-forms-field-shortcode pafe-forms-field-shortcode--repeater',
 				'condition' => [
 					'pafe_form_builder_repeater_enable' => 'yes',
 				],
@@ -99,9 +101,13 @@ class PAFE_Form_Builder_Repeater extends \Elementor\Widget_Base {
 
 	public function before_render_element($element) {
 		$settings = $element->get_settings_for_display();
-		if( !empty($settings['pafe_form_builder_repeater_enable']) && !empty($settings['pafe_form_builder_repeater_form_id']) && !empty($settings['pafe_form_builder_repeater_id']) && !empty($settings['pafe_form_builder_repeater_label']) ) { 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['pafe_form_builder_repeater_form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
+
+		if( !empty($settings['pafe_form_builder_repeater_enable']) && !empty($settings['pafe_form_builder_repeater_id']) && !empty($settings['pafe_form_builder_repeater_label']) ) { 
 			$element->add_render_attribute( '_wrapper', [
-				'data-pafe-form-builder-repeater-form-id' => $settings['pafe_form_builder_repeater_form_id'],
+				'data-pafe-form-builder-repeater-form-id' => $form_id,
 				'data-pafe-form-builder-repeater-id' => $settings['pafe_form_builder_repeater_id'],
 				'data-pafe-form-builder-repeater-label' => $settings['pafe_form_builder_repeater_label'],
 				'data-pafe-form-builder-repeater-limit' => $settings['pafe_form_builder_repeater_limit'],

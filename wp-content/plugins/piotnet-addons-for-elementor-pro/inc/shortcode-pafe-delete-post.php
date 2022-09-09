@@ -23,6 +23,8 @@
 					wp_enqueue_style( 'pafe-form-builder-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder.min.css', [], PAFE_PRO_VERSION );
 
 					echo '<a data-pafe-form-builder-delete-post="' . get_the_ID() . '" data-pafe-form-builder-delete-post-redirect="' . $redirect . '" data-pafe-form-builder-delete-post-force="' . $force_delete . '" class="pafe-form-builder-delete-post">' . $delete_text . '</a>';
+
+					wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
 				}
 			}
 		return ob_get_clean();

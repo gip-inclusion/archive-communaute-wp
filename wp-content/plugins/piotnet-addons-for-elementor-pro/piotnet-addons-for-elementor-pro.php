@@ -3,18 +3,18 @@
  * Plugin Name: Piotnet Addons For Elementor Pro
  * Description: Piotnet Addons For Elementor Pro (PAFE Pro) adds many new features for Elementor
  * Plugin URI:  https://pafe.piotnet.com/
- * Version:     6.5.24dev1
+ * Version:     7.0.2
  * Author:      Piotnet Team
  * Author URI:  https://piotnet.com/
  * Text Domain: pafe
  * Domain Path: /languages
- * Elementor tested up to: 3.6.6
- * Elementor Pro tested up to: 3.7.2
+ * Elementor tested up to: 3.7.4
+ * Elementor Pro tested up to: 3.7.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PAFE_PRO_VERSION', '6.5.24dev1' );
+define( 'PAFE_PRO_VERSION', '7.0.2' );
 define( 'PAFE_PRO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 final class Piotnet_Addons_For_Elementor_Pro {
@@ -41,11 +41,17 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		add_action( 'init', [ $this, 'i18n' ] );
 
 		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+			add_action( 'init', [ $this, 'pafe_forms_post_type' ] );
 			add_action( 'init', [ $this, 'pafe_elementor_form_database_post_type' ] );
 			add_action( 'init', [ $this, 'pafe_form_database_post_type' ] );
 			add_action( 'init', [ $this, 'pafe_form_booking_post_type' ] );
 			add_action( 'init', [ $this, 'pafe_pdf_font_post_type' ] );
 		}
+
+		if( get_option( 'pafe-features-widget-creator', 2 ) == 2 || get_option( 'pafe-features-widget-creator', 2 ) == 1 ) {
+			add_action( 'init', [ $this, 'pafe_widget_creator_post_type' ] );
+		}
+
 
 		require_once( __DIR__ . '/inc/features.php' );
 		$features = json_decode( PAFE_FEATURES, true );
@@ -88,7 +94,9 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 		if ($form_builder || $widget) {
 			add_action( 'elementor/frontend/after_register_scripts', [ $this, 'enqueue_scripts_widget' ] );
+			add_action( 'elementor/preview/enqueue_scripts', [ $this, 'enqueue_scripts_widget_preview' ] );
 			add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'enqueue_styles_widget' ] );
+			add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_styles_widget_preview' ] );
 		}
 
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
@@ -130,6 +138,8 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		}
 
 		require_once( __DIR__ . '/inc/ajax-live-search.php' );
+		require_once( __DIR__ . '/controls/custom-controls/custom-controls.php' );
+
 		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
 			require_once( __DIR__ . '/inc/ajax-form-builder.php' );
 			require_once( __DIR__ . '/inc/ajax-form-builder-preview-submission.php' );
@@ -157,6 +167,10 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			require_once( __DIR__ . '/inc/ajax-convertkit-get-form.php');
 			require_once( __DIR__ . '/inc/ajax-constant-contact-get-custom-field.php');
 			require_once( __DIR__ . '/inc/ajax-constant-contact-get-list.php');
+            require_once( __DIR__ . '/inc/ajax-paypal-get-plan.php');
+            require_once( __DIR__ . '/inc/dynamic-tags.php');
+			require_once( __DIR__ . '/inc/ajax/pafe-forms-functions.php');
+			require_once( __DIR__ . '/inc/ajax/pafe-widget-functions.php');
 		}
 		if( get_option( 'pafe-features-woocommerce-checkout', 2 ) == 2 || get_option( 'pafe-features-woocommerce-checkout', 2 ) == 1 ) {
 			require_once( __DIR__ . '/inc/ajax-form-builder-woocommerce-checkout.php' );
@@ -180,6 +194,13 @@ final class Piotnet_Addons_For_Elementor_Pro {
             mkdir( $upload_dir, 0775 );
         } else {
             @chmod( $upload_dir, 0775 );
+        }
+
+        $widget_creator_dir = $upload_dir . '/widget-creator';
+        if ( ! is_dir( $widget_creator_dir ) ) {
+            mkdir( $widget_creator_dir, 0775 );
+        } else {
+            @chmod( $widget_creator_dir, 0775 );
         }
 
         // Disable Directory Browsing
@@ -229,7 +250,11 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 		add_action('manage_pafe-form-database_posts_custom_column', [$this,'pafe_form_builder_filter_column_content'], 10, 2);
 
-		add_action('admin_footer', [$this,'pafe_form_builder_filter_export_btn'] );
+		add_action('admin_footer', [ $this,'pafe_form_builder_filter_export_btn' ] );
+
+		add_action('admin_footer', [ $this,'admin_footer' ] );
+
+		add_action( 'admin_print_footer_scripts', [ $this, 'admin_print_footer_scripts' ] );
 
 		if( get_option( 'pafe-features-woocommerce-checkout', 2 ) == 2 || get_option( 'pafe-features-woocommerce-checkout', 2 ) == 1 ) {
 		
@@ -266,8 +291,94 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			require_once( __DIR__ . '/inc/ajax-form-abandonment.php' );
 		}
 		
-		add_filter( 'deprecated_function_trigger_error', [ $this, 'remove_deprecated_function_trigger_error' ], 10, 1 ); 
+		add_filter( 'deprecated_function_trigger_error', [ $this, 'remove_deprecated_function_trigger_error' ], 10, 1 );
 
+		add_filter( 'post_row_actions', [ $this, 'modify_list_row_actions' ], 10, 2 );
+
+		add_shortcode('pafe-forms', [ $this, 'pafe_template_elementor' ] );
+
+		add_shortcode('pafe-form', [ $this, 'pafe_form_shortcode' ] );
+
+		add_filter( 'manage_pafe-forms_posts_columns', [ $this, 'pafe_forms_set_custom_edit_columns' ] );
+    	add_action( 'manage_pafe-forms_posts_custom_column', [ $this, 'pafe_forms_custom_column' ], 10, 2 );
+	}
+
+	public function pafe_form_shortcode($atts) {
+		if(!class_exists('Elementor\Plugin')){
+	        return '';
+	    }
+	    if(!isset($atts['id']) || empty($atts['id'])){
+	        return '';
+	    }
+
+	    $post_id = $atts['id'];
+	    $response = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($post_id);
+	    return $response;
+	}
+
+	public function pafe_forms_set_custom_edit_columns($columns) {
+        $columns['pafe-forms-shortcode'] = __( 'Shortcode', 'pafe' );
+        return $columns;
+    }
+
+    public function pafe_forms_custom_column( $column, $post_id ) {
+        switch ( $column ) {
+            case 'pafe-forms-shortcode' :
+                echo '<input class="elementor-shortcode-input" type="text" readonly="" onfocus="this.select()" value="[pafe-form id=' . '&quot;' . $post_id . '&quot;' . ']">';
+                break;
+        }
+    }
+
+	public function modify_list_row_actions( $actions, $post ) {
+		$post_type = $post->post_type;
+		if ( in_array($post_type, ['pafe-forms']) ) {
+            $url_export_html = '<a href="' . esc_url( get_admin_url( null, 'admin-ajax.php?action=pafe_forms_functions&function=export&id=' ) ) . $post->ID . '">' . __( 'Export', 'pafe' ) . '</a>';
+
+            $duplicate_html = '<a href="' . esc_url( get_admin_url( null, 'admin-ajax.php?action=pafe_forms_functions&function=duplicate&id=' ) ) . $post->ID . '">' . __( 'Duplicate', 'pafe' ) . '</a>';
+
+			$actions['export_pafe_forms'] = $url_export_html;
+			$actions['duplicate_pafe_forms'] = $duplicate_html;
+		}
+
+		if ( in_array($post_type, ['pafe-widget']) ) {
+            $url_export_html = '<a href="' . esc_url( get_admin_url( null, 'admin-ajax.php?action=pafe_widget_functions&function=export&id=' ) ) . $post->ID . '">' . __( 'Export', 'pafe' ) . '</a>';
+
+            $duplicate_html = '<a href="' . esc_url( get_admin_url( null, 'admin-ajax.php?action=pafe_widget_functions&function=duplicate&id=' ) ) . $post->ID . '">' . __( 'Duplicate', 'pafe' ) . '</a>';
+
+			$actions['export_pafe_widget'] = $url_export_html;
+			$actions['duplicate_pafe_widget'] = $duplicate_html;
+		}
+
+		return $actions;
+	}
+
+	public function admin_footer() {
+		echo '<div data-pafe-admin-url="' . admin_url() . '"></div>';
+		echo '<div data-pafe-plugin-url="' . plugins_url() . '"></div>';
+
+		global $pagenow;
+		if (( $pagenow == 'edit.php' ) && !empty($_GET['post_type'])) {
+			if (sanitize_text_field($_GET['post_type']) == 'pafe-forms') {
+				if ( empty(get_option( 'pafe_do_flush', false )) ) {
+					add_option( 'pafe_do_flush', true );
+					flush_rewrite_rules();
+				}
+			}
+			if (sanitize_text_field($_GET['post_type']) == 'pafe-widget') {
+				if ( empty(get_option( 'pafe_do_flush_widget', false )) ) {
+					add_option( 'pafe_do_flush_widget', true );
+					flush_rewrite_rules();
+				}
+			}
+		}
+	}
+
+	public function admin_print_footer_scripts() {
+		echo "<div data-pafe-dynamic-tags-list style='display:none'>";
+		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+			pafe_dynamic_tags_list_html();
+		}
+		echo "</div>";
 	}
 
 	public function remove_deprecated_function_trigger_error() {
@@ -348,15 +459,18 @@ final class Piotnet_Addons_For_Elementor_Pro {
 	}
 
 	public function pafe_form_builder_filter_column($defaults) {
-	    $defaults['form_id'] = 'Form ID';
+	    $defaults['form'] = 'Form';
 	    $defaults['status'] = 'Status';
 	    $defaults['form_type'] = 'Form Type';
 	    return $defaults;
 	}
 
 	public function pafe_form_builder_filter_column_content($column_name, $post_ID) {
-	    if ($column_name == 'form_id') {
-	        echo get_post_meta($post_ID,'form_id',true);
+	    if ($column_name == 'form') {
+	        $form_id = get_post_meta($post_ID,'form_id',true);
+	        $form_post_id = get_post_meta($post_ID,'post_id',true);
+	        $form_title = get_post_type($form_post_id) == 'pafe-forms' ? get_the_title($form_post_id) . ' (#' . $form_id . ')' : '#' . $form_id;
+	        echo $form_title;
 	    }
 
 	    if ($column_name == 'status') {
@@ -559,14 +673,14 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 		}
 	}
-	
+
     public function pafe_unset_redirect_order_item_meta_data($formatted_meta){
 	    foreach( $formatted_meta as $key => $meta ){
 	        if ($meta->key == 'pafe_woocommerce_checkout_redirect') {
 	            unset($formatted_meta[$key]);
 	        }
 	    }
-	    
+
 	    return $formatted_meta;
     }
 
@@ -574,7 +688,7 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		if ( class_exists( 'WooCommerce' ) ) {  
 	        foreach ( $cart->get_cart() as $cart_item ) {
 		        if( isset($cart_item['pafe_custom_price']) ) {
-		            $cart_item['data']->set_price( $cart_item['pafe_custom_price'] );
+		            $cart_item['data']->set_price( !empty($cart_item['pafe_custom_price']) ? $cart_item['pafe_custom_price'] : 0 );
 		        }
 		    }
 	    }  
@@ -585,6 +699,64 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		$message = '<p><strong>Piotnet Addons For Elementor PRO</strong></p>' . '<p>' . __( 'You have to Activate License to enable all features.', 'pafe' ) . ' ' . '<a href="'. esc_url( get_admin_url(null, 'admin.php?page=piotnet-addons-for-elementor') ) .'" class="elementor-plugins-gopro">' . esc_html__( 'Activate License', 'pafe' ) . '</a>' . '</p>';
 
 		echo '<div class="'. $class . '">' . $message . '</div>';
+	}
+
+	public function pafe_forms_post_type() {
+	    register_post_type('pafe-forms',
+			array(
+				'labels'      => array(
+					'name'          => __('PAFE Forms'),
+					'singular_name' => __('Form'),
+				),
+				'public'      => true,
+				'has_archive' => true,
+				'show_in_menu' => false,
+				'supports' => array(
+					'title',
+					'custom-fields',
+					'elementor',
+				),
+			)
+	    );
+
+	    remove_post_type_support( 'pafe-forms', 'editor' );
+
+	    add_filter( 'wpseo_sitemap_exclude_post_type', function( $retval, $post_type ) {
+			if ( 'pafe-forms' === $post_type ) {
+				$retval = true;
+			}
+
+			return $retval;
+		}, 10, 2 );
+	}
+
+	function pafe_widget_creator_post_type() {
+		register_post_type('pafe-widget',
+			array(
+				'labels'      => array(
+					'name'          => __('PAFE Widget Creator'),
+					'singular_name' => __('Widget Creator'),
+				),
+				'public'      => true,
+				'has_archive' => true,
+				'show_in_menu' => false,
+				'supports' => array(
+					'title',
+					'custom-fields',
+					'elementor',
+				),
+			)
+	    );
+
+	    remove_post_type_support( 'pafe-widget', 'editor' );
+
+	    add_filter( 'wpseo_sitemap_exclude_post_type', function( $retval, $post_type ) {
+			if ( 'pafe-forms' === $post_type ) {
+				$retval = true;
+			}
+
+			return $retval;
+		}, 10, 2 );
 	}
 
 	public function pafe_elementor_form_database_post_type() {
@@ -621,8 +793,8 @@ final class Piotnet_Addons_For_Elementor_Pro {
 	    register_post_type('pafe-form-database',
 			array(
 				'labels'      => array(
-					'name'          => __('PAFE Form Database'),
-					'singular_name' => __('PAFE Form Database'),
+					'name'          => __('Form Database'),
+					'singular_name' => __('Form Database'),
 				),
 				'public'      => true,
 				'has_archive' => true,
@@ -820,7 +992,9 @@ final class Piotnet_Addons_For_Elementor_Pro {
 				$pos = stripos($string, '"');
 				$product_id = substr($string,0,$pos);
 
-				WC()->cart->add_to_cart( $product_id, 1 );
+				if (!empty($product_id)) {
+					WC()->cart->add_to_cart( $product_id, 1 );
+				}
 			}
 		}
 	}
@@ -864,38 +1038,122 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 	public function enqueue() {
 		wp_enqueue_script( 'pafe-extension', plugin_dir_url( __FILE__ ) . 'assets/js/minify/extension.min.js', array('jquery'), PAFE_PRO_VERSION );
-		wp_enqueue_style( 'pafe-extension-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/extension.min.css', [], PAFE_PRO_VERSION );		
+		wp_enqueue_style( 'pafe-extension-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/extension.min.css', [], PAFE_PRO_VERSION );
 	}
 
 	public function enqueue_font_awesome_5() {
-		wp_enqueue_style( 'pafe-font-awesome-5', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome-5.css', [], PAFE_PRO_VERSION );		
+		wp_enqueue_style( 'pafe-font-awesome-5', plugin_dir_url( __FILE__ ) . 'assets/css/minify/font-awesome-5.min.css', [], PAFE_PRO_VERSION );
 	}
 
 	public function enqueue_scripts_woocommerce_sales_funnels() {
 		wp_enqueue_script( 'pafe-woocommerce-sales-funnels-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/woocommerce-sales-funnels.min.js', array('jquery'), PAFE_PRO_VERSION );
-		wp_enqueue_style( 'pafe-woocommerce-sales-funnels-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/woocommerce-sales-funnels.min.css', [], PAFE_PRO_VERSION );		
+		wp_enqueue_style( 'pafe-woocommerce-sales-funnels-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/woocommerce-sales-funnels.min.css', [], PAFE_PRO_VERSION );
 	}
 
 	public function enqueue_scripts_widget() {
-		wp_register_script( 'pafe-form-builder', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder.min.js', array('jquery'), PAFE_PRO_VERSION );
-		wp_register_script( 'pafe-slick', plugin_dir_url( __FILE__ ) . 'assets/js/slick.min.js', array('jquery'), PAFE_PRO_VERSION );
-		//wp_register_script( 'pafe-submit-post-scripts', plugin_dir_url( __FILE__ ) . 'inc/tinymce/jquery.tinymce.min.js', array('jquery'), PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-advanced-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/advanced.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-advanced2-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/advanced2.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-iban-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/iban.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-image-picker-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/image-picker.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-range-slider-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/ion-rangeslider.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-jquery-validation-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/jquery-validation.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-tinymce-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/tinymce.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-input-mask-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/input-mask.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-nice-number-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/nice-number.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-flatpickr-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/flatpickr.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-date-time-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/date-time.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-stripe-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/stripe.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-mollie-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/mollie.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-multi-step-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/multi-step.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-international-tel-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/international-tel.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-signature-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/signature.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-selectize-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/selectize.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-image-upload-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/image-upload.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+		wp_register_script( 'pafe-form-builder-preview-submission-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/preview-submission.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+
+		if (!empty(get_option('piotnet-addons-for-elementor-pro-google-maps-api-key'))) {
+			wp_register_script( 'pafe-form-builder-google-maps-init-script', plugin_dir_url( __FILE__ ) . 'assets/js/minify/form-builder/google-maps-init.min.js', [ 'jquery' ], PAFE_PRO_VERSION );
+			wp_register_script( 'pafe-form-builder-google-maps-script', 'https://maps.googleapis.com/maps/api/js?key='. esc_attr( get_option('piotnet-addons-for-elementor-pro-google-maps-api-key') ) .'&libraries=places&callback=pafeAddressAutocompleteInitMap', [], PAFE_PRO_VERSION );
+		}
+
+		wp_register_script( 'pafe-slick', plugin_dir_url( __FILE__ ) . 'assets/js/minify/slick.min.js', array('jquery'), PAFE_PRO_VERSION );
 		wp_register_script( 'pafe-widget', plugin_dir_url( __FILE__ ) . 'assets/js/minify/widget.min.js', array('jquery'), PAFE_PRO_VERSION );
-		wp_register_script( 'pafe-widget-date', plugin_dir_url( __FILE__ ) . 'languages/date/flatpickr.min.js', array('jquery'), PAFE_PRO_VERSION, false );
-		wp_register_script( 'pafe-widget-tel', plugin_dir_url( __FILE__ ) . 'assets/js/utils.js', array('jquery'), PAFE_PRO_VERSION, false );
+        wp_register_script( 'pafe-widget-date', plugin_dir_url( __FILE__ ) . 'languages/date/flatpickr.min.js', array('jquery'), PAFE_PRO_VERSION, false );
+        wp_register_script( 'pafe-select2', plugin_dir_url( __FILE__ ) . 'assets/js/minify/select2.min.js', array('jquery'), PAFE_PRO_VERSION );
+	}
+
+	public function enqueue_scripts_widget_preview() {
+		wp_enqueue_script( 'pafe-form-builder-advanced-script' );
+		wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
+		wp_enqueue_script( 'pafe-form-builder-iban-script' );
+		wp_enqueue_script( 'pafe-form-builder-image-picker-script' );
+		wp_enqueue_script( 'pafe-form-builder-range-slider-script' );
+		wp_enqueue_script( 'pafe-form-builder-jquery-validation-script' );
+		wp_enqueue_script( 'pafe-form-builder-tinymce-script' );
+		wp_enqueue_script( 'pafe-form-builder-input-mask-script' );
+		wp_enqueue_script( 'pafe-form-builder-nice-number-script' );
+		wp_enqueue_script( 'pafe-form-builder-flatpickr-script' );
+		wp_enqueue_script( 'pafe-form-builder-date-time-script' );
+		wp_enqueue_script( 'pafe-form-builder-stripe-script' );
+		wp_enqueue_script( 'pafe-form-builder-mollie-script' );
+		wp_enqueue_script( 'pafe-form-builder-multi-step-script' );
+		wp_enqueue_script( 'pafe-form-builder-international-tel-script' );
+		wp_enqueue_script( 'pafe-form-builder-signature-script' );
+		wp_enqueue_script( 'pafe-form-builder-selectize-script' );
+		wp_enqueue_script( 'pafe-form-builder-image-upload-script' );
+		wp_enqueue_script( 'pafe-form-builder-preview-submission-script' );
+		wp_enqueue_script( 'pafe-widget' );
 	}
 
 	public function enqueue_styles_widget() {
 		wp_register_style( 'pafe-form-builder-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-form-builder-image-picker-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/image-picker.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-form-builder-range-slider-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/range-slider.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-form-builder-multi-step-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/multi-step.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-form-builder-flatpickr-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/flatpickr.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-form-builder-selectize-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/selectize.min.css', [], PAFE_PRO_VERSION );
 		wp_register_style( 'pafe-widget-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/widget.min.css', [], PAFE_PRO_VERSION );
+        wp_register_style( 'pafe-select2-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/form-builder/select2.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-widget-creator-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/pafe-widget-creator.min.css', [], PAFE_PRO_VERSION );
+		wp_register_style( 'pafe-font-awesome-style', plugin_dir_url( __FILE__ ) . 'assets/css/minify/font-awesome-5.min.css', [], PAFE_PRO_VERSION );
+	}
+
+	public function enqueue_styles_widget_preview() {
+		wp_enqueue_style( 'pafe-form-builder-style' );
+		wp_enqueue_style( 'pafe-form-builder-image-picker-style' );
+		wp_enqueue_style( 'pafe-form-builder-range-slider-style' );
+		wp_enqueue_style( 'pafe-form-builder-multi-step-style' );
+		wp_enqueue_style( 'pafe-form-builder-flatpickr-style' );
+		wp_enqueue_style( 'pafe-form-builder-selectize-style' );
+		wp_enqueue_style( 'pafe-widget-style' );
 	}
 
 	public function enqueue_editor() {
 
 		wp_enqueue_style( 'pafe-editor', plugin_dir_url( __FILE__ ) . 'assets/css/minify/pafe-editor.min.css', [], PAFE_PRO_VERSION );
 		wp_enqueue_script( 'pafe-editor-scripts', plugin_dir_url( __FILE__ ) . 'assets/js/minify/pafe-editor.min.js', array('jquery'), PAFE_PRO_VERSION );
-		wp_enqueue_style( 'pafe-font-awesome-editor', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome-5.css', [], PAFE_PRO_VERSION );
+		wp_enqueue_style( 'pafe-font-awesome-editor', plugin_dir_url( __FILE__ ) . 'assets/css/minify/font-awesome-5.min.css', [], PAFE_PRO_VERSION );
 
+		if (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-forms') {
+			?>
+				<style type="text/css">
+					#elementor-panel-categories {display: flex; flex-direction: column;}
+					.elementor-panel-category {order: 2;}
+					#elementor-panel-category-pafe-form-builder {order: 1;}
+				</style>
+			<?php
+		}
+
+		if (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-widget') {
+			?>
+				<style type="text/css">
+					#elementor-panel-categories {display: flex; flex-direction: column;}
+					.elementor-panel-category {order: 2;}
+					#elementor-panel-category-pafe-widget-creator {order: 1;}
+				</style>
+			<?php
+		}
 	}
 
 	public function enqueue_footer() {
@@ -934,17 +1192,35 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		}
 
 		if( get_option( 'pafe-features-stripe-payment', 2 ) == 2 || get_option( 'pafe-features-stripe-payment', 2 ) == 1 ) {
-			// echo '<script src="https://js.stripe.com/v3/"></script>';
 			echo '<div data-pafe-stripe="' . esc_attr( get_option('piotnet-addons-for-elementor-pro-stripe-publishable-key') ) . '"></div>';
 		}
 
-		if (!empty(esc_attr( get_option('piotnet-addons-for-elementor-pro-google-maps-api-key') ))) {
-			if( get_option( 'pafe-features-address-autocomplete-field', 2 ) == 2 || get_option( 'pafe-features-address-autocomplete-field', 2 ) == 1 ) {
-				echo '<script src="https://maps.googleapis.com/maps/api/js?key='. esc_attr( get_option('piotnet-addons-for-elementor-pro-google-maps-api-key') ) .'&libraries=places&callback=pafeAddressAutocompleteInitMap" async defer></script>';
-			}
-		}
-		
 		echo '<div data-pafe-form-builder-tinymce-upload="' . plugins_url() . '/piotnet-addons-for-elementor-pro/inc/tinymce/tinymce-upload.php"></div>';
+		echo '<div data-pafe-plugin-url="' . plugins_url() . '"></div>';
+
+		if (!empty($GLOBALS['pafe_widget_creator_scripts'])) {
+			?>
+			<script id="pafe-widget-creator-scripts">
+			<?php
+				foreach ($GLOBALS['pafe_widget_creator_scripts'] as $key => $value) {
+					echo $value;
+				}
+			?>
+			</script>
+			<?php
+		}
+
+		if (!empty($GLOBALS['pafe_widget_creator_styles'])) {
+			?>
+			<style type="text/css">
+			<?php
+				foreach ($GLOBALS['pafe_widget_creator_styles'] as $key => $value) {
+					echo $value;
+				}
+			?>
+			</style>
+			<?php
+		}
 	}
 
 	public function enqueue_header() {
@@ -968,6 +1244,9 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 		echo '<style>.pswp.pafe-lightbox-modal {display: none;}</style>';
 
+		$GLOBALS['pafe_widget_creator_scripts'] = [];
+		$GLOBALS['pafe_widget_creator_styles'] = [];
+
 	}
 
 	public function init() {
@@ -990,9 +1269,17 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			return;
 		}
 
+		if ( version_compare( PHP_VERSION, '7.2.5', '<' ) ) {
+			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version_widget_creator' ] );
+		}
+
 		// Add Plugin actions
 		if ( defined('ELEMENTOR_VERSION') ) {
-			add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+			if ( version_compare( ELEMENTOR_VERSION, '3.7.0', '<' ) ) {
+				add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+			} else {
+				add_action( 'elementor/widgets/register', [ $this, 'init_widgets_new' ] );
+			}
 			add_action( 'elementor/controls/controls_registered', [ $this, 'init_controls' ] );
 		}
 		
@@ -1001,6 +1288,7 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		add_action( 'wp_head', [ $this, 'enqueue_header' ], 100 );
 		add_action( 'wp_footer', [ $this, 'enqueue_footer' ], 600 );
 		add_action( 'admin_menu', [ $this, 'admin_menu' ], 600 );
+		add_action( 'admin_menu', [ $this, 'change_submenu_first_item_label' ], 600 );
 		add_action( 'in_plugin_update_message-piotnet-addons-for-elementor-pro/piotnet-addons-for-elementor-pro.php', [ $this, 'update_message'], 10, 2 );
 		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
 		add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), [ $this, 'plugin_action_links' ], 10, 1 );
@@ -1101,6 +1389,22 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
 	}
 
+	public function admin_notice_minimum_php_version_widget_creator() {
+
+		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+
+		$message = sprintf(
+			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'pafe' ),
+			'<strong>' . esc_html__( 'PAFE Widget Creator', 'pafe' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'pafe' ) . '</strong>',
+			'7.2.5'
+		);
+
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+
+	}
+
 	public function plugin_action_links( $links ) {
 		$links[] = '<a href="'. esc_url( get_admin_url(null, 'admin.php?page=piotnet-addons-for-elementor') ) .'">' . esc_html__( 'Settings', 'pafe' ) . '</a>';
 		if( !PAFE_License_Service::has_valid_license() ) {
@@ -1130,17 +1434,21 @@ final class Piotnet_Addons_For_Elementor_Pro {
 	}
 
 	public function admin_menu() {
-		add_menu_page(
-			'Piotnet Addons',
-			'Piotnet Addons',
-			'manage_options',
-			'piotnet-addons-for-elementor',
-			[ $this, 'admin_page' ],
-			'dashicons-pafe-icon'
-		);
+        add_menu_page(
+            'Settings',
+            'Piotnet Addons',
+            'manage_options',
+            'piotnet-addons-for-elementor',
+            [$this, 'admin_page'],
+            'dashicons-pafe-icon'
+        );
 
+        add_submenu_page('piotnet-addons-for-elementor', 'All Widgets', 'All Widgets', 'manage_options', 'edit.php?post_type=pafe-widget');
+        add_submenu_page('piotnet-addons-for-elementor', 'Import Widget', 'Import Widget', 'manage_options', 'pafe-import-page-widget', [ $this, 'import_page_widgets' ]);
+		add_submenu_page('piotnet-addons-for-elementor', 'Add New Form', 'Add New Form', 'manage_options', 'pafe-import-page', [ $this, 'import_page' ]);
+		add_submenu_page('piotnet-addons-for-elementor', 'All Forms', 'All Forms', 'manage_options', 'edit.php?post_type=pafe-forms');
+		add_submenu_page('piotnet-addons-for-elementor', 'Form Database', 'Form Database', 'manage_options', 'edit.php?post_type=pafe-form-database');
 		add_submenu_page('piotnet-addons-for-elementor', 'Form Abandonment', 'Form Abandonment', 'manage_options', 'edit.php?post_type=pafe-formabandonment');
-		add_submenu_page('piotnet-addons-for-elementor', 'PAFE Form Database', 'PAFE Form Database', 'manage_options', 'edit.php?post_type=pafe-form-database');
 		add_submenu_page('piotnet-addons-for-elementor', 'Form Booking', 'Form Booking', 'manage_options', 'edit.php?post_type=pafe-form-booking');
 		add_submenu_page('piotnet-addons-for-elementor', 'PDF Custom Font', 'PDF Custom Font', 'manage_options', 'edit.php?post_type=pafe-fonts');
 
@@ -1148,6 +1456,14 @@ final class Piotnet_Addons_For_Elementor_Pro {
 
         add_action( 'admin_init',  [ $this, 'refresh_license' ] );
 
+	}
+
+	public function change_submenu_first_item_label() {
+		global $submenu;
+
+		if ( isset( $submenu[ 'piotnet-addons-for-elementor' ] ) ) {
+			$submenu[ 'piotnet-addons-for-elementor' ][0][0] = 'Settings';
+		}
 	}
 
     public function refresh_license() {
@@ -1158,7 +1474,7 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		register_setting( 'piotnet-addons-for-elementor-pro-google-sheets-group', 'piotnet-addons-for-elementor-pro-google-sheets-client-id' );
 		register_setting( 'piotnet-addons-for-elementor-pro-google-sheets-group', 'piotnet-addons-for-elementor-pro-google-sheets-client-secret' );
 
-        register_setting( 'piotnet-addons-for-elementor-pro-hubspot-group', 'piotnet-addons-for-elementor-pro-hubspot-api-key' );
+        register_setting( 'piotnet-addons-for-elementor-pro-hubspot-group', 'piotnet-addons-for-elementor-pro-hubspot-access-token' );
 
 		register_setting( 'piotnet-addons-for-elementor-pro-google-calendar-group', 'piotnet-addons-for-elementor-pro-google-calendar-client-id' );
 		register_setting( 'piotnet-addons-for-elementor-pro-google-calendar-group', 'piotnet-addons-for-elementor-pro-google-calendar-client-secret' );
@@ -1201,6 +1517,7 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		register_setting( 'piotnet-addons-for-elementor-pro-zoho-group', 'piotnet-addons-for-elementor-pro-zoho-token' );
 
 		register_setting( 'piotnet-addons-for-elementor-pro-paypal-group', 'piotnet-addons-for-elementor-pro-paypal-client-id' );
+		register_setting( 'piotnet-addons-for-elementor-pro-paypal-group', 'piotnet-addons-for-elementor-pro-paypal-client-secret' );
 
 		register_setting( 'piotnet-addons-for-elementor-pro-mollie-group', 'piotnet-addons-for-elementor-pro-mollie-api-key' );
 		
@@ -1218,9 +1535,15 @@ final class Piotnet_Addons_For_Elementor_Pro {
 	}
 
 	public function admin_page(){
-		
 		require_once( __DIR__ . '/inc/admin-page.php' );
+	}
 
+	public function import_page() {
+		require_once __DIR__ . '/inc/import-page.php';
+	}
+
+	public function import_page_widgets() {
+		require_once __DIR__ . '/inc/import-page-widget.php';
 	}
 
 	public function admin_enqueue() {
@@ -1267,9 +1590,31 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			]
 		);
 
+		$elements_manager->add_category(
+			'pafe-widget-creator',
+			[
+				'title' => __( 'PAFE Widget Creator', 'pafe' ),
+				'icon' => 'fa fa-plug',
+			]
+		);
+
+	}
+
+	public function find_widget_creator_start($haystack, $needle, $widget_creator_pos) {
+	    $offset = 0;
+	    $allpos = array();
+	    while (($pos = strpos($haystack, $needle, $offset)) !== FALSE) {
+	        $offset   = $pos + 1;
+	        if ($pos < $widget_creator_pos) {
+	        	$allpos[] = $pos;
+	        }
+	    }
+	    return $allpos[count($allpos) - 1];
 	}
 
 	public function init_widgets() {
+
+		$pafe_forms = (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-forms' || get_post_type() == 'pafe-forms') ? true : false;
 
 		if( get_option( 'pafe-features-lightbox-image', 2 ) == 2 || get_option( 'pafe-features-lightbox-image', 2 ) == 1 ) {
 			if ( version_compare( '2.1.0', ELEMENTOR_VERSION, '<=' ) ) {
@@ -1292,14 +1637,18 @@ final class Piotnet_Addons_For_Elementor_Pro {
 		}
 
 		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+
 			require_once( __DIR__ . '/widgets/pafe-form-builder-field.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Field() );
 
 			require_once( __DIR__ . '/widgets/pafe-form-builder-submit.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Submit() );
 
-            require_once( __DIR__ . '/widgets/pafe-display-form-submissions.php' );
-            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Data() );
+			require_once( __DIR__ . '/widgets/pafe-forms.php' );
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Forms() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-booking.php' );
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Booking() );
 
 			require_once( __DIR__ . '/widgets/pafe-form-builder-lost-password.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Lost_Password() );
@@ -1307,18 +1656,69 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			require_once( __DIR__ . '/widgets/pafe-form-builder-preview-submission.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Preview_Submission() );
 
-			require_once( __DIR__ . '/widgets/pafe-form-booking.php' );
-			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Booking() );
 		}
 
 		if( get_option( 'pafe-features-multi-step-form', 2 ) == 2 || get_option( 'pafe-features-multi-step-form', 2 ) == 1 ) {
+
 			require_once( __DIR__ . '/widgets/pafe-multi-step-form.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Multi_Step_Form() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-prev-step.php' );
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Prev_Step() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-next-step.php' );
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Next_Step() );
 		}
 
 		if( get_option( 'pafe-features-woocommerce-checkout', 2 ) == 2 || get_option( 'pafe-features-woocommerce-checkout', 2 ) == 1 ) {
 			require_once( __DIR__ . '/widgets/pafe-woocommerce-checkout.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Woocommerce_Checkout() );
+		}
+
+		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+
+			require_once( __DIR__ . '/widgets/pafe-display-form-submissions.php' );
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Form_Builder_Data() );
+
+		}
+
+		if( get_option( 'pafe-features-widget-creator', 2 ) == 2 || get_option( 'pafe-features-widget-creator', 2 ) == 1 ) {
+
+			if ( version_compare( PHP_VERSION, '7.2.5', '>=' ) ) {
+				//if (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-widget' || get_post_type() == 'pafe-widget') {
+					require_once( __DIR__ . '/widgets/pafe-widget-creator.php' );
+					\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Widget_Creator() );
+				//}
+
+				require_once( __DIR__ . '/widgets/pafe-widget-creator-base.php' );
+
+			$widgets = get_posts([
+				'post_type' => 'pafe-widget',
+				'posts_per_page' => -1,
+				'fields' => 'ids',
+			]);
+
+			if (!empty($_GET['post']) && get_post_type($_GET['post']) != 'pafe-widget' || get_post_type() != 'pafe-widget') {
+				foreach ($widgets as $post_id) {
+					$elementor_data = get_post_meta( $post_id, '_elementor_data', true);
+					$widget_creator_pos = strpos($elementor_data, ',"widgetType":"pafe-widget-creator"');
+
+						if ($widget_creator_pos !== false) {
+							$widget_start_pos = $this->find_widget_creator_start($elementor_data, '"elType":"widget","settings":{"pafe_widget_creator_title"', $widget_creator_pos);
+							$widget_creator_settings = json_decode( '{' . substr($elementor_data, $widget_start_pos, $widget_creator_pos - $widget_start_pos) . '}', true )['settings'];
+
+							if (!empty($widget_creator_settings['pafe_widget_creator_name'])) {
+								$className = str_replace([' ','-'], ['_','_'], $widget_creator_settings['pafe_widget_creator_name']);
+								$code = "class {$className} extends PAFE_Widget_Creator_Base{}";
+								eval($code);
+								$widget = new $className([], $widget_creator_settings);
+								$widget->pafe_set_settings($widget_creator_settings);
+								\Elementor\Plugin::instance()->widgets_manager->register_widget_type( $widget );
+							}
+						}
+					}
+				}
+			}
 		}
 
 		// if( get_option( 'pafe-features-woocommerce-sales-funnels', 2 ) == 2 || get_option( 'pafe-features-woocommerce-sales-funnels', 2 ) == 1 ) {
@@ -1338,7 +1738,135 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			require_once( __DIR__ . '/widgets/pafe-advanced-search.php' );
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \PAFE_Advanced_Search() ); 
 		}
-	}	 
+	}
+
+	public function init_widgets_new($widgets_manager) {
+
+		$pafe_forms = (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-forms' || get_post_type() == 'pafe-forms') ? true : false;
+
+		if( get_option( 'pafe-features-lightbox-image', 2 ) == 2 || get_option( 'pafe-features-lightbox-image', 2 ) == 1 ) {
+			if ( version_compare( '2.1.0', ELEMENTOR_VERSION, '<=' ) ) {
+				require_once( __DIR__ . '/widgets/pafe-lightbox-image.php' );
+				$widgets_manager->register( new \PAFE_Lightbox_Image() );
+			}
+
+		}
+
+		if( get_option( 'pafe-features-lightbox-gallery', 2 ) == 2 || get_option( 'pafe-features-lightbox-gallery', 2 ) == 1 ) {
+			if ( version_compare( '2.1.0', ELEMENTOR_VERSION, '<=' ) ) {
+				require_once( __DIR__ . '/widgets/pafe-lightbox-gallery.php' );
+				$widgets_manager->register( new \PAFE_Lightbox_Gallery() );
+			}
+		}
+
+		if( get_option( 'pafe-features-slider-builder', 2 ) == 2 || get_option( 'pafe-features-slider-builder', 2 ) == 1 ) {
+			require_once( __DIR__ . '/widgets/pafe-slider-builder.php' );
+			$widgets_manager->register( new \PAFE_Slider_Builder() );
+		}
+
+		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-field.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Field() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-submit.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Submit() );
+
+			require_once( __DIR__ . '/widgets/pafe-forms.php' );
+			$widgets_manager->register( new \PAFE_Forms() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-booking.php' );
+			$widgets_manager->register( new \PAFE_Form_Booking() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-lost-password.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Lost_Password() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-preview-submission.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Preview_Submission() );
+
+		}
+
+		if( get_option( 'pafe-features-multi-step-form', 2 ) == 2 || get_option( 'pafe-features-multi-step-form', 2 ) == 1 ) {
+
+			require_once( __DIR__ . '/widgets/pafe-multi-step-form.php' );
+			$widgets_manager->register( new \PAFE_Multi_Step_Form() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-prev-step.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Prev_Step() );
+
+			require_once( __DIR__ . '/widgets/pafe-form-builder-next-step.php' );
+			$widgets_manager->register( new \PAFE_Form_Builder_Next_Step() );
+		}
+
+		if( get_option( 'pafe-features-woocommerce-checkout', 2 ) == 2 || get_option( 'pafe-features-woocommerce-checkout', 2 ) == 1 ) {
+			require_once( __DIR__ . '/widgets/pafe-woocommerce-checkout.php' );
+			$widgets_manager->register( new \PAFE_Woocommerce_Checkout() );
+		}
+
+		if( get_option( 'pafe-features-form-builder', 2 ) == 2 || get_option( 'pafe-features-form-builder', 2 ) == 1 ) {
+
+			require_once( __DIR__ . '/widgets/pafe-display-form-submissions.php' );
+            $widgets_manager->register( new \PAFE_Form_Builder_Data() );
+
+		}
+
+		if( get_option( 'pafe-features-widget-creator', 2 ) == 2 || get_option( 'pafe-features-widget-creator', 2 ) == 1 ) {
+
+			if ( version_compare( PHP_VERSION, '7.2.5', '>=' ) ) {
+				//if (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-widget' || get_post_type() == 'pafe-widget') {
+					require_once( __DIR__ . '/widgets/pafe-widget-creator.php' );
+					$widgets_manager->register( new \PAFE_Widget_Creator() );
+				//}
+
+				require_once( __DIR__ . '/widgets/pafe-widget-creator-base.php' );
+
+			$widgets = get_posts([
+				'post_type' => 'pafe-widget',
+				'posts_per_page' => -1,
+				'fields' => 'ids',
+			]);
+
+			if (!empty($_GET['post']) && get_post_type($_GET['post']) != 'pafe-widget' || get_post_type() != 'pafe-widget') {
+				foreach ($widgets as $post_id) {
+					$elementor_data = get_post_meta( $post_id, '_elementor_data', true);
+					$widget_creator_pos = strpos($elementor_data, ',"widgetType":"pafe-widget-creator"');
+
+						if ($widget_creator_pos !== false) {
+							$widget_start_pos = $this->find_widget_creator_start($elementor_data, '"elType":"widget","settings":{"pafe_widget_creator_title"', $widget_creator_pos);
+							$widget_creator_settings = json_decode( '{' . substr($elementor_data, $widget_start_pos, $widget_creator_pos - $widget_start_pos) . '}', true )['settings'];
+
+							if (!empty($widget_creator_settings['pafe_widget_creator_name'])) {
+								$className = str_replace([' ','-'], ['_','_'], $widget_creator_settings['pafe_widget_creator_name']);
+								$code = "class {$className} extends PAFE_Widget_Creator_Base{}";
+								eval($code);
+								$widget = new $className([], $widget_creator_settings);
+								$widget->pafe_set_settings($widget_creator_settings);
+								$widgets_manager->register( $widget );
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// if( get_option( 'pafe-features-woocommerce-sales-funnels', 2 ) == 2 || get_option( 'pafe-features-woocommerce-sales-funnels', 2 ) == 1 ) {
+		// 	require_once( __DIR__ . '/widgets/pafe-add-to-cart-checkbox.php' );
+		// 	$widgets_manager->register( new \PAFE_Add_To_Cart_Checkbox() );
+		// }
+
+		if( get_option( 'pafe-features-acf-repeater-render', 2 ) == 2 || get_option( 'pafe-features-acf-repeater-render', 2 ) == 1 ) {
+			require_once( __DIR__ . '/widgets/pafe-acf-repeater-sub-field.php' );
+			$widgets_manager->register( new \PAFE_ACF_Repeater_Sub_Field() );
+
+			require_once( __DIR__ . '/widgets/pafe-acf-repeater-render.php' );
+			$widgets_manager->register( new \PAFE_ACF_Repeater_Render() );
+		}
+
+		if( get_option( 'pafe-features-advanced-search', 2 ) == 2 || get_option( 'pafe-features-advanced-search', 2 ) == 1 ) {
+			require_once( __DIR__ . '/widgets/pafe-advanced-search.php' );
+			$widgets_manager->register( new \PAFE_Advanced_Search() );
+		}
+	}
 
 	public function init_controls() {
 
@@ -1540,6 +2068,15 @@ final class Piotnet_Addons_For_Elementor_Pro {
 			new PAFE_Form_Builder_Repeater_Trigger();
 		}
 
+		if( get_option( 'pafe-features-multi-step-form', 2 ) == 2 || get_option( 'pafe-features-multi-step-form', 2 ) == 1 ) {
+
+			require_once( __DIR__ . '/controls/pafe-multi-step-form.php' );
+			new PAFE_Multi_Step();
+
+			require_once( __DIR__ . '/controls/pafe-next-prev-multi-step-form.php' );
+			new PAFE_Next_Prev_Multi_Step_Form();
+		}
+
 		if( get_option( 'pafe-features-range-slider', 2 ) == 2 || get_option( 'pafe-features-range-slider', 2 ) == 1 ) {
 			require_once( __DIR__ . '/controls/pafe-range-slider.php' );
 			new PAFE_Range_Slider();
@@ -1602,6 +2139,8 @@ final class Piotnet_Addons_For_Elementor_Pro {
 	}
 
 	public function add_wpml_support() {
+		$pafe_forms = (!empty($_GET['post']) && get_post_type($_GET['post']) == 'pafe-forms' || get_post_type() == 'pafe-forms') ? true : false;
+
 		require_once( __DIR__ . '/widgets/pafe-form-builder-field.php' );
 		$widget = new PAFE_Form_Builder_Field();
 		$widget->add_wpml_support();

@@ -7,15 +7,15 @@ class PAFE_Woocommerce_Checkout extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Woocommerce Checkout', 'pafe' );
+		return __( 'Woo Checkout', 'pafe' );
 	}
 
 	public function get_icon() {
-		return 'fa fa-shopping-cart';
+		return 'icon-w-woocommerce-checkout';
 	}
 
 	public function get_categories() {
-		return [ 'pafe-woocommerce-sales-funnels' ];
+		return [ 'pafe-form-builder' ];
 	}
 
 	public function get_keywords() {
@@ -42,13 +42,38 @@ class PAFE_Woocommerce_Checkout extends \Elementor\Widget_Base {
 				]
 			);
 
+			$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+			
 			$this->add_control(
 				'pafe_woocommerce_checkout_form_id',
 				[
 					'label' => __( 'Form ID* (Required)', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
+					'default' => $pafe_forms ? get_the_ID() : '',
 					'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
 					'render_type' => 'none',
+				]
+			);
+
+			$this->add_control(
+				'pafe_woocommerce_checkout_product_id',
+				[
+					'label' => __( 'Product ID* (Required)', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'dynamic' => [
+						'active' => true,
+					],
+				]
+			);
+
+			$this->add_control(
+				'pafe_woocommerce_checkout_redirect',
+				[
+					'label' => __( 'Redirect', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'dynamic' => [
+						'active' => true,
+					],
 				]
 			);
 
@@ -98,33 +123,12 @@ class PAFE_Woocommerce_Checkout extends \Elementor\Widget_Base {
 			);
 
 			$this->add_control(
-				'pafe_woocommerce_checkout_product_id',
-				[
-					'label' => __( 'Product ID* (Required)', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$this->add_control(
-				'pafe_woocommerce_checkout_redirect',
-				[
-					'label' => __( 'Redirect', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$this->add_control(
 				'woocommerce_add_to_cart_price',
 				[
 					'label' => __( 'Price Field Shortcode', 'pafe' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => __( 'Field Shortcode. E.g [field id="total"]', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'label_block' => true,
 				]
 			);
@@ -149,7 +153,8 @@ class PAFE_Woocommerce_Checkout extends \Elementor\Widget_Base {
 				[
 					'label' => __( 'Field Shortcode, Repeater Shortcode', 'pafe' ),
 					'label_block' => true,
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 				]
 			);
 
@@ -210,10 +215,13 @@ class PAFE_Woocommerce_Checkout extends \Elementor\Widget_Base {
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['pafe_woocommerce_checkout_form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
 
 		if (!empty($settings['pafe_woocommerce_checkout_product_id'])) :
 	?>
-		<div data-pafe-woocommerce-checkout-form-id="<?php echo $settings['pafe_woocommerce_checkout_form_id']; ?>" data-pafe-woocommerce-checkout-product-id="<?php echo $settings['pafe_woocommerce_checkout_product_id']; ?>" data-pafe-woocommerce-checkout-post-id="<?php echo get_the_ID(); ?>" data-pafe-woocommerce-checkout-id="<?php echo $this->get_id(); ?>" >
+		<div data-pafe-woocommerce-checkout-form-id="<?php echo $form_id; ?>" data-pafe-woocommerce-checkout-product-id="<?php echo $settings['pafe_woocommerce_checkout_product_id']; ?>" data-pafe-woocommerce-checkout-post-id="<?php echo get_the_ID(); ?>" data-pafe-woocommerce-checkout-id="<?php echo $this->get_id(); ?>" >
 			<?php echo do_shortcode('[woocommerce_checkout]'); ?>
 		</div>
 	<?php

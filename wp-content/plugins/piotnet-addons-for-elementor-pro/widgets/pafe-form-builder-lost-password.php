@@ -11,7 +11,7 @@ class PAFE_Form_Builder_Lost_Password extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-lock-user';
+		return 'icon-w-lost-password';
 	}
 
 	public function get_categories() {

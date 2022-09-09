@@ -11,7 +11,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-button';
+		return 'icon-w-button';
 	}
 
 	public function get_categories() {
@@ -118,57 +118,18 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			]
 		);
 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 		$this->add_control(
 			'form_id',
 			[
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
-				'render_type' => 'none',
+				'default' => $pafe_forms ? get_the_ID() : '',
 				'dynamic' => [
 					'active' => true,
 				],
-			]
-		);
-
-		$this->add_control(
-			'remove_empty_form_input_fields',
-			[
-				'label' => __( 'Remove Empty Form Input Fields', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'default' => '',
-				'label_on' => 'Yes',
-				'label_off' => 'No',
-				'return_value' => 'yes',
-			]
-		);
-
-		$this->add_control(
-			'enter_submit_form',
-			[
-				'label' => __( 'Press enter to submit form', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'default' => '',
-				'label_on' => 'Yes',
-				'label_off' => 'No',
-				'return_value' => 'yes',
-			]
-		);
-
-		$this->add_control(
-			'button_type',
-			[
-				'label' => __( 'Type', 'elementor' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'info' => __( 'Info', 'elementor' ),
-					'success' => __( 'Success', 'elementor' ),
-					'warning' => __( 'Warning', 'elementor' ),
-					'danger' => __( 'Danger', 'elementor' ),
-				],
-				'prefix_class' => 'elementor-button-',
 			]
 		);
 
@@ -180,8 +141,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Click here', 'elementor' ),
-				'placeholder' => __( 'Click here', 'elementor' ),
+				'default' => __( 'Submit', 'elementor' ),
 			]
 		);
 
@@ -278,6 +238,51 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'default' => 'traditional',
 			]
 		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_other_options',
+			[
+				'label' => __( 'Other Options', 'elementor' ),
+			]
+		);
+
+		$this->add_control(
+			'remove_empty_form_input_fields',
+			[
+				'label' => __( 'Remove Empty Form Input Fields', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'default' => '',
+				'label_on' => 'Yes',
+				'label_off' => 'No',
+				'return_value' => 'yes',
+			]
+		);
+
+        $this->add_control(
+            'enter_submit_form',
+            [
+                'label' => __( 'Press Enter To Submit Form', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'label_on' => 'Yes',
+                'label_off' => 'No',
+                'return_value' => 'yes',
+            ]
+        );
+
+        $this->add_control(
+            'hide_button_after_submitting',
+            [
+                'label' => __( 'Hide The Button After Submitting', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'label_on' => 'Yes',
+                'label_off' => 'No',
+                'return_value' => 'yes',
+            ]
+        );
 
 		$this->end_controls_section();
 
@@ -451,14 +456,347 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'description' => __( 'Add actions that will be performed after a visitor submits the form (e.g. send an email notification). Choosing an action will add its setting below.', 'elementor-pro' ),
 			]
 		);
-		$this->add_control(
-			'submit_metadata_shortcode',
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_email',
 			[
-				'label' => __( 'Metadata Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => __( '<div class="pafe-metarata-shortcode"><div class="pafe-metadata-shortcode-item"><label>Submit ID</label><div><input type="text" value="[submit_id]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Page URL</label><div><input type="text" value="[page_url]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Remote IP</label><div><input type="text" value="[remote_ip]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>User Agent</label><div><input type="text" value="[user_agent]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Date Submit</label><div><input type="text" value="[date_submit]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Time Submit</label><div><input type="text" value="[time_submit]" readonly></div></div><div class="pafe-metadata-shortcode-item"><label>Payment Status</label><div><input type="text" value="[payment_status]" readonly=""></div></div></div>', 'pafe' ),
+				'label' => 'Email',
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+				'condition' => [
+					'submit_actions' => 'email',
+				],
 			]
 		);
+
+		$this->add_control(
+			'email_to',
+			[
+				'label' => __( 'To', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => get_option( 'admin_email' ),
+				'placeholder' => get_option( 'admin_email' ),
+				'label_block' => true,
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
+                'dynamic' => [
+                    'active' => true,
+                ],
+			]
+		);
+
+		/* translators: %s: Site title. */
+		$default_message = sprintf( __( 'New message from "%s"', 'elementor-pro' ), get_option( 'blogname' ) );
+
+		$this->add_control(
+			'email_subject',
+			[
+				'label' => __( 'Subject', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => $default_message,
+				'placeholder' => $default_message,
+				'label_block' => true,
+				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
+			]
+		);
+
+		$this->add_control(
+			'email_content',
+			[
+				'label' => __( 'Message', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => '[all-fields]',
+				'placeholder' => '[all-fields]',
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields pafe-control-dynamic-tags--metadata',
+				'description' => __( 'By default, all form fields are sent via shortcode: <code>[all-fields]</code>. Want to customize sent fields? Copy the shortcode that appears inside the field and paste it above. Enter this if you want to customize sent fields and remove line if field empty [field id="your_field_id"][remove_line_if_field_empty]', 'pafe' ),
+				'label_block' => true,
+				'render_type' => 'none',
+			]
+		);
+
+		// $site_domain = Utils::get_site_domain();
+
+		$site_domain = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
+
+		$this->add_control(
+			'email_from',
+			[
+				'label' => __( 'From Email', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'email@' . $site_domain,
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_from_name',
+			[
+				'label' => __( 'From Name', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => get_bloginfo( 'name' ),
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_reply_to',
+			[
+				'label' => __( 'Reply-To', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'options' => [
+					'' => '',
+				],
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_to_cc',
+			[
+				'label' => __( 'Cc', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_to_bcc',
+			[
+				'label' => __( 'Bcc', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+			]
+		);
+
+        $this->add_control(
+            'disable_attachment_pdf_email',
+            [
+                'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Yes', 'pafe' ),
+                'label_off' => esc_html__( 'No', 'pafe' ),
+                'return_value' => 'yes',
+                'default' => '',
+                'condition' => [
+                    'submit_actions' => 'pdfgenerator'
+                ]
+            ]
+        );
+
+		$this->add_control(
+			'form_metadata',
+			[
+				'label' => __( 'Meta Data', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'multiple' => true,
+				'label_block' => true,
+				'separator' => 'before',
+				'default' => [
+					'date',
+					'time',
+					'page_url',
+					'user_agent',
+					'remote_ip',
+				],
+				'options' => [
+					'date' => __( 'Date', 'elementor-pro' ),
+					'time' => __( 'Time', 'elementor-pro' ),
+					'page_url' => __( 'Page URL', 'elementor-pro' ),
+					'user_agent' => __( 'User Agent', 'elementor-pro' ),
+					'remote_ip' => __( 'Remote IP', 'elementor-pro' ),
+				],
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_content_type',
+			[
+				'label' => __( 'Send As', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'plain',
+				'render_type' => 'none',
+				'options' => [
+					'html' => __( 'HTML', 'elementor-pro' ),
+					'plain' => __( 'Plain', 'elementor-pro' ),
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_email_2',
+			[
+				'label' => 'Email 2',
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+				'condition' => [
+					'submit_actions' => 'email2',
+				],
+			]
+		);
+
+		$this->add_control(
+			'email_to_2',
+			[
+				'label' => __( 'To', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => get_option( 'admin_email' ),
+				'placeholder' => get_option( 'admin_email' ),
+				'label_block' => true,
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
+                'dynamic' => [
+                    'active' => true,
+                ],
+			]
+		);
+
+		/* translators: %s: Site title. */
+		$default_message = sprintf( __( 'New message from "%s"', 'elementor-pro' ), get_option( 'blogname' ) );
+
+		$this->add_control(
+			'email_subject_2',
+			[
+				'label' => __( 'Subject', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => $default_message,
+				'placeholder' => $default_message,
+				'label_block' => true,
+				'render_type' => 'none',
+                'dynamic' => [
+                    'active' => true,
+                ],
+			]
+		);
+
+		$this->add_control(
+			'email_content_2',
+			[
+				'label' => __( 'Message', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => '[all-fields]',
+				'placeholder' => '[all-fields]',
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields pafe-control-dynamic-tags--metadata',
+				'description' => __( 'By default, all form fields are sent via shortcode: <code>[all-fields]</code>. Want to customize sent fields? Copy the shortcode that appears inside the field and paste it above. Enter this if you want to customize sent fields and remove line if field empty [field id="your_field_id"][remove_line_if_field_empty]', 'pafe' ),
+				'label_block' => true,
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_from_2',
+			[
+				'label' => __( 'From Email', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'email@' . $site_domain,
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_from_name_2',
+			[
+				'label' => __( 'From Name', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => get_bloginfo( 'name' ),
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_reply_to_2',
+			[
+				'label' => __( 'Reply-To', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'options' => [
+					'' => '',
+				],
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_to_cc_2',
+			[
+				'label' => __( 'Cc', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_to_bcc_2',
+			[
+				'label' => __( 'Bcc', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '',
+				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
+				'render_type' => 'none',
+			]
+		);
+
+        $this->add_control(
+            'disable_attachment_pdf_email2',
+            [
+                'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Yes', 'pafe' ),
+                'label_off' => esc_html__( 'No', 'pafe' ),
+                'return_value' => 'yes',
+                'default' => '',
+                'condition' => [
+                    'submit_actions' => 'pdfgenerator'
+                ]
+            ]
+        );
+
+        $this->add_control(
+			'form_metadata_2',
+			[
+				'label' => __( 'Meta Data', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'multiple' => true,
+				'label_block' => true,
+				'separator' => 'before',
+				'default' => [],
+				'options' => [
+					'date' => __( 'Date', 'elementor-pro' ),
+					'time' => __( 'Time', 'elementor-pro' ),
+					'page_url' => __( 'Page URL', 'elementor-pro' ),
+					'user_agent' => __( 'User Agent', 'elementor-pro' ),
+					'remote_ip' => __( 'Remote IP', 'elementor-pro' ),
+				],
+				'render_type' => 'none',
+			]
+		);
+
+		$this->add_control(
+			'email_content_type_2',
+			[
+				'label' => __( 'Send As', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'plain',
+				'render_type' => 'none',
+				'options' => [
+					'html' => __( 'HTML', 'elementor-pro' ),
+					'plain' => __( 'Plain', 'elementor-pro' ),
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -530,7 +868,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Booking Shortcode', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( '[field id="booking"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'label_block' => true,
 			]
 		);
@@ -571,7 +910,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Email Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -581,7 +921,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Username Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="username"]', 'pafe' ),
 			]
 		);
@@ -591,7 +932,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Password Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="password"]', 'pafe' ),
 			]
 		);
@@ -601,7 +943,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Confirm Password Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="confirm_password"]', 'pafe' ),
 			]
 		);
@@ -621,7 +964,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'First Name Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="first_name"]', 'pafe' ),
 			]
 		);
@@ -631,7 +975,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Last Name Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="last_name"]', 'pafe' ),
 			]
 		);
@@ -692,7 +1037,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'register_user_meta_field_id',
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="description"]', 'pafe' ),
 			]
 		);
@@ -900,7 +1246,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Username or Email Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="username"]', 'pafe' ),
 			]
 		);
@@ -910,7 +1257,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Password Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="password"]', 'pafe' ),
 			]
 		);
@@ -920,7 +1268,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Remember Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="remember"]', 'pafe' ),
 			]
 		);
@@ -1003,7 +1352,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'update_user_meta_field_shortcode',
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="description"]', 'pafe' ),
 			]
 		);
@@ -1012,7 +1362,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'update_user_meta_field_shortcode_confirm_password',
 			[
 				'label' => __( 'Confirm Password Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="confirm_password"]', 'pafe' ),
 				'condition' => [
 					'update_user_meta' => 'password',
@@ -1138,7 +1489,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'submit_post_terms_field_id',
 			[
 				'label' => __( 'Terms Select Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="term"]', 'pafe' ),
 			]
 		);
@@ -1190,7 +1542,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'submit_post_title',
 			[
 				'label' => __( 'Title Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="title"]', 'pafe' ),
 			]
 		);
@@ -1199,7 +1552,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'submit_post_content',
 			[
 				'label' => __( 'Content Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="content"]', 'pafe' ),
 			]
 		);
@@ -1208,7 +1562,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'submit_post_featured_image',
 			[
 				'label' => __( 'Featured Image Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="featured_image_upload"]', 'pafe' ),
 			]
 		);
@@ -1259,7 +1614,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="addition"]', 'pafe' ),
 			]
 		);
@@ -1699,7 +2055,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Subscriptions Plan Select Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="plan_select"]', 'pafe' ),
 				'conditions' => [
 					'relation' => 'and',
@@ -1817,7 +2174,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'pafe_stripe_subscriptions_amount_field',
 			[
 				'label' => __( 'Amount Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="amount_yearly"]', 'pafe' ),
 				'condition' => [
 					'pafe_stripe_subscriptions_amount_field_enable' => 'yes',
@@ -1931,7 +2289,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Amount Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="amount"]', 'pafe' ),
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
@@ -1970,8 +2329,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Payment Description', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="description"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -1983,8 +2342,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Name Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="name"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -1996,8 +2355,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Email Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="email"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2009,8 +2368,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Description Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="description"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2022,8 +2381,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Phone Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="phone"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2035,8 +2394,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address Line 1 Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="address_line1"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2048,8 +2407,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address City Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="city"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2061,7 +2420,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address Country Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="country"]. You should create a select field, the country value is two-letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)', 'pafe' ),
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
@@ -2074,8 +2434,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address Line 2 Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="address_line2"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2087,8 +2447,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address Postal Code Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="postal_code"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2100,8 +2460,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Customer Address State Field', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="state"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2112,34 +2472,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'pafe_stripe_customer_receipt_email',
 			[
 				'label' => __( 'Receipt Email', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="email"]', 'pafe' ),
-				'condition' => [
-					'pafe_stripe_enable' => 'yes',
-				],
-			]
-		);
-
-		$this->add_control(
-			'pafe_stripe_payment_note',
-			[
-				'label' => __( 'Payment ID shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" value="[payment_id]" readonly />',
-				'condition' => [
-					'pafe_stripe_enable' => 'yes',
-				],
-			]
-		);
-
-		$this->add_control(
-			'pafe_stripe_status_note',
-			[
-				'label' => __( 'Payment Status shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" value="[payment_status]" readonly />',
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'pafe_stripe_enable' => 'yes',
 				],
@@ -2241,7 +2575,115 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'return_value' => 'yes',
 			]
 		);
-
+		$this->add_control(
+			'paypal_subscription_enable',
+			[
+				'label' => __( 'Enable Subscriptions', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'default' => '',
+				'label_on' => 'Yes',
+				'label_off' => 'No',
+				'return_value' => 'yes',
+				'condition' => [
+					'paypal_enable' => 'yes'
+				]
+			]
+		);
+		$this->add_control(
+			'paypal_subscription_sandbox',
+			[
+				'label' => __( 'Subscription Sandbox', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'no',
+				'render_type' => 'none',
+				'options' => [
+					'no'  => __( 'No', 'pafe' ),
+					'yes' => __( 'Yes', 'pafe' ),
+				],
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						]
+					]
+				]
+			]
+		);
+		$this->add_control(
+			'paypal_get_plans',
+			[
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'raw' => __( '<button class="pafe-admin-button-ajax elementor-button elementor-button-default" data-pafe-button-get-plans>Get Plans <i class="fas fa-spinner fa-spin"></i></button>', 'pafe' ),
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						]
+					]
+				]
+			]
+		);
+		$this->add_control(
+			'paypal_result',
+			[
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'raw' => __( '<div class="pafe-paypal-plans-result"></div>', 'pafe' ),
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						]
+					]
+				]
+			]
+		);
+		$this->add_control(
+			'paypal_plan',
+			[
+				'label' => __( 'Plan ID', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'placeholder' => __( 'E.g: P-4X507011M1170704PMA3BWJA', 'pafe' ),
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						]
+					]
+				]
+			]
+		);
 		$this->add_control(
 			'paypal_currency',
 			[
@@ -2274,9 +2716,21 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					'USD' => 'USD',
 				],
 				'default' => 'USD',
-				'condition' => [
-					'paypal_enable' => 'yes',
-				],
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => ''
+						]
+					]
+				]
 			]
 		);
 
@@ -2286,9 +2740,22 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label' => __( 'Amount', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'E.g 100, 1000, [field id="amount"]', 'pafe' ),
-				'condition' => [
-					'paypal_enable' => 'yes',
-				],
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => ''
+						]
+					]
+				]
 			]
 		);
 
@@ -2298,9 +2765,22 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label' => __( 'Description', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'E.g Piotnet Addons, [field id="description"]', 'pafe' ),
-				'condition' => [
-					'paypal_enable' => 'yes',
-				],
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'paypal_enable',
+							'operator' => '==',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'paypal_subscription_enable',
+							'operator' => '==',
+							'value' => ''
+						]
+					]
+				]
 			]
 		);
 
@@ -2310,7 +2790,45 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'label'       => __( 'Locale', 'pafe' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'E.g "fr_FR". By default PayPal smartly detects the correct locale for the buyer based on their geolocation and browser preferences. Go to this url to get your locale value <a href="https://developer.paypal.com/docs/checkout/reference/customize-sdk/#locale" target="_blank">https://developer.paypal.com/docs/checkout/reference/customize-sdk/#locale</a>', 'pafe' ),
-				'condition'   => [
+					'conditions' => [
+						'relation' => 'and',
+						'terms' => [
+							[
+								'name' => 'paypal_enable',
+								'operator' => '==',
+								'value' => 'yes'
+							],
+							[
+								'name' => 'paypal_subscription_enable',
+								'operator' => '==',
+								'value' => ''
+							]
+						]
+					]
+			]
+		);
+
+		$this->add_control(
+			'pafe_paypal_message_succeeded',
+			[
+				'label' => __( 'Succeeded Message', 'pafe' ),
+				'label_block' => true,
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __( 'Payment success', 'pafe' ),
+				'condition' => [
+					'paypal_enable' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'pafe_paypal_message_failed',
+			[
+				'label' => __( 'Failed Message', 'pafe' ),
+				'label_block' => true,
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __( 'Payment failed', 'pafe' ),
+				'condition' => [
 					'paypal_enable' => 'yes',
 				],
 			]
@@ -2389,6 +2907,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					'label' => __( 'Amount', 'pafe' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'description' => __( 'E.g 100, 1000, [field id="amount"]', 'pafe' ),
+					'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
 					'condition' => [
 						'mollie_enable' => 'yes',
 					],
@@ -2401,6 +2920,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 					'label' => __( 'Description', 'pafe' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'description' => __( 'E.g Piotnet Addons, [field id="description"]', 'pafe' ),
+					'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
 					'condition' => [
 						'mollie_enable' => 'yes',
 					],
@@ -2563,407 +3083,6 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-        $this->start_controls_section(
-            'section_limit_form_entries',
-            [
-                'label' => __( 'Limit The Form Entries', 'pafe' ),
-            ]
-        );
-        $this->add_control(
-            'pafe_limit_form_enable',
-            [
-                'label' => __( 'Enable', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'default' => '',
-                'label_on' => 'Yes',
-                'label_off' => 'No',
-                'return_value' => 'yes',
-            ]
-        );
-        $this->add_control(
-            'pafe_limit_entries_total_post',
-            [
-                'label' => __( 'Total Post', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( '', 'pafe' ),
-                'label_block' => true,
-                'condition' => [
-                    'pafe_limit_form_enable' => 'yes'
-                ],
-            ]
-        );
-        $this->add_control(
-            'pafe_limit_entries_custom_message',
-            [
-                'label' => __( 'Custom Message', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( '', 'pafe' ),
-                'label_block' => true,
-                'default' => __( 'Your contents have not been sent yet. The Form will be opened soon.', 'pafe' ),
-                'condition' => [
-                    'pafe_limit_form_enable' => 'yes'
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-			'section_email',
-			[
-				'label' => 'Email',
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-				'condition' => [
-					'submit_actions' => 'email',
-				],
-			]
-		);
-
-		$this->add_control(
-			'submit_id_shortcode',
-			[
-				'label' => __( 'Submit ID Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" value="[submit_id]" readonly />',
-			]
-		);
-
-		$this->add_control(
-			'email_to',
-			[
-				'label' => __( 'To', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => get_option( 'admin_email' ),
-				'placeholder' => get_option( 'admin_email' ),
-				'label_block' => true,
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-                'dynamic' => [
-                    'active' => true,
-                ],
-			]
-		);
-
-		/* translators: %s: Site title. */
-		$default_message = sprintf( __( 'New message from "%s"', 'elementor-pro' ), get_option( 'blogname' ) );
-
-		$this->add_control(
-			'email_subject',
-			[
-				'label' => __( 'Subject', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => $default_message,
-				'placeholder' => $default_message,
-				'label_block' => true,
-				'render_type' => 'none',
-                'dynamic' => [
-                    'active' => true,
-                ],
-			]
-		);
-
-		$this->add_control(
-			'email_content',
-			[
-				'label' => __( 'Message', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => '[all-fields]',
-				'placeholder' => '[all-fields]',
-				'description' => __( 'By default, all form fields are sent via shortcode: <code>[all-fields]</code>. Want to customize sent fields? Copy the shortcode that appears inside the field and paste it above. Enter this if you want to customize sent fields and remove line if field empty [field id="your_field_id"][remove_line_if_field_empty]', 'pafe' ),
-				'label_block' => true,
-				'render_type' => 'none',
-			]
-		);
-
-		// $site_domain = Utils::get_site_domain();
-
-		$site_domain = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
-
-		$this->add_control(
-			'email_from',
-			[
-				'label' => __( 'From Email', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'email@' . $site_domain,
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_from_name',
-			[
-				'label' => __( 'From Name', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => get_bloginfo( 'name' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_reply_to',
-			[
-				'label' => __( 'Reply-To', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'options' => [
-					'' => '',
-				],
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_to_cc',
-			[
-				'label' => __( 'Cc', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => '',
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_to_bcc',
-			[
-				'label' => __( 'Bcc', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => '',
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'disable_attachment_pdf_email',
-			[
-				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'pafe' ),
-				'label_off' => esc_html__( 'No', 'pafe' ),
-				'return_value' => 'yes',
-				'default' => '',
-				'condition' => [
-					'submit_actions' => 'pdfgenerator'
-				]
-			]
-		);
-
-		$this->add_control(
-			'form_metadata',
-			[
-				'label' => __( 'Meta Data', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::SELECT2,
-				'multiple' => true,
-				'label_block' => true,
-				'separator' => 'before',
-				'default' => [
-					'date',
-					'time',
-					'page_url',
-					'user_agent',
-					'remote_ip',
-				],
-				'options' => [
-					'date' => __( 'Date', 'elementor-pro' ),
-					'time' => __( 'Time', 'elementor-pro' ),
-					'page_url' => __( 'Page URL', 'elementor-pro' ),
-					'user_agent' => __( 'User Agent', 'elementor-pro' ),
-					'remote_ip' => __( 'Remote IP', 'elementor-pro' ),
-				],
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_content_type',
-			[
-				'label' => __( 'Send As', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'plain',
-				'render_type' => 'none',
-				'options' => [
-					'html' => __( 'HTML', 'elementor-pro' ),
-					'plain' => __( 'Plain', 'elementor-pro' ),
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_email_2',
-			[
-				'label' => 'Email 2',
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-				'condition' => [
-					'submit_actions' => 'email2',
-				],
-			]
-		);
-
-		$this->add_control(
-			'submit_id_shortcode_2',
-			[
-				'label' => __( 'Submit ID Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" value="[submit_id]" readonly />',
-			]
-		);
-
-		$this->add_control(
-			'email_to_2',
-			[
-				'label' => __( 'To', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => get_option( 'admin_email' ),
-				'placeholder' => get_option( 'admin_email' ),
-				'label_block' => true,
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-                'dynamic' => [
-                    'active' => true,
-                ],
-			]
-		);
-
-		/* translators: %s: Site title. */
-		$default_message = sprintf( __( 'New message from "%s"', 'elementor-pro' ), get_option( 'blogname' ) );
-
-		$this->add_control(
-			'email_subject_2',
-			[
-				'label' => __( 'Subject', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => $default_message,
-				'placeholder' => $default_message,
-				'label_block' => true,
-				'render_type' => 'none',
-                'dynamic' => [
-                    'active' => true,
-                ],
-			]
-		);
-
-		$this->add_control(
-			'email_content_2',
-			[
-				'label' => __( 'Message', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => '[all-fields]',
-				'placeholder' => '[all-fields]',
-				'description' => __( 'By default, all form fields are sent via shortcode: <code>[all-fields]</code>. Want to customize sent fields? Copy the shortcode that appears inside the field and paste it above. Enter this if you want to customize sent fields and remove line if field empty [field id="your_field_id"][remove_line_if_field_empty]', 'pafe' ),
-				'label_block' => true,
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_from_2',
-			[
-				'label' => __( 'From Email', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'email@' . $site_domain,
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_from_name_2',
-			[
-				'label' => __( 'From Name', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => get_bloginfo( 'name' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_reply_to_2',
-			[
-				'label' => __( 'Reply-To', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'options' => [
-					'' => '',
-				],
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_to_cc_2',
-			[
-				'label' => __( 'Cc', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => '',
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_to_bcc_2',
-			[
-				'label' => __( 'Bcc', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => '',
-				'title' => __( 'Separate emails with commas', 'elementor-pro' ),
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'disable_attachment_pdf_email2',
-			[
-				'label' => esc_html__( 'Disable attachment PDF file', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'pafe' ),
-				'label_off' => esc_html__( 'No', 'pafe' ),
-				'return_value' => 'yes',
-				'default' => '',
-				'condition' => [
-					'submit_actions' => 'pdfgenerator'
-				]
-			]
-		);
-
-		$this->add_control(
-			'form_metadata_2',
-			[
-				'label' => __( 'Meta Data', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::SELECT2,
-				'multiple' => true,
-				'label_block' => true,
-				'separator' => 'before',
-				'default' => [],
-				'options' => [
-					'date' => __( 'Date', 'elementor-pro' ),
-					'time' => __( 'Time', 'elementor-pro' ),
-					'page_url' => __( 'Page URL', 'elementor-pro' ),
-					'user_agent' => __( 'User Agent', 'elementor-pro' ),
-					'remote_ip' => __( 'Remote IP', 'elementor-pro' ),
-				],
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'email_content_type_2',
-			[
-				'label' => __( 'Send As', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'plain',
-				'render_type' => 'none',
-				'options' => [
-					'html' => __( 'HTML', 'elementor-pro' ),
-					'plain' => __( 'Plain', 'elementor-pro' ),
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
 		$this->start_controls_section(
 			'section_redirect',
 			[
@@ -3029,8 +3148,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'woocommerce_add_to_cart_price',
 				[
 					'label' => __( 'Price Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => __( 'Field Shortcode. E.g [field id="total"]', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'label_block' => true,
 					'condition' => [
 						'submit_actions' => 'woocommerce_add_to_cart',
@@ -3057,7 +3176,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				[
 					'label' => __( 'Field Shortcode, Repeater Shortcode', 'pafe' ),
 					'label_block' => true,
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 				]
 			);
 
@@ -3065,6 +3185,18 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'woocommerce_add_to_cart_custom_order_item_remove_if_field_empty',
 				[
 					'label' => __( 'Remove If Field Empty', 'pafe' ),
+					'type' => \Elementor\Controls_Manager::SWITCHER,
+					'default' => '',
+					'label_on' => 'Yes',
+					'label_off' => 'No',
+					'return_value' => 'yes',
+				]
+			);
+
+			$repeater->add_control(
+				'woocommerce_add_to_cart_custom_order_item_remove_if_value_zero',
+				[
+					'label' => __( 'Remove If value is zero', 'pafe' ),
 					'type' => \Elementor\Controls_Manager::SWITCHER,
 					'default' => '',
 					'label_on' => 'Yes',
@@ -3489,7 +3621,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'mailchimp_acceptance_field_shortcode',
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="acceptance"]', 'pafe' ),
 			]
 		);
@@ -3563,7 +3696,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode E.g [field id="email"]', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 				'condition' => [
 					'mailchimp_field_mapping_address' => '',
@@ -3576,7 +3710,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Address 1 Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3588,7 +3723,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Address 2 Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3600,7 +3736,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'City Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3612,7 +3749,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'State Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3624,7 +3762,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Zip Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3636,7 +3775,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Country Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address' => 'yes',
 				],
@@ -3715,7 +3855,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'mailerlite_api_acceptance_field_shortcode',
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="acceptance"]', 'pafe' ),
 				'condition' => [
 					'mailerlite_api_acceptance_field' => 'yes'
@@ -3760,7 +3901,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode E.g [field id="email"]', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -3837,7 +3979,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'mailchimp_acceptance_field_shortcode_v3',
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="acceptance"]', 'pafe' ),
 			]
 		);
@@ -3954,7 +4097,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode E.g [field id="email"]', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => '',
@@ -3967,7 +4111,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Address 1 Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -3979,7 +4124,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Address 2 Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -3991,7 +4137,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'City Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -4003,7 +4150,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'State Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -4015,7 +4163,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Zip Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -4027,7 +4176,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Country Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailchimp_field_mapping_address_v3' => 'yes',
 				],
@@ -4108,7 +4258,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Email Field Shortcode* (Required)', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -4130,7 +4281,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -4242,7 +4394,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -4318,9 +4471,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'mailpoet_acceptance_field_shortcode',
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __( '', 'pafe' ),
-				'placeholder' => __( 'Enter your shortcode here', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'mailpoet_acceptance_field' => 'yes'
 				]
@@ -4359,8 +4511,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 		$this->add_control(
@@ -4515,8 +4667,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 
@@ -4613,9 +4765,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'zoho_acceptance_field_shortcode',
 				[
 					'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => __( '', 'pafe' ),
-					'placeholder' => __( 'Enter your shortcode here', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'condition' => [
 						'zoho_acceptance_field' => 'yes'
 					]
@@ -4635,7 +4786,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			$repeater->add_control(
 				'zohocrm_shortcode', [
 					'label' => __( 'Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'label_block' => true,
 				]
 			);
@@ -4713,8 +4865,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Type your shortcode here', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition'   => [
 					'convertkit_acceptance_field' => 'yes',
 				],
@@ -4759,10 +4911,11 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		$repeater->add_control(
 			'convertkit_shortcode', [
 				'label' => __( 'Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'label_block' => true,
 				'render_type' => 'none',
-				'placeholder' => __( 'E.g [field id="email"]', 'piotnetforms' ),
+				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
 		$this->add_control(
@@ -4839,8 +4992,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'sendinblue_api_acceptance_field_shortcode',
 			[
 				'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'E.g [field id="acceptance"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'sendinblue_api_acceptance_field' => 'yes'
 				]
@@ -4880,7 +5033,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			$repeater->add_control(
 				'sendinblue_shortcode', [
 					'label' => __( 'Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'label_block' => true,
 				]
 			);
@@ -4966,9 +5120,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'constant_contact_acceptance_field_shortcode',
 				[
 					'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => __( '', 'pafe' ),
-					'placeholder' => __( 'Enter your shortcode here', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'condition' => [
 						'constant_contact_acceptance_field' => 'yes'
 					]
@@ -4987,7 +5140,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				$repeater->add_control(
 					'constant_contact_shortcode', [
 						'label' => __( 'Field Shortcode', 'pafe' ),
-						'type' => \Elementor\Controls_Manager::TEXT,
+						'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+						'get_fields' => true,
 						'label_block' => true,
 					]
 				);
@@ -5166,8 +5320,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'twilio_sendgrid_email_field_shortcode',
             [
                 'label'       => __( 'Email Field Shortcode* (Required)', 'pafe' ),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
                 'label_block' => true,
             ]
         );
@@ -5189,7 +5343,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             [
                 'label' => __( 'Field Shortcode', 'pafe' ),
                 'label_block' => true,
-                'type' => \Elementor\Controls_Manager::TEXT,
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
                 'placeholder' => __( 'E.g [field id="first_name"]', 'pafe' ),
             ]
         );
@@ -5382,9 +5537,10 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		$this->add_control(
 			'pdfgenerator_save_file',
 			[
-				'label' => __( 'Save file after submit', 'pafe' ),
+				'label' => __( 'Save file in core coding.', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'pafe' ),
+				'description' => 'This PDF file will be stored in: "wp-content\uploads\piotnet-addons-for-elementor"',
 				'label_off' => __( 'No', 'pafe' ),
 				'return_value' => 'yes',
 				'render_type' => 'none',
@@ -5588,7 +5744,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
 			]
 		);
@@ -6013,8 +6170,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Show this submit If', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Field Shortcode', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 
@@ -6095,8 +6252,52 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-		//Hubspot
+        $this->start_controls_section(
+            'section_limit_form_entries',
+            [
+                'label' => __( 'Limit The Form Entries', 'pafe' ),
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_form_enable',
+            [
+                'label' => __( 'Enable', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'label_on' => 'Yes',
+                'label_off' => 'No',
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_entries_total_post',
+            [
+                'label' => __( 'Total Post', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( '', 'pafe' ),
+                'label_block' => true,
+                'condition' => [
+                    'pafe_limit_form_enable' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'pafe_limit_entries_custom_message',
+            [
+                'label' => __( 'Custom Message', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => __( '', 'pafe' ),
+                'label_block' => true,
+                'default' => __( 'Your contents have not been sent yet. The Form will be opened soon.', 'pafe' ),
+                'condition' => [
+                    'pafe_limit_form_enable' => 'yes'
+                ],
+            ]
+        );
 
+        $this->end_controls_section();
+
+        //Hubspot
         $this->start_controls_section(
             'pafe_hubspot_section',
             [
@@ -6123,7 +6324,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'pafe_hubspot_acceptance_field_shortcode',
             [
                 'label' => __( 'Acceptance Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
                 'label_block' => true,
                 'default' => __( '', 'pafe' ),
                 'placeholder' => __( 'Enter your shortcode here', 'pafe' ),
@@ -6176,8 +6378,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             [
                 'label' => __( 'Field Shortcode', 'pafe' ),
                 'label_block' => true,
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'E.g [field id="email"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6237,8 +6439,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'sendy_name_field_shortcode',
             [
                 'label' => __( 'Name Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="name"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6246,8 +6448,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'sendy_email_field_shortcode',
             [
                 'label' => __( 'Email Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="email"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6255,8 +6457,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			'sendy_gdpr_shortcode',
 			[
 				'label' => __( 'GDPR/CCPA Compliant Shortcode', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'E.g [field id="acceptance"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 
@@ -6286,8 +6488,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
         $repeater->add_control(
             'custom_field_shortcode', [
                 'label' => __( 'Custom Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="phone"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
                 'label_block' => true,
             ]
         );
@@ -6418,8 +6620,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'sendfox_email_field_shortcode',
             [
                 'label' => __( 'Email Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="email"]', 'pafe' ),
+               'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6427,8 +6629,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'sendfox_first_name_field_shortcode',
             [
                 'label' => __( 'Frist Name Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="first_name"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6436,8 +6638,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
             'sendfox_last_name_field_shortcode',
             [
                 'label' => __( 'Last Name Field Shortcode', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'description' => __( 'E.g [field id="last_name"]', 'pafe' ),
+                'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
             ]
         );
 
@@ -6661,6 +6863,10 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+		$settings['form_id'] = !empty($settings['form_id']) ? $settings['form_id'] : '';
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
 
 		$this->add_render_attribute( 'wrapper', 'class', 'elementor-button-wrapper' );
 
@@ -6677,9 +6883,11 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			}
 		}
 		$submit_keyboard = !empty($settings['enter_submit_form']) ? 'true' : 'false';
+		$submit_hide = !empty($settings['hide_button_after_submitting']) ? 'true' : 'false';
 		$this->add_render_attribute( 'button', 'class', 'elementor-button' );
 		$this->add_render_attribute( 'button', 'class', 'pafe-form-builder-button' );
 		$this->add_render_attribute( 'button', 'data-pafe-submit-keyboard', $submit_keyboard );
+		$this->add_render_attribute( 'button', 'data-pafe-submit-hide', $submit_hide );
 		$this->add_render_attribute( 'button', 'role', 'button' );
 
 		$this->add_render_attribute( 'button', 'data-pafe-form-builder-required-text', $settings['required_field_message'] );
@@ -6696,8 +6904,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . $settings['hover_animation'] );
 		}
 
-		if ( $settings['form_id'] ) {
-			$this->add_render_attribute( 'button', 'data-pafe-form-builder-submit-form-id', $settings['form_id'] );
+		if ( $form_id ) {
+			$this->add_render_attribute( 'button', 'data-pafe-form-builder-submit-form-id', $form_id );
 		}
 
 		if ( !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-site-key')) && !empty(get_option('piotnet-addons-for-elementor-pro-recaptcha-secret-key')) && !empty($settings['pafe_recaptcha_enable']) ) {
@@ -6711,7 +6919,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 				'data-pafe-form-builder-conditional-logic-speed' => $settings['pafe_conditional_logic_form_speed'],
 				'data-pafe-form-builder-conditional-logic-easing' => $settings['pafe_conditional_logic_form_easing'],
 				'data-pafe-form-builder-conditional-logic-not-field' => '',
-				'data-pafe-form-builder-conditional-logic-not-field-form-id' => $settings['form_id'],
+				'data-pafe-form-builder-conditional-logic-not-field-form-id' => $form_id,
 			] );
 		}
 
@@ -6796,10 +7004,11 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		}
 		if(!empty($settings['mollie_enable'])){
 			$this->add_render_attribute('button', [
-				'data-pafe-form-builder-mollie-payment' => $settings['form_id']
+				'data-pafe-form-builder-mollie-payment' => $form_id
 			]);
+			wp_enqueue_script( 'pafe-form-builder-mollie-script' );
 		}
-		if( !empty($settings['paypal_enable']) && isset($settings['form_id'])) {
+		if( !empty($settings['paypal_enable']) && isset($form_id)) {
 			$this->add_render_attribute( 'button', [
 				'data-pafe-form-builder-paypal-submit' => '',
 				'data-pafe-form-builder-paypal-submit-enable' => '',
@@ -6849,14 +7058,14 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			if( is_user_logged_in() && get_post($post_id) != null ) {
 				if (current_user_can( 'edit_others_posts' ) || get_current_user_id() == get_post($post_id)->post_author) {
 					$sp_post_id = get_post_meta($post_id,'_submit_post_id',true);
-					$form_id = get_post_meta($post_id,'_submit_button_id',true);
+					$sp_button_id = get_post_meta($post_id,'_submit_button_id',true);
 
 					if (!empty($_GET['smpid'])) {
 						$sp_post_id = sanitize_text_field($_GET['smpid']);
 					}
 
 					if (!empty($_GET['sm'])) {
-						$form_id = sanitize_text_field($_GET['sm']);
+						$sp_button_id = sanitize_text_field($_GET['sm']);
 					}
 
 					$elementor = \Elementor\Plugin::$instance;
@@ -6867,7 +7076,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 						$meta = $elementor->db->get_plain_editor( $sp_post_id );
 					}
 
-					$form = find_element_recursive( $meta, $form_id );
+					$form = find_element_recursive( $meta, $sp_button_id );
 
 					if ( !empty($form)) {
 						$this->add_render_attribute( 'button', [
@@ -6951,7 +7160,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 												}, $_GET['edit']);
 
 												?>
-													<div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $settings['form_id']; ?>" style="display: none;">
+													<div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $form_id; ?>" style="display: none;">
 														<?php echo json_encode($custom_field_value); ?>
 													</div>
 												<?php
@@ -7027,7 +7236,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                                 }
 
                                                 ?>
-                                                <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $settings['form_id']; ?>" style="display: none;">
+                                                <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $form_id; ?>" style="display: none;">
                                                     <?php echo json_encode($custom_field_value); ?>
                                                 </div>
                                                 <?php
@@ -7132,7 +7341,7 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                                     }
                                                 }, $custom_field_objects);
                                                 ?>
-                                                <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $settings['form_id']; ?>" style="display: none;">
+                                                <div data-pafe-form-builder-repeater-value data-pafe-form-builder-repeater-value-id="<?php echo $sp_custom_field['submit_post_custom_field']; ?>" data-pafe-form-builder-repeater-value-form-id="<?php echo $form_id; ?>" style="display: none;">
                                                     <?php echo json_encode($custom_field_value); ?>
                                                 </div>
                                                 <?php
@@ -7148,29 +7357,29 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 		}
 
 		?>
-		<input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>"/>
-		<input type="hidden" name="form_id" value="<?php echo $this->get_id(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>"/>
-		<input type="hidden" name="remote_ip" value="<?php echo $this->get_client_ip(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>"/>
+		<input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>"/>
+		<input type="hidden" name="form_id" value="<?php echo $this->get_id(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>"/>
+		<input type="hidden" name="remote_ip" value="<?php echo $this->get_client_ip(); ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>"/>
 
 		<?php if(in_array('redirect', $settings['submit_actions'])) : ?>
-			<input type="hidden" name="redirect" value="<?php echo $settings['redirect_to']; ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" data-pafe-form-builder-open-new-tab="<?php echo $settings['redirect_open_new_tab']; ?>"/>
+			<input type="hidden" name="redirect" value="<?php echo $settings['redirect_to']; ?>" data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>" data-pafe-form-builder-open-new-tab="<?php echo $settings['redirect_open_new_tab']; ?>"/>
 		<?php endif; ?>
 
 		<?php if(in_array('popup', $settings['submit_actions'])) : ?>
 			<?php if(!empty( $settings['popup_action'] ) && !empty( $settings['popup_action_popup_id'] )) : ?>
-				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id'],$settings['popup_action']); ?>" data-pafe-form-builder-popup data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" style="display: none;"></a>
+				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id'],$settings['popup_action']); ?>" data-pafe-form-builder-popup data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>" style="display: none;"></a>
 			<?php endif; ?>
 		<?php endif; ?>
 
 		<?php if(in_array('open_popup', $settings['submit_actions'])) : ?>
 			<?php if(!empty( $settings['popup_action_popup_id_open'] )) : ?>
-				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id_open'],'open'); ?>" data-pafe-form-builder-popup-open data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" style="display: none;"></a>
+				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id_open'],'open'); ?>" data-pafe-form-builder-popup-open data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>" style="display: none;"></a>
 			<?php endif; ?>
 		<?php endif; ?>
 
 		<?php if(in_array('close_popup', $settings['submit_actions'])) : ?>
 			<?php if(!empty( $settings['popup_action_popup_id_close'] )) : ?>
-				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id_close'],'close'); ?>" data-pafe-form-builder-popup-close data-pafe-form-builder-hidden-form-id="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" style="display: none;"></a>
+				<a href="<?php echo $this->create_popup_url($settings['popup_action_popup_id_close'],'close'); ?>" data-pafe-form-builder-popup-close data-pafe-form-builder-hidden-form-id="<?php if ( $form_id ) {echo $form_id;} ?>" style="display: none;"></a>
 			<?php endif; ?>
 		<?php endif; ?>
 
@@ -7188,21 +7397,27 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			<?php endif; ?>
 		<?php endif; ?>
 
-		<?php if( !empty($settings['paypal_enable']) && isset($settings['form_id'])) : ?>
+		<?php if( !empty($settings['paypal_enable']) && isset($form_id)) : ?>
 			<?php
 				$paypal_button_class = is_admin() ? ' pafe-paypal-admin' : '';
 			?>
 			<div class="pafe-form-builder-paypal">
 				<!-- Set up a container element for the button -->
-			    <div class="pafe-paypal-button<?php echo $paypal_button_class; ?>" id="pafe-paypal-button-container-<?php echo $settings['form_id']; ?>"></div>
+			    <div class="pafe-paypal-button<?php echo $paypal_button_class; ?>" id="pafe-paypal-button-container-<?php echo $form_id; ?>"></div>
 		    </div>
 
             <?php
-                $paypal_sdk_src = "https://www.paypal.com/sdk/js?client-id=" . esc_attr( get_option("piotnet-addons-for-elementor-pro-paypal-client-id") ) . "&currency=" . $settings["paypal_currency"];
-                if(!empty($settings["paypal_locale"])) {
+                $paypal_sdk_src = "https://www.paypal.com/sdk/js?client-id=" . esc_attr( get_option("piotnet-addons-for-elementor-pro-paypal-client-id") );
+                if(!empty($settings['paypal_currency'])){
+					$paypal_sdk_src .= "&currency=" . $settings["paypal_currency"];
+				}
+				if(!empty($settings["paypal_locale"])) {
 					$paypal_sdk_src .= "&locale=" . $settings["paypal_locale"];
                 }
-                $paypal_sdk_script_id = "script-pafe-paypal-" . $settings['form_id'];
+                if(!empty($settings['paypal_subscription_enable']) && !empty($settings['paypal_plan'])){
+					$paypal_sdk_src .= '&vault=true';
+				}
+                $paypal_sdk_script_id = "script-pafe-paypal-" . $form_id;
                 wp_enqueue_script( $paypal_sdk_script_id, $paypal_sdk_src, [], null );
 
                 // Fix Conflict with WooCommerce PayPal Payments
@@ -7229,8 +7444,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			        return fieldValue;
 		    	}
 
-		    	function pafeValidateForm<?php echo $settings['form_id']; ?>() {
-		    		var formID = '<?php echo $settings['form_id']; ?>',
+		    	function pafeValidateForm<?php echo $form_id; ?>() {
+		    		var formID = '<?php echo $form_id; ?>',
 		    			$ = jQuery,
 			    		$fields = $(document).find('[data-pafe-form-builder-form-id='+ formID +']'),
 			    		$submit = $(document).find('[data-pafe-form-builder-submit-form-id='+ formID +']'),
@@ -7297,14 +7512,19 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                 jQuery('#<?php echo $paypal_sdk_script_id ?>-js').ready(function () {
 					var isFirefox = typeof InstallTrigger !== 'undefined';
                     setTimeout(function () {
-                        var paypal_button_container = jQuery("#pafe-paypal-button-container-<?php echo $settings['form_id']; ?>");
+                        var paypal_button_container = jQuery("#pafe-paypal-button-container-<?php echo $form_id; ?>");
+                        var paypalPlanID = '<?php echo $settings['paypal_plan'] ?>';
                         if (paypal_button_container.length > 0 && paypal_button_container.children().length === 0) {
                             paypal.Buttons({
                                 onClick :  function(data, actions){
-                                    if(!pafeValidateForm<?php echo $settings['form_id']; ?>()){
+                                    if(paypalPlanID.indexOf('[field id="') !== -1){
+										paypalFieldName = paypalPlanID.replace('[field id="', '').replace('"]', '');
+										paypalPlanID = jQuery('[name="form_fields['+paypalFieldName+']"][data-pafe-form-builder-form-id="<?php echo $settings['form_id'] ?>"]').val();
+									}
+                                    if(!pafeValidateForm<?php echo $form_id; ?>()){
 										if(isFirefox){
 											setTimeout(() => {
-												pafeValidateForm<?php echo $settings['form_id']; ?>()
+												pafeValidateForm<?php echo $form_id; ?>()
 											}, 300)
 										}
                                         return false;
@@ -7313,6 +7533,23 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                     }
                                 },
 
+								<?php if(!empty($settings['paypal_subscription_enable']) && !empty($settings['paypal_plan'])){ ?>
+									createSubscription: function(data, actions) {
+										return actions.subscription.create({
+										/* Creates the subscription */
+										plan_id: paypalPlanID
+										});
+									},
+									onApprove: function(data, actions) {
+										var $submit = jQuery(document).find('[data-pafe-form-builder-submit-form-id="<?php echo $settings['form_id']; ?>"]'),
+                                        	$parent = $submit.closest('.elementor-element');
+
+                                        $submit.attr('data-pafe-form-builder-paypal-submit-transaction-id', data.subscriptionID);
+                                        $submit.trigger('click');
+                                        $parent.find('.elementor-message').removeClass('visible');
+                                        $parent.find('.pafe-form-builder-alert--paypal .elementor-message-success').addClass('visible');
+									},
+								<?php }else{ ?>
                                 // Set up the transaction
                                 createOrder: function(data, actions) {
                                     return actions.order.create({
@@ -7332,18 +7569,30 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
                                         }]
                                     });
                                 },
-
-                                // Finalize the transaction
-                                onApprove: function(data, actions) {
+								// Finalize the transaction
+								onApprove: function(data, actions) {
                                     return actions.order.capture().then(function(details) {
                                         // Show a success message to the buyer
                                         // alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                                        var $submit = jQuery(document).find('[data-pafe-form-builder-submit-form-id="<?php echo $settings['form_id']; ?>"]');
+                                        var $submit = jQuery(document).find('[data-pafe-form-builder-submit-form-id="<?php echo $form_id; ?>"]'),
+                                        	$parent = $submit.closest('.elementor-element');
+
                                         $submit.attr('data-pafe-form-builder-paypal-submit-transaction-id', details.id);
                                         $submit.trigger('click');
+                                        $parent.find('.elementor-message').removeClass('visible');
+                                        $parent.find('.pafe-form-builder-alert--paypal .elementor-message-success').addClass('visible');
                                     });
                                 },
-                            }).render('#pafe-paypal-button-container-<?php echo $settings['form_id']; ?>');
+                                <?php } ?>
+					            onError: function (err) {
+					            	var $submit = jQuery(document).find('[data-pafe-form-builder-submit-form-id="<?php echo $form_id; ?>"]'),
+                            			$parent = $submit.closest('.elementor-element');
+
+                                    $parent.find('.elementor-message').removeClass('visible');
+                                    $parent.find('.pafe-form-builder-alert--paypal .elementor-message-danger').addClass('visible');
+                                    $parent.find('[data-pafe-form-builder-trigger-failed]').trigger('click');
+								}
+                            }).render('#pafe-paypal-button-container-<?php echo $form_id; ?>');
                         }
                     }, 10);
                 });
@@ -7357,11 +7606,16 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			</div>
 		<?php endif; ?>
 		<?php if( !empty($settings['pafe_stripe_enable']) ) : ?>
-			<script src="https://js.stripe.com/v3/"></script>
 			<div class="pafe-form-builder-alert pafe-form-builder-alert--stripe">
 				<div class="elementor-message elementor-message-success" role="alert"><?php echo $settings['pafe_stripe_message_succeeded']; ?></div>
 				<div class="elementor-message elementor-message-danger" role="alert"><?php echo $settings['pafe_stripe_message_failed']; ?></div>
 				<div class="elementor-message elementor-help-inline" role="alert"><?php echo $settings['pafe_stripe_message_pending']; ?></div>
+			</div>
+		<?php endif; ?>
+		<?php if(!empty($settings['paypal_enable'])): ?>
+			<div class="pafe-form-builder-alert pafe-form-builder-alert--paypal">
+				<div class="elementor-message elementor-message-success" role="alert"><?php echo !empty($settings['pafe_paypal_message_succeeded']) ? $settings['pafe_paypal_message_succeeded'] : 'Payment Success'; ?></div>
+				<div class="elementor-message elementor-message-danger" role="alert"><?php echo !empty($settings['pafe_paypal_message_failed']) ? $settings['pafe_paypal_message_failed'] : 'Payment Failed'; ?></div>
 			</div>
 		<?php endif; ?>
 
@@ -7382,8 +7636,8 @@ class PAFE_Form_Builder_Submit extends \Elementor\Widget_Base {
 			</style>
 		<?php endif; ?>
 		<?php endif; ?>
-		<div id="pafe-form-builder-trigger-success-<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" data-pafe-form-builder-trigger-success="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" style="display: none"></div>
-		<div id="pafe-form-builder-trigger-failed-<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" data-pafe-form-builder-trigger-failed="<?php if ( $settings['form_id'] ) {echo $settings['form_id'];} ?>" style="display: none"></div>
+		<div id="pafe-form-builder-trigger-success-<?php if ( $form_id ) {echo $form_id;} ?>" data-pafe-form-builder-trigger-success="<?php if ( $form_id ) {echo $form_id;} ?>" style="display: none"></div>
+		<div id="pafe-form-builder-trigger-failed-<?php if ( $form_id ) {echo $form_id;} ?>" data-pafe-form-builder-trigger-failed="<?php if ( $form_id ) {echo $form_id;} ?>" style="display: none"></div>
 		<div class="pafe-form-builder-alert pafe-form-builder-alert--mail">
 			<div class="elementor-message elementor-message-success" role="alert" data-pafe-form-builder-message="<?php echo $settings['success_message']; ?>"><?php echo $settings['success_message']; ?></div>
 			<div class="elementor-message elementor-message-danger" role="alert" data-pafe-form-builder-message="<?php echo $settings['error_message']; ?>"><?php echo $settings['error_message']; ?></div>

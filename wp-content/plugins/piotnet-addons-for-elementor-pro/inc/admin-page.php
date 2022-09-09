@@ -38,22 +38,82 @@ $license_data = PAFE_License_Service::get_license_data();
 $has_valid_license = PAFE_License_Service::has_valid_license();
 
 ?>
-<div class="wrap">
-	<div class="pafe-header">
-		<div class="pafe-header__left">
-			<div class="pafe-header__logo">
-				<img src="<?php echo plugin_dir_url( __FILE__ ) . '../assets/images/piotnet-logo.png'; ?>" alt="">
-			</div>
-			<h2 class="pafe-header__headline"><?php _e('Piotnet Addons For Elementor Settings (PAFE PRO)','pafe'); ?></h2>
-		</div>
-		<div class="pafe-header__right">
-            <a class="pafe-header__button pafe-header__button--gradient" href="https://pafe.piotnet.com/?wpam_id=1" target="_blank"><?php if( !$has_valid_license ) { _e('GO PRO NOW','pafe'); } else { _e('GO TO PAFE','pafe'); } ?></a>
-		</div>
-	</div>
-	<div class="pafe-wrap">
-        <?php require_once "admin-license.php"; ?>
-		<hr>
-        <?php require_once "admin-features.php"; ?>
-        <?php require_once "admin-settings.php"; ?>
-	</div>
+<div class="pafe-dashboard pafe-dashboard--templates">
+    <div class="pafe-header">
+        <div class="pafe-header__left">
+            <div class="pafe-header__logo">
+                <img src="<?php echo plugin_dir_url( __FILE__ ) . '../assets/images/piotnet.svg'; ?>" alt="">
+            </div>
+            <h2 class="pafe-header__headline"><?php esc_html_e( 'Piotnet Addons For Elementor Settings (PAFE PRO)', 'pafe' ); ?></h2>
+        </div>
+        <div class="pafe-header__right">
+                <a class="pafe-header__button pafe-header__button--gradient" href="https://pafe.piotnet.com/?wpam_id=1" target="_blank">
+                <?php echo __( 'Go to Piotnet Addons', 'pafe' ); ?>
+                </a>
+        </div>
+    </div>
+    <div class="pafe-dashboard__sidebar">
+        <div class="pafe-dashboard__category">
+            <?php
+                $templates_categories = [
+                    'license' => __('License', 'pafe'),
+                    'general' => __('General', 'pafe'),
+                    'features' => __('Features', 'pafe'),
+                    'integration' => __('Integration', 'pafe'),
+                    'about' => __('About', 'pafe'),
+                ];
+
+                $tab = !empty($_GET['tab']) ? $_GET['tab'] : 'license';
+
+                foreach ($templates_categories as $key => $templates_category) :
+            ?>
+                <div class="pafe-dashboard__category-item<?php if($key == $tab) { echo ' active'; } ?>" data-pafe-dashboard-category='<?php echo $key;?>'><?php echo $templates_category; ?></div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="pafe-dashboard__content">
+        <div class="pafe-dashboard__item<?php if($tab == 'license') { echo ' active'; } ?>" data-pafe-dashboard-item-category="license">
+            <div class="piotnetforms-dashboard__title"><?php echo __('License', 'piotnetforms'); ?></div>
+            <div class="piotnetforms-dashboard__item-content">
+                <?php require_once "admin-license.php"; ?>
+            </div>
+        </div>
+        <div class="pafe-dashboard__item<?php if($tab == 'general') { echo ' active'; } ?>" data-pafe-dashboard-item-category="general">
+            <div class="piotnetforms-dashboard__title"><?php echo __('General', 'piotnetforms'); ?></div>
+            <div class="piotnetforms-dashboard__item-content">
+                <?php require_once "admin-general.php"; ?>
+            </div>
+        </div>
+        <div class="pafe-dashboard__item<?php if($tab == 'features') { echo ' active'; } ?>" data-pafe-dashboard-item-category="features">
+            <div class="piotnetforms-dashboard__title"><?php echo __('Features', 'piotnetforms'); ?></div>
+            <div class="piotnetforms-dashboard__item-content">
+                <?php require_once "admin-features.php"; ?>
+            </div>
+        </div>
+        <div class="pafe-dashboard__item<?php if($tab == 'integration') { echo ' active'; } ?>" data-pafe-dashboard-item-category="integration">
+            <div class="piotnetforms-dashboard__title"><?php echo __('Integration', 'piotnetforms'); ?></div>
+            <div class="piotnetforms-dashboard__item-content">
+                <?php require_once "admin-integration.php"; ?>
+            </div>
+        </div>
+        <div class="pafe-dashboard__item<?php if($tab == 'about') { echo ' active'; } ?>" data-pafe-dashboard-item-category="about">
+            <div class="piotnetforms-dashboard__title"><?php echo __('About', 'piotnetforms'); ?></div>
+            <div class="piotnetforms-dashboard__item-content">
+                <h3><?php _e('Tutorials','pafe'); ?></h3>
+                <a href="https://pafe.piotnet.com/?wpam_id=1" target="_blank">https://pafe.piotnet.com</a>
+                <h3><?php _e('Support','pafe'); ?></h3>
+                <a href="mailto:support@piotnet.com">support@piotnet.com</a>
+                <h3><?php _e('Version','pafe'); ?></h3>
+                <?php
+                    $pro_version = 'Pro v' . PAFE_PRO_VERSION;
+                    if (defined('PAFE_VERSION')) {
+                        $free_version = 'Free v' . constant('PAFE_VERSION');
+                        echo "$free_version - $pro_version";
+                    } else {
+                        echo $pro_version;
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>

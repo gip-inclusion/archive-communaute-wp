@@ -33,11 +33,13 @@ class PAFE_Form_Builder_Repeater_Trigger extends \Elementor\Widget_Base {
 			]
 		);
 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 		$element->add_control(
 			'pafe_form_builder_repeater_form_id_trigger',
 			[
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
 				'condition' => [
 					'pafe_form_builder_repeater_enable_trigger' => 'yes',
@@ -79,12 +81,18 @@ class PAFE_Form_Builder_Repeater_Trigger extends \Elementor\Widget_Base {
 
 	public function before_render_element($element) {
 		$settings = $element->get_settings_for_display();
-		if( !empty($settings['pafe_form_builder_repeater_enable_trigger']) && !empty($settings['pafe_form_builder_repeater_form_id_trigger']) && !empty($settings['pafe_form_builder_repeater_id_trigger']) && !empty($settings['pafe_form_builder_repeater_trigger_action']) ) { 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['pafe_form_builder_repeater_form_id_trigger'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
+
+		if( !empty($settings['pafe_form_builder_repeater_enable_trigger']) && !empty($settings['pafe_form_builder_repeater_id_trigger']) && !empty($settings['pafe_form_builder_repeater_trigger_action']) ) { 
 			$element->add_render_attribute( '_wrapper', [
-				'data-pafe-form-builder-repeater-form-id-trigger' => $settings['pafe_form_builder_repeater_form_id_trigger'],
+				'data-pafe-form-builder-repeater-form-id-trigger' => $form_id,
 				'data-pafe-form-builder-repeater-id-trigger' => $settings['pafe_form_builder_repeater_id_trigger'],
 				'data-pafe-form-builder-repeater-trigger-action' => $settings['pafe_form_builder_repeater_trigger_action'],
 			] );
+
+			wp_enqueue_script( 'pafe-form-builder-advanced-script' );
 		}
 	}
 

@@ -56,6 +56,7 @@ class PAFE_Responsive_Section_Column_Text_Align extends \Elementor\Widget_Base {
 
 	protected function init_control() {
 		add_action( 'elementor/element/section/section_typo/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
+		add_action( 'elementor/element/container/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/column/section_typo/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 		add_action( 'elementor/element/container/pafe_support_section/after_section_end', [ $this, 'pafe_register_controls' ], 10, 2 );
 	}

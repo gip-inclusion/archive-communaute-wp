@@ -10,7 +10,7 @@
 		}
 
 		public function get_icon() {
-			return 'fa fa-braille';
+			return 'icon-w-booking';
 		}
 
 		public function get_categories() {
@@ -24,6 +24,7 @@
 		public function get_script_depends() {
 			return [ 
 				'pafe-form-builder',
+				'pafe-form-builder-advanced-script'
 			];
 		}
 
@@ -42,12 +43,15 @@
 				]
 			);
 
+			$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 			$this->add_control(
 				'pafe_form_booking_form_id',
 				[
 					'label' => __( 'Form ID* (Required)', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
+					'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 					'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
+					'default' => $pafe_forms ? get_the_ID() : '',
 					'dynamic' => [
 						'active' => true,
 					],
@@ -59,6 +63,7 @@
 				[
 					'label' => __( 'Booking ID* (Required)', 'pafe' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'description' => __( 'Latin character and no space. E.g booking_restaurant', 'pafe' ),
 					'dynamic' => [
 						'active' => true,
 					],
@@ -69,9 +74,8 @@
 				'shortcode',
 				[
 					'label' => __( 'Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::RAW_HTML,
-					'classes' => 'forms-field-shortcode',
-					'raw' => '<input class="elementor-form-field-shortcode" readonly />',
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'classes' => 'pafe-forms-field-shortcode pafe-forms-field-shortcode--booking',
 				]
 			);
 
@@ -137,8 +141,8 @@
 				'pafe_form_booking_date_field', 
 				[
 					'label' => __( 'Date Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => __( '[field id="date"]', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'condition' => [
 						'pafe_form_booking_date_type' => 'date_picker'	
 					]
@@ -174,8 +178,8 @@
 				'pafe_form_booking_slot_quantity_field',
 				[
 					'label' => __( 'Slot Quantity Field Shortcode', 'pafe' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => __( '[field id="quantity"]', 'pafe' ),
+					'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+					'get_fields' => true,
 					'condition' => [
 						'pafe_form_booking_field_allow_multiple' => ''	
 					]
@@ -674,6 +678,7 @@
 
 		protected function render() {
 			$settings = $this->get_settings_for_display();
+			$editor = \Elementor\Plugin::$instance->editor->is_edit_mode();
 			$class = '';
 			if ( ! empty( $settings['form_booking_field_required'] ) ) {
 				$class = ' elementor-field-required elementor-field-type-checkbox';
@@ -681,12 +686,37 @@
 					$class .= ' elementor-mark-required';
 				}
 			}
+
+			$post_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : get_the_ID();
+
+			$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+			$form_id = $pafe_forms ? get_the_ID() : $settings['pafe_form_booking_form_id'];
+			$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
+
+			$settings['pafe_form_booking_form_id'] = $form_id;
+
+			if ($editor) {
+				$this->add_render_attribute( 'wrapper', [
+					'data-pafe-form-builder-field' => json_encode(
+						[
+							'field_label' => !empty($settings['pafe_form_booking_field_label']) ? $settings['pafe_form_booking_field_label'] : '',
+							'field_id' => !empty($settings['pafe_form_booking_id']) ? $settings['pafe_form_booking_id'] : '',
+							'widget_id' => $this->get_id(),
+						]
+					),
+				] );
+			}
+
+			$this->add_render_attribute( 'wrapper', [
+				'class' => 'elementor-field-group pafe-form-booking pafe-form-booking--loading ' . $class,
+				'data-pafe-form-booking' => esc_attr(json_encode($settings)),
+			] );
 		?>		
-		<div class="elementor-field-group pafe-form-booking pafe-form-booking--loading<?php echo $class; ?>" data-pafe-form-booking="<?php echo esc_attr(json_encode($settings)); ?>">
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 			<?php
 				require_once( __DIR__ . '/../inc/templates/template-form-booking.php' );
 
-				pafe_template_form_booking($settings, $this->get_id(), get_the_ID());
+				pafe_template_form_booking($settings, $this->get_id(), $post_id, '', $form_id);
 			?>
 		</div>
 		<?php

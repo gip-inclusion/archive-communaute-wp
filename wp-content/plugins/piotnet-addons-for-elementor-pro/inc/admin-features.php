@@ -1,20 +1,20 @@
+<?php
+// var_dump(PAFE_FEATURES_FREE);
+if ( !defined('PAFE_VERSION') ) :
+    ?>
+    <p><?php _e('Please Install or Active Free Version on Wordpress Repository to Enable Free Features','pafe'); ?> <a href="https://wordpress.org/plugins/piotnet-addons-for-elementor" target="_blank">https://wordpress.org/plugins/piotnet-addons-for-elementor</a></p>
+<?php endif; ?>
+
 <form method="post" action="options.php" data-pafe-features>
     <?php settings_fields( 'piotnet-addons-for-elementor-features-settings-group' ); ?>
     <?php do_settings_sections( 'piotnet-addons-for-elementor-features-settings-group' ); ?>
     <div class="pafe-toggle-features">
-        <br>
-        <br>
         <div class="pafe-toggle-features__button" data-pafe-toggle-features-enable>Enable All</div>
         <div class="pafe-toggle-features__button pafe-toggle-features__button--disable" data-pafe-toggle-features-disable>Disable All</div>
         <div class="pafe-toggle-features__button" data-pafe-features-save><?php _e('Save Settings','pafe'); ?></div>
         <br>
     </div>
-    <?php
-    // var_dump(PAFE_FEATURES_FREE);
-    if ( !defined('PAFE_VERSION') ) :
-        ?>
-        <p><?php _e('Please Install or Active Free Version on Wordpress Repository to Enable Free Features','pafe'); ?> <a href="https://wordpress.org/plugins/piotnet-addons-for-elementor">https://wordpress.org/plugins/piotnet-addons-for-elementor</a></p>
-    <?php endif; ?>
+    
     <?php
     require_once( __DIR__ . '/features.php' );
     $features = json_decode( PAFE_FEATURES, true );
@@ -129,8 +129,6 @@
             <?php endif; endforeach; ?>
     </ul>
     <div class="pafe-toggle-features">
-        <br>
-        <br>
         <div class="pafe-toggle-features__button" data-pafe-toggle-features-enable>Enable All</div>
         <div class="pafe-toggle-features__button pafe-toggle-features__button--disable" data-pafe-toggle-features-disable>Disable All</div>
         <div class="pafe-toggle-features__button" data-pafe-features-save><?php _e('Save Settings','pafe'); ?></div>

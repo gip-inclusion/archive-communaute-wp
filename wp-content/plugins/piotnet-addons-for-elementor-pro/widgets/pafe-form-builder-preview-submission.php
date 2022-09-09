@@ -11,7 +11,7 @@ class PAFE_Form_Builder_Preview_Submission extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-bullet-list';
+		return 'icon-w-preview';
 	}
 
 	public function get_categories() {
@@ -24,7 +24,8 @@ class PAFE_Form_Builder_Preview_Submission extends \Elementor\Widget_Base {
 
 	public function get_script_depends() {
 		return [ 
-			'pafe-form-builder'
+			'pafe-form-builder',
+			'pafe-form-builder-preview-submission-script'
 		];
 	}
 
@@ -43,11 +44,14 @@ class PAFE_Form_Builder_Preview_Submission extends \Elementor\Widget_Base {
 			]
 		);
 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 		$this->add_control(
 			'form_id',
 			[
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
+				'default' => $pafe_forms ? get_the_ID() : '',
 				'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
 				'render_type' => 'none',
 			]
@@ -85,7 +89,8 @@ class PAFE_Form_Builder_Preview_Submission extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field Shortcode, Repeater Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 
@@ -175,11 +180,14 @@ class PAFE_Form_Builder_Preview_Submission extends \Elementor\Widget_Base {
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
-
-		if ( !empty( $settings['form_id'] ) ) {
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
+		
+		if ( !empty( $form_id ) ) {
 
 		?>	
-			<div class="pafe-form-builder-preview-submission" data-pafe-form-builder-preview-submission="<?php echo $settings['form_id']; ?>" <?php if (!empty( $settings['remove_empty_form_input_fields'])) { echo ' data-pafe-form-builder-preview-submission-remove-empty-fields'; } ?><?php if (!empty($settings['preview_submission_custom_list_fields_list']) && !empty($settings['preview_submission_custom_list_fields'])) { echo " data-pafe-form-builder-preview-submission-custom-list-fields='" . json_encode($settings['preview_submission_custom_list_fields_list']) . "'"; } ?>>
+			<div class="pafe-form-builder-preview-submission" data-pafe-form-builder-preview-submission="<?php echo $form_id; ?>" <?php if (!empty( $settings['remove_empty_form_input_fields'])) { echo ' data-pafe-form-builder-preview-submission-remove-empty-fields'; } ?><?php if (!empty($settings['preview_submission_custom_list_fields_list']) && !empty($settings['preview_submission_custom_list_fields'])) { echo " data-pafe-form-builder-preview-submission-custom-list-fields='" . json_encode($settings['preview_submission_custom_list_fields_list']) . "'"; } ?>>
 			</div>
         <?php
 

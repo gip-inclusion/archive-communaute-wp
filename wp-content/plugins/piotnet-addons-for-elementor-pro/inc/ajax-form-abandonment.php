@@ -11,6 +11,7 @@
         $user_id = $fields['userId'];
         $function = $_POST['function'];
         $webhook = $_POST['webhook'];
+        $form_post_id = !empty($_POST['post_id']) ? $_POST['post_id'] : '';
 
         $args = array(
             'post_type' => $post_type,
@@ -66,6 +67,10 @@
 
             if ($function == 'success') {
                 update_post_meta( $form_database_post_id, 'status', 'Success');
+            }
+
+            if (!empty($form_post_id)) {
+                update_post_meta( $form_database_post_id, 'post_id', $form_post_id);
             }
 
         }

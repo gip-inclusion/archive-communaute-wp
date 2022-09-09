@@ -11,7 +11,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'far fa-keyboard';
+		return 'icon-w-field';
 	}
 
 	public function get_categories() {
@@ -83,23 +83,37 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		}
 
 		$this->start_controls_section(
-			'pafe_form_builder_field',
+			'section_general',
 			[
-				'label' => __( 'Field', 'pafe' ),
+				'label' => __( 'General', 'pafe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
 
 		$this->add_control(
 			'form_id',
 			[
 				'label' => __( 'Form ID* (Required)', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Enter the same form id for all fields in a form, with latin character and no space. E.g order_form', 'pafe' ),
 				'render_type' => 'none',
+				'default' => $pafe_forms ? get_the_ID() : '',
 				'dynamic' => [
 					'active' => true,
 				],
+			]
+		);
+
+		$this->add_control(
+			'field_type',
+			[
+				'label' => __( 'Type', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => $field_types,
+				'default' => 'text',
+				'description' => 'TinyMCE only works on the frontend.'
 			]
 		);
 
@@ -117,98 +131,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'shortcode',
-			[
-				'label' => __( 'Shortcode', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" readonly />',
-			]
-		);
-
-		$this->add_control(
-			'live_preview_code',
-			[
-				'label'   => __( 'Live Preview Code', 'piotnetforms' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
-				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="pafe-form-builder-live-preview-code" readonly />',
-				'condition' => [
-					'field_type!' => 'image_upload'
-				]
-			]
-		);
-
-		$this->add_control(
-			'live_preview_show_label',
-			[
-				'label' => esc_html__( 'Show Label Preview', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'pafe' ),
-				'label_off' => esc_html__( 'No', 'pafe' ),
-				'return_value' => 'yes',
-				'default' => '',
-				'condition' => [
-					'field_type' => ['select', 'checkbox', 'radio']
-				]
-			]
-		);
-
-        $this->add_control(
-            'live_preview_image',
-            [
-                'label'   => __( 'Live Preview Code', 'piotnetforms' ),
-                'type' => \Elementor\Controls_Manager::RAW_HTML,
-                'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
-                'classes' => 'forms-field-shortcode',
-                'raw' => '<input class="pafe-form-builder-live-preview-image" readonly />',
-                'condition' => [
-                    'field_type' => 'image_upload'
-                ]
-            ]
-        );
-        $this->add_control(
-            'live_preview_image_width',
-            [
-                'label' => esc_html__( 'Live Preview Width', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 5,
-                'max' => 1000,
-                'step' => 1,
-                'default' => 150,
-                'condition' => [
-                    'field_type' => 'image_upload'
-                ]
-            ]
-        );
-        $this->add_control(
-            'live_preview_image_height',
-            [
-                'label' => esc_html__( 'Live Preview height', 'pafe' ),
-                'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 5,
-                'max' => 1000,
-                'step' => 1,
-                'default' => 150,
-                'condition' => [
-                    'field_type' => 'image_upload'
-                ]
-            ]
-        );
-
-		$this->add_control(
-			'field_type',
-			[
-				'label' => __( 'Type', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'options' => $field_types,
-				'default' => 'text',
-				'description' => 'TinyMCE only works on the frontend.'
-			]
-		);
-		
 		$this->add_control(
 			'confirm_type',
 			[
@@ -319,7 +241,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$this->add_control(
 			'field_type_show_password_options',
 			[
-				'label' => __( 'Show/Hidden Password Icon?', 'pafe' ),
+				'label' => __( 'Show Password Icon?', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'pafe' ),
 				'label_off' => __( 'No', 'pafe' ),
@@ -851,279 +773,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'field_icon_enable',
-			[
-				'label' => __( 'Icon', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'pafe' ),
-				'label_off' => __( 'Off', 'pafe' ),
-				'return_value' => 'true',
-				'default' => '',
-			]
-		);
-
-		$this->add_control(
-			'field_icon_type',
-			[
-				'label' => __( 'Icon Type', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'options' => [
-					'font_awesome' => __( 'Font Awesome', 'pafe' ),
-					'image' => __( 'Image', 'pafe' ),
-				],
-				'default' => 'font_awesome',
-				'condition' => [
-					'field_icon_enable!' => '', 
-				],
-			]
-		);
-
-		$this->add_control(
-			'field_icon_font_awesome',
-			[
-				'label' => __( 'Choose Icon', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::ICON,
-				'condition' => [
-					'field_icon_enable!' => '',
-					'field_icon_type' => 'font_awesome',
-				],
-			]
-		);
-
-		$this->add_control(
-			'field_icon_image',
-			[
-				'label' => __( 'Choose Icon Image', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'condition' => [
-					'field_icon_enable!' => '',
-					'field_icon_type' => 'image',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_icon_width',
-			[
-				'label' => __( 'Icon Width', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 20,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field:not(.elementor-select-wrapper)' => 'padding-left: {{SIZE}}{{UNIT}} !important;',
-					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field .elementor-field-textual' => 'padding-left: {{SIZE}}{{UNIT}} !important;',
-					'{{WRAPPER}} .pafe-field-icon' => 'width: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_icon_size',
-			[
-				'label' => __( 'Icon Size', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 18,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .pafe-field-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-					'field_icon_type' => 'font_awesome',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_icon_image_width',
-			[
-				'label' => __( 'Icon Size', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .pafe-field-icon img' => 'width: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-					'field_icon_type' => 'image',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_icon_x',
-			[
-				'label' => __( 'Icon Position X', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .pafe-field-icon i, {{WRAPPER}} .pafe-field-icon img' => 'margin-left: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_icon_y',
-			[
-				'label' => __( 'Icon Position Y', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => -20,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .pafe-field-icon i, {{WRAPPER}} .pafe-field-icon img' => 'margin-top: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-				],
-			]
-		);
-
-		$this->add_control(
-			'field_icon_color',
-			[
-				'label' => __( 'Icon Color', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .pafe-field-icon i' => 'color: {{VALUE}};',
-				],
-				'condition' => [
-					'field_icon_enable!' => '',
-				],
-			]
-		);
-
-		$this->add_control(
-			'field_pattern',
-			[
-				'label' => __( 'Pattern', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => '[0-9()#&+*-=.]+',
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => 'in',
-							'value' => [
-								'tel',
-							],
-						],
-					],
-				],
-			]
-		);
-
-        $this->add_control(
-            'field_dial_code',
-            [
-                'label' => __( 'International Telephone Input', 'elementor-pro' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'default' => '',
-                'conditions' => [
-                'terms' => [
-                    [
-                        'name' => 'field_type',
-                        'operator' => 'in',
-                        'value' => [
-                            'tel',
-                        ],
-                    ],
-                ],
-            ],
-            ]
-        );
-
-		$this->add_control(
-			'field_pattern_not_tel',
-			[
-				'label' => __( 'Pattern', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => 'in',
-							'value' => [
-								'text',
-								'email',
-								'textarea',
-								'url',
-								'number',
-								'password',
-							],
-						],
-					],
-				],
-			]
-		);
-
-		$this->add_control(
-			'field_autocomplete',
-			[
-				'label' => __( 'Autocomplete', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'pafe' ),
-				'label_off' => __( 'Off', 'pafe' ),
-				'return_value' => 'true',
-				'default' => 'true',
-				'condition' => [
-					'field_type!' => 'html',
-				],
-			]
-		);
-
-		$this->add_control(
 			'file_sizes',
 			[
 				'label' => __( 'Max. File Size', 'pafe' ),
@@ -1285,85 +934,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'invalid_message',
-			[
-				'label' => __( 'Invalid Message', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => '!in',
-							'value' => [
-								'recaptcha',
-								'hidden',
-								'html',
-								'honeypot',
-								'iban'
-							],
-						],
-					],
-				],
-			]
-		);
-
-		$this->add_control(
-			'iban_invalid_message',
-			[
-				'label' => __( 'Invalid Message', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'This IBAN is invalid.',
-				'condition' => [
-					'field_type' => 'iban'
-				],
-			]
-		);
-
-		$this->add_control(
-			'max_length',
-			[
-				'label' => __( 'Max Length', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::NUMBER,
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => 'in',
-							'value' => [
-								'text',
-								'email',
-								'textarea',
-								'url',
-								'tel',
-								'number',
-								'password',
-							],
-						],
-					],
-				],
-			]
-		);
-
-		$this->add_control(
-			'min_length',
-			[
-				'label' => __( 'Min Length', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::NUMBER,
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => 'in',
-							'value' => [
-								'tel',
-							],
-						],
-					],
-				],
-			]
-		);
-
-		$this->add_control(
 			'mark_required',
 			[
 				'label' => __( 'Required Mark', 'elementor-pro' ),
@@ -1371,8 +941,19 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'label_on' => __( 'Show', 'elementor-pro' ),
 				'label_off' => __( 'Hide', 'elementor-pro' ),
 				'default' => '',
-				'condition' => [
-					'field_label!' => '',
+				'conditions'   => [
+					'terms' => [
+						[
+							'name'     => 'field_label',
+							'operator' => '!=',
+							'value'    => '',
+						],
+						[
+							'name'     => 'field_required',
+							'operator' => '!=',
+							'value'    => '',
+						],
+					],
 				],
 			]
 		);
@@ -1514,15 +1095,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						],
 					],
 				],
-			]
-		);
-
-		$this->add_control(
-			'remove_this_field_from_repeater',
-			[
-				'label' => __( 'Remove this field from Repeater', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'return_value' => 'true',
 			]
 		);
 
@@ -1718,6 +1290,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'default' => 'select',
 				'options' => [
 					'select' => __( 'Select', 'pafe' ),
+					'select2' => __( 'Select 2', 'pafe' ),
 					'checkbox' => __( 'Checkbox', 'pafe' ),
 					'radio' => __( 'Radio', 'pafe' ),
 				],
@@ -1950,6 +1523,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'label' => __( 'Default Value', 'pafe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => '',
+				'label_block' => true,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -1980,6 +1554,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						],
 					],
 				],
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--pafe',
 			]
 		);
 
@@ -2041,47 +1616,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'field_remove_option_value',
-			[
-				'label' => __( 'Remove option value?', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'pafe' ),
-				'label_off' => __( 'No', 'pafe' ),
-				'return_value' => 'yes',
-				'default' => '',
-				'description' => 'Working with remove empty field in button section.',
-				'condition' => [
-					'field_type' => 'number'
-				]
-			]
-		);
-		$this->add_control(
-			'field_value_remove',
-			[
-				'label' => __( 'Remove value', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Type your value remove here', 'pafe' ),
-				'dynamic' => [
-					'active' => true,
-				],
-				'conditions' => [
-					'relation' => 'and',
-					'terms' => [
-						[
-							'name' => 'field_type',
-							'operator' => '==',
-							'value' => 'number'
-						],
-						[
-							'name' => 'field_remove_option_value',
-							'operator' => '==',
-							'value' => 'yes'
-						]
-					]
-				]
-			]
-		);
+
 		$this->add_control(
 			'number_spiner',
 			[
@@ -2660,6 +2195,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'return_value' => 'yes',
 				'condition' => [
 					'field_type' => 'calculated_fields',
+					'pafe_calculated_fields_form_distance_calculation' => 'yes',
 				]
 			]
 		);
@@ -2684,8 +2220,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'From Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="from"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'field_type' => 'calculated_fields',
 					'pafe_calculated_fields_form_distance_calculation' => 'yes',
@@ -2705,6 +2241,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'return_value' => 'yes',
 				'condition' => [
 					'field_type' => 'calculated_fields',
+					'pafe_calculated_fields_form_distance_calculation' => 'yes',
 				]
 			]
 		);
@@ -2729,8 +2266,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'To Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'E.g [field id="to"]', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'condition' => [
 					'field_type' => 'calculated_fields',
 					'pafe_calculated_fields_form_distance_calculation' => 'yes',
@@ -2762,8 +2299,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Calculation', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'description' => __( 'E.g [field id="quantity"]*[field id="price"]+10', 'pafe' ),
+				'classes' => 'pafe-control-dynamic-tags pafe-control-dynamic-tags--get-fields',
 				'condition' => [
 					'field_type' => 'calculated_fields',
 					'pafe_calculated_fields_form_distance_calculation!' => 'yes',
@@ -2776,7 +2314,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Coupon Code Field Shortcode', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'description' => __( 'E.g [field id="coupon_code"]', 'pafe' ),
 				'condition' => [
 					'field_type' => 'calculated_fields',
@@ -2874,6 +2413,296 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'shortcode',
+			[
+				'label' => __( 'Shortcode', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'classes' => 'pafe-forms-field-shortcode pafe-forms-field-shortcode--shortcode',
+			]
+		);
+
+		$this->add_control(
+			'live_preview_code',
+			[
+				'label'   => __( 'Live Preview Code', 'pafe' ),
+				'label_block' => true,
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
+				'classes' => 'pafe-forms-field-shortcode pafe-forms-field-shortcode--preview',
+				'condition' => [
+					'field_type!' => 'image_upload'
+				]
+			]
+		);
+
+		$this->add_control(
+			'live_preview_show_label',
+			[
+				'label' => esc_html__( 'Show Label Preview', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'pafe' ),
+				'label_off' => esc_html__( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'field_type' => ['select', 'checkbox', 'radio']
+				]
+			]
+		);
+
+        $this->add_control(
+            'live_preview_image',
+            [
+                'label'   => __( 'Live Preview Code', 'pafe' ),
+                'label_block' => true,
+                'type' => \Elementor\Controls_Manager::TEXT,
+				'description' => __( 'Paste this code to anywhere to live preview this field value', 'pafe' ),
+				'classes' => 'pafe-forms-field-shortcode pafe-forms-field-shortcode--preview-image',
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
+        $this->add_control(
+            'live_preview_image_width',
+            [
+                'label' => esc_html__( 'Live Preview Width', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 5,
+                'max' => 1000,
+                'step' => 1,
+                'default' => 150,
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
+        $this->add_control(
+            'live_preview_image_height',
+            [
+                'label' => esc_html__( 'Live Preview height', 'pafe' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 5,
+                'max' => 1000,
+                'step' => 1,
+                'default' => 150,
+                'condition' => [
+                    'field_type' => 'image_upload'
+                ]
+            ]
+        );
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_other_options',
+			[
+				'label' => __( 'Other Options', 'pafe' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'field_pattern',
+			[
+				'label' => __( 'Pattern', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => '[0-9()#&+*-=.]+',
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'tel',
+							],
+						],
+					],
+				],
+			]
+		);
+
+        $this->add_control(
+            'field_dial_code',
+            [
+                'label' => __( 'International Telephone Input', 'elementor-pro' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => '',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'field_type',
+                            'operator' => 'in',
+                            'value' => [
+                                'tel',
+                            ],
+                        ],
+                    ],
+                ],
+            ]
+        );
+
+		$this->add_control(
+			'field_pattern_not_tel',
+			[
+				'label' => __( 'Pattern', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'text',
+								'email',
+								'textarea',
+								'url',
+								'number',
+								'password',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'invalid_message',
+			[
+				'label' => __( 'Invalid Message', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => '!in',
+							'value' => [
+								'recaptcha',
+								'hidden',
+								'html',
+								'honeypot',
+								'iban'
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'iban_invalid_message',
+			[
+				'label' => __( 'Invalid Message', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'This IBAN is invalid.',
+				'condition' => [
+					'field_type' => 'iban'
+				],
+			]
+		);
+
+		$this->add_control(
+			'field_autocomplete',
+			[
+				'label' => __( 'Autocomplete', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'On', 'pafe' ),
+				'label_off' => __( 'Off', 'pafe' ),
+				'return_value' => 'true',
+				'default' => 'true',
+				'condition' => [
+					'field_type!' => 'html',
+				],
+			]
+		);
+
+		$this->add_control(
+			'min_length',
+			[
+				'label' => __( 'Min Length', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'tel',
+								'textarea',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'max_length',
+			[
+				'label' => __( 'Max Length', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'text',
+								'email',
+								'textarea',
+								'url',
+								'tel',
+								'number',
+								'password',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			'remove_this_field_from_repeater',
+			[
+				'label' => __( 'Remove this field from Repeater', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'return_value' => 'true',
+			]
+		);
+
+		$this->add_control(
+			'field_remove_option_value',
+			[
+				'label' => __( 'Remove this field from email message', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+		$this->add_control(
+			'field_value_remove',
+			[
+				'label' => __( 'If Field Value is equal', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
+				'conditions' => [
+					'relation' => 'and',
+					'terms' => [
+						[
+							'name' => 'field_remove_option_value',
+							'operator' => '==',
+							'value' => 'yes'
+						]
+					]
+				]
+			]
+		);
+
+		$this->add_control(
 			'multi_step_form_autonext',
 			[
 				'label' => __( 'Automatically move to the next step after selecting - Multi Step Form', 'pafe' ),
@@ -2897,6 +2726,247 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 							],
 						],
 					],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_icon',
+			[
+				'label' => __( 'Icon', 'pafe' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'field_icon_enable',
+			[
+				'label' => __( 'Enable', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'On', 'pafe' ),
+				'label_off' => __( 'Off', 'pafe' ),
+				'return_value' => 'true',
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'field_icon_type',
+			[
+				'label' => __( 'Icon Type', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'font_awesome' => __( 'Font Awesome', 'pafe' ),
+					'image' => __( 'Image', 'pafe' ),
+				],
+				'default' => 'font_awesome',
+				'condition' => [
+					'field_icon_enable!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'field_icon_font_awesome',
+			[
+				'label' => __( 'Choose Icon', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::ICON,
+				'condition' => [
+					'field_icon_enable!' => '',
+					'field_icon_type' => 'font_awesome',
+				],
+			]
+		);
+
+		$this->add_control(
+			'field_icon_image',
+			[
+				'label' => __( 'Choose Icon Image', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'condition' => [
+					'field_icon_enable!' => '',
+					'field_icon_type' => 'image',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_width',
+			[
+				'label' => __( 'Icon Width', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field:not(.elementor-select-wrapper)' => 'padding-left: {{SIZE}}{{UNIT}} !important;',
+					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field .elementor-field-textual' => 'padding-left: {{SIZE}}{{UNIT}} !important;',
+					'{{WRAPPER}} .pafe-field-icon' => 'width: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_size',
+			[
+				'label' => __( 'Icon Size', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 18,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-field-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
+					'field_icon_type' => 'font_awesome',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_image_width',
+			[
+				'label' => __( 'Icon Size', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-field-icon img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
+					'field_icon_type' => 'image',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_x',
+			[
+				'label' => __( 'Icon Position X', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-field-icon' => 'left: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_x_right',
+			[
+				'label'      => __( 'Icon Position X from right', 'pafe' ),
+				'type'	     => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range'      => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default'    => [
+					'unit' => 'px',
+					'size' => '',
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .pafe-field-icon' => 'right: {{SIZE}}{{UNIT}};',
+				],
+				'condition'  => [
+					'field_icon_enable!' => '',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_icon_y',
+			[
+				'label' => __( 'Icon Position Y', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => -20,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-field-icon' => 'top: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'field_icon_color',
+			[
+				'label' => __( 'Icon Color', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .pafe-field-icon i' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'field_icon_enable!' => '',
 				],
 			]
 		);
@@ -4079,8 +4149,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Set Value For', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => __( 'Field Shortcode', 'pafe' ),
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
+				'get_fields_include_itself' => true,
 				'condition' => [
 					'pafe_conditional_logic_form_action' => 'set_value',
 				],
@@ -4092,8 +4163,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'If', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
 				'placeholder' => __( 'Field Shortcode', 'pafe' ),
+				'get_fields' => true,
 			]
 		);
 
@@ -4278,22 +4350,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
             ]
         );
 
-		$this->add_control(
-			'label_color',
-			[
-				'label' => __( 'Text Color', 'elementor-pro' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-field-group > label, {{WRAPPER}} .elementor-field-subgroup label' => 'color: {{VALUE}};',
-				],
-				'scheme' => [
-					'type' => \Elementor\Core\Schemes\Color::get_type(),
-					'value' => \Elementor\Core\Schemes\Color::COLOR_3,
-				],
-			]
-		);
-
-		$this->add_control(
+        $this->add_control(
 			'mark_required_color',
 			[
 				'label' => __( 'Mark Color', 'elementor-pro' ),
@@ -4308,6 +4365,86 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'label_animation',
+			[
+				'label' => __( 'Label Animation', 'pafe' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'pafe' ),
+				'label_off' => __( 'No', 'pafe' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$this->add_responsive_control(
+			'label_animation_focus_left',
+			[
+				'label'     => __( 'Label Animation Left', 'pafe' ),
+				'type'      => 'slider',
+				'default'   => [
+					'size' => '',
+					'unit' => 'px',
+				],
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 60,
+					],
+				],
+				'condition'   => [
+					'label_animation' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-form-builder-label-animation.pafe-form-builder-label-animated label' => 'left: {{SIZE}}{{UNIT}};',
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'label_animation_focus_spacing',
+			[
+				'label'     => __( 'Label Animation Focus Spacing', 'pafe' ),
+				'type'      => 'slider',
+				'default'   => [
+					'size' => 24,
+					'unit' => 'px',
+				],
+				'range'     => [
+					'px' => [
+						'min' => 1,
+						'max' => 60,
+					],
+				],
+				'condition'   => [
+					'label_animation' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pafe-form-builder-label-animation.pafe-form-builder-label-animated label' => 'transform: translate3d(0,-{{SIZE}}{{UNIT}},10px);',
+				]
+			]
+		);
+
+		$this->start_controls_tabs('label_animation_tabs');
+
+		$this->start_controls_tab(
+			'label_normal_tab',
+			[
+				'label' => __( 'Normal', 'elementor' ),
+			]
+		);
+
+		$this->add_control(
+			'label_color',
+			[
+				'label' => __( 'Text Color', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .elementor-field-group > label, {{WRAPPER}} .elementor-field-subgroup label' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
@@ -4316,6 +4453,39 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'scheme' => \Elementor\Core\Schemes\Typography::TYPOGRAPHY_3,
 			]
 		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'label_focus_tab',
+			[
+				'label' => __( 'Focus', 'elementor' ),
+			]
+		);
+
+		$this->add_control(
+			'label_color_focus',
+			[
+				'label' => __( 'Text Color', 'elementor-pro' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .pafe-form-builder-label-animated .elementor-field-group > label, {{WRAPPER}} .elementor-field-subgroup label' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'label_typography_focus',
+				'selector' => '{{WRAPPER}} .pafe-form-builder-label-animated .elementor-field-group > label',
+				'scheme' => \Elementor\Core\Schemes\Typography::TYPOGRAPHY_3,
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 
@@ -4379,7 +4549,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Background Color', 'elementor-pro' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#ffffff',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field:not(.elementor-select-wrapper)' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .elementor-field-group:not(.elementor-field-type-upload) .elementor-field .elementor-field-textual .selectize-input' => 'background: {{VALUE}};',
@@ -4413,6 +4582,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group .elementor-field:not(.elementor-select-wrapper)' => 'max-width: {{SIZE}}{{UNIT}}!important;',
 					'{{WRAPPER}} .elementor-field-group .elementor-field .elementor-field-textual' => 'max-width: {{SIZE}}{{UNIT}}!important;',
+					'{{WRAPPER}} .elementor-field-group .elementor-field.pafe-select-drop-down' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-field-group .elementor-field select.elementor-field-textual' => 'max-width: unset !important;',
 				],
 			]
 		);
@@ -4583,7 +4754,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_style_piotnet_form_show_password',
 			[
-				'label' => __( 'Show Password Button', 'pafe' ),
+				'label' => __( 'Password Button', 'pafe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' =>[
 					'field_type' => 'password'
@@ -4672,7 +4843,6 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 	protected function make_textarea_field( $item, $item_index, $form_id, $tinymce = false,$i=0) {
 		$this->add_render_attribute( 'textarea' . $item_index, [
 			'class' => [
-				'elementor-field-textual',
 				'elementor-field',
 				esc_attr( $item['css_classes'] ),
 				'elementor-size-' . $item['input_size'],
@@ -4688,6 +4858,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 		if ( $tinymce ) {
 			$this->add_render_attribute( 'textarea' . $item_index, 'data-pafe-form-builder-tinymce' );
+			$rtl = is_rtl() ? 'rtl' : 'ltr';
+			$this->add_render_attribute( 'textarea' . $item_index, 'data-pafe-form-builder-tinymce-rtl',  $rtl);
 		}
 
 		if ( $item['field_required'] ) {
@@ -4703,6 +4875,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			$this->add_render_attribute( 'textarea' . $i, 'maxlength', $item['max_length'] );
 		}
 
+		if ( ! empty( $item['min_length'] ) ) {
+			$this->add_render_attribute( 'textarea' . $i, 'minlength', $item['min_length'] );
+		}
+
 		if ( ! empty( $item['field_pattern_not_tel'] ) ) {
 			$this->add_render_attribute( 'textarea' . $i, 'pattern', $item['field_pattern_not_tel'] );
 		}
@@ -4715,8 +4891,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$value = $this->get_value_edit_post($name);
 
 		if (empty($value)) {
-			$value = $item['field_value'];
-			$this->add_render_attribute( 'textarea' . $item_index, 'data-pafe-form-builder-default-value', $item['field_value'] );
+			$value = pafe_dynamic_tags($item['field_value']);
+			$this->add_render_attribute( 'textarea' . $item_index, 'data-pafe-form-builder-default-value', pafe_dynamic_tags($item['field_value']) );
 		}
 
 		// if ( ! empty( $value ) ) {
@@ -4728,8 +4904,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		return '<textarea ' . $this->get_render_attribute_string( 'textarea' . $item_index ) . '>' . $value . '</textarea>';
 	}
 
-	protected function make_select_field( $item, $i, $form_id, $image_select = false, $terms_select = false, $select_autocomplete = false ) {
+	protected function make_select_field( $item, $i, $form_id, $image_select = false, $terms_select = false, $select_autocomplete = false, $select2 = false ) {
 		$preview_class = !empty($item['live_preview_show_label']) ? ' pafe-preview-label' : '';
+		$select_class = $item['field_type'] == 'select' ? 'pafe-select-drop-down' : '';
 		$this->add_render_attribute(
 			[
 				'select-wrapper' . $i => [
@@ -4737,6 +4914,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						'elementor-field',
 						'elementor-select-wrapper',
 						esc_attr( $item['css_classes'] ),
+						$select_class
 					],
 				],
 				'select' . $i => [
@@ -4750,6 +4928,18 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				],
 			]
 		);
+
+        if ( $select2 ) {
+            $this->add_render_attribute(
+                [
+                   'select' . $i => [
+                        'class' => [
+                            'pafe-select-type-select2',
+                        ],
+                    ],
+                ]
+            );
+        }
 
 		if ($image_select) {
 			$list = $item['pafe_image_select_field_gallery'];
@@ -4827,6 +5017,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 			$this->add_render_attribute( 'select' . $i, 'data-pafe-form-builder-payment-methods-select-field', '' );
 			$this->add_render_attribute( 'select' . $i, 'data-pafe-form-builder-payment-methods-select-field-value-for-stripe', $item['payment_methods_select_field_value_for_stripe'] );
 			$this->add_render_attribute( 'select' . $i, 'data-pafe-form-builder-payment-methods-select-field-value-for-paypal', $item['payment_methods_select_field_value_for_paypal'] );
+
+			wp_enqueue_script( 'pafe-form-builder-advanced-script' );
 		}
 
 		$options = preg_split( "/\\r\\n|\\r|\\n/", $item['field_options'] );
@@ -4868,7 +5060,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$value = $this->get_value_edit_post($name);
 
 		if (empty($value)) {
-			$this->add_render_attribute( 'select' . $i, 'data-pafe-form-builder-default-value', $item['field_value'] );
+			$this->add_render_attribute( 'select' . $i, 'data-pafe-form-builder-default-value', pafe_dynamic_tags($item['field_value']) );
 		}
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'select-wrapper' . $i ); ?>>
@@ -4896,7 +5088,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					$value = $this->get_value_edit_post($name);
 
 					if (empty($value)) {
-						$value = $item['field_value'];
+						$value = pafe_dynamic_tags($item['field_value']);
 					}
 
 					if ( ! empty( $value ) && $option_value === $value ) {
@@ -4992,11 +5184,12 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
                 if ( ! empty( $item['checkbox_limit_multiple'] ) ) {
                     $this->add_render_attribute( $element_id, 'data-pafe-checkbox-limit-multiple', $item['checkbox_limit_multiple'] );
+                    wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
                 }
 
 				if (empty($value)) {
-					$value = $item['field_value'];
-					$this->add_render_attribute( $element_id, 'data-pafe-form-builder-default-value', $item['field_value'] );
+					$value = pafe_dynamic_tags($item['field_value']);
+					$this->add_render_attribute( $element_id, 'data-pafe-form-builder-default-value', pafe_dynamic_tags($item['field_value']) );
 				}
 
 				if(!empty($item['live_preview_show_label'])){
@@ -5063,13 +5256,17 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 	protected function form_fields_render_attributes( $i, $instance, $item ) {
 		if(!empty($item['pafe_range_slider_field_options'])){
-			$range_slider_set = explode(',', $item['pafe_range_slider_field_options']);
-			$range_slider_options = [];
-			foreach($range_slider_set as $val){
-				$slider_item = explode(':', $val);
-				$range_slider_options[str_replace(['"', ' '], '', $slider_item[0])] = str_replace(['"'," "], '', $slider_item[1]);
+			if($this->pafe_is_json($item['pafe_range_slider_field_options'])){
+				$rage_setting_encode = $item['pafe_range_slider_field_options'];
+			}else{
+				$range_slider_set = explode(',', $item['pafe_range_slider_field_options']);
+				$range_slider_options = [];
+				foreach($range_slider_set as $val){
+					$slider_item = explode(':', $val);
+					$range_slider_options[str_replace(['"', ' '], '', $slider_item[0])] = str_replace(['"'," "], '', $slider_item[1]);
+				}
+				$rage_setting_encode = wp_json_encode($range_slider_options);
 			}
-			$rage_setting_encode = wp_json_encode($range_slider_options);
 		}else{
 			$rage_setting_encode = '';
 		}
@@ -5184,6 +5381,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		}
 
 		if ( ! empty( $item['input_mask_enable'] ) ) {
+			wp_enqueue_script( 'pafe-form-builder-input-mask-script' );
 			if (!empty($item['input_mask'])) {
 				$this->add_render_attribute( 'input' . $i, 'data-mask', $item['input_mask'] );
 			}
@@ -5207,8 +5405,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		$value = $this->get_value_edit_post($name);
 
 		if (empty($value)) {
-			$value = $item['field_value'];
-			$this->add_render_attribute( 'input' . $i, 'data-pafe-form-builder-default-value', $item['field_value'] );
+			$value = pafe_dynamic_tags($item['field_value']);
+			$this->add_render_attribute( 'input' . $i, 'data-pafe-form-builder-default-value', pafe_dynamic_tags($item['field_value']) );
 		}
 
 		if ( ! empty( $value ) || $value == 0 ) {
@@ -5614,23 +5812,33 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$item_index = 0;		
+		$editor = \Elementor\Plugin::$instance->editor->is_edit_mode();
+		if (!empty($GLOBALS['pafe_editor'])) {
+			$editor = true;
+		}
+		$item_index = 0;
 		$settings['field_id'] = !empty($settings['field_id']) ? $settings['field_id'] : str_replace(['0','1','2','3','4','5','6','7','8','9'], ['a','b','c','d','e','f','g','h','i','j'], $this->get_id());
 		$field_type = $settings['field_type'];
 		$field_id = $settings['field_id'];
-		$form_id = $settings['form_id'];
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
 		$country = !(empty($settings['country'])) ? $settings['country']: '';
 		$latitude = !(empty($settings['google_maps_lat'])) ? $settings['google_maps_lat'] : '';
         $longitude = !(empty($settings['google_maps_lng'])) ? $settings['google_maps_lng'] : '';
 		$zoom = !(empty($settings['google_maps_zoom'])) ? $settings['google_maps_zoom']['size'] : '';
 		$field_placeholder = $settings['field_placeholder'];
-		$field_value = $settings['field_value'];
+		$field_value = pafe_dynamic_tags($settings['field_value']);
 		$field_required = !(empty($settings['field_required'])) ? ' required="required" ' : '';
 		$item = $settings;
 		$item['input_size'] = '';
 		$this->form_fields_render_attributes( $item_index, '', $item );
 
-		$list_conditional = $settings['pafe_conditional_logic_form_list'];	
+		$this->add_render_attribute( 'wrapper' , [
+			'class' => 'elementor-form-fields-wrapper elementor-labels-above pafe-form-builder-field',
+		] );
+
+		$list_conditional = $settings['pafe_conditional_logic_form_list'];
 		if( !empty($settings['pafe_conditional_logic_form_enable']) && !empty($list_conditional[0]['pafe_conditional_logic_form_if']) && !empty($list_conditional[0]['pafe_conditional_logic_form_comparison_operators']) ) {
 			//$this->add_render_attribute( 'field-group' . $item_index, 'data-pafe-form-builder-conditional-logic', json_encode($list_conditional) );
 			$this->add_render_attribute( 'field-group' . $item_index, [
@@ -5638,16 +5846,36 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 				'data-pafe-form-builder-conditional-logic-speed' => $settings['pafe_conditional_logic_form_speed'],
 				'data-pafe-form-builder-conditional-logic-easing' => $settings['pafe_conditional_logic_form_easing'],
 			] );
+
+			wp_enqueue_script( 'pafe-form-builder-advanced-script' );
 		}
 
 		if( !empty($item['number_spiner']) && $item['field_type'] == 'number' ) {
 			$this->add_render_attribute( 'field-group' . $item_index, [
 				'data-pafe-form-builder-spiner' => '',
 			] );
+			wp_enqueue_script( 'pafe-form-builder-nice-number-script' );
+		}
+
+		if ($editor) {
+			$this->add_render_attribute( 'field-group' . $item_index, [
+				'data-pafe-form-builder-field' => json_encode(
+					[
+						'field_label' => !empty($item['field_label']) ? $item['field_label'] : '',
+						'field_id' => $field_id,
+						'widget_id' => $this->get_id(),
+					]
+				),
+			] );
+		}
+
+		if ( !empty( $settings['label_animation'] ) ) {
+			$this->add_render_attribute( 'wrapper', 'class', 'pafe-form-builder-label-animation' );
+			wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
 		}
 	?>
 		
-		<div class="elementor-form-fields-wrapper elementor-labels-above">
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 			<div <?php echo $this->get_render_attribute_string( 'field-group' . $item_index ); ?>>
 				<?php
 				if ( $item['field_label'] && 'html' !== $item['field_type'] ) {
@@ -5686,7 +5914,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 				switch ( $item['field_type'] ) :
 					case 'html':
-						echo '<div class="elementor-field elementor-size- " data-pafe-form-builder-html data-pafe-form-builder-form-id="' . $item['form_id'] . '" ' . 'id="form-field-' . $item['field_id'] . '" name="form_fields[' .  $item['field_id'] . ']">' . $item['field_html'] . '</div>';
+						echo '<div class="elementor-field elementor-size- " data-pafe-form-builder-html data-pafe-form-builder-form-id="' . $form_id . '" ' . 'id="form-field-' . $item['field_id'] . '" name="form_fields[' .  $item['field_id'] . ']">' . $item['field_html'] . '</div>';
 						break;
 					case 'textarea':
 						echo $this->make_textarea_field( $item, $item_index, $form_id );
@@ -5701,33 +5929,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 							$rtl="ltr";
 						}
 
-						?>
-							<script type="text/javascript">
-								jQuery(document).ready(function( $ ) {
-									$('[data-pafe-form-builder-tinymce]').tinymce({
-										script_url : '<?php echo plugins_url(); ?>/piotnet-addons-for-elementor-pro/inc/tinymce/tinymce.min.js',
-										height: 500,
-										directionality :"<?php echo $rtl ;?>",
-										menubar: false,
-										plugins: [
-											'advlist autolink lists link image charmap print preview anchor',
-											'searchreplace visualblocks code fullscreen',
-											'insertdatetime media table contextmenu paste code help youtube'
-										],
-										toolbar: 'bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist | image youtube',
-										image_title: true, 
-										images_upload_url: '<?php echo plugins_url(); ?>/piotnet-addons-for-elementor-pro/inc/tinymce/tinymce-upload.php',
-										file_picker_types: 'image',
-										convert_urls: false,
-										setup: function (editor) {
-											editor.on('change', function () {
-												tinymce.triggerSave();
-											});
-										}
-									});
-								});
-							</script>
-						<?php
+						wp_enqueue_script( 'pafe-form-builder-tinymce-script' );
+
 						break;
 
 					case 'select':
@@ -5743,9 +5946,14 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 					case 'select_autocomplete':
 						echo $this->make_select_field( $item, $item_index, $form_id, false, false, true );
+						wp_enqueue_script( 'pafe-form-builder-selectize-script' );
+						wp_enqueue_style( 'pafe-form-builder-selectize-style' );
+						wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
 						break;
 
 					case 'image_select':
+						wp_enqueue_script( 'pafe-form-builder-image-picker-script' );
+						wp_enqueue_style( 'pafe-form-builder-image-picker-style' );
                         echo '<div data-pafe-image_select_min_select_check></div>';
 						echo $this->make_select_field( $item, $item_index, $form_id, true );
 						break;
@@ -5753,6 +5961,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 					case 'terms_select':
 						if ($item['terms_select_type'] == 'select') {
 							echo $this->make_select_field( $item, $item_index, $form_id, false, true );
+                        } else if ($item['terms_select_type'] == 'select2') {
+                            wp_enqueue_script( 'pafe-select2', plugin_dir_url( __DIR__ ) . 'assets/js/minify/select2.min.js', array('jquery'), null );
+                            wp_enqueue_style( 'pafe-select2-style', plugin_dir_url( __DIR__ ) . 'assets/css/select2.css');
+                            echo $this->make_select_field( $item, $item_index, $form_id, false, true, false, true );
 						} else {
 							echo $this->make_radio_checkbox_field( $item, $item_index, $item['terms_select_type'], $form_id, true );
 						}
@@ -5779,11 +5991,13 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 							$iban_mesg = !empty($settings['iban_invalid_message']) ? $settings['iban_invalid_message'] : 'This IBAN is invalid.';
 							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-iban-field');
 							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-iban-msg', $iban_mesg);
+							wp_enqueue_script( 'pafe-form-builder-iban-script' );
 						}
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						echo '<input size="1" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 						if($item['field_type'] == 'password' && !empty($item['field_type_show_password_options'])){
 							echo '<label for="form-field-'.$item['field_id'].'" class="pafe-show-password" data-pafe-show_password-icon="true" data-pafe-password-name="'.$item['field_id'].'"><i id="eyeIcon-'.$item['field_id'].'" class="fa fa-eye"></i></label>';
+							wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
 						}
 						break;
 					case 'coupon_code':
@@ -5828,6 +6042,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						}
 						if (empty(esc_attr( get_option('piotnet-addons-for-elementor-pro-google-maps-api-key') ))) {
 							echo __('Please go to Dashboard > Piotnet Addons > Google Maps Integration > Enter Google Maps API Key > Save Settings', 'pafe');
+						} else {
+							wp_enqueue_script( 'pafe-form-builder-google-maps-init-script' );
+							wp_enqueue_script( 'pafe-form-builder-google-maps-script' );
 						}
 						break;
 					case 'image_upload':
@@ -5880,14 +6097,21 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						echo '<div style="display: none">';
 						echo '<input type="text" ' . $item_index . ' ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 						echo '</div>';
+
+						wp_enqueue_script( 'pafe-form-builder-image-upload-script' );
 						break;
 					case 'upload':
 						echo "<form action='#' class='pafe-form-builder-upload' data-pafe-form-builder-upload enctype='multipart/form-data'>";
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						echo '<input type="file" ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 						echo "</form>";
+						wp_enqueue_script( 'pafe-form-builder-jquery-validation-script' );
 						break;
 					case 'stripe_payment':
+						?>
+						<script src="https://js.stripe.com/v3/"></script>
+						<?php
+						wp_enqueue_script( 'pafe-form-builder-stripe-script' );
 						if(!empty($settings['stripe_custom_style']) && !empty($settings['stripe_custom_style_enable'])){
 							$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-stripe-custom-style', $foo = preg_replace('/\s+/', '', $settings['stripe_custom_style']));
 						}else{
@@ -5909,7 +6133,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						break;
 					case 'range_slider':
 						$this->add_render_attribute( 'range_slider' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
-						echo '<input size="1" ' . $this->get_render_attribute_string( 'range_slider' . $item_index ) . '>';	
+						echo '<input size="1" ' . $this->get_render_attribute_string( 'range_slider' . $item_index ) . '>';
+						wp_enqueue_script( 'pafe-form-builder-range-slider-script' );
+						wp_enqueue_style( 'pafe-form-builder-range-slider-style' );
 					?>
 						<script>
 							(function ($) {
@@ -5922,10 +6148,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 									}
 
 									$.each($elements, function (i, $element) {
+										let rangerOptions = $(this).attr('data-pafe-form-builder-range-slider-options');
 										if ($($element).siblings('.irs').length == 0) {
-											$('#form-field-<?php echo $item['field_id']; ?>').ionRangeSlider({
-												<?php echo $item['pafe_range_slider_field_options']; ?>
-											});
+											$('#form-field-<?php echo $item['field_id']; ?>').ionRangeSlider(JSON.parse(rangerOptions));
 										}
 
 										$($element).change();
@@ -5966,6 +6191,8 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 						echo '<input style="display:none!important;" size="1" ' . $this->get_render_attribute_string( 'calculated_fields' . $item_index ) . '>';
 
+						wp_enqueue_script( 'pafe-form-builder-advanced-script' );
+
 						break;
 					case 'tel':
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
@@ -5973,7 +6200,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						$this->add_render_attribute( 'input' . $item_index, 'title', __( 'Only numbers and phone characters (#, -, *, etc) are accepted.', 'elementor-pro' ) );
                         if ( !empty($item['field_dial_code']) ) {
                             $this->add_render_attribute( 'input' . $item_index, 'data-pafe-tel-field');
-                            wp_enqueue_script( 'pafe-widget-tel', plugin_dir_url( __DIR__ ) . 'assets/js/utils.js', array('jquery'), null );
+                            wp_enqueue_script( 'pafe-form-builder-international-tel-script' );
                         }
                         echo '<input size="1" '. $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 
@@ -5996,7 +6223,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 							$this->add_render_attribute( 'input' . $item_index, 'max', esc_attr( $item['field_max'] ) );
 						}
 
-						echo '<input ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';	
+						echo '<input ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
+
+						wp_enqueue_script( 'pafe-form-builder-advanced2-script' );
 						break;
 					case 'acceptance':
 						$label = '';
@@ -6019,17 +6248,11 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual elementor-date-field' );
 
-						//$this->add_render_attribute( 'input' . $item_index, 'pattern', '[0-9]{4}-[0-9]{2}-[0-9]{2}' );
-
-						// echo "<script src='". plugin_dir_url( __DIR__ ) . 'languages/date/flatpickr.min.js' . "'></script>";
-						wp_enqueue_script( 'pafe-flatpickr', plugin_dir_url( __DIR__ ) . 'languages/date/flatpickr.min.js', array('jquery'), null );
-
 						if ( isset( $item['use_native_date'] ) && 'yes' === $item['use_native_date'] ) {
 							$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-use-native' );
 						}
 
 						if ( $item['date_language'] != 'english' ) {
-							// echo "<script src='". plugin_dir_url( __DIR__ ) . 'languages/date/' . $item['date_language'] . ".js'></script>"
 							wp_enqueue_script( 'pafe-flatpickr-language-' . $item['date_language'], plugin_dir_url( __DIR__ ) . 'languages/date/' . $item['date_language'] . ".js", array('pafe-flatpickr'), null );
 						}
 
@@ -6068,6 +6291,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 
 						}
 
+						wp_enqueue_script( 'pafe-form-builder-flatpickr-script' );
+						wp_enqueue_style( 'pafe-form-builder-flatpickr-style' );
+						wp_enqueue_script( 'pafe-form-builder-date-time-script' );
+
 						echo '<input ' . $this->get_render_attribute_string( 'input' . $item_index ) . '>';
 							if ( !empty( $item['flatpickr_custom_options_enable'] ) && !empty( $item['flatpickr_custom_options'] ) ) :
 						?>
@@ -6103,8 +6330,10 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 							endif;
 						break;
 					case 'time':
-						// echo "<script src='". plugin_dir_url( __DIR__ ) . 'languages/date/flatpickr.min.js' . "'></script>";
-						wp_enqueue_script( 'pafe-flatpickr', plugin_dir_url( __DIR__ ) . 'languages/date/flatpickr.min.js', array('jquery'), null );
+						wp_enqueue_script( 'pafe-form-builder-flatpickr-script' );
+						wp_enqueue_style( 'pafe-form-builder-flatpickr-style' );
+						wp_enqueue_script( 'pafe-form-builder-date-time-script' );
+
 						$this->add_render_attribute( 'input' . $item_index, 'data-pafe-form-builder-form-id', $form_id );
 						$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual elementor-time-field' );
 						if ( isset( $item['use_native_time'] ) && 'yes' === $item['use_native_time'] ) {
@@ -6128,6 +6357,7 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 						echo '<button type="button" class="pafe-signature-export" data-pafe-signature-export style="display:none"></button>';
 						echo '</div>';
 						echo '</div>';
+						wp_enqueue_script( 'pafe-form-builder-signature-script' );
 						break;
 					default:
 						$field_type = $item['field_type'];
@@ -6200,5 +6430,9 @@ class PAFE_Form_Builder_Field extends \Elementor\Widget_Base {
 		];
 
 		return $widgets;
+	}
+	public function pafe_is_json($string){
+		json_decode($string);
+		return json_last_error() === JSON_ERROR_NONE;
 	}
 }

@@ -46,12 +46,13 @@ class PDF_Template extends Fpdi\Tfpdf\Fpdi
         }
     }
     
-    function WriteHTML2($html, $w, $x, $y)
+    function WriteHTML2($html, $w, $x, $y, $color)
     {
         // HTML parser
         $html = str_replace("\n",' ',$html);
         $a = preg_split('/<(.*)>/U',$html,-1,PREG_SPLIT_DELIM_CAPTURE);
         $this->SetXY($x, $y);
+        $this->SetTextColor($color['r'], $color['g'], $color['b']);
         foreach($a as $i=>$e)
         {
             if($i%2==0)

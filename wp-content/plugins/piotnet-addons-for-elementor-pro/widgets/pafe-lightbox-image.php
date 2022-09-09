@@ -520,13 +520,15 @@ class PAFE_Lightbox_Image extends \Elementor\Widget_Base {
 		}
 
 		if ( ! empty( $settings['background_color'] ) ) {
-			$this->add_render_attribute( 'shortcode', 'background_color', $settings['background_color'] );
-		}
+            $gallery_div .= " data-pafe-lightbox-gallery-background-color='" . $settings['background_color'] . "'";
+		} else {
+            $gallery_div .= " data-pafe-lightbox-gallery-background-color=''";
+        }
 
 		if( !empty($settings['background_opacity']) ) {
 			$gallery_div .= " data-pafe-lightbox-gallery-background-opacity='" . $settings['background_opacity'] . "'";
 		} else {
-			$gallery_div .= " data-pafe-lightbox-gallery-background-opacity=1";
+			$gallery_div .= " data-pafe-lightbox-gallery-background-opacity='1'";
 		}
 
 		if( isset($settings['facebook']) ) {
@@ -563,20 +565,22 @@ class PAFE_Lightbox_Image extends \Elementor\Widget_Base {
 
 		echo '<style>.pswp {display: none;}</style>';
 	?>
-	<div class="pafe-lightbox" <?php echo $gallery_div; ?>>
-		<a data-href="<?php echo $settings['image']['url']; ?>" class="elementor-image pafe-lightbox__item" data-size="<?php echo $image['width'] . 'x' .$image['height']; ?>" data-med="<?php echo $settings['image']['url']; ?>" data-med-size="<?php echo $image['width'] . 'x' .$image['height']; ?>">	     
-			<?php
-				echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings );
-			?>
-			<div class="pafe-lightbox__text">
-				<?php if(!empty($title)) : ?>
-					<div class="pafe-lightbox__title"><strong><?php echo $title; ?></strong></div>
-				<?php endif; ?>
-				<?php if(!empty($caption)) : ?>
-					<div class="pafe-lightbox__caption"><?php echo $caption; ?></div>
-				<?php endif; ?>
-			</div>
-		</a>
+	<div class="pafe-lightbox" <?php echo $gallery_div; ?> data-pafe-lightbox-image>
+	    <div class="pafe-pswp">
+            <a data-href="<?php echo $settings['image']['url']; ?>" class="elementor-image pafe-lightbox__item"  data-width="<?php echo $image['width']; ?>" data-height="<?php echo $image['height']; ?>" data-med="<?php echo $settings['image']['url']; ?>" data-med-size="<?php echo $image['width'] . 'x' .$image['height']; ?>">
+                <?php
+                    echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings );
+                ?>
+                <div class="pafe-lightbox__text">
+                    <?php if(!empty($title)) : ?>
+                        <div class="pafe-lightbox__title"><strong><?php echo $title; ?></strong></div>
+                    <?php endif; ?>
+                    <?php if(!empty($caption)) : ?>
+                        <div class="pafe-lightbox__caption"><?php echo $caption; ?></div>
+                    <?php endif; ?>
+                </div>
+            </a>
+        </div>
 	</div>
 	<?php
 	}

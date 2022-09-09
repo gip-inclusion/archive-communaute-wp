@@ -35,11 +35,13 @@ class PAFE_Form_Builder_Conditional_Logic extends \Elementor\Widget_Base {
 			]
 		);
 
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+
 		$element->add_control(
 			'pafe_conditional_logic_form_form_id',
 			[
 				'label' => __( 'Form ID', 'pafe' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => $pafe_forms ? \Elementor\Controls_Manager::HIDDEN : \Elementor\Controls_Manager::TEXT,
 				'condition' => [
 					'pafe_conditional_logic_form_enable_new' => 'yes',
 				],
@@ -106,7 +108,8 @@ class PAFE_Form_Builder_Conditional_Logic extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'If', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 				'placeholder' => __( 'Field ID', 'pafe' ),
 			]
 		);
@@ -602,18 +605,22 @@ class PAFE_Form_Builder_Conditional_Logic extends \Elementor\Widget_Base {
 
 	public function before_render_element($element) {
 		$settings = $element->get_settings();
-		if (!empty($settings['pafe_conditional_logic_form_enable_new']) && !empty($settings['pafe_conditional_logic_form_form_id'])) {
+		$pafe_forms = get_post_type() == 'pafe-forms' ? true : false;
+		$form_id = $pafe_forms ? get_the_ID() : $settings['pafe_conditional_logic_form_form_id'];
+		$form_id = !empty($GLOBALS['pafe_form_id']) ? $GLOBALS['pafe_form_id'] : $form_id;
+		if (!empty($settings['pafe_conditional_logic_form_enable_new'])) {
 			if ( array_key_exists( 'pafe_conditional_logic_form_list_new',$settings ) ) {
 				$list = $settings['pafe_conditional_logic_form_list_new'];	
 				if( !empty($list[0]['pafe_conditional_logic_form_if']) && !empty($list[0]['pafe_conditional_logic_form_comparison_operators']) ) {
 					$element->add_render_attribute( '_wrapper', [
 						'data-pafe-form-builder-conditional-logic' => json_encode($list),
 						'data-pafe-form-builder-conditional-logic-not-field' => '',
-						'data-pafe-form-builder-conditional-logic-not-field-form-id' => $settings['pafe_conditional_logic_form_form_id'],
+						'data-pafe-form-builder-conditional-logic-not-field-form-id' => $form_id,
 						'data-pafe-form-builder-conditional-logic-speed' => $settings['pafe_conditional_logic_form_speed_new'],
 						'data-pafe-form-builder-conditional-logic-easing' => $settings['pafe_conditional_logic_form_easing_new'],
 					] );
 				}
+				wp_enqueue_script( 'pafe-form-builder-advanced-script' );
 			}
 		}
 	}

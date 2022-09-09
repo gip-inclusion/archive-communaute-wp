@@ -11,14 +11,14 @@
 	add_action( 'wp_ajax_pafe_ajax_form_builder', 'pafe_ajax_form_builder' );
 	add_action( 'wp_ajax_nopriv_pafe_ajax_form_builder', 'pafe_ajax_form_builder' );
 
-	function find_element_recursive( $elements, $form_id ) {
+	function find_element_recursive( $elements, $submit_button_id ) {
 		foreach ( $elements as $element ) {
-			if ( $form_id === $element['id'] ) {
+			if ( $submit_button_id === $element['id'] ) {
 				return $element;
 			}
 
 			if ( ! empty( $element['elements'] ) ) {
-				$element = find_element_recursive( $element['elements'], $form_id );
+				$element = find_element_recursive( $element['elements'], $submit_button_id );
 
 				if ( $element ) {
 					return $element;
@@ -526,7 +526,7 @@
 
 			if ( !empty($_POST['post_id']) && !empty($_POST['form_id']) && !empty($_POST['fields']) ) {
 				$post_id = $_POST['post_id'];
-				$form_id = $_POST['form_id'];
+				$submit_button_id = $_POST['form_id'];
 				$fields = stripslashes($_POST['fields']);
 				$fields = json_decode($fields, true);
 				$fields = array_unique($fields, SORT_REGULAR);
@@ -551,11 +551,12 @@
 					$meta = $elementor->db->get_plain_editor( $post_id );
 				}
 
-				$form = find_element_recursive( $meta, $form_id );
+				$form = find_element_recursive( $meta, $submit_button_id );
 
 				$widget = $elementor->elements_manager->create_element_instance( $form );
-				$limit_entries_message = '';
 				$form['settings'] = $widget->get_active_settings();
+
+				$limit_entries_message = '';
 				$args = array(
 					'post_type' => 'pafe-form-database',
 					'meta_value' => $form['settings']['form_id'],
@@ -643,7 +644,7 @@
 					}
 				}
 
-
+				$form_id = get_post_type($post_id) == 'pafe-forms' ? $post_id : $form['settings']['form_id'];
 
 				$body = array(); // Webhook
 
@@ -797,7 +798,7 @@
 				// 			$charge = \Stripe\Charge::create(array(
 				// 				"amount" => $amount,
 				// 				"currency" => $currency,
-				// 				"description" => $form_id,
+				// 				"description" => $submit_button_id,
 				// 				"customer" => $customer->id,
 				// 				"metadata" => $fields_metadata,
 				// 			));
@@ -1044,7 +1045,7 @@
 
 					if (empty($form['settings']['form_database_disable'])) {
 						$my_post = array(
-							'post_title'    => wp_strip_all_tags( 'Piotnet Addons Form Database ' . $form_id ),
+							'post_title'    => wp_strip_all_tags( 'Piotnet Addons Form Database ' . $submit_button_id ),
 							'post_status'   => 'publish',
 							'post_type'		=> 'pafe-form-database',
 						);
@@ -1065,12 +1066,12 @@
 
 							$fields_database['form_id'] = array(
 								'name' => 'form_id',
-								'value' => $form['settings']['form_id'],
+								'value' => $form_id,
 								'label' => 'Form ID',
 							);
 							$fields_database['form_id_elementor'] = array(
 								'name' => 'form_id_elementor',
-								'value' => $form_id,
+								'value' => $submit_button_id,
 								'label' => '',
 							);
 							$fields_database['post_id'] = array(
@@ -1908,7 +1909,7 @@
 								}
 							}
 
-							update_post_meta( $submit_post_id, '_submit_button_id', $form_id );
+							update_post_meta( $submit_post_id, '_submit_button_id', $submit_button_id );
 							update_post_meta( $submit_post_id, '_submit_post_id', $post_id );
 
 							$post_url = get_permalink( $submit_post_id );
@@ -1962,7 +1963,7 @@
 
 					$form_submission['fields'] = $fields_data;
 
-					$form_submission['form']['id'] = $form['settings']['form_id'];
+					$form_submission['form']['id'] = $form_id;
 
 					$form_submission['submission_id'] = $form_database_post_id;
 
@@ -2018,11 +2019,11 @@
 					    // Submission
 					    //$row = rtrim($row, ',');
 					    // Config
-					    $gs_sid = $form['settings']['pafe_form_google_sheets_connector_id']; // Enter your Google Sheet ID here
+					    $gs_sid = $form['settings']['pafe_form_google_sheets_connector_id'];
 					    $gs_tab = !empty($form['settings']['pafe_form_google_sheets_connector_tab']) ? $form['settings']['pafe_form_google_sheets_connector_tab'] . '!' : '';
-					    $gs_clid = get_option('piotnet-addons-for-elementor-pro-google-sheets-client-id'); // Enter your API Client ID here
-					    $gs_clis = get_option('piotnet-addons-for-elementor-pro-google-sheets-client-secret'); // Enter your API Client Secret here
-					    $gs_rtok = get_option('piotnet-addons-for-elementor-pro-google-sheets-refresh-token'); // Enter your OAuth Refresh Token here
+					    $gs_clid = get_option('piotnet-addons-for-elementor-pro-google-sheets-client-id');
+					    $gs_clis = get_option('piotnet-addons-for-elementor-pro-google-sheets-client-secret');
+					    $gs_rtok = get_option('piotnet-addons-for-elementor-pro-google-sheets-refresh-token');
 					    //$gs_atok = false;
 					    $gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' . $gs_sid . '/values/' . $gs_tab . 'A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
 					    //$gs_body = '{"majorDimension":"ROWS", "values":[[' . $row . ']]}';
@@ -2035,7 +2036,7 @@
 					    $gs_body = json_encode($gs_body);
 					    // HTTP Request Token Refresh
 
-						$google_sheet_expired_token = get_option('piotnet-addons-for-elementor-pro-google-sheet-expired-token');
+						$google_sheet_expired_token = get_option('piotnet-addons-for-elementor-pro-google-sheets-expired-token');
 						$google_sheet_expired_token = (int)$google_sheet_expired_token;
 						$google_sheet_current_time = time();
 
@@ -2050,17 +2051,17 @@
 							$google_sheets = json_decode(wp_remote_retrieve_body($google_sheets));
 							if (!empty($google_sheets->access_token)) {
 								$gs_atok = $google_sheets->access_token;
-								$gg_sheet_newexpired = get_option('piotnet-addons-for-elementor-pro-google-sheet-expires');
+								$gg_sheet_newexpired = get_option('piotnet-addons-for-elementor-pro-google-sheets-expires');
 								$gg_sheet_newexpired = (int)$gg_sheet_newexpired;
 
-								update_option( 'piotnet-addons-for-elementor-pro-google-sheet-access-token', $gs_atok );
+								update_option( 'piotnet-addons-for-elementor-pro-google-sheets-access-token', $gs_atok );
 
 								$google_gheet_new_expired_token = time() + $gg_sheet_newexpired;
 
-								update_option( 'piotnet-addons-for-elementor-pro-google-calendar-expired-token', $google_gheet_new_expired_token );
+								update_option( 'piotnet-addons-for-elementor-pro-google-sheets-expired-token', $google_gheet_new_expired_token );
 							}
 						}
-						$gs_atok = get_option('piotnet-addons-for-elementor-pro-google-sheet-access-token');
+						$gs_atok = get_option('piotnet-addons-for-elementor-pro-google-sheets-access-token');
 
 						$google_sheets_request_send = [
 							'body' => $gs_body,
@@ -2460,7 +2461,7 @@
 											}
 										}else{
 											if($form['settings']['pdfgenerator_font_family'] == 'default'){
-												$pdf->SetFont('dejavu-bolditalic','',$item['font_size']['size'] * $pfd_font_ratio);
+												$pdf->SetFont('dejavu', '', $item['font_size']['size'] * $pfd_font_ratio);
 											}else{
 												$pdf->SetFont($form['settings']['pdfgenerator_font_family'],'BI',$item['font_size']['size']);
 											}
@@ -2554,10 +2555,10 @@
 												if(strpos($pdf_txt, '[field id="') !== false){
 													continue;
 												}else{
-													$pdf->WriteHTML2($pdf_txt,$item_width,$item_x, $item_y);
+													$pdf->WriteHTML2($pdf_txt,$item_width,$item_x, $item_y, $pdf_color);
 												}
 											}else{
-												$pdf->WriteHTML2($pdf_txt,$item_width,$item_x, $item_y);
+												$pdf->WriteHTML2($pdf_txt,$item_width,$item_x, $item_y, $pdf_color);
 											}
 										}else{
 											if(!empty($form['settings']['remove_empty_form_input_fields'])){
@@ -3253,10 +3254,12 @@
 													}
 												} else {
 													if ($fields[$key_field]['name'] == get_field_name_shortcode( $item['woocommerce_add_to_cart_custom_order_item_field_shortcode'] )) {
-														if (empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_field_empty'])) {
+														if (empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_field_empty']) && $field['value'] != '0') {
 															$fields_cart[] = $field;
 														} else {
-															if (!empty($field['value'])) {
+															if (!empty($field['value']) && empty($item['woocommerce_add_to_cart_custom_order_item_remove_if_value_zero'])) {
+																$fields_cart[] = $field;
+															}elseif($field['value'] != '0'){
 																$fields_cart[] = $field;
 															}
 														}
@@ -3346,9 +3349,8 @@
 
 					if (in_array('hubspot', $form['settings']['submit_actions'])) {
 						$hubspot_acceptance = true;
-
+						$hubspot_access_token = get_option('piotnet-addons-for-elementor-pro-hubspot-access-token');
 						if (!empty($form['settings']['pafe_hubspot_acceptance_field_shortcode'])) {
-
 							$hubspot_acceptance_value = pafe_get_field_value($form['settings']['pafe_hubspot_acceptance_field_shortcode'],$fields);
 							if (empty($hubspot_acceptance_value)) {
 								$hubspot_acceptance = false;
@@ -3356,8 +3358,6 @@
 						}
 						if ( $hubspot_acceptance == true ) {
 							$hubspot_data = [];
-							$hubspot_api = get_option('piotnet-addons-for-elementor-pro-hubspot-api-key');
-							$hubspot_url ='https://api.hubapi.com/contacts/v1/contact?hapikey='.$hubspot_api;
 							$hubspot_properties = $form['settings']['pafe_hubspot_property_list'];
 							foreach ( $hubspot_properties as $item ) {
 								$hubspot_data['properties'][] = [
@@ -3365,11 +3365,9 @@
 									'value' => replace_email($item['pafe_hubspot_field_shortcode'], $fields),
 								];
 							}
-
 							$curl = curl_init();
-
 							curl_setopt_array($curl, array(
-								CURLOPT_URL => $hubspot_url,
+								CURLOPT_URL => 'https://api.hubapi.com/contacts/v1/contact/',
 								CURLOPT_RETURNTRANSFER => true,
 								CURLOPT_ENCODING => '',
 								CURLOPT_MAXREDIRS => 10,
@@ -3377,12 +3375,12 @@
 								CURLOPT_FOLLOWLOCATION => true,
 								CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 								CURLOPT_CUSTOMREQUEST => 'POST',
-								CURLOPT_POSTFIELDS => json_encode($hubspot_data),
+								CURLOPT_POSTFIELDS =>json_encode($hubspot_data),
 								CURLOPT_HTTPHEADER => array(
-									'Content-Type: application/json',
+									'Authorization: Bearer '.$hubspot_access_token,
+									'Content-Type: application/json'
 								),
 							));
-
 							$response = curl_exec($curl);
 							curl_close($curl);
 						}

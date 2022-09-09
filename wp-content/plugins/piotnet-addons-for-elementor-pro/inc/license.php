@@ -7,7 +7,7 @@ class PAFE_License_Service
 {
     const PRO_VERSION = PAFE_PRO_VERSION;
     const PLUGIN_BASENAME = PAFE_PRO_PLUGIN_BASENAME;
-    const LICENSE_API_DOMAIN = "https://pafe-api.piotnet.com";
+    const LICENSE_API_DOMAIN = "https://api.piotnet.com";
     const FREE_VERSION_NAME = "PAFE_VERSION";
     const PREFIX_OPTION_KEY = "piotnet_addons_for_elementor_pro_";
     const PLUGIN_SLUG = "piotnet-addons-for-elementor-pro";

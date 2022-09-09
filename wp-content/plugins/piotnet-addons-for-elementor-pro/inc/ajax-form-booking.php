@@ -24,13 +24,14 @@
 		$post_id = $_POST['post_id'];
 		$element_id = $_POST['element_id'];
 		$date = $_POST['date'];
+		$form_id = $_POST['form_id'];
 
 		if (!empty($element_id) && !empty($post_id)) {
 			$settings = $_POST['form_booking'];
 
 			require_once( __DIR__ . '/../inc/templates/template-form-booking.php' );
 
-			pafe_template_form_booking($settings, $element_id, $post_id, $date);
+			pafe_template_form_booking($settings, $element_id, $post_id, $date, $form_id);
 		}
 
 		wp_die(); 

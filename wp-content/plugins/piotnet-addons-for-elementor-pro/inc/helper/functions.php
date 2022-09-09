@@ -261,4 +261,29 @@ class PAFE_Helper{
 		}
 		return $response->access_token ? $response->access_token : false;
 	}
+
+    public function pafe_paypal_get_token($client_id, $client_secret, $paypal_url){
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $paypal_url.'v1/oauth2/token',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
+            CURLOPT_HTTPHEADER => array(
+                'Accept: application/json',
+                'Accept-Language: en_US',
+                'Authorization: Basic '.base64_encode($client_id . ':' . $client_secret),
+                'Content-Type: application/x-www-form-urlencoded'
+            ),
+        ));
+        $response = json_decode(curl_exec($curl))->access_token;
+        curl_close($curl);
+        return $response;
+    }
+
 }

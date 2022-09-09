@@ -6,11 +6,11 @@ class PAFE_Form_Builder_Data extends \Elementor\Widget_Base {
     }
 
     public function get_title(){
-        return __('PAFE Form Builder Data', 'pafe');
+        return __('Form Entries', 'pafe');
     }
 
-    public function get_icon(){
-        return 'eicon-database';
+    public function get_icon() {
+        return 'icon-w-form-entries';
     }
 
     public function get_categories(){
@@ -82,7 +82,8 @@ class PAFE_Form_Builder_Data extends \Elementor\Widget_Base {
             }
 
             $th = array_unique($th);
-        endwhile; endif;
+            endwhile; wp_reset_postdata();
+        endif; 
 
         $this->start_controls_section(
             'pafe_form_data_section',
@@ -407,6 +408,7 @@ class PAFE_Form_Builder_Data extends \Elementor\Widget_Base {
         </table>
     </div>
     <?php
+        wp_reset_postdata();
     }
     private function get_fields_data($settings=array()) {
         $args = array(
@@ -445,7 +447,8 @@ class PAFE_Form_Builder_Data extends \Elementor\Widget_Base {
                     }
                 }
             }
-        endwhile; endif;
+            endwhile; wp_reset_postdata();
+        endif;
         foreach($field_id as $id) {
             if ( $id != 'form_id' && $id != '_elementor_controls_usage' && $id != '_edit_lock' && $id != 'form_id_elementor' && $id != 'post_id' && $id != '_pafe_form_builder_fields_database') {
                 if (is_array($fields_database)) {
@@ -469,8 +472,9 @@ class PAFE_Form_Builder_Data extends \Elementor\Widget_Base {
                 }
             }
 
-        $fields[] = $tr;
-        endwhile; endif;
+            $fields[] = $tr;
+            endwhile; wp_reset_postdata();
+        endif;
         return $fields;
     }
 }

@@ -76,7 +76,8 @@ class PAFE_Form_Google_Sheets_Connector extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Field ID if you use Elementor Pro Form, Field Shortcode if you use PAFE Form Builder', 'pafe' ),
 				'label_block' => true,
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\PafeCustomControls\Select_Control::Select,
+				'get_fields' => true,
 			]
 		);
 
