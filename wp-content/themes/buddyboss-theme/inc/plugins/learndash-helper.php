@@ -400,27 +400,29 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 		public function boss_theme_convert_social_learner_video_to_ld_video_progression() {
 			if ( is_singular( [ 'sfwd-lessons', 'sfwd-topic' ] ) ) {
 				global $post;
-				$value           = get_post_meta( $post->ID, '_boss_edu_post_video', true );
-				$lesson_settings = learndash_get_setting( $post->ID );
-				if ( $value ) {
-					if ( ( isset( $lesson_settings['lesson_video_enabled'] ) ) && ( $lesson_settings['lesson_video_enabled'] == 'on' ) ) {
+				$value            = get_post_meta( $post->ID, '_boss_edu_post_video', true );
+				$is_video_migrate = get_post_meta( $post->ID, 'is_boss_edu_post_video_migrate', true );
+				$lesson_settings  = learndash_get_setting( $post->ID );
+				if ( $value && false === $is_video_migrate ) {
+					if ( ( isset( $lesson_settings['lesson_video_enabled'] ) ) && ( 'on' === $lesson_settings['lesson_video_enabled'] ) ) {
 					} else {
 						learndash_update_setting( $post->ID, 'lesson_video_enabled', 'on' );
 						learndash_update_setting( $post->ID, 'lesson_video_url', $value );
 						learndash_update_setting( $post->ID, 'lesson_video_shown', 'BEFORE' );
 						learndash_update_setting( $post->ID, 'lesson_video_auto_start', 'on' );
 						learndash_update_setting( $post->ID, 'lesson_video_show_controls', 'on' );
-						//update_post_meta( $post->ID, '_boss_edu_post_video', '' );
+						update_post_meta( $post->ID, 'is_boss_edu_post_video_migrate', true );
 					}
 				}
 			}
 
 			if ( is_singular( [ 'sfwd-courses' ] ) ) {
 				global $post;
-				$value = get_post_meta( $post->ID, '_boss_edu_post_video', true );
-				if ( $value ) {
+				$value            = get_post_meta( $post->ID, '_boss_edu_post_video', true );
+				$is_video_migrate = get_post_meta( $post->ID, 'is_boss_edu_post_video_migrate', true );
+				if ( $value && false === $is_video_migrate ) {
 					update_post_meta( $post->ID, '_buddyboss_lms_course_video', $value );
-					//update_post_meta( $post->ID, '_boss_edu_post_video', '' );
+					update_post_meta( $post->ID, 'is_boss_edu_post_video_migrate', true );
 				}
 			}
 		}
@@ -2267,7 +2269,7 @@ if ( ! class_exists( '\BuddyBossTheme\LearndashHelper' ) ) {
 
 				foreach ( $group_course_ids as $course_id ) {
 
-					$this->buddyboss_theme_ld_course_enrolled_users_list( $course_id, $force_refresh = true );	
+					$this->buddyboss_theme_ld_course_enrolled_users_list( $course_id, $force_refresh = true );
 
 					$this->buddyboss_theme_ld_course_enrolled_users_list( $course_id, true );
 				}

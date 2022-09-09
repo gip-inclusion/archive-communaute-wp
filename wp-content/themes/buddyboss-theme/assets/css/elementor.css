@@ -371,22 +371,6 @@
   width: auto;
 }
 
-/* Fix for floating buttons in "Learndash Activity" and "Forum Activity" */
-@media (min-width: 768px) {
-  .elementor-max-50 .elementor-heading-title {
-    max-width: 50%;
-  }
-
-  .bb-ldactivity-main-section,
-  .elementor-widget-ld-activity {
-    padding-top: 60px;
-  }
-
-  .elementor-max-50 + section .bb-ldactivity-main-section,
-  .elementor-max-50 + section .elementor-widget-ld-activity {
-    padding-top: 0;
-  }
-}
 /* WooCommerce Issues */
 .elementor-element.elementor-products-grid ul.products li.product {
   max-width: 100%;
@@ -4118,6 +4102,20 @@ body.rtl .bb-la-activity-btn__link i {
 }
 
 /* Animation End **/
+/* Fix for floating buttons in "Learndash Activity" */
+@media (min-width: 768px) {
+  .elementor-max-50 .elementor-heading-title {
+    max-width: 50%;
+  }
+
+  .bb-ldactivity-main-section {
+    padding-top: 60px;
+  }
+
+  .elementor-max-50 + section .bb-ldactivity-main-section {
+    padding-top: 0;
+  }
+}
 /** ld courses widget */
 .learndash-course-list--elementor .grid-box-solid .bb-course-items .bb-cover-list-item {
   border-style: solid;
@@ -7084,6 +7082,20 @@ body.rtl .bb-forums__avatar {
   margin: 0 auto;
 }
 
+/* Fix for floating buttons in "Forum Activity" */
+@media (min-width: 768px) {
+  .elementor-max-50 .elementor-heading-title {
+    max-width: 50%;
+  }
+
+  .elementor-widget-bbp-forums-activity {
+    padding-top: 60px;
+  }
+
+  .elementor-max-50 + section .elementor-widget-bbp-forums-activity {
+    padding-top: 0;
+  }
+}
 .bb-forums-activity-wrapper {
   position: relative;
   min-height: 250px;

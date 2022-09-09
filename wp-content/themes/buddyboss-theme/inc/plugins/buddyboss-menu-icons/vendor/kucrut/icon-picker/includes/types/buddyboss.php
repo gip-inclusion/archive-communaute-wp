@@ -453,6 +453,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 				'name'  => esc_html__( 'BuddyPress', 'buddyboss-theme' ),
 			),
 			array(
+				'group' => 'brands',
+				'id'    => 'bb-icon-brand-bunnynet',
+				'name'  => esc_html__( 'Bunny Net', 'buddyboss-theme' ),
+			),
+			array(
 				'group' => 'technology',
 				'id'    => 'bb-icon-bug',
 				'name'  => esc_html__( 'Bug', 'buddyboss-theme' ),
@@ -1398,6 +1403,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 				'name'  => esc_html__( 'Hashtag', 'buddyboss-theme' ),
 			),
 			array(
+				'group' => 'interfaces',
+				'id'    => 'bb-icon-hand-pointer',
+				'name'  => esc_html__( 'Hand Pointer', 'buddyboss-theme' ),
+			),
+			array(
 				'group' => 'text-formatting',
 				'id'    => 'bb-icon-heading',
 				'name'  => esc_html__( 'Heading', 'buddyboss-theme' ),
@@ -1421,6 +1431,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 				'group' => 'media-files',
 				'id'    => 'bb-icon-image',
 				'name'  => esc_html__( 'Image', 'buddyboss-theme' ),
+			),
+			array(
+				'group' => 'media-files',
+				'id'    => 'bb-icon-image-plus',
+				'name'  => esc_html__( 'Image Plus', 'buddyboss-theme' ),
 			),
 			array(
 				'group' => 'media-files',
@@ -1639,6 +1654,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'interfaces',
+				'id'    => 'bb-icon-minimize',
+				'name'  => esc_html__( 'Minimize', 'buddyboss-theme' ),
+			),
+			array(
+				'group' => 'interfaces',
 				'id'    => 'bb-icon-minus',
 				'name'  => esc_html__( 'Minus', 'buddyboss-theme' ),
 			),
@@ -1786,6 +1806,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 				'group' => 'interfaces',
 				'id'    => 'bb-icon-phone-slash',
 				'name'  => esc_html__( 'Phone Slash', 'buddyboss-theme' ),
+			),
+			array(
+				'group' => 'interfaces',
+				'id'    => 'bb-icon-picture-in-picture',
+				'name'  => esc_html__( 'Picture In Picture', 'buddyboss-theme' ),
 			),
 			array(
 				'group' => 'interfaces',
@@ -2139,6 +2164,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'interfaces',
+				'id'    => 'bb-icon-spinner-alt',
+				'name'  => esc_html__( 'Spinner Alt', 'buddyboss-theme' ),
+			),
+			array(
+				'group' => 'interfaces',
 				'id'    => 'bb-icon-spinner-third',
 				'name'  => esc_html__( 'Spinner Third', 'buddyboss-theme' ),
 			),
@@ -2456,6 +2486,11 @@ class Icon_Picker_Type_BuddyBoss extends Icon_Picker_Type_Font {
 				'group' => 'media-files',
 				'id'    => 'bb-icon-video',
 				'name'  => esc_html__( 'Video', 'buddyboss-theme' ),
+			),
+			array(
+				'group' => 'media-files',
+				'id'    => 'bb-icon-video-plus',
+				'name'  => esc_html__( 'Video Plus', 'buddyboss-theme' ),
 			),
 			array(
 				'group' => 'media-files',

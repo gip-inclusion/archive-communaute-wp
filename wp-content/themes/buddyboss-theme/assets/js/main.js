@@ -1211,8 +1211,8 @@
 
 			$( 'aside.buddypanel .buddypanel-menu .current-menu-parent' ).find( 'ul.sub-menu' ).addClass( 'bb-open' );
 
-			var currentMenu = $( '.bb-mobile-panel-inner .menu-item-has-children.current_page_item, .bb-mobile-panel-inner .menu-item-has-children.current-menu-item, .bb-mobile-panel-inner .menu-item-has-children.current-menu-parent' );
-			currentMenu.find( 'ul.sub-menu' ).addClass( 'bb-open' );
+			var currentMenu = $( '.bb-mobile-panel-inner .menu-item-has-children.current-menu-ancestor, .bb-mobile-panel-inner .menu-item-has-children.current_page_item, .bb-mobile-panel-inner .menu-item-has-children.current-menu-item, .bb-mobile-panel-inner .menu-item-has-children.current-menu-parent' );
+			currentMenu.children( 'ul.sub-menu' ).addClass( 'bb-open' );
 			currentMenu.find( '.bs-submenu-toggle' ).addClass( 'bs-submenu-open' );
 		},
 
@@ -1768,10 +1768,13 @@
 				'.bbp-topic-form form #bbp_topic_submit',
 				function ( e ) {
 					e.preventDefault();
-
-					var valid = true;
-					var media_valid = true;
 					var $topicForm = $( e.target ).closest( 'form' );
+					if ( $topicForm.hasClass( 'submitting' ) ) {
+						return false;
+					}
+					$topicForm.addClass( 'submitting' );
+					var valid       = true;
+					var media_valid = true;
 
 					if ( $topicForm.find( '.bbp-form-anonymous' ).length ) {
 						if ( $.trim( $topicForm.find( '#bbp_anonymous_author' ).val() ) === '' ) {
@@ -1875,6 +1878,8 @@
 
 					if ( valid ) {
 						$topicForm.submit();
+					} else {
+						$topicForm.removeClass( 'submitting' );
 					}
 				}
 			);

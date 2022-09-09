@@ -804,6 +804,12 @@ body.bb-sfwd-aside.buddypanel-header .buddypanel .panel-head .bb-toggle-panel {
   display: block !important;
 }
 
+.ld-progress-stats span.ld-progress-steps__unit {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .grid-view .bb-card-course-details .course-progress-wrap:nth-last-child(2) {
   margin: 0 0 10px;
 }
@@ -3057,6 +3063,11 @@ div.bb-lms-header.quiz-fix .bb-position {
 }
 .lms-header-instructor .bb-about-instructor .bb-avatar-wrap > div {
   margin-bottom: 0;
+}
+
+html[dir="rtl"] .lms-header-instructor .bb-about-instructor .bb-about-instructor-date:before {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .lms-topic-sidebar-course-navigation .ld-course-navigation {
@@ -7629,6 +7640,7 @@ ul.bb-lms-user-profile-tabs .more-button.active:after {
   background-color: var(--bb-primary-color);
 }
 
+#content li.wpProQuiz_questionListItem.wpProQuiz_answerCorrectIncomplete,
 #content li.wpProQuiz_questionListItem.wpProQuiz_answerCorrect {
   background-color: rgba(var(--bb-success-color-rgb), 0.2);
 }
@@ -10976,10 +10988,28 @@ body:not(.bb-dark-theme) .sfwd-light-mode {
 .bb-sfwd-aside.bb-dark-theme .site-header #header-aside i {
   color: #fff;
 }
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .buddypanel .side-panel-menu li:not(.current-menu-item) a,
+.bb-sfwd-aside.bb-dark-theme .side-panel-menu .bb-menu-section a,
 .bb-sfwd-aside.bb-dark-theme .side-panel-menu a {
   color: var(--bb-alternate-text-color);
+  background-color: transparent;
 }
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .buddypanel .side-panel-menu li:not(.current-menu-item) a:hover,
+.bb-sfwd-aside.bb-dark-theme .side-panel-menu .bb-menu-section a:hover,
 .bb-sfwd-aside.bb-dark-theme .side-panel-menu a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .buddypanel .side-panel-menu .current-menu-item > a,
+.bb-sfwd-aside.bb-dark-theme .buddypanel .side-panel-menu .current-menu-item > a {
+  color: #fff;
+}
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .buddypanel .side-panel-menu .current-menu-item > a:hover,
+.bb-sfwd-aside.bb-dark-theme .buddypanel .side-panel-menu .current-menu-item > a:hover {
+  background-color: transparent;
+}
+.bb-sfwd-aside.bb-dark-theme .buddypanel .side-panel-menu li:not(.current-menu-item) a i:not(.bb-icon-angle-down) {
+  opacity: 1;
   color: #fff;
 }
 .bb-sfwd-aside.bb-dark-theme .side-panel-menu .bb-menu-section a {
@@ -11025,7 +11055,8 @@ body:not(.bb-dark-theme) .sfwd-light-mode {
 .bb-sfwd-aside.bb-dark-theme #learndash-page-content,
 .bb-sfwd-aside.bb-dark-theme .bb-footer,
 .bb-sfwd-aside.bb-dark-theme .panel-head,
-.bb-sfwd-aside.bb-dark-theme .buddypanel #site-logo {
+.bb-sfwd-aside.bb-dark-theme .buddypanel #site-logo,
+.bb-sfwd-aside.bb-dark-theme .buddypanel .side-panel-menu a {
   background: #121212;
 }
 .bb-sfwd-aside.bb-dark-theme .lms-topic-sidebar-wrapper,
@@ -11340,6 +11371,12 @@ body:not(.bb-dark-theme) .sfwd-light-mode {
 .bb-sfwd-aside.bb-dark-theme .learndash-wrapper .wpProQuiz_graded_points,
 .bb-sfwd-aside.bb-dark-theme .learndash-wrapper .wpProQuiz_points {
   background-color: rgba(146, 164, 183, 0.2);
+}
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .site-header .user-wrap.menu-item-has-children .user-link .user-name {
+  color: #aaa;
+}
+.bb-sfwd-aside.bb-dark-theme.bb-template-v2 .site-header .user-wrap.menu-item-has-children .user-link:hover:before {
+  background-color: rgba(146, 164, 183, 0.1);
 }
 
 .ld-modal.ld-login-modal .ld-login-modal-register {

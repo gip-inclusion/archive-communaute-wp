@@ -1,8 +1,8 @@
 === BuddyBoss Theme ===
 Contributors: BuddyBoss
 Requires at least: 4.9.1
-Tested up to: 6.0
-Version: 2.0.4.1
+Tested up to: 6.0.2
+Version: 2.0.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,54 @@ BuddyBoss Theme is a community theme for the BuddyBoss Platform.
 4. Upload the file 'buddyboss-theme-child.zip'
 
 == Changelog ==
+
+= 2.0.9 =
+* Groups - Handled group directory minor heading UI issue in the responsive view
+* Registration - Small improvement to tab structure to allow switching between fields in the meaningful order
+* Forums - Handled discussion reply notification issue not taking to relevant pagination and also not scrolling to the reply
+* Core - Icon Pack updated with latest icons
+* LearnDash - Handled RTL UI issues for courses directory and single course screen
+* Compatibility - Handled Learndash video progression compatibility issue when switching from the old BuddyBoss theme
+
+= 2.0.8 =
+* Forums - Handled [ld-profile] shortcode expand/collapse not working issue
+* Forums - Handled Forum activity widget 'View discussion' button UI issue
+* Activity - Improved link preview and embeds layout and styling
+* Core - Small improvements to plugin updates logic by reducing the number of requests to check updates
+* Elementor - Handled maintenance mode not working issue for non-logged-in users
+* Compatibility - Handled conflict with TranslatePress on language switcher not working in the menu
+* Compatibility - Handled 'Paid Memberships Pro' shortcode PHP notices
+
+= 2.0.7 =
+* Core - Icon Pack updated with latest icons
+* Events Calendar Pro - Handled calendar screen button wrong color issue
+
+= 2.0.6 =
+* Styling - Handled a bunch of styling issues for Theme 2.0 updates
+* Styling - Handled Cover block not showing full-width option issue
+* Menus - Handled Menu mobile view dropdown issue for active menu items
+* Forums - Small improvement to not create multiple discussions on double click
+* Core - Updated styling for toolbars and pickers across all content types editor
+* Core - Small improvement to show 'See all' for 'BB Recent Posts' widget
+* LearnDash - Handled quiz results not showing correct answers issue for incorrect input
+* LearnDash - Handled 'LearnDash LMS - Course Grid' shortcode issue to show the right labels and count
+* Elementor - Handled 'Activity' block wrong link issue for 'All Activity' link
+
+= 2.0.5 =
+* Theme Options - Handled maintenance mode shows blank screen issue for administrator
+* Theme Options - Small improvement for widgets to allow Footer 6th Column sidebar
+* Styling - Handled a bunch of important styling issues for Theme 2.0 updates
+* Menus - Handled custom icons not working issue for different display locations
+* Forums - Handled Forum discussion tag getting deleted issue on reply update
+* Forums - Handled forum [bbp-search] shortdcode UI issues
+* Activity - Handled Post activity not working UX issue without refresh
+* Core - Icon Pack updated with latest icons
+* Core - Handled critical issue on Theme activation when 'BuddyBoss Platform' plugin is not active
+* LearnDash - Handled Dark Mode styling issues for Lessons, Topics, and Quizzes
+* Events Calendar Pro - Handled colors CSS conflicts
+* Compatibility - Handled WooCommerce Membership and Elementor plugins conflict
+* Compatibility - Handled minor UX issue of page scrolling on submitting Gravity Forms
+* Compatibility - Handled conflict with TranslatePress on the Course page when switching to different languages
 
 = 2.0.4.1 =
 * Forums - Small style update for the Draft option available for forum Discussion and replies

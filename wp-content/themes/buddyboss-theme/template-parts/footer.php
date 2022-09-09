@@ -3,10 +3,8 @@ $footer_widgets         = buddyboss_theme_get_option( 'footer_widgets' );
 $footer_widgets_columns = buddyboss_theme_get_option( 'footer_widget_columns' );
 $footer_copyright       = buddyboss_theme_get_option( 'footer_copyright' ); ?>
 
-<?php
-if ( $footer_widgets ) {
-	if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) || is_active_sidebar( 'footer-5' ) ) :
-		?>
+<?php if ( $footer_widgets ) {
+	if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) || is_active_sidebar( 'footer-5' ) || is_active_sidebar( 'footer-6' ) ) : ?>
 		<div class="footer-widget-area bb-footer">
 			<div class="container">
 				<div class="bb-grid">
@@ -37,6 +35,12 @@ if ( $footer_widgets ) {
 					<?php if ( is_active_sidebar( 'footer-5' ) && $footer_widgets_columns >= '5' ) : ?>
 						<div class="footer-widget area-5">
 							<?php dynamic_sidebar( 'footer-5' ); ?>
+						</div><!-- .footer-widget -->
+					<?php endif; ?>
+
+					<?php if ( is_active_sidebar('footer-6') && $footer_widgets_columns >= '6' ) : ?>
+						<div class="footer-widget area-6">
+							<?php dynamic_sidebar( 'footer-6' ); ?>
 						</div><!-- .footer-widget -->
 					<?php endif; ?>
 				</div>

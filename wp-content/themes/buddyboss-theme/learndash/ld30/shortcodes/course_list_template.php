@@ -316,27 +316,47 @@ if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'learndash-cours
 
 				<div class="bb-card-course-details">
 					<?php
-					$lession_list  = learndash_get_lesson_list( get_the_ID() );
-					$lesson_count  = learndash_get_lesson_list( get_the_ID(), array( 'num' => -1 ) );
-					$lessons_count = sizeof( $lesson_count );
+					$lession_list = learndash_get_lesson_list( get_the_ID() );
+					$lesson_count = array();
+
+					if ( isset( $shortcode_atts['post_type'] ) && 'sfwd-lessons' === $shortcode_atts['post_type'] ) {
+						$lesson_count = learndash_get_topic_list( get_the_ID() );
+						$labels       = LearnDash_Custom_Label::get_label( 'topics' );
+						$label        = LearnDash_Custom_Label::get_label( 'topic' );
+					} elseif ( isset( $shortcode_atts['post_type'] ) && 'sfwd-topic' === $shortcode_atts['post_type'] ) {
+						$lesson_count = learndash_get_lesson_quiz_list( get_the_ID() );
+						$labels       = LearnDash_Custom_Label::get_label( 'quizzes' );
+						$label        = LearnDash_Custom_Label::get_label( 'quiz' );
+					} elseif ( isset( $shortcode_atts['post_type'] ) && 'sfwd-quiz' === $shortcode_atts['post_type'] ) {
+						$lesson_count = learndash_get_quiz_questions( get_the_ID() );
+						$labels       = LearnDash_Custom_Label::get_label( 'questions' );
+						$label        = LearnDash_Custom_Label::get_label( 'question' );
+					} else {
+						$lesson_count = learndash_get_lesson_list( get_the_ID(), array( 'num' => - 1 ) );
+						$labels       = LearnDash_Custom_Label::get_label( 'lessons' );
+						$label        = LearnDash_Custom_Label::get_label( 'lesson' );
+					}
+
+					$lessons_count = is_array( $lesson_count ) ? sizeof( $lesson_count ) : 0;
+
 					$total_lessons = (
 						$lessons_count > 1
 						? sprintf(
 							__( '%1$s %2$s', 'buddyboss-theme' ),
 							$lessons_count,
-							LearnDash_Custom_Label::get_label( 'lessons' )
+							$labels
 						)
 						: sprintf(
 							__( '%1$s %2$s ', 'buddyboss-theme' ),
 							$lessons_count,
-							LearnDash_Custom_Label::get_label( 'lesson' )
+							$label
 						)
 					);
 
 					if ( $lessons_count > 0 ) {
 						echo '<div class="course-lesson-count">' . $total_lessons . '</div>';
 					} else {
-						echo '<div class="course-lesson-count">' . __( '0 ', 'buddyboss-theme' ) . sprintf( __( '%s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'lessons' ) ) . '</div>';
+						echo '<div class="course-lesson-count">' . __( '0 ', 'buddyboss-theme' ) . sprintf( __( '%s', 'buddyboss-theme' ), $labels ) . '</div>';
 					}
 					?>
 					<h2 class="bb-course-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>

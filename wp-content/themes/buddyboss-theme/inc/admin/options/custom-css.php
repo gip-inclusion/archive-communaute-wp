@@ -714,6 +714,17 @@ if ( ! function_exists( 'boss_generate_option_learndash_css' ) ) {
 			.learndash-wrapper .bb-ld-tabs #learndash-course-content {
 				top: -<?php echo $header_height + $is_admin_bar + 10; ?>px;
 			}
+
+			html[dir="rtl"] .learndash_next_prev_link a.next-link,
+			html[dir="rtl"] .learndash_next_prev_link span.next-link {
+				border-radius: <?php echo $button_radius; ?>px 0 0 <?php echo $button_radius; ?>px;
+			}
+
+			html[dir="rtl"] .learndash_next_prev_link a.prev-link,
+			html[dir="rtl"] .learndash_next_prev_link span.prev-link {
+				border-radius: 0 <?php echo $button_radius; ?>px <?php echo $button_radius; ?>px 0;
+			}
+
 		<?php
 
 		$css = ob_get_contents();

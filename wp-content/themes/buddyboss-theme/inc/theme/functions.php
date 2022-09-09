@@ -114,6 +114,12 @@ if ( ! function_exists( 'buddyboss_theme_setup' ) ) {
 		 * Remove Emoji Styles
 		 */
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+		/*
+		 * Gutenberg - Cover block (Adding wide option) 
+		 */
+		add_theme_support( 'align-wide' ); 
+		
 	}
 
 	add_action( 'after_setup_theme', 'buddyboss_theme_setup' );
@@ -184,6 +190,13 @@ function buddyboss_theme_scripts() {
 	/* Styles */
 	$template_type = '1';
 	$template_type = apply_filters( 'bb_template_type', $template_type );
+
+	// Icons.
+	// don't enqueue icons if BuddyBoss Platform 1.4.0 or higher is activated.
+	if ( ! function_exists( 'buddypress' ) || ( function_exists( 'buddypress' ) && defined( 'BP_PLATFORM_VERSION' ) && version_compare( BP_PLATFORM_VERSION, '1.4.0', '<' ) ) ) {
+		wp_enqueue_style( 'buddyboss-theme-icons-map', get_template_directory_uri() . '/assets/css/icons-map' . $mincss . '.css', '', buddyboss_theme()->version() );
+		wp_enqueue_style( 'buddyboss-theme-icons', get_template_directory_uri() . '/assets/icons/css/bb-icons' . $mincss . '.css', '', buddyboss_theme()->version() );
+	}
 
 	wp_enqueue_style( 'buddyboss-theme-magnific-popup-css', get_template_directory_uri() . '/assets/css/vendors/magnific-popup.min.css', '', buddyboss_theme()->version() );
 	wp_enqueue_style( 'buddyboss-theme-select2-css', get_template_directory_uri() . '/assets/css/vendors/select2.min.css', '', buddyboss_theme()->version() );
@@ -274,13 +287,6 @@ function buddyboss_theme_scripts() {
 
 	if ( function_exists( 'is_plugin_active' ) && ! is_plugin_active( 'buddyboss-platform/bp-loader.php' ) ) {
 		wp_enqueue_script( 'buddyboss-theme-cookie-js', get_template_directory_uri() . '/assets/js/plugins/jquery-cookie' . $minjs . '.js', array( 'jquery' ), buddyboss_theme()->version(), true );
-	}
-
-	// Icons.
-	// don't enqueue icons if BuddyBoss Platform 1.4.0 or higher is activated.
-	if ( ! function_exists( 'buddypress' ) || ( function_exists( 'buddypress' ) && defined( 'BP_PLATFORM_VERSION' ) && version_compare( BP_PLATFORM_VERSION, '1.4.0', '<' ) ) ) {
-		wp_enqueue_style( 'buddyboss-theme-icons-map', get_template_directory_uri() . '/assets/css/icons-map' . $mincss . '.css', '', buddyboss_theme()->version() );
-		wp_enqueue_style( 'buddyboss-theme-icons', get_template_directory_uri() . '/assets/icons/css/bb-icons' . $mincss . '.css', '', buddyboss_theme()->version() );
 	}
 
 	/**
@@ -939,7 +945,7 @@ class BuddyBoss_SubMenuWrap extends Walker_Nav_Menu {
 		$data_ballon        = '';
 
 		if ( 'tab_bar' === $menu_style ) {
-			$data_ballon = 'data-balloon-pos="down" data-balloon="' . $data_balloon_title . '"';
+			$data_ballon = 'data-balloon-pos="down" data-balloon="' . esc_attr( wp_strip_all_tags( $data_balloon_title ) ) . '"';
 		}
 
 		$output .= $indent . '<li' . $id . $class_names . $data_ballon . '>';

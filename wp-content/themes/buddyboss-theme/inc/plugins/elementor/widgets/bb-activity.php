@@ -648,7 +648,7 @@ class BBP_Activity extends Widget_Base {
 					<?php if ( $settings['switch_more'] ) : ?>
 						<div class="bb-block-header__extra push-right">
 							<?php if( '' != $settings['activity_link_text'] ) { ?>
-								<a href="<?php echo esc_url( bp_get_activity_root_slug() ); ?>" class="count-more"><?php echo esc_html( $settings['activity_link_text'] ); ?><i class="bb-icon-l bb-icon-angle-right"></i></a>
+								<a href="<?php bp_activity_directory_permalink(); ?>" class="count-more"><?php echo esc_html( $settings['activity_link_text'] ); ?><i class="bb-icon-l bb-icon-angle-right"></i></a>
 							<?php } ?>
 						</div>
 					<?php endif; ?>
