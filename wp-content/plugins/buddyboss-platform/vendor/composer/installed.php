@@ -5,7 +5,7 @@
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b0d4b650c9af9c4bf6bdf58bf7f31f103d536f5b',
+        'reference' => '9d84ddfbddf4b461178e70f1038c2d7eed10a595',
         'name' => 'buddyboss/buddyboss-platform',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b0d4b650c9af9c4bf6bdf58bf7f31f103d536f5b',
+            'reference' => '9d84ddfbddf4b461178e70f1038c2d7eed10a595',
             'dev_requirement' => false,
         ),
         'composer/installers' => array(
@@ -95,12 +95,12 @@
             ),
         ),
         'symfony/filesystem' => array(
-            'pretty_version' => 'v5.4.11',
-            'version' => '5.4.11.0',
+            'pretty_version' => 'v5.4.12',
+            'version' => '5.4.12.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/filesystem',
             'aliases' => array(),
-            'reference' => '6699fb0228d1bc35b12aed6dd5e7455457609ddd',
+            'reference' => '2d67c1f9a1937406a9be3171b4b22250c0a11447',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
