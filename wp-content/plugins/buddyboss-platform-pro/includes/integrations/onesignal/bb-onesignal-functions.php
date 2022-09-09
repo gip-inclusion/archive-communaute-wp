@@ -870,7 +870,7 @@ function bb_onesingnal_send_notification( $data ) {
 			$lang => html_entity_decode( wp_encode_emoji( $data['title'] ) ),
 		),
 		'contents'                  => array(
-			$lang => html_entity_decode( wp_encode_emoji( $data['content'] ) ),
+			$lang => html_entity_decode( wp_encode_emoji( stripcslashes( $data['content'] ) ) ),
 		),
 		'include_external_user_ids' => wp_parse_list( $data['user_id'] ),
 

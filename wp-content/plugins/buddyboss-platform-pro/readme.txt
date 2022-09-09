@@ -1,9 +1,9 @@
 === BuddyBoss Platform Pro ===
 Contributors: buddyboss
 Requires at least: 4.9.1
-Tested up to: 6.0.1
+Tested up to: 6.0.2
 Requires PHP: 5.6.20
-Stable tag: 2.0.5
+Stable tag: 2.1.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,6 +31,15 @@ To run BuddyBoss Platform Pro, we recommend your host supports:
 5. Activate 'BuddyBoss Platform Pro' from your Plugins page.
 
 == Changelog ==
+
+= 2.1.2 =
+* Notifications - Handled notification content backslash issue for specific special characters
+
+= 2.1.1 =
+* Core - Small improvements to plugin updates logic by reducing the number of requests to check updates
+
+= 2.1.0.2 =
+* Fixed versioning issue
 
 = 2.0.5 =
 * Zoom - Handled add meeting/webinar performance issue by processing notifications and emails in the background
