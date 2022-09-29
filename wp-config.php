@@ -48,7 +48,7 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8') );
     define('WP_DEBUG', true);
     define('WP_DEBUG_LOG', true);
-    define('WP_DEBUG_DISPLAY', false); 
+    define('WP_DEBUG_DISPLAY', false);
     define('FORCE_SSL_ADMIN', false);
 
 } else {
@@ -59,8 +59,8 @@ if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
     define('DB_CHARSET', 'utf8');
     define('WP_DEBUG', false);
     define('WP_DEBUG_LOG', false);
-    define('WP_DEBUG_DISPLAY', false);   
-    define('FORCE_SSL_ADMIN', true); 
+    define('WP_DEBUG_DISPLAY', false);
+    define('FORCE_SSL_ADMIN', true);
 }
 /**
  * Type de collation de la base de données.

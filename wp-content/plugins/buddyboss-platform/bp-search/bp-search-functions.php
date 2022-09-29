@@ -594,7 +594,8 @@ function bp_search_get_total_quizzes_count( $lesson_id ) {
  * @return bool
  */
 function bp_search_is_search() {
-	return ! is_admin() && is_search() && isset( $_REQUEST['bp_search'] );
+	//return ! is_admin() && is_search() && isset( $_REQUEST['bp_search'] );
+	return ! is_admin();
 }
 
 if ( in_array( 'geo-my-wp/geo-my-wp.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {

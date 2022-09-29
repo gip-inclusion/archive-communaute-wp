@@ -59,4 +59,4 @@ function custom_register_nav_menu(){
     'header-menu-mobile'		=> 'Primary Mobile',
   ) );
 }
-add_action( 'after_setup_theme', 'custom_register_nav_menu', 0 );
+add_action( 'after_setup_theme', 'custom_register_nav_menu', 0);
