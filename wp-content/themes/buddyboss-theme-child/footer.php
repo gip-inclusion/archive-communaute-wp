@@ -74,38 +74,6 @@ if( function_exists('heateor_sss_run') ) {
   }
 	?>
 
-<?php if (is_front_page()) : ?>
-  <script async src="https://tally.so/widgets/embed.js"></script>
-  <script>
-    window.TallyConfig = {
-      "formId": "mODrpM",
-      "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        }
-      }
-    };
-  </script>
-<?php endif; ?>
-
-
-<?php if (tribe_get_organizer_id() === 1303 ) : ?>
-  <script async src="https://tally.so/widgets/embed.js"></script>
-  <script>
-    window.TallyConfig = {
-      "formId": "wvXX9X",
-      "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        },
-      "layout": "modal"
-      }
-    };
-  </script>
-<?php endif; ?>
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.9.3/tarteaucitron.js"></script>
 <script type="text/javascript">
   tarteaucitron.init({
