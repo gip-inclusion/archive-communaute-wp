@@ -30,15 +30,6 @@
 <?php wp_footer(); ?>
 
 
-<?php
-if( function_exists('heateor_sss_run') ) {
-  echo '<div class="social-sharer">';
-  echo do_shortcode('[Sassy_Social_Share]');
-  echo '</div>';
-}
-?>
-
-
 <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -46,7 +37,7 @@ if( function_exists('heateor_sss_run') ) {
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://stats.data.gouv.fr/";
+    var u="https://matomo.inclusion.beta.gouv.fr/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '206']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

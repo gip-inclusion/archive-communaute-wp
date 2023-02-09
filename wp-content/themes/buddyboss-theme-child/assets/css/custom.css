@@ -116,3 +116,11 @@ body #tribe-events-pg-template {
     margin-top: .5rem;
   }
 }
+
+.footer-bottom-left .copyright {
+  display: none !important;
+}
+
+.site-header .site-header-container .site-title > a {
+  font-size: 1.2rem !important;
+}
