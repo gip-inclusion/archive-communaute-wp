@@ -1,7 +1,8 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(www\.)?documentation.inclusion.beta\.gouv\.fr$ [NC]
-RewriteCond %{REQUEST_URI} !^/wp-admin.*
+RewriteCond %{REQUEST_URI} !^/wp-admin
+RewriteCond %{REQUEST_URI} !^/wp-login\.php(.*)$
 RewriteRule ^(.*)$ https://aide.emplois.inclusion.beta.gouv.fr/ [L,R=301]
 </IfModule>
 
